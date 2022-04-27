@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingTop="50dp"
+    android:paddingEnd="24dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/img_logo"
+        android:background="@color/md_black_1000"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/txt_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="@string/nombre"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="48dp"
+        android:textStyle="bold"
+        android:textColor="@color/md_red_900"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:focusableInTouchMode="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_usuario"
+            android:background="@color/md_white_1000"
+            android:textSize="24dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:focusableInTouchMode="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_password"
+            android:inputType="textPassword"
+            android:background="@color/md_white_1000"
+            android:textSize="24dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:drawableTop="@drawable/login"
+        android:onClick="confirmLogin"
+        android:padding="12dp"
+        android:text="@string/btn_acceder"
+        android:textSize="24dp" />
+
+</LinearLayout>

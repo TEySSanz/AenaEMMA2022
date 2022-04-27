@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/verylarge_padding"
+                android:background="@color/md_black_1000"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/standard_padding">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_padding"
+                    android:layout_marginBottom="@dimen/standard_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/surveyslist_codEncuestador_text"
+                        android:textColor="@color/md_white_1000"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edit_codEncuestador"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/md_white_1000"
+                        android:gravity="center"
+                        android:hint="@string/surveyslist_edit_codEncuestador_hint"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:padding="@dimen/small_padding" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_padding"
+                    android:layout_marginBottom="@dimen/standard_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/surveyslist_aeropuerto_text"
+                        android:textColor="@color/md_white_1000"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/edit_aeropuerto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/md_white_1000"
+                        android:gravity="center"
+                        android:padding="@dimen/small_padding" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_padding"
+                    android:layout_marginBottom="@dimen/standard_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/surveyslist_language_text"
+                        android:textColor="@color/md_white_1000"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/edit_idioma"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/md_white_1000"
+                        android:gravity="center"
+                        android:padding="@dimen/small_padding" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_newSurvey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standard_padding"
+                android:onClick="newSurvey"
+                android:padding="@dimen/standard_padding"
+                android:text="@string/button_newSurvey"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/large_padding"
+        android:layout_marginTop="@dimen/verylarge_padding"
+        android:background="@color/aenaDarkGrey"
+        android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:layout_marginLeft="@dimen/medium_padding"
+            android:layout_marginRight="@dimen/medium_padding"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_iden" />
+
+            <TextView
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_codEncu" />
+
+            <TextView
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_fecha" />
+
+            <TextView
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_codIdioma" />
+
+            <TextView
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_codAerop" />
+
+            <TextView
+                android:id="@+id/surveylist_item_text_terminal"
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="@string/surveylist_text_header_terminal" />
+
+            <Button
+                style="@style/SuveyQuestionTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="1"
+                android:text="@string/surveylist_text_header_delete"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/surveyList_list_quests"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+
+        </ListView>
+
+        <Button
+            android:id="@+id/button_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/standard_padding"
+            android:layout_marginLeft="@dimen/large_padding"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:padding="@dimen/small_padding"
+            android:paddingLeft="@dimen/verylarge_padding"
+            android:paddingRight="@dimen/verylarge_padding"
+            android:text="@string/button_upload"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
