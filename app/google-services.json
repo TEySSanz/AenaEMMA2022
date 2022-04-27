@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51138002600",
+    "project_id": "aenaemma2022",
+    "storage_bucket": "aenaemma2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51138002600:android:a81954b25f982db0d2cc9d",
+        "android_client_info": {
+          "package_name": "es.testadistica.www.aenaemma2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51138002600-vmidukipg5ima6t9kd3r2o64fg55len3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWUjjuyshcPqw1sY6FrHVjTcZ03hruAis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51138002600-vmidukipg5ima6t9kd3r2o64fg55len3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
