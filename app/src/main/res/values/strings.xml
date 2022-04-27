@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">AenaEMMA2022</string>
+    <string name="app_name">EMMA 2022</string>
+    <string name="nombre">EMMA 2022</string>
+
+    <!-- Activity Login -->
+    <string name="input_usuario">Usuario</string>
+    <string name="input_password">Contraseña</string>
+    <string name="btn_acceder">Acceder</string>
+    <string name="img_logo">EMMA 2022</string>
+    <string name="downloading">Descargando...</string>
+
+    <!-- Activity Menu -->
+    <string name="txt_bienvenida">Bienvenid@:</string>
+    <string name="btn_cue">Cuestionarios Pasajeros</string>
+    <string name="btn_cueTrabajadores">Cuestionarios Trabajadores</string>
+    <string name="btn_actualiza">Actualiza datos</string>
+    <string name="btn_version">Comprobar versión</string>
+    <string name="btn_backup">Enviar backup</string>
+    <string name="btn_salir">Salir</string>
+    <string name="btn_sesion">Cerrar sesión</string>
+
+    <!-- Activity Listado encuestas -->
+    <string name="button_newSurvey">Nueva encuesta</string>
+    <string name="surveyslist_language_text">Idioma</string>
+    <string name="surveyslist_codEncuestador_text">Cod. de Encuestador</string>
+    <string name="surveyslist_edit_codEncuestador_hint">XX</string>
+    <string name="surveyslist_aeropuerto_text">Aeropuerto</string>
+    <string name="surveyslist_edit_aeropuerto_hint">Aeropuerto</string>
+    <string name="survey_sitemainformacion_text">Sistema de Información</string>
+    <string name="survey_text_codencuestador">Código del Encuestador</string>
+    <string name="survey_text_encuestasAeropuerto">Encuestas Aeropuerto de</string>
+    <string name="survey_text_numEncuesta">Nº Encuesta</string>
+    <string name="survey_text_fecha">FECHA</string>
+    <string name="survey_text_hora">HORA</string>
+    <string name="survey_text_numvuelo">Nº VUELO</string>
+    <string name="surveylist_text_header_iden">IDEN</string>
+    <string name="surveylist_text_header_codEncu">ENCUESTADOR</string>
+    <string name="surveylist_text_header_fecha">FECHA</string>
+    <string name="surveylist_text_header_codIdioma">IDIOMA</string>
+    <string name="surveylist_text_header_codAerop">AEROPUERTO</string>
+    <string name="surveylist_text_header_terminal">PUERTA</string>
+    <string name="surveylist_text_header_delete" />
+    <string name="button_upload">ENVIAR</string>
 </resources>

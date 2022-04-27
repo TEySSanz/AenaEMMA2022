@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/aenaBlue</item>
+        <item name="colorAccent">@color/aenaGreen</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <style name="SurveyTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/aenaGreen</item>
+    </style>
+
+    <style name="SuveyQuestionTitle" parent="@android:style/TextAppearance.Medium" >
+        <item name="android:textColor">@color/aenaBlue</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    <style name="SurveySubQuestion" parent="@android:style/TextAppearance.DeviceDefault" >
+        <item name="android:textColor">@color/aenaBlue</item>
+        <item name="android:padding">@dimen/small_padding</item>
+    </style>
+    <style name="SurveyQuestionEdit" >
+        <item name="android:background">@color/md_white_1000</item>
+        <item name="android:paddingBottom">@dimen/small_padding</item>
+        <item name="android:paddingTop">@dimen/small_padding</item>
+        <item name="android:paddingLeft">@dimen/standard_padding</item>
+        <item name="android:paddingRight">@dimen/standard_padding</item>
+        <item name="android:layout_marginTop">@dimen/small_padding</item>
+    </style>
+
+    <style name="SurveyQuestionsBox">
+        <item name="android:background">@color/aenaDarkGrey</item>
+        <!--<item name="android:layout_marginTop">@dimen/standard_padding</item>-->
+        <item name="android:layout_marginBottom">@dimen/standard_padding</item>
+        <item name="android:padding">@dimen/standard_padding</item>
+    </style>
+
+    <style name="SurveySingleQuestion">
+        <item name="android:background">@color/aenaDarkGrey</item>
+        <item name="android:padding">@dimen/large_padding</item>
+        <item name="android:layout_marginTop">@dimen/standard_padding</item>
+        <item name="android:layout_marginBottom">@dimen/standard_padding</item>
+
+        <!--<item name="android:layout_margin">@dimen/standard_padding</item>-->
+    </style>
+
+    <style name="SurveySingleQuestionA">
+        <item name="android:background">@color/aenaDarkGrey</item>
+        <item name="android:padding">@dimen/large_padding</item>
+        <item name="android:layout_marginTop">@dimen/standard_padding</item>
+
+        <!--<item name="android:layout_margin">@dimen/standard_padding</item>-->
+    </style>
+
+    <style name="SurveySingleQuestionB">
+        <item name="android:background">@color/aenaDarkGrey</item>
+        <item name="android:padding">@dimen/large_padding</item>
+        <item name="android:layout_marginBottom">@dimen/standard_padding</item>
+
+        <!--<item name="android:layout_margin">@dimen/standard_padding</item>-->
+    </style>
+
+
+
+</resources>
