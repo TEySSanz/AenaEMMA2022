@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".actividades.MenuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/txt_bienvenida"
                 android:textAllCaps="false"
-                android:textColor="@color/md_red_900"
+                android:textColor="@color/aenaBlue"
                 android:textSize="24dp"
                 android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:textColor="@color/md_red_900"
+                android:textColor="@color/aenaBlue"
                 android:textSize="24dp"
                 android:textStyle="italic" />
 
@@ -56,7 +56,7 @@
                 android:drawableTop="@drawable/list"
 
                 android:text="@string/btn_cue"
-                android:textColor="@color/md_red_900" />
+                android:textColor="@color/aenaBlue" />
             <!--  android:onClick="accederEncuestas" -->
 
             <Button
@@ -68,7 +68,7 @@
                 android:drawableTop="@drawable/list_trabajadores"
 
                 android:text="@string/btn_cueTrabajadores"
-                android:textColor="@color/md_red_900" />
+                android:textColor="@color/aenaBlue" />
             <!--  android:onClick="accederEncuestas" -->
 
 
@@ -87,10 +87,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/update"
-
+                android:onClick="actualizaDatos"
                 android:text="@string/btn_actualiza"
-                android:textColor="@color/md_red_900" />
-            <!-- android:onClick="actualizaDatos" -->
+                android:textColor="@color/aenaBlue" />
 
             <Button
                 android:id="@+id/btn_version"
@@ -99,10 +98,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/version"
-
+                android:onClick="comprobarVersion"
                 android:text="@string/btn_version"
-                android:textColor="@color/md_red_900" />
-            <!-- android:onClick="comprobarVersion" -->
+                android:textColor="@color/aenaBlue" />
 
             <Button
                 android:id="@+id/btn_backup"
@@ -111,10 +109,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/backup"
-
+                android:onClick="enviaBackup"
                 android:text="@string/btn_backup"
-                android:textColor="@color/md_red_900" />
-            <!--android:onClick="enviaBackup"-->
+                android:textColor="@color/aenaBlue" />
 
         </LinearLayout>
 
@@ -131,10 +128,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/signout"
-
+                android:onClick="cerrarSesion"
                 android:text="@string/btn_sesion"
-                android:textColor="@color/md_red_900" />
-            <!--android:onClick="cerrarSesion"-->
+                android:textColor="@color/aenaBlue" />
 
             <Button
                 android:id="@+id/btn_salir"
@@ -143,10 +139,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/power"
-
+                android:onClick="salir"
                 android:text="@string/btn_salir"
-                android:textColor="@color/md_red_900" />
-            <!-- android:onClick="salir" -->
+                android:textColor="@color/aenaBlue" />
 
         </LinearLayout>
     </LinearLayout>

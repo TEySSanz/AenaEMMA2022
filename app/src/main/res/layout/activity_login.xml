@@ -8,14 +8,14 @@
     android:paddingStart="24dp"
     android:paddingTop="50dp"
     android:paddingEnd="24dp"
-    tools:context=".MainActivity">
+    tools:context=".actividades.LoginActivity">
 
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/img_logo"
-        android:background="@color/md_black_1000"
+        android:background="@color/aenaBlue"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:src="@drawable/logo" />
@@ -30,7 +30,7 @@
         android:textAllCaps="true"
         android:textSize="48dp"
         android:textStyle="bold"
-        android:textColor="@color/md_red_900"/>
+        android:textColor="@color/aenaBlue"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -75,6 +75,6 @@
         android:onClick="confirmLogin"
         android:padding="12dp"
         android:text="@string/btn_acceder"
-        android:textSize="24dp" />
+        android:textSize="24dp"/>
 
 </LinearLayout>
