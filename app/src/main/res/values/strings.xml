@@ -19,11 +19,12 @@
     <string name="btn_salir">Salir</string>
     <string name="btn_sesion">Cerrar sesión</string>
 
-    <!-- Activity Listado encuestas -->
+    <!-- Activity Listado Pasajeros -->
     <string name="button_newSurvey">Nueva encuesta</string>
     <string name="surveyslist_language_text">IDIOMA</string>
     <string name="surveyslist_codEncuestador_text">ENCUESTADOR</string>
     <string name="surveyslist_edit_codEncuestador_hint">XX</string>
+    <string name="surveyslist_date_text">FECHA</string>
     <string name="surveyslist_aeropuerto_text">AEROPUERTO</string>
     <string name="surveyslist_edit_aeropuerto_hint">Aeropuerto</string>
     <string name="survey_sitemainformacion_text">Sistema de Información</string>
@@ -41,4 +42,9 @@
     <string name="surveylist_text_header_terminal">PUERTA</string>
     <string name="surveylist_text_header_delete" />
     <string name="button_upload">ENVIAR</string>
+
+    <!-- Activity Cue Pasajeros -->
+    <string name="survey_txt_encuestador">ENCUESTADOR</string>
+    <string name="survey_txt_numEncuesta">Nº ENCUESTA</string>
+    <string name="survey_text_puertaEmbarque">PUERTA</string>
 </resources>

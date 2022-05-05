@@ -41,6 +41,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.adaptadores.ListadoItemAdapter;
@@ -64,6 +65,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private Activity listado = this;
 
     TextView txt_usuario;
+    TextView txt_fechaActual;
     TextView txt_aeropuerto;
     ListView list_pasajeros;
     DBHelper conn;
@@ -82,6 +84,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         //Asigna campos a componentes
         txt_usuario = (TextView) findViewById(R.id.txt_usuario);
+        txt_fechaActual = (TextView) findViewById(R.id.txt_fechaActual);
         txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
         list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
 
@@ -99,6 +102,10 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         //Establece la fecha actual
         Calendar currentTime = Calendar.getInstance();
         fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
+        //Asigna la fecha a visualizar
+        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
 
         //Asigna los valores del desplegable de idiomas
 
@@ -134,6 +141,10 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         //Establece la fecha actual
         Calendar currentTime = Calendar.getInstance();
         fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
+        //Asigna la fecha a visualizar
+        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
     }
 
     private ArrayList<CuePasajerosListado> todasEncuestas(){
@@ -147,11 +158,11 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                         "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " +
                         "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
                         "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " +
-                        "T3." + Contracts.COLUMN_CUEPASAJEROS_PUERTA +
+                        "T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA +
                         " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
                                    Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
                                    Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
-                        " WHERE T5." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + " IS NOT NULL" +
+                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + " IS NOT NULL" +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
@@ -180,10 +191,10 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private CuePasajeros acceso(){
         SQLiteDatabase db = conn.getWritableDatabase();
         CuePasajeros cue = null;
-/*
+
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
-*/
+
         //Usuario
         String[] usuarios = {txt_usuario.getText().toString()};
         String idUsuario = null;
@@ -208,8 +219,11 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
             idAeropuerto = cLineas.getString(0);
         }
 
+        //Clave única
+        String clave = getUniqueKey();
+
         //Crea el nuevo cuestionario
-        //db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ")");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ", " + Contracts.COLUMN_CUEPASAJEROS_CLAVE + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "')");
 
         //Iden de cuestionario
         String[] iden = {Contracts.TABLE_CUEPASAJEROS};
@@ -229,48 +243,19 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     }
 
     public void iniciarCue(View view){
-        /*
-        Intent survey = new Intent(getApplicationContext(), SurveyActivity.class);
+        Intent survey = new Intent(getApplicationContext(), CuePasajerosActivity.class);
         Bundle datosSurvey = new Bundle();
 
         datosSurvey.putString("encuestador", txt_usuario.getText().toString());
         datosSurvey.putString("fecha", txt_fechaActual.getText().toString());
-        datosSurvey.putString("estacion", spinner_estacion.getSelectedItem().toString());
-        datosSurvey.putString("linea", spinner_linea.getSelectedItem().toString());
+        datosSurvey.putString("aeropuerto", txt_aeropuerto.getText().toString());
 
-        String hora = txt_fechaActual.getText().toString().substring(11);
-
-        String txt_tramo = null;
-
-        if (hora.substring(0,2).equals("06") || hora.substring(0,2).equals("07") || hora.substring(0,2).equals("08") || (hora.substring(0,2).equals("09") && (hora.substring(3,4).equals("0") || hora.substring(3,4).equals("1") || hora.substring(3,4).equals("2")))){
-            txt_tramo = "De 07:00-09:30";
-        } else if ((hora.substring(0,2).equals("09") && (hora.substring(3,4).equals("3") || hora.substring(3,4).equals("4") || hora.substring(3,4).equals("5"))) || hora.substring(0,2).equals("10") || hora.substring(0,2).equals("11") || hora.substring(0,2).equals("12") || hora.substring(0,2).equals("13")){
-            txt_tramo = "De 09:30-14:00";
-        } else if (hora.substring(0,2).equals("14") || hora.substring(0,2).equals("15")){
-            txt_tramo = "De 14:00-16:00";
-        } else if (hora.substring(0,2).equals("16") || hora.substring(0,2).equals("17")){
-            txt_tramo = "De 16:00-18:00";
-        } else if (hora.substring(0,2).equals("18") || hora.substring(0,2).equals("19")){
-            txt_tramo = "De 18:00-20:00";
-        } else if (hora.substring(0,2).equals("20") || hora.substring(0,2).equals("21") || hora.substring(0,2).equals("22")){
-            txt_tramo = "De 20:00-22:00";
-        }
-
-        datosSurvey.putString("tramo", txt_tramo);
-
-        Cuestionarios cue = acceso();
+        CuePasajeros cue = acceso();
 
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
-        datosSurvey.putString("idAspecto1", String.valueOf(cue.getIdAspecto1()));
-        datosSurvey.putString("idAspecto2", String.valueOf(cue.getIdAspecto2()));
-        datosSurvey.putString("idAspecto3", String.valueOf(cue.getIdAspecto3()));
-        datosSurvey.putString("idAspecto4", String.valueOf(cue.getIdAspecto4()));
-        datosSurvey.putString("idAspecto5", String.valueOf(cue.getIdAspecto5()));
-        datosSurvey.putString("idAspecto6", String.valueOf(cue.getIdAspecto6()));
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);
-        */
     }
 
     public void enviar(View view){
@@ -531,5 +516,13 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         } catch (Exception e) {
 
         }
+    }
+
+    public static synchronized String getUniqueKey(){
+
+        Random random = new Random();
+        Integer number = random.nextInt(900000)+100000;
+
+        return System.currentTimeMillis()+ String.valueOf(number);
     }
 }

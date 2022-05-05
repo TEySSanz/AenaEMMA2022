@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_cuepasajeros.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado.xml" value="0.5" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_encuestas.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_pasajeros.xml" value="0.2586050724637681" />
@@ -14,6 +15,8 @@
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/list_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/searchable_list_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/selection_spinner_item_small.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_identifier.xml" value="0.33" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_list_item.xml" value="0.18802083333333333" />
       </map>
     </option>

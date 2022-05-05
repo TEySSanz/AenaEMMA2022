@@ -21,6 +21,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_AEROPUERTOS);
         insertsAeropuertos(db);
 
+        //Idiomas
+        db.execSQL(Contracts.SQL_CREATE_IDIOMAS);
+
         //CuePasajeros
         db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
     }
@@ -31,7 +34,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public void insertsUsuarios (SQLiteDatabase db){
-        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (1, 'MAD000', 'aaa', 1)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (0, 'MAD000', 'aaa', 1)");
 
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (1, 'MAD001', 'Rs8eKT8e', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (2, 'MAD002', 'Qw1mKC0a', 1)");
@@ -1349,5 +1352,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + Contracts.TABLE_AEROPUERTOS + " (" + Contracts.COLUMN_AEROPUERTOS_IDEN + ", " + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " + Contracts.COLUMN_AEROPUERTOS_CLAVE + ") VALUES (11, 'Gran Canaria', 'LPA')");
         db.execSQL("INSERT INTO " + Contracts.TABLE_AEROPUERTOS + " (" + Contracts.COLUMN_AEROPUERTOS_IDEN + ", " + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " + Contracts.COLUMN_AEROPUERTOS_CLAVE + ") VALUES (12, 'Tenerife Norte', 'TFN')");
         db.execSQL("INSERT INTO " + Contracts.TABLE_AEROPUERTOS + " (" + Contracts.COLUMN_AEROPUERTOS_IDEN + ", " + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " + Contracts.COLUMN_AEROPUERTOS_CLAVE + ") VALUES (13, 'Tenerife Sur', 'TFS')");
+    }
+
+    public void insertsIdiomas (SQLiteDatabase db){
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (1, 'Español', 'ES')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (2, 'Inglés', 'EN')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (3, 'Alemán', 'DE')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (4, 'Francés', 'FR')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (5, 'Italiano', 'IT')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (6, 'Portugués', 'PT')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (7, 'Catalán', 'CA')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_IDIOMAS + " (" + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA + ", " + Contracts.COLUMN_IDIOMAS_CLAVE + ") VALUES (8, 'Euskera', 'EU')");
     }
 }
