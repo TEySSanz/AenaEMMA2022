@@ -21,10 +21,10 @@
 
     <!-- Activity Listado encuestas -->
     <string name="button_newSurvey">Nueva encuesta</string>
-    <string name="surveyslist_language_text">Idioma</string>
-    <string name="surveyslist_codEncuestador_text">Cod. de Encuestador</string>
+    <string name="surveyslist_language_text">IDIOMA</string>
+    <string name="surveyslist_codEncuestador_text">ENCUESTADOR</string>
     <string name="surveyslist_edit_codEncuestador_hint">XX</string>
-    <string name="surveyslist_aeropuerto_text">Aeropuerto</string>
+    <string name="surveyslist_aeropuerto_text">AEROPUERTO</string>
     <string name="surveyslist_edit_aeropuerto_hint">Aeropuerto</string>
     <string name="survey_sitemainformacion_text">Sistema de Información</string>
     <string name="survey_text_codencuestador">Código del Encuestador</string>

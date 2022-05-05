@@ -56,7 +56,7 @@ import es.testadistica.www.aenaemma2022.utilidades.UpdateHelper;
 public class MenuActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener, UpdateHelper.OnUpdateCheckListener, UpdateHelper.OnNoUpdateCheckListener {
 
     private static final String DESCARGA_URL = "http://192.168.7.18:8084/AENA/rest/actualizacion";
-    //private static final String DESCARGA_URL = "http://213.229.135.43:8081/EPSH/rest/actualizacion";
+    //private static final String DESCARGA_URL = "http://213.229.135.43:8081/AENA/rest/actualizacion";
 
     DBHelper conn;
     Context context;
@@ -206,13 +206,9 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     public void onNoUpdateCheckListener() {
         Toast.makeText(getApplicationContext(), "Ya dispone de la última versión por lo que no es necesario actualizar", Toast.LENGTH_LONG).show();
     }
-/*
-    public void accederEncuestas(View view){
-        //SQLiteDatabase db = conn.getWritableDatabase();
-        //db.execSQL("INSERT INTO " + Contracts.TABLE_CUESTIONARIOS + " (" + Contracts.COLUMN_CUESTIONARIOS_PREGUNTA + ", " + Contracts.COLUMN_CUESTIONARIOS_IDENTIFICADORENCUESTA + ") VALUES (1, 99999)");
 
-        Intent encuestas = new Intent(this, ListadoActivity.class);
-        //Intent encuestas = new Intent(this, SurveyActivity.class);
+    public void accederEncuestas(View view){
+        Intent encuestas = new Intent(this, ListadoPasajerosActivity.class);
         Bundle datos = new Bundle();
 
         datos.putString("usuario", txt_usuario.getText().toString());
@@ -220,7 +216,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         encuestas.putExtras(datos);
         startActivity(encuestas);
     }
-*/
+
     private void ejecutaUpdate(JSONObject resultado){
         SQLiteDatabase db = conn.getWritableDatabase();
         JSONArray total;

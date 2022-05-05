@@ -54,10 +54,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/list"
-
+                android:onClick="accederEncuestas"
                 android:text="@string/btn_cue"
                 android:textColor="@color/aenaBlue" />
-            <!--  android:onClick="accederEncuestas" -->
 
             <Button
                 android:id="@+id/btn_cueTrabajadores"

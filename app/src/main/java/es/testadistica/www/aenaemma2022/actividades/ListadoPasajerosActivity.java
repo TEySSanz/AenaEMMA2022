@@ -1,0 +1,535 @@
+package es.testadistica.www.aenaemma2022.actividades;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import es.testadistica.www.aenaemma2022.R;
+import es.testadistica.www.aenaemma2022.adaptadores.ListadoItemAdapter;
+import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+import es.testadistica.www.aenaemma2022.entidades.CuePasajerosListado;
+import es.testadistica.www.aenaemma2022.utilidades.Contracts;
+import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
+import es.testadistica.www.aenaemma2022.utilidades.JSONWriter;
+import es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner;
+
+public class ListadoPasajerosActivity extends AppCompatActivity {
+
+    private static final String CARGA_URL = "http://192.168.7.18:8084/AENA/rest/envio";
+    //private static final String CARGA_URL = "http://213.229.135.43:8081/AENA/rest/envio";
+    private static final String TAG = ListadoPasajerosActivity.class.toString();
+    private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
+    private static String DATE_FORMAT_COMPLETE ="dd/MM/yyyy HH:mm";
+    private Date fechaActual = null;
+    private ArrayList<CuePasajeros> listaEncuestas;
+    private ArrayList<CuePasajerosListado> listaCue;
+    private Activity listado = this;
+
+    TextView txt_usuario;
+    TextView txt_aeropuerto;
+    ListView list_pasajeros;
+    DBHelper conn;
+    ProgressDialog progreso;
+    RequestQueue peticion;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listado_pasajeros);
+
+        //Añadir icono en el ActionBar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Asigna campos a componentes
+        txt_usuario = (TextView) findViewById(R.id.txt_usuario);
+        txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
+        list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
+
+        //Recoge los parámetros de la pantalla anterior
+        Bundle datos = this.getIntent().getExtras();
+
+        if (datos != null) {
+            txt_usuario.setText(datos.getString("usuario"));
+        }
+
+        //BBDD
+        conn = new DBHelper(this.getApplicationContext());
+        SQLiteDatabase db = conn.getReadableDatabase();
+
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        fechaActual = currentTime.getTime();
+
+        //Asigna los valores del desplegable de idiomas
+
+
+        //Actualiza el listado
+        refrescar();
+
+        //Crea backup de la base de datos
+        exportDatabase(Contracts.DATABASE_NAME);
+
+        //Inicia la petición al webservice
+        peticion = Volley.newRequestQueue(this.getApplicationContext());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        refrescar();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
+
+    private void refrescar(){
+        listaCue = todasEncuestas();
+        ListadoItemAdapter adaptador = new ListadoItemAdapter(this, listaCue);
+        list_pasajeros.setAdapter(adaptador);
+
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        fechaActual = currentTime.getTime();
+    }
+
+    private ArrayList<CuePasajerosListado> todasEncuestas(){
+        SQLiteDatabase db = conn.getReadableDatabase();
+        CuePasajerosListado cue = null;
+        String[] parametros = {txt_usuario.getText().toString()};
+
+        listaCue = new ArrayList<CuePasajerosListado>();
+
+        Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
+                        "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " +
+                        "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
+                        "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " +
+                        "T3." + Contracts.COLUMN_CUEPASAJEROS_PUERTA +
+                        " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
+                                   Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
+                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
+                        " WHERE T5." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + " IS NOT NULL" +
+                        " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
+
+        while (cursor.moveToNext()) {
+            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            listaCue.add(cue);
+        }
+
+        return listaCue;
+    }
+
+    private List<String> getIdiomas() {
+        List<String> getIdiomas = new ArrayList<String>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT " + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA +
+                " FROM " + Contracts.TABLE_IDIOMAS + " AS T1", parametros);
+
+        while (cursor.moveToNext()) {
+            getIdiomas.add(cursor.getString(1));
+        }
+
+        return getIdiomas;
+    }
+
+    private CuePasajeros acceso(){
+        SQLiteDatabase db = conn.getWritableDatabase();
+        CuePasajeros cue = null;
+/*
+        String fecha = txt_fechaActual.getText().toString().substring(0,10);
+        String hora = txt_fechaActual.getText().toString().substring(11);
+*/
+        //Usuario
+        String[] usuarios = {txt_usuario.getText().toString()};
+        String idUsuario = null;
+
+        Cursor cUsuarios = db.rawQuery("SELECT " + Contracts.COLUMN_USUARIOS_IDEN +
+                " FROM " + Contracts.TABLE_USUARIOS + " AS T1" +
+                " WHERE " + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
+
+        while (cUsuarios.moveToNext()) {
+            idUsuario = cUsuarios.getString(0);
+        }
+
+        //Aeropuerto
+        String[] aeropuerto = {txt_aeropuerto.getText().toString()};
+        String idAeropuerto = null;
+
+        Cursor cLineas = db.rawQuery("SELECT " + Contracts.COLUMN_AEROPUERTOS_IDEN +
+                " FROM " + Contracts.TABLE_AEROPUERTOS + " AS T1" +
+                " WHERE " + Contracts.COLUMN_AEROPUERTOS_NOMBRE + "=?", aeropuerto);
+
+        while (cLineas.moveToNext()) {
+            idAeropuerto = cLineas.getString(0);
+        }
+
+        //Crea el nuevo cuestionario
+        //db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ")");
+
+        //Iden de cuestionario
+        String[] iden = {Contracts.TABLE_CUEPASAJEROS};
+        int idCue = 0;
+
+        Cursor cIdenCue = db.rawQuery("SELECT seq" +
+                " FROM sqlite_sequence" +
+                " WHERE name =?" , iden);
+
+        while (cIdenCue.moveToNext()) {
+            idCue = cIdenCue.getInt(0);
+        }
+
+        cue = new CuePasajeros(idCue);
+
+        return cue;
+    }
+
+    public void iniciarCue(View view){
+        /*
+        Intent survey = new Intent(getApplicationContext(), SurveyActivity.class);
+        Bundle datosSurvey = new Bundle();
+
+        datosSurvey.putString("encuestador", txt_usuario.getText().toString());
+        datosSurvey.putString("fecha", txt_fechaActual.getText().toString());
+        datosSurvey.putString("estacion", spinner_estacion.getSelectedItem().toString());
+        datosSurvey.putString("linea", spinner_linea.getSelectedItem().toString());
+
+        String hora = txt_fechaActual.getText().toString().substring(11);
+
+        String txt_tramo = null;
+
+        if (hora.substring(0,2).equals("06") || hora.substring(0,2).equals("07") || hora.substring(0,2).equals("08") || (hora.substring(0,2).equals("09") && (hora.substring(3,4).equals("0") || hora.substring(3,4).equals("1") || hora.substring(3,4).equals("2")))){
+            txt_tramo = "De 07:00-09:30";
+        } else if ((hora.substring(0,2).equals("09") && (hora.substring(3,4).equals("3") || hora.substring(3,4).equals("4") || hora.substring(3,4).equals("5"))) || hora.substring(0,2).equals("10") || hora.substring(0,2).equals("11") || hora.substring(0,2).equals("12") || hora.substring(0,2).equals("13")){
+            txt_tramo = "De 09:30-14:00";
+        } else if (hora.substring(0,2).equals("14") || hora.substring(0,2).equals("15")){
+            txt_tramo = "De 14:00-16:00";
+        } else if (hora.substring(0,2).equals("16") || hora.substring(0,2).equals("17")){
+            txt_tramo = "De 16:00-18:00";
+        } else if (hora.substring(0,2).equals("18") || hora.substring(0,2).equals("19")){
+            txt_tramo = "De 18:00-20:00";
+        } else if (hora.substring(0,2).equals("20") || hora.substring(0,2).equals("21") || hora.substring(0,2).equals("22")){
+            txt_tramo = "De 20:00-22:00";
+        }
+
+        datosSurvey.putString("tramo", txt_tramo);
+
+        Cuestionarios cue = acceso();
+
+        datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
+        datosSurvey.putString("idAspecto1", String.valueOf(cue.getIdAspecto1()));
+        datosSurvey.putString("idAspecto2", String.valueOf(cue.getIdAspecto2()));
+        datosSurvey.putString("idAspecto3", String.valueOf(cue.getIdAspecto3()));
+        datosSurvey.putString("idAspecto4", String.valueOf(cue.getIdAspecto4()));
+        datosSurvey.putString("idAspecto5", String.valueOf(cue.getIdAspecto5()));
+        datosSurvey.putString("idAspecto6", String.valueOf(cue.getIdAspecto6()));
+
+        survey.putExtras(datosSurvey);
+        startActivityForResult(survey, 0);
+        */
+    }
+
+    public void enviar(View view){
+        /*
+        final CharSequence[] opciones = {"Sí", "No"};
+        final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(ListadoPasajerosActivity.this);
+        alertOpciones.setTitle("¿Quiere realizar un envío de la información pendiente?");
+        alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (opciones[which].equals("Sí")) {
+                    progreso = new ProgressDialog(ListadoPasajerosActivity.this);
+                    progreso.setMessage("Consultando...");
+                    progreso.show();
+
+                    String ruta = CARGA_URL;
+                    Gson gson = new Gson();
+
+                    listaEncuestas = cuestionariosPendientes();
+
+                    for(Cuestionarios cuestionario: listaEncuestas){
+                        progreso.setMessage("Enviando cuestionarios...");
+                        final int cuestionarioIden = cuestionario.getIden();
+                        String jsonStringBody = gson.toJson(cuestionario);
+                        JSONObject jsonBody = null;
+
+                        //Genera el fichero
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+                        ParsePosition pos = new ParsePosition(0);
+                        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy HH:mm");
+                        //Date fechaCues = formato.parse(cuestionario.getFechaInicio_HC()+" "+cuestionario.getHoraInicio_HC(), pos);
+                        Date fechaCues = Calendar.getInstance().getTime();
+                        String fileName = "Metro_"+ cuestionario.getIdUsuario() + "_" + cuestionario.getIden() + "_C_"+ sdf.format(fechaCues)+".json";
+                        JSONWriter jsonWriter = new JSONWriter();
+                        jsonWriter.ficheroCuestionario(listado, cuestionario, fileName);
+
+                        try {
+                            jsonBody = new JSONObject(jsonStringBody);
+                        } catch (Exception e){
+                            Log.e(TAG, "Unable to cast form gson to JSONObject");
+                            continue;
+                        }
+
+                        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                                (Request.Method.POST, ruta+"/cuestionarios", jsonBody, new Response.Listener<JSONObject>() {
+
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        marcarEnviadoCuestionario(cuestionarioIden);
+                                    }
+                                }, new Response.ErrorListener() {
+
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        //addFailedQue(queIden);
+                                        Log.i(TAG, "Failure when sending questionnaire with iden: " + cuestionarioIden);
+                                        error.printStackTrace();
+                                    }
+                                });
+
+                        peticion.add(jsObjRequest);
+                    }
+
+                    progreso.hide();
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(), "Se ha completado el proceso de envío", Toast.LENGTH_LONG).show();
+                } else {
+                    dialog.dismiss();
+                }
+            }
+        });
+        alertOpciones.show();
+
+         */
+    }
+
+    private void marcarEnviadoCuestionario(int cueIden){
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        db.execSQL("UPDATE " + Contracts.TABLE_CUEPASAJEROS + " SET " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + " = 1 WHERE " + Contracts.COLUMN_CUEPASAJEROS_IDEN + " = " + cueIden);
+    }
+
+    private ArrayList<CuePasajeros> cuestionariosPendientes() {
+        SQLiteDatabase db = conn.getReadableDatabase();
+        CuePasajeros cue = null;
+        int a = 0;
+        String[] parametros = {String.valueOf(a)};
+        ArrayList<CuePasajeros> pendientes;
+
+        pendientes = new ArrayList<CuePasajeros>();
+/*
+        Cursor cursor = db.rawQuery("SELECT " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDUSUARIO + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_FECHA + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAINICIO + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAFIN + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDLINEA + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDESTACION + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDTRAMO + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F0 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P15 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16A + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16B + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_1 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_2 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_3 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_4 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_5 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_6 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_7 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_8 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_9 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_10 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_11 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_12 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_13 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_14 + ", " +
+                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_15 +
+                        " FROM " + Contracts.TABLE_CUESTIONARIOS + " AS T1 " +
+                        " WHERE T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + "=?" +
+                        " ORDER BY T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN, parametros);
+
+        while (cursor.moveToNext()) {
+            cue = new CuePasajeros();
+
+            cue.setIden(cursor.getInt(0));
+            cue.setIdUsuario(cursor.getInt(1));
+            cue.setEnviado(cursor.getInt(2));
+            cue.setFecha(cursor.getString(3));
+            cue.setHoraInicio(cursor.getString(4));
+            cue.setHoraFin(cursor.getString(5));
+            cue.setIdLinea(cursor.getInt(6));
+            cue.setIdEstacion(cursor.getInt(7));
+            cue.setIdTramo(cursor.getInt(8));
+            cue.setF0(cursor.getInt(9));
+            cue.setF1(cursor.getInt(10));
+            cue.setF2(cursor.getInt(11));
+            cue.setF3(cursor.getInt(12));
+            cue.setF4(cursor.getInt(13));
+            cue.setF5(cursor.getInt(14));
+            cue.setF6(cursor.getInt(15));
+            cue.setP1(cursor.getInt(16));
+            cue.setP3_1(cursor.getString(17));
+            cue.setP3_2(cursor.getString(18));
+            cue.setP3_3(cursor.getString(19));
+            cue.setP6_1(cursor.getString(20));
+            cue.setP6_2(cursor.getString(21));
+            cue.setP6_3(cursor.getString(22));
+            cue.setP4(cursor.getInt(23));
+            cue.setIdAspecto1(cursor.getInt(24));
+            cue.setIdAspecto2(cursor.getInt(25));
+            cue.setIdAspecto3(cursor.getInt(26));
+            cue.setIdAspecto4(cursor.getInt(27));
+            cue.setIdAspecto5(cursor.getInt(28));
+            cue.setIdAspecto6(cursor.getInt(29));
+            cue.setP5A_1(cursor.getInt(30));
+            cue.setP5A_2(cursor.getInt(31));
+            cue.setP5A_3(cursor.getInt(32));
+            cue.setP5A_4(cursor.getInt(33));
+            cue.setP5A_5(cursor.getInt(34));
+            cue.setP5A_6(cursor.getInt(35));
+            cue.setP5B_1(cursor.getInt(36));
+            cue.setP5B_2(cursor.getInt(37));
+            cue.setP5B_3(cursor.getInt(38));
+            cue.setP5B_4(cursor.getInt(39));
+            cue.setP5B_5(cursor.getInt(40));
+            cue.setP5B_6(cursor.getInt(41));
+            cue.setP15(cursor.getInt(42));
+            cue.setP16A(cursor.getString(43));
+            cue.setP16B(cursor.getString(44));
+            cue.setP17_1(cursor.getInt(45));
+            cue.setP17_2(cursor.getInt(46));
+            cue.setP17_3(cursor.getInt(47));
+            cue.setP17_4(cursor.getInt(48));
+            cue.setP17_5(cursor.getInt(49));
+            cue.setP17_6(cursor.getInt(50));
+            cue.setP14_1(cursor.getInt(51));
+            cue.setP14_2(cursor.getInt(52));
+            cue.setP14_3(cursor.getInt(53));
+            cue.setP14_4(cursor.getInt(54));
+            cue.setP14_5(cursor.getInt(55));
+            cue.setP14_6(cursor.getInt(56));
+            cue.setP14_7(cursor.getInt(57));
+            cue.setP14_8(cursor.getInt(58));
+            cue.setP14_9(cursor.getInt(59));
+            cue.setP14_10(cursor.getInt(60));
+            cue.setP14_11(cursor.getInt(61));
+            cue.setP14_12(cursor.getInt(62));
+            cue.setP14_13(cursor.getInt(63));
+            cue.setP14_14(cursor.getInt(64));
+            cue.setP14_15(cursor.getInt(65));
+
+            pendientes.add(cue);
+        }*/
+
+        return pendientes;
+    }
+
+    public void exportDatabase(String databaseName) {
+        try {
+            File sd = this.getExternalFilesDir("AenaStorage");
+            File data = Environment.getDataDirectory();
+
+            if (sd.canWrite()) {
+                String currentDBPath = "//data//"+getPackageName()+"//databases//"+databaseName+"";
+                String backupDBPath = Contracts.DATABASE_NAME;
+                File currentDB = new File(data, currentDBPath);
+                File backupDB = new File(sd, backupDBPath);
+
+                if (currentDB.exists()) {
+                    FileChannel src = new FileInputStream(currentDB).getChannel();
+                    FileChannel dst = new FileOutputStream(backupDB).getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                }
+            }
+        } catch (Exception e) {
+
+        }
+    }
+}

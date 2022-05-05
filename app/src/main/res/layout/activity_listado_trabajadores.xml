@@ -154,7 +154,7 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -163,7 +163,7 @@
                 android:text="@string/surveylist_text_header_iden" />
 
             <TextView
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -172,7 +172,7 @@
                 android:text="@string/surveylist_text_header_codEncu" />
 
             <TextView
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -181,7 +181,7 @@
                 android:text="@string/surveylist_text_header_fecha" />
 
             <TextView
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -190,7 +190,7 @@
                 android:text="@string/surveylist_text_header_codIdioma" />
 
             <TextView
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -200,7 +200,7 @@
 
             <TextView
                 android:id="@+id/surveylist_item_text_terminal"
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
@@ -209,7 +209,7 @@
                 android:text="@string/surveylist_text_header_terminal" />
 
             <Button
-                style="@style/SuveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
