@@ -253,6 +253,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         CuePasajeros cue = acceso();
 
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
+        datosSurvey.putInt("idCue", cue.getIden());
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);

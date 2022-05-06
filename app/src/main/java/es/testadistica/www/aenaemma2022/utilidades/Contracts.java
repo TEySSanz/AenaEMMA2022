@@ -23,10 +23,12 @@ public class Contracts {
     public static final String COLUMN_AEROPUERTOS_IDEN = "iden";
     public static final String COLUMN_AEROPUERTOS_NOMBRE = "nombre";
     public static final String COLUMN_AEROPUERTOS_CLAVE = "clave";
+    public static final String COLUMN_AEROPUERTOS_MODELO = "modelo";
     public static final String SQL_CREATE_AEROPUERTOS = "CREATE TABLE "+ TABLE_AEROPUERTOS + " ("+
             COLUMN_AEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_AEROPUERTOS_NOMBRE + " TEXT, " +
-            COLUMN_AEROPUERTOS_CLAVE + " TEXT )";
+            COLUMN_AEROPUERTOS_CLAVE + " TEXT, " +
+            COLUMN_AEROPUERTOS_MODELO + " INTEGER )";
     public static final String SQL_DROP_AEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_AEROPUERTOS;
 
     //Tabla Idiomas
@@ -45,6 +47,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_IDEN = "iden";
     public static final String COLUMN_CUEPASAJEROS_IDUSUARIO = "idUsuario";
     public static final String COLUMN_CUEPASAJEROS_ENVIADO = "enviado";
+    public static final String COLUMN_CUEPASAJEROS_PREGUNTA = "pregunta";
     public static final String COLUMN_CUEPASAJEROS_CLAVE = "clave";
     public static final String COLUMN_CUEPASAJEROS_FECHA = "fecha";
     public static final String COLUMN_CUEPASAJEROS_HORAINICIO = "horaInicio";
@@ -126,6 +129,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUEPASAJEROS_IDUSUARIO + " INTEGER, " +
             COLUMN_CUEPASAJEROS_ENVIADO + " INTEGER, " +
+            COLUMN_CUEPASAJEROS_PREGUNTA + " INTEGER, " +
             COLUMN_CUEPASAJEROS_CLAVE + " TEXT, " +
             COLUMN_CUEPASAJEROS_FECHA + " TEXT, " +
             COLUMN_CUEPASAJEROS_HORAINICIO + " TEXT, " +

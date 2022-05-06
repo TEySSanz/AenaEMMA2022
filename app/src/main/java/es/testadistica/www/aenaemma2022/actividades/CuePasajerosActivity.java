@@ -1,17 +1,26 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.Form;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros1;
 
 public class CuePasajerosActivity extends AppCompatActivity {
 
@@ -27,11 +36,14 @@ public class CuePasajerosActivity extends AppCompatActivity {
     private Button saveButton;
     private Button nextButton;
     private Button previousButton;
+    DBHelper conn;
 
     TextView txt_encuestador;
     TextView txt_numEncuesta;
-    EditText txt_fechaHora;
-    EditText txt_aeropuerto;
+    EditText txt_fecha;
+    EditText txt_hora;
+    EditText txt_company;
+    EditText txt_vuelo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +58,129 @@ public class CuePasajerosActivity extends AppCompatActivity {
         //Asigna campos a componentes
         txt_encuestador = (TextView) findViewById(R.id.survey_text_encuestador);
         txt_numEncuesta = (TextView) findViewById(R.id.survey_text_numEncuesta);
-        txt_fechaHora = (EditText) findViewById(R.id.survey_edit_fecha);
-        //txt_aeropuerto = (EditText) findViewById(R.id.survey_edit_linea);
+        txt_fecha = (EditText) findViewById(R.id.survey_edit_fecha);
+        txt_hora = (EditText) findViewById(R.id.survey_edit_hora);
+        txt_company = (EditText) findViewById(R.id.survey_edit_codCompVuelo);
+        txt_vuelo = (EditText) findViewById(R.id.survey_edit_numVuelo);
+
+        //BBDD
+        conn = new DBHelper(this.getApplicationContext());
+
+        //Recoge los parámetros de la pantalla anterior
+        Bundle datos = this.getIntent().getExtras();
+
+        if (datos != null) {
+            txt_encuestador.setText(datos.getString("encuestador"));
+            txt_numEncuesta.setText(datos.getString("numEncuesta"));
+            txt_fecha.setText(datos.getString("fecha"));
+            txt_hora.setText(datos.getString("hora"));
+            pregunta = 1;
+            idCue = datos.getInt("idCue");
+        }
+
+        //Genera el cuestionario
+        cue = new CuePasajeros(idCue);
+        form = new ModeloPasajeros1(this, pregunta, conn);
+        ((ModeloPasajeros1) form).setCue(cue);
+        LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
+        View.inflate(this, form.getLayoutId(), formContainer);
+
+        form.initFormView();
+
+        //Progressbar
+        final TextView tvQ = (TextView) findViewById(R.id.survey_text_question);
+        final ProgressBar pb = (ProgressBar) findViewById(R.id.survey_progressbar);
+
+        pb.setProgress(pregunta);
+        pb.setMax(maxPreg);
+        tvQ.setText(String.valueOf(pregunta) + "/" + maxPreg);
+
+        //Botón Guardar
+        saveButton = (Button) findViewById(R.id.survey_button_save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (satisfyValidation()) {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CuePasajerosActivity.this, R.style.MyDialogTheme);
+                    alertDialogBuilder.setMessage("¿Está seguro de que desea guardar y salir?");
+
+                    alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            form.onNextPressed(pregunta);
+                            Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                            Intent visita = new Intent();
+                            setResult(0, visita);
+                            finish();
+                        }
+                    });
+
+                    alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                }
+            }
+        });
+
+        //Botón Anterior
+        previousButton = (Button) findViewById(R.id.survey_button_previous);
+        previousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText etDummy = (EditText) findViewById(R.id.survey_edit_fecha);
+                etDummy.requestFocus();
+
+                int actual = pregunta;
+                int anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
+
+                //form.onPreviousPressed(actual, anterior);
+                pregunta = form.onPreviousPressed(actual, anterior);
+
+                pb.setProgress(pregunta);
+                pb.setMax(maxPreg);
+                tvQ.setText(String.valueOf(pregunta) + "/" + maxPreg);
+            }
+        });
+
+        //Botón Siguiente
+        nextButton = (Button) findViewById(R.id.survey_button_next);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText etDummy = (EditText) findViewById(R.id.survey_edit_fecha);
+                etDummy.requestFocus();
+
+                pb.setProgress(pregunta);
+
+                if (form.onNextPressed(pregunta) != 0) {
+
+                    pregunta = form.onNextPressed(pregunta);
+
+                    pb.setProgress(pregunta);
+                    pb.setMax(maxPreg);
+                    tvQ.setText(String.valueOf(pregunta) + "/" + maxPreg);
+                }
+            }
+        });
+    }
+
+    private boolean satisfyValidation(){
+
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+
+        finish();
+        return true;
     }
 }
