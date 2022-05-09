@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:theme="@style/SurveySingleQuestion"
+        style="@style/SurveySingleQuestion"
         android:visibility="gone">
 
         <LinearLayout
@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:theme="@style/SurveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:text="@string/survey_m1_text_cdpaisna" />
 
             <Spinner
@@ -32,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="2"
-                android:theme="@style/SurveyQuestionEdit" />
+                style="@style/SurveyQuestionEdit" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

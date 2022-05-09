@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:theme="@style/SurveySingleQuestion"
+        style="@style/SurveySingleQuestion"
         android:visibility="gone">
 
         <LinearLayout
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:theme="@style/SurveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:text="@string/survey_m1_text_cdpaisre" />
 
             <Spinner
@@ -33,7 +33,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="2"
-                android:theme="@style/SurveyQuestionEdit" />
+                style="@style/SurveyQuestionEdit" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center|center_horizontal"
-                android:theme="@style/SurveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:text="@string/survey_m1_text_cdpaisre_prov" />
 
             <Spinner
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="4.48"
-                android:theme="@style/SurveyQuestionEdit" />
+                style="@style/SurveyQuestionEdit" />
 
             <TextView
                 android:id="@+id/survey_text_cdlocado"
@@ -67,7 +67,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/standard_padding"
                 android:gravity="center"
-                android:theme="@style/SurveyQuestionTitle"
+                style="@style/SurveyQuestionTitle"
                 android:text="@string/survey_m1_text_cdlocado" />
 
             <Spinner
@@ -75,7 +75,7 @@
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="4"
-                android:theme="@style/SurveyQuestionEdit" />
+                style="@style/SurveyQuestionEdit" />
         </LinearLayout>
 
     </LinearLayout>

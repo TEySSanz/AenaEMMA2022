@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="es.testadistica.www.aenaemma2022.actividades.CuePasajerosActivity"
+    android:id="@+id/contentSurvey"
+    android:orientation="vertical" >
+
+    <include layout="@layout/survey_header"/>
+
+    //Body of the survey
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <include layout="@layout/survey_identifier_trab" />
+
+            <LinearLayout
+                android:id="@+id/survey_form_container"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/survey_form_control1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/survey_button_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="2dp"
+                    android:text="&#x21b6;"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/survey_button_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:padding="16dp"
+                    android:text="Siguiente"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/survey_button_save"
+                    android:layout_toRightOf="@+id/survey_text_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="16dp"
+                    android:padding="16dp"
+                    android:text="Guardar"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/survey_text_question"
+                    android:layout_marginTop="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/survey_progressbar"
+                    android:text="999/111" />
+
+                <ProgressBar
+                    android:id="@+id/survey_progressbar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_toRightOf="@+id/survey_button_previous"
+                    android:layout_marginTop="28dp"
+                    android:layout_gravity="left"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:max="10"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:layout_weight="1" />
+            </RelativeLayout>
+        </LinearLayout>
+        //End of body
+    </ScrollView>
+</LinearLayout>

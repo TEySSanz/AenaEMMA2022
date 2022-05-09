@@ -29,31 +29,32 @@ import java.util.List;
 import java.util.Random;
 
 import es.testadistica.www.aenaemma2022.R;
-import es.testadistica.www.aenaemma2022.adaptadores.ListadoPasajerosItemAdapter;
+import es.testadistica.www.aenaemma2022.adaptadores.ListadoTrabajadoresItemAdapter;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
-import es.testadistica.www.aenaemma2022.entidades.CuePasajerosListado;
+import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
+import es.testadistica.www.aenaemma2022.entidades.CueTrabajadoresListado;
 import es.testadistica.www.aenaemma2022.utilidades.Contracts;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner;
 
-public class ListadoPasajerosActivity extends AppCompatActivity {
+public class ListadoTrabajadoresActivity extends AppCompatActivity {
 
     private static final String CARGA_URL = "http://192.168.7.18:8084/AENA/rest/envio";
     //private static final String CARGA_URL = "http://213.229.135.43:8081/AENA/rest/envio";
-    private static final String TAG = ListadoPasajerosActivity.class.toString();
+    private static final String TAG = ListadoTrabajadoresActivity.class.toString();
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_COMPLETE ="dd/MM/yyyy HH:mm";
     private Date fechaActual = null;
-    private ArrayList<CuePasajeros> listaEncuestas;
-    private ArrayList<CuePasajerosListado> listaCue;
+    private ArrayList<CueTrabajadores> listaEncuestas;
+    private ArrayList<CueTrabajadoresListado> listaCue;
     private Activity listado = this;
-    private int modeloCue;
+    private int modeloCue = 1;
 
     TextView txt_usuario;
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
     SearchableSpinner sp_idioma;
-    ListView list_pasajeros;
+    ListView list_trabajadores;
     DBHelper conn;
     ProgressDialog progreso;
     RequestQueue peticion;
@@ -61,7 +62,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listado_pasajeros);
+        setContentView(R.layout.activity_listado_trabajadores);
 
         //Añadir icono en el ActionBar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -73,7 +74,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_fechaActual = (TextView) findViewById(R.id.txt_fechaActual);
         txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
         sp_idioma = (SearchableSpinner) findViewById(R.id.spinner_idioma);
-        list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
+        list_trabajadores = (ListView) findViewById(R.id.list_trabajadores);
 
         //Recoge los parámetros de la pantalla anterior
         Bundle datos = this.getIntent().getExtras();
@@ -127,8 +128,8 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
     private void refrescar(){
         listaCue = todasEncuestas();
-        ListadoPasajerosItemAdapter adaptador = new ListadoPasajerosItemAdapter(this, listaCue);
-        list_pasajeros.setAdapter(adaptador);
+        ListadoTrabajadoresItemAdapter adaptador = new ListadoTrabajadoresItemAdapter(this, listaCue);
+        list_trabajadores.setAdapter(adaptador);
 
         //Establece la fecha actual
         Calendar currentTime = Calendar.getInstance();
@@ -139,26 +140,25 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
     }
 
-    private ArrayList<CuePasajerosListado> todasEncuestas(){
+    private ArrayList<CueTrabajadoresListado> todasEncuestas(){
         SQLiteDatabase db = conn.getReadableDatabase();
-        CuePasajerosListado cue = null;
+        CueTrabajadoresListado cue = null;
         String[] parametros = {txt_usuario.getText().toString()};
 
-        listaCue = new ArrayList<CuePasajerosListado>();
+        listaCue = new ArrayList<CueTrabajadoresListado>();
 
-        Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
-                        "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA +
-                        " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
-                                   Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
-                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + " IS NOT NULL" +
-                        " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
+        Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN + ", " +
+                        "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " +
+                        "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
+                        "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+                        " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 LEFT JOIN " +
+                                   Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
+                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
+                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUETRABAJADORES_HORAFIN + " IS NOT NULL" +
+                        " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
 
         while (cursor.moveToNext()) {
-            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            cue = new CueTrabajadoresListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
             listaCue.add(cue);
         }
 
@@ -181,9 +181,9 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         return getIdiomas;
     }
 
-    private CuePasajeros acceso(){
+    private CueTrabajadores acceso(){
         SQLiteDatabase db = conn.getWritableDatabase();
-        CuePasajeros cue = null;
+        CueTrabajadores cue = null;
 
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
@@ -210,17 +210,16 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         while (cAeropuerto.moveToNext()) {
             idAeropuerto = cAeropuerto.getString(0);
-            modeloCue = cAeropuerto.getInt(1);
         }
 
         //Clave única
         String clave = getUniqueKey();
 
         //Crea el nuevo cuestionario
-        db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ", " + Contracts.COLUMN_CUEPASAJEROS_CLAVE + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_CUETRABAJADORES + " (" + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + ", " + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + ", " + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + ", " + Contracts.COLUMN_CUETRABAJADORES_CLAVE + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "')");
 
         //Iden de cuestionario
-        String[] iden = {Contracts.TABLE_CUEPASAJEROS};
+        String[] iden = {Contracts.TABLE_CUETRABAJADORES};
         int idCue = 0;
 
         Cursor cIdenCue = db.rawQuery("SELECT seq" +
@@ -231,7 +230,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
             idCue = cIdenCue.getInt(0);
         }
 
-        cue = new CuePasajeros(idCue);
+        cue = new CueTrabajadores(idCue);
 
         return cue;
     }
@@ -243,7 +242,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         datosSurvey.putString("encuestador", txt_usuario.getText().toString());
         datosSurvey.putString("aeropuerto", txt_aeropuerto.getText().toString());
 
-        CuePasajeros cue = acceso();
+        CueTrabajadores cue = acceso();
 
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
@@ -335,17 +334,17 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private void marcarEnviadoCuestionario(int cueIden){
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        db.execSQL("UPDATE " + Contracts.TABLE_CUEPASAJEROS + " SET " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + " = 1 WHERE " + Contracts.COLUMN_CUEPASAJEROS_IDEN + " = " + cueIden);
+        db.execSQL("UPDATE " + Contracts.TABLE_CUETRABAJADORES + " SET " + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + " = 1 WHERE " + Contracts.COLUMN_CUETRABAJADORES_IDEN + " = " + cueIden);
     }
 
-    private ArrayList<CuePasajeros> cuestionariosPendientes() {
+    private ArrayList<CueTrabajadores> cuestionariosPendientes() {
         SQLiteDatabase db = conn.getReadableDatabase();
         CuePasajeros cue = null;
         int a = 0;
         String[] parametros = {String.valueOf(a)};
-        ArrayList<CuePasajeros> pendientes;
+        ArrayList<CueTrabajadores> pendientes;
 
-        pendientes = new ArrayList<CuePasajeros>();
+        pendientes = new ArrayList<CueTrabajadores>();
 /*
         Cursor cursor = db.rawQuery("SELECT " +
                         "T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN + ", " +
