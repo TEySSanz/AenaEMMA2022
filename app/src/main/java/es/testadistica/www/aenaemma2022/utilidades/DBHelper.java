@@ -23,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //Idiomas
         db.execSQL(Contracts.SQL_CREATE_IDIOMAS);
+        insertsIdiomas(db);
 
         //CuePasajeros
         db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
@@ -30,6 +31,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(Contracts.SQL_DROP_CUEPASAJEROS);
+        onCreate(db);
 
     }
 

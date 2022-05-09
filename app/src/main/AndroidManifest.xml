@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".actividades.MenuActivity" />
+        <activity android:name=".actividades.ListadoPasajerosActivity" />
         <activity android:name=".actividades.CuePasajerosActivity" />
     </application>
 

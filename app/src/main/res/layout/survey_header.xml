@@ -57,7 +57,7 @@
                 android:src="@mipmap/ic_launcher"/>
 
             <TextView
-                android:id="@+id/survey_text_metroHeader"
+                android:id="@+id/survey_text_airportHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
