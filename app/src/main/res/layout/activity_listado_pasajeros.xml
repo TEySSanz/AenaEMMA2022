@@ -134,18 +134,20 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.75"
+                        android:paddingTop="20dp"
                         android:text="@string/surveyslist_language_text"
                         android:textColor="@color/md_white_1000"
                         android:textStyle="bold" />
 
-                    <Spinner
-                        android:id="@+id/edit_idioma"
+                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                        android:id="@+id/spinner_idioma"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@color/md_white_1000"
-                        android:gravity="center"
-                        android:padding="@dimen/small_padding" />
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:spinnerMode="dropdown" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -154,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_padding"
-                android:onClick="newSurvey"
+                android:onClick="iniciarCue"
                 android:padding="@dimen/standard_padding"
                 android:text="@string/button_newSurvey"
                 android:textStyle="bold" />

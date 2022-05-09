@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">EMMA 2022</string>
+    <string name="app_name">EMMA 2022 (v1.0)</string>
     <string name="nombre">EMMA 2022</string>
+    <string name="version">v1.0</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -42,6 +43,8 @@
     <string name="surveylist_text_header_terminal">PUERTA</string>
     <string name="surveylist_text_header_delete" />
     <string name="button_upload">ENVIAR</string>
+    <string name="spinner_idioma_title">SELECCIONE EL IDIOMA</string>
+    <string name="spinner_close">CERRAR</string>
 
     <!-- Activity Cue Pasajeros -->
     <string name="survey_txt_encuestador">ENCUESTADOR</string>
