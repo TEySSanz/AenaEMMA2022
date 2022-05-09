@@ -97,19 +97,19 @@ public class ModeloPasajeros1 extends Form {
         Button save = (Button) activity.findViewById(R.id.survey_button_save);
         switch (show) {
             case 1:
-                //B1
-                //LinearLayout b1 = (LinearLayout) activity.findViewById(R.id.survey_model_layout_B1);
+                //P1
+                LinearLayout p1 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdpaisna);
                 previo.setVisibility(GONE);
                 save.setVisibility(GONE);
-                //b1.setVisibility(VISIBLE);
+                p1.setVisibility(VISIBLE);
                 break;
             case 2:
                 //B2
-                //LinearLayout b2 = (LinearLayout) activity.findViewById(R.id.survey_model_layout_B2);
+                LinearLayout p2 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdpaisre);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
-                //b2.setVisibility(VISIBLE);
+                p2.setVisibility(VISIBLE);
                 break;
             case 171:
                 //FIN
@@ -128,7 +128,7 @@ public class ModeloPasajeros1 extends Form {
         if (activated) {
             switch (check) {
                 case 1:
-                    //B1
+                    //P1
                     /*RadioButton rbB1_1 = (RadioButton) activity.findViewById(R.id.survey_model_radio_B1_option1);
                     RadioButton rbB1_6 = (RadioButton) activity.findViewById(R.id.survey_model_radio_B1_option6);
 
@@ -155,9 +155,13 @@ public class ModeloPasajeros1 extends Form {
         if (activated) {
             switch (check) {
                 case 1:
-                    //B1
-                    //guardaDB(Contracts.COLUMN_CUESTIONARIOS_B1, cue.getB1());
-
+                    //P1
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISNA, cue.getCdpaisna());
+                    break;
+                case 2:
+                    //P2
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE, cue.getCdpaisre());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO, cue.getCdlocado());
                     break;
             }
         }
@@ -172,10 +176,8 @@ public class ModeloPasajeros1 extends Form {
             switch (check) {
                 case 2:
                     //B2
-                    /*borraDB(Contracts.COLUMN_CUESTIONARIOS_B2_D);
-                    borraDB(Contracts.COLUMN_CUESTIONARIOS_B2_M);
-                    borraDB(Contracts.COLUMN_CUESTIONARIOS_B2_A);*/
-
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO);
                     break;
             }
         }
@@ -184,9 +186,9 @@ public class ModeloPasajeros1 extends Form {
 
     public void hideQuestions() {
 
-        //B1
-        /*LinearLayout b1 = (LinearLayout) activity.findViewById(R.id.survey_model_layout_B1);
-        b1.setVisibility(GONE);*/
+        //P1
+        LinearLayout p1 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdpaisna);
+        p1.setVisibility(GONE);
 
     }
 
@@ -203,7 +205,7 @@ public class ModeloPasajeros1 extends Form {
 
         switch (show) {
             case 1:
-                //B1
+                //P1
                 show = showQuestion(2);
                 break;
         }

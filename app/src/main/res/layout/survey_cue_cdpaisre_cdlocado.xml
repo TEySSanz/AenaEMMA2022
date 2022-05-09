@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_cdpaisre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/SurveySingleQuestion"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/survey_text_cdpaisre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:theme="@style/SurveyQuestionTitle"
+                android:text="@string/survey_m1_text_cdpaisre" />
+
+            <Spinner
+                android:id="@+id/survey_spinner_cdpaisre"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:theme="@style/SurveyQuestionEdit" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/survey_layout_cdlocado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/survey_text_cdlocado_prov"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center|center_horizontal"
+                android:theme="@style/SurveyQuestionTitle"
+                android:text="@string/survey_m1_text_cdpaisre_prov" />
+
+            <Spinner
+                android:id="@+id/survey_spinner_cdlocado_prov"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="4.48"
+                android:theme="@style/SurveyQuestionEdit" />
+
+            <TextView
+                android:id="@+id/survey_text_cdlocado"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:gravity="center"
+                android:theme="@style/SurveyQuestionTitle"
+                android:text="@string/survey_m1_text_cdlocado" />
+
+            <Spinner
+                android:id="@+id/survey_spinner_cdlocado"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:theme="@style/SurveyQuestionEdit" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

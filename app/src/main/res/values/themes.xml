@@ -39,7 +39,7 @@
     </style>
 
     <!-- Survey model -->
-    <style name="SurveySingleQuestionOLD">
+    <style name="SurveySingleQuestion">
         <item name="android:background">@color/md_teal_50</item>
         <item name="android:padding">8dp</item>
         <item name="android:layout_marginTop">8dp</item>
@@ -48,7 +48,7 @@
         <!--<item name="android:layout_margin">@dimen/standard_padding</item>-->
     </style>
 
-    <style name="SurveyQuestionTitleOLD" parent="@android:style/TextAppearance.Medium" >
+    <style name="SurveyQuestionTitle" parent="@android:style/TextAppearance.Medium" >
         <item name="android:textColor">@color/md_red_900</item>
         <item name="android:padding">8dp</item>
         <item name="android:textStyle">bold</item>
@@ -70,7 +70,7 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="SurveyQuestionEditOLD" parent="@android:style/TextAppearance.Medium" >
+    <style name="SurveyQuestionEdit" parent="@android:style/TextAppearance.Medium" >
         <item name="android:background">@color/md_white_1000</item>
     </style>
 
