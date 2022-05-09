@@ -63,10 +63,12 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private ArrayList<CuePasajeros> listaEncuestas;
     private ArrayList<CuePasajerosListado> listaCue;
     private Activity listado = this;
+    private int modeloCue;
 
     TextView txt_usuario;
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
+    SearchableSpinner sp_idioma;
     ListView list_pasajeros;
     DBHelper conn;
     ProgressDialog progreso;
@@ -86,6 +88,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_usuario = (TextView) findViewById(R.id.txt_usuario);
         txt_fechaActual = (TextView) findViewById(R.id.txt_fechaActual);
         txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
+        sp_idioma = (SearchableSpinner) findViewById(R.id.spinner_idioma);
         list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
 
         //Recoge los parámetros de la pantalla anterior
@@ -93,6 +96,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         if (datos != null) {
             txt_usuario.setText(datos.getString("usuario"));
+            txt_aeropuerto.setText(datos.getString("aeropuerto"));
         }
 
         //BBDD
@@ -108,7 +112,11 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
 
         //Asigna los valores del desplegable de idiomas
-
+        ArrayAdapter<String> idiomaAdapter = new ArrayAdapter<String>(this, R.layout.selection_spinner_item_small, getIdiomas());
+        idiomaAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        sp_idioma.setAdapter(idiomaAdapter);
+        sp_idioma.setTitle(this.getString(R.string.spinner_idioma_title));
+        sp_idioma.setPositiveButton(this.getString(R.string.spinner_close));
 
         //Actualiza el listado
         refrescar();
@@ -179,7 +187,8 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         String[] parametros = null;
 
         Cursor cursor = db.rawQuery("SELECT " + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA +
-                " FROM " + Contracts.TABLE_IDIOMAS + " AS T1", parametros);
+                " FROM " + Contracts.TABLE_IDIOMAS + " AS T1" +
+                " ORDER BY " + Contracts.COLUMN_IDIOMAS_IDEN , parametros);
 
         while (cursor.moveToNext()) {
             getIdiomas.add(cursor.getString(1));
@@ -211,12 +220,13 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         String[] aeropuerto = {txt_aeropuerto.getText().toString()};
         String idAeropuerto = null;
 
-        Cursor cLineas = db.rawQuery("SELECT " + Contracts.COLUMN_AEROPUERTOS_IDEN +
+        Cursor cAeropuerto = db.rawQuery("SELECT " + Contracts.COLUMN_AEROPUERTOS_IDEN + ", " + Contracts.COLUMN_AEROPUERTOS_MODELO +
                 " FROM " + Contracts.TABLE_AEROPUERTOS + " AS T1" +
                 " WHERE " + Contracts.COLUMN_AEROPUERTOS_NOMBRE + "=?", aeropuerto);
 
-        while (cLineas.moveToNext()) {
-            idAeropuerto = cLineas.getString(0);
+        while (cAeropuerto.moveToNext()) {
+            idAeropuerto = cAeropuerto.getString(0);
+            modeloCue = cAeropuerto.getInt(1);
         }
 
         //Clave única
@@ -247,13 +257,18 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         Bundle datosSurvey = new Bundle();
 
         datosSurvey.putString("encuestador", txt_usuario.getText().toString());
-        datosSurvey.putString("fecha", txt_fechaActual.getText().toString());
         datosSurvey.putString("aeropuerto", txt_aeropuerto.getText().toString());
 
         CuePasajeros cue = acceso();
 
+        String fecha = txt_fechaActual.getText().toString().substring(0,10);
+        String hora = txt_fechaActual.getText().toString().substring(11);
+
+        datosSurvey.putString("fecha", fecha);
+        datosSurvey.putString("hora", hora);
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
         datosSurvey.putInt("idCue", cue.getIden());
+        datosSurvey.putInt("modeloCue", modeloCue);
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);

@@ -21,6 +21,10 @@ import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.Form;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros1;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros2;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros3;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros4;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros5;
 
 public class CuePasajerosActivity extends AppCompatActivity {
 
@@ -31,6 +35,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
 
     private CuePasajeros cue;
     private Form form;
+    private int modeloCue;
     private int idCue;
     private int pregunta;
     private Button saveButton;
@@ -40,6 +45,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
 
     TextView txt_encuestador;
     TextView txt_numEncuesta;
+    TextView txt_airportHeader;
     EditText txt_fecha;
     EditText txt_hora;
     EditText txt_company;
@@ -62,6 +68,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
         txt_hora = (EditText) findViewById(R.id.survey_edit_hora);
         txt_company = (EditText) findViewById(R.id.survey_edit_codCompVuelo);
         txt_vuelo = (EditText) findViewById(R.id.survey_edit_numVuelo);
+        txt_airportHeader = (TextView) findViewById(R.id.survey_text_airportHeader);
 
         //BBDD
         conn = new DBHelper(this.getApplicationContext());
@@ -72,16 +79,38 @@ public class CuePasajerosActivity extends AppCompatActivity {
         if (datos != null) {
             txt_encuestador.setText(datos.getString("encuestador"));
             txt_numEncuesta.setText(datos.getString("numEncuesta"));
+            txt_airportHeader.setText(datos.getString("aeropuerto"));
             txt_fecha.setText(datos.getString("fecha"));
             txt_hora.setText(datos.getString("hora"));
             pregunta = 1;
             idCue = datos.getInt("idCue");
+            modeloCue = datos.getInt("modeloCue");
         }
 
         //Genera el cuestionario
         cue = new CuePasajeros(idCue);
-        form = new ModeloPasajeros1(this, pregunta, conn);
-        ((ModeloPasajeros1) form).setCue(cue);
+        switch (modeloCue) {
+            case 1:
+                form = new ModeloPasajeros1(this, pregunta, conn);
+                ((ModeloPasajeros1) form).setCue(cue);
+                break;
+            case 2:
+                form = new ModeloPasajeros2(this, pregunta, conn);
+                ((ModeloPasajeros2) form).setCue(cue);
+                break;
+            case 3:
+                form = new ModeloPasajeros3(this, pregunta, conn);
+                ((ModeloPasajeros3) form).setCue(cue);
+                break;
+            case 4:
+                form = new ModeloPasajeros4(this, pregunta, conn);
+                ((ModeloPasajeros4) form).setCue(cue);
+                break;
+            case 5:
+                form = new ModeloPasajeros5(this, pregunta, conn);
+                ((ModeloPasajeros5) form).setCue(cue);
+                break;
+        }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
         View.inflate(this, form.getLayoutId(), formContainer);
 

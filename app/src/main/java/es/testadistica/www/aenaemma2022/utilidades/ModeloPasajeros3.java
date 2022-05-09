@@ -46,7 +46,7 @@ public class ModeloPasajeros3 extends Form {
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.form_modelpasajeros3;
     }
 
     @Override

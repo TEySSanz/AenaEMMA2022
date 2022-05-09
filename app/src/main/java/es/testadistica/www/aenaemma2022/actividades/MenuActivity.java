@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ import java.util.Date;
 
 import es.testadistica.www.aenaemma2022.BuildConfig;
 import es.testadistica.www.aenaemma2022.R;
+import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.utilidades.Contracts;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.LogcatHelper;
@@ -211,7 +213,22 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         Intent encuestas = new Intent(this, ListadoPasajerosActivity.class);
         Bundle datos = new Bundle();
 
+        //Obtenemos el nombre del aeropierto
+        String aeropuerto = null;
+        SQLiteDatabase db = conn.getWritableDatabase();
+        String[] usuarios = {txt_usuario.getText().toString()};
+
+        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+                " FROM " + Contracts.TABLE_USUARIOS + " AS T1 INNER JOIN " +
+                           Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1.idAeropuerto = T2.iden " +
+                " WHERE T1." + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
+
+        while (cUsuarios.moveToNext()) {
+            aeropuerto = cUsuarios.getString(0);
+        }
+
         datos.putString("usuario", txt_usuario.getText().toString());
+        datos.putString("aeropuerto", aeropuerto);
 
         encuestas.putExtras(datos);
         startActivity(encuestas);

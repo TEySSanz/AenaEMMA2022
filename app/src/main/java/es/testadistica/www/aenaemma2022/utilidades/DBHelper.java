@@ -23,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //Idiomas
         db.execSQL(Contracts.SQL_CREATE_IDIOMAS);
+        insertsIdiomas(db);
 
         //CuePasajeros
         db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
