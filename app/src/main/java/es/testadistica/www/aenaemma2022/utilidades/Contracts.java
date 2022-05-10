@@ -209,4 +209,140 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_ELECCOVID + " TEXT )";
     public static final String SQL_DROP_CUEPASAJEROS = "DROP TABLE IF EXISTS " + TABLE_CUEPASAJEROS;
 
+    //Tabla CueTrabajadores
+    public static final String TABLE_CUETRABAJADORES = "CueTrabajadores";
+    public static final String COLUMN_CUETRABAJADORES_IDEN = "iden";
+    public static final String COLUMN_CUETRABAJADORES_IDUSUARIO = "idUsuario";
+    public static final String COLUMN_CUETRABAJADORES_ENVIADO = "enviado";
+    public static final String COLUMN_CUETRABAJADORES_PREGUNTA = "pregunta";
+    public static final String COLUMN_CUETRABAJADORES_CLAVE = "clave";
+    public static final String COLUMN_CUETRABAJADORES_FECHA = "fecha";
+    public static final String COLUMN_CUETRABAJADORES_HORAINICIO = "horaInicio";
+    public static final String COLUMN_CUETRABAJADORES_HORAFIN = "horaFin";
+    public static final String COLUMN_CUETRABAJADORES_IDAEROPUERTO = "idAeropuerto";
+    public static final String COLUMN_CUETRABAJADORES_NENCDOR = "nencdor";
+    public static final String COLUMN_CUETRABAJADORES_CDSEXO = "cdsexo";
+    public static final String COLUMN_CUETRABAJADORES_IDIOMA = "idioma";
+    public static final String COLUMN_CUETRABAJADORES_EMPRESA = "empresa";
+    public static final String COLUMN_CUETRABAJADORES_ACTEMPRE = "actempre";
+    public static final String COLUMN_CUETRABAJADORES_CDLOCADO = "cdlocado";
+    public static final String COLUMN_CUETRABAJADORES_DISTRES = "distres";
+    public static final String COLUMN_CUETRABAJADORES_JORNADA = "jornada";
+    public static final String COLUMN_CUETRABAJADORES_JORNADAOTRO = "jornadaotro";
+    public static final String COLUMN_CUETRABAJADORES_NDIASTRAB = "ndiastrab";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB = "zonatrab";
+    public static final String COLUMN_CUETRABAJADORES_HORAENT1 = "horaent1";
+    public static final String COLUMN_CUETRABAJADORES_HORASAL1 = "horasal1";
+    public static final String COLUMN_CUETRABAJADORES_HORAENT2 = "horaent2";
+    public static final String COLUMN_CUETRABAJADORES_HORASAL2 = "horasal2";
+    public static final String COLUMN_CUETRABAJADORES_HORAENT3 = "horaent3";
+    public static final String COLUMN_CUETRABAJADORES_HORASAL3 = "horasal3";
+    public static final String COLUMN_CUETRABAJADORES_NMODOS = "nmodos";
+    public static final String COLUMN_CUETRABAJADORES_MODO1 = "modo1";
+    public static final String COLUMN_CUETRABAJADORES_MODO2 = "modo2";
+    public static final String COLUMN_CUETRABAJADORES_ULTIMODO = "ultimodo";
+    public static final String COLUMN_CUETRABAJADORES_NOCUCOCHE = "nocucoche";
+    public static final String COLUMN_CUETRABAJADORES_SATISTRANSPUBLI = "satistranspubli";
+    public static final String COLUMN_CUETRABAJADORES_VALTRANSPUBLI1 = "valtranspubli1";
+    public static final String COLUMN_CUETRABAJADORES_VALTRANSPUBLI2 = "valtranspubli2";
+    public static final String COLUMN_CUETRABAJADORES_VALTRANSPUBLI3 = "valtranspubli3";
+    public static final String COLUMN_CUETRABAJADORES_VALTRANSPUBLIOTRO = "valtranspubliotro";
+    public static final String COLUMN_CUETRABAJADORES_MEJTRANSPUBLI1 = "mejtranspubli1";
+    public static final String COLUMN_CUETRABAJADORES_MEJTRANSPUBLI2 = "mejtranspubli2";
+    public static final String COLUMN_CUETRABAJADORES_MEJTRANSPUBLI3 = "mejtranspubli3";
+    public static final String COLUMN_CUETRABAJADORES_MEJTRANSPUBLIOTRO = "mejtranspubliotro";
+    public static final String COLUMN_CUETRABAJADORES_DESPLAZATRAB = "desplazatrab";
+    public static final String COLUMN_CUETRABAJADORES_NOTRANSPUBLI1 = "notranspubli1";
+    public static final String COLUMN_CUETRABAJADORES_NOTRANSPUBLI2 = "notranspubli2";
+    public static final String COLUMN_CUETRABAJADORES_NOTRANSPUBLI3 = "notranspubli3";
+    public static final String COLUMN_CUETRABAJADORES_NOTRANSPUBLIOTRO = "notranspubliotro";
+    public static final String COLUMN_CUETRABAJADORES_DISPTRANSPUBLI = "disptranspubli";
+    public static final String COLUMN_CUETRABAJADORES_DISPTRANSPUBLIOTRO = "disptranspubliotro";
+    public static final String COLUMN_CUETRABAJADORES_IMPORTRANSPUBLI = "importranspubli";
+    public static final String COLUMN_CUETRABAJADORES_MEDTRANSPUBLI1 = "medtranspubli1";
+    public static final String COLUMN_CUETRABAJADORES_MEDTRANSPUBLI2 = "medtranspubli2";
+    public static final String COLUMN_CUETRABAJADORES_MEDTRANSPUBLI3 = "medtranspubli3";
+    public static final String COLUMN_CUETRABAJADORES_MEDTRANSPUBLIOTRO = "medtranspubliotro";
+    public static final String COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI = "tiempotranspubli";
+    public static final String COLUMN_CUETRABAJADORES_APARCTRAB = "aparctrab";
+    public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE1 = "compartcoche1";
+    public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE2 = "compartcoche2";
+    public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE3 = "compartcoche3";
+    public static final String COLUMN_CUETRABAJADORES_DISPBICI1 = "dispbici1";
+    public static final String COLUMN_CUETRABAJADORES_DISPBICI2 = "dispbici2";
+    public static final String COLUMN_CUETRABAJADORES_DISPBICI3 = "dispbici3";
+    public static final String COLUMN_CUETRABAJADORES_DISPBICIOTRO = "dispbiciotro";
+    public static final String COLUMN_CUETRABAJADORES_MODOSALIDA = "modosalida";
+    public static final String COLUMN_CUETRABAJADORES_MODOSALIDAOTRO = "modosalidaotro";
+    public static final String COLUMN_CUETRABAJADORES_CDEDADTRAB = "cdedadtrab";
+    public static final String COLUMN_CUETRABAJADORES_CDSLAB = "cdslab";
+    public static final String COLUMN_CUETRABAJADORES_PUESTO = "puesto";
+    public static final String SQL_CREATE_CUETRABAJADORES = "CREATE TABLE "+ TABLE_CUETRABAJADORES + " ("+
+            COLUMN_CUETRABAJADORES_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_CUETRABAJADORES_IDUSUARIO + " INTEGER, " +
+            COLUMN_CUETRABAJADORES_ENVIADO + " INTEGER, " +
+            COLUMN_CUETRABAJADORES_PREGUNTA + " INTEGER, " +
+            COLUMN_CUETRABAJADORES_CLAVE + " TEXT, " +
+            COLUMN_CUETRABAJADORES_FECHA + " TEXT, " +
+            COLUMN_CUETRABAJADORES_HORAINICIO + " TEXT, " +
+            COLUMN_CUETRABAJADORES_HORAFIN + " TEXT, " +
+            COLUMN_CUETRABAJADORES_IDAEROPUERTO + " INTEGER, " +
+            COLUMN_CUETRABAJADORES_NENCDOR + " INTEGER," +
+            COLUMN_CUETRABAJADORES_CDSEXO + " INTEGER," +
+            COLUMN_CUETRABAJADORES_IDIOMA + " TEXT," +
+            COLUMN_CUETRABAJADORES_EMPRESA + " TEXT," +
+            COLUMN_CUETRABAJADORES_ACTEMPRE + " TEXT," +
+            COLUMN_CUETRABAJADORES_CDLOCADO + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISTRES + " TEXT," +
+            COLUMN_CUETRABAJADORES_JORNADA + " TEXT," +
+            COLUMN_CUETRABAJADORES_JORNADAOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_NDIASTRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_ZONATRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORAENT1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORASAL1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORAENT2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORASAL2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORAENT3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_HORASAL3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_NMODOS + " TEXT," +
+            COLUMN_CUETRABAJADORES_MODO1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MODO2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_ULTIMODO + " TEXT," +
+            COLUMN_CUETRABAJADORES_NOCUCOCHE + " TEXT," +
+            COLUMN_CUETRABAJADORES_SATISTRANSPUBLI + " TEXT," +
+            COLUMN_CUETRABAJADORES_VALTRANSPUBLI1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_VALTRANSPUBLI2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_VALTRANSPUBLI3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_VALTRANSPUBLIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEJTRANSPUBLI1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEJTRANSPUBLI2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEJTRANSPUBLI3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEJTRANSPUBLIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_DESPLAZATRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_NOTRANSPUBLI1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_NOTRANSPUBLI2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_NOTRANSPUBLI3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_NOTRANSPUBLIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPTRANSPUBLI + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPTRANSPUBLIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_IMPORTRANSPUBLI + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEDTRANSPUBLI1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEDTRANSPUBLI2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEDTRANSPUBLI3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_MEDTRANSPUBLIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI + " TEXT," +
+            COLUMN_CUETRABAJADORES_APARCTRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_COMPARTCOCHE1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_COMPARTCOCHE2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_COMPARTCOCHE3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPBICI1 + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPBICI2 + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPBICI3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISPBICIOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_MODOSALIDA + " TEXT," +
+            COLUMN_CUETRABAJADORES_MODOSALIDAOTRO + " TEXT," +
+            COLUMN_CUETRABAJADORES_CDEDADTRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_CDSLAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_PUESTO + " TEXT )";
+    public static final String SQL_DROP_CUETRABAJADORES = "DROP TABLE IF EXISTS " + TABLE_CUETRABAJADORES;
 }

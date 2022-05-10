@@ -234,6 +234,31 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         startActivity(encuestas);
     }
 
+    public void accederTrabajadores(View view){
+        Intent encuestas = new Intent(this, ListadoTrabajadoresActivity.class);
+        Bundle datos = new Bundle();
+
+        //Obtenemos el nombre del aeropierto
+        String aeropuerto = null;
+        SQLiteDatabase db = conn.getWritableDatabase();
+        String[] usuarios = {txt_usuario.getText().toString()};
+
+        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+                " FROM " + Contracts.TABLE_USUARIOS + " AS T1 INNER JOIN " +
+                Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1.idAeropuerto = T2.iden " +
+                " WHERE T1." + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
+
+        while (cUsuarios.moveToNext()) {
+            aeropuerto = cUsuarios.getString(0);
+        }
+
+        datos.putString("usuario", txt_usuario.getText().toString());
+        datos.putString("aeropuerto", aeropuerto);
+
+        encuestas.putExtras(datos);
+        startActivity(encuestas);
+    }
+
     private void ejecutaUpdate(JSONObject resultado){
         SQLiteDatabase db = conn.getWritableDatabase();
         JSONArray total;

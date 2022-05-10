@@ -32,6 +32,8 @@
         <activity android:name=".actividades.MenuActivity" />
         <activity android:name=".actividades.ListadoPasajerosActivity" />
         <activity android:name=".actividades.CuePasajerosActivity" />
+        <activity android:name=".actividades.ListadoTrabajadoresActivity" />
+        <activity android:name=".actividades.CueTrabajadoresActivity" />
     </application>
 
 </manifest>
