@@ -65,10 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/list_trabajadores"
-
+                android:onClick="accederTrabajadores"
                 android:text="@string/btn_cueTrabajadores"
                 android:textColor="@color/aenaBlue" />
-            <!--  android:onClick="accederEncuestas" -->
 
 
         </LinearLayout>

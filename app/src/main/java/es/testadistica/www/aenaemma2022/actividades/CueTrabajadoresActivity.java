@@ -18,23 +18,25 @@ import java.util.Date;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
-import es.testadistica.www.aenaemma2022.utilidades.Form;
+import es.testadistica.www.aenaemma2022.utilidades.FormTrab;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros1;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros2;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros3;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros4;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros5;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloTrabajadores1;
 
-public class CuePasajerosActivity extends AppCompatActivity {
+public class CueTrabajadoresActivity extends AppCompatActivity {
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
     private int maxPreg = 41;
 
-    private CuePasajeros cue;
-    private Form form;
+    private CueTrabajadores cue;
+    private FormTrab form;
     private int modeloCue;
     private int idCue;
     private int pregunta;
@@ -48,13 +50,11 @@ public class CuePasajerosActivity extends AppCompatActivity {
     TextView txt_airportHeader;
     EditText txt_fecha;
     EditText txt_hora;
-    EditText txt_company;
-    EditText txt_vuelo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cuepasajeros);
+        setContentView(R.layout.activity_cuetrabajadores);
 
         //Añadir icono en el ActionBar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -66,8 +66,6 @@ public class CuePasajerosActivity extends AppCompatActivity {
         txt_numEncuesta = (TextView) findViewById(R.id.survey_text_numEncuesta);
         txt_fecha = (EditText) findViewById(R.id.survey_edit_fecha);
         txt_hora = (EditText) findViewById(R.id.survey_edit_hora);
-        txt_company = (EditText) findViewById(R.id.survey_edit_codCompVuelo);
-        txt_vuelo = (EditText) findViewById(R.id.survey_edit_numVuelo);
         txt_airportHeader = (TextView) findViewById(R.id.survey_text_airportHeader);
 
         //BBDD
@@ -79,7 +77,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
         if (datos != null) {
             txt_encuestador.setText(datos.getString("encuestador"));
             txt_numEncuesta.setText(datos.getString("numEncuesta"));
-            txt_airportHeader.setText("Encuestas de\n" + datos.getString("aeropuerto"));
+            txt_airportHeader.setText("Encuesta Movilidad Trabajadores\n" + datos.getString("aeropuerto"));
             txt_fecha.setText(datos.getString("fecha"));
             txt_hora.setText(datos.getString("hora"));
             pregunta = 1;
@@ -88,27 +86,11 @@ public class CuePasajerosActivity extends AppCompatActivity {
         }
 
         //Genera el cuestionario
-        cue = new CuePasajeros(idCue);
+        cue = new CueTrabajadores(idCue);
         switch (modeloCue) {
             case 1:
-                form = new ModeloPasajeros1(this, pregunta, conn);
-                ((ModeloPasajeros1) form).setCue(cue);
-                break;
-            case 2:
-                form = new ModeloPasajeros2(this, pregunta, conn);
-                ((ModeloPasajeros2) form).setCue(cue);
-                break;
-            case 3:
-                form = new ModeloPasajeros3(this, pregunta, conn);
-                ((ModeloPasajeros3) form).setCue(cue);
-                break;
-            case 4:
-                form = new ModeloPasajeros4(this, pregunta, conn);
-                ((ModeloPasajeros4) form).setCue(cue);
-                break;
-            case 5:
-                form = new ModeloPasajeros5(this, pregunta, conn);
-                ((ModeloPasajeros5) form).setCue(cue);
+                form = new ModeloTrabajadores1(this, pregunta, conn);
+                ((ModeloTrabajadores1) form).setCue(cue);
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
@@ -131,14 +113,14 @@ public class CuePasajerosActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (satisfyValidation()) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CuePasajerosActivity.this, R.style.MyDialogTheme);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CueTrabajadoresActivity.this, R.style.MyDialogTheme);
                     alertDialogBuilder.setMessage("¿Está seguro de que desea guardar y salir?");
 
                     alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
                             Intent visita = new Intent();
                             setResult(0, visita);
                             finish();
@@ -167,7 +149,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 etDummy.requestFocus();
 
                 int actual = pregunta;
-                int anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
+                int anterior = ((ModeloTrabajadores1) form).getPreguntaAnterior();
 
                 //form.onPreviousPressed(actual, anterior);
                 pregunta = form.onPreviousPressed(actual, anterior);

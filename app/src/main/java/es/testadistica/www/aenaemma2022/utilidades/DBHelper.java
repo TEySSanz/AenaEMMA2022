@@ -55,6 +55,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //CuePasajeros
         db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
+
+        //CueTrabajadores
+        db.execSQL(Contracts.SQL_CREATE_CUETRABAJADORES);
     }
 
     @Override
