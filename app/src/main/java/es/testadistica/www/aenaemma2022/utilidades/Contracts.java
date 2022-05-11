@@ -42,6 +42,75 @@ public class Contracts {
             COLUMN_IDIOMAS_CLAVE + " TEXT )";
     public static final String SQL_DROP_IDIOMAS = "DROP TABLE IF EXISTS " + TABLE_IDIOMAS;
 
+    //Tabla TipoCompanias
+    public static final String TABLE_TIPOCOMPANIAS = "TipoCompanias";
+    public static final String COLUMN_TIPOCOMPANIAS_IDEN = "iden";
+    public static final String COLUMN_TIPOCOMPANIAS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOCOMPANIAS_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
+            COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
+
+    //Tabla Distritos
+    public static final String TABLE_TIPODISTRITOS = "TipoDistritos";
+    public static final String COLUMN_TIPODISTRITOS_IDEN = "iden";
+    public static final String COLUMN_TIPODISTRITOS_CODIGO = "codigo";
+    public static final String COLUMN_TIPODISTRITOS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPODISTRITOS_CIUDAD = "ciudad";
+    public static final String SQL_CREATE_TIPODISTRITOS = "CREATE TABLE "+ TABLE_TIPODISTRITOS + " ("+
+            COLUMN_TIPODISTRITOS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPODISTRITOS_CODIGO + " TEXT, " +
+            COLUMN_TIPODISTRITOS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPODISTRITOS_CIUDAD + " TEXT )";
+    public static final String SQL_DROP_TIPODISTRITOS = "DROP TABLE IF EXISTS " + TABLE_TIPODISTRITOS;
+
+    //Tabla TipoMunicipios
+    public static final String TABLE_TIPOMUNICIPIOS = "TipoMunicipios";
+    public static final String COLUMN_TIPOMUNICIPIOS_IDEN = "iden";
+    public static final String COLUMN_TIPOMUNICIPIOS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOMUNICIPIOS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOMUNICIPIOS_PROVINCIA = "provincia";
+    public static final String SQL_CREATE_TIPOMUNICIPIOS = "CREATE TABLE "+ TABLE_TIPOMUNICIPIOS + " ("+
+            COLUMN_TIPOMUNICIPIOS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOMUNICIPIOS_CODIGO + " TEXT, " +
+            COLUMN_TIPOMUNICIPIOS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOMUNICIPIOS_PROVINCIA + " TEXT )";
+    public static final String SQL_DROP_TIPOMUNICIPIOS = "DROP TABLE IF EXISTS " + TABLE_TIPOMUNICIPIOS;
+
+    //Tabla TipoPaises
+    public static final String TABLE_TIPOPAISES = "TipoPaises";
+    public static final String COLUMN_TIPOPAISES_IDEN = "iden";
+    public static final String COLUMN_TIPOPAISES_CODIGO = "codigo";
+    public static final String COLUMN_TIPOPAISES_DESCRIPCION= "descripcion";
+    public static final String COLUMN_TIPOPAISES_CODGRUPOPAIS= "codGrupoPais";
+    public static final String COLUMN_TIPOPAISES_CODZONAPAIS1= "codZonaPais1";
+    public static final String COLUMN_TIPOPAISES_CODZONAPAIS2= "codZonaPais2";
+    public static final String COLUMN_TIPOPAISES_CODZONAPAIS3= "codZonaPais3";
+    public static final String SQL_CREATE_TIPOPAISES = "CREATE TABLE "+ TABLE_TIPOPAISES + " ("+
+            COLUMN_TIPOPAISES_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOPAISES_CODIGO + " TEXT, " +
+            COLUMN_TIPOPAISES_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOPAISES_CODGRUPOPAIS + " TEXT, " +
+            COLUMN_TIPOPAISES_CODZONAPAIS1 + " TEXT, " +
+            COLUMN_TIPOPAISES_CODZONAPAIS2 + " TEXT, " +
+            COLUMN_TIPOPAISES_CODZONAPAIS3 + " TEXT )";
+    public static final String SQL_DROP_TIPOPAISES = "DROP TABLE IF EXISTS " + TABLE_TIPOPAISES;
+
+    //Tabla TipoProvincias
+    public static final String TABLE_TIPOPROVINCIAS = "TipoProvincias";
+    public static final String COLUMN_TIPOPROVINCIAS_IDEN = "iden";
+    public static final String COLUMN_TIPOPROVINCIAS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOPROVINCIAS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOPROVINCIAS_idCA = "idCA";
+    public static final String SQL_CREATE_TIPOPROVINCIAS = "CREATE TABLE "+ TABLE_TIPOPROVINCIAS + " ("+
+            COLUMN_TIPOPROVINCIAS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOPROVINCIAS_CODIGO + " TEXT, " +
+            COLUMN_TIPOPROVINCIAS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOPROVINCIAS_idCA + " TEXT )";
+    public static final String SQL_DROP_TIPOPROVINCIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOPROVINCIAS;
+
     //Tabla CuePasajeros
     public static final String TABLE_CUEPASAJEROS = "CuePasajeros";
     public static final String COLUMN_CUEPASAJEROS_IDEN = "iden";
@@ -199,7 +268,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_USOAVE + " TEXT," +
             COLUMN_CUEPASAJEROS_VIEN_RE + " TEXT," +
             COLUMN_CUEPASAJEROS_VOL12MES + " TEXT," +
-            COLUMN_CUEPASAJEROS_DISTRES + " INTEGER," +
+            COLUMN_CUEPASAJEROS_DISTRES + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSINOPE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDALOJEN + " TEXT," +
             COLUMN_CUEPASAJEROS_DISTRACCE + " INTEGER," +

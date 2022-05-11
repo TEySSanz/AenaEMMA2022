@@ -52,6 +52,13 @@
     <string name="survey_txt_numEncuesta">Nº ENCUESTA</string>
     <string name="survey_text_puertaEmbarque">PUERTA</string>
 
+    <!--Títulos spinners-->
+    <string name="spinner_pais_title">SELECCIONE EL PAÍS</string>
+    <string name="spinner_provincia_title">SELECCIONE LA PROVINCIA</string>
+    <string name="spinner_municipio_title">SELECCIONE EL MUNICIPIO</string>
+    <string name="spinner_distrito_title">SELECCIONE EL DISTRITO</string>
+    <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
+
     <!--Preguntas Modelo 1-->
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
