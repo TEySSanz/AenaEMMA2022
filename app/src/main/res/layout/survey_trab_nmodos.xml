@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/survey_layout_nmodos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SurveySingleQuestion"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/survey_text_nmodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_nmodos" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_nmodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/survey_text_nmodos"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_nmodos_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_nmodos_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_nmodos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_nmodos_nmodos" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/survey_edit_nmodos_otros"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/survey_radiogroup_nmodos"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="12dp"
+            android:layout_toRightOf="@id/survey_radiogroup_nmodos"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
