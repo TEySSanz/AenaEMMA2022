@@ -33,7 +33,7 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 41;
+    private int maxPreg = 27;
 
     private CueTrabajadores cue;
     private FormTrab form;

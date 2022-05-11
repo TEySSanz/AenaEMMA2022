@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- P1 -->
+    <include layout="@layout/survey_trab_empresa"/>
+    <!-- P2 -->
+    <include layout="@layout/survey_trab_actempre"/>
+    <!-- P3 -->
+    <include layout="@layout/survey_trab_cdlocado_distres"/>
+    <!-- P4 -->
+    <include layout="@layout/survey_trab_jornadas"/>
+    <!-- P5 -->
+    <include layout="@layout/survey_trab_ndiastrab"/>
+    <!-- P6 -->
+    <include layout="@layout/survey_trab_zonatrab"/>
+    <!-- P7 -->
+    <include layout="@layout/survey_trab_horaent_horasal"/>
+    <!-- P8 -->
+    <include layout="@layout/survey_trab_nmodos"/>
+
+</LinearLayout>
