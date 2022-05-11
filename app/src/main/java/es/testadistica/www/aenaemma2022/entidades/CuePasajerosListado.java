@@ -5,16 +5,18 @@ import java.io.Serializable;
 public class CuePasajerosListado implements Serializable {
 
     private int iden;
+    private String encuestador;
     private String fecha;
-    private String horaInicio;
-    private String aeropuerto;
+    private String idioma;
+    private String vuelo;
     private String puerta;
 
-    public CuePasajerosListado(int iden, String fecha, String horaInicio, String aeropuerto, String puerta) {
+    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta) {
         this.iden = iden;
+        this.encuestador = encuestador;
         this.fecha = fecha;
-        this.horaInicio = horaInicio;
-        this.aeropuerto = aeropuerto;
+        this.idioma = idioma;
+        this.vuelo = vuelo;
         this.puerta = puerta;
     }
 
@@ -26,6 +28,14 @@ public class CuePasajerosListado implements Serializable {
         this.iden = iden;
     }
 
+    public String getEncuestador() {
+        return encuestador;
+    }
+
+    public void setEncuestador(String encuestador) {
+        this.encuestador = encuestador;
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -34,20 +44,20 @@ public class CuePasajerosListado implements Serializable {
         this.fecha = fecha;
     }
 
-    public String getHoraInicio() {
-        return horaInicio;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setHoraInicio(String horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
-    public String getAeropuerto() {
-        return aeropuerto;
+    public String getVuelo() {
+        return vuelo;
     }
 
-    public void setAeropuerto(String aeropuerto) {
-        this.aeropuerto = aeropuerto;
+    public void setVuelo(String vuelo) {
+        this.vuelo = vuelo;
     }
 
     public String getPuerta() {

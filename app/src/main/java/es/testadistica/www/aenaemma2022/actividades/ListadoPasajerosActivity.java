@@ -147,18 +147,20 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         listaCue = new ArrayList<CuePasajerosListado>();
 
         Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
-                        "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA +
+                        "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
+                        "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
+                        "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
+                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUECA + ",' '), " +
+                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ",' ') " +
                         " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
                                    Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
-                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + " IS NOT NULL" +
+                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
+                                   Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
+                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? " +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
-            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
             listaCue.add(cue);
         }
 
@@ -185,6 +187,13 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         SQLiteDatabase db = conn.getWritableDatabase();
         CuePasajeros cue = null;
 
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
+        //Asigna la fecha a visualizar
+        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
 
@@ -213,11 +222,23 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
             modeloCue = cAeropuerto.getInt(1);
         }
 
+        //Idioma
+        String[] idioma = {sp_idioma.getSelectedItem().toString()};
+        String idIdioma = null;
+
+        Cursor cIdioma = db.rawQuery("SELECT " + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA +
+                " FROM " + Contracts.TABLE_IDIOMAS + " AS T1" +
+                " WHERE " + Contracts.COLUMN_IDIOMAS_IDIOMA + "=?", idioma);
+
+        while (cIdioma.moveToNext()) {
+            idIdioma = cIdioma.getString(0);
+        }
+
         //Clave única
         String clave = getUniqueKey();
 
         //Crea el nuevo cuestionario
-        db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ", " + Contracts.COLUMN_CUEPASAJEROS_CLAVE + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_CUEPASAJEROS + " (" + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ", " + Contracts.COLUMN_CUEPASAJEROS_CLAVE + ", " + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "', " + idIdioma + ")");
 
         //Iden de cuestionario
         String[] iden = {Contracts.TABLE_CUEPASAJEROS};

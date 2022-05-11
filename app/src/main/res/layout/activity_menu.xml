@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/list"
+                android:drawableTop="@drawable/list_pasajeros"
                 android:onClick="accederEncuestas"
                 android:text="@string/btn_cue"
                 android:textColor="@color/aenaBlue" />
@@ -69,6 +69,25 @@
                 android:text="@string/btn_cueTrabajadores"
                 android:textColor="@color/aenaBlue" />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_transferir"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/transferdata"
+                android:onClick="transferir"
+                android:text="@string/btn_transferir"
+                android:textColor="@color/aenaBlue" />
 
         </LinearLayout>
 

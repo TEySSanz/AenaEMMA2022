@@ -14,6 +14,7 @@
     <string name="txt_bienvenida">Bienvenid@:</string>
     <string name="btn_cue">Cuestionarios Pasajeros</string>
     <string name="btn_cueTrabajadores">Cuestionarios Trabajadores</string>
+    <string name="btn_transferir">Transferir cuestionarios</string>
     <string name="btn_actualiza">Actualiza datos</string>
     <string name="btn_version">Comprobar versión</string>
     <string name="btn_backup">Enviar backup</string>
@@ -39,7 +40,7 @@
     <string name="surveylist_text_header_codEncu">ENCUESTADOR</string>
     <string name="surveylist_text_header_fecha">FECHA</string>
     <string name="surveylist_text_header_codIdioma">IDIOMA</string>
-    <string name="surveylist_text_header_codAerop">AEROPUERTO</string>
+    <string name="surveylist_text_header_vuelo">VUELO</string>
     <string name="surveylist_text_header_terminal">PUERTA</string>
     <string name="surveylist_text_header_delete" />
     <string name="button_upload">ENVIAR</string>

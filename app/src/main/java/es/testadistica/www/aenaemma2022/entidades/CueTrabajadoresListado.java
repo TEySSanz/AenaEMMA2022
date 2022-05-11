@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class CueTrabajadoresListado implements Serializable {
 
     private int iden;
+    private String encuestador;
     private String fecha;
-    private String horaInicio;
-    private String aeropuerto;
+    private String idioma;
 
-    public CueTrabajadoresListado(int iden, String fecha, String horaInicio, String aeropuerto) {
+    public CueTrabajadoresListado(int iden, String encuestador, String fecha, String idioma) {
         this.iden = iden;
+        this.encuestador = encuestador;
         this.fecha = fecha;
-        this.horaInicio = horaInicio;
-        this.aeropuerto = aeropuerto;
+        this.idioma = idioma;
     }
 
     public int getIden() {
@@ -24,6 +24,14 @@ public class CueTrabajadoresListado implements Serializable {
         this.iden = iden;
     }
 
+    public String getEncuestador() {
+        return encuestador;
+    }
+
+    public void setEncuestador(String encuestador) {
+        this.encuestador = encuestador;
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -32,19 +40,11 @@ public class CueTrabajadoresListado implements Serializable {
         this.fecha = fecha;
     }
 
-    public String getHoraInicio() {
-        return horaInicio;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setHoraInicio(String horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public String getAeropuerto() {
-        return aeropuerto;
-    }
-
-    public void setAeropuerto(String aeropuerto) {
-        this.aeropuerto = aeropuerto;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 }

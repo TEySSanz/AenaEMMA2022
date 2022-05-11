@@ -53,6 +53,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_HORAINICIO = "horaInicio";
     public static final String COLUMN_CUEPASAJEROS_HORAFIN = "horaFin";
     public static final String COLUMN_CUEPASAJEROS_IDAEROPUERTO = "idAeropuerto";
+    public static final String COLUMN_CUEPASAJEROS_IDIDIOMA = "idIdioma";
     public static final String COLUMN_CUEPASAJEROS_MODULO = "modulo";
     public static final String COLUMN_CUEPASAJEROS_CDOCIAAR = "cdociaar";
     public static final String COLUMN_CUEPASAJEROS_CDSLAB = "cdslab";
@@ -135,6 +136,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_HORAINICIO + " TEXT, " +
             COLUMN_CUEPASAJEROS_HORAFIN + " TEXT, " +
             COLUMN_CUEPASAJEROS_IDAEROPUERTO + " INTEGER, " +
+            COLUMN_CUEPASAJEROS_IDIDIOMA + " INTEGER, " +
             COLUMN_CUEPASAJEROS_ACOMPTES + " INTEGER," +
             COLUMN_CUEPASAJEROS_BULGRUPO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDALOJIN + " TEXT," +
@@ -220,6 +222,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_HORAINICIO = "horaInicio";
     public static final String COLUMN_CUETRABAJADORES_HORAFIN = "horaFin";
     public static final String COLUMN_CUETRABAJADORES_IDAEROPUERTO = "idAeropuerto";
+    public static final String COLUMN_CUETRABAJADORES_IDIDIOMA = "idIdioma";
     public static final String COLUMN_CUETRABAJADORES_NENCDOR = "nencdor";
     public static final String COLUMN_CUETRABAJADORES_CDSEXO = "cdsexo";
     public static final String COLUMN_CUETRABAJADORES_IDIOMA = "idioma";
@@ -287,6 +290,7 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_HORAINICIO + " TEXT, " +
             COLUMN_CUETRABAJADORES_HORAFIN + " TEXT, " +
             COLUMN_CUETRABAJADORES_IDAEROPUERTO + " INTEGER, " +
+            COLUMN_CUETRABAJADORES_IDIDIOMA + " INTEGER, " +
             COLUMN_CUETRABAJADORES_NENCDOR + " INTEGER," +
             COLUMN_CUETRABAJADORES_CDSEXO + " INTEGER," +
             COLUMN_CUETRABAJADORES_IDIOMA + " TEXT," +
