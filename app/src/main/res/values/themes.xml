@@ -83,4 +83,5 @@
         <item name="colorControlNormal">@color/md_black_1000</item>
         <item name="colorControlActivated">@color/md_black_1000</item>
     </style>
+
 </resources>
