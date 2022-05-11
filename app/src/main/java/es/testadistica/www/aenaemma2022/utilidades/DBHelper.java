@@ -14,16 +14,44 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Creación de tablas y vistas
         //Usuarios
+        db.execSQL(Contracts.SQL_DROP_USUARIOS);
         db.execSQL(Contracts.SQL_CREATE_USUARIOS);
         DBInsert.insertsUsuarios(db);
 
         //Aeropuertos
+        db.execSQL(Contracts.SQL_DROP_AEROPUERTOS);
         db.execSQL(Contracts.SQL_CREATE_AEROPUERTOS);
         DBInsert.insertsAeropuertos(db);
 
         //Idiomas
+        db.execSQL(Contracts.SQL_DROP_IDIOMAS);
         db.execSQL(Contracts.SQL_CREATE_IDIOMAS);
         DBInsert.insertsIdiomas(db);
+
+        //TipoCompanias
+        db.execSQL(Contracts.SQL_DROP_TIPOCOMPANIAS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOCOMPANIAS);
+        DBInsert.insertsTipoCompanias(db);
+
+        //TipoDistritos
+        db.execSQL(Contracts.SQL_DROP_TIPODISTRITOS);
+        db.execSQL(Contracts.SQL_CREATE_TIPODISTRITOS);
+        DBInsert.insertsTipoDistritos(db);
+
+        //TipoMunicipios
+        db.execSQL(Contracts.SQL_DROP_TIPOMUNICIPIOS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOMUNICIPIOS);
+        DBInsert.insertsTipoMunicipios(db);
+
+        //TipoPaises
+        db.execSQL(Contracts.SQL_DROP_TIPOPAISES);
+        db.execSQL(Contracts.SQL_CREATE_TIPOPAISES);
+        DBInsert.insertsTipoPaises(db);
+
+        //TipoProvincias
+        db.execSQL(Contracts.SQL_DROP_TIPOPROVINCIAS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOPROVINCIAS);
+        DBInsert.insertsTipoProvincias(db);
 
         //CuePasajeros
         db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);

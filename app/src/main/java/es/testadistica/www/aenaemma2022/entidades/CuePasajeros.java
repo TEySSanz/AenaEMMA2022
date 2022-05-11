@@ -73,7 +73,7 @@ public class CuePasajeros implements Serializable {
     private String usoave;
     private String vien_re;
     private String vol12mes;
-    private int distres;
+    private String distres;
     private String cdsinope;
     private String cdalojen;
     private int distracce;
@@ -644,11 +644,11 @@ public class CuePasajeros implements Serializable {
         this.vol12mes = vol12mes;
     }
 
-    public int getDistres() {
+    public String getDistres() {
         return distres;
     }
 
-    public void setDistres(int distres) {
+    public void setDistres(String distres) {
         this.distres = distres;
     }
 
