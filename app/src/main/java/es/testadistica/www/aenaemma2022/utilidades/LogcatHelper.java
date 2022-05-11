@@ -31,7 +31,7 @@ public class LogcatHelper {
                     + File.separator + "logcat";
         }*/
 
-        PATH_LOGCAT = context.getExternalFilesDir("EpshStorage")+"/log/";
+        PATH_LOGCAT = context.getExternalFilesDir("AenaStorage")+"/log/";
 
         File file = new File(PATH_LOGCAT);
         if (!file.exists()) {

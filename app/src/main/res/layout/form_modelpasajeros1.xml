@@ -8,5 +8,11 @@
     <include layout="@layout/survey_cue_cdpaisna"/>
     <!-- P2 -->
     <include layout="@layout/survey_cue_cdpaisre_cdlocado"/>
+    <!-- P3 -->
+    <include layout="@layout/survey_cue_cdcambio"/>
+    <!-- P4 -->
+    <include layout="@layout/survey_cue_cdiaptoo"/>
+    <!-- P5 -->
+    <include layout="@layout/survey_cue_ciaantes"/>
 
 </LinearLayout>

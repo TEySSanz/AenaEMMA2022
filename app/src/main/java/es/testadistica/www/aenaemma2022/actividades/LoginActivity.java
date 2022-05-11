@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements UpdateHelper.OnU
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         //Permisos
-        PermissionCheck.location(this);
+        //PermissionCheck.location(this);
         PermissionCheck.readAndWriteExternalStorage(this);
 
         //BBDD

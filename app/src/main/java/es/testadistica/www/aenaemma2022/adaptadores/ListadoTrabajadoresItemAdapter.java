@@ -26,37 +26,37 @@ public class ListadoTrabajadoresItemAdapter extends ArrayAdapter<CueTrabajadores
         //Inflate view
         if(convertView==null){
             convertView = LayoutInflater.from(getContext())
-                    .inflate(R.layout.list_item, parent, false);
+                    .inflate(R.layout.listtrabajadores_item, parent, false);
             holder = new ViewHolder();
-            holder.txt_numEncuesta = ((TextView) convertView.findViewById(R.id.list_item_text_numEncuesta));
-            holder.txt_fecha = ((TextView) convertView.findViewById(R.id.list_item_text_fecha));
-            holder.txt_hora = ((TextView) convertView.findViewById(R.id.list_item_text_hora));
-            holder.txt_aeropuerto = ((TextView) convertView.findViewById(R.id.list_item_text_aeropuerto));
+            holder.txt_numEncuesta = ((TextView) convertView.findViewById(R.id.surveylist_item_text_iden));
+            holder.txt_encuestador = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codEnc));
+            holder.txt_fecha = ((TextView) convertView.findViewById(R.id.surveylist_item_text_fecha));
+            holder.txt_idioma = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codIdioma));
 
             convertView.setTag(holder);
         } else {
             holder = new ViewHolder();
-            holder.txt_numEncuesta = ((TextView) convertView.findViewById(R.id.list_item_text_numEncuesta));
-            holder.txt_fecha = ((TextView) convertView.findViewById(R.id.list_item_text_fecha));
-            holder.txt_hora = ((TextView) convertView.findViewById(R.id.list_item_text_hora));
-            holder.txt_aeropuerto = ((TextView) convertView.findViewById(R.id.list_item_text_aeropuerto));
+            holder.txt_numEncuesta = ((TextView) convertView.findViewById(R.id.surveylist_item_text_iden));
+            holder.txt_encuestador = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codEnc));
+            holder.txt_fecha = ((TextView) convertView.findViewById(R.id.surveylist_item_text_fecha));
+            holder.txt_idioma = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codIdioma));
 
             holder = (ViewHolder) convertView.getTag();
         }
 
         //Asigna los valores
         holder.txt_numEncuesta.setText(String.valueOf(cue.getIden()));
+        holder.txt_encuestador.setText(String.valueOf(cue.getEncuestador()));
         holder.txt_fecha.setText(String.valueOf(cue.getFecha()));
-        holder.txt_hora.setText(String.valueOf(cue.getHoraInicio()));
-        holder.txt_aeropuerto.setText(String.valueOf(cue.getAeropuerto()));
+        holder.txt_idioma.setText(String.valueOf(cue.getIdioma()));
 
         return convertView;
     }
 
     static class ViewHolder {
         public TextView txt_numEncuesta;
+        public TextView txt_encuestador;
         public TextView txt_fecha;
-        public TextView txt_hora;
-        public TextView txt_aeropuerto;
+        public TextView txt_idioma;
     }
 }

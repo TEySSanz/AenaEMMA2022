@@ -184,71 +184,78 @@
             android:layout_margin="@dimen/small_padding"
             android:layout_marginLeft="@dimen/medium_padding"
             android:layout_marginRight="@dimen/medium_padding"
+            android:background="@color/aenaDarkGreen"
             android:orientation="horizontal">
 
             <TextView
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
+                android:layout_weight="1.25"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
                 android:text="@string/surveylist_text_header_iden" />
 
             <TextView
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
-                android:layout_weight="3"
-                android:gravity="center_vertical"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
                 android:text="@string/surveylist_text_header_codEncu" />
 
             <TextView
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
                 android:layout_weight="3"
-                android:gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
                 android:text="@string/surveylist_text_header_fecha" />
 
             <TextView
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
                 android:layout_weight="2"
-                android:gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
                 android:text="@string/surveylist_text_header_codIdioma" />
-
+<!--
             <TextView
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
                 android:layout_weight="3"
-                android:gravity="center_vertical"
-                android:text="@string/surveylist_text_header_codAerop" />
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
+                android:text="@string/surveylist_text_header_vuelo" />
 
             <TextView
                 android:id="@+id/surveylist_item_text_terminal"
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
                 android:layout_weight="2"
-                android:gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
                 android:text="@string/surveylist_text_header_terminal" />
 
             <Button
-                style="@style/SurveyQuestionTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/small_padding"
                 android:layout_weight="1"
                 android:text="@string/surveylist_text_header_delete"
                 android:visibility="invisible" />
+-->
 
 
         </LinearLayout>

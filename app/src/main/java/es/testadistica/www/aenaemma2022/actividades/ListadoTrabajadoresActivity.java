@@ -148,13 +148,14 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         listaCue = new ArrayList<CueTrabajadoresListado>();
 
         Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN + ", " +
-                        "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " +
-                        "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
-                        "T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+                        "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
+                        "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
+                        "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' ') " +
                         " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 LEFT JOIN " +
                                    Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN +
-                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUETRABAJADORES_HORAFIN + " IS NOT NULL" +
+                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
+                                   Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
+                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? " +
                         " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
 
         while (cursor.moveToNext()) {
@@ -185,6 +186,13 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         SQLiteDatabase db = conn.getWritableDatabase();
         CueTrabajadores cue = null;
 
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
+        //Asigna la fecha a visualizar
+        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
 
@@ -212,11 +220,23 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
             idAeropuerto = cAeropuerto.getString(0);
         }
 
+        //Idioma
+        String[] idioma = {sp_idioma.getSelectedItem().toString()};
+        String idIdioma = null;
+
+        Cursor cIdioma = db.rawQuery("SELECT " + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA +
+                " FROM " + Contracts.TABLE_IDIOMAS + " AS T1" +
+                " WHERE " + Contracts.COLUMN_IDIOMAS_IDIOMA + "=?", idioma);
+
+        while (cIdioma.moveToNext()) {
+            idIdioma = cIdioma.getString(0);
+        }
+
         //Clave única
         String clave = getUniqueKey();
 
         //Crea el nuevo cuestionario
-        db.execSQL("INSERT INTO " + Contracts.TABLE_CUETRABAJADORES + " (" + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + ", " + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + ", " + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + ", " + Contracts.COLUMN_CUETRABAJADORES_CLAVE + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_CUETRABAJADORES + " (" + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + ", " + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + ", " + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + ", " + Contracts.COLUMN_CUETRABAJADORES_CLAVE + ", " + Contracts.COLUMN_CUETRABAJADORES_IDIDIOMA + ") VALUES (" + idUsuario + ", 0, '" + fecha + "', '" + hora + "', " + idAeropuerto + ", '" + clave + "', " + idIdioma + ")");
 
         //Iden de cuestionario
         String[] iden = {Contracts.TABLE_CUETRABAJADORES};
@@ -236,7 +256,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
     }
 
     public void iniciarCue(View view){
-        Intent survey = new Intent(getApplicationContext(), CuePasajerosActivity.class);
+        Intent survey = new Intent(getApplicationContext(), CueTrabajadoresActivity.class);
         Bundle datosSurvey = new Bundle();
 
         datosSurvey.putString("encuestador", txt_usuario.getText().toString());

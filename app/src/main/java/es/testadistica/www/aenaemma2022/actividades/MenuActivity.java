@@ -57,8 +57,8 @@ import es.testadistica.www.aenaemma2022.utilidades.UpdateHelper;
 
 public class MenuActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener, UpdateHelper.OnUpdateCheckListener, UpdateHelper.OnNoUpdateCheckListener {
 
-    private static final String DESCARGA_URL = "http://192.168.7.18:8084/AENA/rest/actualizacion";
-    //private static final String DESCARGA_URL = "http://213.229.135.43:8081/AENA/rest/actualizacion";
+    private static final String DESCARGA_URL = "http://192.168.7.18:8084/AenaEMMA2022/rest/actualizacion";
+    //private static final String DESCARGA_URL = "http://213.229.135.43:8081/AenaEMMA2022/rest/actualizacion";
 
     DBHelper conn;
     Context context;
@@ -289,6 +289,10 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         }
     }
 
+    public void transferir(View view) {
+
+    }
+
     public void actualizaDatos(View view){
         final CharSequence[] opciones = {"Sí", "No"};
         final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(MenuActivity.this);
@@ -416,13 +420,14 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                                                 Toast.makeText(getApplicationContext(), "Se ha producido un problema durante el envío del log", Toast.LENGTH_LONG).show();
                                             }
                                         });
+                            } else {
+                                Toast.makeText(getApplicationContext(), "No existen backups para enviar", Toast.LENGTH_LONG).show();
                             }
                         }
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "Se ha producido un problema durante el envío", Toast.LENGTH_LONG).show();
                     }
 
-                    Toast.makeText(getApplicationContext(), "No existen backups para enviar", Toast.LENGTH_LONG).show();
                     progreso.dismiss();
                     findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                 } else {
