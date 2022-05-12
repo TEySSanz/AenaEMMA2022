@@ -417,7 +417,7 @@
     <string name="survey_text_EMP_seccion_transpubl">Sección transporte público</string>
     <!--Pregunta11-->
     <string name="survey_text_satistranspubli">11. ¿Cuál es el nivel de satisfacción en la utilización del transporte público en su desplazamiento hacia o desde el Aeropuerto?</string>
-    <string name="survey_text_satistranspubli_ent">siendo 1 nada sastifecho y 5 muy sastifecho</string>
+    <string name="survey_text_satistranspubli_ent">(siendo 1 nada satisfecho y 5 muy satisfecho)</string>
     <string name="survey_radio_satistranspubli_option1">1</string>
     <string name="survey_radio_satistranspubli_option2">2</string>
     <string name="survey_radio_satistranspubli_option3">3</string>
@@ -425,7 +425,7 @@
     <string name="survey_radio_satistranspubli_option5">5</string>
     <!--Pregunta12-->
     <string name="survey_text_valtranspubli">12. ¿Qué es lo que más valora del transporte público?</string>
-    <string name="survey_text_valtranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_text_valtranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_valtranspubli_option1">Comodidad</string>
     <string name="survey_check_valtranspubli_option2">Tiempo desplazamiento</string>
     <string name="survey_check_valtranspubli_option3">Precio</string>
@@ -438,7 +438,7 @@
     <string name="survey_check_valtranspubli_option10">Otros (indique cuál)</string>
     <!--Pregunta13-->
     <string name="survey_text_mejtranspubli">13. ¿Qué aspectos cree que podrían mejorar del transporte público?</string>
-    <string name="survey_text_mejtranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_text_mejtranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_mejtranspubli_option1">Frecuencias</string>
     <string name="survey_check_mejtranspubli_option2">Precio</string>
     <string name="survey_check_mejtranspubli_option3">Flota más moderna</string>
@@ -451,10 +451,10 @@
     <string name="survey_text_EMP_seccion_coche">Sección Coche</string>
     <!--Pregunta14-->
     <string name="survey_text_desplazatrab">14. Aproximadamente ¿Cuánto tiempo emplea en su desplazamiento al lugar del trabajo?</string>
-    <string name="survey_text_desplazatrab_ent">Indique el tiempo en minutos</string>
+    <string name="survey_text_desplazatrab_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta15-->
     <string name="survey_text_notranspubli">15. ¿Por qué no utiliza el transporte público para acceder a su puesto de trabajo?</string>
-    <string name="survey_text_notranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_text_notranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_notranspubli_option1">Tiempo de desplazamiento</string>
     <string name="survey_check_notranspubli_option2">Mala combinación</string>
     <string name="survey_check_notranspubli_option3">Necesito mi vehículo para trabajar o gestión personal</string>
@@ -478,15 +478,15 @@
     <string name="survey_text_importranspubli">17. Indique qué otra cuestión considera importante para utilizar el transporte público</string>
     <!--Pregunta18-->
     <string name="survey_text_medtranspubli">18. En caso de utilizar transporte público ¿Qué medio utilizaría?</string>
-    <string name="survey_text_medtranspubli_ent">si tuviera que utilizar más de un modo márquelos hasta un máximo de 3</string>
-    <string name="survey_check_medtranspubli_option1">Autobús Urbano (EMT)</string>
-    <string name="survey_check_medtranspubli_option2">Autobús Interurbano</string>
-    <string name="survey_check_medtranspubli_option3">Metro</string>
-    <string name="survey_check_medtranspubli_option4">Cercanías</string>
-    <string name="survey_check_medtranspubli_option5">Otro (indique cuál)</string>
+    <string name="survey_text_medtranspubli_ent">(si tuviera que utilizar más de un modo márquelos hasta un máximo de 3)</string>
+    <string name="survey_check_medtranspubli_option7">Autobús Urbano (EMT)</string>
+    <string name="survey_check_medtranspubli_option8">Autobús Interurbano</string>
+    <string name="survey_check_medtranspubli_option10">Metro</string>
+    <string name="survey_check_medtranspubli_option11">Cercanías</string>
+    <string name="survey_check_medtranspubli_option99">Otro (indique cuál)</string>
     <!--Pregunta19-->
     <string name="survey_text_tiempotranspubli">19. Aproximadamente, ¿Cuánto tiempo adicional estaría dispuesto a invertir para utilizar el transporte público para acceder al Aeropuerto?</string>
-    <string name="survey_text_tiempotranspubli_ent">Indique el tiempo en minutos</string>
+    <string name="survey_text_tiempotranspubli_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta20-->
     <string name="survey_text_aparctrab">20. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
     <string name="survey_radio_aparctrab_option1">Si, gratuito</string>
@@ -495,13 +495,13 @@
     <string name="survey_radio_aparctrab_option4">No, se lo lleva el conductor</string>
     <!--Pregunta21-->
     <string name="survey_text_compartcoche">21. ¿Estaría dispuesto a COMPARTIR COCHE para ir al trabajo, si actualmente no lo hace?</string>
-    <string name="survey_text_compartcoche_ent">puede marcar más de una respuesta hasta un máximo de 3</string>
-    <string name="survey_check_compartcoche_option1">No</string>
-    <string name="survey_check_compartcoche_option2">Si, incondicionalmente</string>
-    <string name="survey_check_compartcoche_option3">Si, si la empresa me encuentra compañeros para compartir coche</string>
-    <string name="survey_check_compartcoche_option4">Si, si los compañeros de trabajo vivieran cerca de mi casa</string>
-    <string name="survey_check_compartcoche_option5">Si, si la empresa dispone de un dispositivo aplicativo colaborativo para compartir coche</string>
-    <string name="survey_check_compartcoche_option6">Otras condiciones (especificar):</string>
+    <string name="survey_text_compartcoche_ent">(puede marcar más de una respuesta hasta un máximo de 3)</string>
+    <string name="survey_check_compartcoche_option0">No</string>
+    <string name="survey_check_compartcoche_option1">Si, incondicionalmente</string>
+    <string name="survey_check_compartcoche_option2">Si, si la empresa me encuentra compañeros para compartir coche</string>
+    <string name="survey_check_compartcoche_option3">Si, si los compañeros de trabajo vivieran cerca de mi casa</string>
+    <string name="survey_check_compartcoche_option4">Si, si la empresa dispone de un dispositivo aplicativo colaborativo para compartir coche</string>
+    <string name="survey_check_compartcoche_option5">Otras condiciones (especificar):</string>
     <!--SeccionB-->
     <string name="survey_text_EMP_seccion_bicicleta">Sección Bicicleta o modo alternativo</string>
     <!--Pregunta22-->

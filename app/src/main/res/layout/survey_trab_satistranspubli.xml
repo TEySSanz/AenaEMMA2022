@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/survey_layout_satistranspubli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SurveySingleQuestion"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_satistranspubli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_satistranspubli" />
+
+        <TextView
+            android:id="@+id/survey_text_satistranspubli_ent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_satistranspubli_ent"
+            android:visibility="visible"
+            android:layout_below="@id/survey_text_satistranspubli"
+            style="@style/SurveyQuestionHelp"/>
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_satistranspubli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/survey_text_satistranspubli_ent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option3" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option4" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option5" />
+
+        </RadioGroup>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_notranspubli"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        style="@style/SurveySingleQuestion">
+
+        <TextView
+            android:id="@+id/survey_text_notranspubli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_notranspubli"
+            style="@style/SurveyQuestionTitle"/>
+
+        <TextView
+            android:id="@+id/survey_text_notranspubli_ent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_notranspubli_ent"
+            android:visibility="visible"
+            style="@style/SurveyQuestionHelp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option1" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option2" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option3" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option4" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_valtranspubli_option6" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option7" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option8" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option9" />
+
+                <CheckBox
+                    android:id="@+id/check_notranspubli_option10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_check_notranspubli_option10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/survey_text_notranspubli_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+
+                <TextView
+                    android:id="@+id/survey_text_notranspubli_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+
+                <TextView
+                    android:id="@+id/survey_text_notranspubli_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+
+                <TextView
+                    android:id="@+id/survey_text_notranspubli_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+
+                <EditText
+                    android:id="@+id/survey_edit_notranspubli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="text"
+                    style="@style/SurveyQuestionEdit"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/survey_edit_notranspubli1"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/survey_edit_notranspubli2"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/survey_edit_notranspubli3"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>
