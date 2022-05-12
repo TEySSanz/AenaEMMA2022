@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_cdalojin"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_cdalojin"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_cdalojin" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_cdalojin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option4" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option7" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option8" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdalojin_option9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdalojin_option9" />
+        </RadioGroup>
+
+        //cdalojin_otros
+        <LinearLayout
+            android:id="@+id/survey_layout_cdalojin_otros"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/SurveySingleQuestion">
+
+            <TextView
+                android:id="@+id/survey_edit_text_cdalojin_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_cdalojin_otros"
+                style="@style/SurveyQuestionLiteral"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:focusableInTouchMode="true" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/survey_edit_cdalojin_otros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -152,6 +152,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_CDLOCACO = "cdlocaco";
     public static final String COLUMN_CUEPASAJEROS_DISTRACCE = "distracce";
     public static final String COLUMN_CUEPASAJEROS_CDALOJIN = "cdalojin";
+    public static final String COLUMN_CUEPASAJEROS_CDALOJIN_OTROS = "cdalojin_otros";
     public static final String COLUMN_CUEPASAJEROS_NMODOS = "nmodos";
     public static final String COLUMN_CUEPASAJEROS_MODO1 = "modo1";
     public static final String COLUMN_CUEPASAJEROS_MODO2 = "modo2";
@@ -209,6 +210,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_ACOMPTES + " INTEGER," +
             COLUMN_CUEPASAJEROS_BULGRUPO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDALOJIN + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDALOJIN_OTROS + " TEXT," +
             COLUMN_CUEPASAJEROS_CDBILLET + " TEXT," +
             COLUMN_CUEPASAJEROS_CDCAMBIO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDEDAD + " TEXT," +
@@ -271,10 +273,10 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_DISTRES + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSINOPE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDALOJEN + " TEXT," +
-            COLUMN_CUEPASAJEROS_DISTRACCE + " INTEGER," +
-            COLUMN_CUEPASAJEROS_NMODOS + " INTEGER," +
-            COLUMN_CUEPASAJEROS_MODO1 + " INTEGER," +
-            COLUMN_CUEPASAJEROS_MODO2 + " INTEGER," +
+            COLUMN_CUEPASAJEROS_DISTRACCE + " TEXT," +
+            COLUMN_CUEPASAJEROS_NMODOS + " TEXT," +
+            COLUMN_CUEPASAJEROS_MODO1 + " TEXT," +
+            COLUMN_CUEPASAJEROS_MODO2 + " TEXT," +
             COLUMN_CUEPASAJEROS_BUSTERMI + " INTEGER," +
             COLUMN_CUEPASAJEROS_DROPOFF + " TEXT," +
             COLUMN_CUEPASAJEROS_ELECCOVID + " TEXT )";

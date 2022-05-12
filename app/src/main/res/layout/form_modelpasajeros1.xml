@@ -14,5 +14,29 @@
     <include layout="@layout/survey_cue_cdiaptoo"/>
     <!-- P5 -->
     <include layout="@layout/survey_cue_ciaantes"/>
+    <!-- P6 -->
+    <include layout="@layout/survey_cue_conexfac"/>
+    <!-- P7 -->
+    <include layout="@layout/survey_cue_cdsinope"/>
+    <!-- P8 -->
+    <include layout="@layout/survey_cue_cdalojen"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_cue_vienere_cdlocaco_distracce"/>
+    <!-- P10 -->
+    <include layout="@layout/survey_cue_cdalojin"/>
+    <!-- P11 -->
+    <include layout="@layout/survey_cue_nmodos"/>
+    <!-- P12 -->
+    <include layout="@layout/survey_cue_ultimodo"/>
+    <!-- P13 -->
+    <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
+    <!-- P14 -->
+    <include layout="@layout/survey_cue_bustermi"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_cue_acomptes"/>
+    <!-- P16 -->
+    <include layout="@layout/survey_cue_hllega"/>
+
+
 
 </LinearLayout>

@@ -107,11 +107,13 @@
     <string name="survey_m1_radio_cdalojin_option7">Vivienda de familiares/amigos</string>
     <string name="survey_m1_radio_cdalojin_option8">Lugar de trabajo/negocios</string>
     <string name="survey_m1_radio_cdalojin_option9">Otros(especificar)</string>
+    <string name="survey_m1_text_cdalojin_otros">Especificar</string>
     <!--Pregunta11-->
     <string name="survey_m1_text_nmodos">11. ¿Cuántos MODOS DE TRANSPORTE ha utilizado para ACCEDER al aeropuerto?</string>
     <string name="survey_m1_radio_nmodos_option1">Un modo</string>
     <string name="survey_m1_radio_nmodos_option2">Dos modos</string>
     <string name="survey_m1_radio_nmodos_nummodos">Indique nº de modos</string>
+    <string name="survey_m1_text_nmodos_otros">Especificar</string>
     <!--Pregunta12-->
     <string name="survey_m1_text_ultimodo">12. ¿Podría indicarme el MODO DE TRANSPORTE que ha utilizado para ACCEDER al aeropuerto?</string>
     <string name="survey_m1_text_ultimodo_ent">Señalar último modo</string>
@@ -169,6 +171,7 @@
     <string name="survey_m1_radio_acomptes_option1">1 persona</string>
     <string name="survey_m1_radio_acomptes_option2">2 personas</string>
     <string name="survey_m1_radio_acomptes_option3">Mas de 2 personas, especificar</string>
+    <string name="survey_m1_text_acomptes_especificar">Especificar</string>
     <!--Pregunta16-->
     <string name="survey_m1_text_hllega">16. ¿A qué HORA ha llegado al aeropuerto?</string>
     <string name="survey_m1_text_hllega_hora">Hora</string>
@@ -318,4 +321,226 @@
     <string name="survey_m1_radio_cdsexo_option2">Mujer</string>
     <string name="survey_text_muchasgracias">Muchas gracias por su colaboración</string>
 
+    <!-- Preguntas Modelo Trabajadores 1 -->
+    <string name="survey_text_selectOption">Se debe indicar una opción</string>
+    <!--Pregunta1-->
+    <string name="survey_text_empresa">1. ¿Podría indicar la empresa para la que trabaja?</string>
+    <!--Pregunta2-->
+    <string name="survey_text_actempre">2. ¿Podría indicar la actividad de su empresa en el Aeropuerto?</string>
+    <!--Pregunta3-->
+    <string name="survey_text_cdlocado">3. Indique el Municipio de su residencia habitual</string>
+    <string name="survey_text_cdlocado_loc">Localidad</string>
+    <string name="survey_text_distres">Distrito (solo para Madrid Capital)</string>
+    <!--Pregunta4-->
+    <string name="survey_text_jornada">4. ¿Que jornada laboral realiza?</string>
+    <string name="survey_radio_jornada_option1">Jornada continua de mañana (L a V)</string>
+    <string name="survey_radio_jornada_option2">Jornada continua de tarde (L a V)</string>
+    <string name="survey_radio_jornada_option3">Jornada partida mañana/tarde (L a V)</string>
+    <string name="survey_radio_jornada_option4">Jornada continua de noche</string>
+    <string name="survey_radio_jornada_option5">Jornada a turnos regulares</string>
+    <string name="survey_radio_jornada_option6">Jornada a turnos irregulares</string>
+    <string name="survey_radio_jornada_option7">Otros (Indique cuál)</string>
+    <!--Pregunta5-->
+    <string name="survey_text_ndiastrab">5. ¿Cuántos días a la semana tiene que acudir al centro de trabajo habitualmente?</string>
+    <string name="survey_radio_ndiastrab_option1">>4 días</string>
+    <string name="survey_radio_ndiastrab_option2">2 a 4 días</string>
+    <string name="survey_radio_ndiastrab_option3">2 días</string>
+    <!--Pregunta6-->
+    <string name="survey_text_zonatrab">6. ¿Indique la zona del Aeropuerto en la que trabaja habitualmente?</string>
+    <string name="survey_radio_zonatrab_option1">T1</string>
+    <string name="survey_radio_zonatrab_option2">T2-3</string>
+    <string name="survey_radio_zonatrab_option3">T4-T4S</string>
+    <string name="survey_radio_zonatrab_option4">Terminal Ejecutiva</string>
+    <string name="survey_radio_zonatrab_option5">Zona Carga Aérea</string>
+    <!--Pregunta7-->
+    <string name="survey_text_horaent_pregunta">7. ¿Cuál es su horario habitual de trabajo?</string>
+    <string name="survey_text_horaent_option1">1. Hora habitual de entrada/salida al trabajo:</string>
+    <string name="survey_text_horaent1">Entrada 1</string>
+    <string name="survey_text_horasal1">Salida 1</string>
+    <string name="survey_text_horaent_option2">2. Hora habitual de entrada/salida del trabajo:</string>
+    <string name="survey_text_horaent_option2_ent">(si realiza más de un horario)</string>
+    <string name="survey_text_horaent2">Entrada 2</string>
+    <string name="survey_text_horasal2">Salida 2</string>
+    <string name="survey_text_horaent_ent2">(si realiza más de un horario)</string>
+    <string name="survey_text_horaent_option3">3. Hora habitual de entrada/salida del trabajo:</string>
+    <string name="survey_text_horaent_option3_ent">(si realiza más de dos horario)</string>
+    <string name="survey_text_horaent3">Entrada 3</string>
+    <string name="survey_text_horasal3">Salida 3</string>
+    <string name="survey_text_horaent_ent3">si realiza más de dos horarios</string>
+    <!--Pregunta8-->
+    <string name="survey_text_nmodos">8. ¿Cuántos MODOS DE TRANSPORTE utiliza HABITUALMENTE en el desplazamiento al aeropuerto?</string>
+    <string name="survey_radio_nmodos_option1">Un modo</string>
+    <string name="survey_text_nmodos_ent">solo preguntar ultimo modo</string>
+    <string name="survey_radio_nmodos_option2">Dos modos</string>
+    <string name="survey_radio_nmodos_nmodos">Indique nº de modos</string>
+    <!--Pregunta9-->
+    <string name="survey_text_ultimodo_pregunta">9. ¿Podría indicar los MODOS DE TRANSPORTE que ha utilizado para ACCEDER al aeropuerto?</string>
+    <string name="survey_text_modo1">1er Modo</string>
+    <string name="survey_text_modo2">2º Modo</string>
+    <string name="survey_text_ultimodo">Ultimo Modo</string>
+    <string name="survey_text_ultimodo_taxi">TAXI</string>
+    <string name="survey_text_ultimodo_taxi_taxi">Taxi</string>
+    <string name="survey_text_ultimodo_taxi_taxi_pasa">Pasa sec bici</string>
+    <string name="survey_text_ultimodo_taxi_VTC">VTC: Cabify y Uber</string>
+    <string name="survey_text_ultimodo_taxi_VTC_pasa">Pasa sec bici</string>
+    <string name="survey_text_ultimodo_vpriv">VEHICULO PRIVADO</string>
+    <string name="survey_text_ultimodo_vpriv_ccond">Coche conductor</string>
+    <string name="survey_text_ultimodo_vpriv_ccond_pasa">Pasa sec coche</string>
+    <string name="survey_text_ultimodo_vpriv_cacom">Coche acompañante</string>
+    <string name="survey_text_ultimodo_vpriv_cacom_pasa">Pasa sec coche</string>
+    <string name="survey_text_ultimodo_vpriv_moto">Moto</string>
+    <string name="survey_text_ultimodo_vpriv_moto_pasa">Pasa sec coche</string>
+    <string name="survey_text_ultimodo_vpriv_cochecompcom">Coche compartido compañeros</string>
+    <string name="survey_text_ultimodo_vpriv_cochecompcom_pasa">Pasa Siguiente</string>
+    <string name="survey_text_ultimodo_autobus">AUTOBÚS</string>
+    <string name="survey_text_ultimodo_autobus_aurbanoEMT">Autobús Urbano (EMT)</string>
+    <string name="survey_text_ultimodo_autobus_aurbanoEMT_pasa">Pasa sec tp</string>
+    <string name="survey_text_ultimodo_autobus_ainter">Autobús Interurbano</string>
+    <string name="survey_text_ultimodo_autobus_ainter_pasa">Pasa sec tp</string>
+    <string name="survey_text_ultimodo_autobus_aempr">Autobús Empresa</string>
+    <string name="survey_text_ultimodo_autobus_aempr_pasa">Pasa sec bici</string>
+    <string name="survey_text_ultimodo_tren">TREN</string>
+    <string name="survey_text_ultimodo_tren_trenc">Tren/Cercanías</string>
+    <string name="survey_text_ultimodo_tren_trenc_pasa">Pasa sec tp</string>
+    <string name="survey_text_ultimodo_metro">METRO</string>
+    <string name="survey_text_ultimodo_metro_pasa">Pasa sec tp</string>
+    <string name="survey_text_ultimodo_otros">OTROS</string>
+    <string name="survey_text_ultimodo_otros_bici">Bicicleta, patinete eléctrico o A pie</string>
+    <string name="survey_text_ultimodo_otros_bici_pasa">Pasa sec bici</string>
+    <!--Pregunta10-->
+    <string name="survey_text_nocucoche_ent">En caso de utilizar coche compartido</string>
+    <string name="survey_text_nocucoche">10. ¿Cuántos ocupantes van en el vehículo?</string>
+    <string name="survey_radio_nocucoche_option1">2 personas</string>
+    <string name="survey_radio_nocucoche_option2">3 personas</string>
+    <string name="survey_radio_nocucoche_option3">>3 personas</string>
+    <string name="survey_text_nocucoche_option3_ent">pasar a sección coche</string>
+    <!--SeccionTP-->
+    <string name="survey_text_EMP_seccion_transpubl">Sección transporte público</string>
+    <!--Pregunta11-->
+    <string name="survey_text_satistranspubli">11. ¿Cuál es el nivel de satisfacción en la utilización del transporte público en su desplazamiento hacia o desde el Aeropuerto?</string>
+    <string name="survey_text_satistranspubli_ent">siendo 1 nada sastifecho y 5 muy sastifecho</string>
+    <string name="survey_radio_satistranspubli_option1">1</string>
+    <string name="survey_radio_satistranspubli_option2">2</string>
+    <string name="survey_radio_satistranspubli_option3">3</string>
+    <string name="survey_radio_satistranspubli_option4">4</string>
+    <string name="survey_radio_satistranspubli_option5">5</string>
+    <!--Pregunta12-->
+    <string name="survey_text_valtranspubli">12. ¿Qué es lo que más valora del transporte público?</string>
+    <string name="survey_text_valtranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_check_valtranspubli_option1">Comodidad</string>
+    <string name="survey_check_valtranspubli_option2">Tiempo desplazamiento</string>
+    <string name="survey_check_valtranspubli_option3">Precio</string>
+    <string name="survey_check_valtranspubli_option4">Contribuir al medio ambiente</string>
+    <string name="survey_check_valtranspubli_option5">Proximidad de paradas al domicilio/trabajo</string>
+    <string name="survey_check_valtranspubli_option6">No tener que aparcar</string>
+    <string name="survey_check_valtranspubli_option7">Evitar atascos</string>
+    <string name="survey_check_valtranspubli_option8">Tiempo desplazamiento</string>
+    <string name="survey_check_valtranspubli_option9">Horarios/Frecuencia</string>
+    <string name="survey_check_valtranspubli_option10">Otros (indique cuál)</string>
+    <!--Pregunta13-->
+    <string name="survey_text_mejtranspubli">13. ¿Qué aspectos cree que podrían mejorar del transporte público?</string>
+    <string name="survey_text_mejtranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_check_mejtranspubli_option1">Frecuencias</string>
+    <string name="survey_check_mejtranspubli_option2">Precio</string>
+    <string name="survey_check_mejtranspubli_option3">Flota más moderna</string>
+    <string name="survey_check_mejtranspubli_option4">Estado de limpieza de la flota</string>
+    <string name="survey_check_mejtranspubli_option5">Mayor conectividad</string>
+    <string name="survey_check_mejtranspubli_option6">Horarios nocturnos</string>
+    <string name="survey_check_mejtranspubli_option9">Otros (indique cuál)</string>
+    <string name="survey_text_mejtranspubli_option9_ent">pasa a sección Bici</string>
+    <!--SeccionC-->
+    <string name="survey_text_EMP_seccion_coche">Sección Coche</string>
+    <!--Pregunta14-->
+    <string name="survey_text_desplazatrab">14. Aproximadamente ¿Cuánto tiempo emplea en su desplazamiento al lugar del trabajo?</string>
+    <string name="survey_text_desplazatrab_ent">Indique el tiempo en minutos</string>
+    <!--Pregunta15-->
+    <string name="survey_text_notranspubli">15. ¿Por qué no utiliza el transporte público para acceder a su puesto de trabajo?</string>
+    <string name="survey_text_notranspubli_ent">seleccionar un máximo de 3 aspectos</string>
+    <string name="survey_check_notranspubli_option1">Tiempo de desplazamiento</string>
+    <string name="survey_check_notranspubli_option2">Mala combinación</string>
+    <string name="survey_check_notranspubli_option3">Necesito mi vehículo para trabajar o gestión personal</string>
+    <string name="survey_check_notranspubli_option4">Más cómodo el actual</string>
+    <string name="survey_check_notranspubli_option5">Destino muy cerca</string>
+    <string name="survey_check_notranspubli_option6">No hay servicio público</string>
+    <string name="survey_check_notranspubli_option7">Es más caro</string>
+    <string name="survey_check_notranspubli_option8">No me gusta el transporte público</string>
+    <string name="survey_check_notranspubli_option9">Prefiero ir andando/bicicleta</string>
+    <string name="survey_check_notranspubli_option10">Otros (indique cuál)</string>
+    <!--Pregunta16-->
+    <string name="survey_text_disptranspubli">16. ¿Estaría dispuesto a utilizar el transporte público para acceder a su puesto de trabajo?</string>
+    <string name="survey_radio_disptranspubli_option1">No</string>
+    <string name="survey_radio_disptranspubli_option2">Si, incondicionalmente</string>
+    <string name="survey_radio_disptranspubli_option3">Si, si tuviera paradas tren/metro/bus cerca de mi domicilio</string>
+    <string name="survey_radio_disptranspubli_option4">Si, si tuviera paradas tren/metro/bus cerca de mi puesto de trabajo</string>
+    <string name="survey_radio_disptranspubli_option5">Si, si el tiempo empleado en el desplazamiento fuera igual o no mayor a 30 minutos que en coche</string>
+    <string name="survey_radio_disptranspubli_option6">Si, si el horario de trabajo coincidiera con una oferta de transporte adecuada</string>
+    <string name="survey_radio_disptranspubli_option7">Si, otras condiciones (indíquelas)</string>
+    <!--Pregunta17-->
+    <string name="survey_text_importranspubli">17. Indique qué otra cuestión considera importante para utilizar el transporte público</string>
+    <!--Pregunta18-->
+    <string name="survey_text_medtranspubli">18. En caso de utilizar transporte público ¿Qué medio utilizaría?</string>
+    <string name="survey_text_medtranspubli_ent">si tuviera que utilizar más de un modo márquelos hasta un máximo de 3</string>
+    <string name="survey_check_medtranspubli_option1">Autobús Urbano (EMT)</string>
+    <string name="survey_check_medtranspubli_option2">Autobús Interurbano</string>
+    <string name="survey_check_medtranspubli_option3">Metro</string>
+    <string name="survey_check_medtranspubli_option4">Cercanías</string>
+    <string name="survey_check_medtranspubli_option5">Otro (indique cuál)</string>
+    <!--Pregunta19-->
+    <string name="survey_text_tiempotranspubli">19. Aproximadamente, ¿Cuánto tiempo adicional estaría dispuesto a invertir para utilizar el transporte público para acceder al Aeropuerto?</string>
+    <string name="survey_text_tiempotranspubli_ent">Indique el tiempo en minutos</string>
+    <!--Pregunta20-->
+    <string name="survey_text_aparctrab">20. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
+    <string name="survey_radio_aparctrab_option1">Si, gratuito</string>
+    <string name="survey_radio_aparctrab_option2">Si, pago abono</string>
+    <string name="survey_radio_aparctrab_option3">No, lo dejo en el viario</string>
+    <string name="survey_radio_aparctrab_option4">No, se lo lleva el conductor</string>
+    <!--Pregunta21-->
+    <string name="survey_text_compartcoche">21. ¿Estaría dispuesto a COMPARTIR COCHE para ir al trabajo, si actualmente no lo hace?</string>
+    <string name="survey_text_compartcoche_ent">puede marcar más de una respuesta hasta un máximo de 3</string>
+    <string name="survey_check_compartcoche_option1">No</string>
+    <string name="survey_check_compartcoche_option2">Si, incondicionalmente</string>
+    <string name="survey_check_compartcoche_option3">Si, si la empresa me encuentra compañeros para compartir coche</string>
+    <string name="survey_check_compartcoche_option4">Si, si los compañeros de trabajo vivieran cerca de mi casa</string>
+    <string name="survey_check_compartcoche_option5">Si, si la empresa dispone de un dispositivo aplicativo colaborativo para compartir coche</string>
+    <string name="survey_check_compartcoche_option6">Otras condiciones (especificar):</string>
+    <!--SeccionB-->
+    <string name="survey_text_EMP_seccion_bicicleta">Sección Bicicleta o modo alternativo</string>
+    <!--Pregunta22-->
+    <string name="survey_text_dispbici">22. ¿Estaría dispuesto a utilizar la BICICLETA para ir al trabajo?</string>
+    <string name="survey_text_dispbici_ent">puede marcar más de una respuesta hasta un máximo de 3</string>
+    <string name="survey_check_dispbici_option1">No</string>
+    <string name="survey_check_dispbici_option2">Si, incondicionalmente</string>
+    <string name="survey_check_dispbici_option3">Si, si hubiera carriles bici mejores y más seguros para ir al trabajo</string>
+    <string name="survey_check_dispbici_option4">Si, si hubiera aparcamiento cubierto para bicicletas</string>
+    <string name="survey_check_dispbici_option5">Si, si hubiera vestuarios y duchas a disposición en el trabajo</string>
+    <string name="survey_check_dispbici_option6">Si, si hubiera un incentivo para ir en bicicleta o a pie al trabajo</string>
+    <string name="survey_check_dispbici_option7">Si, otras condiciones (indíquelas)</string>
+    <!--Pregunta23-->
+    <string name="survey_text_modosalida">23. ¿Utiliza el mismo modo de transporte a la salida del trabajo?</string>
+    <string name="survey_radio_modosalida_option1">Si</string>
+    <string name="survey_radio_modosalida_option2">No</string>
+    <string name="survey_text_modosalida_indique">Indique cuál</string>
+    <!--SeccionP-->
+    <string name="survey_text_EMP_seccion_perfil">Sección Perfil</string>
+    <!--Pregunta24-->
+    <string name="survey_text_cedadtrab">24. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <string name="survey_radio_cedadtrab_option1">Menor de 30</string>
+    <string name="survey_radio_cedadtrab_option2">30 a 44</string>
+    <string name="survey_radio_cedadtrab_option3">45 a 60</string>
+    <string name="survey_radio_cedadtrab_option4">>60</string>
+    <!--Pregunta25-->
+    <string name="survey_text_cdsexo">25. Género</string>
+    <string name="survey_radio_cdsexo_option1">Hombre</string>
+    <string name="survey_radio_cdsexo_option2">Mujer</string>
+    <!--Pregunta26-->
+    <string name="survey_text_cdslab">26. Indique nivel de estudios terminados</string>
+    <string name="survey_radio_cdslab_option1">Primeros/Básicos/EGB</string>
+    <string name="survey_radio_cdslab_option2">Secundarios (ESO/BUP/Bachiller/FP Grado Medio)</string>
+    <string name="survey_radio_cdslab_option3">Superiores (Universitarios/Técnico Superior)</string>
+    <!--Pregunta27-->
+    <string name="survey_text_puesto">27. Selecciones el tipo de puesto de trabajo que ocupa en su empresa u organización</string>
+    <string name="survey_radio_puesto_option1">Directivo</string>
+    <string name="survey_radio_puesto_option2">Mando medio</string>
+    <string name="survey_radio_puesto_option3">Supervisión, Profesionales y Técnicos</string>
+    <string name="survey_radio_puesto_option4">Operativos y de Apoyo</string>
 </resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/survey_layout_jornada"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_jornada"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_jornada" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_jornada"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/survey_text_jornada"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option3"
+                android:layout_width="289dp"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option3" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option4"
+                android:layout_width="253dp"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option4" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option5" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option6"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option6" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_jornada_option7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_jornada_option7" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/survey_edit_jornada_otros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/survey_radiogroup_jornada"
+            android:layout_toRightOf="@id/survey_radiogroup_jornada"
+            style="@style/SurveyQuestionEdit"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

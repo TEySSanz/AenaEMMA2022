@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_nmodos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SurveySingleQuestion"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_nmodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m1_text_nmodos" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_nmodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/survey_text_nmodos"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_nmodos_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_nmodos_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_nmodos_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_nmodos_nummodos" />
+        </RadioGroup>
+
+        //nmodos_otros
+        <LinearLayout
+            android:id="@+id/survey_layout_nmodos_otros"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/SurveySingleQuestion">
+
+            <TextView
+                android:id="@+id/survey_edit_text_nmodos_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_nmodos_otros"
+                style="@style/SurveyQuestionLiteral"/>
+
+            <EditText
+                android:id="@+id/survey_edit_nmodos_otros"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:maxLength="2"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

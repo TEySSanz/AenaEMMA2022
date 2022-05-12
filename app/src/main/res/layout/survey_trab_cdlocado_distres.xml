@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_cdlocado"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="@style/SurveySingleQuestion">
+
+        <TextView
+            android:id="@+id/survey_text_cdlocado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_cdlocado"
+            style="@style/SurveyQuestionTitle"/>
+
+        //cdlocado
+        <LinearLayout
+            android:id="@+id/survey_model_layout_cdlocado"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            style="@style/SurveySingleQuestion" >
+
+            <TextView
+                android:id="@+id/survey_text_cdlocado_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_cdlocado_loc"
+                style="@style/SurveyQuestionAspect"/>
+
+            <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                android:id="@+id/survey_spinner_cdlocado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        //distres
+        <LinearLayout
+            android:id="@+id/survey_model_layout_distres"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/SurveySingleQuestion" >
+
+            <TextView
+                android:id="@+id/survey_distres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_distres"
+                style="@style/SurveyQuestionAspect"/>
+
+            <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                android:id="@+id/survey_spinner_distres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
