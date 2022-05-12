@@ -20,5 +20,7 @@
     <include layout="@layout/survey_trab_horaent_horasal"/>
     <!-- P8 -->
     <include layout="@layout/survey_trab_nmodos"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_trab_modo1_modo2_ultimomodo"/>
 
 </LinearLayout>

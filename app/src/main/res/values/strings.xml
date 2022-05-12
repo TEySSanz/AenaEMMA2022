@@ -358,9 +358,8 @@
     <string name="survey_text_horaent_option2_ent">(si realiza más de un horario)</string>
     <string name="survey_text_horaent2">Entrada 2</string>
     <string name="survey_text_horasal2">Salida 2</string>
-    <string name="survey_text_horaent_ent2">(si realiza más de un horario)</string>
     <string name="survey_text_horaent_option3">3. Hora habitual de entrada/salida del trabajo:</string>
-    <string name="survey_text_horaent_option3_ent">(si realiza más de dos horario)</string>
+    <string name="survey_text_horaent_option3_ent">(si realiza más de dos horarios)</string>
     <string name="survey_text_horaent3">Entrada 3</string>
     <string name="survey_text_horasal3">Salida 3</string>
     <string name="survey_text_horaent_ent3">si realiza más de dos horarios</string>

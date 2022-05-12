@@ -6,7 +6,6 @@ import static android.view.View.VISIBLE;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -29,6 +28,7 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,8 +36,6 @@ import java.util.Date;
 import java.util.List;
 
 import es.testadistica.www.aenaemma2022.R;
-import es.testadistica.www.aenaemma2022.actividades.CueTrabajadoresActivity;
-import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 
 public class ModeloTrabajadores1 extends FormTrab {
@@ -46,7 +44,6 @@ public class ModeloTrabajadores1 extends FormTrab {
     private int idCue;
     private int finCue = 41;
     private boolean resultValue;
-    TimePickerDialog picker;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
@@ -73,13 +70,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         iniciarSpinners();
         condicionesSpinners();
         condicionesRadioButton();
-
-        setReloj(activity.findViewById(R.id.survey_edit_horaent1));
-        setReloj(activity.findViewById(R.id.survey_edit_horasal1));
-        setReloj(activity.findViewById(R.id.survey_edit_horaent2));
-        setReloj(activity.findViewById(R.id.survey_edit_horasal2));
-        setReloj(activity.findViewById(R.id.survey_edit_horaent3));
-        setReloj(activity.findViewById(R.id.survey_edit_horasal3));
+        iniciarTimePickers();
     }
 
     private void iniciarSpinners() {
@@ -238,34 +229,21 @@ public class ModeloTrabajadores1 extends FormTrab {
 
     }
 
-    private void setReloj(EditText campo) {
-        //Establece la fecha actual
-        Calendar currentTime = Calendar.getInstance();
-        fechaActual = currentTime.getTime();
+    private void iniciarTimePickers(){
+        //P7
+        TimePicker tpHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
+        TimePicker tpHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
+        TimePicker tpHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
+        TimePicker tpHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
+        TimePicker tpHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
+        TimePicker tpHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
-        SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
-        campo.setText(sdfHora.format(currentTime.getTime()));
-        campo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Calendar cldr = Calendar.getInstance();
-                int hour = cldr.get(Calendar.HOUR_OF_DAY);
-                int minutes = cldr.get(Calendar.MINUTE);
-                // time picker dialog
-                picker = new TimePickerDialog(activity.getApplicationContext(), android.R.style.Theme_Holo_Light_Dialog,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                                if (sMinute < 10) {
-                                    campo.setText(sHour + ":0" + sMinute);
-                                } else {
-                                    campo.setText(sHour + ":" + sMinute);
-                                }
-                            }
-                        }, hour, minutes, true);
-                picker.show();
-            }
-        });
+        tpHoraent1.setIs24HourView(true);
+        tpHorasal1.setIs24HourView(true);
+        tpHoraent2.setIs24HourView(true);
+        tpHorasal2.setIs24HourView(true);
+        tpHoraent3.setIs24HourView(true);
+        tpHorasal3.setIs24HourView(true);
     }
 
     @Override
@@ -368,6 +346,14 @@ public class ModeloTrabajadores1 extends FormTrab {
                 next.setVisibility(VISIBLE);
                 p8.setVisibility(VISIBLE);
                 break;
+            case 9:
+                //P9
+                LinearLayout p9 = (LinearLayout) activity.findViewById(R.id.survey_layout_ultimodo_pregunta);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p9.setVisibility(VISIBLE);
+                break;
             case 27:
                 //FIN
                 next.setVisibility(GONE);
@@ -427,6 +413,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 8:
                     //P8
+
+                    break;
+                case 9:
+                    //P9
 
                     break;
             }
@@ -492,6 +482,13 @@ public class ModeloTrabajadores1 extends FormTrab {
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_NMODOS, cue.getNmodos());
 
                     break;
+                case 9:
+                    //P9
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_MODO1, cue.getModo1());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_MODO2, cue.getModo2());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ULTIMODO, cue.getUltimodo());
+
+                    break;
             }
         }
 
@@ -543,6 +540,13 @@ public class ModeloTrabajadores1 extends FormTrab {
                 case 8:
                     //P8
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_NMODOS);
+
+                    break;
+                case 9:
+                    //P9
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_MODO1);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_MODO2);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ULTIMODO);
 
                     break;
             }
@@ -644,7 +648,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 break;
                         }
                     } else {
-                        show = showQuestion(5); //>C3
+                        show = showQuestion(5); //>P5
                     }
                 } else {
                     show = showQuestion(5);
@@ -665,6 +669,61 @@ public class ModeloTrabajadores1 extends FormTrab {
             case 8:
                 //P8
                 show = showQuestion(9);
+                break;
+            case 9:
+                //P9
+                if (activated) {
+                    RadioGroup rgUltimoModo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_umodo);
+                    checkedId = rgUltimoModo.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_ultimodo_umodo_option1:
+                                show = showQuestion(22); //>P22
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option2:
+                                show = showQuestion(22); //>P22
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option3:
+                                show = showQuestion(14); //>P14
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option4:
+                                show = showQuestion(14); //>P14
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option5:
+                                show = showQuestion(14); //>P14
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option6:
+                                show = showQuestion(10); //>P10
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option7:
+                                show = showQuestion(11); //>P11
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option8:
+                                show = showQuestion(11); //>P11
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option9:
+                                show = showQuestion(22); //>P22
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option10:
+                                show = showQuestion(11); //>P11
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option11:
+                                show = showQuestion(11); //>P11
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option12:
+                                show = showQuestion(22); //>P22
+                                break;
+                            default:
+                                show = showQuestion(6); //>P6
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(10); //>P10
+                    }
+                } else {
+                    show = showQuestion(10);
+                }
                 break;
         }
 
@@ -803,19 +862,27 @@ public class ModeloTrabajadores1 extends FormTrab {
         quest.setZonatrab(String.valueOf(selectedCode));
 
         //P7
+        /*
         EditText etHoraent1 = (EditText) activity.findViewById(R.id.survey_edit_horaent1);
         EditText etHoraent2 = (EditText) activity.findViewById(R.id.survey_edit_horaent2);
         EditText etHoraent3 = (EditText) activity.findViewById(R.id.survey_edit_horaent3);
         EditText etHorasal1 = (EditText) activity.findViewById(R.id.survey_edit_horasal1);
         EditText etHorasal2 = (EditText) activity.findViewById(R.id.survey_edit_horasal2);
         EditText etHorasal3 = (EditText) activity.findViewById(R.id.survey_edit_horasal3);
+        */
+        TimePicker etHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
+        TimePicker etHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
+        TimePicker etHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
+        TimePicker etHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
+        TimePicker etHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
+        TimePicker etHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
-        quest.setHoraent1(etHoraent1.getText().toString());
-        quest.setHoraent2(etHoraent2.getText().toString());
-        quest.setHoraent3(etHoraent3.getText().toString());
-        quest.setHorasal1(etHorasal1.getText().toString());
-        quest.setHorasal2(etHorasal2.getText().toString());
-        quest.setHorasal3(etHorasal3.getText().toString());
+        quest.setHoraent1(etHoraent1.toString());
+        quest.setHoraent2(etHoraent2.toString());
+        quest.setHoraent3(etHoraent3.toString());
+        quest.setHorasal1(etHorasal1.toString());
+        quest.setHorasal2(etHorasal2.toString());
+        quest.setHorasal3(etHorasal3.toString());
 
         //P8
         RadioGroup rgNmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
@@ -842,6 +909,158 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         quest.setNmodos(String.valueOf(selectedCode));
+
+        //P9
+        RadioGroup rgModo1 = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_1modo);
+        RadioGroup rgModo2 = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_2modo);
+        RadioGroup rgUModo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_umodo);
+
+        selectedCode = -1;
+        checkedId = rgModo1.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_ultimodo_1modo_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option6:
+                    selectedCode = 6;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option7:
+                    selectedCode = 7;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option8:
+                    selectedCode = 8;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option9:
+                    selectedCode = 9;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option10:
+                    selectedCode = 10;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option11:
+                    selectedCode = 11;
+                    break;
+                case R.id.survey_radio_ultimodo_1modo_option12:
+                    selectedCode = 12;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+
+        quest.setModo1(String.valueOf(selectedCode));
+
+        selectedCode = -1;
+        checkedId = rgModo2.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_ultimodo_2modo_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option6:
+                    selectedCode = 6;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option7:
+                    selectedCode = 7;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option8:
+                    selectedCode = 8;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option9:
+                    selectedCode = 9;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option10:
+                    selectedCode = 10;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option11:
+                    selectedCode = 11;
+                    break;
+                case R.id.survey_radio_ultimodo_2modo_option12:
+                    selectedCode = 12;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+
+        quest.setModo2(String.valueOf(selectedCode));
+
+        selectedCode = -1;
+        checkedId = rgUModo.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_ultimodo_umodo_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option6:
+                    selectedCode = 6;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option7:
+                    selectedCode = 7;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option8:
+                    selectedCode = 8;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option9:
+                    selectedCode = 9;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option10:
+                    selectedCode = 10;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option11:
+                    selectedCode = 11;
+                    break;
+                case R.id.survey_radio_ultimodo_umodo_option12:
+                    selectedCode = 12;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+
+        quest.setUltimodo(String.valueOf(selectedCode));
 
         return quest;
     }
