@@ -50,6 +50,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horaent1" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horaent1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horaent1"
                     android:layout_width="100dp"
@@ -59,7 +65,7 @@
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit"
                     android:maxLines="1" />
-
+                -->
                 <TextView
                     android:id="@+id/survey_text_horasal1"
                     android:layout_width="wrap_content"
@@ -68,6 +74,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horasal1" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horasal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horasal1"
                     android:layout_width="100dp"
@@ -77,6 +89,7 @@
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit"
                     android:maxLines="1" />
+                -->
             </LinearLayout>
         </LinearLayout>
 
@@ -117,6 +130,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horaent2" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horaent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horaent2"
                     android:layout_width="100dp"
@@ -126,7 +145,7 @@
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit"
                     android:maxLines="1" />
-
+                -->
                 <TextView
                     android:id="@+id/survey_text_horasal2"
                     android:layout_width="wrap_content"
@@ -135,6 +154,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horasal2" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horasal2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horasal2"
                     android:layout_width="100dp"
@@ -144,6 +169,7 @@
                     android:inputType="date"
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit" />
+                 -->
             </LinearLayout>
         </LinearLayout>
 
@@ -184,6 +210,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horaent3" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horaent3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horaent3"
                     android:layout_width="100dp"
@@ -193,7 +225,7 @@
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit"
                     android:maxLines="1" />
-
+                -->
                 <TextView
                     android:id="@+id/survey_text_horasal3"
                     android:layout_width="wrap_content"
@@ -202,6 +234,12 @@
                     style="@style/SurveyQuestionAspect"
                     android:text="@string/survey_text_horasal3" />
 
+                <TimePicker
+                    android:id="@+id/survey_edit_horasal3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+                <!--
                 <EditText
                     android:id="@+id/survey_edit_horasal3"
                     android:layout_width="100dp"
@@ -211,6 +249,7 @@
                     android:layout_marginStart="10dp"
                     style="@style/SurveyQuestionEdit"
                     android:maxLines="1" />
+                -->
             </LinearLayout>
         </LinearLayout>
 

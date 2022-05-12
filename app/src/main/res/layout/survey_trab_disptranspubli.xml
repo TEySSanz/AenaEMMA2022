@@ -7,76 +7,76 @@
     tools:ignore="ExtraText">
 
     <RelativeLayout
-        android:id="@+id/survey_layout_jornada"
+        android:id="@+id/survey_layout_disptranspubli"
         style="@style/SurveySingleQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone">
 
         <TextView
-            android:id="@+id/survey_text_jornada"
+            android:id="@+id/survey_text_disptranspubli"
             style="@style/SurveyQuestionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/survey_text_jornada" />
+            android:text="@string/survey_text_disptranspubli" />
 
         <RadioGroup
-            android:id="@+id/survey_radiogroup_jornada"
+            android:id="@+id/survey_radiogroup_disptranspubli"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/survey_text_jornada"
+            android:layout_below="@id/survey_text_disptranspubli"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option1"
+                android:id="@+id/survey_radio_disptranspubli_option1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option1" />
+                android:text="@string/survey_radio_disptranspubli_option1" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option2"
+                android:id="@+id/survey_radio_disptranspubli_option2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option2" />
+                android:text="@string/survey_radio_disptranspubli_option2" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option3"
+                android:id="@+id/survey_radio_disptranspubli_option3"
                 android:layout_width="289dp"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option3" />
+                android:text="@string/survey_radio_disptranspubli_option3" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option4"
+                android:id="@+id/survey_radio_disptranspubli_option4"
                 android:layout_width="253dp"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option4" />
+                android:text="@string/survey_radio_disptranspubli_option4" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option5"
+                android:id="@+id/survey_radio_disptranspubli_option5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option5" />
+                android:text="@string/survey_radio_disptranspubli_option5" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option6"
+                android:id="@+id/survey_radio_disptranspubli_option6"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option6" />
+                android:text="@string/survey_radio_disptranspubli_option6" />
 
             <RadioButton
-                android:id="@+id/survey_radio_jornada_option9"
+                android:id="@+id/survey_radio_disptranspubli_option7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_radio_jornada_option7" />
+                android:text="@string/survey_radio_disptranspubli_option7" />
         </RadioGroup>
 
         <EditText
-            android:id="@+id/survey_edit_jornada_otros"
+            android:id="@+id/survey_edit_disptranspubli_otros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/survey_radiogroup_jornada"
-            android:layout_toRightOf="@id/survey_radiogroup_jornada"
+            android:layout_alignBottom="@id/survey_radiogroup_disptranspubli"
+            android:layout_toRightOf="@id/survey_radiogroup_disptranspubli"
             style="@style/SurveyQuestionEdit"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </RelativeLayout>
 </LinearLayout>

@@ -17,15 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Date;
 
 import es.testadistica.www.aenaemma2022.R;
-import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.FormTrab;
-import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros1;
-import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros2;
-import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros3;
-import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros4;
-import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros5;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloTrabajadores1;
 
 public class CueTrabajadoresActivity extends AppCompatActivity {
@@ -91,6 +85,7 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
             case 1:
                 form = new ModeloTrabajadores1(this, pregunta, conn);
                 ((ModeloTrabajadores1) form).setCue(cue);
+
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);

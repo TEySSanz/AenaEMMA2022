@@ -20,5 +20,31 @@
     <include layout="@layout/survey_trab_horaent_horasal"/>
     <!-- P8 -->
     <include layout="@layout/survey_trab_nmodos"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_trab_modo1_modo2_ultimomodo"/>
+    <!-- P10 -->
+    <include layout="@layout/survey_trab_nocucoche"/>
+    <!-- P11 -->
+    <include layout="@layout/survey_trab_satistranspubli"/>
+    <!-- P12 -->
+    <include layout="@layout/survey_trab_valtranspubli"/>
+    <!-- P13 -->
+    <include layout="@layout/survey_trab_mejtranspubli"/>
+    <!-- P14 -->
+    <include layout="@layout/survey_trab_desplazatrab"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_trab_notranspubli"/>
+    <!-- P16 -->
+    <include layout="@layout/survey_trab_disptranspubli"/>
+    <!-- P17 -->
+    <include layout="@layout/survey_trab_importranspubli"/>
+    <!-- P18 -->
+    <include layout="@layout/survey_trab_medtranspubli"/>
+    <!-- P19 -->
+    <include layout="@layout/survey_trab_tiempotranspubli"/>
+    <!-- P20 -->
+    <include layout="@layout/survey_trab_aparctrab"/>
+    <!-- P21 -->
+    <include layout="@layout/survey_trab_compartcoche"/>
 
 </LinearLayout>

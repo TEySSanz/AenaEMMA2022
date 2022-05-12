@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/SurveySingleQuestion"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/survey_text_nmodos"

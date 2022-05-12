@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eduardo/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_cuepasajeros.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_cuetrabajadores.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado.xml" value="0.5" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_encuestas.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_pasajeros.xml" value="0.2586050724637681" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_pasajeros.xml" value="0.5" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_listado_trabajadores.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
@@ -21,22 +22,39 @@
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/form_modelpasajeros5.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/form_modeltrabajadores1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/list_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/listpasajeros_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/listtrabajadores_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/searchable_list_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/selection_spinner_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/selection_spinner_item_small.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdpaisna.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_cue_ultimodo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_identifier.xml" value="0.33" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_identifierTrab.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_list_item.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_actempre.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_aparctrab.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_cdlocado_distres.xml" value="0.33" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_compartcoche.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_desplazatrab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_disptranspubli.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_empresa.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_horaent_horasal.xml" value="0.33" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_horasent_horassal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_importranspubli.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_jornadas.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_medtranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_mejtranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_modo1_modo2_ultimomodo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_ndiastrab.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_nmodos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_nocucoche.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_notranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_satistranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_tiempotranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_valtranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_xxx.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/layout/survey_trab_zonatrab.xml" value="0.36666666666666664" />
       </map>
     </option>
