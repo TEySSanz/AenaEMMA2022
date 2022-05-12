@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_p44factu"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_p44factu"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_p44factu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_p44factu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_p44factu_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_p44factu_option1" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_p44factu_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_p44factu_option2" />
+            </RadioGroup>
+        </LinearLayout>
+
+        //bulgrupo_especificar
+        <LinearLayout
+            android:id="@+id/survey_layout_bulgrupo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/SurveySingleQuestion">
+
+            <TextView
+                android:id="@+id/survey_edit_text_bulgrupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_bulgrupo"
+                style="@style/SurveyQuestionLiteral"/>
+
+            <EditText
+                android:id="@+id/survey_edit_bulgrupo"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:maxLength="3"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -66,6 +66,19 @@ public class Contracts {
             COLUMN_TIPODISTRITOS_CIUDAD + " TEXT )";
     public static final String SQL_DROP_TIPODISTRITOS = "DROP TABLE IF EXISTS " + TABLE_TIPODISTRITOS;
 
+    //Tabla MotivoViaje
+    public static final String TABLE_TIPOMOTIVOVIAJE = "TipoMotivoViaje";
+    public static final String COLUMN_TIPOMOTIVOVIAJE_IDEN = "iden";
+    public static final String COLUMN_TIPOMOTIVOVIAJE_CODIGO = "codigo";
+    public static final String COLUMN_TIPOMOTIVOVIAJE_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOMOTIVOVIAJE_CODGRUPO = "codGrupo";
+    public static final String SQL_CREATE_TIPOMOTIVOVIAJE = "CREATE TABLE "+ TABLE_TIPOMOTIVOVIAJE + " ("+
+            COLUMN_TIPOMOTIVOVIAJE_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOMOTIVOVIAJE_CODIGO + " TEXT, " +
+            COLUMN_TIPOMOTIVOVIAJE_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOMOTIVOVIAJE_CODGRUPO + " TEXT )";
+    public static final String SQL_DROP_TIPOMOTIVOVIAJE = "DROP TABLE IF EXISTS " + TABLE_TIPOMOTIVOVIAJE;
+
     //Tabla TipoMunicipios
     public static final String TABLE_TIPOMUNICIPIOS = "TipoMunicipios";
     public static final String COLUMN_TIPOMUNICIPIOS_IDEN = "iden";
@@ -97,6 +110,32 @@ public class Contracts {
             COLUMN_TIPOPAISES_CODZONAPAIS2 + " TEXT, " +
             COLUMN_TIPOPAISES_CODZONAPAIS3 + " TEXT )";
     public static final String SQL_DROP_TIPOPAISES = "DROP TABLE IF EXISTS " + TABLE_TIPOPAISES;
+
+    //Tabla TipoPaises1y2
+    public static final String TABLE_TIPOPAISES1Y2 = "TipoPaises1y2";
+    public static final String COLUMN_TIPOPAISES1Y2_IDEN = "iden";
+    public static final String COLUMN_TIPOPAISES1Y2_CODIGO = "codigo";
+    public static final String COLUMN_TIPOPAISES1Y2_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOPAISES1Y2_CODIGOPAIS = "codigoPais";
+    public static final String COLUMN_TIPOPAISES1Y2_ZONAS = "zonas";
+    public static final String SQL_CREATE_TIPOPAISES1Y2 = "CREATE TABLE "+ TABLE_TIPOPAISES1Y2 + " ("+
+            COLUMN_TIPOPAISES1Y2_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOPAISES1Y2_CODIGO + " TEXT, " +
+            COLUMN_TIPOPAISES1Y2_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOPAISES1Y2_CODIGOPAIS + " TEXT, " +
+            COLUMN_TIPOPAISES1Y2_ZONAS + " TEXT )";
+    public static final String SQL_DROP_TIPOPAISES1Y2 = "DROP TABLE IF EXISTS " + TABLE_TIPOPAISES1Y2;
+
+    //Tabla TipoProductos
+    public static final String TABLE_TIPOPRODUCTOS = "TipoProductos";
+    public static final String COLUMN_TIPOPRODUCTOS_IDEN = "iden";
+    public static final String COLUMN_TIPOPRODUCTOS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOPRODUCTOS_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOPRODUCTOS = "CREATE TABLE "+ TABLE_TIPOPRODUCTOS + " ("+
+            COLUMN_TIPOPRODUCTOS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOPRODUCTOS_CODIGO + " TEXT, " +
+            COLUMN_TIPOPRODUCTOS_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOPRODUCTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOPRODUCTOS;
 
     //Tabla TipoProvincias
     public static final String TABLE_TIPOPROVINCIAS = "TipoProvincias";

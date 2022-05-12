@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_cdbillet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/SurveySingleQuestion"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_cdbillet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m1_text_cdbillet" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_cdbillet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdbillet_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_cdbillet_option1" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdbillet_option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_cdbillet_option4" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdbillet_option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_cdbillet_option5" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdbillet_option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_cdbillet_option6" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdbillet_option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_cdbillet_option9" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

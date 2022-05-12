@@ -131,7 +131,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (satisfyValidation()) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CuePasajerosActivity.this, R.style.MyDialogTheme);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CuePasajerosActivity.this);
                     alertDialogBuilder.setMessage("¿Está seguro de que desea guardar y salir?");
 
                     alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {

@@ -1,18 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/aenaLightGrey</item>
+        <item name="colorAccent">@color/aenaGreen</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- Base application theme. -->
     <style name="Theme.AenaEMMA2022" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/md_red_200</item>
-        <item name="colorPrimaryVariant">@color/md_red_700</item>
-        <item name="colorOnPrimary">@color/md_black_1000</item>
+        <item name="colorPrimary">@color/aenaLightGrey</item>
+        <item name="colorPrimaryVariant">@color/md_teal_600</item>
+        <item name="colorOnPrimary">@color/md_white_1000</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/md_teal_200</item>
-        <item name="colorSecondaryVariant">@color/md_teal_200</item>
-        <item name="colorOnSecondary">@color/md_black_1000</item>
+        <item name="colorSecondary">@color/md_red_900</item>
+        <item name="colorSecondaryVariant">@color/md_red_900</item>
+        <item name="colorOnSecondary">@color/md_white_1000</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Background color. -->
-        <item name="android:windowBackground">@color/md_black_1000</item>
+        <item name="android:windowBackground">@color/aenaBlue</item>
         <!-- Customize your theme here. -->
     </style>
     <!-- Customize your theme here. -->
@@ -22,8 +39,8 @@
 
     <!-- Survey model -->
     <style name="SurveySingleQuestion">
-        <item name="android:background">@color/md_black_1000</item>
-        <item name="android:padding">32dp</item>
+        <item name="android:background">@color/aenaDarkGrey</item>
+        <item name="android:padding">8dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
 
@@ -31,13 +48,33 @@
     </style>
 
     <style name="SurveyQuestionTitle" parent="@android:style/TextAppearance.Medium" >
-        <item name="android:textColor">@color/md_black_1000</item>
+        <item name="android:textColor">@color/aenaLightGrey</item>
         <item name="android:padding">8dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="SurveyQuestionHelp" parent="@android:style/TextAppearance.Medium" >
+        <item name="android:textColor">@color/md_red_900</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:background">@color/md_amber_200</item>
+    </style>
+
+    <style name="SurveyQuestionLiteral" parent="@android:style/TextAppearance.Medium" >
+        <item name="android:textColor">@color/md_red_900</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="SurveyQuestionEdit" parent="@android:style/TextAppearance.Medium" >
+        <item name="android:background">@color/md_white_1000</item>
     </style>
 
     <style name="SurveyQuestionAspect" parent="@android:style/TextAppearance.Medium" >
-        <item name="android:textColor">@color/md_black_1000</item>
+        <item name="android:textColor">@color/aenaLightGrey</item>
         <item name="android:padding">8dp</item>
     </style>
 

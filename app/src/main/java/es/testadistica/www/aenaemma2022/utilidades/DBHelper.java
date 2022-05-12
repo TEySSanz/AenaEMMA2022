@@ -38,6 +38,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPODISTRITOS);
         DBInsert.insertsTipoDistritos(db);
 
+        //TipoMotivoViaje
+        db.execSQL(Contracts.SQL_DROP_TIPOMOTIVOVIAJE);
+        db.execSQL(Contracts.SQL_CREATE_TIPOMOTIVOVIAJE);
+        DBInsert.insertsTipoMotivoViaje(db);
+
         //TipoMunicipios
         db.execSQL(Contracts.SQL_DROP_TIPOMUNICIPIOS);
         db.execSQL(Contracts.SQL_CREATE_TIPOMUNICIPIOS);
@@ -47,6 +52,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_DROP_TIPOPAISES);
         db.execSQL(Contracts.SQL_CREATE_TIPOPAISES);
         DBInsert.insertsTipoPaises(db);
+
+        //TipoPaises1y2
+        db.execSQL(Contracts.SQL_DROP_TIPOPAISES1Y2);
+        db.execSQL(Contracts.SQL_CREATE_TIPOPAISES1Y2);
+        DBInsert.insertsTipoPaises1y2(db);
+
+        //TipoProductos
+        db.execSQL(Contracts.SQL_DROP_TIPOPRODUCTOS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOPRODUCTOS);
+        DBInsert.insertsTipoProductos(db);
 
         //TipoProvincias
         db.execSQL(Contracts.SQL_DROP_TIPOPROVINCIAS);

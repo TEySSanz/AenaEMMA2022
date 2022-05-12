@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -80,13 +81,17 @@ public class ModeloPasajeros1 extends Form {
         provinciasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> municipiosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
         municipiosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        ArrayAdapter<String> motivoViajeAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
+        motivoViajeAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> distritosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPODISTRITOS,"iden", "codigo","descripcion", "codigo", " ciudad like '%MAD%' "));
         distritosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> companiasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo"));
         companiasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        ArrayAdapter<String> productosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPRODUCTOS,"iden", "codigo","descripcion", "codigo"));
+        productosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         //P1
-        //Asigna los valores del desplegable de idiomas
+        //Asigna los valores del desplegable de paises
         SearchableSpinner sp_cdpasina;
         sp_cdpasina = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
         sp_cdpasina.setAdapter(paisesAdapter);
@@ -148,6 +153,79 @@ public class ModeloPasajeros1 extends Form {
         sp_distracce.setAdapter(distritosAdapter);
         sp_distracce.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distracce.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P17
+        //Asigna los valores del desplegable de paises
+        SearchableSpinner sp_cdiaptod;
+        sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        sp_cdiaptod.setAdapter(paisesAdapter);
+        sp_cdiaptod.setTitle(activity.getString(R.string.spinner_pais_title));
+        sp_cdiaptod.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P18
+        //Asigna los valores del desplegable de companias
+        SearchableSpinner sp_numvuepa;
+        sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+        sp_numvuepa.setAdapter(companiasAdapter);
+        sp_numvuepa.setTitle(activity.getString(R.string.spinner_compania_title));
+        sp_numvuepa.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P19b
+        //Asigna los valores del desplegable de companias
+        SearchableSpinner sp_cdociaar;
+        sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+        sp_cdociaar.setAdapter(companiasAdapter);
+        sp_cdociaar.setTitle(activity.getString(R.string.spinner_compania_title));
+        sp_cdociaar.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P20
+        //Asigna los valores del desplegable de paises
+        SearchableSpinner sp_cdiaptof;
+        sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+        sp_cdiaptof.setAdapter(paisesAdapter);
+        sp_cdiaptof.setTitle(activity.getString(R.string.spinner_pais_title));
+        sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P21
+        //Asigna los valores del desplegable de motivo viaje
+        SearchableSpinner sp_cdmviaje;
+        sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+        sp_cdmviaje.setAdapter(motivoViajeAdapter);
+        sp_cdmviaje.setTitle(activity.getString(R.string.spinner_pais_title));
+        sp_cdmviaje.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        //P36
+        //Asigna los valores del desplegable de productos
+        SearchableSpinner sp_prod1;
+        sp_prod1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+        sp_prod1.setAdapter(productosAdapter);
+        sp_prod1.setTitle(activity.getString(R.string.spinner_producto_title));
+        sp_prod1.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        SearchableSpinner sp_prod2;
+        sp_prod2 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
+        sp_prod2.setAdapter(productosAdapter);
+        sp_prod2.setTitle(activity.getString(R.string.spinner_producto_title));
+        sp_prod2.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        SearchableSpinner sp_prod3;
+        sp_prod3 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
+        sp_prod3.setAdapter(productosAdapter);
+        sp_prod3.setTitle(activity.getString(R.string.spinner_producto_title));
+        sp_prod3.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        SearchableSpinner sp_prod4;
+        sp_prod4 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
+        sp_prod4.setAdapter(productosAdapter);
+        sp_prod4.setTitle(activity.getString(R.string.spinner_producto_title));
+        sp_prod4.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        SearchableSpinner sp_prod5;
+        sp_prod5 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
+        sp_prod5.setAdapter(productosAdapter);
+        sp_prod5.setTitle(activity.getString(R.string.spinner_producto_title));
+        sp_prod5.setPositiveButton(activity.getString(R.string.spinner_close));
+
     }
 
     private void condicionesSpinners() {
@@ -295,6 +373,27 @@ public class ModeloPasajeros1 extends Form {
 
             }
         });
+
+        //P18
+        final SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+
+        sp_numvuepa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String texto = sp_numvuepa.getSelectedItem().toString().substring(0,3);
+                TextView miTextView =(TextView) activity.findViewById(R.id.survey_text_numvuepa_companyCode);
+                if (!texto.equals("000")){
+                    miTextView.setText(texto+"-");
+                } else {
+                    miTextView.setText("XXX-");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void condicionesRadioButton() {
@@ -303,8 +402,6 @@ public class ModeloPasajeros1 extends Form {
         rgViene_re.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        //System.out.println("Entra "+i);
-                        //System.out.println(R.id.survey_radio_viene_re_option2);
                         switch(i)
                         {
                             case R.id.survey_radio_viene_re_option2:
@@ -383,6 +480,187 @@ public class ModeloPasajeros1 extends Form {
                 }
             }
         });
+
+        //P19
+        RadioGroup rgCdterm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
+        rgCdterm.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_cdterm_option2:
+                        activity.findViewById(R.id.survey_layout_cdociaar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_cdociaar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P22
+        RadioGroup rgCdidavue = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdidavue);
+        rgCdidavue.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_cdidavue_option1:
+                        activity.findViewById(R.id.survey_layout_taus).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                        break;
+                    case R.id.survey_radio_cdidavue_option2:
+                        activity.findViewById(R.id.survey_layout_taus).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_taus).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P23
+        RadioGroup rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
+        rgNpers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_npers_option3:
+                        activity.findViewById(R.id.survey_layout_npers_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_npers_especificar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P26
+        RadioGroup rgCdtreser = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdtreser);
+        rgCdtreser.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_cdtreser_dias:
+                        activity.findViewById(R.id.survey_layout_cdtreser_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_cdtreser_especificar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P28
+        RadioGroup rgNviaje = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
+        rgNviaje.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_nviaje_numviajes:
+                        activity.findViewById(R.id.survey_layout_nviaje_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_nviaje_especificar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P29
+        RadioGroup rgVol12mes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vol12mes);
+        rgVol12mes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_vol12mes_numviajes:
+                        activity.findViewById(R.id.survey_layout_vol12mes_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_vol12mes_especificar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P31
+        RadioGroup rgP44factu = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_p44factu);
+        rgP44factu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_p44factu_option1:
+                        activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P32
+        RadioGroup rgNperbul = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nperbul);
+        rgNperbul.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_nperbul_option3:
+                        activity.findViewById(R.id.survey_layout_nperbul_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_nperbul_especificar).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P35
+        RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
+        rgConsume.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_consume_option1:
+                        activity.findViewById(R.id.survey_layout_gas_cons).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_gas_cons).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P36
+        RadioGroup rgCompart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
+        rgCompart.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_comprart_option1:
+                        activity.findViewById(R.id.survey_layout_gas_com).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        activity.findViewById(R.id.survey_layout_gas_com).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+
 
     }
 
@@ -550,7 +828,7 @@ public class ModeloPasajeros1 extends Form {
                 next.setVisibility(VISIBLE);
                 p16.setVisibility(VISIBLE);
                 break;
-            /*case 17:
+            case 17:
                 //P17
                 LinearLayout p17 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdiaptod);
                 previo.setVisibility(VISIBLE);
@@ -621,7 +899,7 @@ public class ModeloPasajeros1 extends Form {
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
                 p25.setVisibility(VISIBLE);
-                break;.
+                break;
             case 26:
                 //P26
                 LinearLayout p26 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdtreser);
@@ -688,7 +966,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 34:
                 //P34
-                LinearLayout p34 = (LinearLayout) activity.findViewById(R.id.survey_layout_checkinb);
+                LinearLayout p34 = (LinearLayout) activity.findViewById(R.id.survey_layout_chekinb);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -741,9 +1019,14 @@ public class ModeloPasajeros1 extends Form {
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
                 p40.setVisibility(VISIBLE);
-                break;  */
+                break;
             case 41:
                 //FIN
+                LinearLayout p41 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p41.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
                 break;
         }
@@ -1153,6 +1436,106 @@ public class ModeloPasajeros1 extends Form {
         LinearLayout hllega = (LinearLayout) activity.findViewById(R.id.survey_layout_hllega);
         hllega.setVisibility(GONE);
 
+        //P17
+        LinearLayout diaptod = (LinearLayout) activity.findViewById(R.id.survey_layout_cdiaptod);
+        diaptod.setVisibility(GONE);
+
+        //P18
+        LinearLayout numvuepa = (LinearLayout) activity.findViewById(R.id.survey_layout_numvuepa);
+        numvuepa.setVisibility(GONE);
+
+        //P19
+        LinearLayout cdterm_cdociaar = (LinearLayout) activity.findViewById(R.id.survey_layout_cdterm);
+        cdterm_cdociaar.setVisibility(GONE);
+
+        //P20
+        LinearLayout cdiaptof = (LinearLayout) activity.findViewById(R.id.survey_layout_cdiaptof);
+        cdiaptof.setVisibility(GONE);
+
+        //P21
+        LinearLayout cdmviaje = (LinearLayout) activity.findViewById(R.id.survey_layout_cdmviaje);
+        cdmviaje.setVisibility(GONE);
+
+        //P22
+        LinearLayout cdidavue_taus = (LinearLayout) activity.findViewById(R.id.survey_layout_cdidavue);
+        cdidavue_taus.setVisibility(GONE);
+
+        //P23
+        LinearLayout npers = (LinearLayout) activity.findViewById(R.id.survey_layout_npers);
+        npers.setVisibility(GONE);
+
+        //P24
+        LinearLayout nniños = (LinearLayout) activity.findViewById(R.id.survey_layout_nniños);
+        nniños.setVisibility(GONE);
+
+        //P25
+        LinearLayout relacion = (LinearLayout) activity.findViewById(R.id.survey_layout_relacion);
+        relacion.setVisibility(GONE);
+
+        //P26
+        LinearLayout cdtreser = (LinearLayout) activity.findViewById(R.id.survey_layout_cdtreser);
+        cdtreser.setVisibility(GONE);
+
+        //P27
+        LinearLayout cdbillet = (LinearLayout) activity.findViewById(R.id.survey_layout_cdbillet);
+        cdbillet.setVisibility(GONE);
+
+        //P28
+        LinearLayout nviaje = (LinearLayout) activity.findViewById(R.id.survey_layout_nviaje);
+        nviaje.setVisibility(GONE);
+
+        //P29
+        LinearLayout vol12mes = (LinearLayout) activity.findViewById(R.id.survey_layout_vol12mes);
+        vol12mes.setVisibility(GONE);
+
+        //P30
+        LinearLayout eleccovid = (LinearLayout) activity.findViewById(R.id.survey_layout_eleccovid);
+        eleccovid.setVisibility(GONE);
+
+        //P31
+        LinearLayout p44factu_bulgrupo = (LinearLayout) activity.findViewById(R.id.survey_layout_p44factu);
+        p44factu_bulgrupo.setVisibility(GONE);
+
+        //P32
+        LinearLayout nperbul = (LinearLayout) activity.findViewById(R.id.survey_layout_nperbul);
+        nperbul.setVisibility(GONE);
+
+        //P33
+        LinearLayout dropoff = (LinearLayout) activity.findViewById(R.id.survey_layout_dropoff);
+        dropoff.setVisibility(GONE);
+
+        //P34
+        LinearLayout checkinb = (LinearLayout) activity.findViewById(R.id.survey_layout_chekinb);
+        checkinb.setVisibility(GONE);
+
+        //P35
+        LinearLayout consume_gans_cons = (LinearLayout) activity.findViewById(R.id.survey_layout_consume);
+        consume_gans_cons.setVisibility(GONE);
+
+        //P36
+        LinearLayout comprart_gas_com_prod = (LinearLayout) activity.findViewById(R.id.survey_layout_comprart);
+        comprart_gas_com_prod.setVisibility(GONE);
+
+        //P37
+        LinearLayout cdslab = (LinearLayout) activity.findViewById(R.id.survey_layout_cdslab);
+        cdslab.setVisibility(GONE);
+
+        //P38
+        LinearLayout cdsprof = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsprof);
+        cdsprof.setVisibility(GONE);
+
+        //P39
+        LinearLayout estudios = (LinearLayout) activity.findViewById(R.id.survey_layout_estudios);
+        estudios.setVisibility(GONE);
+
+        //P40
+        LinearLayout cdedad = (LinearLayout) activity.findViewById(R.id.survey_layout_cdedad);
+        cdedad.setVisibility(GONE);
+
+        //P41
+        LinearLayout cdsexo = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+        cdsexo.setVisibility(GONE);
+
     }
 
     public int showNextQuestion(int show) {
@@ -1204,6 +1587,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 9:
                 //P9
+                generarTituloCdalojin();
                 show = showQuestion(10); //>P10
                 //show = showQuestion(11); //>P11
                 break;
@@ -1222,14 +1606,20 @@ public class ModeloPasajeros1 extends Form {
                             //P12
                             activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(GONE);
                             activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_text_ultimodo).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_text_ultimodo_b).setVisibility(GONE);
                             break;
                         case R.id.survey_radio_nmodos_option2:
                             activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(VISIBLE);
                             activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_text_ultimodo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_text_ultimodo_b).setVisibility(VISIBLE);
                             break;
                         case R.id.survey_radio_nmodos_option3:
                             activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(VISIBLE);
                             activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_text_ultimodo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_text_ultimodo_b).setVisibility(VISIBLE);
                             break;
                     }
                 }
@@ -1258,6 +1648,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 17:
                 //P17
+                generarTituloCdterm();
                 show = showQuestion(18);
                 break;
             case 18:
@@ -1856,7 +2247,82 @@ public class ModeloPasajeros1 extends Form {
 
         quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());
 
+        //P17
+        SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        String textSpCdiaptod = sp_cdiaptod.getSelectedItem().toString().substring(0,3);
+        if(!textSpCdiaptod.contains("000")){
+            quest.setCdiaptod(textSpCdiaptod);
+        } else {
+            quest.setCdiaptod("-1");
+        }
 
+        //P18
+        SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+        String textSpNumvuepa = sp_numvuepa.getSelectedItem().toString().substring(0,3);
+        if(!textSpNumvuepa.contains("000")){
+            quest.setNumvuepa(textSpNumvuepa);
+        } else {
+            quest.setNumvuepa("-1");
+        }
+
+        //P19b
+        SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+        String textSpCdociaar = sp_cdociaar.getSelectedItem().toString().substring(0,3);
+        if(!textSpCdociaar.contains("000")){
+            quest.setCdociaar(textSpCdociaar);
+        } else {
+            quest.setCdociaar("-1");
+        }
+
+        //P20
+        SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+        String textSpCdiaptof = sp_cdiaptof.getSelectedItem().toString().substring(0,3);
+        if(!textSpCdiaptof.contains("000")){
+            quest.setCdiaptof(textSpCdiaptof);
+        } else {
+            quest.setCdiaptof("-1");
+        }
+
+        //P36
+        SearchableSpinner sp_prod1= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+        String textSpProd1 = sp_prod1.getSelectedItem().toString().substring(0,2);
+        if(!textSpProd1.contains("00")){
+            quest.setProd1(textSpProd1);
+        } else {
+            quest.setProd1("-1");
+        }
+
+        SearchableSpinner sp_prod2= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
+        String textSpProd2 = sp_prod2.getSelectedItem().toString().substring(0,2);
+        if(!textSpProd2.contains("00")){
+            quest.setProd2(textSpProd2);
+        } else {
+            quest.setProd2("-1");
+        }
+
+        SearchableSpinner sp_prod3= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
+        String textSpProd3 = sp_prod3.getSelectedItem().toString().substring(0,2);
+        if(!textSpProd3.contains("00")){
+            quest.setProd3(textSpProd3);
+        } else {
+            quest.setProd3("-1");
+        }
+
+        SearchableSpinner sp_prod4= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
+        String textSpProd4 = sp_prod4.getSelectedItem().toString().substring(0,2);
+        if(!textSpProd4.contains("00")){
+            quest.setProd4(textSpProd4);
+        } else {
+            quest.setProd4("-1");
+        }
+
+        SearchableSpinner sp_prod5= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
+        String textSpProd5 = sp_prod5.getSelectedItem().toString().substring(0,2);
+        if(!textSpProd5.contains("00")){
+            quest.setProd5(textSpProd5);
+        } else {
+            quest.setProd5("-1");
+        }
 
         return quest;
     }
@@ -2009,6 +2475,26 @@ public class ModeloPasajeros1 extends Form {
             }
         }
         return 0;
+    }
+
+    private void generarTituloCdalojin() {
+        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
+        String textoCdalojin = activity.getString(R.string.survey_m1_text_cdalojin);
+        TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin);
+        if (textSpCdlocaco.length()>7)
+            textSpCdlocaco = textSpCdlocaco.substring(7, textSpCdlocaco.length());
+        tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
+    }
+
+    private void generarTituloCdterm() {
+        SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        String textSpCdiaptod = sp_cdiaptod.getSelectedItem().toString();
+        String textoCdterm = activity.getString(R.string.survey_m1_text_cdterm);
+        if (textSpCdiaptod.length()>4)
+            textSpCdiaptod = textSpCdiaptod.substring(4, textSpCdiaptod.length());
+        TextView tvCdterm= (TextView) activity.findViewById(R.id.survey_text_cdterm);
+        tvCdterm.setText(textoCdterm.replace("%1$s", textSpCdiaptod));
     }
 
 

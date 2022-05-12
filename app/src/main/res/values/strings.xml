@@ -58,6 +58,7 @@
     <string name="spinner_municipio_title">SELECCIONE EL MUNICIPIO</string>
     <string name="spinner_distrito_title">SELECCIONE EL DISTRITO</string>
     <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
+    <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
 
     <!--Preguntas Modelo 1-->
     <!--Pregunta1-->
@@ -199,7 +200,7 @@
     <string name="survey_m1_text_cdidavue_a">22a. ¿Cuánto tiempo estará fuera?</string>
     <string name="survey_m1_radio_cdidavue_option2">Vuelta</string>
     <string name="survey_m1_text_cdidavue_b">22b. ¿Cuánto tiempo ha estado fuera?</string>
-    <string name="survey_m1_radio_cdidavue_option0">Regreso en el mismo día</string>
+    <string name="survey_m1_check_cdidavue_option0">Regreso en el mismo día</string>
     <string name="survey_m1_text_taus">Nº de días</string>
     <!--Pregunta23-->
     <string name="survey_m1_text_npers">23. ¿Incluyéndose usted, cuántas personas viajan en su grupo inmediato?</string>
@@ -253,7 +254,8 @@
     <string name="survey_m1_text_nperbul">32. ¿A cuántas personas pertenecen los bultos?</string>
     <string name="survey_m1_radio_nperbul_option1">Una persona</string>
     <string name="survey_m1_radio_nperbul_option2">Dos personas</string>
-    <string name="survey_m1_radio_nperbul_option3">Mas personas, especificar nº</string>
+    <string name="survey_m1_radio_nperbul_option3">Mas personas</string>
+    <string name="survey_m1_text_nperbul_especificar">Especificar nº</string>
     <!--Pregunta33-->
     <string name="survey_m1_text_dropoff">33. Y ¿En qué mostrador ha dejado su equipaje?</string>
     <string name="survey_m1_radio_dropoff_option1">Mostrador atendido por personal</string>

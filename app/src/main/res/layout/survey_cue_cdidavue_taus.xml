@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_cdidavue"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_cdidavue"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_cdidavue" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_cdidavue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdidavue_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdidavue_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdidavue_option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_cdidavue_option2" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/survey_layout_taus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_text_cdidavue_a"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_cdidavue_a"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/survey_text_cdidavue_b"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_cdidavue_b"
+                android:visibility="visible" />
+
+            //taus
+
+            <CheckBox
+                android:id="@+id/survey_check_cdidavue_option0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_check_cdidavue_option0"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/survey_edit_text_taus"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_taus" />
+
+            <EditText
+                android:id="@+id/survey_edit_taus"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="3" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
