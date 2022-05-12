@@ -5,490 +5,577 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="ExtraText">
+
     <LinearLayout
         android:id="@+id/survey_layout_ultimodo_pregunta"
-        android:layout_width="match_parent"
-        android:layout_height="677dp"
-        android:orientation="horizontal"
-        android:textAlignment="gravity"
+        android:layout_width="556dp"
+        android:layout_height="match_parent"
+        android:background="@color/md_blue_grey_200"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <!--- 1 columna -->
+        <TextView
+            android:id="@+id/survey_text_ultimodo"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/aenaDarkGrey"
+            android:text="@string/survey_m1_text_ultimodo"
+            android:visibility="visible" />
+
         <LinearLayout
-            android:id="@+id/survey_layout_vertical_ultimodo_1col"
-            android:layout_width="66dp"
-            android:layout_height="677dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_1col"
-                android:layout_width="62dp"
-                android:layout_height="96dp" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_taxi"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_taxi" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_vpriv"
-                android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_vpriv" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_autobus"
-                android:layout_width="75dp"
-                android:layout_height="98dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_autobus" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_tren"
-                android:layout_width="75dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_tren" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_metro"
-                android:layout_width="75dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_metro" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_otros_1col"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_otros" />
-
-
-        </LinearLayout>
-
-        <!--- 2 columna -->
-        <LinearLayout
-            android:id="@+id/survey_layout_vertical_ultimodo_2col"
-            android:layout_width="350dp"
-            android:layout_height="677dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_2col"
-                android:layout_width="match_parent"
-                android:layout_height="96dp" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_taxi_taxi"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_taxi_taxi" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_taxi_VTC"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_taxi_VTC" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_vpriv_ccond"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_vpriv_ccond" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_vpriv_cacom"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_vpriv_cacom" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_vpriv_moto"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_vpriv_moto" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_vpriv_cochecompcom"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_vpriv_cochecompcom" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_autobus_aurbanoEMT"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_autobus_aurbanoEMT" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_autobus_ainter"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_autobus_ainter" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_autobus_aempr"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_autobus_aempr" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_tren_trenc"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_tren_trenc" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_metro_vacio"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding" />
-
-            <TextView
-                android:id="@+id/survey_text_ultimodo_otros_bici"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="@dimen/medium_padding"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo_otros_bici" />
-
-
-        </LinearLayout>
-
-        <!--- 3 columna -->
-        <LinearLayout
-            android:id="@+id/survey_layout_ultimodo_1modo"
-            android:layout_width="50dp"
-            android:layout_height="677dp"
-            android:orientation="vertical"
+            android:id="@+id/survey_layout_tabla"
+            android:layout_width="564dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center|center_vertical"
+            android:orientation="horizontal"
+            android:textAlignment="gravity"
             android:visibility="visible">
-
-            <TextView
-                android:id="@+id/survey_text_modo1"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_modo1" />
-
-            <RadioGroup
-                android:id="@+id/survey_radiogroup_1modo"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="2"
+            <!--- 1 columna -->
+            <LinearLayout
+                android:id="@+id/survey_layout_vertical_ultimodo_1col"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option1"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_1col"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:foregroundGravity="center_vertical|center_horizontal"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:layout_height="96dp"
+                    android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option2"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_taxi"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_taxi" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option3"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_vpriv"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="111dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_vpriv"
+                    android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option4"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_autobus"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="111dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_autobus"
+                    android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option5"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_tren"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_tren" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option6"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_metro"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_metro" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option7"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_otros"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_otros" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
+            </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option10"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option11"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_1modo_option12"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:gravity="center_horizontal|center_vertical" />
-
-            </RadioGroup>
-        </LinearLayout>
-
-        <!--- 4 columna -->
-        <LinearLayout
-            android:id="@+id/survey_layout_ultimodo_2modo"
-            android:layout_width="50dp"
-            android:layout_height="677dp"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
-                android:id="@+id/survey_text_modo2"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_modo2" />
-
-            <RadioGroup
-                android:id="@+id/survey_radiogroup_2modo"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_weight="2"
+            <!--- 2 columna -->
+            <LinearLayout
+                android:id="@+id/survey_layout_ultimodo_2col"
+                android:layout_width="324dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option1"
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_2col"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="350dp"
+                    android:layout_height="96dp"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_taxi_taxi"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_taxi_taxi" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_taxi_VTC"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_taxi_VTC" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_vpriv_ccond"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_vpriv_ccond" />
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_vpriv_cacom"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_vpriv_cacom" />
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_vpriv_moto"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_vpriv_moto" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_vpriv_cochecompcom"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_vpriv_cochecompcom" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_autobus_aurbanoEMT"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_autobus_aurbanoEMT" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_autobus_ainter"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_autobus_ainter" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_autobus_aempr"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_autobus_aempr" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_tren_trenc"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_tren_trenc" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_metro_vacio"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey" />
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_otros_bici"
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_text_ultimodo_otros_bici" />
+
+
+
+
+            </LinearLayout>
+
+            <!--- 3 columna -->
+            <LinearLayout
+                android:id="@+id/survey_layout_ultimodo_1modo"
+                android:layout_width="50dp"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_1modo"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    android:layout_height="96dp"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m1_text_ultimodo_1modo"
+                    android:textColor="@color/aenaBlue" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option2"
+                <RadioGroup
+                    android:id="@+id/survey_radiogroup_1modo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option1"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:foregroundGravity="center_vertical|center_horizontal"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option2"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option3"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option4"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option5"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option6"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option7"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option8"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option9"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option10"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option11"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_1modo_option12"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <!--- 4 columna -->
+            <LinearLayout
+                android:id="@+id/survey_layout_ultimodo_2modo"
+                android:layout_width="50dp"
+                android:layout_height="500dp"
+
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/survey_radiogroup_2modo"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    android:layout_height="96dp"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m1_text_ultimodo_2modo"
+                    android:textColor="@color/aenaBlue" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                <RadioGroup
+                    android:id="@+id/survey_radiogroup_ultimodo_2modo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_weight="2"
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option1"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option2"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option7"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option3"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option4"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option5"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option10"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option6"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option11"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option7"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_2modo_option12"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option8"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-            </RadioGroup>
-        </LinearLayout>
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option9"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-        <!--- 5 columna -->
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option10"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-        <LinearLayout
-            android:id="@+id/survey_layout_ultimodo_umodo"
-            android:layout_width="60dp"
-            android:layout_height="677dp"
-            android:orientation="vertical"
-            android:visibility="visible">
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option11"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-            <TextView
-                android:id="@+id/survey_text_ultimodo_5col"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/survey_text_ultimodo" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_2modo_option12"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-            <RadioGroup
-                android:id="@+id/survey_radiogroup_umodo"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                </RadioGroup>
+            </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option1"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+            <!--- 5 columna -->
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+            <LinearLayout
+                android:id="@+id/survey_layout_ultimodo_umodo"
+                android:layout_width="60dp"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:visibility="visible">
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                <TextView
+                    android:id="@+id/survey_text_ultimodo_umodo"
+                    android:layout_width="48dp"
+                    android:layout_height="96dp"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m1_text_ultimodo_umodo"
+                    android:textColor="@color/aenaBlue" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                <RadioGroup
+                    android:id="@+id/survey_radiogroup_umodo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option1"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option2"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option7"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option3"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option4"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option5"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option10"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option6"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option11"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option7"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_ultimodo_umodo_option12"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="@dimen/medium_padding" />
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option8"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option9"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option10"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option11"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_ultimodo_umodo_option12"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey" />
+
+                </RadioGroup>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
