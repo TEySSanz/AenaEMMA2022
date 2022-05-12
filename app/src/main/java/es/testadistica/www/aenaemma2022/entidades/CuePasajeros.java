@@ -14,6 +14,7 @@ public class CuePasajeros implements Serializable {
     private int acomptes;
     private String bulgrupo;
     private String cdalojin;
+    private String cdalojin_otros;
     private String cdbillet;
     private String cdcambio;
     private String cdedad;
@@ -76,10 +77,10 @@ public class CuePasajeros implements Serializable {
     private String distres;
     private String cdsinope;
     private String cdalojen;
-    private int distracce;
-    private int nmodos;
-    private int modo1;
-    private int modo2;
+    private String distracce;
+    private String nmodos;
+    private String modo1;
+    private String modo2;
     private int bustermi;
     private String dropoff;
     private String eleccovid;
@@ -170,6 +171,14 @@ public class CuePasajeros implements Serializable {
 
     public void setCdalojin(String cdalojin) {
         this.cdalojin = cdalojin;
+    }
+
+    public String getCdalojin_otros() {
+        return cdalojin_otros;
+    }
+
+    public void setCdalojin_otros(String cdalojin_otros) {
+        this.cdalojin_otros = cdalojin_otros;
     }
 
     public String getCdbillet() {
@@ -668,35 +677,35 @@ public class CuePasajeros implements Serializable {
         this.cdalojen = cdalojen;
     }
 
-    public int getDistracce() {
+    public String getDistracce() {
         return distracce;
     }
 
-    public void setDistracce(int distracce) {
+    public void setDistracce(String distracce) {
         this.distracce = distracce;
     }
 
-    public int getNmodos() {
+    public String getNmodos() {
         return nmodos;
     }
 
-    public void setNmodos(int nmodos) {
+    public void setNmodos(String nmodos) {
         this.nmodos = nmodos;
     }
 
-    public int getModo1() {
+    public String getModo1() {
         return modo1;
     }
 
-    public void setModo1(int modo1) {
+    public void setModo1(String modo1) {
         this.modo1 = modo1;
     }
 
-    public int getModo2() {
+    public String getModo2() {
         return modo2;
     }
 
-    public void setModo2(int modo2) {
+    public void setModo2(String modo2) {
         this.modo2 = modo2;
     }
 

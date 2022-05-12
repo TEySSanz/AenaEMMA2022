@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_sitiopark"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_sitiopark"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_sitiopark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_sitiopark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_sitiopark_option1" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_sitiopark_option5" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_sitiopark_option6" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_sitiopark_option4" />
+
+                <LinearLayout
+                    android:id="@+id/survey_layout_pqfuera"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    style="@style/SurveySingleQuestion">
+
+                    <TextView
+                        android:id="@+id/survey_edit_text_pqfuera"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/survey_m1_text_pqfuera"
+                        style="@style/SurveyQuestionLiteral"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:focusableInTouchMode="true" >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/survey_edit_pqfuera"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m1_radio_sitiopark_option9" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

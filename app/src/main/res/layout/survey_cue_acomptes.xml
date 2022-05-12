@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_acomptes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/SurveySingleQuestion"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_acomptes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m1_text_acomptes" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_acomptes"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/survey_text_acomptes"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_acomptes_option0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_acomptes_option0" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_acomptes_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_acomptes_option1" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_acomptes_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_acomptes_option2" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_acomptes_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_radio_acomptes_option3" />
+
+        </RadioGroup>
+
+        //acomptes_especificar
+        <LinearLayout
+            android:id="@+id/survey_layout_acomptes_especificar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/SurveySingleQuestion">
+
+            <TextView
+                android:id="@+id/survey_edit_text_acomptes_especificar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_acomptes_especificar"
+                style="@style/SurveyQuestionLiteral"/>
+
+            <EditText
+                android:id="@+id/survey_edit_acomptes_especificar"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:maxLength="3"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
