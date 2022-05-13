@@ -46,5 +46,17 @@
     <include layout="@layout/survey_trab_aparctrab"/>
     <!-- P21 -->
     <include layout="@layout/survey_trab_compartcoche"/>
+    <!-- P22 -->
+    <include layout="@layout/survey_trab_dispbici"/>
+    <!-- P23 -->
+    <include layout="@layout/survey_trab_modosalida"/>
+    <!-- P24 -->
+    <include layout="@layout/survey_trab_cdedadtrab"/>
+    <!-- P25 -->
+    <include layout="@layout/survey_trab_cdsexo"/>
+    <!-- P26 -->
+    <include layout="@layout/survey_trab_cdslab"/>
+    <!-- P27 -->
+    <include layout="@layout/survey_trab_puesto"/>
 
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -43,7 +44,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
     private int preguntaAnterior = 1;
     private int idCue;
-    private int finCue = 27;
+    private int finCue = 28;
     private boolean resultValue;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -157,6 +158,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
             }
         });
 
@@ -164,6 +167,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
             }
         });
 
@@ -171,6 +176,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
             }
         });
 
@@ -178,6 +185,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
             }
         });
 
@@ -185,6 +194,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
             }
         });
 
@@ -192,6 +203,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
             }
         });
 
@@ -199,6 +212,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
             }
         });
 
@@ -229,6 +244,24 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
+        //P23
+        final RadioButton rbModosalida_1 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option1);
+        final RadioButton rbModosalida_2 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option2);
+
+        rbModosalida_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.findViewById(R.id.survey_layout_modosalida_indique).setVisibility(GONE);
+            }
+        });
+
+        rbModosalida_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.findViewById(R.id.survey_layout_modosalida_indique).setVisibility(VISIBLE);
+            }
+        });
+
     }
 
     private void iniciarTimePickers(){
@@ -246,6 +279,35 @@ public class ModeloTrabajadores1 extends FormTrab {
         tpHorasal2.setIs24HourView(true);
         tpHoraent3.setIs24HourView(true);
         tpHorasal3.setIs24HourView(true);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            tpHoraent1.setHour(0);
+            tpHoraent1.setMinute(0);
+            tpHorasal1.setHour(0);
+            tpHorasal1.setMinute(0);
+            tpHoraent2.setHour(0);
+            tpHoraent2.setMinute(0);
+            tpHorasal2.setHour(0);
+            tpHorasal2.setMinute(0);
+            tpHoraent3.setHour(0);
+            tpHoraent3.setMinute(0);
+            tpHorasal3.setHour(0);
+            tpHorasal3.setMinute(0);
+        } else {
+            tpHoraent1.setCurrentHour(0);
+            tpHoraent1.setCurrentMinute(0);
+            tpHorasal1.setCurrentHour(0);
+            tpHorasal1.setCurrentMinute(0);
+            tpHoraent2.setCurrentHour(0);
+            tpHoraent2.setCurrentMinute(0);
+            tpHorasal2.setCurrentHour(0);
+            tpHorasal2.setCurrentMinute(0);
+            tpHoraent3.setCurrentHour(0);
+            tpHoraent3.setCurrentMinute(0);
+            tpHorasal3.setCurrentHour(0);
+            tpHorasal3.setCurrentMinute(0);
+        }
     }
 
     private void iniciarCheckBox(){
@@ -1517,6 +1579,516 @@ public class ModeloTrabajadores1 extends FormTrab {
                 }
             }
         });
+
+        //P21
+        final CheckBox cbCompartcoche_0 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option0);
+        final CheckBox cbCompartcoche_1 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option1);
+        final CheckBox cbCompartcoche_2 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option2);
+        final CheckBox cbCompartcoche_3 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option3);
+        final CheckBox cbCompartcoche_4 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option4);
+        final CheckBox cbCompartcoche_5 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option5);
+
+        final ArrayList<String> listCompartcoche = new ArrayList<String>();
+
+        final EditText etCompartcoche_1 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche1);
+        final EditText etCompartcoche_2 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche2);
+        final EditText etCompartcoche_3 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche3);
+
+        cbCompartcoche_0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_0.setChecked(false);
+                }
+
+                if(cbCompartcoche_0.isChecked()) {
+                    listCompartcoche.add("0");
+                } else {
+                    listCompartcoche.remove("0");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        cbCompartcoche_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_1.setChecked(false);
+                }
+
+                if(cbCompartcoche_1.isChecked()) {
+                    listCompartcoche.add("1");
+                } else {
+                    listCompartcoche.remove("1");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        cbCompartcoche_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_2.setChecked(false);
+                }
+
+                if(cbCompartcoche_2.isChecked()) {
+                    listCompartcoche.add("2");
+                } else {
+                    listCompartcoche.remove("2");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        cbCompartcoche_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_3.setChecked(false);
+                }
+
+                if(cbCompartcoche_3.isChecked()) {
+                    listCompartcoche.add("3");
+                } else {
+                    listCompartcoche.remove("3");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        cbCompartcoche_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_4.setChecked(false);
+                }
+
+                if(cbCompartcoche_4.isChecked()) {
+                    listCompartcoche.add("4");
+                } else {
+                    listCompartcoche.remove("4");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        cbCompartcoche_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
+                        (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbCompartcoche_5.setChecked(false);
+                }
+
+                if(cbCompartcoche_5.isChecked()) {
+                    listCompartcoche.add("5");
+                } else {
+                    listCompartcoche.remove("5");
+                }
+
+                if (listCompartcoche.size() == 1) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 2) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText("");
+                } else if (listCompartcoche.size() == 3) {
+                    etCompartcoche_1.setText(listCompartcoche.get(0));
+                    etCompartcoche_2.setText(listCompartcoche.get(1));
+                    etCompartcoche_3.setText(listCompartcoche.get(2));
+                } else {
+                    etCompartcoche_1.setText("");
+                    etCompartcoche_2.setText("");
+                    etCompartcoche_3.setText("");
+                }
+            }
+        });
+
+        //P22
+        final CheckBox cbDispbici_0 = (CheckBox) activity.findViewById(R.id.check_dispbici_option0);
+        final CheckBox cbDispbici_1 = (CheckBox) activity.findViewById(R.id.check_dispbici_option1);
+        final CheckBox cbDispbici_2 = (CheckBox) activity.findViewById(R.id.check_dispbici_option2);
+        final CheckBox cbDispbici_3 = (CheckBox) activity.findViewById(R.id.check_dispbici_option3);
+        final CheckBox cbDispbici_4 = (CheckBox) activity.findViewById(R.id.check_dispbici_option4);
+        final CheckBox cbDispbici_5 = (CheckBox) activity.findViewById(R.id.check_dispbici_option5);
+        final CheckBox cbDispbici_6 = (CheckBox) activity.findViewById(R.id.check_dispbici_option6);
+
+        final ArrayList<String> listDispbici = new ArrayList<String>();
+
+        final EditText etDispbici_1 = (EditText) activity.findViewById(R.id.survey_edit_dispbici1);
+        final EditText etDispbici_2 = (EditText) activity.findViewById(R.id.survey_edit_dispbici2);
+        final EditText etDispbici_3 = (EditText) activity.findViewById(R.id.survey_edit_dispbici3);
+
+        cbDispbici_0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_0.setChecked(false);
+                }
+
+                if(cbDispbici_0.isChecked()) {
+                    listDispbici.add("0");
+                } else {
+                    listDispbici.remove("0");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_1.setChecked(false);
+                }
+
+                if(cbDispbici_1.isChecked()) {
+                    listDispbici.add("1");
+                } else {
+                    listDispbici.remove("1");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_2.setChecked(false);
+                }
+
+                if(cbDispbici_2.isChecked()) {
+                    listDispbici.add("2");
+                } else {
+                    listDispbici.remove("2");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_3.setChecked(false);
+                }
+
+                if(cbDispbici_3.isChecked()) {
+                    listDispbici.add("3");
+                } else {
+                    listDispbici.remove("3");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_4.setChecked(false);
+                }
+
+                if(cbDispbici_4.isChecked()) {
+                    listDispbici.add("4");
+                } else {
+                    listDispbici.remove("4");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_5.setChecked(false);
+                }
+
+                if(cbDispbici_5.isChecked()) {
+                    listDispbici.add("5");
+                } else {
+                    listDispbici.remove("5");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
+
+        cbDispbici_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
+                        (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
+
+                if (count > 3){
+                    cbDispbici_6.setChecked(false);
+                }
+
+                if(cbDispbici_6.isChecked()) {
+                    listDispbici.add("6");
+                } else {
+                    listDispbici.remove("6");
+                }
+
+                if (listDispbici.size() == 1) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 2) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText("");
+                } else if (listDispbici.size() == 3) {
+                    etDispbici_1.setText(listDispbici.get(0));
+                    etDispbici_2.setText(listDispbici.get(1));
+                    etDispbici_3.setText(listDispbici.get(2));
+                } else {
+                    etDispbici_1.setText("");
+                    etDispbici_2.setText("");
+                    etDispbici_3.setText("");
+                }
+            }
+        });
     }
 
     @Override
@@ -1715,7 +2287,63 @@ public class ModeloTrabajadores1 extends FormTrab {
                 next.setVisibility(VISIBLE);
                 p20.setVisibility(VISIBLE);
                 break;
+            case 21:
+                //P21
+                LinearLayout p21 = (LinearLayout) activity.findViewById(R.id.survey_layout_compartcoche);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p21.setVisibility(VISIBLE);
+                break;
+            case 22:
+                //P22
+                LinearLayout p22 = (LinearLayout) activity.findViewById(R.id.survey_layout_dispbici);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p22.setVisibility(VISIBLE);
+                break;
+            case 23:
+                //P23
+                LinearLayout p23 = (LinearLayout) activity.findViewById(R.id.survey_layout_modosalida);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p23.setVisibility(VISIBLE);
+                break;
+            case 24:
+                //P24
+                RelativeLayout p24 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdedadtrab);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p24.setVisibility(VISIBLE);
+                break;
+            case 25:
+                //P25
+                RelativeLayout p25 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p25.setVisibility(VISIBLE);
+                break;
+            case 26:
+                //P26
+                RelativeLayout p26 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdslab);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p26.setVisibility(VISIBLE);
+                break;
             case 27:
+                //P27
+                RelativeLayout p27 = (RelativeLayout) activity.findViewById(R.id.survey_layout_puesto);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p27.setVisibility(VISIBLE);
+                break;
+            case 28:
                 //FIN
                 next.setVisibility(GONE);
                 break;
@@ -1778,10 +2406,6 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 9:
                     //P9
-
-                    break;
-                case 10:
-                    //P10
                     final RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
                     final RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option2);
                     final RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
@@ -1802,6 +2426,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                         toast.show();
                         return false;
                     }
+                    break;
+                case 10:
+                    //P10
+
                     break;
                 case 11:
                     //P11
@@ -1854,6 +2482,34 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 20:
                     //P20
+
+                    break;
+                case 21:
+                    //P21
+
+                    break;
+                case 22:
+                    //P22
+
+                    break;
+                case 23:
+                    //P23
+
+                    break;
+                case 24:
+                    //P24
+
+                    break;
+                case 25:
+                    //P25
+
+                    break;
+                case 26:
+                    //P26
+
+                    break;
+                case 27:
+                    //P27
 
                     break;
             }
@@ -1994,6 +2650,49 @@ public class ModeloTrabajadores1 extends FormTrab {
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB, cue.getAparctrab());
 
                     break;
+                case 21:
+                    //P21
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE1, cue.getCompartcoche1());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE2, cue.getCompartcoche2());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE3, cue.getCompartcoche3());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHEOTRO, cue.getCompartcocheotro());
+
+                    break;
+                case 22:
+                    //P22
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI1, cue.getDispbici1());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI2, cue.getDispbici2());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI3, cue.getDispbici3());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICIOTRO, cue.getDispbiciotro());
+
+                    break;
+                case 23:
+                    //P23
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_MODOSALIDA, cue.getModosalida());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_MODOSALIDAOTRO, cue.getModosalidaotro());
+
+                    break;
+                case 24:
+                    //P24
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_CDEDADTRAB, cue.getCdedadtrab());
+
+                    break;
+                case 25:
+                    //P25
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_CDSEXO, String.valueOf(cue.getCdsexo()));
+
+                    break;
+                case 26:
+                    //P26
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_CDSLAB, cue.getCdslab());
+
+                    break;
+                case 27:
+                    //P27
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_PUESTO, cue.getPuesto());
+
+                    break;
+
             }
         }
 
@@ -2122,6 +2821,48 @@ public class ModeloTrabajadores1 extends FormTrab {
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB);
 
                     break;
+                case 21:
+                    //P21
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE1);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE2);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE3);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHEOTRO);
+
+                    break;
+                case 22:
+                    //P22
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI1);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI2);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICI3);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPBICIOTRO);
+
+                    break;
+                case 23:
+                    //P23
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_MODOSALIDA);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_MODOSALIDAOTRO);
+
+                    break;
+                case 24:
+                    //P24
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_CDEDADTRAB);
+
+                    break;
+                case 25:
+                    //P25
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_CDSEXO);
+
+                    break;
+                case 26:
+                    //P26
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_CDSLAB);
+
+                    break;
+                case 27:
+                    //P27
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_PUESTO);
+
+                    break;
             }
         }
         return true;
@@ -2209,18 +2950,41 @@ public class ModeloTrabajadores1 extends FormTrab {
         RelativeLayout p20 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
         p20.setVisibility(GONE);
 
+        //P21
+        LinearLayout p21 = (LinearLayout) activity.findViewById(R.id.survey_layout_compartcoche);
+        p21.setVisibility(GONE);
+
+        //P22
+        LinearLayout p22 = (LinearLayout) activity.findViewById(R.id.survey_layout_dispbici);
+        p22.setVisibility(GONE);
+
+        //P23
+        LinearLayout p23 = (LinearLayout) activity.findViewById(R.id.survey_layout_modosalida);
+        p23.setVisibility(GONE);
+
+        //P24
+        RelativeLayout p24 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdedadtrab);
+        p24.setVisibility(GONE);
+
+        //P25
+        RelativeLayout p25 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+        p25.setVisibility(GONE);
+
+        //P26
+        RelativeLayout p26 = (RelativeLayout) activity.findViewById(R.id.survey_layout_cdslab);
+        p26.setVisibility(GONE);
+
+        //P27
+        RelativeLayout p27 = (RelativeLayout) activity.findViewById(R.id.survey_layout_puesto);
+        p27.setVisibility(GONE);
+
     }
 
     public int showNextQuestion(int show) {
 
-        Button previous = (Button) activity.findViewById(R.id.survey_button_previous);
-        Button save = (Button) activity.findViewById(R.id.survey_button_save);
-        Button next = (Button) activity.findViewById(R.id.survey_button_next);
-
         boolean activated = true;
 
         int checkedId;
-        int checkedId2;
 
         switch (show) {
             case 1:
@@ -2426,6 +3190,34 @@ public class ModeloTrabajadores1 extends FormTrab {
                 //P20
                 show = showQuestion(21);
                 break;
+            case 21:
+                //P21
+                show = showQuestion(22);
+                break;
+            case 22:
+                //P22
+                show = showQuestion(23);
+                break;
+            case 23:
+                //P23
+                show = showQuestion(24);
+                break;
+            case 24:
+                //P24
+                show = showQuestion(25);
+                break;
+            case 25:
+                //P25
+                show = showQuestion(26);
+                break;
+            case 26:
+                //P26
+                show = showQuestion(27);
+                break;
+            case 27:
+                //P27
+                show = showQuestion(finCue); //>FIN
+                break;
         }
 
         return show;
@@ -2578,12 +3370,20 @@ public class ModeloTrabajadores1 extends FormTrab {
         TimePicker etHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
         TimePicker etHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
-        quest.setHoraent1(etHoraent1.toString());
-        quest.setHoraent2(etHoraent2.toString());
-        quest.setHoraent3(etHoraent3.toString());
-        quest.setHorasal1(etHorasal1.toString());
-        quest.setHorasal2(etHorasal2.toString());
-        quest.setHorasal3(etHorasal3.toString());
+        if(!etHoraent1.toString().equals("00:00") || !etHorasal1.toString().equals("00:00")){
+            quest.setHoraent1(etHoraent1.toString());
+            quest.setHorasal1(etHorasal1.toString());
+        }
+
+        if(!etHoraent2.toString().equals("00:00") || !etHorasal2.toString().equals("00:00")) {
+            quest.setHoraent2(etHoraent2.toString());
+            quest.setHorasal2(etHorasal2.toString());
+        }
+
+        if(!etHoraent3.toString().equals("00:00") || !etHorasal3.toString().equals("00:00")) {
+            quest.setHoraent3(etHoraent3.toString());
+            quest.setHorasal3(etHorasal3.toString());
+        }
 
         //P8
         RadioGroup rgNmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
@@ -3010,6 +3810,189 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         quest.setAparctrab(String.valueOf(selectedCode));
+
+        //P21
+        EditText etCompartcoche_1 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche1);
+        EditText etCompartcoche_2 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche2);
+        EditText etCompartcoche_3 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche3);
+        EditText etCompartcoche_otro = (EditText) activity.findViewById(R.id.survey_edit_compartcoche);
+
+        if (!etCompartcoche_1.getText().toString().equals("")) {
+            quest.setCompartcoche1(etCompartcoche_1.getText().toString());
+        } else {
+            quest.setCompartcoche1("-1");
+        }
+
+        if (!etCompartcoche_2.getText().toString().equals("")) {
+            quest.setCompartcoche2(etCompartcoche_2.getText().toString());
+        } else {
+            quest.setCompartcoche2("-1");
+        }
+
+        if (!etCompartcoche_3.getText().toString().equals("")) {
+            quest.setCompartcoche3(etCompartcoche_3.getText().toString());
+        } else {
+            quest.setCompartcoche3("-1");
+        }
+
+        if (etCompartcoche_1.getText().toString().equals("5") || etCompartcoche_2.getText().toString().equals("5") || etCompartcoche_3.getText().toString().equals("5")) {
+            quest.setCompartcocheotro(etCompartcoche_otro.getText().toString());
+        }
+
+        //P22
+        EditText etDispbici_1 = (EditText) activity.findViewById(R.id.survey_edit_dispbici1);
+        EditText etDispbici_2 = (EditText) activity.findViewById(R.id.survey_edit_dispbici2);
+        EditText etDispbici_3 = (EditText) activity.findViewById(R.id.survey_edit_dispbici3);
+        EditText etDispbici_otro = (EditText) activity.findViewById(R.id.survey_edit_dispbici);
+
+        if (!etDispbici_1.getText().toString().equals("")) {
+            quest.setDispbici1(etDispbici_1.getText().toString());
+        } else {
+            quest.setDispbici1("-1");
+        }
+
+        if (!etDispbici_2.getText().toString().equals("")) {
+            quest.setDispbici2(etDispbici_2.getText().toString());
+        } else {
+            quest.setDispbici2("-1");
+        }
+
+        if (!etDispbici_3.getText().toString().equals("")) {
+            quest.setDispbici3(etDispbici_3.getText().toString());
+        } else {
+            quest.setDispbici3("-1");
+        }
+
+        if (etDispbici_1.getText().toString().equals("6") || etDispbici_2.getText().toString().equals("6") || etDispbici_3.getText().toString().equals("6")) {
+            quest.setDispbiciotro(etDispbici_otro.getText().toString());
+        }
+
+        //P23
+        RadioGroup rgModosalida = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_modosalida);
+        EditText etModosalida_otro = (EditText) activity.findViewById(R.id.survey_edit_modosalida_indique);
+
+        selectedCode = -1;
+        checkedId = rgModosalida.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_modosalida_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_modosalida_option2:
+                    selectedCode = 2;
+                    quest.setModosalidaotro(etModosalida_otro.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setModosalida(String.valueOf(selectedCode));
+
+        //P24
+        RadioGroup rgCdedadtrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedadtrab);
+
+        selectedCode = -1;
+        checkedId = rgCdedadtrab.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdedadtrab_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdedadtrab_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_cdedadtrab_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_cdedadtrab_option4:
+                    selectedCode = 4;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setCdedadtrab(String.valueOf(selectedCode));
+
+        //P25
+        RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
+
+        selectedCode = -1;
+        checkedId = rgCdsexo.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdsexo_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdsexo_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setCdsexo(selectedCode);
+
+        //P26
+        RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
+
+        selectedCode = -1;
+        checkedId = rgCdslab.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdslab_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdslab_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_cdslab_option3:
+                    selectedCode = 3;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setCdslab(String.valueOf(selectedCode));
+
+        //P27
+        RadioGroup rgPuesto = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_puesto);
+
+        selectedCode = -1;
+        checkedId = rgPuesto.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_puesto_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_puesto_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_puesto_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_puesto_option4:
+                    selectedCode = 4;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setPuesto(String.valueOf(selectedCode));
 
         return quest;
     }

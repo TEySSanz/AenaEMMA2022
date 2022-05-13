@@ -381,6 +381,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE1 = "compartcoche1";
     public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE2 = "compartcoche2";
     public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHE3 = "compartcoche3";
+    public static final String COLUMN_CUETRABAJADORES_COMPARTCOCHEOTRO = "compartcocheotro";
     public static final String COLUMN_CUETRABAJADORES_DISPBICI1 = "dispbici1";
     public static final String COLUMN_CUETRABAJADORES_DISPBICI2 = "dispbici2";
     public static final String COLUMN_CUETRABAJADORES_DISPBICI3 = "dispbici3";
@@ -449,6 +450,7 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_COMPARTCOCHE1 + " TEXT," +
             COLUMN_CUETRABAJADORES_COMPARTCOCHE2 + " TEXT," +
             COLUMN_CUETRABAJADORES_COMPARTCOCHE3 + " TEXT," +
+            COLUMN_CUETRABAJADORES_COMPARTCOCHEOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_DISPBICI1 + " TEXT," +
             COLUMN_CUETRABAJADORES_DISPBICI2 + " TEXT," +
             COLUMN_CUETRABAJADORES_DISPBICI3 + " TEXT," +
