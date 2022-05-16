@@ -59,6 +59,7 @@ public class CueTrabajadores implements Serializable {
     private String compartcoche1;
     private String compartcoche2;
     private String compartcoche3;
+    private String compartcocheotro;
     private String dispbici1;
     private String dispbici2;
     private String dispbici3;
@@ -515,6 +516,14 @@ public class CueTrabajadores implements Serializable {
 
     public void setCompartcoche3(String compartcoche3) {
         this.compartcoche3 = compartcoche3;
+    }
+
+    public String getCompartcocheotro() {
+        return compartcocheotro;
+    }
+
+    public void setCompartcocheotro(String compartcocheotro) {
+        this.compartcocheotro = compartcocheotro;
     }
 
     public String getDispbici1() {

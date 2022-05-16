@@ -510,14 +510,14 @@
     <string name="survey_text_EMP_seccion_bicicleta">Sección Bicicleta o modo alternativo</string>
     <!--Pregunta22-->
     <string name="survey_text_dispbici">22. ¿Estaría dispuesto a utilizar la BICICLETA para ir al trabajo?</string>
-    <string name="survey_text_dispbici_ent">puede marcar más de una respuesta hasta un máximo de 3</string>
-    <string name="survey_check_dispbici_option1">No</string>
-    <string name="survey_check_dispbici_option2">Si, incondicionalmente</string>
-    <string name="survey_check_dispbici_option3">Si, si hubiera carriles bici mejores y más seguros para ir al trabajo</string>
-    <string name="survey_check_dispbici_option4">Si, si hubiera aparcamiento cubierto para bicicletas</string>
-    <string name="survey_check_dispbici_option5">Si, si hubiera vestuarios y duchas a disposición en el trabajo</string>
-    <string name="survey_check_dispbici_option6">Si, si hubiera un incentivo para ir en bicicleta o a pie al trabajo</string>
-    <string name="survey_check_dispbici_option7">Si, otras condiciones (indíquelas)</string>
+    <string name="survey_text_dispbici_ent">(puede marcar más de una respuesta hasta un máximo de 3)</string>
+    <string name="survey_check_dispbici_option0">No</string>
+    <string name="survey_check_dispbici_option1">Si, incondicionalmente</string>
+    <string name="survey_check_dispbici_option2">Si, si hubiera carriles bici mejores y más seguros para ir al trabajo</string>
+    <string name="survey_check_dispbici_option3">Si, si hubiera aparcamiento cubierto para bicicletas</string>
+    <string name="survey_check_dispbici_option4">Si, si hubiera vestuarios y duchas a disposición en el trabajo</string>
+    <string name="survey_check_dispbici_option5">Si, si hubiera un incentivo para ir en bicicleta o a pie al trabajo</string>
+    <string name="survey_check_dispbici_option6">Si, otras condiciones (indíquelas)</string>
     <!--Pregunta23-->
     <string name="survey_text_modosalida">23. ¿Utiliza el mismo modo de transporte a la salida del trabajo?</string>
     <string name="survey_radio_modosalida_option1">Si</string>
@@ -526,11 +526,11 @@
     <!--SeccionP-->
     <string name="survey_text_EMP_seccion_perfil">Sección Perfil</string>
     <!--Pregunta24-->
-    <string name="survey_text_cedadtrab">24. ¿A cuál de estos grupos de edad pertenece usted?</string>
-    <string name="survey_radio_cedadtrab_option1">Menor de 30</string>
-    <string name="survey_radio_cedadtrab_option2">30 a 44</string>
-    <string name="survey_radio_cedadtrab_option3">45 a 60</string>
-    <string name="survey_radio_cedadtrab_option4">>60</string>
+    <string name="survey_text_cdedadtrab">24. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <string name="survey_radio_cdedadtrab_option1">Menor de 30</string>
+    <string name="survey_radio_cdedadtrab_option2">30 a 44</string>
+    <string name="survey_radio_cdedadtrab_option3">45 a 60</string>
+    <string name="survey_radio_cdedadtrab_option4">Mayor de 60</string>
     <!--Pregunta25-->
     <string name="survey_text_cdsexo">25. Género</string>
     <string name="survey_radio_cdsexo_option1">Hombre</string>
