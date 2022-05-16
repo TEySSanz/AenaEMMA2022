@@ -54,6 +54,7 @@
 
     <!--Títulos spinners-->
     <string name="spinner_pais_title">SELECCIONE EL PAÍS</string>
+    <string name="spinner_pais1y2_title">SELECCIONE EL ÁREA / REGIÓN</string>
     <string name="spinner_provincia_title">SELECCIONE LA PROVINCIA</string>
     <string name="spinner_municipio_title">SELECCIONE EL MUNICIPIO</string>
     <string name="spinner_distrito_title">SELECCIONE EL DISTRITO</string>
@@ -69,6 +70,7 @@
     <string name="survey_m1_text_cdpaisre_prov">Provincia</string>
     <string name="survey_m1_text_cdlocado">Localidad</string>
     <string name="survey_m1_text_distres">Distrito para Madrid capital</string>
+    <string name="survey_m1_text_distres_area">Área / Región</string>
     <!--Pregunta3-->
     <string name="survey_m1_text_cdcambio">3. ¿Ha llegado al aeropuerto para realizar una conexión?</string>
     <string name="survey_m1_radio_cdcambio_option1">Sí</string>
