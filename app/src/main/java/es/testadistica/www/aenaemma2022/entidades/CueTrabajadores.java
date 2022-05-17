@@ -16,6 +16,7 @@ public class CueTrabajadores implements Serializable {
     private int idioma;
     private String empresa;
     private String actempre;
+    private String actempreotro;
     private String cdlocado;
     private String distres;
     private String jornada;
@@ -74,8 +75,9 @@ public class CueTrabajadores implements Serializable {
 
     }
 
-    public CueTrabajadores(int iden){
+    public CueTrabajadores(int iden, int idAeropuerto){
         this.iden = iden;
+        this.idAeropuerto = idAeropuerto;
     }
 
     public int getIden() {
@@ -172,6 +174,14 @@ public class CueTrabajadores implements Serializable {
 
     public void setActempre(String actempre) {
         this.actempre = actempre;
+    }
+
+    public String getActempreotro() {
+        return actempreotro;
+    }
+
+    public void setActempreotro(String actempreotro) {
+        this.actempreotro = actempreotro;
     }
 
     public String getCdlocado() {

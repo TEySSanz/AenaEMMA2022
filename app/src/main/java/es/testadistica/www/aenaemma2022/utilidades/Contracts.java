@@ -150,6 +150,45 @@ public class Contracts {
             COLUMN_TIPOPROVINCIAS_idCA + " TEXT )";
     public static final String SQL_DROP_TIPOPROVINCIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOPROVINCIAS;
 
+    //Tabla TipoActEmpTrab
+    public static final String TABLE_TIPOACTEMPTRAB = "TipoActEmpTrab";
+    public static final String COLUMN_TIPOACTEMPTRAB_IDEN = "iden";
+    public static final String COLUMN_TIPOACTEMPTRAB_CODIGO = "codigo";
+    public static final String COLUMN_TIPOACTEMPTRAB_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOACTEMPTRAB = "CREATE TABLE "+ TABLE_TIPOACTEMPTRAB + " ("+
+            COLUMN_TIPOACTEMPTRAB_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOACTEMPTRAB_CODIGO + " TEXT, " +
+            COLUMN_TIPOACTEMPTRAB_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOACTEMPTRAB = "DROP TABLE IF EXISTS " + TABLE_TIPOACTEMPTRAB;
+
+    //Tabla TipoBarrios
+    public static final String TABLE_TIPOBARRIOS = "TipoBarrios";
+    public static final String COLUMN_TIPOBARRIOS_IDEN = "iden";
+    public static final String COLUMN_TIPOBARRIOS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOBARRIOS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOBARRIOS_DISTRITO = "distrito";
+    public static final String COLUMN_TIPOBARRIOS_IDAEROPUERTO = "idAeropuerto";
+    public static final String SQL_CREATE_TIPOBARRIOS = "CREATE TABLE "+ TABLE_TIPOBARRIOS + " ("+
+            COLUMN_TIPOBARRIOS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOBARRIOS_CODIGO + " TEXT, " +
+            COLUMN_TIPOBARRIOS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOBARRIOS_DISTRITO + " TEXT, " +
+            COLUMN_TIPOBARRIOS_IDAEROPUERTO + " TEXT )";
+    public static final String SQL_DROP_TIPOBARRIOS = "DROP TABLE IF EXISTS " + TABLE_TIPOBARRIOS;
+
+    //Tabla TipoEmpresaTrab
+    public static final String TABLE_TIPOEMPRESATRAB = "TipoEmpresaTrab";
+    public static final String COLUMN_TIPOEMPRESATRAB_IDEN = "iden";
+    public static final String COLUMN_TIPOEMPRESATRAB_CODIGO = "codigo";
+    public static final String COLUMN_TIPOEMPRESATRAB_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOEMPRESATRAB_IDAEROPUERTO = "idAeropuerto";
+    public static final String SQL_CREATE_TIPOEMPRESATRAB = "CREATE TABLE "+ TABLE_TIPOEMPRESATRAB + " ("+
+            COLUMN_TIPOEMPRESATRAB_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOEMPRESATRAB_CODIGO + " TEXT, " +
+            COLUMN_TIPOEMPRESATRAB_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOEMPRESATRAB_IDAEROPUERTO + " TEXT )";
+    public static final String SQL_DROP_TIPOEMPRESATRAB = "DROP TABLE IF EXISTS " + TABLE_TIPOEMPRESATRAB;
+
     //Tabla CuePasajeros
     public static final String TABLE_CUEPASAJEROS = "CuePasajeros";
     public static final String COLUMN_CUEPASAJEROS_IDEN = "iden";
@@ -340,6 +379,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_IDIOMA = "idioma";
     public static final String COLUMN_CUETRABAJADORES_EMPRESA = "empresa";
     public static final String COLUMN_CUETRABAJADORES_ACTEMPRE = "actempre";
+    public static final String COLUMN_CUETRABAJADORES_ACTEMPREOTRO = "actempreotro";
     public static final String COLUMN_CUETRABAJADORES_CDLOCADO = "cdlocado";
     public static final String COLUMN_CUETRABAJADORES_DISTRES = "distres";
     public static final String COLUMN_CUETRABAJADORES_JORNADA = "jornada";
@@ -409,6 +449,7 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_IDIOMA + " TEXT," +
             COLUMN_CUETRABAJADORES_EMPRESA + " TEXT," +
             COLUMN_CUETRABAJADORES_ACTEMPRE + " TEXT," +
+            COLUMN_CUETRABAJADORES_ACTEMPREOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_CDLOCADO + " TEXT," +
             COLUMN_CUETRABAJADORES_DISTRES + " TEXT," +
             COLUMN_CUETRABAJADORES_JORNADA + " TEXT," +
@@ -463,4 +504,11 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_CDSLAB + " TEXT," +
             COLUMN_CUETRABAJADORES_PUESTO + " TEXT )";
     public static final String SQL_DROP_CUETRABAJADORES = "DROP TABLE IF EXISTS " + TABLE_CUETRABAJADORES;
+
+    //Tabla Versión
+    public static final String TABLE_VERSION = "Version";
+    public static final String COLUMN_VERSION_VERSION = "version";
+    public static final String SQL_CREATE_VERSION = "CREATE TABLE "+ TABLE_VERSION + " ("+
+            COLUMN_VERSION_VERSION + " TEXT )";
+    public static final String SQL_DROP_VERSION = "DROP TABLE IF EXISTS " + TABLE_VERSION;
 }

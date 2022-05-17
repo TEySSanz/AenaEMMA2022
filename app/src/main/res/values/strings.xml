@@ -334,8 +334,8 @@
 
     <!-- Preguntas Modelo Trabajadores 1 -->
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
-    <string name="survey_text_error_Nmodos_otros">Se debe indicar un valor mayor a 2</string>
-    <string name="survey_text_error_umodo">No se puede repetir el mismo modo</string>
+    <string name="survey_text_setNumberModes">Se debe indicar un número mayor de 2</string>
+    <string name="survey_text_specifyAnswer">Se debe especificar una respuesta</string>
     <!--Pregunta1-->
     <string name="survey_text_empresa">1. ¿Podría indicar la empresa para la que trabaja?</string>
     <!--Pregunta2-->
@@ -343,7 +343,7 @@
     <!--Pregunta3-->
     <string name="survey_text_cdlocado">3. Indique el Municipio de su residencia habitual</string>
     <string name="survey_text_cdlocado_loc">Localidad</string>
-    <string name="survey_text_distres">Distrito (solo para Madrid Capital)</string>
+    <string name="survey_text_distres">Distrito-Barrio (solo para Madrid Capital)</string>
     <!--Pregunta4-->
     <string name="survey_text_jornada">4. ¿Que jornada laboral realiza?</string>
     <string name="survey_radio_jornada_option1">Jornada continua de mañana (L a V)</string>
@@ -355,9 +355,9 @@
     <string name="survey_radio_jornada_option7">Otros (Indique cuál)</string>
     <!--Pregunta5-->
     <string name="survey_text_ndiastrab">5. ¿Cuántos días a la semana tiene que acudir al centro de trabajo habitualmente?</string>
-    <string name="survey_radio_ndiastrab_option1">>4 días</string>
+    <string name="survey_radio_ndiastrab_option1">Menos de 2 días</string>
     <string name="survey_radio_ndiastrab_option2">2 a 4 días</string>
-    <string name="survey_radio_ndiastrab_option3">2 días</string>
+    <string name="survey_radio_ndiastrab_option3">Más de 4 días</string>
     <!--Pregunta6-->
     <string name="survey_text_zonatrab">6. ¿Indique la zona del Aeropuerto en la que trabaja habitualmente?</string>
     <string name="survey_radio_zonatrab_option1">T1</string>
@@ -550,7 +550,7 @@
     <string name="survey_radio_cdslab_option2">Secundarios (ESO/BUP/Bachiller/FP Grado Medio)</string>
     <string name="survey_radio_cdslab_option3">Superiores (Universitarios/Técnico Superior)</string>
     <!--Pregunta27-->
-    <string name="survey_text_puesto">27. Selecciones el tipo de puesto de trabajo que ocupa en su empresa u organización</string>
+    <string name="survey_text_puesto">27. Seleccione el tipo de puesto de trabajo que ocupa en su empresa u organización</string>
     <string name="survey_radio_puesto_option1">Directivo</string>
     <string name="survey_radio_puesto_option2">Mando medio</string>
     <string name="survey_radio_puesto_option3">Supervisión, Profesionales y Técnicos</string>

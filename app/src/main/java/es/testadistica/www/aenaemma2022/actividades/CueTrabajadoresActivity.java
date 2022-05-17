@@ -27,11 +27,12 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 27;
+    private int maxPreg = 28;
 
     private CueTrabajadores cue;
     private FormTrab form;
     private int modeloCue;
+    private int idAeropuerto;
     private int idCue;
     private int pregunta;
     private Button saveButton;
@@ -77,10 +78,11 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
             pregunta = 1;
             idCue = datos.getInt("idCue");
             modeloCue = datos.getInt("modeloCue");
+            idAeropuerto = datos.getInt("idAeropuerto");
         }
 
         //Genera el cuestionario
-        cue = new CueTrabajadores(idCue);
+        cue = new CueTrabajadores(idCue, idAeropuerto);
         switch (modeloCue) {
             case 1:
                 form = new ModeloTrabajadores1(this, pregunta, conn);
@@ -108,7 +110,7 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (satisfyValidation()) {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CueTrabajadoresActivity.this, R.style.MyDialogTheme);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CueTrabajadoresActivity.this);
                     alertDialogBuilder.setMessage("¿Está seguro de que desea guardar y salir?");
 
                     alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {

@@ -79,7 +79,7 @@ public class ModeloTrabajadores1 extends FormTrab {
     private void iniciarSpinners() {
 
         //P1
-        ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "codigo"));
+        ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
         empresasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_empresa;
@@ -89,7 +89,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         survey_spinner_empresa.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P2
-        ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "codigo"));
+        ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "codigo"));
         actempreAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_actempre;
@@ -108,7 +108,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
         survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
 
-        ArrayAdapter<String> distresAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPODISTRITOS,"iden", "codigo","descripcion", "codigo", " ciudad like '%MAD%' "));
+        ArrayAdapter<String> distresAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
         distresAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_distres;
@@ -119,6 +119,28 @@ public class ModeloTrabajadores1 extends FormTrab {
     }
 
     private void condicionesSpinners() {
+
+        //P2
+        final SearchableSpinner sp_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
+
+        sp_actempre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String texto = sp_actempre.getSelectedItem().toString().substring(0,3);
+
+                if (!texto.equals("024")){
+                    activity.findViewById(R.id.survey_edit_actempre).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_edit_actempre).setVisibility(VISIBLE);
+                }
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //P3
         final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
@@ -2365,6 +2387,14 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 2:
                     //P2
+                    final SearchableSpinner sp_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
+                    final EditText etActempre_otro = (EditText) activity.findViewById(R.id.survey_edit_actempre);
+
+                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("024") && etActempre_otro.getText().toString().equals("")) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_specifyAnswer), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
 
                     break;
                 case 3:
@@ -2380,10 +2410,15 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final RadioButton rbJornada_5 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option5);
                     final RadioButton rbJornada_6 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option6);
                     final RadioButton rbJornada_9 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option9);
+                    final EditText etJornada_otros = (EditText) activity.findViewById(R.id.survey_edit_jornada_otros);
 
                     if (!rbJornada_1.isChecked() && !rbJornada_2.isChecked() && !rbJornada_3.isChecked() && !rbJornada_4.isChecked() && !rbJornada_5.isChecked()
                             && !rbJornada_6.isChecked() && !rbJornada_9.isChecked()) {
                         Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else if (rbJornada_9.isChecked() && etJornada_otros.getText().toString().equals("")){
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_specifyAnswer), Toast.LENGTH_LONG);
                         toast.show();
                         return false;
                     }
@@ -2402,6 +2437,14 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 8:
                     //P8
+                    final RadioButton rbNmodos_Nmodos = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_nmodos);
+                    final EditText etNmodos_otros = (EditText) activity.findViewById(R.id.survey_edit_nmodos_otros);
+
+                    if (rbNmodos_Nmodos.isChecked() && stringToInt(etNmodos_otros.getText().toString()) < 3) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_setNumberModes), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
 
                     break;
                 case 9:
@@ -2536,6 +2579,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 case 2:
                     //P2
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_ACTEMPRE, cue.getActempre());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ACTEMPREOTRO, cue.getActempreotro());
 
                     break;
                 case 3:
@@ -2707,6 +2751,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 case 2:
                     //P2
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_ACTEMPRE);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ACTEMPREOTRO);
 
                     break;
                 case 3:
@@ -3053,6 +3098,30 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 8:
                 //P8
+                RadioGroup rgNmodos= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
+                checkedId = rgNmodos.getCheckedRadioButtonId();
+
+                if (checkedId > 0) {
+                    switch (checkedId) {
+                        case R.id.survey_radio_nmodos_option1:
+                            //P12
+                            activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_umodo).setVisibility(VISIBLE);
+                            break;
+                        case R.id.survey_radio_nmodos_option2:
+                            activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(GONE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_umodo).setVisibility(VISIBLE);
+                            break;
+                        case R.id.survey_radio_nmodos_nmodos:
+                            activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_layout_ultimodo_umodo).setVisibility(VISIBLE);
+                            break;
+                    }
+                }
+
                 show = showQuestion(9);
                 break;
             case 9:
@@ -3239,8 +3308,13 @@ public class ModeloTrabajadores1 extends FormTrab {
         //P2
         SearchableSpinner spActempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
         String textSpActempre = spActempre.getSelectedItem().toString().substring(0,3);
+        EditText etActEmpOtros = (EditText) activity.findViewById(R.id.survey_edit_actempre);
         if(!textSpActempre.contains("000")){
             quest.setActempre(textSpActempre);
+
+            if(textSpActempre.contains("024")){
+                quest.setActempreotro(etActEmpOtros.getText().toString());
+            }
         } else {
             quest.setActempre("-1");
         }
@@ -3401,7 +3475,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     selectedCode = 2;
                     break;
                 case R.id.survey_radio_nmodos_nmodos:
-                    selectedCode = Integer.valueOf(etNmodos.getText().toString());
+                    selectedCode = stringToInt(etNmodos.getText().toString());
                     break;
                 default:
                     selectedCode = 99;
