@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_valorexp"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_valorexp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m1_text_valorexp" />
+
+        <EditText
+            android:id="@+id/survey_edit_valorexp"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="2" />
+
+
+    </LinearLayout>
+</LinearLayout>

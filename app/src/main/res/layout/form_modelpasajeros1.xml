@@ -86,6 +86,8 @@
     <include layout="@layout/survey_cue_cdedad"/>
     <!-- P41 -->
     <include layout="@layout/survey_cue_cdsexo"/>
+    <!-- P42 -->
+    <include layout="@layout/survey_cue_valorexp"/>
 
 
 </LinearLayout>

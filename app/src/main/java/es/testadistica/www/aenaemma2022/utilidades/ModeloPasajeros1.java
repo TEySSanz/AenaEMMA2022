@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -40,7 +41,7 @@ public class ModeloPasajeros1 extends Form {
 
     private int preguntaAnterior = 1;
     private int idCue;
-    private int finCue = 41;
+    private int finCue = 42;
     private boolean resultValue;
 
 
@@ -77,6 +78,8 @@ public class ModeloPasajeros1 extends Form {
 
         ArrayAdapter<String> paisesAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "codigo"));
         paisesAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo"));
+        paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> provinciasAdapter = new ArrayAdapter<String>(this.activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo"));
         provinciasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> municipiosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
@@ -121,6 +124,11 @@ public class ModeloPasajeros1 extends Form {
         sp_distres.setAdapter(distritosAdapter);
         sp_distres.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distres.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        sp_distres_area.setAdapter(paises1y2Adapter);
+        sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
+        sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P4
         //Asigna los valores del desplegable de paises
@@ -237,12 +245,23 @@ public class ModeloPasajeros1 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String texto = sp_cdpaisre.getSelectedItem().toString().substring(0,3);
-
-                if (!texto.equals("724")){
-                    activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(GONE);
-                    activity.findViewById(R.id.survey_layout_distres).setVisibility(GONE);
-                } else {
+                if (texto.equals("724")){
                     activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(VISIBLE);
+                } else {
+                    activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(GONE);
+                    if (compruebaListaPaises1y2(texto) > 0){
+                        String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
+                        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo", filtro));
+                        paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+                        sp_distres_area.setAdapter(paises1y2Adapter);
+                        sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
+                        sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
+                        activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(VISIBLE);
+
+                    } else {
+                        activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(GONE);
+                    }
                 }
 
             }
@@ -443,6 +462,70 @@ public class ModeloPasajeros1 extends Form {
                         break;
                     default:
                         activity.findViewById(R.id.survey_layout_nmodos_otros).setVisibility(GONE);
+                        break;
+                }
+            }
+        });
+
+        //P12
+        RadioGroup rgUmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_umodo);
+        RadioGroup rg1modos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_1modo);
+        RadioGroup rg2modos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_2modo);
+        rgUmodos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_ultimodo_umodo_option13:
+                        activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        if (rg1modos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_1modo_option13 ||
+                                rg2modos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_2modo_option13 ){
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(View.INVISIBLE);
+                        }
+                        break;
+                }
+            }
+        });
+
+        rg1modos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_ultimodo_1modo_option13:
+                        activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        if (rgUmodos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_umodo_option13 ||
+                                rg2modos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_2modo_option13 ){
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(View.INVISIBLE);
+                        }
+                        break;
+                }
+            }
+        });
+
+        rg2modos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch(i)
+                {
+                    case R.id.survey_radio_ultimodo_2modo_option13:
+                        activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        break;
+                    default:
+                        if (rg1modos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_1modo_option13 ||
+                                rgUmodos.getCheckedRadioButtonId()==R.id.survey_radio_ultimodo_umodo_option13 ){
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_text_ultimodo_otros_especificar).setVisibility(View.INVISIBLE);
+                        }
                         break;
                 }
             }
@@ -1021,12 +1104,20 @@ public class ModeloPasajeros1 extends Form {
                 p40.setVisibility(VISIBLE);
                 break;
             case 41:
-                //FIN
+                //P41
                 LinearLayout p41 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
                 p41.setVisibility(VISIBLE);
+                break;
+            case 42:
+                //FIN
+                LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p42.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
                 break;
         }
@@ -1041,16 +1132,156 @@ public class ModeloPasajeros1 extends Form {
 
         if (activated) {
             switch (check) {
-                case 1:
-                    //P1
-                    /*RadioButton rbB1_1 = (RadioButton) activity.findViewById(R.id.survey_model_radio_B1_option1);
-                    RadioButton rbB1_6 = (RadioButton) activity.findViewById(R.id.survey_model_radio_B1_option6);
+                case 3:
+                    //P3
+                    RadioGroup rgCdcambio = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdcambio);
 
-                    if (!rbB1_1.isChecked() && !rbB1_6.isChecked()) {
+                    if (rgCdcambio.getCheckedRadioButtonId()==-1) {
                         Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
                         toast.show();
                         return false;
-                    }*/
+                    }
+                    break;
+                case 7:
+                    //P7
+                    RadioGroup rgCdsinope = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsinope);
+
+                    if (rgCdsinope.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 8:
+                    //P8
+                    RadioGroup rgCalojen = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdalojen);
+
+                    if (rgCalojen.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 9:
+                    //P9
+                    RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+
+                    if (rgViene_re.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 11:
+                    //P11
+                    RadioGroup rgNmodos= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
+
+                    if (rgNmodos.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgNmodos.getCheckedRadioButtonId() == R.id.survey_radio_nmodos_option3){
+                        EditText etNmodos_otros = (EditText) activity.findViewById(R.id.survey_edit_nmodos_otros);
+                        if (stringToInt(etNmodos_otros.getText().toString())<3){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etNmodos_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etNmodos_otros.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etNmodos_otros.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+                    break;
+                case 12:
+                    //P12
+                    if (checkUModo()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_umodo);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
+                    RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
+                    RadioButton rb2modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option13);
+                    EditText etUltimodo_otros_especificar = (EditText) activity.findViewById(R.id.survey_text_ultimodo_otros_especificar);
+
+                    if((rbUmodo_13.isChecked() || rb1modo_13.isChecked() || rb2modo_13.isChecked()) &&
+                            etUltimodo_otros_especificar.getText().toString().isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                        etUltimodo_otros_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etUltimodo_otros_especificar.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etUltimodo_otros_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    break;
+                case 19:
+                    //P19
+                    RadioGroup rgCdTerm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
+
+                    if (rgCdTerm.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 23:
+                    //P23
+                    RadioGroup rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
+
+                    if (rgNpers.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 28:
+                    //P28
+                    RadioGroup rgNviaje = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
+
+                    if (rgNviaje.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 31:
+                    //P31
+                    RadioGroup rgP44factu = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_p44factu);
+
+                    if (rgP44factu.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 35:
+                    //P35
+                    RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
+
+                    if (rgConsume.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+                    break;
+                case 37:
+                    //P37
+                    RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
+
+                    if (rgCdslab.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
                     break;
             }
         }
@@ -1164,15 +1395,15 @@ public class ModeloPasajeros1 extends Form {
                 case 22:
                     //P22
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDIDAVUE, cue.getCdidavue());
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_TAUS, cue.getTaus());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_TAUS, String.valueOf(cue.getTaus()));
                     break;
                 case 23:
                     //P23
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_NPERS, cue.getNpers());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NPERS, String.valueOf(cue.getNpers()));
                     break;
                 case 24:
                     //P24
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_NNIÑOS, cue.getNniños());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NNIÑOS, String.valueOf(cue.getNniños()));
                     break;
                 case 25:
                     //P25
@@ -1213,17 +1444,17 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 34:
                     //P34
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_CHEKINB, cue.getChekinb());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CHEKINB, String.valueOf(cue.getChekinb()));
                     break;
                 case 35:
                     //P35
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME, cue.getConsume());
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS, cue.getGas_cons());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS, String.valueOf(cue.getGas_cons()));
                     break;
                 case 36:
                     //P36
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_COMPRART, cue.getComprart());
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_COM, cue.getGas_com());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_COM, String.valueOf(cue.getGas_com()));
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD1, cue.getProd1());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD2, cue.getProd2());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD3, cue.getProd3());
@@ -1248,7 +1479,11 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 41:
                     //P41
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO, cue.getCdsexo());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO, String.valueOf(cue.getCdsexo()));
+                    break;
+                case 42:
+                    //P42
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP, String.valueOf(cue.getValorexp()));
                     break;
             }
         }
@@ -1364,6 +1599,82 @@ public class ModeloPasajeros1 extends Form {
                 case 25:
                     //P25
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_RELACION);
+                    break;
+                case 26:
+                    //P26
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDTRESER);
+                    break;
+                case 27:
+                    //P27
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDBILLET);
+                    break;
+                case 28:
+                    //P28
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_NVIAJE);
+                    break;
+                case 29:
+                    //P29
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_VOL12MES);
+                    break;
+                case 30:
+                    //P30
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ELECCOVID);
+                    break;
+                case 31:
+                    //P31
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_P44FACTU);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_BULGRUPO);
+                    break;
+                case 32:
+                    //P32
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_NPERBUL);
+                    break;
+                case 33:
+                    //P33
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_DROPOFF);
+                    break;
+                case 34:
+                    //P34
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CHEKINB);
+                    break;
+                case 35:
+                    //P35
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS);
+                    break;
+                case 36:
+                    //P36
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_COMPRART);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_GAS_COM);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD1);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD2);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD3);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD4);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD5);
+                    break;
+                case 37:
+                    //P37
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSLAB);
+                    break;
+                case 38:
+                    //P38
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSPROF);
+                    break;
+                case 39:
+                    //P39
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS);
+                    break;
+                case 40:
+                    //P40
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDEDAD);
+                    break;
+                case 41:
+                    //P41
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO);
+                    break;
+                case 42:
+                    //P42
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP);
                     break;
             }
         }
@@ -1536,6 +1847,10 @@ public class ModeloPasajeros1 extends Form {
         LinearLayout cdsexo = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
         cdsexo.setVisibility(GONE);
 
+        //P42
+        LinearLayout valorexp = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
+        valorexp.setVisibility(GONE);
+
     }
 
     public int showNextQuestion(int show) {
@@ -1548,6 +1863,7 @@ public class ModeloPasajeros1 extends Form {
 
         int checkedId;
         int checkedId2;
+        int checkedId3;
 
         switch (show) {
             case 1:
@@ -1560,8 +1876,25 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 3:
                 //P3
-                show = showQuestion(4); //>P4
-                //show = showQuestion(X); //>P9
+                if (activated) {
+                    RadioGroup rgCdcambio = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdcambio);
+                    checkedId = rgCdcambio.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_cdcambio_option1:
+                                show = showQuestion(4); //>P4
+                                break;
+                            case R.id.survey_radio_cdcambio_option2:
+                                show = showQuestion(9); //>P9
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(4); //>P4
+                    }
+                } else {
+                    show = showQuestion(4);
+                }
                 break;
             case 4:
                 //P4
@@ -1577,19 +1910,76 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 7:
                 //P7
-                show = showQuestion(8); //>P8
-                //show = showQuestion(16); //>P16
+                if (activated) {
+                    RadioGroup rgCdsinope = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsinope);
+                    checkedId = rgCdsinope.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_cdsinope_option1:
+                                show = showQuestion(8); //>P8
+                                break;
+                            case R.id.survey_radio_cdsinope_option2:
+                                show = showQuestion(16); //>P16
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(8); //>P8
+                    }
+                } else {
+                    show = showQuestion(8);
+                }
                 break;
             case 8:
                 //P8
-                show = showQuestion(9); //>P9
-                //show = showQuestion(16); //>P16
+                if (activated) {
+                    RadioGroup rgCdalojen = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdalojen);
+                    checkedId = rgCdalojen.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_cdalojen_option0:
+                                show = showQuestion(16); //>P16
+                                break;
+                            case R.id.survey_radio_cdalojen_option1:
+                                show = showQuestion(9); //>P9
+                                break;
+                            case R.id.survey_radio_cdalojen_option7:
+                                show = showQuestion(9); //>P9
+                                break;
+                            case R.id.survey_radio_cdalojen_option9:
+                                show = showQuestion(16); //>P16
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(9); //>P9
+                    }
+                } else {
+                    show = showQuestion(9);
+                }
                 break;
             case 9:
                 //P9
                 generarTituloCdalojin();
-                show = showQuestion(10); //>P10
-                //show = showQuestion(11); //>P11
+                if (activated) {
+                    RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+                    checkedId = rgViene_re.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_viene_re_option1:
+                                show = showQuestion(11); //>P11
+                                break;
+                            case R.id.survey_radio_viene_re_option2:
+                                show = showQuestion(10); //>P10
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(10); //>P10
+                    }
+                } else {
+                    show = showQuestion(10);
+                }
                 break;
             case 10:
                 //P10
@@ -1628,7 +2018,28 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 12:
                 //P12
-                show = showQuestion(13);
+                if (activated) {
+                    RadioGroup rgUltimodo_umodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_umodo);
+                    RadioGroup rgUltimodo_1modo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_1modo);
+                    RadioGroup rgUltimodo_2modo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_2modo);
+                    checkedId = rgUltimodo_umodo.getCheckedRadioButtonId();
+                    checkedId2 = rgUltimodo_1modo.getCheckedRadioButtonId();
+                    checkedId3 = rgUltimodo_2modo.getCheckedRadioButtonId();
+
+                    if ((checkedId > 0) || (checkedId2>0) || (checkedId3>0)) {
+                        if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5)){
+                            show = showQuestion(13);//>P13
+                        }else if ((checkedId2 == R.id.survey_radio_ultimodo_1modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option5)){
+                            show = showQuestion(13);//>P13
+                        }else if ((checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_2modo_option5)) {
+                            show = showQuestion(13);//>P13
+                        }else{
+                            show = showQuestion(15);//>P15
+                        }
+                    }
+                } else {
+                    show = showQuestion(13);//>P13
+                }
                 break;
             case 13:
                 //P13
@@ -1657,7 +2068,26 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 19:
                 //P19
-                show = showQuestion(20);
+                generarTituloCdalojin();
+                if (activated) {
+                    RadioGroup rgCdterm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
+                    checkedId = rgCdterm.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_cdterm_option1:
+                                show = showQuestion(21); //>P21
+                                break;
+                            case R.id.survey_radio_cdterm_option2:
+                                show = showQuestion(20); //>P20
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(20); //>P20
+                    }
+                } else {
+                    show = showQuestion(20); //>P20
+                }
                 break;
             case 20:
                 //P20
@@ -1673,7 +2103,25 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 23:
                 //P23
-                show = showQuestion(24);
+                if (activated) {
+                    RadioGroup rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
+                    checkedId = rgNpers.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_npers_option1:
+                                show = showQuestion(26); //>P26
+                                break;
+                            case R.id.survey_radio_npers_option2:
+                                show = showQuestion(24); //>P24
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(24); //>P24
+                    }
+                } else {
+                    show = showQuestion(24);
+                }
                 break;
             case 24:
                 //P24
@@ -1693,7 +2141,25 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 28:
                 //P28
-                show = showQuestion(29);
+                if (activated) {
+                    RadioGroup rgNviaje = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
+                    checkedId = rgNviaje.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_nviaje_option0:
+                                show = showQuestion(30); //>P30
+                                break;
+                            case R.id.survey_radio_nviaje_numviajes:
+                                show = showQuestion(29); //>P29
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(29); //>P29
+                    }
+                } else {
+                    show = showQuestion(29);
+                }
                 break;
             case 29:
                 //P29
@@ -1704,8 +2170,26 @@ public class ModeloPasajeros1 extends Form {
                 show = showQuestion(31);
                 break;
             case 31:
-                //P31
-                show = showQuestion(32);
+                //P28
+                if (activated) {
+                    RadioGroup rgP44factu = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_p44factu);
+                    checkedId = rgP44factu.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_p44factu_option1:
+                                show = showQuestion(32); //>P32
+                                break;
+                            case R.id.survey_radio_p44factu_option2:
+                                show = showQuestion(35); //>P35
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(32); //>P32
+                    }
+                } else {
+                    show = showQuestion(32); //>P32
+                }
                 break;
             case 32:
                 //P32
@@ -1743,6 +2227,10 @@ public class ModeloPasajeros1 extends Form {
                 //P40
                 show = showQuestion(41);
                 break;
+            case 41:
+                //P41
+                show = showQuestion(42);
+                break;
 
         }
 
@@ -1755,8 +2243,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P1
         SearchableSpinner sp_cdpaisna = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
-        String textSpCdpaisna = sp_cdpaisna.getSelectedItem().toString().substring(0,3);
-        if(!textSpCdpaisna.contains("000")){
+        String textSpCdpaisna = sp_cdpaisna.getSelectedItem().toString().substring(0, 3);
+        if (!textSpCdpaisna.contains("000")) {
             quest.setCdpaisna(textSpCdpaisna);
         } else {
             quest.setCdpaisna("-1");
@@ -1764,25 +2252,29 @@ public class ModeloPasajeros1 extends Form {
 
         //P2
         SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
-        String textSpCdpaisre = sp_cdpaisre.getSelectedItem().toString().substring(0,3);
-        if(!textSpCdpaisre.contains("000")){
+        String textSpCdpaisre = sp_cdpaisre.getSelectedItem().toString().substring(0, 3);
+        if (!textSpCdpaisre.contains("000")) {
             quest.setCdpaisre(textSpCdpaisre);
         } else {
             quest.setCdpaisre("-1");
         }
 
         SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-        String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0,5);
-        if(!textSpCdlocado.contains("00000")){
+        String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
+        if (!textSpCdlocado.contains("00000")) {
             quest.setCdlocado(textSpCdlocado);
         } else {
             quest.setCdlocado("-1");
         }
 
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
-        String textSpDistres = sp_distres.getSelectedItem().toString().substring(0,2);
-        if(!textSpDistres.contains("00") && textSpCdlocado.contains("28079")){
+        String textSpDistres = sp_distres.getSelectedItem().toString().substring(0, 2);
+        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        String textSpDistres_area = sp_distres_area.getSelectedItem().toString().substring(0, 3);
+        if (!textSpDistres.contains("00") && textSpCdlocado.contains("28079")) {
             quest.setDistres(textSpDistres);
+        } else if (!textSpDistres.contains("000") && compruebaListaPaises1y2(textSpCdpaisre)>0) {
+            quest.setDistres(textSpDistres_area);
         } else {
             quest.setDistres("-1");
         }
@@ -1920,7 +2412,7 @@ public class ModeloPasajeros1 extends Form {
                     } else {
                         quest.setCdlocaco("-1");
                     }
-                    if(!textSpDistracce.contains("00") && textSpCdpaisre.contains("28079")){
+                    if(!textSpDistracce.contains("00") && textSpCdlocaco.contains("28079")){
                         quest.setDistracce(textSpDistracce);
                     } else {
                         quest.setDistracce("-1");
@@ -1986,7 +2478,7 @@ public class ModeloPasajeros1 extends Form {
                     selectedCode = 2;
                     break;
                 case R.id.survey_radio_nmodos_option3:
-                    selectedCode = Integer.valueOf(etNmodos_otros.getText().toString());
+                    selectedCode = Integer.valueOf(stringToInt(etNmodos_otros.getText().toString()));
                     break;
                 default:
                     selectedCode = 99;
@@ -2052,7 +2544,7 @@ public class ModeloPasajeros1 extends Form {
         quest.setUltimodo(String.valueOf(selectedCode));
 
         selectedCode = -1;
-        if (quest.getNmodos().equals("2") || quest.getNmodos().equals("3")) {
+        if (stringToInt(quest.getNmodos())>1) {
             checkedId = rgUltimodo_1modo.getCheckedRadioButtonId();
 
             if (checkedId > 0) {
@@ -2105,7 +2597,7 @@ public class ModeloPasajeros1 extends Form {
         quest.setModo1(String.valueOf(selectedCode));
 
         selectedCode = -1;
-        if (quest.getNmodos().equals("3")) {
+        if (stringToInt(quest.getNmodos())>3) {
             checkedId = rgUltimodo_2modo.getCheckedRadioButtonId();
             if (checkedId > 0) {
                 switch (checkedId) {
@@ -2171,7 +2663,6 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case R.id.survey_radio_sitiopark_option4:
                     TextInputEditText etPqfuera = (TextInputEditText) activity.findViewById(R.id.survey_edit_pqfuera);
-                    System.out.println(etPqfuera.getText().toString());
                     quest.setPqfuera(etPqfuera.getText().toString());
                     selectedCode = 4;
                     break;
@@ -2259,20 +2750,40 @@ public class ModeloPasajeros1 extends Form {
         //P18
         SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
         String textSpNumvuepa = sp_numvuepa.getSelectedItem().toString().substring(0,3);
+        EditText numvuepa = (EditText) activity.findViewById(R.id.survey_edit_numvuepa);
         if(!textSpNumvuepa.contains("000")){
-            quest.setNumvuepa(textSpNumvuepa);
+            quest.setNumvuepa(textSpNumvuepa+"-"+numvuepa.getText().toString());
         } else {
             quest.setNumvuepa("-1");
         }
 
         //P19b
-        SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
-        String textSpCdociaar = sp_cdociaar.getSelectedItem().toString().substring(0,3);
-        if(!textSpCdociaar.contains("000")){
-            quest.setCdociaar(textSpCdociaar);
-        } else {
-            quest.setCdociaar("-1");
+        RadioGroup rgCdterm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
+
+        selectedCode = -1;
+        checkedId = rgCdterm.getCheckedRadioButtonId();
+        quest.setCdociaar("-1");
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdterm_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdterm_option2:
+                    SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+                    String textSpCdociaar = sp_cdociaar.getSelectedItem().toString().substring(0,3);
+                    if(!textSpCdociaar.contains("000")){
+                        quest.setCdociaar(textSpCdociaar);
+                    }
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
         }
+        quest.setCdterm(String.valueOf(selectedCode));
+
 
         //P20
         SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
@@ -2283,46 +2794,572 @@ public class ModeloPasajeros1 extends Form {
             quest.setCdiaptof("-1");
         }
 
+        //P21
+        SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+        String textSpCdmviaje = sp_cdmviaje.getSelectedItem().toString().substring(0,3);
+        if(!textSpCdmviaje.contains("000")){
+            quest.setCdmviaje(textSpCdmviaje);
+        } else {
+            quest.setCdmviaje("-1");
+        }
+
+        //P22
+        RadioGroup rgCdidavue = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdidavue);
+        CheckBox ckCdidavue = (CheckBox) activity.findViewById(R.id.survey_check_cdidavue_option0);
+
+        selectedCode = -1;
+        quest.setTaus(stringToInt("-1"));
+        checkedId = rgCdidavue.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdidavue_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdidavue_option2:
+                    if (ckCdidavue.isChecked()){
+                        quest.setTaus(stringToInt("0"));
+                    } else {
+                        EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
+                        quest.setTaus(stringToInt(etTaus.getText().toString()));
+                    }
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+        quest.setCdidavue(String.valueOf(selectedCode));
+
+        //P23
+        RadioGroup rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
+        EditText etNpers_especificar = (EditText) activity.findViewById(R.id.survey_edit_npers_especificar);
+
+        selectedCode = -1;
+        checkedId = rgNpers.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_npers_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_npers_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_npers_option3:
+                    selectedCode = stringToInt(etNpers_especificar.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9999;
+                    break;
+            }
+        }
+        quest.setNpers(selectedCode);
+
+        //P24
+        EditText etNniños= (EditText) activity.findViewById(R.id.survey_edit_nniños);
+        quest.setNniños(stringToInt(etNniños.getText().toString()));
+
+        //P25
+        RadioGroup rgRelacion = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_relacion);
+        selectedCode = -1;
+
+        checkedId = rgRelacion.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_relacion_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_relacion_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_relacion_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_relacion_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_relacion_option9:
+                    selectedCode = 9;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setRelacion(String.valueOf(selectedCode));
+
+        //P26
+        RadioGroup rgCdtreser = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdtreser);
+        EditText etCdtreser_especificar = (EditText) activity.findViewById(R.id.survey_edit_cdtreser_especificar);
+
+        selectedCode = -1;
+        checkedId = rgCdtreser.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdtreser_option0:
+                    selectedCode = 0;
+                    break;
+                case R.id.survey_radio_cdtreser_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdtreser_dias:
+                    selectedCode = stringToInt(etCdtreser_especificar.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9999;
+                    break;
+            }
+        }
+        quest.setCdtreser(String.valueOf(selectedCode));
+
+        //P27
+        RadioGroup rgCdbillet = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdbillet);
+
+        selectedCode = -1;
+        checkedId = rgCdbillet.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdbillet_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdbillet_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_cdbillet_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_cdbillet_option6:
+                    selectedCode = 6;
+                    break;
+                case R.id.survey_radio_cdbillet_option9:
+                    selectedCode = 9;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setCdbillet(String.valueOf(selectedCode));
+
+        //P28
+        RadioGroup rgNviaje = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
+        EditText etNviaje_especificar = (EditText) activity.findViewById(R.id.survey_edit_nviaje_especificar);
+
+        selectedCode = -1;
+        checkedId = rgNviaje.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_nviaje_option0:
+                    selectedCode = 0;
+                    break;
+                case R.id.survey_radio_nviaje_numviajes:
+                    selectedCode = stringToInt(etNviaje_especificar.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9999;
+                    break;
+            }
+        }
+        quest.setNviaje(String.valueOf(selectedCode));
+
+        //P29
+        RadioGroup rgVol12mes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vol12mes);
+        EditText etVol12mes_especificar = (EditText) activity.findViewById(R.id.survey_edit_vol12mes_especificar);
+
+        selectedCode = -1;
+        checkedId = rgVol12mes.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_vol12mes_option0:
+                    selectedCode = 0;
+                    break;
+                case R.id.survey_radio_vol12mes_numviajes:
+                    selectedCode = stringToInt(etVol12mes_especificar.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9999;
+                    break;
+            }
+        }
+        quest.setVol12mes(String.valueOf(selectedCode));
+
+        //P30
+        RadioGroup rgEleccovid = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_eleccovid);
+
+        selectedCode = -1;
+        checkedId = rgEleccovid.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_eleccovid_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_eleccovid_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_eleccovid_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_eleccovid_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_eleccovid_option5:
+                    selectedCode = 5;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setEleccovid(String.valueOf(selectedCode));
+
+        //P31
+        RadioGroup rgP44factu = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_p44factu);
+        EditText etBulgrupo = (EditText) activity.findViewById(R.id.survey_edit_bulgrupo);
+
+        selectedCode = -1;
+        quest.setBulgrupo("-1");
+        checkedId = rgP44factu.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_p44factu_option1:
+                    quest.setBulgrupo(etBulgrupo.getText().toString());
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_p44factu_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setP44factu(String.valueOf(selectedCode));
+
+        //P32
+        RadioGroup rgNperbul = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nperbul);
+        EditText etNperbul_especificar = (EditText) activity.findViewById(R.id.survey_edit_nperbul_especificar);
+
+        selectedCode = -1;
+        checkedId = rgNperbul.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_nperbul_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_nperbul_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_nperbul_option3:
+                    selectedCode = stringToInt(etNperbul_especificar.getText().toString());
+                    break;
+                default:
+                    selectedCode = 9999;
+                    break;
+            }
+        }
+        quest.setNperbul(String.valueOf(selectedCode));
+
+        //P33
+        RadioGroup rgDropoff = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_dropoff);
+        selectedCode = -1;
+
+        checkedId = rgDropoff.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_dropoff_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_dropoff_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setDropoff(String.valueOf(selectedCode));
+
+        //P34
+        RadioGroup rgChekinb = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_chekinb);
+        selectedCode = -1;
+        checkedId = rgChekinb.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_chekinb_option0:
+                    selectedCode = 0;
+                    break;
+                case R.id.survey_radio_chekinb_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_chekinb_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setChekinb(selectedCode);
+
+        //P35
+        RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
+        EditText etGas_cons = (EditText) activity.findViewById(R.id.survey_edit_gas_cons);
+
+        selectedCode = -1;
+        quest.setGas_cons(stringToInt("-1"));
+        checkedId = rgConsume.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_consume_option1:
+                    quest.setGas_cons(stringToInt(etGas_cons.getText().toString()));
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_consume_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setConsume(String.valueOf(selectedCode));
+
         //P36
-        SearchableSpinner sp_prod1= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
-        String textSpProd1 = sp_prod1.getSelectedItem().toString().substring(0,2);
-        if(!textSpProd1.contains("00")){
-            quest.setProd1(textSpProd1);
-        } else {
-            quest.setProd1("-1");
-        }
+        RadioGroup rgComprart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
+        EditText etGas_com = (EditText) activity.findViewById(R.id.survey_edit_gas_com);
 
-        SearchableSpinner sp_prod2= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
-        String textSpProd2 = sp_prod2.getSelectedItem().toString().substring(0,2);
-        if(!textSpProd2.contains("00")){
-            quest.setProd2(textSpProd2);
-        } else {
-            quest.setProd2("-1");
-        }
+        selectedCode = -1;
+        quest.setGas_com(stringToInt("-1"));
+        quest.setProd1("-1");
+        quest.setProd2("-1");
+        quest.setProd3("-1");
+        quest.setProd4("-1");
+        quest.setProd5("-1");
+        checkedId = rgComprart.getCheckedRadioButtonId();
 
-        SearchableSpinner sp_prod3= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
-        String textSpProd3 = sp_prod3.getSelectedItem().toString().substring(0,2);
-        if(!textSpProd3.contains("00")){
-            quest.setProd3(textSpProd3);
-        } else {
-            quest.setProd3("-1");
-        }
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_comprart_option1:
+                    quest.setGas_com(stringToInt(etGas_com.getText().toString()));
+                    SearchableSpinner sp_prod1= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+                    String textSpProd1 = sp_prod1.getSelectedItem().toString().substring(0,2);
+                    if(!textSpProd1.contains("00")){
+                        quest.setProd1(textSpProd1);
+                    } else {
+                        quest.setProd1("-1");
+                    }
 
-        SearchableSpinner sp_prod4= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
-        String textSpProd4 = sp_prod4.getSelectedItem().toString().substring(0,2);
-        if(!textSpProd4.contains("00")){
-            quest.setProd4(textSpProd4);
-        } else {
-            quest.setProd4("-1");
-        }
+                    SearchableSpinner sp_prod2= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
+                    String textSpProd2 = sp_prod2.getSelectedItem().toString().substring(0,2);
+                    if(!textSpProd2.contains("00")){
+                        quest.setProd2(textSpProd2);
+                    } else {
+                        quest.setProd2("-1");
+                    }
 
-        SearchableSpinner sp_prod5= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
-        String textSpProd5 = sp_prod5.getSelectedItem().toString().substring(0,2);
-        if(!textSpProd5.contains("00")){
-            quest.setProd5(textSpProd5);
-        } else {
-            quest.setProd5("-1");
+                    SearchableSpinner sp_prod3= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
+                    String textSpProd3 = sp_prod3.getSelectedItem().toString().substring(0,2);
+                    if(!textSpProd3.contains("00")){
+                        quest.setProd3(textSpProd3);
+                    } else {
+                        quest.setProd3("-1");
+                    }
+
+                    SearchableSpinner sp_prod4= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
+                    String textSpProd4 = sp_prod4.getSelectedItem().toString().substring(0,2);
+                    if(!textSpProd4.contains("00")){
+                        quest.setProd4(textSpProd4);
+                    } else {
+                        quest.setProd4("-1");
+                    }
+
+                    SearchableSpinner sp_prod5= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
+                    String textSpProd5 = sp_prod5.getSelectedItem().toString().substring(0,2);
+                    if(!textSpProd5.contains("00")){
+                        quest.setProd5(textSpProd5);
+                    } else {
+                        quest.setProd5("-1");
+                    }
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_comprart_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
         }
+        quest.setComprart(String.valueOf(selectedCode));
+
+        //P37
+        RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
+        selectedCode = -1;
+        checkedId = rgCdslab.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdslab_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdslab_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_cdslab_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_cdslab_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_cdslab_option6:
+                    selectedCode = 6;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setCdslab(String.valueOf(selectedCode));
+
+        //P38
+        RadioGroup rgCdsprof = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsprof);
+        selectedCode = -1;
+        checkedId = rgCdsprof.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdsprof_option0:
+                    selectedCode = 0;
+                    break;
+                case R.id.survey_radio_cdsprof_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdsprof_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_cdsprof_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_cdsprof_option6:
+                    selectedCode = 6;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setCdsprof(String.valueOf(selectedCode));
+
+        //P39
+        RadioGroup rgEstudios = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_estudios);
+        selectedCode = -1;
+        checkedId = rgEstudios.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_estudios_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_estudios_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_estudios_option5:
+                    selectedCode = 5;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setEstudios(String.valueOf(selectedCode));
+
+        //P40
+        RadioGroup rgCdedad = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedad);
+
+        selectedCode = -1;
+        checkedId = rgCdedad.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdedad_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdedad_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_cdedad_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_cdedad_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_cdedad_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_cdedad_option6:
+                    selectedCode = 6;
+                    break;
+                case R.id.survey_radio_cdedad_option7:
+                    selectedCode = 7;
+                    break;
+                case R.id.survey_radio_cdedad_option8:
+                    selectedCode = 8;
+                    break;
+                case R.id.survey_radio_cdedad_option9:
+                    selectedCode = 9;
+                    break;
+                case R.id.survey_radio_cdedad_option10:
+                    selectedCode = 10;
+                    break;
+                case R.id.survey_radio_cdedad_option11:
+                    selectedCode = 11;
+                    break;
+                case R.id.survey_radio_cdedad_option12:
+                    selectedCode = 12;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setCdedad(String.valueOf(selectedCode));
+
+        //P41
+        RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
+        selectedCode = -1;
+        checkedId = rgCdsexo.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_cdsexo_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_cdsexo_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+        quest.setCdsexo(selectedCode);
+
+        //P42
+        EditText etValorexp= (EditText) activity.findViewById(R.id.survey_edit_valorexp);
+        quest.setValorexp(stringToInt(etValorexp.getText().toString()));
 
         return quest;
     }
@@ -2495,6 +3532,95 @@ public class ModeloPasajeros1 extends Form {
             textSpCdiaptod = textSpCdiaptod.substring(4, textSpCdiaptod.length());
         TextView tvCdterm= (TextView) activity.findViewById(R.id.survey_text_cdterm);
         tvCdterm.setText(textoCdterm.replace("%1$s", textSpCdiaptod));
+    }
+
+    private int compruebaListaPaises1y2(String codigoPais){
+        int conteo = 0;
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) AS Conteo "+
+                " FROM " + Contracts.TABLE_TIPOPAISES1Y2 + " AS T1 " +
+                " WHERE iden <> 0 AND "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS + " = '"+codigoPais+"'" , parametros);
+
+        while (cursor.moveToNext()) {
+            conteo = cursor.getInt(0);
+        }
+
+        return conteo;
+    }
+
+    private boolean checkUModo(){
+        RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
+        RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
+        RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
+        RadioButton rbUmodo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option4);
+        RadioButton rbUmodo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option5);
+        RadioButton rbUmodo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option6);
+        RadioButton rbUmodo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option7);
+        RadioButton rbUmodo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option8);
+        RadioButton rbUmodo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option9);
+        RadioButton rbUmodo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option10);
+        RadioButton rbUmodo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option11);
+        RadioButton rbUmodo_12 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option12);
+        RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
+
+        RadioButton rb1modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option1);
+        RadioButton rb1modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option1);
+        RadioButton rb1modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option3);
+        RadioButton rb1modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option4);
+        RadioButton rb1modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option5);
+        RadioButton rb1modo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option6);
+        RadioButton rb1modo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option7);
+        RadioButton rb1modo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option8);
+        RadioButton rb1modo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option9);
+        RadioButton rb1modo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option10);
+        RadioButton rb1modo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option11);
+        RadioButton rb1modo_12 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option12);
+        RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
+
+        RadioButton rb2modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option1);
+        RadioButton rb2modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option1);
+        RadioButton rb2modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option3);
+        RadioButton rb2modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option4);
+        RadioButton rb2modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option5);
+        RadioButton rb2modo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option6);
+        RadioButton rb2modo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option7);
+        RadioButton rb2modo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option8);
+        RadioButton rb2modo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option9);
+        RadioButton rb2modo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option10);
+        RadioButton rb2modo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option11);
+        RadioButton rb2modo_12 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option12);
+        RadioButton rb2modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option13);
+
+        if((rbUmodo_1.isChecked() && (rb1modo_1.isChecked() || rb2modo_1.isChecked())) || (rb1modo_1.isChecked() && rb2modo_1.isChecked()))
+            return true;
+        else if((rbUmodo_2.isChecked() && (rb1modo_2.isChecked() || rb2modo_2.isChecked())) || (rb1modo_2.isChecked() && rb2modo_2.isChecked()))
+            return true;
+        else if((rbUmodo_3.isChecked() && (rb1modo_3.isChecked() || rb2modo_3.isChecked())) || (rb1modo_3.isChecked() && rb2modo_3.isChecked()))
+            return true;
+        else if((rbUmodo_4.isChecked() && (rb1modo_4.isChecked() || rb2modo_4.isChecked())) || (rb1modo_4.isChecked() && rb2modo_4.isChecked()))
+            return true;
+        else if((rbUmodo_5.isChecked() && (rb1modo_5.isChecked() || rb2modo_5.isChecked())) || (rb1modo_5.isChecked() && rb2modo_5.isChecked()))
+            return true;
+        else if((rbUmodo_6.isChecked() && (rb1modo_6.isChecked() || rb2modo_6.isChecked())) || (rb1modo_6.isChecked() && rb2modo_6.isChecked()))
+            return true;
+        else if((rbUmodo_7.isChecked() && (rb1modo_7.isChecked() || rb2modo_7.isChecked())) || (rb1modo_7.isChecked() && rb2modo_7.isChecked()))
+            return true;
+        else if((rbUmodo_8.isChecked() && (rb1modo_8.isChecked() || rb2modo_8.isChecked())) || (rb1modo_8.isChecked() && rb2modo_8.isChecked()))
+            return true;
+        else if((rbUmodo_9.isChecked() && (rb1modo_9.isChecked() || rb2modo_9.isChecked())) || (rb1modo_9.isChecked() && rb2modo_9.isChecked()))
+            return true;
+        else if((rbUmodo_10.isChecked() && (rb1modo_10.isChecked() || rb2modo_10.isChecked())) || (rb1modo_10.isChecked() && rb2modo_10.isChecked()))
+            return true;
+        else if((rbUmodo_11.isChecked() && (rb1modo_11.isChecked() || rb2modo_11.isChecked())) || (rb1modo_11.isChecked() && rb2modo_11.isChecked()))
+            return true;
+        else if((rbUmodo_12.isChecked() && (rb1modo_12.isChecked() || rb2modo_12.isChecked())) || (rb1modo_12.isChecked() && rb2modo_12.isChecked()))
+            return true;
+        else if((rbUmodo_13.isChecked() && (rb1modo_13.isChecked() || rb2modo_13.isChecked())) || (rb1modo_13.isChecked() && rb2modo_13.isChecked()))
+            return true;
+
+        return false;
     }
 
 
