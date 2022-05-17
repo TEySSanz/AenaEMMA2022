@@ -324,9 +324,15 @@
     <string name="survey_m1_radio_cdsexo_option1">Hombre</string>
     <string name="survey_m1_radio_cdsexo_option2">Mujer</string>
     <string name="survey_text_muchasgracias">Muchas gracias por su colaboración</string>
+    <!--Pregunta42-->
+    <string name="survey_m1_text_valorexp">42. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+
+
 
     <!-- Preguntas Modelo Trabajadores 1 -->
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
+    <string name="survey_text_error_Nmodos_otros">Se debe indicar un valor mayor a 2</string>
+    <string name="survey_text_error_umodo">No se puede repetir el mismo modo</string>
     <!--Pregunta1-->
     <string name="survey_text_empresa">1. ¿Podría indicar la empresa para la que trabaja?</string>
     <!--Pregunta2-->
