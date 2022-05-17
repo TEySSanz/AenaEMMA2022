@@ -79,7 +79,7 @@
                     android:id="@+id/check_notranspubli_option6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option6" />
+                    android:text="@string/survey_check_notranspubli_option6" />
 
                 <CheckBox
                     android:id="@+id/check_notranspubli_option7"

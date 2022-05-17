@@ -49,6 +49,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
     private ArrayList<CueTrabajadoresListado> listaCue;
     private Activity listado = this;
     private int modeloCue = 1;
+    private int idAeropuerto = 1;
 
     TextView txt_usuario;
     TextView txt_fechaActual;
@@ -218,6 +219,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
 
         while (cAeropuerto.moveToNext()) {
             idAeropuerto = cAeropuerto.getString(0);
+            this.idAeropuerto = cAeropuerto.getInt(0);
         }
 
         //Idioma
@@ -250,7 +252,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
             idCue = cIdenCue.getInt(0);
         }
 
-        cue = new CueTrabajadores(idCue);
+        cue = new CueTrabajadores(idCue, this.idAeropuerto);
 
         return cue;
     }
@@ -272,6 +274,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
         datosSurvey.putInt("idCue", cue.getIden());
         datosSurvey.putInt("modeloCue", modeloCue);
+        datosSurvey.putInt("idAeropuerto", idAeropuerto);
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);
