@@ -63,6 +63,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:inputType="number"
+                android:hint="@string/survey_m1_text_gas_cons_ent"
                 android:maxLength="4" />
         </LinearLayout>
     </LinearLayout>
