@@ -31,7 +31,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 42;
+    private int maxPreg = 43;
 
     private CuePasajeros cue;
     private Form form;

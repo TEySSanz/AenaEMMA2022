@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -20,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -43,7 +45,7 @@ public class ModeloPasajeros1 extends Form {
 
     private int preguntaAnterior = 1;
     private int idCue;
-    private int finCue = 42;
+    private int finCue = 43;
     private boolean resultValue;
 
 
@@ -72,8 +74,11 @@ public class ModeloPasajeros1 extends Form {
         showQuestion(pregunta);
 
         iniciarSpinners();
+        iniciarTimePickers();;
         condicionesSpinners();
         condicionesRadioButton();
+        condicionesChecks();
+        condicionesEditText();
     }
 
     private void iniciarSpinners() {
@@ -765,6 +770,33 @@ public class ModeloPasajeros1 extends Form {
 
     }
 
+    private void condicionesChecks(){
+        CheckBox ckCdidavue = (CheckBox) activity.findViewById(R.id.survey_check_cdidavue_option0);
+
+        ckCdidavue.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
+                if (compoundButton.isChecked()){
+                    etTaus.setText("");
+                    etTaus.setEnabled(false);
+                    etTaus.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    compoundButton.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                } else {
+                    etTaus.setEnabled(true);
+                    etTaus.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    etTaus.setError(null);
+                }
+            }
+        });
+
+    }
+
+    private void condicionesEditText(){
+
+    }
+
     @Override
     public int onNextPressed(int p) {
         if (checkQuestion(p)) {
@@ -1130,12 +1162,17 @@ public class ModeloPasajeros1 extends Form {
                 p41.setVisibility(VISIBLE);
                 break;
             case 42:
-                //FIN
+                //P42
                 LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
                 p42.setVisibility(VISIBLE);
+                break;
+            case 43:
+                //FIN
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
                 break;
         }
@@ -1220,7 +1257,7 @@ public class ModeloPasajeros1 extends Form {
                     if (rgNmodos.getCheckedRadioButtonId() == R.id.survey_radio_nmodos_option3){
                         EditText etNmodos_otros = (EditText) activity.findViewById(R.id.survey_edit_nmodos_otros);
                         if (stringToInt(etNmodos_otros.getText().toString())<3){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_mas2);
                             etNmodos_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                             etNmodos_otros.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1257,6 +1294,37 @@ public class ModeloPasajeros1 extends Form {
                         etUltimodo_otros_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
+                    rgNmodos= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
+                    RadioGroup rgUmodo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_umodo);
+                    RadioGroup rg1modo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_1modo);
+                    RadioGroup rg2modo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_2modo);
+                    switch (rgNmodos.getCheckedRadioButtonId()){
+                        case R.id.survey_radio_nmodos_option1:
+                            if(rgUmodo.getCheckedRadioButtonId()==-1){
+                                String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                                Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                                toast.show();
+                                return false;
+                            }
+                            break;
+                        case R.id.survey_radio_nmodos_option2:
+                            if(rgUmodo.getCheckedRadioButtonId()==-1 || rg1modo.getCheckedRadioButtonId()==-1){
+                                String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                                Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                                toast.show();
+                                return false;
+                            }
+                            break;
+                        case R.id.survey_radio_nmodos_option3:
+                            if(rgUmodo.getCheckedRadioButtonId()==-1 || rg1modo.getCheckedRadioButtonId()==-1 || rg2modo.getCheckedRadioButtonId()==-1){
+                                String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                                Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                                toast.show();
+                                return false;
+                            }
+                            break;
+                    }
+
                     break;
                 case 15:
                     //P15
@@ -1271,7 +1339,7 @@ public class ModeloPasajeros1 extends Form {
                     if (rgAcomptes.getCheckedRadioButtonId() == R.id.survey_radio_acomptes_option3){
                         EditText etAcomptes_especificar = (EditText) activity.findViewById(R.id.survey_edit_acomptes_especificar);
                         if (stringToInt(etAcomptes_especificar.getText().toString())<3){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_mas2);
                             etAcomptes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                             etAcomptes_especificar.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1291,6 +1359,49 @@ public class ModeloPasajeros1 extends Form {
                         toast.show();
                         return false;
                     }
+
+                    if (rgCdTerm.getCheckedRadioButtonId() == R.id.survey_radio_cdterm_option2){
+                        SearchableSpinner spCdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+                        if (spCdociaar.getSelectedItem().toString().substring(0,3).equals("000")){
+                            String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                            spCdociaar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            spCdociaar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+                    break;
+                case 22:
+                    //P22
+                    RadioGroup rgCdidavue = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdidavue);
+
+                    if (rgCdidavue.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgCdidavue.getCheckedRadioButtonId() == R.id.survey_radio_cdidavue_option1 ||
+                            rgCdidavue.getCheckedRadioButtonId() == R.id.survey_radio_cdidavue_option2){
+                        CheckBox ckCdidavue = (CheckBox) activity.findViewById(R.id.survey_check_cdidavue_option0);
+                        EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
+                        if (!ckCdidavue.isChecked() && stringToInt(etTaus.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                            etTaus.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etTaus.setError(textoError);
+                            ckCdidavue.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etTaus.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            ckCdidavue.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        }
+                    }
+
                     break;
                 case 23:
                     //P23
@@ -1305,7 +1416,7 @@ public class ModeloPasajeros1 extends Form {
                     if (rgNpers.getCheckedRadioButtonId() == R.id.survey_radio_npers_option3){
                         EditText etNpers_especificar = (EditText) activity.findViewById(R.id.survey_edit_npers_especificar);
                         if (stringToInt(etNpers_especificar.getText().toString())<3){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_mas2);
                             etNpers_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                             etNpers_especificar.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1332,7 +1443,7 @@ public class ModeloPasajeros1 extends Form {
                     if (rgCdtreser.getCheckedRadioButtonId() == R.id.survey_radio_cdtreser_dias){
                         EditText etCdtreser_especificar = (EditText) activity.findViewById(R.id.survey_edit_cdtreser_especificar);
                         if (stringToInt(etCdtreser_especificar.getText().toString())<2){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_mas1);
                             etCdtreser_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                             etCdtreser_especificar.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1432,7 +1543,7 @@ public class ModeloPasajeros1 extends Form {
                     if (rgNperbul.getCheckedRadioButtonId() == R.id.survey_radio_nperbul_option3){
                         EditText etNperbul_especificar = (EditText) activity.findViewById(R.id.survey_edit_nperbul_especificar);
                         if (stringToInt(etNperbul_especificar.getText().toString())<3){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_mas2);
                             etNperbul_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                             etNperbul_especificar.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1453,6 +1564,44 @@ public class ModeloPasajeros1 extends Form {
                         toast.show();
                         return false;
                     }
+
+                    if (rgConsume.getCheckedRadioButtonId() == R.id.survey_radio_consume_option1){
+                        EditText etGas_cons = (EditText) activity.findViewById(R.id.survey_edit_gas_cons);
+                        if (stringToInt(etGas_cons.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etGas_cons.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etGas_cons.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etGas_cons.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+                    break;
+                case 36:
+                    //P36
+                    RadioGroup rgComprart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
+
+                    if (rgComprart.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgComprart.getCheckedRadioButtonId() == R.id.survey_radio_comprart_option1){
+                        EditText etGas_com = (EditText) activity.findViewById(R.id.survey_edit_gas_com);
+                        if (stringToInt(etGas_com.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etGas_com.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etGas_com.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etGas_com.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
                     break;
                 case 37:
                     //P37
@@ -1468,7 +1617,7 @@ public class ModeloPasajeros1 extends Form {
                     EditText etValorexp = (EditText) activity.findViewById(R.id.survey_edit_valorexp);
                     int intValorexp = stringToInt(etValorexp.getText().toString());
                     if (intValorexp<1 || intValorexp>10) {
-                        String textoError = activity.getResources().getString(R.string.survey_text_error_valorexp);
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_1a10);
                         etValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                         etValorexp.setError(textoError);
                         Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
@@ -1477,6 +1626,42 @@ public class ModeloPasajeros1 extends Form {
                     } else {
                         etValorexp.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
+
+                    EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
+                    EditText etNnumVuelo = (EditText) activity.findViewById(R.id.survey_edit_numVuelo);
+                    EditText etPpuertaEmbarque = (EditText) activity.findViewById(R.id.survey_edit_puertaEmbarque);
+                    String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+
+                    if (etCodCompVuelo.getText().toString().isEmpty()) {
+                        etCodCompVuelo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etCodCompVuelo.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etCodCompVuelo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if (etNnumVuelo.getText().toString().isEmpty()) {
+                        etNnumVuelo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etNnumVuelo.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etNnumVuelo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if (etPpuertaEmbarque.getText().toString().isEmpty()) {
+                        etPpuertaEmbarque.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etPpuertaEmbarque.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etPpuertaEmbarque.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+                break;
             }
         }
         return true;
@@ -2424,6 +2609,10 @@ public class ModeloPasajeros1 extends Form {
             case 41:
                 //P41
                 show = showQuestion(42);
+                break;
+            case 42:
+                //P42
+                show = showQuestion(43); //FIN
                 break;
 
         }
@@ -3751,7 +3940,7 @@ public class ModeloPasajeros1 extends Form {
 
     private boolean checkUModo(){
         RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
-        RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
+        RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option2);
         RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
         RadioButton rbUmodo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option4);
         RadioButton rbUmodo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option5);
@@ -3765,7 +3954,7 @@ public class ModeloPasajeros1 extends Form {
         RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
 
         RadioButton rb1modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option1);
-        RadioButton rb1modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option1);
+        RadioButton rb1modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option2);
         RadioButton rb1modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option3);
         RadioButton rb1modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option4);
         RadioButton rb1modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option5);
@@ -3779,7 +3968,7 @@ public class ModeloPasajeros1 extends Form {
         RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
 
         RadioButton rb2modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option1);
-        RadioButton rb2modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option1);
+        RadioButton rb2modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option2);
         RadioButton rb2modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option3);
         RadioButton rb2modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option4);
         RadioButton rb2modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option5);
