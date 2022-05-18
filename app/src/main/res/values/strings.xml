@@ -156,6 +156,8 @@
     <string name="survey_m1_text_ultimodo_otros">OTROS</string>
     <string name="survey_m1_text_ultimodo_otros_especificar">Especificar</string>
     <string name="survey_m1_text_ultimodo_otros_num">91</string>
+    <string name="survey_text_error_Nmodos_otros">Se debe especificar una respuesta</string>
+    <string name="survey_text_error_umodo">XXX</string>
     <!--Pregunta13-->
     <string name="survey_m1_text_sitiopark">13. ¿Dónde ha dejado su vehículo?</string>
     <string name="survey_m1_radio_sitiopark_option1">En ZONA BAJADA/SUBIDA de pasajeros/Parking Express</string>
