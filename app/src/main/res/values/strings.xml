@@ -62,6 +62,9 @@
     <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
 
     <!--Preguntas Modelo 1-->
+    <string name="survey_text_error_nviaje_num">Se debe indicar un nº de viajes</string>
+    <string name="survey_text_error_bulgrupo">Se debe indicar un nº de bultos</string>
+    <string name="survey_text_error_valorexp">El valor debe estar comprendido entre 1 y 10</string>
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
     <!--Pregunta2-->

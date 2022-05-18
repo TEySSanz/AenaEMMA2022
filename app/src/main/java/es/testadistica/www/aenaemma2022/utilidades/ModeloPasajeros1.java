@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -24,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -234,6 +236,22 @@ public class ModeloPasajeros1 extends Form {
         sp_prod5.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod5.setPositiveButton(activity.getString(R.string.spinner_close));
 
+    }
+
+    private void iniciarTimePickers(){
+        //P16
+        TimePicker tpHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
+
+        tpHllega.setIs24HourView(true);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            tpHllega.setHour(0);
+            tpHllega.setMinute(0);
+        } else {
+            tpHllega.setCurrentHour(0);
+            tpHllega.setCurrentMinute(0);
+        }
     }
 
     private void condicionesSpinners() {
@@ -1172,6 +1190,23 @@ public class ModeloPasajeros1 extends Form {
                         return false;
                     }
                     break;
+                case 10:
+                    //P10
+                    RadioGroup rgCdalojin = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdalojin);
+                    TextInputEditText etCdalojin = (TextInputEditText) activity.findViewById(R.id.survey_edit_cdalojin_otros);
+
+                    if (rgCdalojin.getCheckedRadioButtonId()==R.id.survey_radio_cdalojin_option9 &&
+                            etCdalojin.getText().toString().isEmpty()) {
+                        String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                        etCdalojin.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etCdalojin.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etCdalojin.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+                    break;
                 case 11:
                     //P11
                     RadioGroup rgNmodos= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
@@ -1223,6 +1258,30 @@ public class ModeloPasajeros1 extends Form {
                     }
 
                     break;
+                case 15:
+                    //P15
+                    RadioGroup rgAcomptes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_acomptes);
+
+                    if (rgAcomptes.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgAcomptes.getCheckedRadioButtonId() == R.id.survey_radio_acomptes_option3){
+                        EditText etAcomptes_especificar = (EditText) activity.findViewById(R.id.survey_edit_acomptes_especificar);
+                        if (stringToInt(etAcomptes_especificar.getText().toString())<3){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etAcomptes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etAcomptes_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etAcomptes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+                    break;
                 case 19:
                     //P19
                     RadioGroup rgCdTerm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
@@ -1242,6 +1301,48 @@ public class ModeloPasajeros1 extends Form {
                         toast.show();
                         return false;
                     }
+
+                    if (rgNpers.getCheckedRadioButtonId() == R.id.survey_radio_npers_option3){
+                        EditText etNpers_especificar = (EditText) activity.findViewById(R.id.survey_edit_npers_especificar);
+                        if (stringToInt(etNpers_especificar.getText().toString())<3){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etNpers_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etNpers_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etNpers_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+
+                    break;
+
+                case 26:
+                    //P26
+                    RadioGroup rgCdtreser = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdtreser);
+
+                    if (rgCdtreser.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgCdtreser.getCheckedRadioButtonId() == R.id.survey_radio_cdtreser_dias){
+                        EditText etCdtreser_especificar = (EditText) activity.findViewById(R.id.survey_edit_cdtreser_especificar);
+                        if (stringToInt(etCdtreser_especificar.getText().toString())<2){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etCdtreser_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etCdtreser_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etCdtreser_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
                     break;
                 case 28:
                     //P28
@@ -1252,6 +1353,46 @@ public class ModeloPasajeros1 extends Form {
                         toast.show();
                         return false;
                     }
+
+                    if (rgNviaje.getCheckedRadioButtonId() == R.id.survey_radio_nviaje_numviajes){
+                        EditText etNviaje_especificar = (EditText) activity.findViewById(R.id.survey_edit_nviaje_especificar);
+                        if (stringToInt(etNviaje_especificar.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
+                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etNviaje_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+                    break;
+                case 29:
+                    //P29
+                    RadioGroup rgVol12mes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vol12mes);
+
+                    if (rgVol12mes.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgVol12mes.getCheckedRadioButtonId() == R.id.survey_radio_vol12mes_numviajes){
+                        EditText etVol12mes_especificar = (EditText) activity.findViewById(R.id.survey_edit_vol12mes_especificar);
+                        if (stringToInt(etVol12mes_especificar.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
+                            etVol12mes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etVol12mes_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etVol12mes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
                     break;
                 case 31:
                     //P31
@@ -1262,6 +1403,46 @@ public class ModeloPasajeros1 extends Form {
                         toast.show();
                         return false;
                     }
+
+                    if (rgP44factu.getCheckedRadioButtonId() == R.id.survey_radio_p44factu_option1){
+                        EditText bulgrupo = (EditText) activity.findViewById(R.id.survey_edit_bulgrupo);
+                        if (stringToInt(bulgrupo.getText().toString())<1){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_bulgrupo);
+                            bulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            bulgrupo.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            bulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+                    break;
+                case 32:
+                    //P32
+                    RadioGroup rgNperbul = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nperbul);
+
+                    if (rgNperbul.getCheckedRadioButtonId()==-1) {
+                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    }
+
+                    if (rgNperbul.getCheckedRadioButtonId() == R.id.survey_radio_nperbul_option3){
+                        EditText etNperbul_especificar = (EditText) activity.findViewById(R.id.survey_edit_nperbul_especificar);
+                        if (stringToInt(etNperbul_especificar.getText().toString())<3){
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_Nmodos_otros);
+                            etNperbul_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etNperbul_especificar.setError(textoError);
+                            Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                            toast.show();
+                            return false;
+                        } else {
+                            etNperbul_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
                     break;
                 case 35:
                     //P35
@@ -1283,6 +1464,19 @@ public class ModeloPasajeros1 extends Form {
                         return false;
                     }
                     break;
+                case 42:
+                    EditText etValorexp = (EditText) activity.findViewById(R.id.survey_edit_valorexp);
+                    int intValorexp = stringToInt(etValorexp.getText().toString());
+                    if (intValorexp<1 || intValorexp>10) {
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_valorexp);
+                        etValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etValorexp.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etValorexp.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
             }
         }
         return true;
@@ -2026,17 +2220,14 @@ public class ModeloPasajeros1 extends Form {
                     checkedId2 = rgUltimodo_1modo.getCheckedRadioButtonId();
                     checkedId3 = rgUltimodo_2modo.getCheckedRadioButtonId();
 
-                    if ((checkedId > 0) || (checkedId2>0) || (checkedId3>0)) {
-                        if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5)){
-                            show = showQuestion(13);//>P13
-                        }else if ((checkedId2 == R.id.survey_radio_ultimodo_1modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option5)){
-                            show = showQuestion(13);//>P13
-                        }else if ((checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_2modo_option5)) {
-                            show = showQuestion(13);//>P13
-                        }else{
-                            show = showQuestion(15);//>P15
-                        }
+                    if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5) ||
+                            (checkedId2 == R.id.survey_radio_ultimodo_1modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option5) ||
+                            (checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)) {
+                        show = showQuestion(13);//>P13
+                    } else{
+                        show = showQuestion(15);//>P15
                     }
+
                 } else {
                     show = showQuestion(13);//>P13
                 }
@@ -2113,6 +2304,9 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(26); //>P26
                                 break;
                             case R.id.survey_radio_npers_option2:
+                                show = showQuestion(24); //>P24
+                                break;
+                            case R.id.survey_radio_npers_option3:
                                 show = showQuestion(24); //>P24
                                 break;
                         }
@@ -2723,7 +2917,7 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case R.id.survey_radio_acomptes_option3:
                     EditText acomptes_especificar = (EditText) activity.findViewById(R.id.survey_edit_acomptes_especificar);
-                    selectedCode = Integer.valueOf(acomptes_especificar.getText().toString());
+                    selectedCode = Integer.valueOf(stringToInt(acomptes_especificar.getText().toString()));
                     break;
                 default:
                     selectedCode = 9999;
@@ -2733,10 +2927,15 @@ public class ModeloPasajeros1 extends Form {
         quest.setAcomptes(selectedCode);
 
         //P16
-        EditText hllega_hora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
+        /*EditText hllega_hora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
         EditText hllega_minutos = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
+        quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());*/
+        TimePicker etHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
 
-        quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());
+        if(!etHllega.toString().equals("00:00")){
+            quest.setHllega(etHllega.toString());
+        }
+
 
         //P17
         SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);

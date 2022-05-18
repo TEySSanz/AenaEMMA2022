@@ -5,37 +5,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="ExtraText">
+
     <LinearLayout
         android:id="@+id/survey_layout_cdiaptof"
+        style="@style/SurveySingleQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        style="@style/SurveySingleQuestion"
         android:visibility="gone">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/survey_text_cdiaptof"
+            style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/survey_m1_text_cdiaptof" />
 
-            <TextView
-                android:id="@+id/survey_text_cdiaptof"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                style="@style/SurveyQuestionTitle"
-                android:text="@string/survey_m1_text_cdiaptof" />
+        <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+            android:id="@+id/survey_spinner_cdiaptof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
 
-            <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
-                android:id="@+id/survey_spinner_cdiaptof"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown" />
-                
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

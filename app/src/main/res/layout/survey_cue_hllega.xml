@@ -21,51 +21,11 @@
             android:layout_height="wrap_content"
             android:text="@string/survey_m1_text_hllega" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TimePicker
+            android:id="@+id/survey_edit_hllega"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/SurveyQuestionAspect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/medium_padding"
-                android:layout_weight="2"
-                android:text="@string/survey_m1_text_hllega_hora" />
-
-            <EditText
-                android:id="@+id/survey_edit_hllega_hora"
-                style="@style/SurveyQuestionEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="XX"
-                android:inputType="number"
-                android:maxLength="2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/SurveyQuestionAspect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/survey_m1_text_hllega_min" />
-
-            <EditText
-                android:id="@+id/survey_edit_hllega_minutos"
-                style="@style/SurveyQuestionEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="XX"
-                android:inputType="number"
-                android:maxLength="2" />
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:timePickerMode="spinner" />
     </LinearLayout>
 </LinearLayout>
