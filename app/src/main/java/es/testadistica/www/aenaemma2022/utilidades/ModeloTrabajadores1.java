@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.sql.Time;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -120,12 +121,30 @@ public class ModeloTrabajadores1 extends FormTrab {
 
     private void condicionesSpinners() {
 
+        //P1
+        final SearchableSpinner sp_empresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
+
+        sp_empresa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_empresa.setBackgroundResource(android.R.drawable.btn_dropdown);
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P2
         final SearchableSpinner sp_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
 
         sp_actempre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_actempre.setBackgroundResource(android.R.drawable.btn_dropdown);
 
                 String texto = sp_actempre.getSelectedItem().toString().substring(0,3);
 
@@ -149,6 +168,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
+
                 String texto = sp_cdlocado.getSelectedItem().toString().substring(0,5);
 
                 if (!texto.equals("28079")){
@@ -163,11 +184,27 @@ public class ModeloTrabajadores1 extends FormTrab {
 
             }
         });
+
+        final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+
+        sp_distres.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_distres.setBackgroundResource(android.R.drawable.btn_dropdown);
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void condicionesRadioButton() {
 
         //P4
+        final RadioGroup rgJornada = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_jornada);
         final RadioButton rbJornada_1 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option1);
         final RadioButton rbJornada_2 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option2);
         final RadioButton rbJornada_3 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option3);
@@ -179,6 +216,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
@@ -188,6 +227,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
@@ -197,6 +238,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
@@ -206,6 +249,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(GONE);
@@ -215,6 +260,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
@@ -224,6 +271,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(GONE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
@@ -233,14 +282,86 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbJornada_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 activity.findViewById(R.id.survey_edit_jornada_otros).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_layout_horaent_option2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_layout_horaent_option3).setVisibility(VISIBLE);
             }
         });
 
+        //P5
+        final RadioGroup rgNdiastrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ndiastrab);
+        final RadioButton rbNdiastrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option1);
+        final RadioButton rbNdiastrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option2);
+        final RadioButton rbNdiastrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option3);
+
+        rbNdiastrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbNdiastrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbNdiastrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P6
+        final RadioGroup rgZonatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_zonatrab);
+        final RadioButton rbZonatrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option1);
+        final RadioButton rbZonatrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option2);
+        final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
+        final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
+        final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
+
+        rbZonatrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbZonatrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbZonatrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbZonatrab_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbZonatrab_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
 
         //P8
+        final RadioGroup rgNmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
         final RadioButton rbNmodos_1 = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_option1);
         final RadioButton rbNmodos_2 = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_option2);
         final RadioButton rbNmodos_3 = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_nmodos);
@@ -248,6 +369,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbNmodos_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgNmodos.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_edit_nmodos_otros).setVisibility(GONE);
             }
         });
@@ -255,6 +377,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbNmodos_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgNmodos.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_edit_nmodos_otros).setVisibility(GONE);
             }
         });
@@ -262,7 +385,107 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbNmodos_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgNmodos.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_edit_nmodos_otros).setVisibility(VISIBLE);
+            }
+        });
+
+        //P9
+        final RadioGroup rgUmodo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_umodo);
+        final RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
+        final RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option2);
+        final RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
+        final RadioButton rbUmodo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option4);
+        final RadioButton rbUmodo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option5);
+        final RadioButton rbUmodo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option6);
+        final RadioButton rbUmodo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option7);
+        final RadioButton rbUmodo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option8);
+        final RadioButton rbUmodo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option9);
+        final RadioButton rbUmodo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option10);
+        final RadioButton rbUmodo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option11);
+        final RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
+
+        rbUmodo_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
+            }
+        });
+
+        rbUmodo_13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
             }
         });
 
@@ -344,7 +567,6 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbValtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option7);
         final CheckBox cbValtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option8);
         final CheckBox cbValtranspubli_9 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option9);
-        final CheckBox cbValtranspubli_10 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option10);
 
         final ArrayList<String> listValtranspubli = new ArrayList<String>();
 
@@ -358,7 +580,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_1.setChecked(false);
@@ -396,7 +618,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_2.setChecked(false);
@@ -434,7 +656,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_3.setChecked(false);
@@ -472,7 +694,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_4.setChecked(false);
@@ -510,7 +732,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_5.setChecked(false);
@@ -548,7 +770,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_6.setChecked(false);
@@ -586,7 +808,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_7.setChecked(false);
@@ -624,7 +846,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_8.setChecked(false);
@@ -662,7 +884,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
+                        (cbValtranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbValtranspubli_9.setChecked(false);
@@ -672,44 +894,6 @@ public class ModeloTrabajadores1 extends FormTrab {
                     listValtranspubli.add("9");
                 } else {
                     listValtranspubli.remove("9");
-                }
-
-                if (listValtranspubli.size() == 1) {
-                    etValtranspubli_1.setText(listValtranspubli.get(0));
-                    etValtranspubli_2.setText("");
-                    etValtranspubli_3.setText("");
-                } else if (listValtranspubli.size() == 2) {
-                    etValtranspubli_1.setText(listValtranspubli.get(0));
-                    etValtranspubli_2.setText(listValtranspubli.get(1));
-                    etValtranspubli_2.setText("");
-                } else if (listValtranspubli.size() == 3) {
-                    etValtranspubli_1.setText(listValtranspubli.get(0));
-                    etValtranspubli_2.setText(listValtranspubli.get(1));
-                    etValtranspubli_2.setText(listValtranspubli.get(2));
-                } else {
-                    etValtranspubli_1.setText("");
-                    etValtranspubli_2.setText("");
-                    etValtranspubli_3.setText("");
-                }
-            }
-        });
-
-        cbValtranspubli_10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
-                        (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
-                        (cbValtranspubli_9.isChecked()? 1:0) + (cbValtranspubli_10.isChecked()? 1:0);
-
-                if (count > 3){
-                    cbValtranspubli_10.setChecked(false);
-                }
-
-                if(cbValtranspubli_10.isChecked()) {
-                    listValtranspubli.add("10");
-                } else {
-                    listValtranspubli.remove("10");
                 }
 
                 if (listValtranspubli.size() == 1) {
@@ -2383,6 +2567,16 @@ public class ModeloTrabajadores1 extends FormTrab {
             switch (check) {
                 case 1:
                     //P1
+                    final SearchableSpinner sp_empresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
+
+                    if (sp_empresa.getSelectedItem().toString().substring(0,3).equals("000")) {
+                        sp_empresa.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    }
 
                     break;
                 case 2:
@@ -2390,19 +2584,52 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final SearchableSpinner sp_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
                     final EditText etActempre_otro = (EditText) activity.findViewById(R.id.survey_edit_actempre);
 
+                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("000")) {
+                        sp_actempre.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    }
+
                     if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("024") && etActempre_otro.getText().toString().equals("")) {
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_specifyAnswer), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        etActempre_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }
 
                     break;
                 case 3:
                     //P3
+                    final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+                    final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+
+                    if (sp_cdlocado.getSelectedItem().toString().substring(0,5).equals("00000")) {
+                        sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    }
+
+                    if (sp_cdlocado.getSelectedItem().toString().substring(0,5).equals("28079") && sp_distres.getSelectedItem().toString().substring(0,5).equals("00000")) {
+                        sp_distres.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    }
 
                     break;
                 case 4:
                     //P4
+                    final RadioGroup rgJornada = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_jornada);
                     final RadioButton rbJornada_1 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option1);
                     final RadioButton rbJornada_2 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option2);
                     final RadioButton rbJornada_3 = (RadioButton) activity.findViewById(R.id.survey_radio_jornada_option3);
@@ -2414,41 +2641,124 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                     if (!rbJornada_1.isChecked() && !rbJornada_2.isChecked() && !rbJornada_3.isChecked() && !rbJornada_4.isChecked() && !rbJornada_5.isChecked()
                             && !rbJornada_6.isChecked() && !rbJornada_9.isChecked()) {
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
                     } else if (rbJornada_9.isChecked() && etJornada_otros.getText().toString().equals("")){
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_specifyAnswer), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        etJornada_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        rgJornada.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etJornada_otros.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
+
                     break;
                 case 5:
                     //P5
+                    final RadioGroup rgNdiastrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ndiastrab);
+                    final RadioButton rbNdiastrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option1);
+                    final RadioButton rbNdiastrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option2);
+                    final RadioButton rbNdiastrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ndiastrab_option3);
+
+                    if (!rbNdiastrab_1.isChecked() && !rbNdiastrab_2.isChecked() && !rbNdiastrab_3.isChecked()) {
+                        rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 6:
                     //P6
+                    final RadioGroup rgZonatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_zonatrab);
+                    final RadioButton rbZonatrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option1);
+                    final RadioButton rbZonatrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option2);
+                    final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
+                    final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
+                    final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
+
+                    if (!rbZonatrab_1.isChecked() && !rbZonatrab_2.isChecked() && !rbZonatrab_3.isChecked() && !rbZonatrab_4.isChecked() && !rbZonatrab_5.isChecked()) {
+                        rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 7:
                     //P7
+                    final LinearLayout llHoraent1 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option1);
+                    final TimePicker tpHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
+                    final TimePicker tpHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
+
+                    String stHoraent1;
+                    String stHorasal1;
+
+                    stHoraent1 = replicate(String.valueOf(tpHoraent1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent1.getCurrentMinute()), "0", 2);
+                    stHorasal1 = replicate(String.valueOf(tpHorasal1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal1.getCurrentMinute()), "0", 2);
+
+                    if(stHoraent1.equals("00:00") && stHorasal1.equals("00:00")){
+                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 8:
                     //P8
+                    final RadioGroup rgNmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
+                    final RadioButton rbNmodos_1 = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_option1);
+                    final RadioButton rbNmodos_2 = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_option2);
                     final RadioButton rbNmodos_Nmodos = (RadioButton) activity.findViewById(R.id.survey_radio_nmodos_nmodos);
                     final EditText etNmodos_otros = (EditText) activity.findViewById(R.id.survey_edit_nmodos_otros);
 
-                    if (rbNmodos_Nmodos.isChecked() && stringToInt(etNmodos_otros.getText().toString()) < 3) {
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_setNumberModes), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                    if (!rbNmodos_1.isChecked() && !rbNmodos_2.isChecked() && !rbNmodos_Nmodos.isChecked()) {
+                        rgNmodos.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (rbNmodos_Nmodos.isChecked() && stringToInt(etNmodos_otros.getText().toString()) < 3) {
+                        etNmodos_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_setNumberModes),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        etNmodos_otros.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
                     break;
                 case 9:
                     //P9
+                    final RadioGroup rgUmodo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_umodo);
                     final RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
                     final RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option2);
                     final RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
@@ -2460,14 +2770,19 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final RadioButton rbUmodo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option9);
                     final RadioButton rbUmodo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option10);
                     final RadioButton rbUmodo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option11);
-                    final RadioButton rbUmodo_12 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option12);
+                    final RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
 
                     if (!rbUmodo_1.isChecked() && !rbUmodo_2.isChecked() && !rbUmodo_3.isChecked() && !rbUmodo_4.isChecked() && !rbUmodo_5.isChecked()
                             && !rbUmodo_6.isChecked() && !rbUmodo_7.isChecked() && !rbUmodo_8.isChecked() && !rbUmodo_9.isChecked() && !rbUmodo_10.isChecked()
-                            && !rbUmodo_11.isChecked() && !rbUmodo_12.isChecked()) {
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                            && !rbUmodo_11.isChecked() && !rbUmodo_13.isChecked()) {
+
+                        rgUmodo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
                     }
                     break;
                 case 10:
@@ -3104,7 +3419,6 @@ public class ModeloTrabajadores1 extends FormTrab {
                 if (checkedId > 0) {
                     switch (checkedId) {
                         case R.id.survey_radio_nmodos_option1:
-                            //P12
                             activity.findViewById(R.id.survey_layout_ultimodo_1modo).setVisibility(GONE);
                             activity.findViewById(R.id.survey_layout_ultimodo_2modo).setVisibility(GONE);
                             activity.findViewById(R.id.survey_layout_ultimodo_umodo).setVisibility(VISIBLE);
@@ -3329,8 +3643,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
-        String textSpDistres = sp_distres.getSelectedItem().toString().substring(0,2);
-        if(!textSpDistres.contains("00") && textSpCdlocado.contains("28079")){
+        String textSpDistres = sp_distres.getSelectedItem().toString().substring(0,5);
+        if(!textSpDistres.contains("00000") && textSpCdlocado.contains("28079")){
             quest.setDistres(textSpDistres);
         } else {
             quest.setDistres("-1");
@@ -3429,14 +3743,6 @@ public class ModeloTrabajadores1 extends FormTrab {
         quest.setZonatrab(String.valueOf(selectedCode));
 
         //P7
-        /*
-        EditText etHoraent1 = (EditText) activity.findViewById(R.id.survey_edit_horaent1);
-        EditText etHoraent2 = (EditText) activity.findViewById(R.id.survey_edit_horaent2);
-        EditText etHoraent3 = (EditText) activity.findViewById(R.id.survey_edit_horaent3);
-        EditText etHorasal1 = (EditText) activity.findViewById(R.id.survey_edit_horasal1);
-        EditText etHorasal2 = (EditText) activity.findViewById(R.id.survey_edit_horasal2);
-        EditText etHorasal3 = (EditText) activity.findViewById(R.id.survey_edit_horasal3);
-        */
         TimePicker etHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
         TimePicker etHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
         TimePicker etHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
@@ -3444,19 +3750,26 @@ public class ModeloTrabajadores1 extends FormTrab {
         TimePicker etHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
         TimePicker etHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
-        if(!etHoraent1.toString().equals("00:00") || !etHorasal1.toString().equals("00:00")){
-            quest.setHoraent1(etHoraent1.toString());
-            quest.setHorasal1(etHorasal1.toString());
+        String stHoraent1 = replicate(String.valueOf(etHoraent1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent1.getCurrentMinute()), "0", 2);
+        String stHorasal1 = replicate(String.valueOf(etHorasal1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal1.getCurrentMinute()), "0", 2);
+        String stHoraent2 = replicate(String.valueOf(etHoraent2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent2.getCurrentMinute()), "0", 2);
+        String stHorasal2 = replicate(String.valueOf(etHorasal2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal2.getCurrentMinute()), "0", 2);
+        String stHoraent3 = replicate(String.valueOf(etHoraent3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent3.getCurrentMinute()), "0", 2);
+        String stHorasal3 = replicate(String.valueOf(etHorasal3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal3.getCurrentMinute()), "0", 2);
+
+        if(!stHoraent1.equals("00:00") || !stHorasal1.equals("00:00")){
+            quest.setHoraent1(stHoraent1);
+            quest.setHorasal1(stHorasal1);
         }
 
-        if(!etHoraent2.toString().equals("00:00") || !etHorasal2.toString().equals("00:00")) {
-            quest.setHoraent2(etHoraent2.toString());
-            quest.setHorasal2(etHorasal2.toString());
+        if(!stHoraent2.equals("00:00") || !stHorasal2.equals("00:00")) {
+            quest.setHoraent2(stHoraent2);
+            quest.setHorasal2(stHorasal2);
         }
 
-        if(!etHoraent3.toString().equals("00:00") || !etHorasal3.toString().equals("00:00")) {
-            quest.setHoraent3(etHoraent3.toString());
-            quest.setHorasal3(etHorasal3.toString());
+        if(!stHoraent3.equals("00:00") || !stHorasal3.equals("00:00")) {
+            quest.setHoraent3(stHoraent3);
+            quest.setHorasal3(stHorasal3);
         }
 
         //P8
@@ -3717,7 +4030,7 @@ public class ModeloTrabajadores1 extends FormTrab {
             quest.setValtranspubli3("-1");
         }
 
-        if (etValtranspubli_1.getText().toString().equals("10") || etValtranspubli_2.getText().toString().equals("10") || etValtranspubli_3.getText().toString().equals("10")) {
+        if (etValtranspubli_1.getText().toString().equals("9") || etValtranspubli_2.getText().toString().equals("9") || etValtranspubli_3.getText().toString().equals("9")) {
             quest.setValtranspubliotro(etValtranspubli_otro.getText().toString());
         }
 
@@ -4219,5 +4532,17 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         }
         return 0;
+    }
+
+    public String replicate (String origen, String relleno, int max){
+        String texto;
+
+        texto = origen;
+
+        while(texto.length() < max){
+            texto = relleno + texto;
+        };
+
+        return texto;
     }
 }
