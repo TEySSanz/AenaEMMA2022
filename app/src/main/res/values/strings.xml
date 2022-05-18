@@ -339,6 +339,11 @@
 
 
     <!-- Preguntas Modelo Trabajadores 1 -->
+    <!-- Botón continuar error -->
+    <string name="survey_model_text_errorTitle">¡Error!</string>
+
+    <!-- Botón revisar error -->
+    <string name="survey_model_text_errorBtnReview">Revisar</string>
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
     <string name="survey_text_setNumberModes">Se debe indicar un número mayor de 2</string>
     <string name="survey_text_specifyAnswer">Se debe especificar una respuesta</string>

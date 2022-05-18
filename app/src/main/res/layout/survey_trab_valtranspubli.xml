@@ -91,16 +91,10 @@
                     android:id="@+id/check_valtranspubli_option8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option8" />
-
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:text="@string/survey_check_valtranspubli_option9" />
 
                 <CheckBox
-                    android:id="@+id/check_valtranspubli_option10"
+                    android:id="@+id/check_valtranspubli_option9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/survey_check_valtranspubli_option10" />
@@ -123,11 +117,6 @@
 
                 <TextView
                     android:id="@+id/survey_text_valtranspubli_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
-
-                <TextView
-                    android:id="@+id/survey_text_valtranspubli_4"
                     android:layout_width="match_parent"
                     android:layout_height="48dp" />
 
