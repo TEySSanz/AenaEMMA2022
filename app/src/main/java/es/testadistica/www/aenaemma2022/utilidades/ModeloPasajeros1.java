@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,6 +25,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -45,7 +45,7 @@ public class ModeloPasajeros1 extends Form {
 
     private int preguntaAnterior = 1;
     private int idCue;
-    private int finCue = 43;
+    private int finCue = 42;
     private boolean resultValue;
 
 
@@ -1166,14 +1166,8 @@ public class ModeloPasajeros1 extends Form {
                 LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
-                next.setVisibility(VISIBLE);
-                p42.setVisibility(VISIBLE);
-                break;
-            case 43:
-                //FIN
-                previo.setVisibility(VISIBLE);
-                save.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
+                p42.setVisibility(VISIBLE);
                 break;
         }
 
@@ -1614,7 +1608,7 @@ public class ModeloPasajeros1 extends Form {
                     }
                     break;
                 case 42:
-                    EditText etValorexp = (EditText) activity.findViewById(R.id.survey_edit_valorexp);
+                    /*EditText etValorexp = (EditText) activity.findViewById(R.id.survey_edit_valorexp);
                     int intValorexp = stringToInt(etValorexp.getText().toString());
                     if (intValorexp<1 || intValorexp>10) {
                         String textoError = activity.getResources().getString(R.string.survey_text_error_1a10);
@@ -1625,8 +1619,22 @@ public class ModeloPasajeros1 extends Form {
                         return false;
                     } else {
                         etValorexp.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
-                    }
+                    }*/
 
+                    RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
+                    int intValorexp = Math.round(rabValorexp.getRating());
+                    if (intValorexp<1 || intValorexp>10) {
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_1a10);
+                        rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
+                    break;
+                case 999:
+                    //Siempre que se guarde se comprueba que tenga relleno el numero de vuelo y la puerta de embarque
                     EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
                     EditText etNnumVuelo = (EditText) activity.findViewById(R.id.survey_edit_numVuelo);
                     EditText etPpuertaEmbarque = (EditText) activity.findViewById(R.id.survey_edit_puertaEmbarque);
@@ -1661,6 +1669,10 @@ public class ModeloPasajeros1 extends Form {
                     } else {
                         etPpuertaEmbarque.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
+
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMVUECA, String.valueOf(cue.getNumvueca()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_PUERTA, String.valueOf(cue.getPuerta()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_HORAFIN, String.valueOf(cue.getHoraFin()));
                 break;
             }
         }
@@ -2624,6 +2636,33 @@ public class ModeloPasajeros1 extends Form {
         int selectedCode = -1;
         int checkedId = -1;
 
+        //CABECERA
+        EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
+        EditText etNnumVuelo = (EditText) activity.findViewById(R.id.survey_edit_numVuelo);
+        EditText etPuertaEmbarque = (EditText) activity.findViewById(R.id.survey_edit_puertaEmbarque);
+        String stPuertaEmbarque = etPuertaEmbarque.getText().toString();
+        String stNumvueca = etCodCompVuelo.getText().toString()+"-"+etNnumVuelo.getText().toString();
+
+        if (!stPuertaEmbarque.isEmpty()) {
+            quest.setPuerta(stPuertaEmbarque);
+        } else {
+            quest.setPuerta("-1");
+        }
+
+        if (!etCodCompVuelo.getText().toString().isEmpty() || !etNnumVuelo.getText().toString().isEmpty()){
+            quest.setNumvueca(stNumvueca);
+        }
+
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        Date fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_TIME);
+        //Asigna la fecha a visualizar
+        quest.setHoraFin(sdfDate.format(fechaActual));
+
+
+
         //P1
         SearchableSpinner sp_cdpaisna = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
         String textSpCdpaisna = sp_cdpaisna.getSelectedItem().toString().substring(0, 3);
@@ -3120,11 +3159,13 @@ public class ModeloPasajeros1 extends Form {
         EditText hllega_minutos = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
         quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());*/
         TimePicker etHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
+        String stHllega = replicate(String.valueOf(etHllega.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHllega.getCurrentMinute()), "0", 2);
 
-        if(!etHllega.toString().equals("00:00")){
-            quest.setHllega(etHllega.toString());
-        }
-
+        //if(!stHllega.equals("00:00")){
+            quest.setHllega(stHllega);
+        //} else {
+        //    quest.setHllega("-1");
+        //}
 
         //P17
         SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
@@ -3746,8 +3787,10 @@ public class ModeloPasajeros1 extends Form {
         quest.setCdsexo(selectedCode);
 
         //P42
-        EditText etValorexp= (EditText) activity.findViewById(R.id.survey_edit_valorexp);
-        quest.setValorexp(stringToInt(etValorexp.getText().toString()));
+        /*EditText etValorexp= (EditText) activity.findViewById(R.id.survey_edit_valorexp);
+        quest.setValorexp(stringToInt(etValorexp.getText().toString()));*/
+        RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
+        quest.setValorexp(Math.round(rabValorexp.getRating()));
 
         return quest;
     }
@@ -4011,5 +4054,15 @@ public class ModeloPasajeros1 extends Form {
         return false;
     }
 
+    private String replicate (String origen, String relleno, int max){
+        String texto;
 
+        texto = origen;
+
+        while(texto.length() < max){
+            texto = relleno + texto;
+        };
+
+        return texto;
+    }
 }

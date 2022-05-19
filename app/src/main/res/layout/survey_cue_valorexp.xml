@@ -20,7 +20,15 @@
             style="@style/SurveyQuestionTitle"
             android:text="@string/survey_m1_text_valorexp" />
 
-        <EditText
+        <RatingBar
+            android:id="@+id/survey_rating_valorexp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="10"
+            android:stepSize="1" />
+
+        <!--<EditText
             android:id="@+id/survey_edit_valorexp"
             style="@style/SurveyQuestionEdit"
             android:layout_width="match_parent"
@@ -28,7 +36,7 @@
             android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="2" />-->
 
 
     </LinearLayout>

@@ -31,7 +31,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 43;
+    private int maxPreg = 42;
 
     private CuePasajeros cue;
     private Form form;
@@ -138,10 +138,19 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
-                            Intent visita = new Intent();
-                            setResult(0, visita);
-                            finish();
+                            if (modeloCue==1){
+                                if (form.checkQuestion(999)){
+                                    Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                                    Intent visita = new Intent();
+                                    setResult(0, visita);
+                                    finish();
+                                }
+                            } else {
+                                Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                                Intent visita = new Intent();
+                                setResult(0, visita);
+                                finish();
+                            }
                         }
                     });
 
