@@ -69,7 +69,7 @@
     <string name="survey_text_error_mas2">Se debe indicar un valor mayor a 2</string>
     <string name="survey_text_error_Nmodos_otros">Se debe especificar una respuesta</string>
     <string name="survey_text_error_umodo">No se puede repetir el mismo modo</string>
-
+    <string name="survey_text_error_nninos">El nº de personas que viaja en su grupo inmediato es inferior al nº de niños introducido</string>
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
     <!--Pregunta2-->
