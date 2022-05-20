@@ -8,12 +8,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -23,6 +25,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
@@ -43,6 +46,7 @@ import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 
 public class ModeloPasajeros1 extends Form {
 
+    private static final String TAG = "ModeloPasajeros1";
     private int preguntaAnterior = 1;
     private int idCue;
     private int finCue = 42;
@@ -108,6 +112,17 @@ public class ModeloPasajeros1 extends Form {
         sp_cdpasina.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdpasina.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdpasina.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sp_cdpasina.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P2
         //Asigna los valores del desplegable de paises
         SearchableSpinner sp_cdpasire;
@@ -116,26 +131,85 @@ public class ModeloPasajeros1 extends Form {
         sp_cdpasire.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdpasire.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdpasire.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdpasire.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
         sp_cdlocado_prov.setAdapter(provinciasAdapter);
         sp_cdlocado_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocado_prov.setPositiveButton(activity.getString(R.string.spinner_close));
 
-        SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+        sp_cdlocado_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
         sp_cdlocado.setAdapter(municipiosAdapter);
         sp_cdlocado.setTitle(activity.getString(R.string.spinner_municipio_title));
         sp_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_cdlocado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
         sp_distres.setAdapter(distritosAdapter);
         sp_distres.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distres.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_distres.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_distres.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
         sp_distres_area.setAdapter(paises1y2Adapter);
         sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
         sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_distres_area.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //P4
         //Asigna los valores del desplegable de paises
@@ -145,6 +219,18 @@ public class ModeloPasajeros1 extends Form {
         sp_cdiaptoo.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdiaptoo.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdiaptoo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P5
         //Asigna los valores del desplegable de companias
         SearchableSpinner sp_ciaantes;
@@ -153,21 +239,69 @@ public class ModeloPasajeros1 extends Form {
         sp_ciaantes.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_ciaantes.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_ciaantes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_ciaantes.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P9
         SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
         sp_cdlocaco_prov.setAdapter(provinciasAdapter);
         sp_cdlocaco_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocaco_prov.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         sp_cdlocaco.setAdapter(municipiosAdapter);
         sp_cdlocaco.setTitle(activity.getString(R.string.spinner_municipio_title));
         sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocaco.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_distracce = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
         sp_distracce.setAdapter(distritosAdapter);
         sp_distracce.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distracce.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_distracce.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_distracce.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //P17
         //Asigna los valores del desplegable de paises
@@ -177,6 +311,18 @@ public class ModeloPasajeros1 extends Form {
         sp_cdiaptod.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdiaptod.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdiaptod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P18
         //Asigna los valores del desplegable de companias
         SearchableSpinner sp_numvuepa;
@@ -184,6 +330,18 @@ public class ModeloPasajeros1 extends Form {
         sp_numvuepa.setAdapter(companiasAdapter);
         sp_numvuepa.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_numvuepa.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_numvuepa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_numvuepa.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //P19b
         //Asigna los valores del desplegable de companias
@@ -193,6 +351,18 @@ public class ModeloPasajeros1 extends Form {
         sp_cdociaar.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_cdociaar.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdociaar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdociaar.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P20
         //Asigna los valores del desplegable de paises
         SearchableSpinner sp_cdiaptof;
@@ -200,6 +370,18 @@ public class ModeloPasajeros1 extends Form {
         sp_cdiaptof.setAdapter(paisesAdapter);
         sp_cdiaptof.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdiaptof.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         //P21
         //Asigna los valores del desplegable de motivo viaje
@@ -209,6 +391,18 @@ public class ModeloPasajeros1 extends Form {
         sp_cdmviaje.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdmviaje.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_cdmviaje.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdmviaje.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P36
         //Asigna los valores del desplegable de productos
         SearchableSpinner sp_prod1;
@@ -217,11 +411,35 @@ public class ModeloPasajeros1 extends Form {
         sp_prod1.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod1.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_prod1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_prod1.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_prod2;
         sp_prod2 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
         sp_prod2.setAdapter(productosAdapter);
         sp_prod2.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod2.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_prod2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_prod2.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         SearchableSpinner sp_prod3;
         sp_prod3 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
@@ -229,17 +447,53 @@ public class ModeloPasajeros1 extends Form {
         sp_prod3.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod3.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_prod3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_prod3.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_prod4;
         sp_prod4 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
         sp_prod4.setAdapter(productosAdapter);
         sp_prod4.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod4.setPositiveButton(activity.getString(R.string.spinner_close));
 
+        sp_prod4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_prod4.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         SearchableSpinner sp_prod5;
         sp_prod5 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
         sp_prod5.setAdapter(productosAdapter);
         sp_prod5.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod5.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_prod5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_prod5.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
@@ -249,6 +503,7 @@ public class ModeloPasajeros1 extends Form {
 
         tpHllega.setIs24HourView(true);
 
+        setTimePickerInterval(tpHllega);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             tpHllega.setHour(0);
@@ -1265,12 +1520,12 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 12:
                     //P12
-                    if (checkUModo()){
+                    /*if (checkUModo()){
                         String textoError = activity.getResources().getString(R.string.survey_text_error_umodo);
                         Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
                         toast.show();
                         return false;
-                    }
+                    }*/
                     RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
                     RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
                     RadioButton rb2modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option13);
@@ -1362,8 +1617,6 @@ public class ModeloPasajeros1 extends Form {
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
                             toast.show();
                             return false;
-                        } else {
-                            spCdociaar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                         }
                     }
 
@@ -1421,6 +1674,39 @@ public class ModeloPasajeros1 extends Form {
                         }
                     }
 
+
+                    break;
+                case 24:
+                    rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
+                    EditText etNpers_especificar = (EditText) activity.findViewById(R.id.survey_edit_npers_especificar);
+                    EditText etNninos = (EditText) activity.findViewById(R.id.survey_edit_nniños);
+                    int intEtNninos = stringToInt(etNninos.getText().toString());
+                    int checkedId = rgNpers.getCheckedRadioButtonId();
+                    int selectedCode = 0;
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_npers_option1:
+                                selectedCode = 1;
+                                break;
+                            case R.id.survey_radio_npers_option2:
+                                selectedCode = 2;
+                                break;
+                            case R.id.survey_radio_npers_option3:
+                                selectedCode = stringToInt(etNpers_especificar.getText().toString());
+                                break;
+                        }
+                    }
+
+                    if (intEtNninos > (selectedCode)){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_nninos);
+                        etNninos.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etNninos.setError(textoError);
+                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
+                        toast.show();
+                        return false;
+                    } else {
+                        etNninos.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
 
@@ -1510,16 +1796,16 @@ public class ModeloPasajeros1 extends Form {
                     }
 
                     if (rgP44factu.getCheckedRadioButtonId() == R.id.survey_radio_p44factu_option1){
-                        EditText bulgrupo = (EditText) activity.findViewById(R.id.survey_edit_bulgrupo);
-                        if (stringToInt(bulgrupo.getText().toString())<1){
+                        EditText etBulgrupo = (EditText) activity.findViewById(R.id.survey_edit_bulgrupo);
+                        if (stringToInt(etBulgrupo.getText().toString())<1){
                             String textoError = activity.getResources().getString(R.string.survey_text_error_bulgrupo);
-                            bulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-                            bulgrupo.setError(textoError);
+                            etBulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etBulgrupo.setError(textoError);
                             Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
                             toast.show();
                             return false;
                         } else {
-                            bulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            etBulgrupo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                         }
                     }
 
@@ -4064,5 +4350,22 @@ public class ModeloPasajeros1 extends Form {
         };
 
         return texto;
+    }
+
+    private void setTimePickerInterval(TimePicker timePicker) {
+        try {
+            int TIME_PICKER_INTERVAL = 15;
+            NumberPicker minutePicker = (NumberPicker) timePicker.findViewById(Resources.getSystem().getIdentifier(
+                    "minute", "id", "android"));
+            minutePicker.setMinValue(0);
+            minutePicker.setMaxValue((60 / TIME_PICKER_INTERVAL) - 1);
+            List<String> displayedValues = new ArrayList<String>();
+            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
+                displayedValues.add(String.format("%02d", i));
+            }
+            minutePicker.setDisplayedValues(displayedValues.toArray(new String[0]));
+        } catch (Exception e) {
+            Log.e(TAG, "Exception: " + e);
+        }
     }
 }
