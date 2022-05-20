@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.0)</string>
+    <string name="app_name">EMMA 2022 (v1.2)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.0</string>
+    <string name="version">v1.2</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -347,6 +347,7 @@
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
     <string name="survey_text_setNumberModes">Se debe indicar un número mayor de 2</string>
     <string name="survey_text_specifyAnswer">Se debe especificar una respuesta</string>
+    <string name="survey_text_sameTime">La hora de entrada y salida no pueden coincidir</string>
     <!--Pregunta1-->
     <string name="survey_text_empresa">1. ¿Podría indicar la empresa para la que trabaja?</string>
     <!--Pregunta2-->
@@ -355,6 +356,7 @@
     <string name="survey_text_cdlocado">3. Indique el Municipio de su residencia habitual</string>
     <string name="survey_text_cdlocado_loc">Localidad</string>
     <string name="survey_text_distres">Distrito-Barrio (solo para Madrid Capital)</string>
+    <string name="survey_text_distres_otros">Indique algún punto identificativo cercano a su residencia: calle, parada, etc.</string>
     <!--Pregunta4-->
     <string name="survey_text_jornada">4. ¿Que jornada laboral realiza?</string>
     <string name="survey_radio_jornada_option1">Jornada continua de mañana (L a V)</string>
@@ -376,6 +378,7 @@
     <string name="survey_radio_zonatrab_option3">T4-T4S</string>
     <string name="survey_radio_zonatrab_option4">Terminal Ejecutiva</string>
     <string name="survey_radio_zonatrab_option5">Zona Carga Aérea</string>
+    <string name="survey_radio_zonatrab_option6">Zona de Rampa</string>
     <!--Pregunta7-->
     <string name="survey_text_horaent_pregunta">7. ¿Cuál es su horario habitual de trabajo?</string>
     <string name="survey_text_horaent_option1">1. Hora habitual de entrada/salida al trabajo:</string>
@@ -447,6 +450,7 @@
     <string name="survey_radio_satistranspubli_option3">3</string>
     <string name="survey_radio_satistranspubli_option4">4</string>
     <string name="survey_radio_satistranspubli_option5">5</string>
+    <string name="survey_radio_satistranspubli_option9">Ns/Nc</string>
     <!--Pregunta12-->
     <string name="survey_text_valtranspubli">12. ¿Qué es lo que más valora del transporte público?</string>
     <string name="survey_text_valtranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
@@ -517,6 +521,7 @@
     <string name="survey_radio_aparctrab_option2">Si, pago abono</string>
     <string name="survey_radio_aparctrab_option3">No, lo dejo en el viario</string>
     <string name="survey_radio_aparctrab_option4">No, se lo lleva el conductor</string>
+    <string name="survey_radio_aparctrab_option9">Ns/Nc</string>
     <!--Pregunta21-->
     <string name="survey_text_compartcoche">21. ¿Estaría dispuesto a COMPARTIR COCHE para ir al trabajo, si actualmente no lo hace?</string>
     <string name="survey_text_compartcoche_ent">(puede marcar más de una respuesta hasta un máximo de 3)</string>
@@ -525,7 +530,7 @@
     <string name="survey_check_compartcoche_option2">Si, si la empresa me encuentra compañeros para compartir coche</string>
     <string name="survey_check_compartcoche_option3">Si, si los compañeros de trabajo vivieran cerca de mi casa</string>
     <string name="survey_check_compartcoche_option4">Si, si la empresa dispone de un dispositivo aplicativo colaborativo para compartir coche</string>
-    <string name="survey_check_compartcoche_option5">Otras condiciones (especificar):</string>
+    <string name="survey_check_compartcoche_option5">Otras condiciones (especificar)</string>
     <!--SeccionB-->
     <string name="survey_text_EMP_seccion_bicicleta">Sección Bicicleta o modo alternativo</string>
     <!--Pregunta22-->

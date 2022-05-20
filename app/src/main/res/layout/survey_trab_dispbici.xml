@@ -30,103 +30,61 @@
             style="@style/SurveyQuestionHelp"/>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/survey_layout_check_dispbici"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option0" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option1" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option2" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option3" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option4" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option5" />
-
-                <CheckBox
-                    android:id="@+id/check_dispbici_option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_dispbici_option6" />
-            </LinearLayout>
-
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/check_dispbici_option0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/survey_check_dispbici_option0" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option1" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option2" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option3" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option4" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option5" />
 
-                <TextView
-                    android:id="@+id/survey_text_dispbici_6"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_dispbici_option6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_dispbici_option6" />
 
-                <EditText
-                    android:id="@+id/survey_edit_dispbici"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:gravity="center"
-                    android:inputType="text"
-                    style="@style/SurveyQuestionEdit"
-                    android:visibility="visible" />
+            <EditText
+                android:id="@+id/survey_edit_dispbici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                style="@style/SurveyQuestionEdit"
+                android:visibility="gone" />
 
-            </LinearLayout>
         </LinearLayout>
 
         <EditText

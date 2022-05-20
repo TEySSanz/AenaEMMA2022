@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/aenaLightGrey</item>
+        <item name="colorPrimary">@color/aenaBlue</item>
         <item name="colorAccent">@color/aenaGreen</item>
     </style>
 
@@ -18,8 +19,9 @@
 
     <!-- Base application theme. -->
     <style name="Theme.AenaEMMA2022" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">20dp</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/aenaLightGrey</item>
+        <item name="colorPrimary">@color/aenaBlue</item>
         <item name="colorPrimaryVariant">@color/md_teal_600</item>
         <item name="colorOnPrimary">@color/md_white_1000</item>
         <!-- Secondary brand color. -->
@@ -29,7 +31,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Background color. -->
-        <item name="android:windowBackground">@color/aenaBlue</item>
+        <item name="android:windowBackground">@color/aenaLightGrey</item>
         <!-- Customize your theme here. -->
     </style>
     <!-- Customize your theme here. -->
@@ -48,16 +50,16 @@
     </style>
 
     <style name="SurveyQuestionTitle" parent="@android:style/TextAppearance.Medium" >
-        <item name="android:textColor">@color/aenaLightGrey</item>
+        <item name="android:textColor">@color/aenaBlue</item>
         <item name="android:padding">8dp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">32dp</item>
     </style>
 
     <style name="SurveyQuestionHelp" parent="@android:style/TextAppearance.Medium" >
         <item name="android:textColor">@color/md_red_900</item>
         <item name="android:padding">8dp</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:background">@color/md_amber_200</item>
     </style>
@@ -65,7 +67,7 @@
     <style name="SurveyQuestionLiteral" parent="@android:style/TextAppearance.Medium" >
         <item name="android:textColor">@color/md_red_900</item>
         <item name="android:padding">8dp</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">italic</item>
     </style>
 
@@ -74,7 +76,7 @@
     </style>
 
     <style name="SurveyQuestionAspect" parent="@android:style/TextAppearance.Medium" >
-        <item name="android:textColor">@color/aenaLightGrey</item>
+        <item name="android:textColor">@color/aenaBlue</item>
         <item name="android:padding">8dp</item>
     </style>
 
@@ -82,4 +84,5 @@
         <item name="colorControlNormal">@color/md_black_1000</item>
         <item name="colorControlActivated">@color/md_black_1000</item>
     </style>
+
 </resources>

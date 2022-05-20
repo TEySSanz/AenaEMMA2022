@@ -19,6 +19,7 @@
 
     <!-- Base application theme. -->
     <style name="Theme.AenaEMMA2022" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">20dp</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/aenaBlue</item>
         <item name="colorPrimaryVariant">@color/md_teal_600</item>
@@ -52,13 +53,13 @@
         <item name="android:textColor">@color/aenaBlue</item>
         <item name="android:padding">8dp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">32dp</item>
     </style>
 
     <style name="SurveyQuestionHelp" parent="@android:style/TextAppearance.Medium" >
         <item name="android:textColor">@color/md_red_900</item>
         <item name="android:padding">8dp</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:background">@color/md_amber_200</item>
     </style>
@@ -66,7 +67,7 @@
     <style name="SurveyQuestionLiteral" parent="@android:style/TextAppearance.Medium" >
         <item name="android:textColor">@color/md_red_900</item>
         <item name="android:padding">8dp</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">italic</item>
     </style>
 

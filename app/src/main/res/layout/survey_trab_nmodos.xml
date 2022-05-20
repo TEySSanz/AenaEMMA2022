@@ -55,6 +55,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="12dp"
             android:layout_toRightOf="@id/survey_radiogroup_nmodos"
+            android:inputType="number"
             android:visibility="gone" />
     </RelativeLayout>
 </LinearLayout>

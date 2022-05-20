@@ -8,12 +8,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -22,6 +25,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -43,6 +47,7 @@ import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 
 public class ModeloTrabajadores1 extends FormTrab {
 
+    private static final String TAG = "ModeloTrabajadores1";
     private int preguntaAnterior = 1;
     private int idCue;
     private int finCue = 28;
@@ -100,7 +105,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         survey_spinner_actempre.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P3
-        ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
+        //ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
+        ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario("28"));
         cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_cdlocado;
@@ -192,6 +198,16 @@ public class ModeloTrabajadores1 extends FormTrab {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 sp_distres.setBackgroundResource(android.R.drawable.btn_dropdown);
+
+                String texto = sp_distres.getSelectedItem().toString().substring(0,5);
+
+                if (!texto.equals("99999")){
+                    activity.findViewById(R.id.survey_distres_otros).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_edit_distres_otros).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_distres_otros).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_edit_distres_otros).setVisibility(VISIBLE);
+                }
 
             }
             @Override
@@ -324,6 +340,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
         final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
         final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
+        final RadioButton rbZonatrab_6 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option6);
 
         rbZonatrab_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -354,6 +371,13 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         rbZonatrab_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbZonatrab_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
@@ -489,13 +513,202 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
+        //P10
+        final RadioGroup rgNocucoche = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nocucoche);
+        final RadioButton rbNocucoche_1 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option1);
+        final RadioButton rbNocucoche_2 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option2);
+        final RadioButton rbNocucoche_3 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option3);
+
+        rbNocucoche_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNocucoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbNocucoche_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNocucoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbNocucoche_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgNocucoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P11
+        final RadioGroup rgSatistranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_satistranspubli);
+        final RadioButton rbSatistranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option1);
+        final RadioButton rbSatistranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option2);
+        final RadioButton rbSatistranspubli_3 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option3);
+        final RadioButton rbSatistranspubli_4 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option4);
+        final RadioButton rbSatistranspubli_5 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option5);
+        final RadioButton rbSatistranspubli_9 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option9);
+
+        rbSatistranspubli_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbSatistranspubli_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbSatistranspubli_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbSatistranspubli_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbSatistranspubli_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbSatistranspubli_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P16
+        final RadioGroup rgDisptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
+        final RadioButton rbDisptranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option1);
+        final RadioButton rbDisptranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option2);
+        final RadioButton rbDisptranspubli_3 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option3);
+        final RadioButton rbDisptranspubli_4 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option4);
+        final RadioButton rbDisptranspubli_5 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option5);
+        final RadioButton rbDisptranspubli_6 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option6);
+        final RadioButton rbDisptranspubli_7 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option7);
+
+        rbDisptranspubli_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(GONE);
+            }
+        });
+
+        rbDisptranspubli_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(VISIBLE);
+            }
+        });
+
+        //P20
+        final RadioGroup rgAparctrab= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
+        final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
+        final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
+        final RadioButton rbAparctrab_3= (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
+        final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
+        final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
+
+        rbAparctrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
         //P23
+        final RadioGroup rgModosalida = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_modosalida);
         final RadioButton rbModosalida_1 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option1);
         final RadioButton rbModosalida_2 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option2);
 
         rbModosalida_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgModosalida.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_layout_modosalida_indique).setVisibility(GONE);
             }
         });
@@ -503,7 +716,124 @@ public class ModeloTrabajadores1 extends FormTrab {
         rbModosalida_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                rgModosalida.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_layout_modosalida_indique).setVisibility(VISIBLE);
+            }
+        });
+
+        //P24
+        final RadioGroup rgCdedadtrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedadtrab);
+        final RadioButton rbCdedadtrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option1);
+        final RadioButton rbCdedadtrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option2);
+        final RadioButton rbCdedadtrab_3= (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option3);
+        final RadioButton rbCdedadtrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option4);
+
+        rbCdedadtrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdedadtrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdedadtrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdedadtrab_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P25
+        final RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
+        final RadioButton rbCdsexo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdsexo_option1);
+        final RadioButton rbCdsexo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdsexo_option2);
+
+        rbCdsexo_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdsexo_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P26
+        final RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
+        final RadioButton rbCdslab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option1);
+        final RadioButton rbCdslab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option2);
+        final RadioButton rbCdslab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option3);
+
+        rbCdslab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdslab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbCdslab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P27
+        final RadioGroup rgPuesto = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_puesto);
+        final RadioButton rbPuesto_1 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option1);
+        final RadioButton rbPuesto_2 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option2);
+        final RadioButton rbPuesto_3 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option3);
+        final RadioButton rbPuesto_4 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option4);
+
+        rbPuesto_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbPuesto_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbPuesto_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbPuesto_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
 
@@ -525,6 +855,12 @@ public class ModeloTrabajadores1 extends FormTrab {
         tpHoraent3.setIs24HourView(true);
         tpHorasal3.setIs24HourView(true);
 
+        setTimePickerInterval(tpHoraent1);
+        setTimePickerInterval(tpHorasal1);
+        setTimePickerInterval(tpHoraent2);
+        setTimePickerInterval(tpHorasal2);
+        setTimePickerInterval(tpHoraent3);
+        setTimePickerInterval(tpHorasal3);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             tpHoraent1.setHour(0);
@@ -558,6 +894,7 @@ public class ModeloTrabajadores1 extends FormTrab {
     private void iniciarCheckBox(){
 
         //P12
+        final LinearLayout llValtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_valtranspubli);
         final CheckBox cbValtranspubli_1 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option1);
         final CheckBox cbValtranspubli_2 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option2);
         final CheckBox cbValtranspubli_3 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option3);
@@ -567,6 +904,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbValtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option7);
         final CheckBox cbValtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option8);
         final CheckBox cbValtranspubli_9 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option9);
+        final EditText etValtranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_valtranspubli);
 
         final ArrayList<String> listValtranspubli = new ArrayList<String>();
 
@@ -577,6 +915,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbValtranspubli_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
@@ -616,6 +956,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
                         (cbValtranspubli_9.isChecked()? 1:0);
@@ -653,6 +995,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbValtranspubli_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
@@ -692,6 +1036,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
                         (cbValtranspubli_9.isChecked()? 1:0);
@@ -729,6 +1075,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbValtranspubli_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
@@ -768,6 +1116,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
                         (cbValtranspubli_9.isChecked()? 1:0);
@@ -805,6 +1155,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbValtranspubli_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
@@ -844,6 +1196,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
                         (cbValtranspubli_9.isChecked()? 1:0);
@@ -882,6 +1236,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbValtranspubli_1.isChecked()? 1:0) + (cbValtranspubli_2.isChecked()? 1:0) + (cbValtranspubli_3.isChecked()? 1:0) + (cbValtranspubli_4.isChecked()? 1:0) +
                         (cbValtranspubli_5.isChecked()? 1:0) + (cbValtranspubli_6.isChecked()? 1:0) + (cbValtranspubli_7.isChecked()? 1:0) + (cbValtranspubli_8.isChecked()? 1:0) +
                         (cbValtranspubli_9.isChecked()? 1:0);
@@ -892,8 +1248,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbValtranspubli_9.isChecked()) {
                     listValtranspubli.add("9");
+                    etValtranspubli_otros.setVisibility(VISIBLE);
                 } else {
                     listValtranspubli.remove("9");
+                    etValtranspubli_otros.setVisibility(GONE);
                 }
 
                 if (listValtranspubli.size() == 1) {
@@ -917,6 +1275,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         //P13
+        final LinearLayout llMejtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_mejtranspubli);
         final CheckBox cbMejtranspubli_1 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option1);
         final CheckBox cbMejtranspubli_2 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option2);
         final CheckBox cbMejtranspubli_3 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option3);
@@ -924,6 +1283,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbMejtranspubli_5 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option5);
         final CheckBox cbMejtranspubli_6 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option6);
         final CheckBox cbMejtranspubli_9 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option9);
+        final EditText etMejtranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_mejtranspubli);
 
         final ArrayList<String> listMejtranspubli = new ArrayList<String>();
 
@@ -934,6 +1294,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbMejtranspubli_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
@@ -972,6 +1334,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
 
@@ -1008,6 +1372,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbMejtranspubli_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
@@ -1046,6 +1412,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
 
@@ -1082,6 +1450,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbMejtranspubli_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
@@ -1120,6 +1490,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
 
@@ -1157,6 +1529,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMejtranspubli_1.isChecked()? 1:0) + (cbMejtranspubli_2.isChecked()? 1:0) + (cbMejtranspubli_3.isChecked()? 1:0) + (cbMejtranspubli_4.isChecked()? 1:0) +
                         (cbMejtranspubli_5.isChecked()? 1:0) + (cbMejtranspubli_6.isChecked()? 1:0) + (cbMejtranspubli_9.isChecked()? 1:0);
 
@@ -1166,8 +1540,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbMejtranspubli_9.isChecked()) {
                     listMejtranspubli.add("9");
+                    etMejtranspubli_otros.setVisibility(VISIBLE);
                 } else {
                     listMejtranspubli.remove("9");
+                    etMejtranspubli_otros.setVisibility(GONE);
                 }
 
                 if (listMejtranspubli.size() == 1) {
@@ -1191,6 +1567,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         //P15
+        final LinearLayout llNotranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_notranspubli);
         final CheckBox cbNotranspubli_1 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option1);
         final CheckBox cbNotranspubli_2 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option2);
         final CheckBox cbNotranspubli_3 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option3);
@@ -1201,6 +1578,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbNotranspubli_8 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option8);
         final CheckBox cbNotranspubli_9 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option9);
         final CheckBox cbNotranspubli_10 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option10);
+        final EditText etNotranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_notranspubli);
 
         final ArrayList<String> listNotranspubli = new ArrayList<String>();
 
@@ -1211,6 +1589,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbNotranspubli_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
@@ -1250,6 +1630,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
                         (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
@@ -1287,6 +1669,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbNotranspubli_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
@@ -1326,6 +1710,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
                         (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
@@ -1363,6 +1749,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbNotranspubli_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
@@ -1402,6 +1790,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
                         (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
@@ -1439,6 +1829,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbNotranspubli_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
@@ -1478,6 +1870,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
                         (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
@@ -1515,6 +1909,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbNotranspubli_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
@@ -1554,6 +1950,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
                         (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
@@ -1564,8 +1962,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbNotranspubli_10.isChecked()) {
                     listNotranspubli.add("10");
+                    etNotranspubli_otros.setVisibility(VISIBLE);
                 } else {
                     listNotranspubli.remove("10");
+                    etNotranspubli_otros.setVisibility(GONE);
                 }
 
                 if (listNotranspubli.size() == 1) {
@@ -1589,11 +1989,13 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         //P18
+        final LinearLayout lMedtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_medtranspubli);
         final CheckBox cbMedtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option7);
         final CheckBox cbMedtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option8);
         final CheckBox cbMedtranspubli_10 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option10);
         final CheckBox cbMedtranspubli_11 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option11);
         final CheckBox cbMedtranspubli_99 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option99);
+        final EditText etMedtranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli);
 
         final ArrayList<String> listMedtranspubli = new ArrayList<String>();
 
@@ -1604,6 +2006,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbMedtranspubli_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbMedtranspubli_7.isChecked()? 1:0) + (cbMedtranspubli_8.isChecked()? 1:0) + (cbMedtranspubli_10.isChecked()? 1:0) + (cbMedtranspubli_11.isChecked()? 1:0) +
                         (cbMedtranspubli_99.isChecked()? 1:0);
@@ -1642,6 +2046,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMedtranspubli_7.isChecked()? 1:0) + (cbMedtranspubli_8.isChecked()? 1:0) + (cbMedtranspubli_10.isChecked()? 1:0) + (cbMedtranspubli_11.isChecked()? 1:0) +
                         (cbMedtranspubli_99.isChecked()? 1:0);
 
@@ -1678,6 +2084,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbMedtranspubli_10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbMedtranspubli_7.isChecked()? 1:0) + (cbMedtranspubli_8.isChecked()? 1:0) + (cbMedtranspubli_10.isChecked()? 1:0) + (cbMedtranspubli_11.isChecked()? 1:0) +
                         (cbMedtranspubli_99.isChecked()? 1:0);
@@ -1716,6 +2124,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMedtranspubli_7.isChecked()? 1:0) + (cbMedtranspubli_8.isChecked()? 1:0) + (cbMedtranspubli_10.isChecked()? 1:0) + (cbMedtranspubli_11.isChecked()? 1:0) +
                         (cbMedtranspubli_99.isChecked()? 1:0);
 
@@ -1753,6 +2163,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbMedtranspubli_7.isChecked()? 1:0) + (cbMedtranspubli_8.isChecked()? 1:0) + (cbMedtranspubli_10.isChecked()? 1:0) + (cbMedtranspubli_11.isChecked()? 1:0) +
                         (cbMedtranspubli_99.isChecked()? 1:0);
 
@@ -1762,8 +2174,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbMedtranspubli_99.isChecked()) {
                     listMedtranspubli.add("99");
+                    etMedtranspubli_otros.setVisibility(VISIBLE);
                 } else {
                     listMedtranspubli.remove("99");
+                    etMedtranspubli_otros.setVisibility(GONE);
                 }
 
                 if (listMedtranspubli.size() == 1) {
@@ -1787,12 +2201,14 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         //P21
+        final LinearLayout lCompartcoche = (LinearLayout) activity.findViewById(R.id.survey_layout_check_compartcoche);
         final CheckBox cbCompartcoche_0 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option0);
         final CheckBox cbCompartcoche_1 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option1);
         final CheckBox cbCompartcoche_2 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option2);
         final CheckBox cbCompartcoche_3 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option3);
         final CheckBox cbCompartcoche_4 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option4);
         final CheckBox cbCompartcoche_5 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option5);
+        final EditText etCompartcoche = (EditText) activity.findViewById(R.id.survey_edit_compartcoche);
 
         final ArrayList<String> listCompartcoche = new ArrayList<String>();
 
@@ -1803,6 +2219,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbCompartcoche_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
@@ -1841,6 +2259,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
 
@@ -1877,6 +2297,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbCompartcoche_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
@@ -1915,6 +2337,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
 
@@ -1951,6 +2375,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbCompartcoche_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
@@ -1989,6 +2415,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbCompartcoche_0.isChecked()? 1:0) + (cbCompartcoche_1.isChecked()? 1:0) + (cbCompartcoche_2.isChecked()? 1:0) + (cbCompartcoche_3.isChecked()? 1:0) +
                         (cbCompartcoche_4.isChecked()? 1:0) + (cbCompartcoche_5.isChecked()? 1:0);
 
@@ -1998,8 +2426,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbCompartcoche_5.isChecked()) {
                     listCompartcoche.add("5");
+                    etCompartcoche.setVisibility(VISIBLE);
                 } else {
                     listCompartcoche.remove("5");
+                    etCompartcoche.setVisibility(GONE);
                 }
 
                 if (listCompartcoche.size() == 1) {
@@ -2023,6 +2453,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         });
 
         //P22
+        final LinearLayout lDisbici = (LinearLayout) activity.findViewById(R.id.survey_layout_check_dispbici);
         final CheckBox cbDispbici_0 = (CheckBox) activity.findViewById(R.id.check_dispbici_option0);
         final CheckBox cbDispbici_1 = (CheckBox) activity.findViewById(R.id.check_dispbici_option1);
         final CheckBox cbDispbici_2 = (CheckBox) activity.findViewById(R.id.check_dispbici_option2);
@@ -2030,6 +2461,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbDispbici_4 = (CheckBox) activity.findViewById(R.id.check_dispbici_option4);
         final CheckBox cbDispbici_5 = (CheckBox) activity.findViewById(R.id.check_dispbici_option5);
         final CheckBox cbDispbici_6 = (CheckBox) activity.findViewById(R.id.check_dispbici_option6);
+        final EditText etDisbici = (EditText) activity.findViewById(R.id.survey_edit_dispbici);
 
         final ArrayList<String> listDispbici = new ArrayList<String>();
 
@@ -2040,6 +2472,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbDispbici_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
@@ -2078,6 +2512,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
 
@@ -2114,6 +2550,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbDispbici_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
@@ -2152,6 +2590,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
 
@@ -2188,6 +2628,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         cbDispbici_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
@@ -2226,6 +2668,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
 
@@ -2263,6 +2707,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
 
+                lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
                 int count = (cbDispbici_0.isChecked()? 1:0) + (cbDispbici_1.isChecked()? 1:0) + (cbDispbici_2.isChecked()? 1:0) + (cbDispbici_3.isChecked()? 1:0) +
                         (cbDispbici_4.isChecked()? 1:0) + (cbDispbici_5.isChecked()? 1:0) + (cbDispbici_6.isChecked()? 1:0);
 
@@ -2272,8 +2718,10 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbDispbici_6.isChecked()) {
                     listDispbici.add("6");
+                    etDisbici.setVisibility(VISIBLE);
                 } else {
                     listDispbici.remove("6");
+                    etDisbici.setVisibility(GONE);
                 }
 
                 if (listDispbici.size() == 1) {
@@ -2300,15 +2748,19 @@ public class ModeloTrabajadores1 extends FormTrab {
     @Override
     public int onNextPressed(int p) {
         if (checkQuestion(p)) {
+            View view = activity.getCurrentFocus();
+
+            if (view != null) {
+                view.clearFocus();
+                InputMethodManager imm = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
             pregunta = p;
             saveQuestion(p);
             hideQuestions();
             setPreguntaAnterior(p);
-            View view = activity.getCurrentFocus();
-            if (view != null) {
-                InputMethodManager imm = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            }
+
             return showNextQuestion(p);
         } else {
             return 0;
@@ -2455,7 +2907,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 16:
                 //P16
-                RelativeLayout p16 = (RelativeLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
+                LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2607,6 +3059,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     //P3
                     final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                     final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+                    final EditText etDistres_otro = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
 
                     if (sp_cdlocado.getSelectedItem().toString().substring(0,5).equals("00000")) {
                         sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -2624,6 +3077,17 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 activity.getResources().getString(R.string.survey_text_selectOption),
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    }
+
+                    if (sp_distres.getSelectedItem().toString().substring(0,5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
+                        etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
                     break;
@@ -2689,8 +3153,9 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
                     final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
                     final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
+                    final RadioButton rbZonatrab_6 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option6);
 
-                    if (!rbZonatrab_1.isChecked() && !rbZonatrab_2.isChecked() && !rbZonatrab_3.isChecked() && !rbZonatrab_4.isChecked() && !rbZonatrab_5.isChecked()) {
+                    if (!rbZonatrab_1.isChecked() && !rbZonatrab_2.isChecked() && !rbZonatrab_3.isChecked() && !rbZonatrab_4.isChecked() && !rbZonatrab_5.isChecked() && !rbZonatrab_6.isChecked()) {
                         rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -2708,12 +3173,30 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final LinearLayout llHoraent1 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option1);
                     final TimePicker tpHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
                     final TimePicker tpHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
+                    final LinearLayout llHoraent2 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option2);
+                    final TimePicker tpHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
+                    final TimePicker tpHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
+                    final LinearLayout llHoraent3 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option3);
+                    final TimePicker tpHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
+                    final TimePicker tpHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
                     String stHoraent1;
                     String stHorasal1;
 
                     stHoraent1 = replicate(String.valueOf(tpHoraent1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent1.getCurrentMinute()), "0", 2);
                     stHorasal1 = replicate(String.valueOf(tpHorasal1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal1.getCurrentMinute()), "0", 2);
+
+                    String stHoraent2;
+                    String stHorasal2;
+
+                    stHoraent2 = replicate(String.valueOf(tpHoraent2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent2.getCurrentMinute()), "0", 2);
+                    stHorasal2 = replicate(String.valueOf(tpHorasal2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal2.getCurrentMinute()), "0", 2);
+
+                    String stHoraent3;
+                    String stHorasal3;
+
+                    stHoraent3 = replicate(String.valueOf(tpHoraent3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent3.getCurrentMinute()), "0", 2);
+                    stHorasal3 = replicate(String.valueOf(tpHorasal3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal3.getCurrentMinute()), "0", 2);
 
                     if(stHoraent1.equals("00:00") && stHorasal1.equals("00:00")){
                         llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -2722,8 +3205,31 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 activity.getResources().getString(R.string.survey_text_specifyAnswer),
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else if (!stHoraent1.equals("00:00") && stHoraent1.equals(stHorasal1)){
+                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_sameTime),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else if (!stHoraent2.equals("00:00") && llHoraent2.getVisibility() == VISIBLE && stHoraent2.equals(stHorasal2)){
+                        llHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_sameTime),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else if (!stHoraent3.equals("00:00") && llHoraent3.getVisibility() == VISIBLE && stHoraent3.equals(stHorasal3)){
+                        llHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_sameTime),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
                         llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        llHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        llHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                     }
 
                     break;
@@ -2787,30 +3293,181 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 10:
                     //P10
+                    final RadioGroup rgNocucoche = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nocucoche);
+                    final RadioButton rbNocucoche_1 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option1);
+                    final RadioButton rbNocucoche_2 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option2);
+                    final RadioButton rbNocucoche_3 = (RadioButton) activity.findViewById(R.id.survey_radio_nocucoche_option3);
+
+                    if (!rbNocucoche_1.isChecked() && !rbNocucoche_2.isChecked() && !rbNocucoche_3.isChecked()) {
+                        rgNocucoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgNocucoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 11:
                     //P11
+                    final RadioGroup rgSatistranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_satistranspubli);
+                    final RadioButton rbSatistranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option1);
+                    final RadioButton rbSatistranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option2);
+                    final RadioButton rbSatistranspubli_3 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option3);
+                    final RadioButton rbSatistranspubli_4 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option4);
+                    final RadioButton rbSatistranspubli_5 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option5);
+                    final RadioButton rbSatistranspubli_9 = (RadioButton) activity.findViewById(R.id.survey_radio_satistranspubli_option9);
+
+                    if (!rbSatistranspubli_1.isChecked() && !rbSatistranspubli_2.isChecked() && !rbSatistranspubli_3.isChecked() && !rbSatistranspubli_4.isChecked()
+                            && !rbSatistranspubli_5.isChecked() && !rbSatistranspubli_9.isChecked()) {
+                        rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgSatistranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 12:
                     //P12
+                    final LinearLayout llValtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_valtranspubli);
+                    final CheckBox cbValtranspubli_1 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option1);
+                    final CheckBox cbValtranspubli_2 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option2);
+                    final CheckBox cbValtranspubli_3 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option3);
+                    final CheckBox cbValtranspubli_4 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option4);
+                    final CheckBox cbValtranspubli_5 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option5);
+                    final CheckBox cbValtranspubli_6 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option6);
+                    final CheckBox cbValtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option7);
+                    final CheckBox cbValtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option8);
+                    final CheckBox cbValtranspubli_9 = (CheckBox) activity.findViewById(R.id.check_valtranspubli_option9);
+                    final EditText etValtranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_valtranspubli);
+
+                    if (!cbValtranspubli_1.isChecked() && !cbValtranspubli_2.isChecked() && !cbValtranspubli_3.isChecked()
+                            && !cbValtranspubli_4.isChecked() && !cbValtranspubli_5.isChecked() && !cbValtranspubli_6.isChecked()
+                            && !cbValtranspubli_7.isChecked() && !cbValtranspubli_8.isChecked() && !cbValtranspubli_9.isChecked()){
+
+                        llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbValtranspubli_9.isChecked() && etValtranspubli_otros.getText().toString().equals("")){
+                        etValtranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        llValtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 13:
                     //P13
+                    final LinearLayout llMejtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_mejtranspubli);
+                    final CheckBox cbMejtranspubli_1 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option1);
+                    final CheckBox cbMejtranspubli_2 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option2);
+                    final CheckBox cbMejtranspubli_3 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option3);
+                    final CheckBox cbMejtranspubli_4 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option4);
+                    final CheckBox cbMejtranspubli_5 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option5);
+                    final CheckBox cbMejtranspubli_6 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option6);
+                    final CheckBox cbMejtranspubli_9 = (CheckBox) activity.findViewById(R.id.check_mejtranspubli_option9);
+                    final EditText etMejtranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_mejtranspubli);
+
+                    if (!cbMejtranspubli_1.isChecked() && !cbMejtranspubli_2.isChecked() && !cbMejtranspubli_3.isChecked()
+                            && !cbMejtranspubli_4.isChecked() && !cbMejtranspubli_5.isChecked() && !cbMejtranspubli_6.isChecked() && !cbMejtranspubli_9.isChecked()){
+
+                        llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbMejtranspubli_9.isChecked() && etMejtranspubli_otros.getText().toString().equals("")){
+                        etMejtranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        llMejtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etMejtranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 14:
                     //P14
+                    final EditText etDesplazatrab = (EditText) activity.findViewById(R.id.survey_edit_desplazatrab);
+
+                    if (etDesplazatrab.getText().toString().equals("")) {
+                        etDesplazatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etDesplazatrab.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 15:
                     //P15
+                    final LinearLayout llNotranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_notranspubli);
+                    final CheckBox cbNotranspubli_1 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option1);
+                    final CheckBox cbNotranspubli_2 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option2);
+                    final CheckBox cbNotranspubli_3 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option3);
+                    final CheckBox cbNotranspubli_4 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option4);
+                    final CheckBox cbNotranspubli_5 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option5);
+                    final CheckBox cbNotranspubli_6 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option6);
+                    final CheckBox cbNotranspubli_7 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option7);
+                    final CheckBox cbNotranspubli_8 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option8);
+                    final CheckBox cbNotranspubli_9 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option9);
+                    final CheckBox cbNotranspubli_10 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option10);
+                    final EditText etNotranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_notranspubli);
+
+                    if (!cbNotranspubli_1.isChecked() && !cbNotranspubli_2.isChecked() && !cbNotranspubli_3.isChecked()
+                            && !cbNotranspubli_4.isChecked() && !cbNotranspubli_5.isChecked() && !cbNotranspubli_6.isChecked() && !cbNotranspubli_7.isChecked()
+                            && !cbNotranspubli_8.isChecked() && !cbNotranspubli_9.isChecked() && !cbNotranspubli_10.isChecked()){
+
+                        llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbNotranspubli_10.isChecked() && etNotranspubli_otros.getText().toString().equals("")){
+                        etNotranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etNotranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 16:
                     //P16
+                    final RadioGroup rgDisptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
                     final RadioButton rbDisptranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option1);
                     final RadioButton rbDisptranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option2);
                     final RadioButton rbDisptranspubli_3 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option3);
@@ -2818,13 +3475,30 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final RadioButton rbDisptranspubli_5 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option5);
                     final RadioButton rbDisptranspubli_6 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option6);
                     final RadioButton rbDisptranspubli_7 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option7);
+                    final EditText etDisptranspubli= (EditText) activity.findViewById(R.id.survey_edit_disptranspubli_otros);
 
                     if (!rbDisptranspubli_1.isChecked() && !rbDisptranspubli_2.isChecked() && !rbDisptranspubli_3.isChecked() && !rbDisptranspubli_4.isChecked() &&
                             !rbDisptranspubli_5.isChecked() && !rbDisptranspubli_6.isChecked() && !rbDisptranspubli_7.isChecked()) {
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (rbDisptranspubli_7.isChecked() && etDisptranspubli.getText().toString().equals("")){
+
+                        etDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
+
                     break;
                 case 17:
                     //P17
@@ -2832,42 +3506,259 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 18:
                     //P18
+                    final LinearLayout lMedtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_medtranspubli);
+                    final CheckBox cbMedtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option7);
+                    final CheckBox cbMedtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option8);
+                    final CheckBox cbMedtranspubli_10 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option10);
+                    final CheckBox cbMedtranspubli_11 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option11);
+                    final CheckBox cbMedtranspubli_99 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option99);
+                    final EditText etMedtranspubli = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli);
+
+                    if(!cbMedtranspubli_7.isChecked() && !cbMedtranspubli_8.isChecked() && !cbMedtranspubli_10.isChecked() && !cbMedtranspubli_11.isChecked()
+                            && !cbMedtranspubli_99.isChecked()) {
+
+                        lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbMedtranspubli_99.isChecked() && etMedtranspubli.getText().toString().equals("")){
+
+                        etMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+
+                        lMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etMedtranspubli.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 19:
                     //P19
+                    final EditText etTiempotranspubli = (EditText) activity.findViewById(R.id.survey_edit_tiempotranspubli);
+                    if (etTiempotranspubli.getText().toString().equals("")){
+
+                        etTiempotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+
+                        etTiempotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 20:
                     //P20
+                    final RadioGroup rgAparctrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
+                    final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
+                    final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
+                    final RadioButton rbAparctrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
+                    final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
+                    final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
+
+                    if (!rbAparctrab_1.isChecked() && !rbAparctrab_2.isChecked() && !rbAparctrab_3.isChecked() && !rbAparctrab_4.isChecked() && !rbAparctrab_9.isChecked()) {
+                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 21:
                     //P21
+                    final LinearLayout lCompartcoche = (LinearLayout) activity.findViewById(R.id.survey_layout_check_compartcoche);
+                    final CheckBox cbCompartcoche_0 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option0);
+                    final CheckBox cbCompartcoche_1 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option1);
+                    final CheckBox cbCompartcoche_2 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option2);
+                    final CheckBox cbCompartcoche_3 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option3);
+                    final CheckBox cbCompartcoche_4 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option4);
+                    final CheckBox cbCompartcoche_5 = (CheckBox) activity.findViewById(R.id.check_compartcoche_option5);
+                    final EditText etCompartcoche = (EditText) activity.findViewById(R.id.survey_edit_compartcoche);
+
+                    if(!cbCompartcoche_0.isChecked() && !cbCompartcoche_1.isChecked() && !cbCompartcoche_2.isChecked() && !cbCompartcoche_3.isChecked()
+                            && !cbCompartcoche_4.isChecked() && !cbCompartcoche_5.isChecked()) {
+
+                        lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbCompartcoche_5.isChecked() && etCompartcoche.getText().toString().equals("")){
+
+                        etCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+
+                        lCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etCompartcoche.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 22:
                     //P22
+                    final LinearLayout lDisbici = (LinearLayout) activity.findViewById(R.id.survey_layout_check_dispbici);
+                    final CheckBox cbDisbici_0 = (CheckBox) activity.findViewById(R.id.check_dispbici_option0);
+                    final CheckBox cbDisbici_1 = (CheckBox) activity.findViewById(R.id.check_dispbici_option1);
+                    final CheckBox cbDisbici_2 = (CheckBox) activity.findViewById(R.id.check_dispbici_option2);
+                    final CheckBox cbDisbici_3 = (CheckBox) activity.findViewById(R.id.check_dispbici_option3);
+                    final CheckBox cbDisbici_4 = (CheckBox) activity.findViewById(R.id.check_dispbici_option4);
+                    final CheckBox cbDisbici_5 = (CheckBox) activity.findViewById(R.id.check_dispbici_option5);
+                    final CheckBox cbDisbici_6 = (CheckBox) activity.findViewById(R.id.check_dispbici_option6);
+                    final EditText etDisbici = (EditText) activity.findViewById(R.id.survey_edit_dispbici);
+
+                    if(!cbDisbici_0.isChecked() && !cbDisbici_1.isChecked() && !cbDisbici_2.isChecked() && !cbDisbici_3.isChecked()
+                            && !cbDisbici_4.isChecked() && !cbDisbici_5.isChecked() && !cbDisbici_6.isChecked()) {
+
+                        lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (cbDisbici_6.isChecked() && etDisbici.getText().toString().equals("")){
+
+                        etDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+
+                        lDisbici.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etDisbici.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 23:
                     //P23
+                    final RadioGroup rgModosalida = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_modosalida);
+                    final RadioButton rbModosalida_1 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option1);
+                    final RadioButton rbModosalida_2 = (RadioButton) activity.findViewById(R.id.survey_radio_modosalida_option2);
+                    final EditText etModosalida_i = (EditText) activity.findViewById(R.id.survey_edit_modosalida_indique);
+
+                    if (!rbModosalida_1.isChecked() && !rbModosalida_2.isChecked()) {
+                        rgModosalida.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else if (rbModosalida_2.isChecked() && etModosalida_i.getText().toString().equals("")){
+
+                        etModosalida_i.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        rgModosalida.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etModosalida_i.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
 
                     break;
                 case 24:
                     //P24
+                    final RadioGroup rgCdedadtrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedadtrab);
+                    final RadioButton rbCdedadtrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option1);
+                    final RadioButton rbCdedadtrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option2);
+                    final RadioButton rbCdedadtrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option3);
+                    final RadioButton rbCdedadtrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_cdedadtrab_option4);
+
+                    if (!rbCdedadtrab_1.isChecked() && !rbCdedadtrab_2.isChecked() && !rbCdedadtrab_3.isChecked() && !rbCdedadtrab_4.isChecked()) {
+                        rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgCdedadtrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 25:
                     //P25
+                    final RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
+                    final RadioButton rbCdsexo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdsexo_option1);
+                    final RadioButton rbCdsexo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdsexo_option2);
+
+                    if (!rbCdsexo_1.isChecked() && !rbCdsexo_2.isChecked()) {
+                        rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 26:
                     //P26
+                    final RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
+                    final RadioButton rbCdslab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option1);
+                    final RadioButton rbCdslab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option2);
+                    final RadioButton rbCdslab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_cdslab_option3);
+
+                    if (!rbCdslab_1.isChecked() && !rbCdslab_2.isChecked() && !rbCdslab_3.isChecked()) {
+                        rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
                 case 27:
                     //P27
+                    final RadioGroup rgPuesto = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_puesto);
+                    final RadioButton rbPuesto_1 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option1);
+                    final RadioButton rbPuesto_2 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option2);
+                    final RadioButton rbPuesto_3 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option3);
+                    final RadioButton rbPuesto_4 = (RadioButton) activity.findViewById(R.id.survey_radio_puesto_option4);
+
+                    if (!rbPuesto_1.isChecked() && !rbPuesto_2.isChecked() && !rbPuesto_3.isChecked() && !rbPuesto_4.isChecked()) {
+                        rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
 
                     break;
             }
@@ -2901,6 +3792,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     //P3
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_CDLOCADO, cue.getCdlocado());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISTRES, cue.getDistres());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISTRESOTRO, cue.getDistresotro());
 
                     break;
                 case 4:
@@ -3073,6 +3965,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     //P3
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_CDLOCADO);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_DISTRES);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_DISTRESOTRO);
 
                     break;
                 case 4:
@@ -3291,7 +4184,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         p15.setVisibility(GONE);
 
         //P16
-        RelativeLayout p16 = (RelativeLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
+        LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
         p16.setVisibility(GONE);
 
         //P17
@@ -3479,7 +4372,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                             case R.id.survey_radio_ultimodo_umodo_option11:
                                 show = showQuestion(11); //>P11
                                 break;
-                            case R.id.survey_radio_ultimodo_umodo_option12:
+                            case R.id.survey_radio_ultimodo_umodo_option13:
                                 show = showQuestion(22); //>P22
                                 break;
                             default:
@@ -3644,8 +4537,13 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
         String textSpDistres = sp_distres.getSelectedItem().toString().substring(0,5);
+        EditText etDistresOtros = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
         if(!textSpDistres.contains("00000") && textSpCdlocado.contains("28079")){
             quest.setDistres(textSpDistres);
+
+            if(textSpDistres.contains("99999")){
+                quest.setDistresotro(etDistresOtros.getText().toString());
+            }
         } else {
             quest.setDistres("-1");
         }
@@ -3733,6 +4631,12 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case R.id.survey_radio_zonatrab_option4:
                     selectedCode = 4;
+                    break;
+                case R.id.survey_radio_zonatrab_option5:
+                    selectedCode = 5;
+                    break;
+                case R.id.survey_radio_zonatrab_option6:
+                    selectedCode = 6;
                     break;
                 default:
                     selectedCode = 9;
@@ -3998,6 +4902,9 @@ public class ModeloTrabajadores1 extends FormTrab {
                 case R.id.survey_radio_satistranspubli_option5:
                     selectedCode = 5;
                     break;
+                case R.id.survey_radio_satistranspubli_option9:
+                    selectedCode = 9;
+                    break;
                 default:
                     selectedCode = 9;
                     break;
@@ -4189,6 +5096,9 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case R.id.survey_radio_aparctrab_option4:
                     selectedCode = 4;
+                    break;
+                case R.id.survey_radio_aparctrab_option9:
+                    selectedCode = 9;
                     break;
                 default:
                     selectedCode = 9;
@@ -4418,6 +5328,33 @@ public class ModeloTrabajadores1 extends FormTrab {
         return preguntaAnterior;
     }
 
+    private List<String> getDiccionario(String provincia) {
+        List<String> getDiccionario = new ArrayList<String>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT T.iden, T.codigo ||'. '|| T.descripcion " +
+                                        "FROM " +
+                                        "        (SELECT iden, codigo, descripcion, 1 AS aux " +
+                                        "                FROM TipoMunicipios " +
+                                        "                WHERE iden = 0 " +
+                                        "                UNION " +
+                                        "                SELECT iden, codigo, descripcion, 2 AS aux " +
+                                        "                FROM TipoMunicipios " +
+                                        "                WHERE provincia = " + provincia + " " +
+                                        "                UNION " +
+                                        "                SELECT iden, codigo, descripcion, 3 AS aux " +
+                                        "                FROM TipoMunicipios " +
+                                        "                WHERE provincia <> " + provincia + " AND iden <> 0) AS T " +
+                                        "ORDER BY T.aux" , parametros);
+
+        while (cursor.moveToNext()) {
+            getDiccionario.add(cursor.getString(1));
+        }
+
+        return getDiccionario;
+    }
+
     private List<String> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden) {
         List<String> getDiccionario = new ArrayList<String>();
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -4544,5 +5481,22 @@ public class ModeloTrabajadores1 extends FormTrab {
         };
 
         return texto;
+    }
+
+    private void setTimePickerInterval(TimePicker timePicker) {
+        try {
+            int TIME_PICKER_INTERVAL = 15;
+            NumberPicker minutePicker = (NumberPicker) timePicker.findViewById(Resources.getSystem().getIdentifier(
+                    "minute", "id", "android"));
+            minutePicker.setMinValue(0);
+            minutePicker.setMaxValue((60 / TIME_PICKER_INTERVAL) - 1);
+            List<String> displayedValues = new ArrayList<String>();
+            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
+                displayedValues.add(String.format("%02d", i));
+            }
+            minutePicker.setDisplayedValues(displayedValues.toArray(new String[0]));
+        } catch (Exception e) {
+            Log.e(TAG, "Exception: " + e);
+        }
     }
 }

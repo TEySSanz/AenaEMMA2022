@@ -22,7 +22,7 @@
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdsexo"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/survey_text_cdsexo"
             android:orientation="vertical">

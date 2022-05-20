@@ -66,6 +66,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_satistranspubli_option5" />
 
+            <RadioButton
+                android:id="@+id/survey_radio_satistranspubli_option9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_radio_satistranspubli_option9" />
+
         </RadioGroup>
     </RelativeLayout>
 </LinearLayout>

@@ -2,7 +2,7 @@ package es.testadistica.www.aenaemma2022.utilidades;
 
 public class Contracts {
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 3;
     public static final String DATABASE_NAME = "Aena.db";
 
     //Tabla Usuarios
@@ -382,6 +382,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_ACTEMPREOTRO = "actempreotro";
     public static final String COLUMN_CUETRABAJADORES_CDLOCADO = "cdlocado";
     public static final String COLUMN_CUETRABAJADORES_DISTRES = "distres";
+    public static final String COLUMN_CUETRABAJADORES_DISTRESOTRO = "distresotro";
     public static final String COLUMN_CUETRABAJADORES_JORNADA = "jornada";
     public static final String COLUMN_CUETRABAJADORES_JORNADAOTRO = "jornadaotro";
     public static final String COLUMN_CUETRABAJADORES_NDIASTRAB = "ndiastrab";
@@ -452,6 +453,7 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_ACTEMPREOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_CDLOCADO + " TEXT," +
             COLUMN_CUETRABAJADORES_DISTRES + " TEXT," +
+            COLUMN_CUETRABAJADORES_DISTRESOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_JORNADA + " TEXT," +
             COLUMN_CUETRABAJADORES_JORNADAOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_NDIASTRAB + " TEXT," +

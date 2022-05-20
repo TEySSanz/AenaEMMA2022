@@ -19,6 +19,7 @@ public class CueTrabajadores implements Serializable {
     private String actempreotro;
     private String cdlocado;
     private String distres;
+    private String distresotro;
     private String jornada;
     private String jornadaotro;
     private String ndiastrab;
@@ -198,6 +199,14 @@ public class CueTrabajadores implements Serializable {
 
     public void setDistres(String distres) {
         this.distres = distres;
+    }
+
+    public String getDistresotro() {
+        return distresotro;
+    }
+
+    public void setDistresotro(String distresotro) {
+        this.distresotro = distresotro;
     }
 
     public String getJornada() {

@@ -3,6 +3,7 @@ package es.testadistica.www.aenaemma2022.actividades;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -116,7 +117,7 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
                     alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
-                            form.onNextPressed(pregunta);
+                            //form.onNextPressed(pregunta);
                             Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
                             Intent visita = new Intent();
                             setResult(0, visita);
@@ -188,7 +189,10 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp(){
 
-        finish();
+        return true;
+    }
+
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
         return true;
     }
 }

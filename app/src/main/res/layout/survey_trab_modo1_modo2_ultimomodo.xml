@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/survey_layout_ultimodo_pregunta"
-        android:layout_width="556dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/md_blue_grey_200"
         android:orientation="vertical"
@@ -25,7 +25,7 @@
 
         <LinearLayout
             android:id="@+id/survey_layout_tabla"
-            android:layout_width="564dp"
+            android:layout_width="match_parent"
             android:layout_height="480dp"
             android:layout_gravity="center|center_vertical"
             android:orientation="horizontal"
@@ -106,7 +106,7 @@
             <!--- 2 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_ultimodo_2col"
-                android:layout_width="324dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -242,7 +242,8 @@
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m1_text_ultimodo_1modo"
-                    android:textColor="@color/aenaBlue" />
+                    android:textColor="@color/aenaBlue"
+                    android:textSize="18dp"/>
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_1modo"
@@ -368,7 +369,8 @@
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m1_text_ultimodo_2modo"
-                    android:textColor="@color/aenaBlue" />
+                    android:textColor="@color/aenaBlue"
+                    android:textSize="18dp" />
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_2modo"
@@ -481,7 +483,8 @@
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m1_text_ultimodo_umodo"
-                    android:textColor="@color/aenaBlue" />
+                    android:textColor="@color/aenaBlue"
+                    android:textSize="16dp" />
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_umodo"

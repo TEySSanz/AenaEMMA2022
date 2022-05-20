@@ -30,107 +30,73 @@
             style="@style/SurveyQuestionHelp"/>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="600dp"
+            android:id="@+id/survey_layout_check_valtranspubli"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="200dp"
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/survey_check_valtranspubli_option1" />
 
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option1" />
-
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option2" />
-
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option3" />
-
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option4" />
-
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option5" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="200dp"
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/survey_check_valtranspubli_option2" />
 
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option6" />
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option3" />
 
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option7" />
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option4" />
 
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option9" />
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option5" />
 
-                <CheckBox
-                    android:id="@+id/check_valtranspubli_option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_check_valtranspubli_option10" />
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option6" />
 
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option7" />
 
-                <TextView
-                    android:id="@+id/survey_text_valtranspubli_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option9" />
 
-                <TextView
-                    android:id="@+id/survey_text_valtranspubli_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <CheckBox
+                android:id="@+id/check_valtranspubli_option9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_check_valtranspubli_option10" />
 
-                <TextView
-                    android:id="@+id/survey_text_valtranspubli_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+            <EditText
+                android:id="@+id/survey_edit_valtranspubli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                style="@style/SurveyQuestionEdit"
+                android:visibility="gone" />
 
-
-                <EditText
-                    android:id="@+id/survey_edit_valtranspubli"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:inputType="text"
-                    style="@style/SurveyQuestionEdit"
-                    android:visibility="visible" />
-
-            </LinearLayout>
         </LinearLayout>
 
         <EditText

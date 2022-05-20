@@ -71,6 +71,21 @@
                 android:layout_marginBottom="8dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/survey_distres_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_distres_otros"
+                style="@style/SurveyQuestionAspect"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/survey_edit_distres_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SurveyQuestionEdit"
+                android:visibility="gone" />
         </LinearLayout>
 
     </LinearLayout>

@@ -22,7 +22,7 @@
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_jornada"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/survey_text_jornada"
             android:orientation="vertical">
@@ -41,13 +41,13 @@
 
             <RadioButton
                 android:id="@+id/survey_radio_jornada_option3"
-                android:layout_width="289dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_jornada_option3" />
 
             <RadioButton
                 android:id="@+id/survey_radio_jornada_option4"
-                android:layout_width="253dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_jornada_option4" />
 
@@ -59,7 +59,7 @@
 
             <RadioButton
                 android:id="@+id/survey_radio_jornada_option6"
-                android:layout_width="280dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_jornada_option6" />
 
@@ -68,15 +68,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_jornada_option7" />
-        </RadioGroup>
 
-        <EditText
-            android:id="@+id/survey_edit_jornada_otros"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/survey_radiogroup_jornada"
-            android:layout_toRightOf="@id/survey_radiogroup_jornada"
-            style="@style/SurveyQuestionEdit"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/survey_edit_jornada_otros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SurveyQuestionEdit"
+                android:visibility="gone" />
+        </RadioGroup>
     </RelativeLayout>
 </LinearLayout>

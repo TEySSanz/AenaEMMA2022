@@ -6,11 +6,12 @@
     android:orientation="vertical"
     tools:ignore="ExtraText">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/survey_layout_disptranspubli"
         style="@style/SurveySingleQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:visibility="gone">
 
         <TextView
@@ -22,7 +23,7 @@
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_disptranspubli"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/survey_text_disptranspubli"
             android:orientation="vertical">
@@ -41,13 +42,13 @@
 
             <RadioButton
                 android:id="@+id/survey_radio_disptranspubli_option3"
-                android:layout_width="289dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_disptranspubli_option3" />
 
             <RadioButton
                 android:id="@+id/survey_radio_disptranspubli_option4"
-                android:layout_width="253dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_disptranspubli_option4" />
 
@@ -59,13 +60,13 @@
 
             <RadioButton
                 android:id="@+id/survey_radio_disptranspubli_option6"
-                android:layout_width="280dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_disptranspubli_option6" />
 
             <RadioButton
                 android:id="@+id/survey_radio_disptranspubli_option7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_radio_disptranspubli_option7" />
         </RadioGroup>
@@ -77,6 +78,6 @@
             android:layout_alignBottom="@id/survey_radiogroup_disptranspubli"
             android:layout_toRightOf="@id/survey_radiogroup_disptranspubli"
             style="@style/SurveyQuestionEdit"
-            android:visibility="visible" />
-    </RelativeLayout>
+            android:visibility="gone" />
+    </LinearLayout>
 </LinearLayout>
