@@ -20,6 +20,14 @@
             style="@style/SurveyQuestionTitle"
             android:text="@string/survey_m1_text_viene_re" />
 
+       <TextView
+           android:id="@+id/survey_text_viene_re_bcn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           style="@style/SurveyQuestionTitle"
+           android:text="@string/survey_m1_text_viene_re_bcn"
+           android:visibility="gone"/>
+
        <RadioGroup
                 android:id="@+id/survey_radiogroup_viene_re"
                 android:layout_width="match_parent"
@@ -133,6 +141,16 @@
                             android:layout_marginLeft="@dimen/standard_padding"
                             android:gravity="center"
                             android:text="@string/survey_m1_text_distracce" />
+
+                        <TextView
+                            android:id="@+id/survey_text_distracce_bcn"
+                            style="@style/SurveyQuestionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/standard_padding"
+                            android:gravity="center"
+                            android:text="@string/survey_m1_text_distracce_bcn"
+                            android:visibility="gone"/>
 
 
                         <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner

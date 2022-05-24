@@ -49,6 +49,7 @@ public class ModeloPasajeros1 extends Form {
     private static final String TAG = "ModeloPasajeros1";
     private int preguntaAnterior = 1;
     private int idCue;
+    private int idAeropuerto;
     private int finCue = 42;
     private boolean resultValue;
 
@@ -75,14 +76,39 @@ public class ModeloPasajeros1 extends Form {
     public void initFormView() {
 
         idCue = cue.getIden();
+        idAeropuerto = cue.getIdAeropuerto();
+        System.out.println("idCue: "+idCue);
+        System.out.println("idAeropuerto: "+idAeropuerto);
         showQuestion(pregunta);
 
+        iniciarTextosAeropuertos();
         iniciarSpinners();
         iniciarTimePickers();;
         condicionesSpinners();
         condicionesRadioButton();
         condicionesChecks();
         condicionesEditText();
+    }
+
+    private void iniciarTextosAeropuertos(){
+        //Por defecto se muestran las opciones del cuestionario de Madrid, si de algún aeropuerto se cambian los textos hay que incluirlo en el switch
+        switch (idAeropuerto){
+            case 2:
+                //Barcelona
+                //P2
+                activity.findViewById(R.id.survey_text_distres).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_distres_bcn).setVisibility(VISIBLE);
+
+                activity.findViewById(R.id.survey_text_cdsinope).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdsinope_bcn).setVisibility(VISIBLE);
+
+                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_viene_re_bcn).setVisibility(VISIBLE);
+
+                activity.findViewById(R.id.survey_text_distracce).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_distracce_bcn).setVisibility(VISIBLE);
+                break;
+        }
     }
 
     private void iniciarSpinners() {
@@ -97,13 +123,27 @@ public class ModeloPasajeros1 extends Form {
         municipiosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> motivoViajeAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
         motivoViajeAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-        ArrayAdapter<String> distritosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPODISTRITOS,"iden", "codigo","descripcion", "codigo", " ciudad like '%MAD%' "));
+        String filtroAeropuerto = " ciudad like '%MAD%' ";
+        switch (idAeropuerto){
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " ciudad like '%BCN%' ";
+                break;
+        }
+        ArrayAdapter<String> distritosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPODISTRITOS,"iden", "codigo","descripcion", "codigo", filtroAeropuerto));
         distritosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> companiasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo"));
         companiasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> productosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPRODUCTOS,"iden", "codigo","descripcion", "codigo"));
         productosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-        ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","pais || ', ' || descripcionPrincipal", "codigo", " MADprincipal = 1"));
+        filtroAeropuerto = " MADprincipal = 1";
+        switch (idAeropuerto){
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
+                break;
+        }
+        ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","pais || ', ' || descripcionPrincipal", "codigo", filtroAeropuerto));
         tipoAeropuertosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         //P1
@@ -523,18 +563,30 @@ public class ModeloPasajeros1 extends Form {
         sp_cdpaisre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Blanquear todas las opciones cuando se cambia de pais
+                SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+                SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+                SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+                EditText et_distresotro = (EditText) activity.findViewById(R.id.survey_edit_distresotro);
+                SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+                sp_cdlocado_prov.setSelection(0);
+                sp_cdlocado.setSelection(0);
+                sp_distres.setSelection(0);
+                blanquearEditText(et_distresotro);
+                sp_distres_area.setSelection(0);
 
                 String texto = sp_cdpaisre.getSelectedItem().toString().substring(0,3);
-                if (texto.equals("724")){
+                if (texto.equals("724")){ //España
                     activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(GONE);
                     blanquearEditText(activity.findViewById(R.id.survey_edit_distresotro));
-                    if (compruebaListaPaises1y2(texto) > 0){
+                    if (compruebaListaPaises1y2(texto) > 0){ //Si el pais es uno de la lista 1 y 2 se habilita para introducir el área / región
                         String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
                         ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo", filtro));
                         paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+                        sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
                         sp_distres_area.setAdapter(paises1y2Adapter);
                         sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
                         sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -577,7 +629,7 @@ public class ModeloPasajeros1 extends Form {
                     filtro = filtro + ")";
                 }
 
-                //System.out.println(filtro);
+
 
                 final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                 ArrayAdapter<String> municipioAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
@@ -600,9 +652,18 @@ public class ModeloPasajeros1 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String texto = sp_cdlocado.getSelectedItem().toString().substring(0,5);
+                String filtroAeropuerto = "28079";
 
-                if (!texto.equals("28079")){
+                switch (idAeropuerto) {
+                    case 2:
+                        //Barcelona
+                        filtroAeropuerto = "08019";
+                    break;
+                }
+
+                if (!texto.equals(filtroAeropuerto)){
                     activity.findViewById(R.id.survey_layout_distres).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_layout_distresotro).setVisibility(GONE);
                     blanquearEditText(activity.findViewById(R.id.survey_edit_distresotro));
                 } else {
                     activity.findViewById(R.id.survey_layout_distres).setVisibility(VISIBLE);
@@ -637,9 +698,9 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
+        //P9 Filtro municipios
         final SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
 
-        //P9 Filtro municipios
         sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -683,9 +744,19 @@ public class ModeloPasajeros1 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String texto = sp_cdlocaco.getSelectedItem().toString().substring(0,5);
+                String filtroAeropuerto = "28079";
 
-                if (!texto.equals("28079")){
+                switch (idAeropuerto) {
+                    case 2:
+                        //Barcelona
+                        filtroAeropuerto = "08019";
+                        break;
+                }
+
+                if (!texto.equals(filtroAeropuerto)){
                     activity.findViewById(R.id.survey_layout_distracce).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_layout_distracceotro).setVisibility(GONE);
+                    blanquearEditText(activity.findViewById(R.id.survey_edit_distracceotro));
                 } else {
                     activity.findViewById(R.id.survey_layout_distracce).setVisibility(VISIBLE);
                 }
@@ -706,6 +777,7 @@ public class ModeloPasajeros1 extends Form {
                 String texto = sp_distracce.getSelectedItem().toString().substring(0,2);
 
                 if (!texto.equals("NS")){
+                    blanquearEditText(activity.findViewById(R.id.survey_edit_distracceotro));
                     activity.findViewById(R.id.survey_layout_distracceotro).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_layout_distracceotro).setVisibility(VISIBLE);
@@ -3116,7 +3188,15 @@ public class ModeloPasajeros1 extends Form {
         String textSpDistres = sp_distres.getSelectedItem().toString().substring(0, 2);
         SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
         String textSpDistres_area = sp_distres_area.getSelectedItem().toString().substring(0, 3);
-        if (!textSpDistres.contains("00") && textSpCdlocado.contains("28079")) {
+        String filtroAeropuerto = "28079";
+
+        switch (idAeropuerto) {
+            case 2:
+                //Barcelona
+                filtroAeropuerto = "08019";
+                break;
+        }
+        if (!textSpDistres.contains("00") && textSpCdlocado.contains(filtroAeropuerto)) {
             if (textSpDistres.contains("NS")){
                 EditText et_distresotro = (EditText) activity.findViewById(R.id.survey_edit_distresotro);
                 quest.setDistresotro(et_distresotro.getText().toString());
@@ -3264,7 +3344,15 @@ public class ModeloPasajeros1 extends Form {
                     } else {
                         quest.setCdlocaco("-1");
                     }
-                    if(!textSpDistracce.contains("00") && textSpCdlocaco.contains("28079")){
+                    filtroAeropuerto = "28079";
+
+                    switch (idAeropuerto) {
+                        case 2:
+                            //Barcelona
+                            filtroAeropuerto = "08019";
+                            break;
+                    }
+                    if(!textSpDistracce.contains("00") && textSpCdlocaco.contains(filtroAeropuerto)){
                         if (textSpDistracce.contains("NS")){
                             EditText et_distraccesotro = (EditText) activity.findViewById(R.id.survey_edit_distracceotro);
                             quest.setDistracceotro(et_distraccesotro.getText().toString());
@@ -4411,10 +4499,6 @@ public class ModeloPasajeros1 extends Form {
         int conteo = 0;
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros = null;
-
-        System.out.println("SELECT COUNT(*) AS Conteo "+
-                " FROM " + Contracts.TABLE_TIPOPAISES1Y2 + " AS T1 " +
-                " WHERE iden <> 0 AND "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS + " = '"+codigoPais+"'");
 
         Cursor cursor = db.rawQuery("SELECT COUNT(*) AS Conteo "+
                 " FROM " + Contracts.TABLE_TIPOPAISES1Y2 + " AS T1 " +

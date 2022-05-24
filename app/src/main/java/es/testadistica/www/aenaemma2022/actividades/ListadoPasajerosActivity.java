@@ -52,6 +52,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     TextView txt_usuario;
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
+    int idAeropuerto;
     SearchableSpinner sp_idioma;
     ListView list_pasajeros;
     DBHelper conn;
@@ -81,6 +82,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         if (datos != null) {
             txt_usuario.setText(datos.getString("usuario"));
             txt_aeropuerto.setText(datos.getString("aeropuerto"));
+            idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
         }
 
         //BBDD
@@ -253,6 +255,8 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         }
 
         cue = new CuePasajeros(idCue);
+        cue.setIdAeropuerto(stringToInt(idAeropuerto));
+        cue.setIdioma(idIdioma);
 
         return cue;
     }
@@ -274,6 +278,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         datosSurvey.putString("hora", hora);
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
         datosSurvey.putInt("idCue", cue.getIden());
+        datosSurvey.putInt("idAeropuerto", cue.getIdAeropuerto());
         datosSurvey.putInt("modeloCue", modeloCue);
         datosSurvey.putString("idioma", idioma);
 
@@ -547,5 +552,19 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         Integer number = random.nextInt(900000)+100000;
 
         return System.currentTimeMillis()+ String.valueOf(number);
+    }
+
+    public int stringToInt (String numeroStr){
+        if (numeroStr != null && numeroStr.matches("[0-9.]+")){
+            int number = 0;
+            try{
+                number = Integer.parseInt(numeroStr);
+                return number;
+            }
+            catch (NumberFormatException ex){
+                return 0;
+            }
+        }
+        return 0;
     }
 }

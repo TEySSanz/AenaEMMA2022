@@ -119,6 +119,16 @@
                     android:gravity="center"
                     android:text="@string/survey_m1_text_distres" />
 
+                <TextView
+                    android:id="@+id/survey_text_distres_bcn"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/standard_padding"
+                    android:gravity="center"
+                    android:text="@string/survey_m1_text_distres_bcn"
+                    android:visibility="gone"/>
+
 
                 <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
                     android:id="@+id/survey_spinner_distres"

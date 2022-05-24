@@ -20,6 +20,14 @@
             style="@style/SurveyQuestionTitle"
             android:text="@string/survey_m1_text_cdsinope" />
 
+        <TextView
+            android:id="@+id/survey_text_cdsinope_bcn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m1_text_cdsinope_bcn"
+            android:visibility="gone"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

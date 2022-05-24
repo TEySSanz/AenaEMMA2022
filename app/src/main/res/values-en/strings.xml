@@ -273,4 +273,7 @@
     <string name="survey_m1_radio_cdsexo_option2">Female</string>
     <string name="survey_text_muchasgracias">THANK YOU VERY MUCH FOR YOUR HELP</string>
     <string name="survey_m1_text_valorexp">42. How do you rate the experience of your time at the airport?</string>
+    <string name="spinner_tipoAeropuerto_title">SELECT AIRPORT</string>
+    <string name="survey_m1_text_cdsinope_bcn">7. During your connection has spent the night in Barcelona or around?</string>
+    <string name="survey_m1_text_viene_re_bcn">9. Where did you start your journey to take this flight in Barcelona-El Prat´s airport?</string>
 </resources>

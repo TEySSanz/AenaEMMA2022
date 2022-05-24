@@ -79,6 +79,7 @@
     <string name="survey_m1_text_cdpaisre_prov">Provincia</string>
     <string name="survey_m1_text_cdlocado">Localidad</string>
     <string name="survey_m1_text_distres">Distrito para Madrid capital</string>
+    <string name="survey_m1_text_distres_bcn">Distrito para Barcelona capital</string>
     <string name="survey_m1_text_distres_area">Área / Región</string>
     <string name="survey_m1_text_distresotro">Especificar calle y nº, hotel o similar</string>
     <!--Pregunta3-->
@@ -96,6 +97,7 @@
     <string name="survey_m1_radio_conexfac_option2">No</string>
     <!--Pregunta7-->
     <string name="survey_m1_text_cdsinope">7. Durante la conexión ¿Ha pasado la noche en Madrid o alrededores?</string>
+    <string name="survey_m1_text_cdsinope_bcn">7. Durante la conexión ¿Ha pasado la noche en Barcelona o alrededores?</string>
     <string name="survey_m1_radio_cdsinope_option1">Sí</string>
     <string name="survey_m1_radio_cdsinope_option2">No</string>
     <!--Pregunta8-->
@@ -106,11 +108,13 @@
     <string name="survey_m1_radio_cdalojen_option9">Otros</string>
     <!--Pregunta9-->
     <string name="survey_m1_text_viene_re">9. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re_bcn">9. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Barcelona-El Prat?</string>
     <string name="survey_m1_radio_viene_re_option1">Viene de su residencia</string>
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>
     <string name="survey_m1_text_cdlocaco_prov">Provincia</string>
     <string name="survey_m1_text_cdlocaco">Localidad</string>
     <string name="survey_m1_text_distracce">Distrito para Madrid capital</string>
+    <string name="survey_m1_text_distracce_bcn">Distrito para Barcelona capital</string>
     <string name="survey_m1_text_distracce_ent">Especificar Distrito o en su defecto calle y nº, hotel o similar</string>
     <string name="survey_m1_text_distracceotro">Especificar calle y nº, hotel o similar</string>
     <!--Pregunta10-->

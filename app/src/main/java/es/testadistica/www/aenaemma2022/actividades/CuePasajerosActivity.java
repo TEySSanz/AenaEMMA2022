@@ -42,6 +42,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     private Form form;
     private int modeloCue;
     private int idCue;
+    private int idAeropuerto;
     private int pregunta;
     private Button saveButton;
     private Button nextButton;
@@ -94,12 +95,14 @@ public class CuePasajerosActivity extends AppCompatActivity {
             txt_hora.setText(datos.getString("hora"));
             pregunta = 1;
             idCue = datos.getInt("idCue");
+            idAeropuerto = datos.getInt("idAeropuerto");
             modeloCue = datos.getInt("modeloCue");
 
         }
 
         //Genera el cuestionario
         cue = new CuePasajeros(idCue);
+        cue.setIdAeropuerto(idAeropuerto);
         switch (modeloCue) {
             case 1:
                 form = new ModeloPasajeros1(this, pregunta, conn);

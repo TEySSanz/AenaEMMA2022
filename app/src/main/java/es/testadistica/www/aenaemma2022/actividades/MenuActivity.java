@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -97,6 +98,18 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
 
         //Inicia la petición al webservice
         peticion = Volley.newRequestQueue(this.getApplicationContext());
+
+        //Ocultar el cuestionario de trabajadores cuando el aeropuerto no es uno de los selecionados para hacer el estudio
+        Button cuestionarioTrabajadores = (Button) findViewById(R.id.btn_cueTrabajadores);
+        switch (obtenerAeropuerto(txt_usuario.getText().toString())){
+            case 1:
+                //Aeropuerto Madrid-Barajas
+                cuestionarioTrabajadores.setVisibility(View.VISIBLE);
+                break;
+            default:
+                cuestionarioTrabajadores.setVisibility(View.GONE);
+                break;
+        }
     }
 
     @Override
@@ -213,22 +226,25 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         Intent encuestas = new Intent(this, ListadoPasajerosActivity.class);
         Bundle datos = new Bundle();
 
-        //Obtenemos el nombre del aeropierto
+        //Obtenemos el nombre del aeropuerto
         String aeropuerto = null;
+        String idAeropuerto = null;
         SQLiteDatabase db = conn.getWritableDatabase();
         String[] usuarios = {txt_usuario.getText().toString()};
 
-        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +", T2."+Contracts.COLUMN_AEROPUERTOS_IDEN+
                 " FROM " + Contracts.TABLE_USUARIOS + " AS T1 INNER JOIN " +
                            Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1.idAeropuerto = T2.iden " +
                 " WHERE T1." + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
 
         while (cUsuarios.moveToNext()) {
             aeropuerto = cUsuarios.getString(0);
+            idAeropuerto = cUsuarios.getString(1);
         }
 
         datos.putString("usuario", txt_usuario.getText().toString());
         datos.putString("aeropuerto", aeropuerto);
+        datos.putString("idAeropuerto", idAeropuerto);
 
         encuestas.putExtras(datos);
         startActivity(encuestas);
@@ -449,5 +465,26 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     public void salir(View view) {
         finish();
         System.exit(0);
+    }
+
+    public int obtenerAeropuerto(String usuario){
+
+        //Obtenemos el nombre del aeropuerto
+        String aeropuerto = null;
+        int idAeropuerto = 0;
+        SQLiteDatabase db = conn.getWritableDatabase();
+        String[] usuarios = {usuario};
+
+        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +", T2."+Contracts.COLUMN_AEROPUERTOS_IDEN+
+                " FROM " + Contracts.TABLE_USUARIOS + " AS T1 INNER JOIN " +
+                Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1.idAeropuerto = T2.iden " +
+                " WHERE T1." + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
+
+        while (cUsuarios.moveToNext()) {
+            aeropuerto = cUsuarios.getString(0);
+            idAeropuerto = cUsuarios.getInt(1);
+        }
+
+        return idAeropuerto;
     }
 }
