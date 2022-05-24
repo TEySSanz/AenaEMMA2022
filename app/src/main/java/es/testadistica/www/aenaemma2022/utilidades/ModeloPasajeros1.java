@@ -3689,7 +3689,7 @@ public class ModeloPasajeros1 extends Form {
         EditText hllega_minutos = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
         quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());*/
         TimePicker etHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
-        String stHllega = replicate(String.valueOf(etHllega.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHllega.getCurrentMinute()), "0", 2);
+        String stHllega = replicateTime(String.valueOf(etHllega.getCurrentHour()), "0", 2, 1) + ":" + replicateTime(String.valueOf(etHllega.getCurrentMinute()), "0", 2, 2);
 
         //if(!stHllega.equals("00:00")){
             quest.setHllega(stHllega);
@@ -4602,6 +4602,35 @@ public class ModeloPasajeros1 extends Form {
 
     private String replicate (String origen, String relleno, int max){
         String texto;
+
+        texto = origen;
+
+        while(texto.length() < max){
+            texto = relleno + texto;
+        };
+
+        return texto;
+    }
+
+    public String replicateTime (String origen, String relleno, int max, int tipo){
+        String texto;
+
+        if(tipo == 2){
+            switch(origen) {
+                case "0":
+                    origen = "00";
+                    break;
+                case "1":
+                    origen = "15";
+                    break;
+                case "2":
+                    origen = "30";
+                    break;
+                case "3":
+                    origen = "45";
+                    break;
+            }
+        }
 
         texto = origen;
 
