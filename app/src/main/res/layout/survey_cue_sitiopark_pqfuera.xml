@@ -59,32 +59,24 @@
 
                 <LinearLayout
                     android:id="@+id/survey_layout_pqfuera"
-                    android:orientation="vertical"
+                    style="@style/SurveySingleQuestion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    style="@style/SurveySingleQuestion">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/survey_edit_text_pqfuera"
+                        style="@style/SurveyQuestionTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/survey_m1_text_pqfuera"
-                        style="@style/SurveyQuestionLiteral"/>
+                        android:text="@string/survey_m1_text_pqfuera" />
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <EditText
+                        android:id="@+id/survey_edit_pqfuera"
+                        style="@style/SurveyQuestionEdit"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:focusableInTouchMode="true" >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/survey_edit_pqfuera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="24dp" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

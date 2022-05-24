@@ -146,6 +146,34 @@
                             android:spinnerMode="dropdown" />
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/survey_layout_distracceotro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/standard_padding"
+                        android:layout_marginTop="@dimen/standard_padding"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/survey_text_distracceotro"
+                            style="@style/SurveyQuestionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/standard_padding"
+                            android:gravity="center"
+                            android:text="@string/survey_m1_text_distracceotro" />
+
+
+                        <EditText
+                            android:id="@+id/survey_edit_distracceotro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/SurveyQuestionEdit"
+                            />
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 

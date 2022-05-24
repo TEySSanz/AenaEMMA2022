@@ -268,12 +268,14 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         String fecha = txt_fechaActual.getText().toString().substring(0,10);
         String hora = txt_fechaActual.getText().toString().substring(11);
+        String idioma = sp_idioma.getSelectedItem().toString();
 
         datosSurvey.putString("fecha", fecha);
         datosSurvey.putString("hora", hora);
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
         datosSurvey.putInt("idCue", cue.getIden());
         datosSurvey.putInt("modeloCue", modeloCue);
+        datosSurvey.putString("idioma", idioma);
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);

@@ -42,6 +42,27 @@ public class Contracts {
             COLUMN_IDIOMAS_CLAVE + " TEXT )";
     public static final String SQL_DROP_IDIOMAS = "DROP TABLE IF EXISTS " + TABLE_IDIOMAS;
 
+    //Tabla TipoAeropuertos
+    public static final String TABLE_TIPOAEROPUERTOS = "TipoAeropuertos";
+    public static final String COLUMN_TIPOAEROPUERTOS_IDEN = "iden";
+    public static final String COLUMN_TIPOAEROPUERTOS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOAEROPUERTOS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOAEROPUERTOS_DESCRIPCIONPRINCIPAL = "descripcionPrincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_CODPAIS = "codPais";
+    public static final String COLUMN_TIPOAEROPUERTOS_PAIS = "Pais";
+    public static final String COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL = "MADprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_MADOLEADA = "MADoleada";
+    public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
+            COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_DESCRIPCIONPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_CODPAIS + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_MADOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_PAIS + " TEXT )";
+    public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
+
     //Tabla TipoCompanias
     public static final String TABLE_TIPOCOMPANIAS = "TipoCompanias";
     public static final String COLUMN_TIPOCOMPANIAS_IDEN = "iden";
@@ -220,6 +241,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_CDPAISRE = "cdpaisre";
     public static final String COLUMN_CUEPASAJEROS_CDLOCADO = "cdlocado";
     public static final String COLUMN_CUEPASAJEROS_DISTRES = "distres";
+    public static final String COLUMN_CUEPASAJEROS_DISTRESOTRO = "distresotro";
     public static final String COLUMN_CUEPASAJEROS_CDCAMBIO = "cdcambio";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOO = "cdiaptoo";
     public static final String COLUMN_CUEPASAJEROS_CIAANTES = "ciaantes";
@@ -229,12 +251,14 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_VIEN_RE = "vien_re";
     public static final String COLUMN_CUEPASAJEROS_CDLOCACO = "cdlocaco";
     public static final String COLUMN_CUEPASAJEROS_DISTRACCE = "distracce";
+    public static final String COLUMN_CUEPASAJEROS_DISTRACCEOTRO = "distracceotro";
     public static final String COLUMN_CUEPASAJEROS_CDALOJIN = "cdalojin";
     public static final String COLUMN_CUEPASAJEROS_CDALOJIN_OTROS = "cdalojin_otros";
     public static final String COLUMN_CUEPASAJEROS_NMODOS = "nmodos";
     public static final String COLUMN_CUEPASAJEROS_MODO1 = "modo1";
     public static final String COLUMN_CUEPASAJEROS_MODO2 = "modo2";
     public static final String COLUMN_CUEPASAJEROS_ULTIMODO = "ultimodo";
+    public static final String COLUMN_CUEPASAJEROS_ULTIMODOOTRO = "ultimodootro";
     public static final String COLUMN_CUEPASAJEROS_SITIOPARK = "sitiopark";
     public static final String COLUMN_CUEPASAJEROS_BUSTERMI = "bustermi";
     public static final String COLUMN_CUEPASAJEROS_ACOMPTES = "acomptes";
@@ -346,13 +370,16 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_SITIOPARK + " TEXT," +
             COLUMN_CUEPASAJEROS_TAUS + " INTEGER," +
             COLUMN_CUEPASAJEROS_ULTIMODO + " TEXT," +
+            COLUMN_CUEPASAJEROS_ULTIMODOOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_USOAVE + " TEXT," +
             COLUMN_CUEPASAJEROS_VIEN_RE + " TEXT," +
             COLUMN_CUEPASAJEROS_VOL12MES + " TEXT," +
             COLUMN_CUEPASAJEROS_DISTRES + " TEXT," +
+            COLUMN_CUEPASAJEROS_DISTRESOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSINOPE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDALOJEN + " TEXT," +
             COLUMN_CUEPASAJEROS_DISTRACCE + " TEXT," +
+            COLUMN_CUEPASAJEROS_DISTRACCEOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_NMODOS + " TEXT," +
             COLUMN_CUEPASAJEROS_MODO1 + " TEXT," +
             COLUMN_CUEPASAJEROS_MODO2 + " TEXT," +

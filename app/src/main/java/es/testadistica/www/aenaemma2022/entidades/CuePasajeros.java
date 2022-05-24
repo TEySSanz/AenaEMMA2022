@@ -71,13 +71,16 @@ public class CuePasajeros implements Serializable {
     private String sitiopark;
     private int taus;
     private String ultimodo;
+    private String ultimodootro;
     private String usoave;
     private String vien_re;
     private String vol12mes;
     private String distres;
+    private String distresotro;
     private String cdsinope;
     private String cdalojen;
     private String distracce;
+    private String distracceotro;
     private String nmodos;
     private String modo1;
     private String modo2;
@@ -630,6 +633,14 @@ public class CuePasajeros implements Serializable {
         this.ultimodo = ultimodo;
     }
 
+    public String getUltimodootro() {
+        return ultimodootro;
+    }
+
+    public void setUltimodootro(String ultimodootro) {
+        this.ultimodootro = ultimodootro;
+    }
+
     public String getUsoave() {
         return usoave;
     }
@@ -662,6 +673,14 @@ public class CuePasajeros implements Serializable {
         this.distres = distres;
     }
 
+    public String getDistresotro() {
+        return distresotro;
+    }
+
+    public void setDistresotro(String distresotro) {
+        this.distresotro = distresotro;
+    }
+
     public String getCdsinope() {
         return cdsinope;
     }
@@ -685,6 +704,12 @@ public class CuePasajeros implements Serializable {
     public void setDistracce(String distracce) {
         this.distracce = distracce;
     }
+
+    public String getDistracceotro() {
+        return distracceotro;
+    }
+
+    public void setDistracceotro(String distracceotro) { this.distracceotro = distracceotro; }
 
     public String getNmodos() {
         return nmodos;

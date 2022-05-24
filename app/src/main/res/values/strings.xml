@@ -60,6 +60,7 @@
     <string name="spinner_distrito_title">SELECCIONE EL DISTRITO</string>
     <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
     <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
+    <string name="spinner_tipoAeropuerto_title">SELECCIONE EL AEROPUERTO</string>
 
     <!--Preguntas Modelo 1-->
     <string name="survey_text_error_nviaje_num">Se debe indicar un nº de viajes</string>
@@ -79,6 +80,7 @@
     <string name="survey_m1_text_cdlocado">Localidad</string>
     <string name="survey_m1_text_distres">Distrito para Madrid capital</string>
     <string name="survey_m1_text_distres_area">Área / Región</string>
+    <string name="survey_m1_text_distresotro">Especificar calle y nº, hotel o similar</string>
     <!--Pregunta3-->
     <string name="survey_m1_text_cdcambio">3. ¿Ha llegado al aeropuerto para realizar una conexión?</string>
     <string name="survey_m1_radio_cdcambio_option1">Sí</string>
@@ -110,6 +112,7 @@
     <string name="survey_m1_text_cdlocaco">Localidad</string>
     <string name="survey_m1_text_distracce">Distrito para Madrid capital</string>
     <string name="survey_m1_text_distracce_ent">Especificar Distrito o en su defecto calle y nº, hotel o similar</string>
+    <string name="survey_m1_text_distracceotro">Especificar calle y nº, hotel o similar</string>
     <!--Pregunta10-->
     <string name="survey_m1_text_cdalojin">10. ¿Qué tipo de alojamiento ha utilizado durante su estancia en %1$s?</string>
     <string name="survey_m1_radio_cdalojin_option1">Hotel o similar</string>

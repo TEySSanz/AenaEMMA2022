@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/survey_layout_ultimodo"
-        android:layout_width="556dp"
+        android:layout_width="760dp"
         android:layout_height="match_parent"
         android:background="@color/md_blue_grey_200"
         android:orientation="vertical"
@@ -34,7 +34,7 @@
 
         <LinearLayout
             android:id="@+id/survey_layout_tabla"
-            android:layout_width="564dp"
+            android:layout_width="match_parent"
             android:layout_height="480dp"
             android:layout_gravity="center|center_vertical"
             android:orientation="horizontal"
@@ -43,7 +43,7 @@
             <!--- 1 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_vertical_ultimodo_1col"
-                android:layout_width="66dp"
+                android:layout_width="99dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -78,7 +78,8 @@
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/survey_m1_text_ultimodo_autobus" />
+                    android:text="@string/survey_m1_text_ultimodo_autobus"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_tren"
@@ -101,7 +102,7 @@
                 <TextView
                     android:id="@+id/survey_text_ultimodo_otros_1col"
                     android:layout_width="match_parent"
-                    android:layout_height="23.5dp"
+                    android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
@@ -113,21 +114,21 @@
             <!--- 2 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_ultimodo_2col"
-                android:layout_width="344dp"
+                android:layout_width="460dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_2col"
                     style="@style/SurveyQuestionTitle"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="96dp"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical" />
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_2col_1"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -135,7 +136,7 @@
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_vtc"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -144,7 +145,7 @@
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_valquiler"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -160,8 +161,8 @@
 
                     <TextView
                         android:id="@+id/survey_text_ultimodo_coche_vprivado"
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="131dp"
+                        android:layout_height="56dp"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
                         android:gravity="center_horizontal|center_vertical"
@@ -169,14 +170,14 @@
 
                     <LinearLayout
                         android:id="@+id/survey_layout_ultimodo_vehiculo1"
-                        android:layout_width="270dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="336dp"
+                        android:layout_height="57dp"
 
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_coche_vprivado_cvviaja"
-                            android:layout_width="280dp"
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:layout_marginTop="@dimen/medium_padding"
                             android:background="@color/aenaDarkGrey"
@@ -185,19 +186,19 @@
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_coche_vprivado_cvdespedir"
-                            android:layout_width="280dp"
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:layout_marginTop="@dimen/medium_padding"
                             android:background="@color/aenaDarkGrey"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="@string/survey_m1_text_ultimodo_coche_vprivado_cvdespedir"
-                            android:textSize="13sp" />
+                            android:textSize="15.5sp" />
                     </LinearLayout>
                 </LinearLayout>
                 <!---Fin vehiculo privado-->
                 <TextView
                     android:id="@+id/survey_text_ultimodo_autobus_adiscrecional"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -213,7 +214,7 @@
 
                     <TextView
                         android:id="@+id/survey_text_ultimodo_apublico"
-                        android:layout_width="75dp"
+                        android:layout_width="131dp"
                         android:layout_height="82dp"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
@@ -222,14 +223,14 @@
 
                     <LinearLayout
                         android:id="@+id/survey_layout_vertical_apublico"
-                        android:layout_width="275dp"
+                        android:layout_width="329dp"
                         android:layout_height="90dp"
 
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_autobus_apublico_aurbano"
-                            android:layout_width="275dp"
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:layout_marginTop="@dimen/medium_padding"
                             android:background="@color/aenaDarkGrey"
@@ -238,7 +239,7 @@
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_autobus_apublico_ainterurbano"
-                            android:layout_width="275dp"
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:layout_marginTop="@dimen/medium_padding"
                             android:background="@color/aenaDarkGrey"
@@ -247,7 +248,7 @@
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_autobus_apublico_alargadistancia"
-                            android:layout_width="275dp"
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:layout_marginTop="@dimen/medium_padding"
                             android:background="@color/aenaDarkGrey"
@@ -258,7 +259,7 @@
                 <!---Fin autobus publico-->
                 <TextView
                     android:id="@+id/survey_text_ultimodo_tren_largadistancia"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -267,7 +268,7 @@
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_tren_cercanias"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
@@ -276,29 +277,30 @@
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_metro_vacio"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey" />
 
                 <LinearLayout
                     android:id="@+id/survey_layout_ultimodo_otros"
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="27dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/survey_text_ultimodo_otros"
-                        android:layout_width="150dp"
+                        android:layout_width="131dp"
                         android:layout_height="27dp"
                         android:layout_gravity="center|center_horizontal"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
+                        android:gravity="center"
                         android:text="@string/survey_m1_text_ultimodo_otros_especificar" />
 
                     <EditText
-                        android:id="@+id/survey_text_ultimodo_otros_especificar"
-                        android:layout_width="199dp"
+                        android:id="@+id/survey_edit_ultimodo_otros"
+                        android:layout_width="331dp"
                         android:layout_height="35dp"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaLightGrey"
@@ -314,7 +316,7 @@
             <!--- 3 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_ultimodo_1modo"
-                android:layout_width="50dp"
+                android:layout_width="67dp"
                 android:layout_height="500dp"
                 android:orientation="vertical"
                 android:visibility="visible">
@@ -330,7 +332,7 @@
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_ultimodo_1modo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_weight="2"
                     android:orientation="vertical">
@@ -446,7 +448,7 @@
             <!--- 4 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_ultimodo_2modo"
-                android:layout_width="50dp"
+                android:layout_width="67dp"
                 android:layout_height="500dp"
 
                 android:orientation="vertical"
@@ -463,7 +465,7 @@
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_ultimodo_2modo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_weight="2"
 
@@ -566,14 +568,14 @@
 
             <LinearLayout
                 android:id="@+id/survey_layout_ultimodo_umodo"
-                android:layout_width="60dp"
+                android:layout_width="67dp"
                 android:layout_height="500dp"
                 android:orientation="vertical"
                 android:visibility="visible">
 
                 <TextView
                     android:id="@+id/survey_text_ultimodo_umodo"
-                    android:layout_width="48dp"
+                    android:layout_width="match_parent"
                     android:layout_height="96dp"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
@@ -582,7 +584,7 @@
 
                 <RadioGroup
                     android:id="@+id/survey_radiogroup_ultimodo_umodo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_weight="2"
                     android:orientation="vertical">
@@ -655,7 +657,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
-                        android:background="@color/aenaDarkGrey" />
+                        android:background="@color/aenaLightGrey"
+                        android:cursorVisible="false"
+                        android:visibility="invisible" />
 
                     <RadioButton
                         android:id="@+id/survey_radio_ultimodo_umodo_option11"

@@ -28,6 +28,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_IDIOMAS);
         DBInsert.insertsIdiomas(db);
 
+        //TipoAeropuertos
+        db.execSQL(Contracts.SQL_DROP_TIPOAEROPUERTOS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOAEROPUERTOS);
+        DBInsert.insertsTipoAeropuertos_Parte1(db);
+        DBInsert.insertsTipoAeropuertos_Parte2(db);
+
         //TipoCompanias
         db.execSQL(Contracts.SQL_DROP_TIPOCOMPANIAS);
         db.execSQL(Contracts.SQL_CREATE_TIPOCOMPANIAS);

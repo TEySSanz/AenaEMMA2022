@@ -2,7 +2,11 @@ package es.testadistica.www.aenaemma2022.actividades;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
+import java.util.Locale;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
@@ -54,6 +59,13 @@ public class CuePasajerosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Recoge los parámetros de la pantalla anterior
+        Bundle datos = this.getIntent().getExtras();
+
+        if (datos != null) {
+            setAppLocale(datos.getString("idioma"));
+        }
+
         setContentView(R.layout.activity_cuepasajeros);
 
         //Añadir icono en el ActionBar
@@ -74,8 +86,6 @@ public class CuePasajerosActivity extends AppCompatActivity {
         conn = new DBHelper(this.getApplicationContext());
 
         //Recoge los parámetros de la pantalla anterior
-        Bundle datos = this.getIntent().getExtras();
-
         if (datos != null) {
             txt_encuestador.setText(datos.getString("encuestador"));
             txt_numEncuesta.setText(datos.getString("numEncuesta"));
@@ -85,6 +95,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             pregunta = 1;
             idCue = datos.getInt("idCue");
             modeloCue = datos.getInt("modeloCue");
+
         }
 
         //Genera el cuestionario
@@ -218,7 +229,30 @@ public class CuePasajerosActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp(){
 
-        finish();
         return true;
+    }
+
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return true;
+    }
+
+    private void setAppLocale(String localeCode){
+
+        switch (localeCode){
+            case "Inglés":
+                localeCode="en";
+                break;
+            default:
+                localeCode="es";
+                break;
+        }
+
+        Resources resources = getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.setLocale(new Locale(localeCode.toLowerCase()));
+        resources.updateConfiguration(configuration, displayMetrics);
+        configuration.locale = new Locale(localeCode.toLowerCase());
+        resources.updateConfiguration(configuration, displayMetrics);
     }
 }
