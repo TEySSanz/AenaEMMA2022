@@ -85,7 +85,7 @@ public class ModeloTrabajadores1 extends FormTrab {
     private void iniciarSpinners() {
 
         //P1
-        ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionarioNoCod(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "descripcion", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
         empresasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_empresa;
@@ -135,6 +135,14 @@ public class ModeloTrabajadores1 extends FormTrab {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 sp_empresa.setBackgroundResource(android.R.drawable.btn_dropdown);
+
+                String texto = sp_empresa.getSelectedItem().toString();
+
+                if (!texto.equals("OTROS")){
+                    activity.findViewById(R.id.survey_edit_empresa).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_edit_empresa).setVisibility(VISIBLE);
+                }
 
             }
             @Override
@@ -591,7 +599,50 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
-        //P16
+        //P15
+        final RadioGroup rgAparctrab= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
+        final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
+        final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
+        final RadioButton rbAparctrab_3= (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
+        final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
+        final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
+
+        rbAparctrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        rbAparctrab_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        //P17
         final RadioGroup rgDisptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
         final RadioButton rbDisptranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option1);
         final RadioButton rbDisptranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option2);
@@ -654,49 +705,6 @@ public class ModeloTrabajadores1 extends FormTrab {
             public void onClick(View v) {
                 rgDisptranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 activity.findViewById(R.id.survey_edit_disptranspubli_otros).setVisibility(VISIBLE);
-            }
-        });
-
-        //P20
-        final RadioGroup rgAparctrab= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
-        final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
-        final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
-        final RadioButton rbAparctrab_3= (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
-        final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
-        final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
-
-        rbAparctrab_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbAparctrab_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbAparctrab_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbAparctrab_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbAparctrab_9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
 
@@ -1566,7 +1574,7 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
-        //P15
+        //P16
         final LinearLayout llNotranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_notranspubli);
         final CheckBox cbNotranspubli_1 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option1);
         final CheckBox cbNotranspubli_2 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option2);
@@ -1988,7 +1996,7 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
-        //P18
+        //P19
         final LinearLayout lMedtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_medtranspubli);
         final CheckBox cbMedtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option7);
         final CheckBox cbMedtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option8);
@@ -1999,9 +2007,9 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         final ArrayList<String> listMedtranspubli = new ArrayList<String>();
 
-        final EditText etMedtranspubli_1 = (EditText) activity.findViewById(R.id.survey_edit_valtranspubli1);
-        final EditText etMedtranspubli_2 = (EditText) activity.findViewById(R.id.survey_edit_valtranspubli2);
-        final EditText etMedtranspubli_3 = (EditText) activity.findViewById(R.id.survey_edit_valtranspubli3);
+        final EditText etMedtranspubli_1 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli1);
+        final EditText etMedtranspubli_2 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli2);
+        final EditText etMedtranspubli_3 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli3);
 
         cbMedtranspubli_7.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -2899,7 +2907,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 15:
                 //P15
-                LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_notranspubli);
+                RelativeLayout p15 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2907,7 +2915,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 16:
                 //P16
-                LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
+                LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_notranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2915,7 +2923,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 17:
                 //P17
-                LinearLayout p17 = (LinearLayout) activity.findViewById(R.id.survey_layout_importranspubli);
+                LinearLayout p17 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2923,7 +2931,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 18:
                 //P18
-                LinearLayout p18 = (LinearLayout) activity.findViewById(R.id.survey_layout_medtranspubli);
+                LinearLayout p18 = (LinearLayout) activity.findViewById(R.id.survey_layout_importranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2931,7 +2939,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 19:
                 //P19
-                LinearLayout p19 = (LinearLayout) activity.findViewById(R.id.survey_layout_tiempotranspubli);
+                LinearLayout p19 = (LinearLayout) activity.findViewById(R.id.survey_layout_medtranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2939,7 +2947,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 20:
                 //P20
-                RelativeLayout p20 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
+                LinearLayout p20 = (LinearLayout) activity.findViewById(R.id.survey_layout_tiempotranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -3021,7 +3029,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     //P1
                     final SearchableSpinner sp_empresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
 
-                    if (sp_empresa.getSelectedItem().toString().substring(0,3).equals("000")) {
+                    if (sp_empresa.getSelectedItem().toString().equals("...")) {
                         sp_empresa.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3183,20 +3191,20 @@ public class ModeloTrabajadores1 extends FormTrab {
                     String stHoraent1;
                     String stHorasal1;
 
-                    stHoraent1 = replicate(String.valueOf(tpHoraent1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent1.getCurrentMinute()), "0", 2);
-                    stHorasal1 = replicate(String.valueOf(tpHorasal1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal1.getCurrentMinute()), "0", 2);
+                    stHoraent1 = replicate(String.valueOf(tpHoraent1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent1.getCurrentMinute()), "0", 2, 2);
+                    stHorasal1 = replicate(String.valueOf(tpHorasal1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal1.getCurrentMinute()), "0", 2, 2);
 
                     String stHoraent2;
                     String stHorasal2;
 
-                    stHoraent2 = replicate(String.valueOf(tpHoraent2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent2.getCurrentMinute()), "0", 2);
-                    stHorasal2 = replicate(String.valueOf(tpHorasal2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal2.getCurrentMinute()), "0", 2);
+                    stHoraent2 = replicate(String.valueOf(tpHoraent2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent2.getCurrentMinute()), "0", 2, 2);
+                    stHorasal2 = replicate(String.valueOf(tpHorasal2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal2.getCurrentMinute()), "0", 2, 2);
 
                     String stHoraent3;
                     String stHorasal3;
 
-                    stHoraent3 = replicate(String.valueOf(tpHoraent3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHoraent3.getCurrentMinute()), "0", 2);
-                    stHorasal3 = replicate(String.valueOf(tpHorasal3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(tpHorasal3.getCurrentMinute()), "0", 2);
+                    stHoraent3 = replicate(String.valueOf(tpHoraent3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent3.getCurrentMinute()), "0", 2, 2);
+                    stHorasal3 = replicate(String.valueOf(tpHorasal3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal3.getCurrentMinute()), "0", 2, 2);
 
                     if(stHoraent1.equals("00:00") && stHorasal1.equals("00:00")){
                         llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -3427,6 +3435,28 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 15:
                     //P15
+                    final RadioGroup rgAparctrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
+                    final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
+                    final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
+                    final RadioButton rbAparctrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
+                    final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
+                    final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
+
+                    if (!rbAparctrab_1.isChecked() && !rbAparctrab_2.isChecked() && !rbAparctrab_3.isChecked() && !rbAparctrab_4.isChecked() && !rbAparctrab_9.isChecked()) {
+                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_selectOption),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+
+                    } else {
+                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                    }
+
+                    break;
+                case 16:
+                    //P16
                     final LinearLayout llNotranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_notranspubli);
                     final CheckBox cbNotranspubli_1 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option1);
                     final CheckBox cbNotranspubli_2 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option2);
@@ -3465,8 +3495,8 @@ public class ModeloTrabajadores1 extends FormTrab {
                     }
 
                     break;
-                case 16:
-                    //P16
+                case 17:
+                    //P17
                     final RadioGroup rgDisptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
                     final RadioButton rbDisptranspubli_1 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option1);
                     final RadioButton rbDisptranspubli_2 = (RadioButton) activity.findViewById(R.id.survey_radio_disptranspubli_option2);
@@ -3500,12 +3530,12 @@ public class ModeloTrabajadores1 extends FormTrab {
                     }
 
                     break;
-                case 17:
-                    //P17
-
-                    break;
                 case 18:
                     //P18
+
+                    break;
+                case 19:
+                    //P19
                     final LinearLayout lMedtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_medtranspubli);
                     final CheckBox cbMedtranspubli_7 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option7);
                     final CheckBox cbMedtranspubli_8 = (CheckBox) activity.findViewById(R.id.check_medtranspubli_option8);
@@ -3539,8 +3569,8 @@ public class ModeloTrabajadores1 extends FormTrab {
                     }
 
                     break;
-                case 19:
-                    //P19
+                case 20:
+                    //P20
                     final EditText etTiempotranspubli = (EditText) activity.findViewById(R.id.survey_edit_tiempotranspubli);
                     if (etTiempotranspubli.getText().toString().equals("")){
 
@@ -3553,28 +3583,6 @@ public class ModeloTrabajadores1 extends FormTrab {
                     } else {
 
                         etTiempotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
-                    }
-
-                    break;
-                case 20:
-                    //P20
-                    final RadioGroup rgAparctrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
-                    final RadioButton rbAparctrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option1);
-                    final RadioButton rbAparctrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option2);
-                    final RadioButton rbAparctrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option3);
-                    final RadioButton rbAparctrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option4);
-                    final RadioButton rbAparctrab_9 = (RadioButton) activity.findViewById(R.id.survey_radio_aparctrab_option9);
-
-                    if (!rbAparctrab_1.isChecked() && !rbAparctrab_2.isChecked() && !rbAparctrab_3.isChecked() && !rbAparctrab_4.isChecked() && !rbAparctrab_9.isChecked()) {
-                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_selectOption),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-
-                    } else {
-                        rgAparctrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                     }
 
                     break;
@@ -3866,39 +3874,39 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 15:
                     //P15
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB, cue.getAparctrab());
+
+                    break;
+                case 16:
+                    //P16
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI1, cue.getNotranspubli1());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI2, cue.getNotranspubli2());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI3, cue.getNotranspubli3());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLIOTRO, cue.getNotranspubliotro());
 
                     break;
-                case 16:
-                    //P16
+                case 17:
+                    //P17
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLI, cue.getDisptranspubli());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLIOTRO, cue.getDisptranspubliotro());
 
                     break;
-                case 17:
-                    //P17
+                case 18:
+                    //P18
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_IMPORTRANSPUBLI, cue.getImportranspubli());
 
                     break;
-                case 18:
-                    //P18
+                case 19:
+                    //P19
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI1, cue.getMedtranspubli1());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI2, cue.getMedtranspubli2());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI3, cue.getMedtranspubli3());
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLIOTRO, cue.getMedtranspubliotro());
 
                     break;
-                case 19:
-                    //P19
-                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI, cue.getTiempotranspubli());
-
-                    break;
                 case 20:
                     //P20
-                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB, cue.getAparctrab());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI, cue.getTiempotranspubli());
 
                     break;
                 case 21:
@@ -4039,39 +4047,39 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 15:
                     //P15
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB);
+
+                    break;
+                case 16:
+                    //P16
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI1);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI2);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI3);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLIOTRO);
 
                     break;
-                case 16:
-                    //P16
+                case 17:
+                    //P17
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLI);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLIOTRO);
 
                     break;
-                case 17:
-                    //P17
+                case 18:
+                    //P18
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_IMPORTRANSPUBLI);
 
                     break;
-                case 18:
-                    //P18
+                case 19:
+                    //P19
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI1);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI2);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI3);
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLIOTRO);
 
                     break;
-                case 19:
-                    //P19
-                    borraDB(Contracts.COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI);
-
-                    break;
                 case 20:
                     //P20
-                    borraDB(Contracts.COLUMN_CUETRABAJADORES_APARCTRAB);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI);
 
                     break;
                 case 21:
@@ -4180,27 +4188,27 @@ public class ModeloTrabajadores1 extends FormTrab {
         p14.setVisibility(GONE);
 
         //P15
-        LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_notranspubli);
+        RelativeLayout p15 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
         p15.setVisibility(GONE);
 
         //P16
-        LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
+        LinearLayout p16 = (LinearLayout) activity.findViewById(R.id.survey_layout_notranspubli);
         p16.setVisibility(GONE);
 
         //P17
-        LinearLayout p17 = (LinearLayout) activity.findViewById(R.id.survey_layout_importranspubli);
+        LinearLayout p17 = (LinearLayout) activity.findViewById(R.id.survey_layout_disptranspubli);
         p17.setVisibility(GONE);
 
         //P18
-        LinearLayout p18 = (LinearLayout) activity.findViewById(R.id.survey_layout_medtranspubli);
+        LinearLayout p18 = (LinearLayout) activity.findViewById(R.id.survey_layout_importranspubli);
         p18.setVisibility(GONE);
 
         //P19
-        LinearLayout p19 = (LinearLayout) activity.findViewById(R.id.survey_layout_tiempotranspubli);
+        LinearLayout p19 = (LinearLayout) activity.findViewById(R.id.survey_layout_medtranspubli);
         p19.setVisibility(GONE);
 
         //P20
-        RelativeLayout p20 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
+        LinearLayout p20 = (LinearLayout) activity.findViewById(R.id.survey_layout_tiempotranspubli);
         p20.setVisibility(GONE);
 
         //P21
@@ -4340,10 +4348,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_ultimodo_umodo_option1:
-                                show = showQuestion(22); //>P22
+                                show = showQuestion(14); //>P14
                                 break;
                             case R.id.survey_radio_ultimodo_umodo_option2:
-                                show = showQuestion(22); //>P22
+                                show = showQuestion(14); //>P14
                                 break;
                             case R.id.survey_radio_ultimodo_umodo_option3:
                                 show = showQuestion(14); //>P14
@@ -4412,6 +4420,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 16:
                 //P16
+                show = showQuestion(17);
+                break;
+            case 17:
+                //P17
                 if (activated) {
                     RadioGroup rgDistptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
                     checkedId = rgDistptranspubli.getCheckedRadioButtonId();
@@ -4419,40 +4431,36 @@ public class ModeloTrabajadores1 extends FormTrab {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_disptranspubli_option1:
-                                show = showQuestion(17); //>P17
+                                show = showQuestion(18); //>P18
                                 break;
                             case R.id.survey_radio_disptranspubli_option2:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_disptranspubli_option3:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_disptranspubli_option4:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_disptranspubli_option5:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_disptranspubli_option6:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_disptranspubli_option7:
-                                show = showQuestion(18); //>P18
+                                show = showQuestion(19); //>P19
                                 break;
                             default:
-                                show = showQuestion(17); //>P17
+                                show = showQuestion(18); //>P18
                                 break;
                         }
                     } else {
-                        show = showQuestion(17); //>P17
+                        show = showQuestion(18); //>P18
                     }
                 } else {
-                    show = showQuestion(17);
+                    show = showQuestion(18);
                 }
-                break;
-            case 17:
-                //P17
-                show = showQuestion(18);
                 break;
             case 18:
                 //P18
@@ -4505,9 +4513,14 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         //P1
         SearchableSpinner spEmpresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
-        String textSpEmpresa = spEmpresa.getSelectedItem().toString().substring(0,3);
-        if(!textSpEmpresa.contains("000")){
-            quest.setEmpresa(textSpEmpresa);
+        String textSpEmpresa = spEmpresa.getSelectedItem().toString();
+        EditText etEmpresa = (EditText) activity.findViewById(R.id.survey_edit_empresa);
+        if(!textSpEmpresa.contains("...")){
+            if(textSpEmpresa.contains("OTROS")){
+                quest.setEmpresa(etEmpresa.getText().toString());
+            } else {
+                quest.setEmpresa(textSpEmpresa);
+            }
         } else {
             quest.setEmpresa("-1");
         }
@@ -4654,12 +4667,12 @@ public class ModeloTrabajadores1 extends FormTrab {
         TimePicker etHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
         TimePicker etHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
 
-        String stHoraent1 = replicate(String.valueOf(etHoraent1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent1.getCurrentMinute()), "0", 2);
-        String stHorasal1 = replicate(String.valueOf(etHorasal1.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal1.getCurrentMinute()), "0", 2);
-        String stHoraent2 = replicate(String.valueOf(etHoraent2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent2.getCurrentMinute()), "0", 2);
-        String stHorasal2 = replicate(String.valueOf(etHorasal2.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal2.getCurrentMinute()), "0", 2);
-        String stHoraent3 = replicate(String.valueOf(etHoraent3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHoraent3.getCurrentMinute()), "0", 2);
-        String stHorasal3 = replicate(String.valueOf(etHorasal3.getCurrentHour()), "0", 2) + ":" + replicate(String.valueOf(etHorasal3.getCurrentMinute()), "0", 2);
+        String stHoraent1 = replicate(String.valueOf(etHoraent1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent1.getCurrentMinute()), "0", 2, 2);
+        String stHorasal1 = replicate(String.valueOf(etHorasal1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal1.getCurrentMinute()), "0", 2, 2);
+        String stHoraent2 = replicate(String.valueOf(etHoraent2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent2.getCurrentMinute()), "0", 2, 2);
+        String stHorasal2 = replicate(String.valueOf(etHorasal2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal2.getCurrentMinute()), "0", 2, 2);
+        String stHoraent3 = replicate(String.valueOf(etHoraent3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent3.getCurrentMinute()), "0", 2, 2);
+        String stHorasal3 = replicate(String.valueOf(etHorasal3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal3.getCurrentMinute()), "0", 2, 2);
 
         if(!stHoraent1.equals("00:00") || !stHorasal1.equals("00:00")){
             quest.setHoraent1(stHoraent1);
@@ -4975,6 +4988,37 @@ public class ModeloTrabajadores1 extends FormTrab {
         quest.setDesplazatrab(etDesplazatrab.getText().toString());
 
         //P15
+        RadioGroup rgAparcatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
+
+        selectedCode = -1;
+        checkedId = rgAparcatrab.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_aparctrab_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_aparctrab_option2:
+                    selectedCode = 2;
+                    break;
+                case R.id.survey_radio_aparctrab_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_aparctrab_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_aparctrab_option9:
+                    selectedCode = 9;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+
+        quest.setAparctrab(String.valueOf(selectedCode));
+
+        //P16
         EditText etNotranspubli_1 = (EditText) activity.findViewById(R.id.survey_edit_notranspubli1);
         EditText etNotranspubli_2 = (EditText) activity.findViewById(R.id.survey_edit_notranspubli2);
         EditText etNotranspubli_3 = (EditText) activity.findViewById(R.id.survey_edit_notranspubli3);
@@ -5002,7 +5046,7 @@ public class ModeloTrabajadores1 extends FormTrab {
             quest.setNotranspubliotro(etNotranspubli_otro.getText().toString());
         }
 
-        //P16
+        //P17
         RadioGroup rgDisptranspubli = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_disptranspubli);
 
         selectedCode = -1;
@@ -5039,12 +5083,12 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         quest.setDisptranspubli(String.valueOf(selectedCode));
 
-        //P17
+        //P18
         EditText etImportranspubli = (EditText) activity.findViewById(R.id.survey_edit_importranspubli);
 
         quest.setImportranspubli(etImportranspubli.getText().toString());
 
-        //P18
+        //P19
         EditText etMedtranspubli_1 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli1);
         EditText etMedtranspubli_2 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli2);
         EditText etMedtranspubli_3 = (EditText) activity.findViewById(R.id.survey_edit_medtranspubli3);
@@ -5072,41 +5116,10 @@ public class ModeloTrabajadores1 extends FormTrab {
             quest.setMedtranspubliotro(etMedtranspubli_otro.getText().toString());
         }
 
-        //P19
+        //P20
         EditText etTiempotranspubli = (EditText) activity.findViewById(R.id.survey_edit_tiempotranspubli);
 
         quest.setTiempotranspubli(etTiempotranspubli.getText().toString());
-
-        //P20
-        RadioGroup rgAparcatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_aparctrab);
-
-        selectedCode = -1;
-        checkedId = rgAparcatrab.getCheckedRadioButtonId();
-
-        if (checkedId > 0) {
-            switch (checkedId) {
-                case R.id.survey_radio_aparctrab_option1:
-                    selectedCode = 1;
-                    break;
-                case R.id.survey_radio_aparctrab_option2:
-                    selectedCode = 2;
-                    break;
-                case R.id.survey_radio_aparctrab_option3:
-                    selectedCode = 3;
-                    break;
-                case R.id.survey_radio_aparctrab_option4:
-                    selectedCode = 4;
-                    break;
-                case R.id.survey_radio_aparctrab_option9:
-                    selectedCode = 9;
-                    break;
-                default:
-                    selectedCode = 9;
-                    break;
-            }
-        }
-
-        quest.setAparctrab(String.valueOf(selectedCode));
 
         //P21
         EditText etCompartcoche_1 = (EditText) activity.findViewById(R.id.survey_edit_compartcoche1);
@@ -5386,6 +5399,22 @@ public class ModeloTrabajadores1 extends FormTrab {
         return getDiccionario;
     }
 
+    private List<String> getDiccionarioNoCod(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
+        List<String> getDiccionario = new ArrayList<String>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT " + campoIden + ", " + campoValor +
+                " FROM " + tabla + " AS T1" +
+                " WHERE " + filtro + " ORDER BY " + campoOrden , parametros);
+
+        while (cursor.moveToNext()) {
+            getDiccionario.add(cursor.getString(1));
+        }
+
+        return getDiccionario;
+    }
+
     public boolean getDialogValueBackAlert(Context context, String txtTitle, String txtMessage, String txtBtnNext, String txtBtnReview )
     {
         final Handler handler = new Handler()
@@ -5471,8 +5500,25 @@ public class ModeloTrabajadores1 extends FormTrab {
         return 0;
     }
 
-    public String replicate (String origen, String relleno, int max){
+    public String replicate (String origen, String relleno, int max, int tipo){
         String texto;
+
+        if(tipo == 2){
+            switch(origen) {
+                case "0":
+                    origen = "00";
+                    break;
+                case "1":
+                    origen = "15";
+                    break;
+                case "2":
+                    origen = "30";
+                    break;
+                case "3":
+                    origen = "45";
+                    break;
+            }
+        }
 
         texto = origen;
 

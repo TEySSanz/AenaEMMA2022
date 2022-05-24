@@ -484,7 +484,14 @@
     <string name="survey_text_desplazatrab">14. Aproximadamente ¿Cuánto tiempo emplea en su desplazamiento al lugar del trabajo?</string>
     <string name="survey_text_desplazatrab_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta15-->
-    <string name="survey_text_notranspubli">15. ¿Por qué no utiliza el transporte público para acceder a su puesto de trabajo?</string>
+    <string name="survey_text_aparctrab">15. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
+    <string name="survey_radio_aparctrab_option1">Si, gratuito</string>
+    <string name="survey_radio_aparctrab_option2">Si, pago abono</string>
+    <string name="survey_radio_aparctrab_option3">No, lo dejo en el viario</string>
+    <string name="survey_radio_aparctrab_option4">No, se lo lleva el conductor</string>
+    <string name="survey_radio_aparctrab_option9">Ns/Nc</string>
+    <!--Pregunta16-->
+    <string name="survey_text_notranspubli">16. ¿Por qué no utiliza el transporte público para acceder a su puesto de trabajo?</string>
     <string name="survey_text_notranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_notranspubli_option1">Tiempo de desplazamiento</string>
     <string name="survey_check_notranspubli_option2">Mala combinación</string>
@@ -496,8 +503,8 @@
     <string name="survey_check_notranspubli_option8">No me gusta el transporte público</string>
     <string name="survey_check_notranspubli_option9">Prefiero ir andando/bicicleta</string>
     <string name="survey_check_notranspubli_option10">Otros (indique cuál)</string>
-    <!--Pregunta16-->
-    <string name="survey_text_disptranspubli">16. ¿Estaría dispuesto a utilizar el transporte público para acceder a su puesto de trabajo?</string>
+    <!--Pregunta17-->
+    <string name="survey_text_disptranspubli">17. ¿Estaría dispuesto a utilizar el transporte público para acceder a su puesto de trabajo?</string>
     <string name="survey_radio_disptranspubli_option1">No</string>
     <string name="survey_radio_disptranspubli_option2">Si, incondicionalmente</string>
     <string name="survey_radio_disptranspubli_option3">Si, si tuviera paradas tren/metro/bus cerca de mi domicilio</string>
@@ -505,26 +512,19 @@
     <string name="survey_radio_disptranspubli_option5">Si, si el tiempo empleado en el desplazamiento fuera igual o no mayor a 30 minutos que en coche</string>
     <string name="survey_radio_disptranspubli_option6">Si, si el horario de trabajo coincidiera con una oferta de transporte adecuada</string>
     <string name="survey_radio_disptranspubli_option7">Si, otras condiciones (indíquelas)</string>
-    <!--Pregunta17-->
-    <string name="survey_text_importranspubli">17. Indique qué otra cuestión considera importante para utilizar el transporte público</string>
     <!--Pregunta18-->
-    <string name="survey_text_medtranspubli">18. En caso de utilizar transporte público ¿Qué medio utilizaría?</string>
+    <string name="survey_text_importranspubli">18. Indique qué otra cuestión considera importante para utilizar el transporte público</string>
+    <!--Pregunta19-->
+    <string name="survey_text_medtranspubli">19. En caso de utilizar transporte público ¿Qué medio utilizaría?</string>
     <string name="survey_text_medtranspubli_ent">(si tuviera que utilizar más de un modo márquelos hasta un máximo de 3)</string>
     <string name="survey_check_medtranspubli_option7">Autobús Urbano (EMT)</string>
     <string name="survey_check_medtranspubli_option8">Autobús Interurbano</string>
     <string name="survey_check_medtranspubli_option10">Metro</string>
     <string name="survey_check_medtranspubli_option11">Cercanías</string>
     <string name="survey_check_medtranspubli_option99">Otro (indique cuál)</string>
-    <!--Pregunta19-->
-    <string name="survey_text_tiempotranspubli">19. Aproximadamente, ¿Cuánto tiempo adicional estaría dispuesto a invertir para utilizar el transporte público para acceder al Aeropuerto?</string>
-    <string name="survey_text_tiempotranspubli_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta20-->
-    <string name="survey_text_aparctrab">20. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
-    <string name="survey_radio_aparctrab_option1">Si, gratuito</string>
-    <string name="survey_radio_aparctrab_option2">Si, pago abono</string>
-    <string name="survey_radio_aparctrab_option3">No, lo dejo en el viario</string>
-    <string name="survey_radio_aparctrab_option4">No, se lo lleva el conductor</string>
-    <string name="survey_radio_aparctrab_option9">Ns/Nc</string>
+    <string name="survey_text_tiempotranspubli">20. Aproximadamente, ¿Cuánto tiempo adicional estaría dispuesto a invertir para utilizar el transporte público para acceder al Aeropuerto?</string>
+    <string name="survey_text_tiempotranspubli_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta21-->
     <string name="survey_text_compartcoche">21. ¿Estaría dispuesto a COMPARTIR COCHE para ir al trabajo, si actualmente no lo hace?</string>
     <string name="survey_text_compartcoche_ent">(puede marcar más de una respuesta hasta un máximo de 3)</string>
