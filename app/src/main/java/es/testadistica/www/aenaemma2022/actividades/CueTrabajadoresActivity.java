@@ -2,7 +2,10 @@ package es.testadistica.www.aenaemma2022.actividades;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
+import java.util.Locale;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
@@ -50,6 +54,13 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Recoge los parámetros de la pantalla anterior
+        Bundle datos = this.getIntent().getExtras();
+
+        if (datos != null) {
+            setAppLocale(datos.getString("idioma"));
+        }
+
         setContentView(R.layout.activity_cuetrabajadores);
 
         //Añadir icono en el ActionBar
@@ -68,8 +79,6 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
         conn = new DBHelper(this.getApplicationContext());
 
         //Recoge los parámetros de la pantalla anterior
-        Bundle datos = this.getIntent().getExtras();
-
         if (datos != null) {
             txt_encuestador.setText(datos.getString("encuestador"));
             txt_numEncuesta.setText(datos.getString("numEncuesta"));
@@ -118,10 +127,12 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             //form.onNextPressed(pregunta);
-                            Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
-                            Intent visita = new Intent();
-                            setResult(0, visita);
-                            finish();
+                            if (form.checkQuestion(999)) {
+                                Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                                Intent visita = new Intent();
+                                setResult(0, visita);
+                                finish();
+                            }
                         }
                     });
 
@@ -194,5 +205,25 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
 
     @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
         return true;
+    }
+
+    private void setAppLocale(String localeCode){
+
+        switch (localeCode){
+            case "Inglés":
+                localeCode="en";
+                break;
+            default:
+                localeCode="es";
+                break;
+        }
+
+        Resources resources = getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.setLocale(new Locale(localeCode.toLowerCase()));
+        resources.updateConfiguration(configuration, displayMetrics);
+        configuration.locale = new Locale(localeCode.toLowerCase());
+        resources.updateConfiguration(configuration, displayMetrics);
     }
 }

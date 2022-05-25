@@ -269,6 +269,8 @@ public class ModeloPasajeros2 extends Form {
             getDiccionario.add(cursor.getString(1));
         }
 
+        cursor.close();
+
         return getDiccionario;
     }
 
@@ -284,6 +286,8 @@ public class ModeloPasajeros2 extends Form {
         while (cursor.moveToNext()) {
             getDiccionario.add(cursor.getString(1));
         }
+
+        cursor.close();
 
         return getDiccionario;
     }
