@@ -4674,6 +4674,8 @@ public class ModeloPasajeros1 extends Form {
             getDiccionario.add(cursor.getString(1));
         }
 
+        cursor.close();
+
         return getDiccionario;
     }
 
@@ -4689,6 +4691,8 @@ public class ModeloPasajeros1 extends Form {
         while (cursor.moveToNext()) {
             getDiccionario.add(cursor.getString(1));
         }
+
+        cursor.close();
 
         return getDiccionario;
     }
@@ -4810,6 +4814,8 @@ public class ModeloPasajeros1 extends Form {
         while (cursor.moveToNext()) {
             conteo = cursor.getInt(0);
         }
+
+        cursor.close();
 
         return conteo;
     }

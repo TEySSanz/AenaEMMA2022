@@ -3297,6 +3297,11 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_text_selectOption),
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
 
+                    } else if (checkUModo()){
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                activity.getResources().getString(R.string.survey_text_sameModes),
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }
                     break;
                 case 10:
@@ -3768,6 +3773,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                         rgPuesto.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                     }
 
+                    break;
+                case 999:
+                    //Se guarda la hora de finalización al guardar
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_HORAFIN, String.valueOf(cue.getHoraFin()));
                     break;
             }
         }
@@ -4510,6 +4519,14 @@ public class ModeloTrabajadores1 extends FormTrab {
     public CueTrabajadores fillQuest(CueTrabajadores quest) {
         int selectedCode = -1;
         int checkedId = -1;
+
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        Date fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_TIME);
+        //Asigna la fecha a visualizar
+        quest.setHoraFin(sdfDate.format(fechaActual));
 
         //P1
         SearchableSpinner spEmpresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
@@ -5365,6 +5382,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             getDiccionario.add(cursor.getString(1));
         }
 
+        cursor.close();
+
         return getDiccionario;
     }
 
@@ -5379,6 +5398,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         while (cursor.moveToNext()) {
             getDiccionario.add(cursor.getString(1));
         }
+
+        cursor.close();
 
         return getDiccionario;
     }
@@ -5396,6 +5417,8 @@ public class ModeloTrabajadores1 extends FormTrab {
             getDiccionario.add(cursor.getString(1));
         }
 
+        cursor.close();
+
         return getDiccionario;
     }
 
@@ -5411,6 +5434,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         while (cursor.moveToNext()) {
             getDiccionario.add(cursor.getString(1));
         }
+
+        cursor.close();
 
         return getDiccionario;
     }
@@ -5544,5 +5569,88 @@ public class ModeloTrabajadores1 extends FormTrab {
         } catch (Exception e) {
             Log.e(TAG, "Exception: " + e);
         }
+    }
+
+    private boolean checkUModo(){
+        RadioButton rbUmodo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option1);
+        RadioButton rbUmodo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option2);
+        RadioButton rbUmodo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option3);
+        RadioButton rbUmodo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option4);
+        RadioButton rbUmodo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option5);
+        RadioButton rbUmodo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option6);
+        RadioButton rbUmodo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option7);
+        RadioButton rbUmodo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option8);
+        RadioButton rbUmodo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option9);
+        RadioButton rbUmodo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option10);
+        RadioButton rbUmodo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option11);
+        RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
+
+        RadioButton rb1modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option1);
+        RadioButton rb1modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option2);
+        RadioButton rb1modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option3);
+        RadioButton rb1modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option4);
+        RadioButton rb1modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option5);
+        RadioButton rb1modo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option6);
+        RadioButton rb1modo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option7);
+        RadioButton rb1modo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option8);
+        RadioButton rb1modo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option9);
+        RadioButton rb1modo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option10);
+        RadioButton rb1modo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option11);
+        RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
+
+        RadioButton rb2modo_1 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option1);
+        RadioButton rb2modo_2 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option2);
+        RadioButton rb2modo_3 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option3);
+        RadioButton rb2modo_4 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option4);
+        RadioButton rb2modo_5 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option5);
+        RadioButton rb2modo_6 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option6);
+        RadioButton rb2modo_7 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option7);
+        RadioButton rb2modo_8 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option8);
+        RadioButton rb2modo_9 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option9);
+        RadioButton rb2modo_10 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option10);
+        RadioButton rb2modo_11 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option11);
+        RadioButton rb2modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_2modo_option13);
+
+        LinearLayout rgUmodo_1 = (LinearLayout) activity.findViewById(R.id.survey_layout_ultimodo_1modo);
+        LinearLayout rgUmodo_2 = (LinearLayout) activity.findViewById(R.id.survey_layout_ultimodo_2modo);
+
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_1.isChecked() && (rbUmodo_1.isChecked() || rb1modo_1.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_1.isChecked() && rbUmodo_1.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_2.isChecked() && (rbUmodo_2.isChecked() || rb1modo_2.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_2.isChecked() && rbUmodo_2.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_3.isChecked() && (rbUmodo_3.isChecked() || rb1modo_3.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_3.isChecked() && rbUmodo_3.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_4.isChecked() && (rbUmodo_4.isChecked() || rb1modo_4.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_4.isChecked() && rbUmodo_4.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_5.isChecked() && (rbUmodo_5.isChecked() || rb1modo_5.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_5.isChecked() && rbUmodo_5.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_6.isChecked() && (rbUmodo_6.isChecked() || rb1modo_6.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_6.isChecked() && rbUmodo_6.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_7.isChecked() && (rbUmodo_7.isChecked() || rb1modo_7.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_7.isChecked() && rbUmodo_7.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_8.isChecked() && (rbUmodo_8.isChecked() || rb1modo_8.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_8.isChecked() && rbUmodo_8.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_9.isChecked() && (rbUmodo_9.isChecked() || rb1modo_9.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_9.isChecked() && rbUmodo_9.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_10.isChecked() && (rbUmodo_10.isChecked() || rb1modo_10.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_10.isChecked() && rbUmodo_10.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_11.isChecked() && (rbUmodo_11.isChecked() || rb1modo_11.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_11.isChecked() && rbUmodo_11.isChecked()))
+            return true;
+        if((rgUmodo_2.getVisibility()==VISIBLE && rb2modo_13.isChecked() && (rbUmodo_13.isChecked() || rb1modo_13.isChecked())) ||
+                (rgUmodo_2.getVisibility()==GONE && rgUmodo_1.getVisibility()==VISIBLE && rb1modo_13.isChecked() && rbUmodo_13.isChecked()))
+            return true;
+
+        return false;
     }
 }
