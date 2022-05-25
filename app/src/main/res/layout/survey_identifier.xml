@@ -142,12 +142,12 @@
                     android:paddingBottom="@dimen/small_padding"
                     android:paddingLeft="@dimen/standard_padding"
                     android:paddingRight="@dimen/standard_padding"
-                    android:hint="XXXX"
+                    android:hint="XXXXX"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:textStyle="bold"
                     android:background="@color/aenaLightGrey"
                     android:inputType="number"
-                    android:maxLength="4"/>
+                    android:maxLength="5"/>
 
             </LinearLayout>
 

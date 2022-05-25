@@ -1705,11 +1705,8 @@ public class ModeloPasajeros1 extends Form {
                 LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
-                next.setVisibility(VISIBLE);
-                p42.setVisibility(VISIBLE);
-                break;
-            case 43:
                 next.setVisibility(GONE);
+                p42.setVisibility(VISIBLE);
                 break;
         }
 
@@ -3420,7 +3417,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 42:
                 //P42
-                show = showQuestion(43); //FIN
+                //FIN
                 break;
 
         }

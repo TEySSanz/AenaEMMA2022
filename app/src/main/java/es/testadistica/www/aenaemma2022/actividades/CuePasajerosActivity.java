@@ -153,7 +153,10 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
                             if (modeloCue==1){
-                                if (form.checkQuestion(999)){
+                                System.out.println("pregunta "+pregunta);
+                                System.out.println("maxPreg "+maxPreg);
+                                if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
+                                        (pregunta!=maxPreg && form.checkQuestion(999))){
                                     Toast.makeText(CuePasajerosActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
                                     Intent visita = new Intent();
                                     setResult(0, visita);
