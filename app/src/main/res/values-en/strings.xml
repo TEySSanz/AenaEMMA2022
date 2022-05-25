@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.0)</string>
+    <string name="app_name">EMMA 2022 (v1.2)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.0</string>
+    <string name="version">v1.2</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -215,10 +215,10 @@
     <string name="survey_m1_radio_nperbul_option2">Two people</string>
     <string name="survey_m1_radio_nperbul_option3">More people</string>
     <string name="survey_m1_text_nperbul_especificar">Specify number</string>
-    <string name="survey_m1_text_dropoff">"33.- ¿At which check-in desk has you left your luggage?  "</string>
+    <string name="survey_m1_text_dropoff">"33. ¿At which check-in desk has you left your luggage?  "</string>
     <string name="survey_m1_radio_dropoff_option1">Check-in desk attended by staff</string>
     <string name="survey_m1_radio_dropoff_option2">In automatic Drop off desk (withou airline personel)\t</string>
-    <string name="survey_m1_text_chekinb">"34.- Where did you obtain your boarding pass? 0 ۝ Airport (check-in desk of airline) "</string>
+    <string name="survey_m1_text_chekinb">34. Where did you obtain your boarding pass?</string>
     <string name="survey_m1_radio_chekinb_option0">Airport (check-in desk of airline)</string>
     <string name="survey_m1_radio_chekinb_option1">Airport (check-in machines)</string>
     <string name="survey_m1_radio_chekinb_option2">Internet (on line)</string>

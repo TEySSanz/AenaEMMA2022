@@ -245,6 +245,12 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case "Inglés":
                 localeCode="en";
                 break;
+            case "Alemán":
+                localeCode="de";
+                break;
+            case "Francés":
+                localeCode="fr";
+                break;
             default:
                 localeCode="es";
                 break;

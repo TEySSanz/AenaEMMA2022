@@ -1811,7 +1811,7 @@ public class ModeloPasajeros1 extends Form {
                     if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_viene_re))){
                         return false;
                     }
-                    if(activity.findViewById(R.id.survey_layout_cdlocaco_esp).getVisibility()==VISIBLE){
+                    if(activity.findViewById(R.id.survey_layout_no_viene_re).getVisibility()==VISIBLE){
                         if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
                             return false;
                         }
@@ -1887,9 +1887,10 @@ public class ModeloPasajeros1 extends Form {
                     //P12
                     if (checkUModo()){
                         String textoError = activity.getResources().getString(R.string.survey_text_error_umodo);
-                        Toast toast = Toast.makeText(activity, textoError, Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }
                     RadioButton rbUmodo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_umodo_option13);
                     RadioButton rb1modo_13 = (RadioButton) activity.findViewById(R.id.survey_radio_ultimodo_1modo_option13);
@@ -2201,11 +2202,8 @@ public class ModeloPasajeros1 extends Form {
                     //P29
                     RadioGroup rgVol12mes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vol12mes);
 
-                    if (rgVol12mes.getCheckedRadioButtonId()==-1) {
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_selectOption),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_vol12mes))){
+                        return false;
                     }
 
                     if (rgVol12mes.getCheckedRadioButtonId() == R.id.survey_radio_vol12mes_numviajes){
