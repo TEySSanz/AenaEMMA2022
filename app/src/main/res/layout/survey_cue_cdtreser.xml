@@ -22,26 +22,26 @@
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdtreser"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/survey_text_cdtreser"
             android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/survey_radio_cdtreser_option0"
-                android:layout_width="75dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_cdtreser_option0" />
 
             <RadioButton
                 android:id="@+id/survey_radio_cdtreser_option1"
-                android:layout_width="76dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_cdtreser_option1" />
 
             <RadioButton
                 android:id="@+id/survey_radio_cdtreser_dias"
-                android:layout_width="143dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_cdtreser_dias" />
 

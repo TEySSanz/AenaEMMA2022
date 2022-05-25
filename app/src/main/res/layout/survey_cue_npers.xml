@@ -33,19 +33,19 @@
 
                 <RadioButton
                     android:id="@+id/survey_radio_npers_option1"
-                    android:layout_width="131dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_radio_npers_option1" />
 
                 <RadioButton
                     android:id="@+id/survey_radio_npers_option2"
-                    android:layout_width="130dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_radio_npers_option2" />
 
                 <RadioButton
                     android:id="@+id/survey_radio_npers_option3"
-                    android:layout_width="131dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_radio_npers_option3" />
             </RadioGroup>

@@ -23,20 +23,20 @@
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_nviaje"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/survey_text_nviaje"
             android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/survey_radio_nviaje_option0"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_nviaje_option0" />
 
             <RadioButton
                 android:id="@+id/survey_radio_nviaje_numviajes"
-                android:layout_width="154dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_nviaje_numviajes" />
 
