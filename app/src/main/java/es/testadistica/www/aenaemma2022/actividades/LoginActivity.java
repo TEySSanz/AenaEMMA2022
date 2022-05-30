@@ -1,29 +1,42 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
-import android.annotation.SuppressLint;
-import android.app.DownloadManager;
-import android.content.BroadcastReceiver;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import java.util.Objects;
 
-import es.testadistica.www.aenaemma2022.BuildConfig;
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.utilidades.Contracts;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
@@ -38,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements UpdateHelper.OnU
     Context context;
 
     private String PROVIDER_PATH = ".provider";
+    private static final int PERMISSION_REQUEST_CODE = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,69 +132,13 @@ public class LoginActivity extends AppCompatActivity implements UpdateHelper.OnU
                 .setPositiveButton("ACTUALIZAR", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Toast.makeText(getApplicationContext(), ""+urlApp, Toast.LENGTH_LONG).show();
-                        //String destination = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/";
-                        String destination = LoginActivity.this.getExternalFilesDir("AenaStorage") + "/";
-                        String fileName = "app-aena.apk";
-                        destination += fileName;
-                        final Uri uri = Uri.parse("file://" + destination);
-
-                        //Delete update file if exists
-                        final File file = new File(destination);
-                        if (file.exists()) {
-                            file.delete();
+                        if (checkPermission()) {
+                            UpdateApp actualizaApp = new UpdateApp();
+                            actualizaApp.setContext(LoginActivity.this);
+                            actualizaApp.execute("https://www.testadistica.es/img/app-aena.apk");
+                        } else {
+                            requestPermission();
                         }
-
-                        //get url of app on server
-                        //String url = UpdateHelper.KEY_UPDATE_URL;
-                        String url = "https://www.testadistica.es/img/app-aena.apk";
-
-                        //set downloadmanager
-                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.downloading), Toast.LENGTH_LONG).show();
-                        //request.setDescription(Main.this.getString(R.string.notification_description));
-                        //request.setTitle(Main.this.getString(R.string.app_name));
-
-                        //set destination
-                        request.setDestinationUri(uri);
-
-                        if (PermissionCheck.readAndWriteExternalStorage(LoginActivity.this)) {
-
-                            //get download service and enqueue file
-                            final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-                            final long downloadId = manager.enqueue(request);
-
-                            //set BroadcastReceiver to install app when .apk is downloaded
-                            BroadcastReceiver onComplete = new BroadcastReceiver() {
-                                public void onReceive(Context ctxt, Intent intent) {
-                                    /*Intent install = new Intent(Intent.ACTION_VIEW);
-                                    install.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    install.setDataAndType(Uri.parse(Environment.getExternalStorageDirectory() + fileName),
-                                            manager.getMimeTypeForDownloadedFile(downloadId));
-                                    startActivity(install);
-
-                                    unregisterReceiver(this);
-                                    finish();*/
-                                    Uri contentUri = FileProvider.getUriForFile(
-                                            getApplicationContext(),
-                                            BuildConfig.APPLICATION_ID + PROVIDER_PATH,
-                                            file
-                                    );
-                                    Intent install = new Intent(Intent.ACTION_VIEW);
-                                    install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    install.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    install.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
-                                    install.setData(contentUri);
-                                    startActivity(install);
-                                    unregisterReceiver(this);
-                                    // finish()
-                                }
-                            };
-
-                            //register receiver for when .apk download is compete
-                            registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-                        }
-
                     }
                 }).setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
                     @Override
@@ -195,5 +153,153 @@ public class LoginActivity extends AppCompatActivity implements UpdateHelper.OnU
     @Override
     public void onNoUpdateCheckListener() {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0) {
+
+                boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                if (locationAccepted && cameraAccepted) {
+                    UpdateApp updateApp = new UpdateApp();
+                    updateApp.setContext(LoginActivity.this);
+                    updateApp.execute("https://www.testadistica.es/img/app-aena.apk");
+                }
+            }
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    private boolean checkPermission() {
+        int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+    }
+
+    public class UpdateApp extends AsyncTask<String, Integer, String> {
+        private ProgressDialog mPDialog;
+        private Context mContext;
+
+        void setContext(Activity context) {
+            mContext = context;
+            context.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPDialog = new ProgressDialog(mContext);
+                    mPDialog.setMessage("Espere...");
+                    mPDialog.setIndeterminate(true);
+                    mPDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    mPDialog.setCancelable(false);
+                    mPDialog.show();
+                }
+            });
+        }
+
+        @Override
+        protected String doInBackground(String... arg0) {
+            try {
+
+                URL url = new URL(arg0[0]);
+                HttpURLConnection c = (HttpURLConnection) url.openConnection();
+                c.setRequestMethod("GET");
+                c.setDoOutput(true);
+                c.connect();
+                int lenghtOfFile = c.getContentLength();
+
+                String PATH = Objects.requireNonNull(mContext.getExternalFilesDir(null)).getAbsolutePath();
+                File file = new File(PATH);
+                boolean isCreate = file.mkdirs();
+                File outputFile = new File(file, "my_apk.apk");
+                if (outputFile.exists()) {
+                    boolean isDelete = outputFile.delete();
+                }
+                FileOutputStream fos = new FileOutputStream(outputFile);
+
+                InputStream is = c.getInputStream();
+
+                byte[] buffer = new byte[1024];
+                int len1;
+                long total = 0;
+                while ((len1 = is.read(buffer)) != -1) {
+                    total += len1;
+                    fos.write(buffer, 0, len1);
+                    publishProgress((int) ((total * 100) / lenghtOfFile));
+                }
+                fos.close();
+                is.close();
+                if (mPDialog != null)
+                    mPDialog.dismiss();
+                installApk();
+            } catch (Exception e) {
+                Log.e("UpdateAPP", "Update error! " + e.getMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            if (mPDialog != null)
+                mPDialog.show();
+
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            if (mPDialog != null) {
+                mPDialog.setIndeterminate(false);
+                mPDialog.setMax(100);
+                mPDialog.setProgress(values[0]);
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (mPDialog != null)
+                mPDialog.dismiss();
+            if (result != null)
+                Toast.makeText(mContext, "Error en la descarga: " + result, Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(mContext, "Archivo descargado", Toast.LENGTH_SHORT).show();
+        }
+
+
+        private void installApk() {
+            try {
+                String PATH = Objects.requireNonNull(mContext.getExternalFilesDir(null)).getAbsolutePath();
+                File file = new File(PATH + "/my_apk.apk");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Uri downloaded_apk = FileProvider.getUriForFile(mContext, mContext.getApplicationContext().getPackageName() + ".provider", file);
+                    intent.setDataAndType(downloaded_apk, "application/vnd.android.package-archive");
+                    List<ResolveInfo> resInfoList = mContext.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                    for (ResolveInfo resolveInfo : resInfoList) {
+                        mContext.grantUriPermission(mContext.getApplicationContext().getPackageName() + ".provider", downloaded_apk, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    }
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(intent);
+                } else {
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
+                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

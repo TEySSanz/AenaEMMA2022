@@ -7,13 +7,16 @@ public class CueTrabajadores implements Serializable {
     private int iden;
     private int idUsuario;
     private int enviado;
+    private int pregunta;
+    private String clave;
     private String fecha;
     private String horaInicio;
     private String horaFin;
     private int idAeropuerto;
-    private int nencdor;
+    private int idIdioma;
+    private String nencdor;
     private int cdsexo;
-    private int idioma;
+    private String idioma;
     private String empresa;
     private String actempre;
     private String actempreotro;
@@ -105,6 +108,22 @@ public class CueTrabajadores implements Serializable {
         this.enviado = enviado;
     }
 
+    public int getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(int pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -137,11 +156,19 @@ public class CueTrabajadores implements Serializable {
         this.idAeropuerto = idAeropuerto;
     }
 
-    public int getNencdor() {
+    public int getIdIdioma() {
+        return idIdioma;
+    }
+
+    public void setIdIdioma(int idIdioma) {
+        this.idIdioma = idIdioma;
+    }
+
+    public String getNencdor() {
         return nencdor;
     }
 
-    public void setNencdor(int nencdor) {
+    public void setNencdor(String nencdor) {
         this.nencdor = nencdor;
     }
 
@@ -153,11 +180,11 @@ public class CueTrabajadores implements Serializable {
         this.cdsexo = cdsexo;
     }
 
-    public int getIdioma() {
+    public String getIdioma() {
         return idioma;
     }
 
-    public void setIdioma(int idioma) {
+    public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
 
