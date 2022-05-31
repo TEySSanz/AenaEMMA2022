@@ -145,7 +145,7 @@ public class ModeloPasajeros1 extends Form {
                 filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
                 break;
         }
-        ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","pais || ', ' || descripcionPrincipal", "codigo", filtroAeropuerto));
+        ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","pais || ', ' || descripcionPrincipal", "pais || ', ' || descripcionPrincipal", filtroAeropuerto));
         tipoAeropuertosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         //P1
@@ -407,11 +407,11 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P20
-        //Asigna los valores del desplegable de paises
+        //Asigna los valores del desplegable de tipoAeropuertos
         SearchableSpinner sp_cdiaptof;
         sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-        sp_cdiaptof.setAdapter(paisesAdapter);
-        sp_cdiaptof.setTitle(activity.getString(R.string.spinner_pais_title));
+        sp_cdiaptof.setAdapter(tipoAeropuertosAdapter);
+        sp_cdiaptof.setTitle(activity.getString(R.string.spinner_tipoAeropuerto_title));
         sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
 
         sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -5065,7 +5065,6 @@ public class ModeloPasajeros1 extends Form {
             //Comprobación de la HORA
             formatoFecha.setLenient(false);
             formatoFecha.parse(hora + ":" + minuto);
-            System.out.println(formatoFecha.parse(hora + ":" + minuto).toString());
             correcto = true;
         } catch (ParseException e) {
             //Si la hora no es correcta, pasará por aquí

@@ -126,7 +126,7 @@
     <string name="survey_m1_text_ultimodo_otros">OUTROS</string>
     <string name="survey_m1_radio_sitiopark_option9">" Outros"</string>
     <string name="survey_m1_radio_relacion_option9">" Outros"</string>
-    <string name="survey_m1_text_viene_re">9. Para apanhar este voo, de onde parte para chegar ao aeroporto de Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re">9. Para apanhar este voo, de onde parte para chegar ao aeroporto de AS Madrid-Barajas?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Para apanhar este voo, de onde parte para chegar ao aeroporto de Barcelona?</string>
     <string name="survey_m1_radio_viene_re_option1">" Vem da sua residência"</string>
     <string name="survey_m1_text_cdalojin">10.¿Que tipo de alojamento utilizou durante a sua estadia em %1$s?</string>

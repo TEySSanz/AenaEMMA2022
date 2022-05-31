@@ -79,7 +79,7 @@
     <string name="survey_m1_text_conexfac">6.¿En realitzar la connexió, ha hagut de recollir el seu equipatge en aquest aeroport per a tornar a facturar-lo??</string>
     <string name="survey_m1_text_cdsinope_bcn">7. Durant la connexió Ha passat la nit a Barcelona o voltants?</string>
     <string name="survey_m1_text_cdsinope">7. Durant la connexió Ha passat la nit a Madrid o voltants?</string>
-    <string name="survey_m1_text_viene_re">9. Per a agafar aquest vol, d\'on part per a accedir a l\'aeroport de  Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re">9. Per a agafar aquest vol, d\'on part per a accedir a l\'aeroport de AS Madrid-Barajas?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Per a agafar aquest vol, d\'on part per a accedir a l\'aeroport de JT Barcelona-El Prat?</string>
     <string name="survey_m1_text_cdalojen">"8.-¿On s'ha allotjat?"</string>
     <string name="survey_m1_text_cdalojin">10.¿Quin tipus d\'allotjament ha utilitzat durant la seva estada en %1$s?</string>

@@ -164,11 +164,13 @@ public class Contracts {
     public static final String COLUMN_TIPOPROVINCIAS_CODIGO = "codigo";
     public static final String COLUMN_TIPOPROVINCIAS_DESCRIPCION = "descripcion";
     public static final String COLUMN_TIPOPROVINCIAS_idCA = "idCA";
+    public static final String COLUMN_TIPOPROVINCIAS_DESCRIPCIONCA = "descripcionCA";
     public static final String SQL_CREATE_TIPOPROVINCIAS = "CREATE TABLE "+ TABLE_TIPOPROVINCIAS + " ("+
             COLUMN_TIPOPROVINCIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOPROVINCIAS_CODIGO + " TEXT, " +
             COLUMN_TIPOPROVINCIAS_DESCRIPCION + " TEXT, " +
-            COLUMN_TIPOPROVINCIAS_idCA + " TEXT )";
+            COLUMN_TIPOPROVINCIAS_idCA + " TEXT, " +
+            COLUMN_TIPOPROVINCIAS_DESCRIPCIONCA + " TEXT )";
     public static final String SQL_DROP_TIPOPROVINCIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOPROVINCIAS;
 
     //Tabla TipoActEmpTrab

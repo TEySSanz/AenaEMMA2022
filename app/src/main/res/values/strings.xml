@@ -107,9 +107,9 @@
     <string name="survey_m1_radio_cdalojen_option7">Vivienda de familiares/amigos</string>
     <string name="survey_m1_radio_cdalojen_option9">Otros</string>
     <!--Pregunta9-->
-    <string name="survey_m1_text_viene_re">9. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re">9. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de AS Madrid-Barajas?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Barcelona-El Prat?</string>
-    <string name="survey_m1_radio_viene_re_option1">Viene de su residencia</string>
+    <string name="survey_m1_radio_viene_re_option1">Viene de su residencia habitual</string>
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>
     <string name="survey_m1_text_cdlocaco_prov">Provincia</string>
     <string name="survey_m1_text_cdlocaco">Localidad</string>
@@ -594,7 +594,7 @@
     <string name="survey_m4_text_cdlocado">Localidad</string>
     <!--Pregunta3-->
     <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Palma de Mallorca?</string>
-    <string name="survey_m4_radio_viene_re">Viene de su residencia</string>
+    <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
     <string name="survey_m4_radio_cdlocaco">Localidad</string>
     <string name="survey_m4_radio_cdiaptoo">Viene en conexión aerea</string>
     <string name="survey_m4_text_cdiaptoo">Aeropuerto de origen</string>

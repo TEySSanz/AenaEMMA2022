@@ -75,7 +75,7 @@
     <string name="survey_m1_radio_cdalojen_option1">"Hotel or similar "</string>
     <string name="survey_m1_radio_cdalojen_option7">"Family/friend's house  "</string>
     <string name="survey_m1_radio_cdalojen_option9">Others</string>
-    <string name="survey_m1_text_viene_re">9. Where did you start your journey to take this flight in Madrid-Barajas´s airport?</string>
+    <string name="survey_m1_text_viene_re">9. Where did you start your journey to take this flight in AS Madrid-Barajas´s airport?</string>
     <string name="survey_m1_radio_viene_re_option1">"Coming from residence "</string>
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>
     <string name="survey_m1_text_cdlocaco_prov">Provincia</string>

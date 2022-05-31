@@ -85,7 +85,7 @@
     <string name="survey_m1_radio_cdalojen_option1">"Hôtel ou similaire "</string>
     <string name="survey_m1_radio_cdalojen_option7">"Chez des amis/famille "</string>
     <string name="survey_m1_radio_cdalojen_option9">Autres</string>
-    <string name="survey_m1_text_viene_re">9.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re">9.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de AS Madrid-Barajas?</string>
     <string name="survey_m1_text_viene_re_bcn">9.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Barcelona?</string>
     <string name="survey_m1_radio_viene_re_option1">"Résidence priveé "</string>
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>

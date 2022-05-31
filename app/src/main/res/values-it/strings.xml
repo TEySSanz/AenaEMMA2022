@@ -68,7 +68,7 @@
     <string name="survey_m1_text_cdsinope">7. Durante il collegamento, avete pernottato a Madrid o nei dintorni?</string>
     <string name="survey_m1_text_cdsinope_bcn">7. Durante il collegamento, avete pernottato a Barcelona o nei dintorni?</string>
     <string name="survey_m1_text_cdalojen">"8.- Dove avete alloggiato?  "</string>
-    <string name="survey_m1_text_viene_re">9. Per prendere questo volo, da dove parte per arrivare all\'aeroporto di Madrid-Barajas?</string>
+    <string name="survey_m1_text_viene_re">9. Per prendere questo volo, da dove parte per arrivare all\'aeroporto di AS Madrid-Barajas?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Per prendere questo volo, da dove parte per arrivare all\'aeroporto di Barcelona?</string>
     <string name="survey_m1_text_cdalojin">10. Che tipo di alloggio ha utilizzato durante il suo soggiorno a %1$s?</string>
     <string name="survey_m1_text_nmodos">11.Quanti mezzi di trasporto ha utilizzato per raggiungere l\'aeroporto?</string>
