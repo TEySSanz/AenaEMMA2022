@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:ignore="ExtraText">
     <LinearLayout
-        android:id="@+id/survey_layout_chekinb"
+        android:id="@+id/survey_layout_usoave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -14,20 +14,11 @@
         android:visibility="gone">
 
         <TextView
-            android:id="@+id/survey_text_chekinb"
+            android:id="@+id/survey_text_usoave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/SurveyQuestionTitle"
-            android:text="@string/survey_m1_text_chekinb"
-            android:visibility="visible"/>
-
-        <TextView
-            android:id="@+id/survey_text_chekinb_m4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/SurveyQuestionTitle"
-            android:text="@string/survey_m4_text_chekinb"
-            android:visibility="gone"/>
+            android:text="@string/survey_m4_text_usoave" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,29 +26,24 @@
             android:orientation="horizontal">
 
             <RadioGroup
-                android:id="@+id/survey_radiogroup_chekinb"
+                android:id="@+id/survey_radiogroup_usoave"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
                 <RadioButton
-                    android:id="@+id/survey_radio_chekinb_option0"
+                    android:id="@+id/survey_radio_usoave_option1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_chekinb_option0" />
+                    android:text="@string/survey_m4_radio_usoave_option1" />
 
                 <RadioButton
-                    android:id="@+id/survey_radio_chekinb_option1"
+                    android:id="@+id/survey_radio_usoave_option2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_chekinb_option1" />
+                    android:text="@string/survey_m4_radio_usoave_option2" />
 
-                <RadioButton
-                    android:id="@+id/survey_radio_chekinb_option2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_chekinb_option2" />
             </RadioGroup>
         </LinearLayout>
     </LinearLayout>

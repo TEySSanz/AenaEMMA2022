@@ -19,7 +19,16 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m1_text_cdpaisna" />
+            android:text="@string/survey_m1_text_cdpaisna"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/survey_text_cdpaisna_m4"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m4_text_cdpaisna"
+            android:visibility="gone" />
 
 
         <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner

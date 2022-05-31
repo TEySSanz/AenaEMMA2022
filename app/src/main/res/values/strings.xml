@@ -580,6 +580,4 @@
     <string name="survey_radio_puesto_option2">Mando medio</string>
     <string name="survey_radio_puesto_option3">Supervisión, Profesionales y Técnicos</string>
     <string name="survey_radio_puesto_option4">Operativos y de Apoyo</string>
-    <!--Pregunta28-->
-    <string name="survey_text_sugerencias">28. Sugerencias: Si lo desea puede expresar cualquier sugerencia, propuesta de mejora o necesidad respecto al medio de transporte hacia y desde el Aeropuerto</string>
 </resources>

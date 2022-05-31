@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_viene_re_cdlocaco_diaptoo"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_viene_re"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m4_text_viene_re" />
+
+        <RadioGroup
+            android:id="@+id/survey_radiogroup_viene_re_diaptoo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/survey_radio_viene_re"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m4_radio_viene_re" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdlocaco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m4_radio_cdlocaco" />
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdiaptoo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m4_radio_cdiaptoo" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/survey_layout_cdlocaco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/survey_layout_cdlocaco_prov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:layout_marginTop="@dimen/standard_padding"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/survey_text_cdlocaco_prov"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/survey_m1_text_cdlocaco_prov" />
+
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    android:id="@+id/survey_spinner_cdlocaco_prov"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/survey_layout_cdlocaco_m4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:layout_marginTop="@dimen/standard_padding"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/survey_text_cdlocaco"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/standard_padding"
+                    android:gravity="center"
+                    android:text="@string/survey_m1_text_cdlocaco" />
+
+
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    android:id="@+id/survey_spinner_cdlocaco"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/survey_layout_cdiaptoo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_text_cdiaptoo"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:gravity="center"
+                android:text="@string/survey_m4_text_cdiaptoo" />
+
+
+            <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                android:id="@+id/survey_spinner_cdiaptoo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
