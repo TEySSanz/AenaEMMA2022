@@ -26,7 +26,12 @@ public class CueTrabajadores implements Serializable {
     private String jornada;
     private String jornadaotro;
     private String ndiastrab;
-    private String zonatrab;
+    private int zonatrab1;
+    private int zonatrab2;
+    private int zonatrab3;
+    private int zonatrab4;
+    private int zonatrab5;
+    private int zonatrab6;
     private String horaent1;
     private String horasal1;
     private String horaent2;
@@ -74,6 +79,7 @@ public class CueTrabajadores implements Serializable {
     private String cdedadtrab;
     private String cdslab;
     private String puesto;
+    private String sugerencias;
 
     public CueTrabajadores(){
 
@@ -260,12 +266,52 @@ public class CueTrabajadores implements Serializable {
         this.ndiastrab = ndiastrab;
     }
 
-    public String getZonatrab() {
-        return zonatrab;
+    public int getZonatrab1() {
+        return zonatrab1;
     }
 
-    public void setZonatrab(String zonatrab) {
-        this.zonatrab = zonatrab;
+    public void setZonatrab1(int zonatrab1) {
+        this.zonatrab1 = zonatrab1;
+    }
+
+    public int getZonatrab2() {
+        return zonatrab2;
+    }
+
+    public void setZonatrab2(int zonatrab2) {
+        this.zonatrab2 = zonatrab2;
+    }
+
+    public int getZonatrab3() {
+        return zonatrab3;
+    }
+
+    public void setZonatrab3(int zonatrab3) {
+        this.zonatrab3 = zonatrab3;
+    }
+
+    public int getZonatrab4() {
+        return zonatrab4;
+    }
+
+    public void setZonatrab4(int zonatrab4) {
+        this.zonatrab4 = zonatrab4;
+    }
+
+    public int getZonatrab5() {
+        return zonatrab5;
+    }
+
+    public void setZonatrab5(int zonatrab5) {
+        this.zonatrab5 = zonatrab5;
+    }
+
+    public int getZonatrab6() {
+        return zonatrab6;
+    }
+
+    public void setZonatrab6(int zonatrab6) {
+        this.zonatrab6 = zonatrab6;
     }
 
     public String getHoraent1() {
@@ -642,5 +688,13 @@ public class CueTrabajadores implements Serializable {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    public String getSugerencias() {
+        return sugerencias;
+    }
+
+    public void setSugerencias(String sugerencias) {
+        this.sugerencias = sugerencias;
     }
 }

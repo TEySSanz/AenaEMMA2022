@@ -50,7 +50,7 @@ public class ModeloTrabajadores1 extends FormTrab {
     private static final String TAG = "ModeloTrabajadores1";
     private int preguntaAnterior = 1;
     private int idCue;
-    private int finCue = 28;
+    private int finCue = 29;
     private boolean resultValue;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -95,7 +95,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         survey_spinner_empresa.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P2
-        ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "codigo"));
+        ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "descripcion"));
         actempreAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_actempre;
@@ -338,57 +338,6 @@ public class ModeloTrabajadores1 extends FormTrab {
             @Override
             public void onClick(View v) {
                 rgNdiastrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        //P6
-        final RadioGroup rgZonatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_zonatrab);
-        final RadioButton rbZonatrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option1);
-        final RadioButton rbZonatrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option2);
-        final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
-        final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
-        final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
-        final RadioButton rbZonatrab_6 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option6);
-
-        rbZonatrab_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbZonatrab_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbZonatrab_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbZonatrab_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbZonatrab_5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        rbZonatrab_6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
 
@@ -900,6 +849,57 @@ public class ModeloTrabajadores1 extends FormTrab {
     }
 
     private void iniciarCheckBox(){
+
+        //P6
+        final LinearLayout llZonatrab = (LinearLayout) activity.findViewById(R.id.survey_layout_check_zonatrab);
+        final CheckBox cbZonatrab_1 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option1);
+        final CheckBox cbZonatrab_2 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option2);
+        final CheckBox cbZonatrab_3 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option3);
+        final CheckBox cbZonatrab_4 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option4);
+        final CheckBox cbZonatrab_5 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option5);
+        final CheckBox cbZonatrab_6 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option6);
+
+        cbZonatrab_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        cbZonatrab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        cbZonatrab_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        cbZonatrab_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        cbZonatrab_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+
+        cbZonatrab_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
 
         //P12
         final LinearLayout llValtranspubli = (LinearLayout) activity.findViewById(R.id.survey_layout_check_valtranspubli);
@@ -2835,7 +2835,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 6:
                 //P6
-                RelativeLayout p6 = (RelativeLayout) activity.findViewById(R.id.survey_layout_zonatrab);
+                LinearLayout p6 = (LinearLayout) activity.findViewById(R.id.survey_layout_zonatrab);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -3010,6 +3010,14 @@ public class ModeloTrabajadores1 extends FormTrab {
                 p27.setVisibility(VISIBLE);
                 break;
             case 28:
+                //P28
+                LinearLayout p28 = (LinearLayout) activity.findViewById(R.id.survey_layout_sugerencias);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p28.setVisibility(VISIBLE);
+                break;
+            case 29:
                 //FIN
                 next.setVisibility(GONE);
                 break;
@@ -3155,16 +3163,16 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 6:
                     //P6
-                    final RadioGroup rgZonatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_zonatrab);
-                    final RadioButton rbZonatrab_1 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option1);
-                    final RadioButton rbZonatrab_2 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option2);
-                    final RadioButton rbZonatrab_3 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option3);
-                    final RadioButton rbZonatrab_4 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option4);
-                    final RadioButton rbZonatrab_5 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option5);
-                    final RadioButton rbZonatrab_6 = (RadioButton) activity.findViewById(R.id.survey_radio_zonatrab_option6);
+                    final LinearLayout llZonatrab = (LinearLayout) activity.findViewById(R.id.survey_layout_check_zonatrab);
+                    final CheckBox cbZonatrab_1 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option1);
+                    final CheckBox cbZonatrab_2 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option2);
+                    final CheckBox cbZonatrab_3 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option3);
+                    final CheckBox cbZonatrab_4 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option4);
+                    final CheckBox cbZonatrab_5 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option5);
+                    final CheckBox cbZonatrab_6 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option6);
 
-                    if (!rbZonatrab_1.isChecked() && !rbZonatrab_2.isChecked() && !rbZonatrab_3.isChecked() && !rbZonatrab_4.isChecked() && !rbZonatrab_5.isChecked() && !rbZonatrab_6.isChecked()) {
-                        rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                    if (!cbZonatrab_1.isChecked() && !cbZonatrab_2.isChecked() && !cbZonatrab_3.isChecked() && !cbZonatrab_4.isChecked() && !cbZonatrab_5.isChecked() && !cbZonatrab_6.isChecked()) {
+                        llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
@@ -3172,7 +3180,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
 
                     } else {
-                        rgZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        llZonatrab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                     }
 
                     break;
@@ -3774,6 +3782,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                     }
 
                     break;
+                case 28:
+                    //P28
+
+                    break;
                 case 999:
                     //Se guarda la hora de finalización al guardar
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_HORAFIN, String.valueOf(cue.getHoraFin()));
@@ -3825,7 +3837,12 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 6:
                     //P6
-                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB, cue.getZonatrab());
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB1, String.valueOf(cue.getZonatrab1()));
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB2, String.valueOf(cue.getZonatrab2()));
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB3, String.valueOf(cue.getZonatrab3()));
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB4, String.valueOf(cue.getZonatrab4()));
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB5, String.valueOf(cue.getZonatrab5()));
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB6, String.valueOf(cue.getZonatrab6()));
 
                     break;
                 case 7:
@@ -3960,6 +3977,11 @@ public class ModeloTrabajadores1 extends FormTrab {
                     guardaDB(Contracts.COLUMN_CUETRABAJADORES_PUESTO, cue.getPuesto());
 
                     break;
+                case 28:
+                    //P28
+                    guardaDB(Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS, cue.getSugerencias());
+
+                    break;
 
             }
         }
@@ -3998,7 +4020,12 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 6:
                     //P6
-                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB1);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB2);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB3);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB4);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB5);
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_ZONATRAB6);
 
                     break;
                 case 7:
@@ -4133,6 +4160,11 @@ public class ModeloTrabajadores1 extends FormTrab {
                     borraDB(Contracts.COLUMN_CUETRABAJADORES_PUESTO);
 
                     break;
+                case 28:
+                    //P28
+                    borraDB(Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS);
+
+                    break;
             }
         }
         return true;
@@ -4161,7 +4193,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         p5.setVisibility(GONE);
 
         //P6
-        RelativeLayout p6 = (RelativeLayout) activity.findViewById(R.id.survey_layout_zonatrab);
+        LinearLayout p6 = (LinearLayout) activity.findViewById(R.id.survey_layout_zonatrab);
         p6.setVisibility(GONE);
 
         //P7
@@ -4247,6 +4279,10 @@ public class ModeloTrabajadores1 extends FormTrab {
         //P27
         RelativeLayout p27 = (RelativeLayout) activity.findViewById(R.id.survey_layout_puesto);
         p27.setVisibility(GONE);
+
+        //P28
+        LinearLayout p28 = (LinearLayout) activity.findViewById(R.id.survey_layout_sugerencias);
+        p28.setVisibility(GONE);
 
     }
 
@@ -4489,7 +4525,28 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 22:
                 //P22
-                show = showQuestion(23);
+                if (activated) {
+                    RadioGroup rgUltimoModo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_umodo);
+                    checkedId = rgUltimoModo.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_ultimodo_umodo_option3:
+                                show = showQuestion(24); //>P24
+                                break;
+                            case R.id.survey_radio_ultimodo_umodo_option5:
+                                show = showQuestion(24); //>P24
+                                break;
+                            default:
+                                show = showQuestion(23); //>P23
+                                break;
+                        }
+                    } else {
+                        show = showQuestion(23); //>P23
+                    }
+                } else {
+                    show = showQuestion(23);
+                }
                 break;
             case 23:
                 //P23
@@ -4509,6 +4566,10 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 27:
                 //P27
+                show = showQuestion(28);
+                break;
+            case 28:
+                //P28
                 show = showQuestion(finCue); //>FIN
                 break;
         }
@@ -4643,38 +4704,48 @@ public class ModeloTrabajadores1 extends FormTrab {
         quest.setNdiastrab(String.valueOf(selectedCode));
 
         //P6
-        RadioGroup rgZonatrab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_zonatrab);
+        CheckBox cbZonatrab_1 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option1);
+        CheckBox cbZonatrab_2 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option2);
+        CheckBox cbZonatrab_3 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option3);
+        CheckBox cbZonatrab_4 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option4);
+        CheckBox cbZonatrab_5 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option5);
+        CheckBox cbZonatrab_6 = (CheckBox) activity.findViewById(R.id.check_zonatrab_option6);
 
-        selectedCode = -1;
-        checkedId = rgZonatrab.getCheckedRadioButtonId();
-
-        if (checkedId > 0) {
-            switch (checkedId) {
-                case R.id.survey_radio_zonatrab_option1:
-                    selectedCode = 1;
-                    break;
-                case R.id.survey_radio_zonatrab_option2:
-                    selectedCode = 2;
-                    break;
-                case R.id.survey_radio_zonatrab_option3:
-                    selectedCode = 3;
-                    break;
-                case R.id.survey_radio_zonatrab_option4:
-                    selectedCode = 4;
-                    break;
-                case R.id.survey_radio_zonatrab_option5:
-                    selectedCode = 5;
-                    break;
-                case R.id.survey_radio_zonatrab_option6:
-                    selectedCode = 6;
-                    break;
-                default:
-                    selectedCode = 9;
-                    break;
-            }
+        if (cbZonatrab_1.isChecked()){
+            quest.setZonatrab1(1);
+        } else {
+            quest.setZonatrab1(0);
         }
 
-        quest.setZonatrab(String.valueOf(selectedCode));
+        if (cbZonatrab_2.isChecked()){
+            quest.setZonatrab2(1);
+        } else {
+            quest.setZonatrab2(0);
+        }
+
+        if (cbZonatrab_3.isChecked()){
+            quest.setZonatrab3(1);
+        } else {
+            quest.setZonatrab3(0);
+        }
+
+        if (cbZonatrab_4.isChecked()){
+            quest.setZonatrab4(1);
+        } else {
+            quest.setZonatrab4(0);
+        }
+
+        if (cbZonatrab_5.isChecked()){
+            quest.setZonatrab5(1);
+        } else {
+            quest.setZonatrab5(0);
+        }
+
+        if (cbZonatrab_6.isChecked()){
+            quest.setZonatrab6(1);
+        } else {
+            quest.setZonatrab6(0);
+        }
 
         //P7
         TimePicker etHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
@@ -5320,6 +5391,15 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         quest.setPuesto(String.valueOf(selectedCode));
+
+        //P28
+        EditText etSugerencias = (EditText) activity.findViewById(R.id.survey_edit_sugerencias);
+
+        if (!etSugerencias.getText().toString().equals("")) {
+            quest.setSugerencias(etSugerencias.getText().toString());
+        } else {
+            quest.setSugerencias("-1");
+        }
 
         return quest;
     }

@@ -771,7 +771,12 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_JORNADA + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_JORNADAOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_NDIASTRAB + ", " +
-                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB4 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB5 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB6 + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAENT1 + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_HORASAL1 + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAENT2 + ", " +
@@ -818,7 +823,8 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_MODOSALIDAOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_CDEDADTRAB + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_CDSLAB + ", " +
-                "T1." + Contracts.COLUMN_CUETRABAJADORES_PUESTO +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_PUESTO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS +
                 " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
@@ -848,54 +854,60 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setJornada(cursor.getString(19));
             cue.setJornadaotro(cursor.getString(20));
             cue.setNdiastrab(cursor.getString(21));
-            cue.setZonatrab(cursor.getString(22));
-            cue.setHoraent1(cursor.getString(23));
-            cue.setHorasal1(cursor.getString(24));
-            cue.setHoraent2(cursor.getString(25));
-            cue.setHorasal2(cursor.getString(26));
-            cue.setHoraent3(cursor.getString(27));
-            cue.setHorasal3(cursor.getString(28));
-            cue.setNmodos(cursor.getString(29));
-            cue.setModo1(cursor.getString(30));
-            cue.setModo2(cursor.getString(31));
-            cue.setUltimodo(cursor.getString(32));
-            cue.setNocucoche(cursor.getString(33));
-            cue.setSatistranspubli(cursor.getString(34));
-            cue.setValtranspubli1(cursor.getString(35));
-            cue.setValtranspubli2(cursor.getString(36));
-            cue.setValtranspubli3(cursor.getString(37));
-            cue.setValtranspubliotro(cursor.getString(38));
-            cue.setMejtranspubli1(cursor.getString(39));
-            cue.setMejtranspubli2(cursor.getString(40));
-            cue.setMejtranspubli3(cursor.getString(41));
-            cue.setMejtranspubliotro(cursor.getString(42));
-            cue.setDesplazatrab(cursor.getString(43));
-            cue.setNotranspubli1(cursor.getString(44));
-            cue.setNotranspubli2(cursor.getString(45));
-            cue.setNotranspubli3(cursor.getString(46));
-            cue.setNotranspubliotro(cursor.getString(47));
-            cue.setDisptranspubli(cursor.getString(48));
-            cue.setDisptranspubliotro(cursor.getString(49));
-            cue.setImportranspubli(cursor.getString(50));
-            cue.setMedtranspubli1(cursor.getString(51));
-            cue.setMedtranspubli2(cursor.getString(52));
-            cue.setMedtranspubli3(cursor.getString(53));
-            cue.setMedtranspubliotro(cursor.getString(54));
-            cue.setTiempotranspubli(cursor.getString(55));
-            cue.setAparctrab(cursor.getString(56));
-            cue.setCompartcoche1(cursor.getString(57));
-            cue.setCompartcoche2(cursor.getString(58));
-            cue.setCompartcoche3(cursor.getString(59));
-            cue.setCompartcocheotro(cursor.getString(60));
-            cue.setDispbici1(cursor.getString(61));
-            cue.setDispbici2(cursor.getString(62));
-            cue.setDispbici3(cursor.getString(63));
-            cue.setDispbiciotro(cursor.getString(64));
-            cue.setModosalida(cursor.getString(65));
-            cue.setModosalidaotro(cursor.getString(66));
-            cue.setCdedadtrab(cursor.getString(67));
-            cue.setCdslab(cursor.getString(68));
-            cue.setPuesto(cursor.getString(69));
+            cue.setZonatrab1(cursor.getInt(22));
+            cue.setZonatrab2(cursor.getInt(23));
+            cue.setZonatrab3(cursor.getInt(24));
+            cue.setZonatrab4(cursor.getInt(25));
+            cue.setZonatrab5(cursor.getInt(26));
+            cue.setZonatrab6(cursor.getInt(27));
+            cue.setHoraent1(cursor.getString(28));
+            cue.setHorasal1(cursor.getString(29));
+            cue.setHoraent2(cursor.getString(30));
+            cue.setHorasal2(cursor.getString(31));
+            cue.setHoraent3(cursor.getString(32));
+            cue.setHorasal3(cursor.getString(33));
+            cue.setNmodos(cursor.getString(34));
+            cue.setModo1(cursor.getString(35));
+            cue.setModo2(cursor.getString(36));
+            cue.setUltimodo(cursor.getString(37));
+            cue.setNocucoche(cursor.getString(38));
+            cue.setSatistranspubli(cursor.getString(39));
+            cue.setValtranspubli1(cursor.getString(40));
+            cue.setValtranspubli2(cursor.getString(41));
+            cue.setValtranspubli3(cursor.getString(42));
+            cue.setValtranspubliotro(cursor.getString(43));
+            cue.setMejtranspubli1(cursor.getString(44));
+            cue.setMejtranspubli2(cursor.getString(45));
+            cue.setMejtranspubli3(cursor.getString(46));
+            cue.setMejtranspubliotro(cursor.getString(47));
+            cue.setDesplazatrab(cursor.getString(48));
+            cue.setNotranspubli1(cursor.getString(49));
+            cue.setNotranspubli2(cursor.getString(50));
+            cue.setNotranspubli3(cursor.getString(51));
+            cue.setNotranspubliotro(cursor.getString(52));
+            cue.setDisptranspubli(cursor.getString(53));
+            cue.setDisptranspubliotro(cursor.getString(54));
+            cue.setImportranspubli(cursor.getString(55));
+            cue.setMedtranspubli1(cursor.getString(56));
+            cue.setMedtranspubli2(cursor.getString(57));
+            cue.setMedtranspubli3(cursor.getString(58));
+            cue.setMedtranspubliotro(cursor.getString(59));
+            cue.setTiempotranspubli(cursor.getString(60));
+            cue.setAparctrab(cursor.getString(61));
+            cue.setCompartcoche1(cursor.getString(62));
+            cue.setCompartcoche2(cursor.getString(63));
+            cue.setCompartcoche3(cursor.getString(64));
+            cue.setCompartcocheotro(cursor.getString(65));
+            cue.setDispbici1(cursor.getString(66));
+            cue.setDispbici2(cursor.getString(67));
+            cue.setDispbici3(cursor.getString(68));
+            cue.setDispbiciotro(cursor.getString(69));
+            cue.setModosalida(cursor.getString(70));
+            cue.setModosalidaotro(cursor.getString(71));
+            cue.setCdedadtrab(cursor.getString(72));
+            cue.setCdslab(cursor.getString(73));
+            cue.setPuesto(cursor.getString(74));
+            cue.setSugerencias(cursor.getString(75));
 
             pendientes.add(cue);
         }

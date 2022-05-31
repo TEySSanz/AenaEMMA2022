@@ -186,6 +186,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_DROP_VERSION);
         db.execSQL(Contracts.SQL_CREATE_VERSION);
         DBInsert.insertsVersion(db);
+
+        //Añade columna Sugerencias en CueTrabajadores
+        db.execSQL("ALTER TABLE " + Contracts.TABLE_CUETRABAJADORES + " ADD " + Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS + " TEXT;");
     }
 
 }

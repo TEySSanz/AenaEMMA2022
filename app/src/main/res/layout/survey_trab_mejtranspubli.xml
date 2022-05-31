@@ -21,7 +21,7 @@
             style="@style/SurveyQuestionTitle"/>
 
         <TextView
-            android:id="@+id/survey_text_valtranspubli_ent"
+            android:id="@+id/survey_text_mejtranspubli_ent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_text_mejtranspubli_ent"

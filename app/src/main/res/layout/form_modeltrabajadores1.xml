@@ -58,5 +58,7 @@
     <include layout="@layout/survey_trab_cdslab"/>
     <!-- P27 -->
     <include layout="@layout/survey_trab_puesto"/>
+    <!-- P28 -->
+    <include layout="@layout/survey_trab_sugerencia"/>
 
 </LinearLayout>
