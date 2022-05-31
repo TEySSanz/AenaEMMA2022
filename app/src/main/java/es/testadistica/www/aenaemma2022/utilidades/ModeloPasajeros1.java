@@ -35,6 +35,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -114,9 +115,9 @@ public class ModeloPasajeros1 extends Form {
 
     private void iniciarSpinners() {
 
-        ArrayAdapter<String> paisesAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "codigo"));
+        ArrayAdapter<String> paisesAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "descripcion"));
         paisesAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo"));
+        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion"));
         paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> provinciasAdapter = new ArrayAdapter<String>(this.activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo"));
         provinciasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
@@ -541,7 +542,7 @@ public class ModeloPasajeros1 extends Form {
 
     private void iniciarTimePickers(){
         //P16
-        TimePicker tpHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
+        /*TimePicker tpHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
 
         tpHllega.setIs24HourView(true);
 
@@ -553,7 +554,7 @@ public class ModeloPasajeros1 extends Form {
         } else {
             tpHllega.setCurrentHour(0);
             tpHllega.setCurrentMinute(0);
-        }
+        }*/
     }
 
     private void condicionesSpinners() {
@@ -589,7 +590,7 @@ public class ModeloPasajeros1 extends Form {
                     blanquearEditText(activity.findViewById(R.id.survey_edit_distresotro));
                     if (compruebaListaPaises1y2(texto) > 0){ //Si el pais es uno de la lista 1 y 2 se habilita para introducir el área / región
                         String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
-                        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo", filtro));
+                        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion", filtro));
                         paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
                         sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
                         sp_distres_area.setAdapter(paises1y2Adapter);
@@ -1982,6 +1983,51 @@ public class ModeloPasajeros1 extends Form {
                         } else {
                             etAcomptes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                         }
+                    }
+                    break;
+                case 16:
+                    EditText etHora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
+                    EditText etMinuto = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
+                    String hora=etHora.getText().toString();
+                    String minuto=etMinuto.getText().toString();
+
+                    if (hora.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHora.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if (minuto.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinuto.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if(!validarFecha(hora,minuto)){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHora.setError(textoError);
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinuto.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
                     break;
                 case 17:
@@ -3983,14 +4029,14 @@ public class ModeloPasajeros1 extends Form {
         quest.setAcomptes(selectedCode);
 
         //P16
-        /*EditText hllega_hora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
+        EditText hllega_hora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
         EditText hllega_minutos = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
-        quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());*/
-        TimePicker etHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
-        String stHllega = replicateTime(String.valueOf(etHllega.getCurrentHour()), "0", 2, 1) + ":" + replicateTime(String.valueOf(etHllega.getCurrentMinute()), "0", 2, 2);
+        quest.setHllega(hllega_hora.getText().toString()+":"+hllega_minutos.getText().toString());
+        //TimePicker etHllega = (TimePicker) activity.findViewById(R.id.survey_edit_hllega);
+        //String stHllega = replicateTime(String.valueOf(etHllega.getCurrentHour()), "0", 2, 1) + ":" + replicateTime(String.valueOf(etHllega.getCurrentMinute()), "0", 2, 2);
 
         //if(!stHllega.equals("00:00")){
-            quest.setHllega(stHllega);
+            //quest.setHllega(stHllega);
         //} else {
         //    quest.setHllega("-1");
         //}
@@ -5008,5 +5054,24 @@ public class ModeloPasajeros1 extends Form {
             miRadioGroup.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
         }
         return true;
+    }
+
+    public boolean validarFecha(String hora, String minuto) {
+        boolean correcto = false;
+
+        try {
+            //Formato de hora (hora/minuto)
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("hh:mm");
+            //Comprobación de la HORA
+            formatoFecha.setLenient(false);
+            formatoFecha.parse(hora + ":" + minuto);
+            System.out.println(formatoFecha.parse(hora + ":" + minuto).toString());
+            correcto = true;
+        } catch (ParseException e) {
+            //Si la hora no es correcta, pasará por aquí
+            correcto = false;
+        }
+
+        return correcto;
     }
 }

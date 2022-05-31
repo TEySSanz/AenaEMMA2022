@@ -195,6 +195,7 @@
     <string name="survey_m1_text_hllega">16. ¿A qué HORA ha llegado al aeropuerto?</string>
     <string name="survey_m1_text_hllega_hora">Hora</string>
     <string name="survey_m1_text_hllega_min">Minuto</string>
+    <string name="survey_m1_text_hllega_ent">Debe introducir las horas en formato de 24h</string>
     <!--Pregunta17-->
     <string name="survey_m1_text_cdiaptod">17. ¿A qué aeropuerto se dirige el vuelo en el que va a embarcar?</string>
     <string name="survey_m1_text_cdiaptod_ent">Concretar estado/país</string>

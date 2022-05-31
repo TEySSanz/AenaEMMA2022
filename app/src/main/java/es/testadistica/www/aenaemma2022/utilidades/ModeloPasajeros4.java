@@ -1565,22 +1565,50 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 8:
                     //P8
-                    EditText etHora = (EditText) activity.findViewById(R.id.survey_edit_hora);
-                    EditText etMinuto = (EditText) activity.findViewById(R.id.survey_edit_min);
+                    EditText etHora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);
+                    EditText etMinuto = (EditText) activity.findViewById(R.id.survey_edit_hllega_minutos);
                     String hora=etHora.getText().toString();
                     String minuto=etMinuto.getText().toString();
 
-                    if(etHora.getText().toString().isEmpty()==true || etMinuto.getText().toString().isEmpty() == true){
-                    Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_selectOption), Toast.LENGTH_LONG);
-                    toast.show();
-                    return false;
+                    if (hora.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHora.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
+
+                    if (minuto.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinuto.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
                     if(!validarFecha(hora,minuto)){
-                        Toast toast = Toast.makeText(activity, activity.getResources().getString(R.string.survey_text_error_date), Toast.LENGTH_LONG);
-                        toast.show();
-                        return false;
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHora.setError(textoError);
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinuto.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHora.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etMinuto.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
-                   break;
+                    break;
                 case 9:
                     //P9
                     if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdiaptod), "000")) {

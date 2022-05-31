@@ -28,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/survey_m4_text_cdpaisre" />
+            android:text="@string/survey_m4_text_cdpaisre"
+            android:visibility="gone"/>
 
         <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
             android:id="@+id/survey_spinner_cdpaisre"
