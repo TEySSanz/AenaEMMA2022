@@ -1,27 +1,34 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.android.volley.Request;
@@ -44,14 +51,18 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
-import es.testadistica.www.aenaemma2022.BuildConfig;
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
@@ -59,7 +70,6 @@ import es.testadistica.www.aenaemma2022.utilidades.Contracts;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.JSONWriter;
 import es.testadistica.www.aenaemma2022.utilidades.LogcatHelper;
-import es.testadistica.www.aenaemma2022.utilidades.PermissionCheck;
 import es.testadistica.www.aenaemma2022.utilidades.UpdateHelper;
 
 public class MenuActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener, UpdateHelper.OnUpdateCheckListener, UpdateHelper.OnNoUpdateCheckListener {
@@ -75,6 +85,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     JsonObjectRequest resultado;
     private StorageReference mStorageRef;
     private String PROVIDER_PATH = ".provider";
+    private static final int PERMISSION_REQUEST_CODE = 200;
     private static final String TAG = MenuActivity.class.toString();
     private ArrayList<CuePasajeros> listaPasajeros;
     private ArrayList<CueTrabajadores> listaTrabajadores;
@@ -152,69 +163,13 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 .setPositiveButton("ACTUALIZAR", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Toast.makeText(getApplicationContext(), ""+urlApp, Toast.LENGTH_LONG).show();
-                        //String destination = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/";
-                        String destination = MenuActivity.this.getExternalFilesDir("AenaStorage") + "/";
-                        String fileName = "app-aena.apk";
-                        destination += fileName;
-                        final Uri uri = Uri.parse("file://" + destination);
-
-                        //Delete update file if exists
-                        final File file = new File(destination);
-                        if (file.exists()) {
-                            file.delete();
+                        if (checkPermission()) {
+                            UpdateApp actualizaApp = new UpdateApp();
+                            actualizaApp.setContext(MenuActivity.this);
+                            actualizaApp.execute("https://www.testadistica.es/img/app-aena.apk");
+                        } else {
+                            requestPermission();
                         }
-
-                        //get url of app on server
-                        //String url = UpdateHelper.KEY_UPDATE_URL;
-                        String url = "https://www.testadistica.es/img/app-aena.apk";
-
-                        //set downloadmanager
-                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.downloading), Toast.LENGTH_LONG).show();
-                        //request.setDescription(Main.this.getString(R.string.notification_description));
-                        //request.setTitle(Main.this.getString(R.string.app_name));
-
-                        //set destination
-                        request.setDestinationUri(uri);
-
-                        if (PermissionCheck.readAndWriteExternalStorage(MenuActivity.this)) {
-
-                            //get download service and enqueue file
-                            final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-                            final long downloadId = manager.enqueue(request);
-
-                            //set BroadcastReceiver to install app when .apk is downloaded
-                            BroadcastReceiver onComplete = new BroadcastReceiver() {
-                                public void onReceive(Context ctxt, Intent intent) {
-                                    /*Intent install = new Intent(Intent.ACTION_VIEW);
-                                    install.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    install.setDataAndType(Uri.parse(Environment.getExternalStorageDirectory() + fileName),
-                                            manager.getMimeTypeForDownloadedFile(downloadId));
-                                    startActivity(install);
-
-                                    unregisterReceiver(this);
-                                    finish();*/
-                                    Uri contentUri = FileProvider.getUriForFile(
-                                            getApplicationContext(),
-                                            BuildConfig.APPLICATION_ID + PROVIDER_PATH,
-                                            file
-                                    );
-                                    Intent install = new Intent(Intent.ACTION_VIEW);
-                                    install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    install.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    install.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
-                                    install.setData(contentUri);
-                                    startActivity(install);
-                                    unregisterReceiver(this);
-                                    // finish()
-                                }
-                            };
-
-                            //register receiver for when .apk download is compete
-                            registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-                        }
-
                     }
                 }).setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
                     @Override
@@ -229,6 +184,154 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     @Override
     public void onNoUpdateCheckListener() {
         Toast.makeText(getApplicationContext(), "Ya dispone de la última versión por lo que no es necesario actualizar", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0) {
+
+                boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                if (locationAccepted && cameraAccepted) {
+                    UpdateApp updateApp = new UpdateApp();
+                    updateApp.setContext(MenuActivity.this);
+                    updateApp.execute("https://www.testadistica.es/img/app-aena.apk");
+                }
+            }
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    private boolean checkPermission() {
+        int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+    }
+
+    public class UpdateApp extends AsyncTask<String, Integer, String> {
+        private ProgressDialog mPDialog;
+        private Context mContext;
+
+        void setContext(Activity context) {
+            mContext = context;
+            context.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPDialog = new ProgressDialog(mContext);
+                    mPDialog.setMessage("Espere...");
+                    mPDialog.setIndeterminate(true);
+                    mPDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    mPDialog.setCancelable(false);
+                    mPDialog.show();
+                }
+            });
+        }
+
+        @Override
+        protected String doInBackground(String... arg0) {
+            try {
+
+                URL url = new URL(arg0[0]);
+                HttpURLConnection c = (HttpURLConnection) url.openConnection();
+                c.setRequestMethod("GET");
+                c.setDoOutput(true);
+                c.connect();
+                int lenghtOfFile = c.getContentLength();
+
+                String PATH = Objects.requireNonNull(mContext.getExternalFilesDir(null)).getAbsolutePath();
+                File file = new File(PATH);
+                boolean isCreate = file.mkdirs();
+                File outputFile = new File(file, "my_apk.apk");
+                if (outputFile.exists()) {
+                    boolean isDelete = outputFile.delete();
+                }
+                FileOutputStream fos = new FileOutputStream(outputFile);
+
+                InputStream is = c.getInputStream();
+
+                byte[] buffer = new byte[1024];
+                int len1;
+                long total = 0;
+                while ((len1 = is.read(buffer)) != -1) {
+                    total += len1;
+                    fos.write(buffer, 0, len1);
+                    publishProgress((int) ((total * 100) / lenghtOfFile));
+                }
+                fos.close();
+                is.close();
+                if (mPDialog != null)
+                    mPDialog.dismiss();
+                installApk();
+            } catch (Exception e) {
+                Log.e("UpdateAPP", "Update error! " + e.getMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            if (mPDialog != null)
+                mPDialog.show();
+
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            if (mPDialog != null) {
+                mPDialog.setIndeterminate(false);
+                mPDialog.setMax(100);
+                mPDialog.setProgress(values[0]);
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (mPDialog != null)
+                mPDialog.dismiss();
+            if (result != null)
+                Toast.makeText(mContext, "Error en la descarga: " + result, Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(mContext, "Archivo descargado", Toast.LENGTH_SHORT).show();
+        }
+
+
+        private void installApk() {
+            try {
+                String PATH = Objects.requireNonNull(mContext.getExternalFilesDir(null)).getAbsolutePath();
+                File file = new File(PATH + "/my_apk.apk");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Uri downloaded_apk = FileProvider.getUriForFile(mContext, mContext.getApplicationContext().getPackageName() + ".provider", file);
+                    intent.setDataAndType(downloaded_apk, "application/vnd.android.package-archive");
+                    List<ResolveInfo> resInfoList = mContext.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                    for (ResolveInfo resolveInfo : resInfoList) {
+                        mContext.grantUriPermission(mContext.getApplicationContext().getPackageName() + ".provider", downloaded_apk, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    }
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(intent);
+                } else {
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
+                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void accederEncuestas(View view){
@@ -330,7 +433,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                     progreso.setMessage("Consultando...");
                     progreso.show();
 
-                    String ruta = WEBSERVICE + "/carga";
+                    String ruta = WEBSERVICE + "/envio";
                     Gson gson = new Gson();
 
                     //Envío Pasajeros
@@ -446,77 +549,98 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         ArrayList<CuePasajeros> pendientes;
 
         pendientes = new ArrayList<CuePasajeros>();
-/*
+
         Cursor cursor = db.rawQuery("SELECT " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDUSUARIO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_FECHA + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAINICIO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAFIN + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDLINEA + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDESTACION + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDTRAMO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F0 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P15 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16A + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16B + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_7 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_8 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_9 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_10 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_11 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_12 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_13 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_14 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_15 +
-                        " FROM " + Contracts.TABLE_CUESTIONARIOS + " AS T1 " +
-                        " WHERE T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + "=?" +
-                        " ORDER BY T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN, parametros);
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PREGUNTA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CLAVE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAFIN + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODULO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDOCIAAR + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDSLAB + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PQFUERA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PREFIERE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_USOAVE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDENTREV + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_FENTREV + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HENTREV + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUECA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUEPA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NENCDOR + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDSEXO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_IDIOMA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISNA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISRE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCADO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DISTRES + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DISTRESOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDCAMBIO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CIAANTES + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CONEXFAC + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDSINOPE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDALOJEN + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_VIEN_RE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCACO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DISTRACCE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DISTRACCEOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDALOJIN + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDALOJIN_OTROS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NMODOS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODO1 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODO2 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ULTIMODO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ULTIMODOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_SITIOPARK + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_BUSTERMI + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ACOMPTES + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HLLEGA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOD + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDTERM + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOF + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDMVIAJE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIDAVUE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_TAUS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NPERS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NNIÑOS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_RELACION + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDTRESER + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDBILLET + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NVIAJE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_VOL12MES + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ELECCOVID + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_P44FACTU + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_BULGRUPO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NPERBUL + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DROPOFF + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CHEKINB + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CONSUME + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_GAS_CONS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_COMPRART + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_GAS_COM + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PROD1 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PROD2 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PROD3 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PROD4 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PROD5 + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDSPROF + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDEDAD + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HINI + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HFIN + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_VALOREXP +
+                " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
+                        " WHERE T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + "=?" +
+                        " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
             cue = new CuePasajeros();
@@ -524,72 +648,93 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setIden(cursor.getInt(0));
             cue.setIdUsuario(cursor.getInt(1));
             cue.setEnviado(cursor.getInt(2));
-            cue.setFecha(cursor.getString(3));
-            cue.setHoraInicio(cursor.getString(4));
-            cue.setHoraFin(cursor.getString(5));
-            cue.setIdLinea(cursor.getInt(6));
-            cue.setIdEstacion(cursor.getInt(7));
-            cue.setIdTramo(cursor.getInt(8));
-            cue.setF0(cursor.getInt(9));
-            cue.setF1(cursor.getInt(10));
-            cue.setF2(cursor.getInt(11));
-            cue.setF3(cursor.getInt(12));
-            cue.setF4(cursor.getInt(13));
-            cue.setF5(cursor.getInt(14));
-            cue.setF6(cursor.getInt(15));
-            cue.setP1(cursor.getInt(16));
-            cue.setP3_1(cursor.getString(17));
-            cue.setP3_2(cursor.getString(18));
-            cue.setP3_3(cursor.getString(19));
-            cue.setP6_1(cursor.getString(20));
-            cue.setP6_2(cursor.getString(21));
-            cue.setP6_3(cursor.getString(22));
-            cue.setP4(cursor.getInt(23));
-            cue.setIdAspecto1(cursor.getInt(24));
-            cue.setIdAspecto2(cursor.getInt(25));
-            cue.setIdAspecto3(cursor.getInt(26));
-            cue.setIdAspecto4(cursor.getInt(27));
-            cue.setIdAspecto5(cursor.getInt(28));
-            cue.setIdAspecto6(cursor.getInt(29));
-            cue.setP5A_1(cursor.getInt(30));
-            cue.setP5A_2(cursor.getInt(31));
-            cue.setP5A_3(cursor.getInt(32));
-            cue.setP5A_4(cursor.getInt(33));
-            cue.setP5A_5(cursor.getInt(34));
-            cue.setP5A_6(cursor.getInt(35));
-            cue.setP5B_1(cursor.getInt(36));
-            cue.setP5B_2(cursor.getInt(37));
-            cue.setP5B_3(cursor.getInt(38));
-            cue.setP5B_4(cursor.getInt(39));
-            cue.setP5B_5(cursor.getInt(40));
-            cue.setP5B_6(cursor.getInt(41));
-            cue.setP15(cursor.getInt(42));
-            cue.setP16A(cursor.getString(43));
-            cue.setP16B(cursor.getString(44));
-            cue.setP17_1(cursor.getInt(45));
-            cue.setP17_2(cursor.getInt(46));
-            cue.setP17_3(cursor.getInt(47));
-            cue.setP17_4(cursor.getInt(48));
-            cue.setP17_5(cursor.getInt(49));
-            cue.setP17_6(cursor.getInt(50));
-            cue.setP14_1(cursor.getInt(51));
-            cue.setP14_2(cursor.getInt(52));
-            cue.setP14_3(cursor.getInt(53));
-            cue.setP14_4(cursor.getInt(54));
-            cue.setP14_5(cursor.getInt(55));
-            cue.setP14_6(cursor.getInt(56));
-            cue.setP14_7(cursor.getInt(57));
-            cue.setP14_8(cursor.getInt(58));
-            cue.setP14_9(cursor.getInt(59));
-            cue.setP14_10(cursor.getInt(60));
-            cue.setP14_11(cursor.getInt(61));
-            cue.setP14_12(cursor.getInt(62));
-            cue.setP14_13(cursor.getInt(63));
-            cue.setP14_14(cursor.getInt(64));
-            cue.setP14_15(cursor.getInt(65));
+            cue.setPregunta(cursor.getInt(3));
+            cue.setClave(cursor.getString(4));
+            cue.setFecha(cursor.getString(5));
+            cue.setHoraInicio(cursor.getString(6));
+            cue.setHoraFin(cursor.getString(7));
+            cue.setIdAeropuerto(cursor.getInt(8));
+            cue.setIdIdioma(cursor.getInt(9));
+            cue.setModulo(cursor.getString(10));
+            cue.setCdociaar(cursor.getString(11));
+            cue.setCdslab(cursor.getString(12));
+            cue.setMotivoavion2(cursor.getString(13));
+            cue.setPqfuera(cursor.getString(14));
+            cue.setPrefiere(cursor.getString(15));
+            cue.setUsoave(cursor.getString(16));
+            cue.setCdentrev(cursor.getString(17));
+            cue.setFentrev(cursor.getString(18));
+            cue.setHentrev(cursor.getString(19));
+            cue.setNumvueca(cursor.getString(20));
+            cue.setNumvuepa(cursor.getString(21));
+            cue.setNencdor(cursor.getString(22));
+            cue.setCdsexo(cursor.getInt(23));
+            cue.setIdioma(cursor.getString(24));
+            cue.setCdpaisna(cursor.getString(25));
+            cue.setCdpaisre(cursor.getString(26));
+            cue.setCdlocado(cursor.getString(27));
+            cue.setDistres(cursor.getString(28));
+            cue.setDistresotro(cursor.getString(29));
+            cue.setCdcambio(cursor.getString(30));
+            cue.setCdiaptoo(cursor.getString(31));
+            cue.setCiaantes(cursor.getString(32));
+            cue.setConexfac(cursor.getString(33));
+            cue.setCdsinope(cursor.getString(34));
+            cue.setCdalojen(cursor.getString(35));
+            cue.setVien_re(cursor.getString(36));
+            cue.setCdlocaco(cursor.getString(37));
+            cue.setDistracce(cursor.getString(38));
+            cue.setDistracceotro(cursor.getString(39));
+            cue.setCdalojin(cursor.getString(40));
+            cue.setCdalojin_otros(cursor.getString(41));
+            cue.setNmodos(cursor.getString(42));
+            cue.setModo1(cursor.getString(43));
+            cue.setModo2(cursor.getString(44));
+            cue.setUltimodo(cursor.getString(45));
+            cue.setUltimodootro(cursor.getString(46));
+            cue.setSitiopark(cursor.getString(47));
+            cue.setBustermi(cursor.getInt(48));
+            cue.setAcomptes(cursor.getInt(49));
+            cue.setHllega(cursor.getString(50));
+            cue.setCdiaptod(cursor.getString(51));
+            cue.setCdterm(cursor.getString(52));
+            cue.setCdiaptoe(cursor.getString(53));
+            cue.setCdiaptof(cursor.getString(54));
+            cue.setCdmviaje(cursor.getString(55));
+            cue.setCdidavue(cursor.getString(56));
+            cue.setTaus(cursor.getInt(57));
+            cue.setNpers(cursor.getInt(58));
+            cue.setNniños(cursor.getInt(59));
+            cue.setRelacion(cursor.getString(60));
+            cue.setCdtreser(cursor.getString(61));
+            cue.setCdbillet(cursor.getString(62));
+            cue.setNviaje(cursor.getString(63));
+            cue.setVol12mes(cursor.getString(64));
+            cue.setEleccovid(cursor.getString(65));
+            cue.setP44factu(cursor.getString(66));
+            cue.setBulgrupo(cursor.getString(67));
+            cue.setNperbul(cursor.getString(68));
+            cue.setDropoff(cursor.getString(69));
+            cue.setChekinb(cursor.getInt(70));
+            cue.setConsume(cursor.getString(71));
+            cue.setGas_cons(cursor.getInt(72));
+            cue.setComprart(cursor.getString(73));
+            cue.setGas_com(cursor.getInt(74));
+            cue.setProd1(cursor.getString(75));
+            cue.setProd2(cursor.getString(76));
+            cue.setProd3(cursor.getString(77));
+            cue.setProd4(cursor.getString(78));
+            cue.setProd5(cursor.getString(79));
+            cue.setCdsprof(cursor.getString(80));
+            cue.setEstudios(cursor.getString(81));
+            cue.setCdedad(cursor.getString(82));
+            cue.setHini(cursor.getString(83));
+            cue.setHfin(cursor.getString(84));
+            cue.setPuerta(cursor.getString(85));
+            cue.setValorexp(cursor.getInt(86));
 
             pendientes.add(cue);
-        }*/
+        }
 
         return pendientes;
     }
@@ -602,150 +747,170 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         ArrayList<CueTrabajadores> pendientes;
 
         pendientes = new ArrayList<CueTrabajadores>();
-/*
+
         Cursor cursor = db.rawQuery("SELECT " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDUSUARIO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_FECHA + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAINICIO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_HORAFIN + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDLINEA + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDESTACION + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDTRAMO + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F0 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_F6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P3_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P6_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_IDASPECTO6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5A_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P5B_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P15 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16A + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P16B + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P17_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_1 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_2 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_3 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_4 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_5 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_6 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_7 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_8 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_9 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_10 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_11 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_12 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_13 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_14 + ", " +
-                        "T1." + Contracts.COLUMN_CUESTIONARIOS_P14_15 +
-                        " FROM " + Contracts.TABLE_CUESTIONARIOS + " AS T1 " +
-                        " WHERE T1." + Contracts.COLUMN_CUESTIONARIOS_ENVIADO + "=?" +
-                        " ORDER BY T1." + Contracts.COLUMN_CUESTIONARIOS_IDEN, parametros);
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_PREGUNTA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_CLAVE + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAFIN + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IDIDIOMA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NENCDOR + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_CDSEXO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IDIOMA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_EMPRESA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ACTEMPRE + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ACTEMPREOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_CDLOCADO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISTRES + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISTRESOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_JORNADA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_JORNADAOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NDIASTRAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB4 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB5 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ZONATRAB6 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAENT1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORASAL1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAENT2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORASAL2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAENT3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_HORASAL3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NMODOS + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MODO1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MODO2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_ULTIMODO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NOCUCOCHE + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_SATISTRANSPUBLI + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_VALTRANSPUBLI1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_VALTRANSPUBLI2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_VALTRANSPUBLI3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_VALTRANSPUBLIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEJTRANSPUBLI1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEJTRANSPUBLI2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEJTRANSPUBLI3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEJTRANSPUBLIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DESPLAZATRAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLI3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_NOTRANSPUBLIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLI + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPTRANSPUBLIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_IMPORTRANSPUBLI + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLI3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MEDTRANSPUBLIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_TIEMPOTRANSPUBLI + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_APARCTRAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHE3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_COMPARTCOCHEOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPBICI1 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPBICI2 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPBICI3 + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_DISPBICIOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MODOSALIDA + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_MODOSALIDAOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_CDEDADTRAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_CDSLAB + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_PUESTO + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS +
+                " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 " +
+                        " WHERE T1." + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + "=?" +
+                        " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
 
         while (cursor.moveToNext()) {
-            cue = new CuePasajeros();
+            cue = new CueTrabajadores();
 
             cue.setIden(cursor.getInt(0));
             cue.setIdUsuario(cursor.getInt(1));
             cue.setEnviado(cursor.getInt(2));
-            cue.setFecha(cursor.getString(3));
-            cue.setHoraInicio(cursor.getString(4));
-            cue.setHoraFin(cursor.getString(5));
-            cue.setIdLinea(cursor.getInt(6));
-            cue.setIdEstacion(cursor.getInt(7));
-            cue.setIdTramo(cursor.getInt(8));
-            cue.setF0(cursor.getInt(9));
-            cue.setF1(cursor.getInt(10));
-            cue.setF2(cursor.getInt(11));
-            cue.setF3(cursor.getInt(12));
-            cue.setF4(cursor.getInt(13));
-            cue.setF5(cursor.getInt(14));
-            cue.setF6(cursor.getInt(15));
-            cue.setP1(cursor.getInt(16));
-            cue.setP3_1(cursor.getString(17));
-            cue.setP3_2(cursor.getString(18));
-            cue.setP3_3(cursor.getString(19));
-            cue.setP6_1(cursor.getString(20));
-            cue.setP6_2(cursor.getString(21));
-            cue.setP6_3(cursor.getString(22));
-            cue.setP4(cursor.getInt(23));
-            cue.setIdAspecto1(cursor.getInt(24));
-            cue.setIdAspecto2(cursor.getInt(25));
-            cue.setIdAspecto3(cursor.getInt(26));
-            cue.setIdAspecto4(cursor.getInt(27));
-            cue.setIdAspecto5(cursor.getInt(28));
-            cue.setIdAspecto6(cursor.getInt(29));
-            cue.setP5A_1(cursor.getInt(30));
-            cue.setP5A_2(cursor.getInt(31));
-            cue.setP5A_3(cursor.getInt(32));
-            cue.setP5A_4(cursor.getInt(33));
-            cue.setP5A_5(cursor.getInt(34));
-            cue.setP5A_6(cursor.getInt(35));
-            cue.setP5B_1(cursor.getInt(36));
-            cue.setP5B_2(cursor.getInt(37));
-            cue.setP5B_3(cursor.getInt(38));
-            cue.setP5B_4(cursor.getInt(39));
-            cue.setP5B_5(cursor.getInt(40));
-            cue.setP5B_6(cursor.getInt(41));
-            cue.setP15(cursor.getInt(42));
-            cue.setP16A(cursor.getString(43));
-            cue.setP16B(cursor.getString(44));
-            cue.setP17_1(cursor.getInt(45));
-            cue.setP17_2(cursor.getInt(46));
-            cue.setP17_3(cursor.getInt(47));
-            cue.setP17_4(cursor.getInt(48));
-            cue.setP17_5(cursor.getInt(49));
-            cue.setP17_6(cursor.getInt(50));
-            cue.setP14_1(cursor.getInt(51));
-            cue.setP14_2(cursor.getInt(52));
-            cue.setP14_3(cursor.getInt(53));
-            cue.setP14_4(cursor.getInt(54));
-            cue.setP14_5(cursor.getInt(55));
-            cue.setP14_6(cursor.getInt(56));
-            cue.setP14_7(cursor.getInt(57));
-            cue.setP14_8(cursor.getInt(58));
-            cue.setP14_9(cursor.getInt(59));
-            cue.setP14_10(cursor.getInt(60));
-            cue.setP14_11(cursor.getInt(61));
-            cue.setP14_12(cursor.getInt(62));
-            cue.setP14_13(cursor.getInt(63));
-            cue.setP14_14(cursor.getInt(64));
-            cue.setP14_15(cursor.getInt(65));
+            cue.setPregunta(cursor.getInt(3));
+            cue.setClave(cursor.getString(4));
+            cue.setFecha(cursor.getString(5));
+            cue.setHoraInicio(cursor.getString(6));
+            cue.setHoraFin(cursor.getString(7));
+            cue.setIdAeropuerto(cursor.getInt(8));
+            cue.setIdIdioma(cursor.getInt(9));
+            cue.setNencdor(cursor.getString(10));
+            cue.setCdsexo(cursor.getInt(11));
+            cue.setIdioma(cursor.getString(12));
+            cue.setEmpresa(cursor.getString(13));
+            cue.setActempre(cursor.getString(14));
+            cue.setActempreotro(cursor.getString(15));
+            cue.setCdlocado(cursor.getString(16));
+            cue.setDistres(cursor.getString(17));
+            cue.setDistresotro(cursor.getString(18));
+            cue.setJornada(cursor.getString(19));
+            cue.setJornadaotro(cursor.getString(20));
+            cue.setNdiastrab(cursor.getString(21));
+            cue.setZonatrab1(cursor.getInt(22));
+            cue.setZonatrab2(cursor.getInt(23));
+            cue.setZonatrab3(cursor.getInt(24));
+            cue.setZonatrab4(cursor.getInt(25));
+            cue.setZonatrab5(cursor.getInt(26));
+            cue.setZonatrab6(cursor.getInt(27));
+            cue.setHoraent1(cursor.getString(28));
+            cue.setHorasal1(cursor.getString(29));
+            cue.setHoraent2(cursor.getString(30));
+            cue.setHorasal2(cursor.getString(31));
+            cue.setHoraent3(cursor.getString(32));
+            cue.setHorasal3(cursor.getString(33));
+            cue.setNmodos(cursor.getString(34));
+            cue.setModo1(cursor.getString(35));
+            cue.setModo2(cursor.getString(36));
+            cue.setUltimodo(cursor.getString(37));
+            cue.setNocucoche(cursor.getString(38));
+            cue.setSatistranspubli(cursor.getString(39));
+            cue.setValtranspubli1(cursor.getString(40));
+            cue.setValtranspubli2(cursor.getString(41));
+            cue.setValtranspubli3(cursor.getString(42));
+            cue.setValtranspubliotro(cursor.getString(43));
+            cue.setMejtranspubli1(cursor.getString(44));
+            cue.setMejtranspubli2(cursor.getString(45));
+            cue.setMejtranspubli3(cursor.getString(46));
+            cue.setMejtranspubliotro(cursor.getString(47));
+            cue.setDesplazatrab(cursor.getString(48));
+            cue.setNotranspubli1(cursor.getString(49));
+            cue.setNotranspubli2(cursor.getString(50));
+            cue.setNotranspubli3(cursor.getString(51));
+            cue.setNotranspubliotro(cursor.getString(52));
+            cue.setDisptranspubli(cursor.getString(53));
+            cue.setDisptranspubliotro(cursor.getString(54));
+            cue.setImportranspubli(cursor.getString(55));
+            cue.setMedtranspubli1(cursor.getString(56));
+            cue.setMedtranspubli2(cursor.getString(57));
+            cue.setMedtranspubli3(cursor.getString(58));
+            cue.setMedtranspubliotro(cursor.getString(59));
+            cue.setTiempotranspubli(cursor.getString(60));
+            cue.setAparctrab(cursor.getString(61));
+            cue.setCompartcoche1(cursor.getString(62));
+            cue.setCompartcoche2(cursor.getString(63));
+            cue.setCompartcoche3(cursor.getString(64));
+            cue.setCompartcocheotro(cursor.getString(65));
+            cue.setDispbici1(cursor.getString(66));
+            cue.setDispbici2(cursor.getString(67));
+            cue.setDispbici3(cursor.getString(68));
+            cue.setDispbiciotro(cursor.getString(69));
+            cue.setModosalida(cursor.getString(70));
+            cue.setModosalidaotro(cursor.getString(71));
+            cue.setCdedadtrab(cursor.getString(72));
+            cue.setCdslab(cursor.getString(73));
+            cue.setPuesto(cursor.getString(74));
+            cue.setSugerencias(cursor.getString(75));
 
             pendientes.add(cue);
-        }*/
+        }
 
         return pendientes;
     }

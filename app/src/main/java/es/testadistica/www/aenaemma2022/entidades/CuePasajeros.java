@@ -7,10 +7,13 @@ public class CuePasajeros implements Serializable {
     private int iden;
     private int idUsuario;
     private int enviado;
+    private int pregunta;
+    private String clave;
     private String fecha;
     private String horaInicio;
     private String horaFin;
     private int idAeropuerto;
+    private int idIdioma;
     private int acomptes;
     private String bulgrupo;
     private String cdalojin;
@@ -41,7 +44,7 @@ public class CuePasajeros implements Serializable {
     private String conexfac;
     private String consume;
     private String estudios;
-    private int fentrev;
+    private String fentrev;
     private int gas_com;
     private int gas_cons;
     private String hentrev;
@@ -51,7 +54,7 @@ public class CuePasajeros implements Serializable {
     private String idioma;
     private String modulo;
     private String motivoavion2;
-    private int nencdor;
+    private String nencdor;
     private int nniños;
     private String nperbul;
     private int npers;
@@ -121,6 +124,22 @@ public class CuePasajeros implements Serializable {
         this.enviado = enviado;
     }
 
+    public int getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(int pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
     public String getFecha() {
         return fecha;
     }
@@ -151,6 +170,14 @@ public class CuePasajeros implements Serializable {
 
     public void setIdAeropuerto(int idAeropuerto) {
         this.idAeropuerto = idAeropuerto;
+    }
+
+    public int getIdIdioma() {
+        return idIdioma;
+    }
+
+    public void setIdIdioma(int idIdioma) {
+        this.idIdioma = idIdioma;
     }
 
     public int getAcomptes() {
@@ -393,11 +420,11 @@ public class CuePasajeros implements Serializable {
         this.estudios = estudios;
     }
 
-    public int getFentrev() {
+    public String getFentrev() {
         return fentrev;
     }
 
-    public void setFentrev(int fentrev) {
+    public void setFentrev(String fentrev) {
         this.fentrev = fentrev;
     }
 
@@ -473,11 +500,11 @@ public class CuePasajeros implements Serializable {
         this.motivoavion2 = motivoavion2;
     }
 
-    public int getNencdor() {
+    public String  getNencdor() {
         return nencdor;
     }
 
-    public void setNencdor(int nencdor) {
+    public void setNencdor(String nencdor) {
         this.nencdor = nencdor;
     }
 

@@ -350,7 +350,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_IDIOMA + " TEXT," +
             COLUMN_CUEPASAJEROS_MODULO + " TEXT," +
             COLUMN_CUEPASAJEROS_MOTIVOAVION2 + " TEXT," +
-            COLUMN_CUEPASAJEROS_NENCDOR + " INTEGER," +
+            COLUMN_CUEPASAJEROS_NENCDOR + " TEXT," +
             COLUMN_CUEPASAJEROS_NNIÑOS + " INTEGER," +
             COLUMN_CUEPASAJEROS_NPERBUL + " TEXT," +
             COLUMN_CUEPASAJEROS_NPERS + " INTEGER," +
@@ -413,7 +413,12 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_JORNADA = "jornada";
     public static final String COLUMN_CUETRABAJADORES_JORNADAOTRO = "jornadaotro";
     public static final String COLUMN_CUETRABAJADORES_NDIASTRAB = "ndiastrab";
-    public static final String COLUMN_CUETRABAJADORES_ZONATRAB = "zonatrab";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB1 = "zonatrab1";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB2 = "zonatrab2";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB3 = "zonatrab3";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB4 = "zonatrab4";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB5 = "zonatrab5";
+    public static final String COLUMN_CUETRABAJADORES_ZONATRAB6 = "zonatrab6";
     public static final String COLUMN_CUETRABAJADORES_HORAENT1 = "horaent1";
     public static final String COLUMN_CUETRABAJADORES_HORASAL1 = "horasal1";
     public static final String COLUMN_CUETRABAJADORES_HORAENT2 = "horaent2";
@@ -461,6 +466,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_CDEDADTRAB = "cdedadtrab";
     public static final String COLUMN_CUETRABAJADORES_CDSLAB = "cdslab";
     public static final String COLUMN_CUETRABAJADORES_PUESTO = "puesto";
+    public static final String COLUMN_CUETRABAJADORES_SUGERENCIAS = "sugerencias";
     public static final String SQL_CREATE_CUETRABAJADORES = "CREATE TABLE "+ TABLE_CUETRABAJADORES + " ("+
             COLUMN_CUETRABAJADORES_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUETRABAJADORES_IDUSUARIO + " INTEGER, " +
@@ -472,7 +478,7 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_HORAFIN + " TEXT, " +
             COLUMN_CUETRABAJADORES_IDAEROPUERTO + " INTEGER, " +
             COLUMN_CUETRABAJADORES_IDIDIOMA + " INTEGER, " +
-            COLUMN_CUETRABAJADORES_NENCDOR + " INTEGER," +
+            COLUMN_CUETRABAJADORES_NENCDOR + " TEXT," +
             COLUMN_CUETRABAJADORES_CDSEXO + " INTEGER," +
             COLUMN_CUETRABAJADORES_IDIOMA + " TEXT," +
             COLUMN_CUETRABAJADORES_EMPRESA + " TEXT," +
@@ -484,7 +490,12 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_JORNADA + " TEXT," +
             COLUMN_CUETRABAJADORES_JORNADAOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_NDIASTRAB + " TEXT," +
-            COLUMN_CUETRABAJADORES_ZONATRAB + " TEXT," +
+            COLUMN_CUETRABAJADORES_ZONATRAB1 + " INTEGER," +
+            COLUMN_CUETRABAJADORES_ZONATRAB2 + " INTEGER," +
+            COLUMN_CUETRABAJADORES_ZONATRAB3 + " INTEGER," +
+            COLUMN_CUETRABAJADORES_ZONATRAB4 + " INTEGER," +
+            COLUMN_CUETRABAJADORES_ZONATRAB5 + " INTEGER," +
+            COLUMN_CUETRABAJADORES_ZONATRAB6 + " INTEGER," +
             COLUMN_CUETRABAJADORES_HORAENT1 + " TEXT," +
             COLUMN_CUETRABAJADORES_HORASAL1 + " TEXT," +
             COLUMN_CUETRABAJADORES_HORAENT2 + " TEXT," +
@@ -531,7 +542,8 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_MODOSALIDAOTRO + " TEXT," +
             COLUMN_CUETRABAJADORES_CDEDADTRAB + " TEXT," +
             COLUMN_CUETRABAJADORES_CDSLAB + " TEXT," +
-            COLUMN_CUETRABAJADORES_PUESTO + " TEXT )";
+            COLUMN_CUETRABAJADORES_PUESTO + " TEXT," +
+            COLUMN_CUETRABAJADORES_SUGERENCIAS + " TEXT )";
     public static final String SQL_DROP_CUETRABAJADORES = "DROP TABLE IF EXISTS " + TABLE_CUETRABAJADORES;
 
     //Tabla Versión
