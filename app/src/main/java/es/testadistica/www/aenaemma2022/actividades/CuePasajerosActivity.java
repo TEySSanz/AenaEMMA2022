@@ -177,6 +177,16 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         }
                     });
 
+                    alertDialogBuilder.setNeutralButton("Salir sin guardar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(CuePasajerosActivity.this, "El cuestionario NO se ha guardado", Toast.LENGTH_LONG).show();
+                            Intent visita = new Intent();
+                            setResult(0, visita);
+                            finish();
+                        }
+                    });
+
                     AlertDialog alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
                 }
@@ -253,6 +263,12 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 break;
             case "Francés":
                 localeCode="fr";
+                break;
+            case "Italiano":
+                localeCode="it";
+                break;
+            case "Portugués":
+                localeCode="pt";
                 break;
             default:
                 localeCode="es";

@@ -15,10 +15,19 @@
 
         <TextView
             android:id="@+id/survey_text_acomptes"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_acomptes"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/survey_text_acomptes_m4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/SurveyQuestionTitle"
-            android:text="@string/survey_m1_text_acomptes" />
+            android:text="@string/survey_m4_text_acomptes"
+            android:visibility="gone" />
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_acomptes"

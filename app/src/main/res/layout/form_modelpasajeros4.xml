@@ -4,6 +4,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- P1 -->
+    <include layout="@layout/survey_cue_cdpaisna"/>
+    <!-- P2 -->
+    <include layout="@layout/survey_cue_cdpaisre_cdlocado"/>
+    <!-- P3 -->
+    <include layout="@layout/survey_cue_vienere_cdlocaco_diaptoo"/>
+    <!-- P4 -->
+    <include layout="@layout/survey_cue_cdalojin_crucero"/>
+    <!-- P5 -->
+    <include layout="@layout/survey_cue_ultimodo_m4"/>
+    <!-- P6 -->
+    <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
+    <!-- P7 -->
+    <include layout="@layout/survey_cue_acomptes"/>
+    <!-- P8 -->
+    <include layout="@layout/survey_cue_hllega"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_cue_cdiaptod"/>
+    <!-- P10 -->
+    <include layout="@layout/survey_cue_numvuepa"/>
+    <!-- P11 -->
+    <include layout="@layout/survey_cue_cdterm_cdociaar"/>
+    <!-- P12 -->
+    <include layout="@layout/survey_cue_cdiaptof"/>
+    <!-- P13 -->
+    <include layout="@layout/survey_cue_cdmviaje"/>
+    <!-- P14 -->
+    <include layout="@layout/survey_cue_cdidavue_taus"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_cue_npers"/>
+    <!-- P16 -->
+    <include layout="@layout/survey_cue_nninos"/>
+    <!-- P17 -->
+    <include layout="@layout/survey_cue_relacion"/>
+    <!-- P18 -->
+    <include layout="@layout/survey_cue_cdtreser"/>
+    <!-- P19 -->
+    <include layout="@layout/survey_cue_cdbillet"/>
+    <!-- P20 -->
+    <include layout="@layout/survey_cue_nviaje"/>
+    <!-- P21 -->
+    <include layout="@layout/survey_cue_vol12mes"/>
+    <!-- P22 -->
+    <include layout="@layout/survey_cue_p44factu_bulgrupo"/>
+    <!-- P23 -->
+    <include layout="@layout/survey_cue_nperbul"/>
+    <!-- P24 -->
+    <include layout="@layout/survey_cue_checkinb"/>
+    <!-- P25 -->
+    <include layout="@layout/survey_cue_usoave"/>
+    <!-- P26 -->
+    <include layout="@layout/survey_cue_motivoavion2"/>
+    <!-- P27 -->
+    <include layout="@layout/survey_cue_prefiere"/>
+    <!-- P28 -->
+    <include layout="@layout/survey_cue_consume_gans_cons"/>
+    <!-- P29 -->
+    <include layout="@layout/survey_cue_comprart_gas_com_prod"/>
+    <!-- P30 -->
+    <include layout="@layout/survey_cue_cdslab"/>
+    <!-- P31 -->
+    <include layout="@layout/survey_cue_cdsprof"/>
+    <!-- P32 -->
+    <include layout="@layout/survey_cue_estudios"/>
+    <!-- P33 -->
+    <include layout="@layout/survey_cue_cdedad"/>
+    <!-- P34 -->
+    <include layout="@layout/survey_cue_cdsexo"/>
+    <!-- P35 -->
+    <include layout="@layout/survey_cue_valorexp"/>
+
 
 
 </LinearLayout>
