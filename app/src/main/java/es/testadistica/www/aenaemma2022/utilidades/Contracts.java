@@ -68,10 +68,14 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_IDEN = "iden";
     public static final String COLUMN_TIPOCOMPANIAS_CODIGO = "codigo";
     public static final String COLUMN_TIPOCOMPANIAS_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOCOMPANIAS_MADAEREA = "MADaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_MADOLEADA = "MADoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_DESCRIPCION + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_MADAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_MADOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos
@@ -226,6 +230,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_IDIDIOMA = "idIdioma";
     public static final String COLUMN_CUEPASAJEROS_MODULO = "modulo";
     public static final String COLUMN_CUEPASAJEROS_CDOCIAAR = "cdociaar";
+    public static final String COLUMN_CUEPASAJEROS_CDOCIAAROTRO = "cdociaarotro";
     public static final String COLUMN_CUEPASAJEROS_CDSLAB = "cdslab";
     public static final String COLUMN_CUEPASAJEROS_MOTIVOAVION2 = "motivoavion2";
     public static final String COLUMN_CUEPASAJEROS_PQFUERA = "pqfuera";
@@ -246,7 +251,9 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_DISTRESOTRO = "distresotro";
     public static final String COLUMN_CUEPASAJEROS_CDCAMBIO = "cdcambio";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOO = "cdiaptoo";
+    public static final String COLUMN_CUEPASAJEROS_CDIAPTOOOTRO = "cdiaptoootro";
     public static final String COLUMN_CUEPASAJEROS_CIAANTES = "ciaantes";
+    public static final String COLUMN_CUEPASAJEROS_CIAANTESOTRO = "ciaantesotro";
     public static final String COLUMN_CUEPASAJEROS_CONEXFAC = "conexfac";
     public static final String COLUMN_CUEPASAJEROS_CDSINOPE = "cdsinope";
     public static final String COLUMN_CUEPASAJEROS_CDALOJEN = "cdalojen";
@@ -266,6 +273,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_ACOMPTES = "acomptes";
     public static final String COLUMN_CUEPASAJEROS_HLLEGA = "hllega";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOD = "cdiaptod";
+    public static final String COLUMN_CUEPASAJEROS_CDIAPTODOTRO = "cdiaptodotro";
     public static final String COLUMN_CUEPASAJEROS_CDTERM = "cdterm";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOE = "cdiaptoe";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOF = "cdiaptof";
@@ -321,14 +329,17 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_CDEDAD + " TEXT," +
             COLUMN_CUEPASAJEROS_CDENTREV + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOD + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDIAPTODOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOF + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOO + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDIAPTOOOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIDAVUE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDLOCACO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDLOCADO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDMVIAJE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDOCIAAR + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDOCIAAROTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDPAISNA + " TEXT," +
             COLUMN_CUEPASAJEROS_CDPAISRE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSEXO + " INTEGER," +
@@ -338,6 +349,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_CDTRESER + " TEXT," +
             COLUMN_CUEPASAJEROS_CHEKINB + " INTEGER," +
             COLUMN_CUEPASAJEROS_CIAANTES + " TEXT," +
+            COLUMN_CUEPASAJEROS_CIAANTESOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_COMPRART + " TEXT," +
             COLUMN_CUEPASAJEROS_CONEXFAC + " TEXT," +
             COLUMN_CUEPASAJEROS_CONSUME + " TEXT," +

@@ -61,6 +61,7 @@
     <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
     <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
     <string name="spinner_tipoAeropuerto_title">SELECCIONE EL AEROPUERTO</string>
+    <string name="spinner_motivo_title">SELECCIONE EL MOTIVO</string>
 
     <!--Preguntas Modelo 1-->
     <string name="survey_text_error_nviaje_num">Se debe indicar un nº de viajes</string>
@@ -71,6 +72,9 @@
     <string name="survey_text_error_Nmodos_otros">Se debe especificar una respuesta</string>
     <string name="survey_text_error_umodo">No se puede repetir el mismo modo</string>
     <string name="survey_text_error_nninos">El nº de personas que viaja en su grupo inmediato es inferior al nº de niños introducido</string>
+    <string name="survey_text_error_hora_hllega">Se ha producido un error en la recogida de la hora de inicio de la encuesta. No se comprobará la hora de llegada</string>
+    <string name="survey_text_error_hllega">La hora de llegada al aeropuerto del pasajero no puede ser posterior a la hora de realización de la encuesta (en cabecera)</string>
+    <string name="survey_text_error_nperbul">El nº de personas que viaja en su grupo inmediato es inferior al nº de personas a las que le pertenecen los bultos</string>
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
     <!--Pregunta2-->
@@ -89,8 +93,10 @@
     <!--Pregunta4-->
     <string name="survey_m1_text_diaptoo">4. ¿Desde qué AEROPUERTO ha volado para llegar aquí?</string>
     <string name="survey_m1_text_diaptoo_ent">Concretar estado/país</string>
+    <string name="survey_m1_text_diaptoo_otro">Especificar</string>
     <!--Pregunta5-->
     <string name="survey_m1_text_ciaantes">5. ¿Con qué COMPAÑÍA AÉREA ha volado?</string>
+    <string name="survey_m1_text_ciaantes_otro">Especificar</string>
     <!--Pregunta6-->
     <string name="survey_m1_text_conexfac">6. ¿Al realizar la conexión, ha tenido que recoger su equipaje en este aeropuerto para volver a facturarlo?</string>
     <string name="survey_m1_radio_conexfac_option1">Sí</string>
@@ -199,6 +205,7 @@
     <!--Pregunta17-->
     <string name="survey_m1_text_cdiaptod">17. ¿A qué aeropuerto se dirige el vuelo en el que va a embarcar?</string>
     <string name="survey_m1_text_cdiaptod_ent">Concretar estado/país</string>
+    <string name="survey_m1_text_cdiaptod_otro">Especificar</string>
     <!--Pregunta18-->
     <string name="survey_m1_text_numvuepa">18. ¿Cuál es el número del vuelo?</string>
     <string name="survey_m1_text_numvuepa_ent">Definir claramente la compañía aérea</string>
@@ -207,6 +214,7 @@
     <string name="survey_m1_radio_cdterm_option1">Finaliza</string>
     <string name="survey_m1_radio_cdterm_option2">Trasbordo</string>
     <string name="survey_m1_text_cdociaar">19b. ¿Compañia aérea con la que continua el viaje?</string>
+    <string name="survey_m1_text_cdociaar_otro">Especificar</string>
     <!--Pregunta20-->
     <string name="survey_m1_text_cdiaptof">20. ¿En qué aeropuerto finalizará su viaje en avión?</string>
     <string name="survey_m1_text_cdiaptof_ent">Concretar estado/país</string>
@@ -809,5 +817,6 @@
     <string name="minuto">MM</string>
     <string name="dos_puntos">:</string>
     <string name="survey_text_error_date">Error fecha</string>
+
 
 </resources>

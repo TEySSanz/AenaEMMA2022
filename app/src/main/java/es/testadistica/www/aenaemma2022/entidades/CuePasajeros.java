@@ -23,14 +23,17 @@ public class CuePasajeros implements Serializable {
     private String cdedad;
     private String cdentrev;
     private String cdiaptod;
+    private String cdiaptodotro;
     private String cdiaptoe;
     private String cdiaptof;
     private String cdiaptoo;
+    private String cdiaptoootro;
     private String cdidavue;
     private String cdlocaco;
     private String cdlocado;
     private String cdmviaje;
     private String cdociaar;
+    private String cdociaarotro;
     private String cdpaisna;
     private String cdpaisre;
     private int cdsexo;
@@ -40,6 +43,7 @@ public class CuePasajeros implements Serializable {
     private String cdtreser;
     private int chekinb;
     private String ciaantes;
+    private String ciaantesotro;
     private String comprart;
     private String conexfac;
     private String consume;
@@ -252,6 +256,10 @@ public class CuePasajeros implements Serializable {
         this.cdiaptod = cdiaptod;
     }
 
+    public String getCdiaptodotro() { return cdiaptodotro; }
+
+    public void setCdiaptodotro(String cdiaptodotro) { this.cdiaptodotro = cdiaptodotro; }
+
     public String getCdiaptoe() {
         return cdiaptoe;
     }
@@ -275,6 +283,10 @@ public class CuePasajeros implements Serializable {
     public void setCdiaptoo(String cdiaptoo) {
         this.cdiaptoo = cdiaptoo;
     }
+
+    public String getCdiaptoootro() { return cdiaptoootro; }
+
+    public void setCdiaptoootro(String cdiaptoootro) { this.cdiaptoootro = cdiaptoootro; }
 
     public String getCdidavue() {
         return cdidavue;
@@ -315,6 +327,10 @@ public class CuePasajeros implements Serializable {
     public void setCdociaar(String cdociaar) {
         this.cdociaar = cdociaar;
     }
+
+    public String getCdociaarotro() { return cdociaarotro; }
+
+    public void setCdociaarotro(String cdociaarotro) { this.cdociaarotro = cdociaarotro; }
 
     public String getCdpaisna() {
         return cdpaisna;
@@ -387,6 +403,10 @@ public class CuePasajeros implements Serializable {
     public void setCiaantes(String ciaantes) {
         this.ciaantes = ciaantes;
     }
+
+    public String getCiaantesotro() { return ciaantesotro; }
+
+    public void setCiaantesotro(String ciaantesotro) { this.ciaantesotro = ciaantesotro; }
 
     public String getComprart() {
         return comprart;
