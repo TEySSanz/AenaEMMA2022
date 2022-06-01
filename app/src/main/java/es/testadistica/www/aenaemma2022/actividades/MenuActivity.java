@@ -637,7 +637,11 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_HINI + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_HFIN + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ", " +
-                "T1." + Contracts.COLUMN_CUEPASAJEROS_VALOREXP +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_VALOREXP + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CIAANTESOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTODOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDOCIAAROTRO +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
@@ -732,6 +736,10 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setHfin(cursor.getString(84));
             cue.setPuerta(cursor.getString(85));
             cue.setValorexp(cursor.getInt(86));
+            cue.setCdiaptoootro(cursor.getString(87));
+            cue.setCiaantesotro(cursor.getString(88));
+            cue.setCdiaptodotro(cursor.getString(89));
+            cue.setCdociaarotro(cursor.getString(90));
 
             pendientes.add(cue);
         }
