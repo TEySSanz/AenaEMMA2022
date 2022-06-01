@@ -270,6 +270,12 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case "Portugués":
                 localeCode="pt";
                 break;
+            case "Catalán":
+                localeCode="ca";
+                break;
+            case "Euskera":
+                localeCode="eu";
+                break;
             default:
                 localeCode="es";
                 break;
