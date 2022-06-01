@@ -32,7 +32,7 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 28;
+    private int maxPreg = 29;
 
     private CueTrabajadores cue;
     private FormTrab form;
@@ -139,6 +139,16 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
                     alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    alertDialogBuilder.setNeutralButton("Salir sin guardar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario NO se ha guardado", Toast.LENGTH_LONG).show();
+                            Intent visita = new Intent();
+                            setResult(0, visita);
+                            finish();
                         }
                     });
 

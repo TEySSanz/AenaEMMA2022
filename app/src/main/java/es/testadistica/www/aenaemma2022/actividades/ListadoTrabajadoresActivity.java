@@ -44,7 +44,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
     private Date fechaActual = null;
     private ArrayList<CueTrabajadoresListado> listaCue;
     private int modeloCue = 1;
-    private int maxPreg = 27;
+    private int maxPreg = 28;
     private int idAeropuerto = 1;
 
     TextView txt_usuario;
@@ -93,7 +93,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
 
         //Asigna los valores del desplegable de idiomas
-        ArrayAdapter<String> idiomaAdapter = new ArrayAdapter<String>(this, R.layout.selection_spinner_item_small, getIdiomas());
+        ArrayAdapter<String> idiomaAdapter = new ArrayAdapter<String>(this, R.layout.selection_spinner_item_small, getIdiomas("clave IN ('ES')"));
         idiomaAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         sp_idioma.setAdapter(idiomaAdapter);
         sp_idioma.setTitle(this.getString(R.string.spinner_idioma_title));
@@ -164,13 +164,14 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         return listaCue;
     }
 
-    private List<String> getIdiomas() {
+    private List<String> getIdiomas(String filtro) {
         List<String> getIdiomas = new ArrayList<String>();
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros = null;
 
         Cursor cursor = db.rawQuery("SELECT " + Contracts.COLUMN_IDIOMAS_IDEN + ", " + Contracts.COLUMN_IDIOMAS_IDIOMA +
                 " FROM " + Contracts.TABLE_IDIOMAS + " AS T1" +
+                " WHERE " + filtro +
                 " ORDER BY " + Contracts.COLUMN_IDIOMAS_IDEN , parametros);
 
         while (cursor.moveToNext()) {

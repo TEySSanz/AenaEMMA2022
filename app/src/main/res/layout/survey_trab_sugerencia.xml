@@ -25,7 +25,9 @@
             android:id="@+id/survey_edit_sugerencias"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:inputType="text"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:scrollbars="vertical"
             style="@style/SurveyQuestionEdit" />
     </LinearLayout>
 </LinearLayout>

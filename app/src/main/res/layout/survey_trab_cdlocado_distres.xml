@@ -21,13 +21,51 @@
             android:text="@string/survey_text_cdlocado"
             style="@style/SurveyQuestionTitle"/>
 
+        //cdlocado_prov
+        <LinearLayout
+            android:id="@+id/survey_model_layout_cdlocado_prov"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            style="@style/SurveySingleQuestion" >
+
+            <TextView
+                android:id="@+id/survey_text_cdlocado_prov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_cdlocado_prov"
+                style="@style/SurveyQuestionAspect"/>
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_cdlocado_prov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/survey_text_cdlocado_prov"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdlocado_prov_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_radio_cdlocado_prov_option1" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_cdlocado_prov_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_radio_cdlocado_prov_option2" />
+
+            </RadioGroup>
+        </LinearLayout>
+
         //cdlocado
         <LinearLayout
             android:id="@+id/survey_model_layout_cdlocado"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             style="@style/SurveySingleQuestion" >
 
             <TextView

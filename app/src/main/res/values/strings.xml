@@ -363,6 +363,9 @@
     <string name="survey_text_actempre">2. ¿Podría indicar la actividad de su empresa en el Aeropuerto?</string>
     <!--Pregunta3-->
     <string name="survey_text_cdlocado">3. Indique el Municipio de su residencia habitual</string>
+    <string name="survey_text_cdlocado_prov">Seleccionar si el municipio pertenece a Madrid o a Otra Provincia</string>
+    <string name="survey_radio_cdlocado_prov_option1">Madrid</string>
+    <string name="survey_radio_cdlocado_prov_option2">Otra provincia</string>
     <string name="survey_text_cdlocado_loc">Localidad</string>
     <string name="survey_text_distres">Distrito-Barrio (solo para Madrid Capital)</string>
     <string name="survey_text_distres_otros">Indique algún punto identificativo cercano a su residencia: calle, parada, etc.</string>
@@ -581,6 +584,8 @@
     <string name="survey_radio_puesto_option2">Mando medio</string>
     <string name="survey_radio_puesto_option3">Supervisión, Profesionales y Técnicos</string>
     <string name="survey_radio_puesto_option4">Operativos y de Apoyo</string>
+    <!--Pregunta28-->
+    <string name="survey_text_sugerencias">28. SUGERENCIAS: Si lo desea puede expresa cualquier sugerencia, propuesta de mejora o necesidad respecto al medio de transporte hacia y desde el Aeropuerto</string>
 
 
     <!--SVQ-->

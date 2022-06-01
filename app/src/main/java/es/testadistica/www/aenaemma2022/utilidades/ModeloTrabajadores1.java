@@ -78,7 +78,6 @@ public class ModeloTrabajadores1 extends FormTrab {
         iniciarSpinners();
         condicionesSpinners();
         condicionesRadioButton();
-        iniciarTimePickers();
         iniciarCheckBox();
     }
 
@@ -105,8 +104,8 @@ public class ModeloTrabajadores1 extends FormTrab {
         survey_spinner_actempre.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P3
-        //ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
-        ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario("28"));
+        ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
+        //ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario("28"));
         cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_cdlocado;
@@ -162,7 +161,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 String texto = sp_actempre.getSelectedItem().toString().substring(0,3);
 
-                if (!texto.equals("024")){
+                if (!texto.equals("999")){
                     activity.findViewById(R.id.survey_edit_actempre).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_edit_actempre).setVisibility(VISIBLE);
@@ -226,6 +225,47 @@ public class ModeloTrabajadores1 extends FormTrab {
     }
 
     private void condicionesRadioButton() {
+
+        //P3
+        final RadioGroup rgCdlocado_prov = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdlocado_prov);
+        final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option1);
+        final RadioButton rbCdlocado_prov_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option2);
+
+        rbCdlocado_prov_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
+                ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia IN ('00','28')"));
+                cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+
+                SearchableSpinner survey_spinner_cdlocado;
+                survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter);
+                survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
+                survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+
+                activity.findViewById(R.id.survey_model_layout_cdlocado).setVisibility(VISIBLE);
+            }
+        });
+
+        rbCdlocado_prov_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+
+                ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia NOT IN ('28')"));
+                cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+
+                SearchableSpinner survey_spinner_cdlocado;
+                survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter);
+                survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
+                survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+
+                activity.findViewById(R.id.survey_model_layout_cdlocado).setVisibility(VISIBLE);
+            }
+        });
 
         //P4
         final RadioGroup rgJornada = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_jornada);
@@ -794,58 +834,6 @@ public class ModeloTrabajadores1 extends FormTrab {
             }
         });
 
-    }
-
-    private void iniciarTimePickers(){
-        //P7
-        TimePicker tpHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
-        TimePicker tpHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
-        TimePicker tpHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
-        TimePicker tpHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
-        TimePicker tpHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
-        TimePicker tpHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
-
-        tpHoraent1.setIs24HourView(true);
-        tpHorasal1.setIs24HourView(true);
-        tpHoraent2.setIs24HourView(true);
-        tpHorasal2.setIs24HourView(true);
-        tpHoraent3.setIs24HourView(true);
-        tpHorasal3.setIs24HourView(true);
-
-        setTimePickerInterval(tpHoraent1);
-        setTimePickerInterval(tpHorasal1);
-        setTimePickerInterval(tpHoraent2);
-        setTimePickerInterval(tpHorasal2);
-        setTimePickerInterval(tpHoraent3);
-        setTimePickerInterval(tpHorasal3);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            tpHoraent1.setHour(0);
-            tpHoraent1.setMinute(0);
-            tpHorasal1.setHour(0);
-            tpHorasal1.setMinute(0);
-            tpHoraent2.setHour(0);
-            tpHoraent2.setMinute(0);
-            tpHorasal2.setHour(0);
-            tpHorasal2.setMinute(0);
-            tpHoraent3.setHour(0);
-            tpHoraent3.setMinute(0);
-            tpHorasal3.setHour(0);
-            tpHorasal3.setMinute(0);
-        } else {
-            tpHoraent1.setCurrentHour(0);
-            tpHoraent1.setCurrentMinute(0);
-            tpHorasal1.setCurrentHour(0);
-            tpHorasal1.setCurrentMinute(0);
-            tpHoraent2.setCurrentHour(0);
-            tpHoraent2.setCurrentMinute(0);
-            tpHorasal2.setCurrentHour(0);
-            tpHorasal2.setCurrentMinute(0);
-            tpHoraent3.setCurrentHour(0);
-            tpHoraent3.setCurrentMinute(0);
-            tpHorasal3.setCurrentHour(0);
-            tpHorasal3.setCurrentMinute(0);
-        }
     }
 
     private void iniciarCheckBox(){
@@ -2792,6 +2780,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         Button next = (Button) activity.findViewById(R.id.survey_button_next);
         Button previo = (Button) activity.findViewById(R.id.survey_button_previous);
         Button save = (Button) activity.findViewById(R.id.survey_button_save);
+
         switch (show) {
             case 1:
                 //P1
@@ -3061,7 +3050,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }
 
-                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("024") && etActempre_otro.getText().toString().equals("")) {
+                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("999") && etActempre_otro.getText().toString().equals("")) {
                         etActempre_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3073,37 +3062,51 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 3:
                     //P3
+                    final RadioGroup rgCdlocado_prov = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdlocado_prov);
+                    final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option1);
+                    final RadioButton rbCdlocado_prov_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option2);
                     final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                     final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
                     final EditText etDistres_otro = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
 
-                    if (sp_cdlocado.getSelectedItem().toString().substring(0,5).equals("00000")) {
-                        sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                    if (!rbCdlocado_prov_1.isChecked() && !rbCdlocado_prov_2.isChecked()) {
+                        rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 activity.getResources().getString(R.string.survey_text_selectOption),
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    }
 
-                    if (sp_cdlocado.getSelectedItem().toString().substring(0,5).equals("28079") && sp_distres.getSelectedItem().toString().substring(0,5).equals("00000")) {
-                        sp_distres.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_selectOption),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    }
-
-                    if (sp_distres.getSelectedItem().toString().substring(0,5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
-                        etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
-                        etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+
+                        if (sp_cdlocado.getSelectedItem().toString().substring(0, 5).equals("00000")) {
+                            sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        }
+
+                        if (sp_cdlocado.getSelectedItem().toString().substring(0, 5).equals("28079") && sp_distres.getSelectedItem().toString().substring(0, 5).equals("00000")) {
+                            sp_distres.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        }
+
+                        if (sp_distres.getSelectedItem().toString().substring(0, 5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
+                            etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_specifyAnswer),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
                     }
 
                     break;
@@ -3186,66 +3189,184 @@ public class ModeloTrabajadores1 extends FormTrab {
                     break;
                 case 7:
                     //P7
-                    final LinearLayout llHoraent1 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option1);
-                    final TimePicker tpHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
-                    final TimePicker tpHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
-                    final LinearLayout llHoraent2 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option2);
-                    final TimePicker tpHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
-                    final TimePicker tpHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
-                    final LinearLayout llHoraent3 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option3);
-                    final TimePicker tpHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
-                    final TimePicker tpHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
+                    final LinearLayout llHora2 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option2);
+                    final LinearLayout llHora3 = (LinearLayout) activity.findViewById(R.id.survey_layout_horaent_option3);
+                    //Horaent1
+                    EditText etHoraent1 = (EditText) activity.findViewById(R.id.survey_edit_horaent1_hora);
+                    EditText etMinutoent1 = (EditText) activity.findViewById(R.id.survey_edit_horaent1_minutos);
+                    String horaent1=etHoraent1.getText().toString();
+                    String minutoent1=etMinutoent1.getText().toString();
 
-                    String stHoraent1;
-                    String stHorasal1;
-
-                    stHoraent1 = replicate(String.valueOf(tpHoraent1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent1.getCurrentMinute()), "0", 2, 2);
-                    stHorasal1 = replicate(String.valueOf(tpHorasal1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal1.getCurrentMinute()), "0", 2, 2);
-
-                    String stHoraent2;
-                    String stHorasal2;
-
-                    stHoraent2 = replicate(String.valueOf(tpHoraent2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent2.getCurrentMinute()), "0", 2, 2);
-                    stHorasal2 = replicate(String.valueOf(tpHorasal2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal2.getCurrentMinute()), "0", 2, 2);
-
-                    String stHoraent3;
-                    String stHorasal3;
-
-                    stHoraent3 = replicate(String.valueOf(tpHoraent3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHoraent3.getCurrentMinute()), "0", 2, 2);
-                    stHorasal3 = replicate(String.valueOf(tpHorasal3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(tpHorasal3.getCurrentMinute()), "0", 2, 2);
-
-                    if(stHoraent1.equals("00:00") && stHorasal1.equals("00:00")){
-                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
+                    if (horaent1.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHoraent1.setError(textoError);
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_specifyAnswer),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    } else if (!stHoraent1.equals("00:00") && stHoraent1.equals(stHorasal1)){
-                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_sameTime),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    } else if (!stHoraent2.equals("00:00") && llHoraent2.getVisibility() == VISIBLE && stHoraent2.equals(stHorasal2)){
-                        llHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_sameTime),
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    } else if (!stHoraent3.equals("00:00") && llHoraent3.getVisibility() == VISIBLE && stHoraent3.equals(stHorasal3)){
-                        llHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                activity.getResources().getString(R.string.survey_text_sameTime),
+                                textoError,
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
-                        llHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                        llHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                        llHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+                        etHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if (minutoent1.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etMinutoent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinutoent1.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etMinutoent1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if(!validarFecha(horaent1,minutoent1)){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                        etHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHoraent1.setError(textoError);
+                        etMinutoent1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinutoent1.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHoraent1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etMinutoent1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    //Horasal1
+                    EditText etHorasal1 = (EditText) activity.findViewById(R.id.survey_edit_horasal1_hora);
+                    EditText etMinutosal1 = (EditText) activity.findViewById(R.id.survey_edit_horasal1_minutos);
+                    String horasal1=etHorasal1.getText().toString();
+                    String minutosal1=etMinutosal1.getText().toString();
+
+                    if (horasal1.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etHorasal1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHorasal1.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHorasal1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if (minutosal1.isEmpty()){
+                        String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
+                        etMinutosal1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinutosal1.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etMinutosal1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if(!validarFecha(horasal1,minutosal1)){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                        etHorasal1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etHorasal1.setError(textoError);
+                        etMinutosal1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etMinutosal1.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etHorasal1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etMinutosal1.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
+                    if(llHora2.getVisibility()==VISIBLE) {
+                        //Horaent2
+                        EditText etHoraent2 = (EditText) activity.findViewById(R.id.survey_edit_horaent2_hora);
+                        EditText etMinutoent2 = (EditText) activity.findViewById(R.id.survey_edit_horaent2_minutos);
+                        String horaent2 = etHoraent2.getText().toString();
+                        String minutoent2 = etMinutoent2.getText().toString();
+
+                        if (!validarFecha(horaent2, minutoent2) && (!horaent2.isEmpty() || !minutoent2.isEmpty())) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                            etHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etHoraent2.setError(textoError);
+                            etMinutoent2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etMinutoent2.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etHoraent2.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            etMinutoent2.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+
+                        //Horasal2
+                        EditText etHorasal2 = (EditText) activity.findViewById(R.id.survey_edit_horasal2_hora);
+                        EditText etMinutosal2 = (EditText) activity.findViewById(R.id.survey_edit_horasal2_minutos);
+                        String horasal2 = etHorasal2.getText().toString();
+                        String minutosal2 = etMinutosal2.getText().toString();
+
+                        if (!validarFecha(horasal2, minutosal2) && (!horasal2.isEmpty() || !minutosal2.isEmpty() || validarFecha(horaent2, minutoent2))) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                            etHorasal2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etHorasal2.setError(textoError);
+                            etMinutosal2.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etMinutosal2.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etHorasal2.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            etMinutosal2.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
+                    if(llHora3.getVisibility()==VISIBLE) {
+                        //Horaent3
+                        EditText etHoraent3 = (EditText) activity.findViewById(R.id.survey_edit_horaent3_hora);
+                        EditText etMinutoent3 = (EditText) activity.findViewById(R.id.survey_edit_horaent3_minutos);
+                        String horaent3 = etHoraent3.getText().toString();
+                        String minutoent3 = etMinutoent3.getText().toString();
+
+                        if (!validarFecha(horaent3, minutoent3) && (!horaent3.isEmpty() || !minutoent3.isEmpty())) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                            etHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etHoraent3.setError(textoError);
+                            etMinutoent3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etMinutoent3.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etHoraent3.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            etMinutoent3.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+
+                        //Horasal3
+                        EditText etHorasal3 = (EditText) activity.findViewById(R.id.survey_edit_horasal3_hora);
+                        EditText etMinutosal3 = (EditText) activity.findViewById(R.id.survey_edit_horasal3_minutos);
+                        String horasal3 = etHorasal3.getText().toString();
+                        String minutosal3 = etMinutosal3.getText().toString();
+
+                        if (!validarFecha(horasal3, minutosal3) && (!horasal3.isEmpty() || !minutosal3.isEmpty() || validarFecha(horaent3, minutoent3) )) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_error_date);
+                            etHorasal3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etHorasal3.setError(textoError);
+                            etMinutosal3.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etMinutosal3.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etHorasal3.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                            etMinutosal3.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
                     }
 
                     break;
@@ -4610,7 +4731,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         if(!textSpActempre.contains("000")){
             quest.setActempre(textSpActempre);
 
-            if(textSpActempre.contains("024")){
+            if(textSpActempre.contains("999")){
                 quest.setActempreotro(etActEmpOtros.getText().toString());
             }
         } else {
@@ -4748,34 +4869,29 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         //P7
-        TimePicker etHoraent1 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent1);
-        TimePicker etHoraent2 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent2);
-        TimePicker etHoraent3 = (TimePicker) activity.findViewById(R.id.survey_edit_horaent3);
-        TimePicker etHorasal1 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal1);
-        TimePicker etHorasal2 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal2);
-        TimePicker etHorasal3 = (TimePicker) activity.findViewById(R.id.survey_edit_horasal3);
+        EditText horaent1_horas = (EditText) activity.findViewById(R.id.survey_edit_horaent1_hora);
+        EditText horaent1_minutos = (EditText) activity.findViewById(R.id.survey_edit_horaent1_minutos);
+        quest.setHoraent1(horaent1_horas.getText().toString()+":"+horaent1_minutos.getText().toString());
 
-        String stHoraent1 = replicate(String.valueOf(etHoraent1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent1.getCurrentMinute()), "0", 2, 2);
-        String stHorasal1 = replicate(String.valueOf(etHorasal1.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal1.getCurrentMinute()), "0", 2, 2);
-        String stHoraent2 = replicate(String.valueOf(etHoraent2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent2.getCurrentMinute()), "0", 2, 2);
-        String stHorasal2 = replicate(String.valueOf(etHorasal2.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal2.getCurrentMinute()), "0", 2, 2);
-        String stHoraent3 = replicate(String.valueOf(etHoraent3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHoraent3.getCurrentMinute()), "0", 2, 2);
-        String stHorasal3 = replicate(String.valueOf(etHorasal3.getCurrentHour()), "0", 2, 1) + ":" + replicate(String.valueOf(etHorasal3.getCurrentMinute()), "0", 2, 2);
+        EditText horasal1_horas = (EditText) activity.findViewById(R.id.survey_edit_horasal1_hora);
+        EditText horasal1_minutos = (EditText) activity.findViewById(R.id.survey_edit_horasal1_minutos);
+        quest.setHorasal1(horasal1_horas.getText().toString()+":"+horasal1_minutos.getText().toString());
 
-        if(!stHoraent1.equals("00:00") || !stHorasal1.equals("00:00")){
-            quest.setHoraent1(stHoraent1);
-            quest.setHorasal1(stHorasal1);
-        }
+        EditText horaent2_horas = (EditText) activity.findViewById(R.id.survey_edit_horaent2_hora);
+        EditText horaent2_minutos = (EditText) activity.findViewById(R.id.survey_edit_horaent2_minutos);
+        quest.setHoraent2(horaent2_horas.getText().toString()+":"+horaent2_minutos.getText().toString());
 
-        if(!stHoraent2.equals("00:00") || !stHorasal2.equals("00:00")) {
-            quest.setHoraent2(stHoraent2);
-            quest.setHorasal2(stHorasal2);
-        }
+        EditText horasal2_horas = (EditText) activity.findViewById(R.id.survey_edit_horasal2_hora);
+        EditText horasal2_minutos = (EditText) activity.findViewById(R.id.survey_edit_horasal2_minutos);
+        quest.setHorasal2(horasal2_horas.getText().toString()+":"+horasal2_minutos.getText().toString());
 
-        if(!stHoraent3.equals("00:00") || !stHorasal3.equals("00:00")) {
-            quest.setHoraent3(stHoraent3);
-            quest.setHorasal3(stHorasal3);
-        }
+        EditText horaent3_horas = (EditText) activity.findViewById(R.id.survey_edit_horaent3_hora);
+        EditText horaent3_minutos = (EditText) activity.findViewById(R.id.survey_edit_horaent3_minutos);
+        quest.setHoraent3(horaent3_horas.getText().toString()+":"+horaent3_minutos.getText().toString());
+
+        EditText horasal3_horas = (EditText) activity.findViewById(R.id.survey_edit_horasal3_hora);
+        EditText horasal3_minutos = (EditText) activity.findViewById(R.id.survey_edit_horasal3_minutos);
+        quest.setHorasal3(horasal3_horas.getText().toString()+":"+horasal3_minutos.getText().toString());
 
         //P8
         RadioGroup rgNmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nmodos);
@@ -5732,5 +5848,24 @@ public class ModeloTrabajadores1 extends FormTrab {
             return true;
 
         return false;
+    }
+
+    public boolean validarFecha(String hora, String minuto) {
+        boolean correcto = false;
+
+        try {
+            //Formato de hora (hora/minuto)
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("HH:mm");
+            //Comprobación de la HORA
+            formatoFecha.setLenient(false);
+            formatoFecha.parse(hora + ":" + minuto);
+            System.out.println(formatoFecha.parse(hora + ":" + minuto).toString());
+            correcto = true;
+        } catch (ParseException e) {
+            //Si la hora no es correcta, pasará por aquí
+            correcto = false;
+        }
+
+        return correcto;
     }
 }
