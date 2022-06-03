@@ -75,6 +75,8 @@
     <string name="survey_text_error_hora_hllega">Se ha producido un error en la recogida de la hora de inicio de la encuesta. No se comprobará la hora de llegada</string>
     <string name="survey_text_error_hllega">La hora de llegada al aeropuerto del pasajero no puede ser posterior a la hora de realización de la encuesta (en cabecera)</string>
     <string name="survey_text_error_nperbul">El nº de personas que viaja en su grupo inmediato es inferior al nº de personas a las que le pertenecen los bultos</string>
+    <string name="survey_text_error_taus_293">Según lo indicado en P21 la duración del viaje tiene que ser mayor a 7 días</string>
+    <string name="survey_text_error_taus_291_292">Según lo indicado en P21 la duración del viaje tiene que ser menor o igual a 7 días</string>
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
     <!--Pregunta2-->
@@ -152,10 +154,10 @@
     <string name="survey_m1_text_ultimodo_coche_vtc_num">24</string>
     <string name="survey_m1_text_ultimodo_coche_valquiler">Vehículo de alquiler (sin conductor)</string>
     <string name="survey_m1_text_ultimodo_coche_valquiler_num">25</string>
-    <string name="survey_m1_text_ultimodo_coche_vprivado">Vehículo privado</string>
-    <string name="survey_m1_text_ultimodo_coche_vprivado_cvviaja">Conductor del vehículo viaja</string>
+    <string name="survey_m1_text_ultimodo_coche_vprivado">COCHE PRIVADO</string>
+    <string name="survey_m1_text_ultimodo_coche_vprivado_cvviaja">Coche pasajeros</string>
     <string name="survey_m1_text_ultimodo_coche_vprivado_cvviaja_num">22</string>
-    <string name="survey_m1_text_ultimodo_coche_vprivado_cvdespedir">Conductor del vehículo solo viene a despedir</string>
+    <string name="survey_m1_text_ultimodo_coche_vprivado_cvdespedir">Coche acompañantes</string>
     <string name="survey_m1_text_ultimodo_coche_vprivado_cvdespedir_num">23</string>
     <string name="survey_m1_text_ultimodo_autobus">AUTOBÚS</string>
     <string name="survey_m1_text_ultimodo_autobus_adiscrecional">Autobús discrecional/cortesía</string>
