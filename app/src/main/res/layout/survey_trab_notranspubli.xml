@@ -89,12 +89,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/survey_check_notranspubli_option9" />
 
-            <CheckBox
-                android:id="@+id/check_notranspubli_option10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/survey_check_notranspubli_option10" />
-
             <EditText
                 android:id="@+id/survey_edit_notranspubli"
                 android:layout_width="match_parent"

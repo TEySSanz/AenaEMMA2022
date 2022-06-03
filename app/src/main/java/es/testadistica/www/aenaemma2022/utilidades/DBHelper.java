@@ -182,14 +182,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOEMPRESATRAB);
         DBInsert.insertsTipoEmpresaTrab(db);
 
-        //CuePasajeros
-        db.execSQL(Contracts.SQL_DROP_CUEPASAJEROS);
-        db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
-
-        //CueTrabajadores
-        db.execSQL(Contracts.SQL_DROP_CUETRABAJADORES);
-        db.execSQL(Contracts.SQL_CREATE_CUETRABAJADORES);
-
         //Version
         db.execSQL(Contracts.SQL_DROP_VERSION);
         db.execSQL(Contracts.SQL_CREATE_VERSION);

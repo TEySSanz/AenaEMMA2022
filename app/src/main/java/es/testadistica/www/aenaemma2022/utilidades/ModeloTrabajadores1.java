@@ -1573,7 +1573,6 @@ public class ModeloTrabajadores1 extends FormTrab {
         final CheckBox cbNotranspubli_7 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option7);
         final CheckBox cbNotranspubli_8 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option8);
         final CheckBox cbNotranspubli_9 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option9);
-        final CheckBox cbNotranspubli_10 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option10);
         final EditText etNotranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_notranspubli);
 
         final ArrayList<String> listNotranspubli = new ArrayList<String>();
@@ -1590,7 +1589,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_1.setChecked(false);
@@ -1630,7 +1629,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_2.setChecked(false);
@@ -1670,7 +1669,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_3.setChecked(false);
@@ -1710,7 +1709,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_4.setChecked(false);
@@ -1750,7 +1749,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_5.setChecked(false);
@@ -1790,7 +1789,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_6.setChecked(false);
@@ -1830,7 +1829,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_7.setChecked(false);
@@ -1870,7 +1869,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_8.setChecked(false);
@@ -1910,7 +1909,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
                         (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
+                        (cbNotranspubli_9.isChecked()? 1:0);
 
                 if (count > 3){
                     cbNotranspubli_9.setChecked(false);
@@ -1918,49 +1917,9 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 if(cbNotranspubli_9.isChecked()) {
                     listNotranspubli.add("9");
-                } else {
-                    listNotranspubli.remove("9");
-                }
-
-                if (listNotranspubli.size() == 1) {
-                    etNotranspubli_1.setText(listNotranspubli.get(0));
-                    etNotranspubli_2.setText("");
-                    etNotranspubli_3.setText("");
-                } else if (listNotranspubli.size() == 2) {
-                    etNotranspubli_1.setText(listNotranspubli.get(0));
-                    etNotranspubli_2.setText(listNotranspubli.get(1));
-                    etNotranspubli_3.setText("");
-                } else if (listNotranspubli.size() == 3) {
-                    etNotranspubli_1.setText(listNotranspubli.get(0));
-                    etNotranspubli_2.setText(listNotranspubli.get(1));
-                    etNotranspubli_3.setText(listNotranspubli.get(2));
-                } else {
-                    etNotranspubli_1.setText("");
-                    etNotranspubli_2.setText("");
-                    etNotranspubli_3.setText("");
-                }
-            }
-        });
-
-        cbNotranspubli_10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-
-                int count = (cbNotranspubli_1.isChecked()? 1:0) + (cbNotranspubli_2.isChecked()? 1:0) + (cbNotranspubli_3.isChecked()? 1:0) + (cbNotranspubli_4.isChecked()? 1:0) +
-                        (cbNotranspubli_5.isChecked()? 1:0) + (cbNotranspubli_6.isChecked()? 1:0) + (cbNotranspubli_7.isChecked()? 1:0) + (cbNotranspubli_8.isChecked()? 1:0) +
-                        (cbNotranspubli_9.isChecked()? 1:0) + (cbNotranspubli_10.isChecked()? 1:0);
-
-                if (count > 3){
-                    cbNotranspubli_10.setChecked(false);
-                }
-
-                if(cbNotranspubli_10.isChecked()) {
-                    listNotranspubli.add("10");
                     etNotranspubli_otros.setVisibility(VISIBLE);
                 } else {
-                    listNotranspubli.remove("10");
+                    listNotranspubli.remove("9");
                     etNotranspubli_otros.setVisibility(GONE);
                 }
 
@@ -3601,12 +3560,11 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final CheckBox cbNotranspubli_7 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option7);
                     final CheckBox cbNotranspubli_8 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option8);
                     final CheckBox cbNotranspubli_9 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option9);
-                    final CheckBox cbNotranspubli_10 = (CheckBox) activity.findViewById(R.id.check_notranspubli_option10);
                     final EditText etNotranspubli_otros = (EditText) activity.findViewById(R.id.survey_edit_notranspubli);
 
                     if (!cbNotranspubli_1.isChecked() && !cbNotranspubli_2.isChecked() && !cbNotranspubli_3.isChecked()
                             && !cbNotranspubli_4.isChecked() && !cbNotranspubli_5.isChecked() && !cbNotranspubli_6.isChecked() && !cbNotranspubli_7.isChecked()
-                            && !cbNotranspubli_8.isChecked() && !cbNotranspubli_9.isChecked() && !cbNotranspubli_10.isChecked()){
+                            && !cbNotranspubli_8.isChecked() && !cbNotranspubli_9.isChecked()){
 
                         llNotranspubli.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
@@ -3615,7 +3573,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_text_selectOption),
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
 
-                    } else if (cbNotranspubli_10.isChecked() && etNotranspubli_otros.getText().toString().equals("")){
+                    } else if (cbNotranspubli_9.isChecked() && etNotranspubli_otros.getText().toString().equals("")){
                         etNotranspubli_otros.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -5246,7 +5204,7 @@ public class ModeloTrabajadores1 extends FormTrab {
             quest.setNotranspubli3("-1");
         }
 
-        if (etNotranspubli_1.getText().toString().equals("10") || etNotranspubli_2.getText().toString().equals("10") || etNotranspubli_3.getText().toString().equals("10")) {
+        if (etNotranspubli_1.getText().toString().equals("9") || etNotranspubli_2.getText().toString().equals("9") || etNotranspubli_3.getText().toString().equals("9")) {
             quest.setNotranspubliotro(etNotranspubli_otro.getText().toString());
         }
 

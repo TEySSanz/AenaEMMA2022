@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.4)</string>
+    <string name="app_name">EMMA 2022 (v1.5)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.4</string>
+    <string name="version">v1.5</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -517,12 +517,11 @@
     <string name="survey_check_notranspubli_option2">Mala combinación</string>
     <string name="survey_check_notranspubli_option3">Necesito mi vehículo para trabajar o gestión personal</string>
     <string name="survey_check_notranspubli_option4">Más cómodo el actual</string>
-    <string name="survey_check_notranspubli_option5">Destino muy cerca</string>
-    <string name="survey_check_notranspubli_option6">No hay servicio público</string>
-    <string name="survey_check_notranspubli_option7">Es más caro</string>
-    <string name="survey_check_notranspubli_option8">No me gusta el transporte público</string>
-    <string name="survey_check_notranspubli_option9">Prefiero ir andando/bicicleta</string>
-    <string name="survey_check_notranspubli_option10">Otros (indique cuál)</string>
+    <string name="survey_check_notranspubli_option5">No hay servicio público</string>
+    <string name="survey_check_notranspubli_option6">Es más caro</string>
+    <string name="survey_check_notranspubli_option7">No me gusta el transporte público</string>
+    <string name="survey_check_notranspubli_option8">Prefiero ir andando/bicicleta</string>
+    <string name="survey_check_notranspubli_option9">Otros (indique cuál)</string>
     <!--Pregunta17-->
     <string name="survey_text_disptranspubli">17. ¿Estaría dispuesto a utilizar el transporte público para acceder a su puesto de trabajo?</string>
     <string name="survey_radio_disptranspubli_option1">No</string>

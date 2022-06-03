@@ -74,8 +74,8 @@ import es.testadistica.www.aenaemma2022.utilidades.UpdateHelper;
 
 public class MenuActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener, UpdateHelper.OnUpdateCheckListener, UpdateHelper.OnNoUpdateCheckListener {
 
-    //private static final String WEBSERVICE = "http://192.168.7.18:8084/AenaEMMA2022/rest/";
-    private static final String WEBSERVICE = "http://213.229.135.43:8081/AenaEMMA2022/rest/";
+    //private static final String WEBSERVICE = "http://192.168.7.18:8084/AenaEMMA2022/rest";
+    private static final String WEBSERVICE = "http://213.229.135.43:8081/AenaEMMA2022/rest";
 
     DBHelper conn;
     Context context;
@@ -449,7 +449,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
                         ParsePosition pos = new ParsePosition(0);
                         Date fechaCues = sdf.parse(cuestionario.getFecha()+" "+cuestionario.getHoraInicio(), pos);
-                        String fileName = "EMMA_"+ cuestionario.getNencdor() + "_" + sdf.format(fechaCues) + "_PAS_" + String.valueOf(cuestionario.getIden()) + ".json";
+                        String fileName = "EMMA_"+ cuestionario.getNencdor() +"_PAS_" + String.valueOf(cuestionario.getClave()) + ".json";
                         JSONWriter jsonWriter = new JSONWriter();
                         jsonWriter.ficheroCuePasajeros(MenuActivity.this, cuestionario, fileName);
 
@@ -493,7 +493,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
                         ParsePosition pos = new ParsePosition(0);
                         Date fechaCues = sdf.parse(cuestionario.getFecha()+" "+cuestionario.getHoraInicio(), pos);
-                        String fileName = "EMMA_"+ cuestionario.getNencdor() + "_" + sdf.format(fechaCues) + "_TRAB_" + String.valueOf(cuestionario.getIden()) + ".json";
+                        String fileName = "EMMA_"+ cuestionario.getNencdor() + "_TRAB_" + String.valueOf(cuestionario.getClave()) + ".json";
                         JSONWriter jsonWriter = new JSONWriter();
                         jsonWriter.ficheroCueTrabajadores(MenuActivity.this, cuestionario, fileName);
 
