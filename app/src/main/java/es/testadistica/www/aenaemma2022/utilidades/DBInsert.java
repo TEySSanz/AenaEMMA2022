@@ -14,6 +14,12 @@ public class DBInsert {
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9990, 'AENA001', '001', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9991, 'AENA002', '002', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9992, 'AENA003', '003', 1)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9993, 'AENA004', '004', 2)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9994, 'AENA005', '005', 2)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9995, 'AENA006', '006', 2)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9996, 'AENA007', '007', 3)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9997, 'AENA008', '008', 3)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9998, 'AENA009', '009', 3)");
 
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (1, 'MAD001', 'Rs8eKT8e', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (2, 'MAD002', 'Qw1mKC0a', 1)");
@@ -11254,6 +11260,6 @@ public class DBInsert {
     }
 
     public static void insertsVersion (SQLiteDatabase db) {
-        db.execSQL("INSERT INTO " + Contracts.TABLE_VERSION + " (" + Contracts.COLUMN_VERSION_VERSION + ") VALUES ('v1.5')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_VERSION + " (" + Contracts.COLUMN_VERSION_VERSION + ") VALUES ('v1.6')");
     }
 }
