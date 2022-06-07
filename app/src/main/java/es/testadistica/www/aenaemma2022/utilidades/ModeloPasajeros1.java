@@ -83,6 +83,7 @@ public class ModeloPasajeros1 extends Form {
         System.out.println("idAeropuerto: "+idAeropuerto);
         showQuestion(pregunta);
 
+        //Iniciar elementos layouts
         iniciarTextosAeropuertos();
         iniciarSpinners();
         iniciarTimePickers();;
