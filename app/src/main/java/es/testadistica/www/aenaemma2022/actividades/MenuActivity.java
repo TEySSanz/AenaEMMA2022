@@ -77,6 +77,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     //private static final String WEBSERVICE = "http://192.168.7.18:8084/AenaEMMA2022/rest";
     private static final String WEBSERVICE = "http://213.229.135.43:8081/AenaEMMA2022/rest";
 
+    //Esta línea es para borrar
     DBHelper conn;
     Context context;
     TextView txt_usuario;
