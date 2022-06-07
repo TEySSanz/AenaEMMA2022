@@ -36,7 +36,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 42;
+    private int maxPreg = 1;
 
     private CuePasajeros cue;
     private Form form;
@@ -107,6 +107,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 1:
                 form = new ModeloPasajeros1(this, pregunta, conn);
                 ((ModeloPasajeros1) form).setCue(cue);
+                maxPreg=42;
                 break;
             case 2:
                 form = new ModeloPasajeros2(this, pregunta, conn);
@@ -119,6 +120,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 4:
                 form = new ModeloPasajeros4(this, pregunta, conn);
                 ((ModeloPasajeros4) form).setCue(cue);
+                maxPreg=34;
                 break;
             case 5:
                 form = new ModeloPasajeros5(this, pregunta, conn);
@@ -152,7 +154,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            if (modeloCue==1){
+                            if (modeloCue==1 || modeloCue==4){
                                 System.out.println("pregunta "+pregunta);
                                 System.out.println("maxPreg "+maxPreg);
                                 if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
@@ -203,8 +205,12 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 etDummy.requestFocus();
 
                 int actual = pregunta;
-                int anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
-
+                int anterior = 0;
+                if (modeloCue == 1) {
+                    anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
+                } else if (modeloCue == 4) {
+                    anterior = ((ModeloPasajeros4) form).getPreguntaAnterior();
+                }
                 //form.onPreviousPressed(actual, anterior);
                 pregunta = form.onPreviousPressed(actual, anterior);
 

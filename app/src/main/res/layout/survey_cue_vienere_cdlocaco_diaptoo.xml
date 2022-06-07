@@ -150,5 +150,27 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/survey_layout_cdiaptoootro_m4"
+            style="@style/SurveySingleQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_edit_text_cdiaptoo_otro_m4"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_diaptoo_otro" />
+
+
+            <EditText
+                android:id="@+id/survey_edit_cdiaptoootro_m4"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

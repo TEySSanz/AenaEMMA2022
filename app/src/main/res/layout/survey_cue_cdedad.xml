@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/SurveyQuestionTitle"
-            android:text="@string/survey_m1_text_cdedad"
+            android:text="@string/survey_m4_text_cdedad"
             android:visibility="gone"/>
 
         <LinearLayout

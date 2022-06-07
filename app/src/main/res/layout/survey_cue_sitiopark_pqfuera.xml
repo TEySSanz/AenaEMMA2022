@@ -41,13 +41,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <RadioButton
                     android:id="@+id/survey_radio_sitiopark_option1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_sitiopark_option1" />
+                    android:text="@string/survey_m1_radio_sitiopark_option1"
+                    android:visibility="visible"/>
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option1_m4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m4_radio_sitiopark_option1"
+                    android:visibility="gone"/>
 
                 <RadioButton
                     android:id="@+id/survey_radio_sitiopark_option5"

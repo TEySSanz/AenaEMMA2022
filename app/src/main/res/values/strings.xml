@@ -77,6 +77,9 @@
     <string name="survey_text_error_nperbul">El nº de personas que viaja en su grupo inmediato es inferior al nº de personas a las que le pertenecen los bultos</string>
     <string name="survey_text_error_taus_293">Según lo indicado en P21 la duración del viaje tiene que ser mayor a 7 días</string>
     <string name="survey_text_error_taus_291_292">Según lo indicado en P21 la duración del viaje tiene que ser menor o igual a 7 días</string>
+    <string name="survey_text_m4_error_taus_293">Segun lo indicado en P13 la duración del viaje tiene que ser mayor a 7 días</string>
+    <string name="survey_text_m4_error_taus_291_292">Segun lo indicado en P13 la duración del viaje tiene que ser menor o igual a 7 días</string>
+    <string name="survey_text_error_vol12mes">El numero de viajes en ruta tiene que ser menor e igual que el numero de viajes en avion</string>
     <!--Pregunta1-->
     <string name="survey_m1_text_cdpaisna">1. ¿Podría decirme cuál es su nacionalidad?</string>
     <!--Pregunta2-->
@@ -597,7 +600,7 @@
     <string name="survey_text_sugerencias">28. SUGERENCIAS: Si lo desea puede expresa cualquier sugerencia, propuesta de mejora o necesidad respecto al medio de transporte hacia y desde el Aeropuerto</string>
 
 
-    <!--SVQ-->
+    <!--Preguntas Modelo 4 SVQ-->
 
     <!--Pregunta1-->
     <string name="survey_m4_text_cdpaisna">1. ¿Podría decirme cuál es su NACIONALIDAD?</string>
@@ -607,7 +610,7 @@
     <string name="survey_m4_text_cdpaisre_prov">Provincia</string>
     <string name="survey_m4_text_cdlocado">Localidad</string>
     <!--Pregunta3-->
-    <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Palma de Mallorca?</string>
+    <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Sevilla?</string>
     <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
     <string name="survey_m4_radio_cdlocaco">Localidad</string>
     <string name="survey_m4_radio_cdiaptoo">Viene en conexión aerea</string>
@@ -645,7 +648,7 @@
     <string name="survey_m4_text_ultimodo_otros_num">91</string>
     <!--Pregunta6-->
     <string name="survey_m4_text_sitiopark">6. ¿Dónde ha dejado su vehículo?</string>
-    <string name="survey_m4_radio_sitiopark_option1">En ZONA BAJADA/SUBIDA de pasajeros/Parking Express</string>
+    <string name="survey_m4_radio_sitiopark_option1">En ZONA BAJADA/SUBIDA de pasajeros/Parking Express (15"'" gratis)</string>
     <string name="survey_m4_radio_sitiopark_option5">En el PARKING DE PAGO DE AENA (El tiempo que dura mi viaje)</string>
     <string name="survey_m4_radio_sitiopark_option6">En el PARKING DE PAGO DE AENA (Mientras me despide mi acompañante)</string>
     <string name="survey_m4_radio_sitiopark_option4">En PARKING DE PAGO NO DE AENA</string>

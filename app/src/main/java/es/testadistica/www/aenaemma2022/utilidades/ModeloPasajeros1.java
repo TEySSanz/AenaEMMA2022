@@ -2505,6 +2505,48 @@ public class ModeloPasajeros1 extends Form {
                         }
                     }
 
+                    RadioGroup rgNviaje3 = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
+                    EditText etNviaje = (EditText) activity.findViewById(R.id.survey_edit_nviaje_especificar);
+                    int intEtNviaje = stringToInt(etNviaje.getText().toString());
+                    int checkedId3 = rgNviaje3.getCheckedRadioButtonId();
+                    int selectedCode3 = 0;
+                    if (checkedId3 > 0) {
+                        switch (checkedId3) {
+                            case R.id.survey_radio_nviaje_option0:
+                                selectedCode3 = 0;
+                                break;
+                            case R.id.survey_radio_nviaje_numviajes:
+                                selectedCode3 = stringToInt(etNviaje.getText().toString());
+                                break;
+                        }
+                    }
+
+                    int checkedId4 = rgVol12mes.getCheckedRadioButtonId();
+                    int selectedCode4 = 0;
+                    EditText etVol12mes = (EditText) activity.findViewById(R.id.survey_edit_vol12mes_especificar);
+                    if (checkedId4 > 0) {
+                        switch (checkedId4) {
+                            case R.id.survey_radio_vol12mes_option0:
+                                selectedCode4 = 0;
+                                break;
+                            case R.id.survey_radio_vol12mes_numviajes:
+                                selectedCode4 = stringToInt(etVol12mes.getText().toString());
+                                break;
+                        }
+                    }
+
+                    if ((selectedCode4) > (selectedCode3)){
+                        String textoError = activity.getResources().getString(R.string.survey_text_error_vol12mes);
+                        etVol12mes.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etVol12mes.setError(textoError);
+                        return getDialogValueBackError(activity,
+                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                textoError,
+                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                    } else {
+                        etVol12mes.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                    }
+
                     break;
                 case 30:
                     //P30

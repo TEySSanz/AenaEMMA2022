@@ -10,6 +10,7 @@ public class DBInsert {
 
     public static void insertsUsuarios (SQLiteDatabase db){
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (0, 'aaa', 'aaa', 1)");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9999, 'sss', 'sss', 3)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9990, 'AENA001', '001', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9991, 'AENA002', '002', 1)");
         db.execSQL("INSERT INTO " + Contracts.TABLE_USUARIOS + " (" + Contracts.COLUMN_USUARIOS_IDEN + ", " + Contracts.COLUMN_USUARIOS_NOMBRE + ", " + Contracts.COLUMN_USUARIOS_PASSWORD + ", " + Contracts.COLUMN_USUARIOS_IDAEROPUERTO + ") VALUES (9992, 'AENA003', '003', 1)");

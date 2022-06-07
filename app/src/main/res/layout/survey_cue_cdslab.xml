@@ -27,7 +27,7 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m1_text_cdslab"
+            android:text="@string/survey_m4_text_cdslab"
             android:visibility="gone"/>
 
         <RadioGroup
