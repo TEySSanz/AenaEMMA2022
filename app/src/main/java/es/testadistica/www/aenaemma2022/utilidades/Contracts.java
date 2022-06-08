@@ -233,6 +233,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_CDOCIAAROTRO = "cdociaarotro";
     public static final String COLUMN_CUEPASAJEROS_CDSLAB = "cdslab";
     public static final String COLUMN_CUEPASAJEROS_MOTIVOAVION2 = "motivoavion2";
+    public static final String COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO = "motivoavion2otro";
     public static final String COLUMN_CUEPASAJEROS_PQFUERA = "pqfuera";
     public static final String COLUMN_CUEPASAJEROS_PREFIERE = "prefiere";
     public static final String COLUMN_CUEPASAJEROS_USOAVE = "usoave";
@@ -364,6 +365,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_IDIOMA + " TEXT," +
             COLUMN_CUEPASAJEROS_MODULO + " TEXT," +
             COLUMN_CUEPASAJEROS_MOTIVOAVION2 + " TEXT," +
+            COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_NENCDOR + " TEXT," +
             COLUMN_CUEPASAJEROS_NNIÑOS + " INTEGER," +
             COLUMN_CUEPASAJEROS_NPERBUL + " TEXT," +

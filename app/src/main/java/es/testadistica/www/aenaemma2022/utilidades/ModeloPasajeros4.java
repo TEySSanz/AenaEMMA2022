@@ -344,6 +344,7 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+
                 sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -433,6 +434,7 @@ public class ModeloPasajeros4 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -504,7 +506,7 @@ public class ModeloPasajeros4 extends Form {
         SearchableSpinner sp_cdiaptof;
         sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
         sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
-        sp_cdiaptof.setTitle(activity.getString(R.string.spinner_pais_title));
+        sp_cdiaptof.setTitle(activity.getString(R.string.spinner_tipoAeropuerto_title));
         sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
 
         sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -728,22 +730,7 @@ public class ModeloPasajeros4 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = sp_cdlocado.getSelectedItem().toString().substring(0,5);
-                String filtroAeropuerto = "28079";
 
-                switch (idAeropuerto) {
-                    case 2:
-                        //Barcelona
-                        filtroAeropuerto = "08019";
-                        break;
-                }
-
-                if (!texto.equals(filtroAeropuerto)){
-                    activity.findViewById(R.id.survey_layout_distres).setVisibility(GONE);
-                    activity.findViewById(R.id.survey_layout_distresotro).setVisibility(GONE);
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_distresotro));
-                } else {
-                    activity.findViewById(R.id.survey_layout_distres).setVisibility(VISIBLE);
-                }
 
             }
             @Override
@@ -822,7 +809,33 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
+
+
                 String texto = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
+
+
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 1:
+                        //Madrid
+                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
+                        break;
+                    case 2:
+                        //Barcelona
+                        //filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
+                        break;
+                    case 3:
+                        //Sevilla
+                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptof;
+                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
+
+
 
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro_m4));
@@ -1179,10 +1192,10 @@ public class ModeloPasajeros4 extends Form {
                 switch(i)
                 {
                     case R.id.survey_radio_motivoavion2_option91:_option9:
-                    activity.findViewById(R.id.survey_edit_motivoavion2_otros).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_layout_motivoavion2_otros).setVisibility(VISIBLE);
                         break;
                     default:
-                        activity.findViewById(R.id.survey_edit_motivoavion2_otros).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_layout_motivoavion2_otros).setVisibility(GONE);
                         break;
                 }
             }
@@ -1732,6 +1745,10 @@ public class ModeloPasajeros4 extends Form {
                     //P5
                     RadioGroup rgUltimodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo);
 
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo))){
+                        return false;
+                    }
+
                     if (rgUltimodo.getCheckedRadioButtonId() == R.id.survey_radio_m4_ultimodo_1modo_option8){
                         EditText etUltimodo = (EditText) activity.findViewById(R.id.survey_edit_m4_ultimodo_otros);
                         if (etUltimodo.getText().toString().isEmpty()){
@@ -1942,6 +1959,7 @@ public class ModeloPasajeros4 extends Form {
                     if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdiaptof), "000")) {
                         return false;
                     }
+
                     break;
                 case 13:
                     //P13
@@ -2605,7 +2623,7 @@ public class ModeloPasajeros4 extends Form {
                 case 26:
                     //P26
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2, String.valueOf(cue.getMotivoavion2()));
-                    //guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2_OTROS, cue.getMotivoavion2_otros());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO, cue.getMotivoavion2otro());
                     break;
                 case 27:
                     //P27
@@ -2771,7 +2789,7 @@ public class ModeloPasajeros4 extends Form {
                 case 26:
                     //P26
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2);
-                    //borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2_OTROS);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO);
                     break;
                 case 27:
                     //P27
@@ -3869,7 +3887,7 @@ public class ModeloPasajeros4 extends Form {
         EditText etMotivoavion2 = (EditText) activity.findViewById(R.id.survey_edit_motivoavion2_otros);
 
         selectedCode = -1;
-        quest.setMotivoavion2("-1");
+        quest.setMotivoavion2otro("-1");
         checkedId = rgMotivoavion2.getCheckedRadioButtonId();
 
         if (checkedId > 0) {
@@ -3905,7 +3923,7 @@ public class ModeloPasajeros4 extends Form {
                     selectedCode = 15;
                     break;
                 case R.id.survey_radio_motivoavion2_option91:
-                    //quest.setMotivoavion2(etMotivoavion2.getText().toString());
+                    quest.setMotivoavion2otro(etMotivoavion2.getText().toString());
                     selectedCode = 91;
                     break;
                 default:

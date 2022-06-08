@@ -4,7 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+
 public class DBHelper extends SQLiteOpenHelper {
+
+    private int idAeropuerto;
+    private CuePasajeros cue;
 
     public DBHelper(Context context) {
         super(context, Contracts.DATABASE_NAME, null, Contracts.DATABASE_VERSION);
@@ -106,6 +111,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onCreate(db);
+
     }
 
 }

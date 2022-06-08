@@ -58,6 +58,7 @@ public class CuePasajeros implements Serializable {
     private String idioma;
     private String modulo;
     private String motivoavion2;
+    private String motivoavion2otro;
     private String nencdor;
     private int nniños;
     private String nperbul;
@@ -518,6 +519,14 @@ public class CuePasajeros implements Serializable {
 
     public void setMotivoavion2(String motivoavion2) {
         this.motivoavion2 = motivoavion2;
+    }
+
+    public String getMotivoavion2otro() {
+        return motivoavion2otro;
+    }
+
+    public void setMotivoavion2otro(String motivoavion2otro) {
+        this.motivoavion2otro = motivoavion2otro;
     }
 
     public String  getNencdor() {
