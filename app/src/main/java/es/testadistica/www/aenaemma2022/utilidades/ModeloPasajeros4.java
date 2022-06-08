@@ -483,7 +483,7 @@ public class ModeloPasajeros4 extends Form {
         //Asigna los valores del desplegable de companias
         SearchableSpinner sp_cdociaar;
         sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
-        sp_cdociaar.setAdapter(companiasAdapter);
+        sp_cdociaar.setAdapter(companiasPpalAdapter);
         sp_cdociaar.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_cdociaar.setPositiveButton(activity.getString(R.string.spinner_close));
 
@@ -503,7 +503,7 @@ public class ModeloPasajeros4 extends Form {
         //Asigna los valores del desplegable de paises
         SearchableSpinner sp_cdiaptof;
         sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-        sp_cdiaptof.setAdapter(paisesAdapter);
+        sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
         sp_cdiaptof.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
 
