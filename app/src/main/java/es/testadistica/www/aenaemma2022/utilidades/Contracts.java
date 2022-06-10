@@ -216,6 +216,17 @@ public class Contracts {
             COLUMN_TIPOEMPRESATRAB_IDAEROPUERTO + " TEXT )";
     public static final String SQL_DROP_TIPOEMPRESATRAB = "DROP TABLE IF EXISTS " + TABLE_TIPOEMPRESATRAB;
 
+    //Tabla TipoMotivoViajeFiltro
+    public static final String TABLE_TIPOMOTIVOVIAJEFILTRO = "TipoMotivoViajeFiltro";
+    public static final String COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN = "iden";
+    public static final String COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO = "motivo";
+    public static final String COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO = "codigo";
+    public static final String SQL_CREATE_TIPOMOTIVOVIAJEFILTRO = "CREATE TABLE "+ TABLE_TIPOMOTIVOVIAJEFILTRO + " ("+
+            COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO + " TEXT, " +
+            COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO + " TEXT )";
+    public static final String SQL_DROP_TIPOMOTIVOVIAJEFILTRO = "DROP TABLE IF EXISTS " + TABLE_TIPOMOTIVOVIAJEFILTRO;
+
     //Tabla CuePasajeros
     public static final String TABLE_CUEPASAJEROS = "CuePasajeros";
     public static final String COLUMN_CUEPASAJEROS_IDEN = "iden";

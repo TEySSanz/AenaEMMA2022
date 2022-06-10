@@ -11259,6 +11259,13 @@ public class DBInsert {
         db.execSQL("INSERT INTO " + Contracts.TABLE_TIPOEMPRESATRAB + " (" + Contracts.COLUMN_TIPOEMPRESATRAB_IDEN + ", " + Contracts.COLUMN_TIPOEMPRESATRAB_CODIGO + ", " + Contracts.COLUMN_TIPOEMPRESATRAB_DESCRIPCION+ ", " + Contracts.COLUMN_TIPOEMPRESATRAB_IDAEROPUERTO+ ") VALUES (257, '999', 'OTROS', 1)");
     }
 
+    public static void insertsTipoMotivoViajeFiltro (SQLiteDatabase db){
+        db.execSQL("INSERT INTO " + Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO + " (" + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO+ ") VALUES (0, '...', '00')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO + " (" + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO+ ") VALUES (1, 'Negocio', '10')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO + " (" + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO+ ") VALUES (2, 'Personal', '20')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO + " (" + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_IDEN + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_MOTIVO + ", " + Contracts.COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO+ ") VALUES (3, 'Vacaciones', '29')");
+    }
+
     public static void insertsVersion (SQLiteDatabase db) {
         db.execSQL("INSERT INTO " + Contracts.TABLE_VERSION + " (" + Contracts.COLUMN_VERSION_VERSION + ") VALUES ('v1.6')");
     }

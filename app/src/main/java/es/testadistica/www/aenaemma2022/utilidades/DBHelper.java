@@ -142,6 +142,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOEMPRESATRAB);
         DBInsert.insertsTipoEmpresaTrab(db);
 
+        //TipoMotivoViajeFiltro
+        db.execSQL(Contracts.SQL_DROP_TIPOMOTIVOVIAJEFILTRO);
+        db.execSQL(Contracts.SQL_CREATE_TIPOMOTIVOVIAJEFILTRO);
+        DBInsert.insertsTipoMotivoViajeFiltro(db);
+
     }
 
     public void addColumn (SQLiteDatabase db, String tabla, String columna){
