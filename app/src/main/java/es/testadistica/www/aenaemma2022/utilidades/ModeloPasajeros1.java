@@ -746,6 +746,32 @@ public class ModeloPasajeros1 extends Form {
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
 
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 1:
+                        //Madrid
+                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptof;
+                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
+
+                String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 1:
+                        //Madrid
+                        filtroAeropuerto2 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
+                tipoAeropuertosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptod;
+                sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+                sp_cdiaptod.setAdapter(tipoAeropuertosPpalAdapter);
+
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro));
                     activity.findViewById(R.id.survey_layout_cdiaptoootro).setVisibility(GONE);
@@ -883,6 +909,22 @@ public class ModeloPasajeros1 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = sp_cdiaptod.getSelectedItem().toString().substring(0,3);
+
+                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto1 = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
+
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 1:
+                        //Madrid
+                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptof;
+                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
 
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
