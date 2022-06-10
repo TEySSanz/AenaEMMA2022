@@ -26,6 +26,7 @@ public class CuePasajeros implements Serializable {
     private String cdiaptodotro;
     private String cdiaptoe;
     private String cdiaptof;
+    private String cdiaptofotro;
     private String cdiaptoo;
     private String cdiaptoootro;
     private String cdidavue;
@@ -275,6 +276,14 @@ public class CuePasajeros implements Serializable {
 
     public void setCdiaptof(String cdiaptof) {
         this.cdiaptof = cdiaptof;
+    }
+
+    public String getCdiaptofotro() {
+        return cdiaptofotro;
+    }
+
+    public void setCdiaptofotro(String cdiaptofotro) {
+        this.cdiaptofotro = cdiaptofotro;
     }
 
     public String getCdiaptoo() {

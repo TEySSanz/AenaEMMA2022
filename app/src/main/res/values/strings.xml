@@ -223,6 +223,7 @@
     <!--Pregunta20-->
     <string name="survey_m1_text_cdiaptof">20. ¿En qué aeropuerto finalizará su viaje en avión?</string>
     <string name="survey_m1_text_cdiaptof_ent">Concretar estado/país</string>
+    <string name="survey_m1_text_cdiaptof_otro">Especificar</string>
     <!--Pregunta21-->
     <string name="survey_m1_text_cdmviaje">21. ¿Cuál es el PROPÓSITO PRINCIPAL de su viaje?</string>
     <string name="survey_m1_text_cdmviaje_ent">MOSTRAR TARJETA</string>

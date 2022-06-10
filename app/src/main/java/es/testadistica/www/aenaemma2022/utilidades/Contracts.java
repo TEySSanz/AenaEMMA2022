@@ -278,6 +278,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_CDTERM = "cdterm";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOE = "cdiaptoe";
     public static final String COLUMN_CUEPASAJEROS_CDIAPTOF = "cdiaptof";
+    public static final String COLUMN_CUEPASAJEROS_CDIAPTOFOTRO = "cdiaptofotro";
     public static final String COLUMN_CUEPASAJEROS_CDMVIAJE = "cdmviaje";
     public static final String COLUMN_CUEPASAJEROS_CDIDAVUE = "cdidavue";
     public static final String COLUMN_CUEPASAJEROS_TAUS = "taus";
@@ -333,6 +334,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_CDIAPTODOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOE + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOF + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDIAPTOFOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIAPTOOOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDIDAVUE + " TEXT," +

@@ -1,8 +1,10 @@
 package es.testadistica.www.aenaemma2022.utilidades;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 
@@ -18,6 +20,52 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Creación de tablas y vistas
+        actualizarTablasDiccionario(db);
+
+        //CuePasajeros
+        db.execSQL(Contracts.SQL_DROP_CUEPASAJEROS);
+        db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
+
+        //CueTrabajadores
+        db.execSQL(Contracts.SQL_DROP_CUETRABAJADORES);
+        db.execSQL(Contracts.SQL_CREATE_CUETRABAJADORES);
+
+        //Version
+        db.execSQL(Contracts.SQL_DROP_VERSION);
+        db.execSQL(Contracts.SQL_CREATE_VERSION);
+        DBInsert.insertsVersion(db);
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        actualizarTablasDiccionario(db);
+        String version = "";
+        Cursor cursor = db.rawQuery("SELECT " + Contracts.COLUMN_VERSION_VERSION + " FROM " + Contracts.TABLE_VERSION, null);
+        while(cursor.moveToNext()){
+            version = cursor.getString(0);
+        }
+
+        if (version.startsWith("v1.")) {
+            int punto = version.indexOf(".");
+            if (punto>0){
+                String st_subVersion = version.substring(punto+1, version.length());
+                int subVersion = stringToInt(st_subVersion);
+                if (subVersion <= 6){ //Si la versión que tiene instalada la tablet es menor o igual a la v1.6 se intentan añadir las columnas.
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO);
+                }
+            }
+        }
+
+        //Version
+        db.execSQL(Contracts.SQL_DROP_VERSION);
+        db.execSQL(Contracts.SQL_CREATE_VERSION);
+        DBInsert.insertsVersion(db);
+
+    }
+
+    public void actualizarTablasDiccionario (SQLiteDatabase db){
         //Usuarios
         db.execSQL(Contracts.SQL_DROP_USUARIOS);
         db.execSQL(Contracts.SQL_CREATE_USUARIOS);
@@ -94,24 +142,30 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOEMPRESATRAB);
         DBInsert.insertsTipoEmpresaTrab(db);
 
-        //CuePasajeros
-        db.execSQL(Contracts.SQL_DROP_CUEPASAJEROS);
-        db.execSQL(Contracts.SQL_CREATE_CUEPASAJEROS);
-
-        //CueTrabajadores
-        db.execSQL(Contracts.SQL_DROP_CUETRABAJADORES);
-        db.execSQL(Contracts.SQL_CREATE_CUETRABAJADORES);
-
-        //Version
-        db.execSQL(Contracts.SQL_DROP_VERSION);
-        db.execSQL(Contracts.SQL_CREATE_VERSION);
-        DBInsert.insertsVersion(db);
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        onCreate(db);
+    public void addColumn (SQLiteDatabase db, String tabla, String columna){
+        try {
+            db.execSQL("ALTER TABLE " + tabla + " ADD " + columna + " TEXT;");
+        } catch (Exception e) {
+            String TAG = DBHelper.class.toString();
 
+            Log.e(TAG, "Ya existe el campo "+columna+" que se quiere insertar en "+tabla);
+        }
+    }
+
+    public int stringToInt (String numeroStr){
+        if (numeroStr != null && numeroStr.matches("[0-9.]+")){
+            int number = 0;
+            try{
+                number = Integer.parseInt(numeroStr);
+                return number;
+            }
+            catch (NumberFormatException ex){
+                return 0;
+            }
+        }
+        return 0;
     }
 
 }

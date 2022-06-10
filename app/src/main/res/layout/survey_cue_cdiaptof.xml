@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_m1_text_cdiaptof"
-            android:visibility="visible"/>
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/survey_text_cdiaptof_m4"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_m4_text_cdiaptof"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
             android:id="@+id/survey_spinner_cdiaptof"
@@ -38,6 +38,29 @@
             android:layout_marginBottom="8dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown" />
+
+        <LinearLayout
+            android:id="@+id/survey_layout_cdiaptofotro"
+            style="@style/SurveySingleQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_edit_text_cdiaptof_otro"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_cdiaptof_otro" />
+
+
+            <EditText
+                android:id="@+id/survey_edit_cdiaptofotro"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

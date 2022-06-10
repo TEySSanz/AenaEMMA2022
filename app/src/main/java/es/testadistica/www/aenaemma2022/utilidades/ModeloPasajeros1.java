@@ -941,6 +941,29 @@ public class ModeloPasajeros1 extends Form {
 
             }
         });
+
+        //P20
+        final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+
+        sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sp_cdiaptof.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = sp_cdiaptof.getSelectedItem().toString().substring(0,3);
+
+                if (!texto.equals("ZZZ")){
+                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptofotro));
+                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(VISIBLE);
+                }
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void condicionesRadioButton() {
@@ -2289,6 +2312,21 @@ public class ModeloPasajeros1 extends Form {
                     if (!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdiaptof), "000")) {
                         return false;
                     }
+                    if (activity.findViewById(R.id.survey_layout_cdiaptofotro).getVisibility() == VISIBLE) {
+                        EditText etCdiaptof = (EditText) activity.findViewById(R.id.survey_edit_cdiaptofotro);
+                        if (etCdiaptof.getText().toString().isEmpty()) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                            etCdiaptof.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etCdiaptof.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etCdiaptof.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
+                    }
+
                     break;
                 case 21:
                     //P21
@@ -3745,7 +3783,7 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(32); //>P32
                                 break;
                             case R.id.survey_radio_p44factu_option2:
-                                show = showQuestion(35); //>P35
+                                show = showQuestion(34); //>P34 -Si en P31=2 pasa a P34, no a P35 (según correo 09/06)
                                 break;
                         }
                     } else {
