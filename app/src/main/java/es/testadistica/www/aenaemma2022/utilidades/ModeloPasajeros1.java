@@ -1179,6 +1179,7 @@ public class ModeloPasajeros1 extends Form {
                 }
             }
         });
+
         //P14
         final RadioGroup rgBustermi = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_bustermi);
         rgBustermi.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1187,6 +1188,7 @@ public class ModeloPasajeros1 extends Form {
                 rgBustermi.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
+
         //P15
         RadioGroup rgAcomptes= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_acomptes);
         rgAcomptes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1669,7 +1671,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 14:
                 //P14
-                LinearLayout p14 = (LinearLayout) activity.findViewById(R.id.survey_layout_bustermi);
+                LinearLayout p14 = (LinearLayout) activity.findViewById(R.id.survey_layout_acomptes);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1677,7 +1679,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 15:
                 //P15
-                LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_acomptes);
+                LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_bustermi);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2176,12 +2178,6 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 14:
                     //P14
-                    if (!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_bustermi))) {
-                        return false;
-                    }
-                    break;
-                case 15:
-                    //P15
                     RadioGroup rgAcomptes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_acomptes);
 
                     if (!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_acomptes))) {
@@ -2201,6 +2197,12 @@ public class ModeloPasajeros1 extends Form {
                         } else {
                             etAcomptes_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                         }
+                    }
+                    break;
+                case 15:
+                    //P15
+                    if (!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_bustermi))) {
+                        return false;
                     }
                     break;
                 case 16:
@@ -2976,11 +2978,11 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 14:
                     //P14
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_BUSTERMI, String.valueOf(cue.getBustermi()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_ACOMPTES, String.valueOf(cue.getAcomptes()));
                     break;
                 case 15:
                     //P15
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_ACOMPTES, String.valueOf(cue.getAcomptes()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_BUSTERMI, String.valueOf(cue.getBustermi()));
                     break;
                 case 16:
                     //P16
@@ -3176,11 +3178,11 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 14:
                     //P14
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_BUSTERMI);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ACOMPTES);
                     break;
                 case 15:
                     //P15
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ACOMPTES);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_BUSTERMI);
                     break;
                 case 16:
                     //P16
@@ -3362,12 +3364,12 @@ public class ModeloPasajeros1 extends Form {
         sitiopark.setVisibility(GONE);
 
         //P14
-        LinearLayout bustermi = (LinearLayout) activity.findViewById(R.id.survey_layout_bustermi);
-        bustermi.setVisibility(GONE);
-
-        //P15
         LinearLayout acomptes = (LinearLayout) activity.findViewById(R.id.survey_layout_acomptes);
         acomptes.setVisibility(GONE);
+
+        //P15
+        LinearLayout bustermi = (LinearLayout) activity.findViewById(R.id.survey_layout_bustermi);
+        bustermi.setVisibility(GONE);
 
         //P16
         LinearLayout hllega = (LinearLayout) activity.findViewById(R.id.survey_layout_hllega);
@@ -3675,7 +3677,7 @@ public class ModeloPasajeros1 extends Form {
                             (checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)*/) {
                         show = showQuestion(13);//>P13
                     } else{
-                        show = showQuestion(15);//>P15
+                        show = showQuestion(14);//>P14
                     }
 
                 } else {
@@ -4424,29 +4426,7 @@ public class ModeloPasajeros1 extends Form {
         }
         quest.setSitiopark(String.valueOf(selectedCode));
 
-
         //P14
-        RadioGroup rgBustermi = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_bustermi);
-
-        selectedCode = -1;
-        checkedId = rgBustermi.getCheckedRadioButtonId();
-
-        if (checkedId > 0) {
-            switch (checkedId) {
-                case R.id.survey_radio_bustermi_option1:
-                    selectedCode = 1;
-                    break;
-                case R.id.survey_radio_bustermi_option2:
-                    selectedCode = 2;
-                    break;
-                default:
-                    selectedCode = 9;
-                    break;
-            }
-        }
-        quest.setBustermi(selectedCode);
-
-        //P15
         RadioGroup rgAcomptes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_acomptes);
 
         selectedCode = -1;
@@ -4473,6 +4453,27 @@ public class ModeloPasajeros1 extends Form {
             }
         }
         quest.setAcomptes(selectedCode);
+
+        //P15
+        RadioGroup rgBustermi = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_bustermi);
+
+        selectedCode = -1;
+        checkedId = rgBustermi.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_bustermi_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_bustermi_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 9;
+                    break;
+            }
+        }
+        quest.setBustermi(selectedCode);
 
         //P16
         EditText hllega_hora = (EditText) activity.findViewById(R.id.survey_edit_hllega_hora);

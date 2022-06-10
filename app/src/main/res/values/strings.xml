@@ -192,16 +192,16 @@
     <string name="survey_m1_text_pqfuera">13a. ¿Porqué?</string>
     <string name="survey_m1_radio_sitiopark_option9">Otros</string>
     <!--Pregunta14-->
-    <string name="survey_m1_text_bustermi">14. ¿Hoy ha tenido que utilizar el autobús entre teminales?</string>
-    <string name="survey_m1_radio_bustermi_option1">Sí</string>
-    <string name="survey_m1_radio_bustermi_option2">No</string>
-    <!--Pregunta15-->
-    <string name="survey_m1_text_acomptes">15. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio Terminal?</string>
+    <string name="survey_m1_text_acomptes">14. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio Terminal?</string>
     <string name="survey_m1_radio_acomptes_option0">Ninguna persona</string>
     <string name="survey_m1_radio_acomptes_option1">1 persona</string>
     <string name="survey_m1_radio_acomptes_option2">2 personas</string>
     <string name="survey_m1_radio_acomptes_option3">Mas de 2 personas, especificar</string>
     <string name="survey_m1_text_acomptes_especificar">Especificar</string>
+    <!--Pregunta15-->
+    <string name="survey_m1_text_bustermi">15. ¿Hoy ha tenido que utilizar el autobús entre teminales?</string>
+    <string name="survey_m1_radio_bustermi_option1">Sí</string>
+    <string name="survey_m1_radio_bustermi_option2">No</string>
     <!--Pregunta16-->
     <string name="survey_m1_text_hllega">16. ¿A qué HORA ha llegado al aeropuerto?</string>
     <string name="survey_m1_text_hllega_hora">Hora</string>

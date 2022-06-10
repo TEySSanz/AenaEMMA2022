@@ -31,9 +31,9 @@
     <!-- P13 -->
     <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
     <!-- P14 -->
-    <include layout="@layout/survey_cue_bustermi"/>
-    <!-- P15 -->
     <include layout="@layout/survey_cue_acomptes"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_cue_bustermi"/>
     <!-- P16 -->
     <include layout="@layout/survey_cue_hllega"/>
     <!-- P17 -->
