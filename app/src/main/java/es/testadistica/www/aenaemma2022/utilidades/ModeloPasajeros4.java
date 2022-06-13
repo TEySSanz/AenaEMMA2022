@@ -218,6 +218,8 @@ public class ModeloPasajeros4 extends Form {
         municipiosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
         ArrayAdapter<String> motivoViajeAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE, "iden", "codigo", "descripcion", "codigo"));
         motivoViajeAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        ArrayAdapter<String> motivoViajefiltroAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO,"iden", "codigo","motivo", "codigo"));
+        motivoViajefiltroAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         String filtroAeropuerto = "iden IS NOT NULL"; //Para que salgan todos
         switch (idAeropuerto){
@@ -541,6 +543,24 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
+        SearchableSpinner sp_cdmviajefiltro;
+        sp_cdmviajefiltro = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviajefiltro);
+        sp_cdmviajefiltro.setAdapter(motivoViajefiltroAdapter);
+        sp_cdmviajefiltro.setTitle(activity.getString(R.string.spinner_motivo_title));
+        sp_cdmviajefiltro.setPositiveButton(activity.getString(R.string.spinner_close));
+
+        sp_cdmviajefiltro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdmviajefiltro.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P29
         //Asigna los valores del desplegable de productos
         SearchableSpinner sp_prod1;
@@ -809,21 +829,10 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-
-
                 String texto = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
-
 
                 String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
                 switch (idAeropuerto){
-                    case 1:
-                        //Madrid
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
-                        break;
-                    case 2:
-                        //Barcelona
-                        //filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
-                        break;
                     case 3:
                         //Sevilla
                         filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
@@ -835,7 +844,18 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
                 sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
 
-
+                String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 3:
+                        //Sevilla
+                        filtroAeropuerto2 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
+                tipoAeropuertosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptod;
+                sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+                sp_cdiaptod.setAdapter(tipoAeropuertosPpalAdapter);
 
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro_m4));
@@ -859,6 +879,22 @@ public class ModeloPasajeros4 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = sp_cdiaptod.getSelectedItem().toString().substring(0,3);
+
+                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto1 = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
+
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto){
+                    case 3:
+                        //Madrid
+                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        break;
+                }
+                ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdiaptof;
+                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
 
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
@@ -890,6 +926,36 @@ public class ModeloPasajeros4 extends Form {
                     activity.findViewById(R.id.survey_layout_cdociaarotro).setVisibility(VISIBLE);
                 }
 
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //P13
+        final SearchableSpinner sp_cdmviajefiltro = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviajefiltro);
+        final SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+
+        sp_cdmviajefiltro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sp_cdmviajefiltro.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String textoViajeFiltro = sp_cdmviajefiltro.getSelectedItem().toString().substring(0,2);
+
+
+                String filtroViaje = " iden IS NOT NULL ";
+
+                if (textoViajeFiltro.equals("10") || textoViajeFiltro.equals("20") || textoViajeFiltro.equals("29")){
+                    activity.findViewById(R.id.survey_spinner_cdmviaje).setVisibility(VISIBLE);
+                    filtroViaje = " "+Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO+" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
+                }
+
+                ArrayAdapter<String> motivoViajeAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE, "iden", "codigo", "descripcion", "codigo", filtroViaje));
+                motivoViajeAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                SearchableSpinner sp_cdmviaje;
+                sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+                sp_cdmviaje.setAdapter(motivoViajeAdapter);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -1963,6 +2029,10 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 13:
                     //P13
+                    if (!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdmviajefiltro), "00")) {
+                        return false;
+                    }
+
                     if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdmviaje), "000")) {
                         return false;
                     }
