@@ -933,6 +933,29 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
+        //P12
+        final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+
+        sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sp_cdiaptof.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = sp_cdiaptof.getSelectedItem().toString().substring(0,3);
+
+                if (!texto.equals("ZZZ")){
+                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptofotro));
+                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(VISIBLE);
+                }
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P13
         final SearchableSpinner sp_cdmviajefiltro = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviajefiltro);
         final SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
@@ -2024,6 +2047,20 @@ public class ModeloPasajeros4 extends Form {
                     //P12
                     if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdiaptof), "000")) {
                         return false;
+                    }
+                    if (activity.findViewById(R.id.survey_layout_cdiaptofotro).getVisibility() == VISIBLE) {
+                        EditText etCdiaptof = (EditText) activity.findViewById(R.id.survey_edit_cdiaptofotro);
+                        if (etCdiaptof.getText().toString().isEmpty()) {
+                            String textoError = activity.getResources().getString(R.string.survey_text_selectOption);
+                            etCdiaptof.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                            etCdiaptof.setError(textoError);
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    textoError,
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        } else {
+                            etCdiaptof.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        }
                     }
 
                     break;
