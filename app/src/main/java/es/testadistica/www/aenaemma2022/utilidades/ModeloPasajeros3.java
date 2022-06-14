@@ -25,6 +25,8 @@ import java.util.List;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+import es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner;
+import es.testadistica.www.aenaemma2022.searchablespinner.mListString;
 
 public class ModeloPasajeros3 extends Form {
 

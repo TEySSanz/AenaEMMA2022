@@ -30,7 +30,7 @@
                 android:text="@string/survey_m4_text_numvuepa"
                 android:visibility="gone"/>
 
-            <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
+            <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
                 android:id="@+id/survey_spinner_numvuepa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
