@@ -41,7 +41,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private Date fechaActual = null;
     private ArrayList<CuePasajerosListado> listaCue;
     private int modeloCue;
-    private int maxPreg = 42;
+    private int maxPreg = 1;
 
     TextView txt_usuario;
     TextView txt_fechaActual;
@@ -76,6 +76,15 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
             txt_usuario.setText(datos.getString("usuario"));
             txt_aeropuerto.setText(datos.getString("aeropuerto"));
             idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
+        }
+
+        switch (idAeropuerto) {
+            case 1:
+                maxPreg = 42;
+                break;
+            case 3:
+                maxPreg = 34;
+                break;
         }
 
         //BBDD
