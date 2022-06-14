@@ -1,7 +1,5 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -30,12 +28,11 @@ import java.util.Random;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.adaptadores.ListadoTrabajadoresItemAdapter;
-import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadoresListado;
 import es.testadistica.www.aenaemma2022.utilidades.Contracts;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
-import es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner;
+import es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD;
 
 public class ListadoTrabajadoresActivity extends AppCompatActivity {
 
@@ -50,7 +47,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
     TextView txt_usuario;
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
-    SearchableSpinner sp_idioma;
+    SearchableSpinnerOLD sp_idioma;
     ListView list_trabajadores;
     DBHelper conn;
     RequestQueue peticion;
@@ -69,7 +66,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         txt_usuario = (TextView) findViewById(R.id.txt_usuario);
         txt_fechaActual = (TextView) findViewById(R.id.txt_fechaActual);
         txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
-        sp_idioma = (SearchableSpinner) findViewById(R.id.spinner_idioma);
+        sp_idioma = (SearchableSpinnerOLD) findViewById(R.id.spinner_idioma);
         list_trabajadores = (ListView) findViewById(R.id.list_trabajadores);
 
         //Recoge los parámetros de la pantalla anterior
