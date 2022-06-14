@@ -152,6 +152,11 @@ public class ModeloPasajeros1 extends Form {
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADOLEADA+"=1 ";
 
                 break;
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_BCNOLEADA+"=1 ";
+
+                break;
 
         }
         //ArrayAdapter<String> companiasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo", filtroAeropuerto));
@@ -163,6 +168,10 @@ public class ModeloPasajeros1 extends Form {
             case 1:
                 //Madrid
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADAEREA+"=1 ";
+                break;
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_BCNAEREA+"=1 ";
                 break;
         }
 
@@ -180,6 +189,10 @@ public class ModeloPasajeros1 extends Form {
                 //Madrid
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1";
                 break;
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNOLEADA+" = 1";
+                break;
         }
         //ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto));
         ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -190,6 +203,10 @@ public class ModeloPasajeros1 extends Form {
             case 1:
                 //Madrid
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
+                break;
+            case 2:
+                //Barcelona
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1";
                 break;
         }
         //ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto));

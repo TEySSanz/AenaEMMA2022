@@ -76,8 +76,8 @@
     <string name="survey_m1_text_ultimodo_b">12b.  Potrebbe indicare i METODI DI TRASPORTO che ha utilizzato per accedere all\'aeroporto?</string>
     <string name="survey_m1_text_sitiopark">13.Dove avete lasciato il vostro veicolo?</string>
     <string name="survey_m1_text_pqfuera">"13a. Perché? "</string>
-    <string name="survey_m1_text_bustermi">14. Avete dovuto utilizzare l\'autobus tra i terminal oggi?</string>
-    <string name="survey_m1_text_acomptes">15.Quante persone (amici, familiari, colleghi, ecc.) sono venute a salutarvi in aeroporto e vi hanno accompagnato all\'interno del terminal?</string>
+    <string name="survey_m1_text_bustermi">15. Avete dovuto utilizzare l\'autobus tra i terminal oggi?</string>
+    <string name="survey_m1_text_acomptes">14.Quante persone (amici, familiari, colleghi, ecc.) sono venute a salutarvi in aeroporto e vi hanno accompagnato all\'interno del terminal?</string>
     <string name="survey_m1_text_hllega">16. A che ora è arrivato all\'aeroporto?</string>
     <string name="survey_m1_text_cdiaptod">"17.A quale aeroporto è diretto il volo su cui si sta imbarcando? "</string>
     <string name="survey_m1_text_numvuepa">"18.Qual è il numero del volo? "</string>

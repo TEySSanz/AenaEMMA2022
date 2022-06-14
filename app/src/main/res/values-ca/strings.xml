@@ -93,8 +93,8 @@
     <string name="survey_m1_radio_sitiopark_option4">"En PÀRQUING DE PAGAMENT NO D'AENA"</string>
     <string name="survey_m1_text_pqfuera">13a. ¿Per qué?</string>
     <string name="survey_m1_radio_sitiopark_option9">"Altres"</string>
-    <string name="survey_m1_text_bustermi">14. ¿Avui ha hagut d\'utilitzar l\'autobús entre terminals?</string>
-    <string name="survey_m1_text_acomptes">15.¿Quantes persones (amics, familiars, companys, etc.) han vingut a acomiadar-li fins a l\'aeroport, i li han acompanyat dins de l\'edifici Terminal?</string>
+    <string name="survey_m1_text_bustermi">15. ¿Avui ha hagut d\'utilitzar l\'autobús entre terminals?</string>
+    <string name="survey_m1_text_acomptes">14.¿Quantes persones (amics, familiars, companys, etc.) han vingut a acomiadar-li fins a l\'aeroport, i li han acompanyat dins de l\'edifici Terminal?</string>
     <string name="survey_m1_text_hllega">16. A quina HORA ha arribat a l\'aeroport?</string>
     <string name="survey_m1_text_cdiaptod">17.¿A quin aeroport es dirigeix el vol en el qual embarcarà?</string>
     <string name="survey_m1_text_numvuepa">"18.¿Quin és el número de vol? "</string>

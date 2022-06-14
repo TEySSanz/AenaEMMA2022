@@ -140,10 +140,10 @@
     <string name="survey_m1_radio_sitiopark_option4">In a PAYMENT PARKING No AENA outside the airport.</string>
     <string name="survey_m1_text_pqfuera">"13b.Why? "</string>
     <string name="survey_m1_radio_sitiopark_option9">Other</string>
-    <string name="survey_m1_text_bustermi">14. Did you have to use the shuttle between terminals today?</string>
+    <string name="survey_m1_text_bustermi">15. Did you have to use the shuttle between terminals today?</string>
     <string name="survey_m1_radio_bustermi_option1">Yes</string>
     <string name="survey_m1_radio_bustermi_option2">No</string>
-    <string name="survey_m1_text_acomptes">15. How many people (friends, family, colleagues, etc.) came to say goodbye to you and entered into the terminal building?</string>
+    <string name="survey_m1_text_acomptes">14. How many people (friends, family, colleagues, etc.) came to say goodbye to you and entered into the terminal building?</string>
     <string name="survey_m1_radio_acomptes_option0">Nobody</string>
     <string name="survey_m1_radio_acomptes_option1">1 person</string>
     <string name="survey_m1_radio_acomptes_option2">2 people</string>

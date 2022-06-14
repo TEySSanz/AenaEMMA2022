@@ -52,15 +52,19 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_PAIS = "Pais";
     public static final String COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL = "MADprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_MADOLEADA = "MADoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL = "BCNprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_BCNOLEADA = "BCNoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_DESCRIPCION + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_DESCRIPCIONPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_CODPAIS + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_PAIS + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_MADOLEADA + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_PAIS + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_BCNOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
@@ -70,12 +74,16 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_DESCRIPCION = "descripcion";
     public static final String COLUMN_TIPOCOMPANIAS_MADAEREA = "MADaerea";
     public static final String COLUMN_TIPOCOMPANIAS_MADOLEADA = "MADoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_BCNAEREA = "BCNaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_BCNOLEADA = "BCNoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_DESCRIPCION + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_MADAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_MADOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_MADOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_BCNAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_BCNOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos

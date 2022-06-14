@@ -95,7 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
-                android:text="@string/survey_m1_text_prod" />
+                android:text="@string/survey_m1_text_prod"
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/survey_text_comprart_b_m4"
@@ -103,7 +104,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
-                android:text="@string/survey_m4_text_prod" />
+                android:text="@string/survey_m4_text_prod"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

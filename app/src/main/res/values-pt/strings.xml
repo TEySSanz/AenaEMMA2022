@@ -170,8 +170,8 @@
     <string name="survey_m1_radio_sitiopark_option6">"No AENA PAID PARKING (Enquanto me despeço do meu companheiro)"</string>
     <string name="survey_m1_radio_sitiopark_option4">"Em PAID PARKING NÃO AENA"</string>
     <string name="survey_m1_text_pqfuera">13a. Porquê?</string>
-    <string name="survey_m1_text_bustermi">14. Teve de utilizar o autocarro entre terminais hoje?</string>
-    <string name="survey_m1_text_acomptes">15.Quantas pessoas (amigos, família, colegas, etc.) vieram vê-lo no aeroporto e acompanharam-no dentro do edifício do terminal?</string>
+    <string name="survey_m1_text_bustermi">15. Teve de utilizar o autocarro entre terminais hoje?</string>
+    <string name="survey_m1_text_acomptes">14.Quantas pessoas (amigos, família, colegas, etc.) vieram vê-lo no aeroporto e acompanharam-no dentro do edifício do terminal?</string>
     <string name="survey_m1_radio_acomptes_option0">Nenhuma pessoa</string>
     <string name="survey_m1_radio_acomptes_option1">1 pessoa</string>
     <string name="survey_m1_radio_acomptes_option2">2 perssoas</string>
