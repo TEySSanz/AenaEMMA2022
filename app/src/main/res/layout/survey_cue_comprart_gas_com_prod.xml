@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_text_prod1" />
 
-                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                     android:id="@+id/survey_spinner_prod1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_text_prod2" />
 
-                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                     android:id="@+id/survey_spinner_prod2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_text_prod3" />
 
-                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                     android:id="@+id/survey_spinner_prod3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_text_prod4" />
 
-                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                     android:id="@+id/survey_spinner_prod4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m1_text_prod5" />
 
-                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                     android:id="@+id/survey_spinner_prod5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

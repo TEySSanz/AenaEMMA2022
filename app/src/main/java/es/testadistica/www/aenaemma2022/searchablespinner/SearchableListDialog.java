@@ -1,4 +1,4 @@
-package es.testadistica.www.aenaemma2022.utilidades;
+package es.testadistica.www.aenaemma2022.searchablespinner;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -14,23 +14,25 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
 
 import es.testadistica.www.aenaemma2022.R;
 
 public class SearchableListDialog extends DialogFragment implements
         SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
-    private static final String ITEMS = "items";
+    private static final String ITEMSLIST = "itemsList";
 
-    private ArrayAdapter listAdapter;
 
     private ListView _listViewItems;
+    private static ArrayList<mListString> stringlist;
+
+    private static int typeSpinner;
+    private static  int numberSelect;
 
     private SearchableItem _searchableItem;
 
@@ -38,22 +40,42 @@ public class SearchableListDialog extends DialogFragment implements
 
     private SearchView _searchView;
 
-    private String _strTitle;
+    private static String _strTitle;
 
-    private String _strPositiveButtonText;
+
+    private static String _strPositiveButtonText;
 
     private DialogInterface.OnClickListener _onClickListener;
+    //new
+    ListAdapterSpinner adapter,adapterAll;
 
     public SearchableListDialog() {
 
     }
 
-    public static SearchableListDialog newInstance(List items) {
+    public static SearchableListDialog newInstance(ArrayList<mListString> itemlist,int typespinner,int numberselect,String listTitle, String positiveButton) {
+        SearchableListDialog multiSelectExpandableFragment = new
+                SearchableListDialog();
+        stringlist = itemlist;
+        typeSpinner=typespinner;
+        numberSelect=numberselect;
+        _strTitle=listTitle;
+        _strPositiveButtonText=positiveButton;
+
+        Bundle args = new Bundle();
+        args.putSerializable(ITEMSLIST, itemlist);
+        multiSelectExpandableFragment.setArguments(args);
+
+        return multiSelectExpandableFragment;
+    }
+
+
+    public static SearchableListDialog newInstance(ArrayList<mListString> items) {
         SearchableListDialog multiSelectExpandableFragment = new
                 SearchableListDialog();
 
         Bundle args = new Bundle();
-        args.putSerializable(ITEMS, (Serializable) items);
+        args.putSerializable(ITEMSLIST, items);
 
         multiSelectExpandableFragment.setArguments(args);
 
@@ -71,6 +93,7 @@ public class SearchableListDialog extends DialogFragment implements
                              Bundle savedInstanceState) {
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams
                 .SOFT_INPUT_STATE_HIDDEN);
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -85,7 +108,7 @@ public class SearchableListDialog extends DialogFragment implements
         // Description: As the instance was re initializing to null on rotating the device,
         // getting the instance from the saved instance
         if (null != savedInstanceState) {
-            _searchableItem = (SearchableItem) savedInstanceState.getSerializable("item");
+            _searchableItem = (SearchableItem) savedInstanceState.getSerializable(ITEMSLIST);
         }
         // Change End
 
@@ -98,7 +121,7 @@ public class SearchableListDialog extends DialogFragment implements
         String strPositiveButton = _strPositiveButtonText == null ? "CLOSE" : _strPositiveButtonText;
         alertDialog.setPositiveButton(strPositiveButton, _onClickListener);
 
-        String strTitle = _strTitle == null ? "Select Item" : _strTitle;
+        String strTitle = _strTitle == null ? " " : _strTitle;
         alertDialog.setTitle(strTitle);
 
         final AlertDialog dialog = alertDialog.create();
@@ -112,7 +135,7 @@ public class SearchableListDialog extends DialogFragment implements
     // Description: Saving the instance of searchable item instance.
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("item", _searchableItem);
+        outState.putSerializable(ITEMSLIST, _searchableItem);
         super.onSaveInstanceState(outState);
     }
     // Change End
@@ -154,26 +177,27 @@ public class SearchableListDialog extends DialogFragment implements
         mgr.hideSoftInputFromWindow(_searchView.getWindowToken(), 0);
 
 
-        List items = (List) getArguments().getSerializable(ITEMS);
 
         _listViewItems = (ListView) rootView.findViewById(R.id.listItems);
 
-        //create the adapter by passing your ArrayList data
-        listAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,
-                items);
-        //attach the adapter to the list
-        _listViewItems.setAdapter(listAdapter);
 
-        _listViewItems.setTextFilterEnabled(true);
+        adapter= new  ListAdapterSpinner(getActivity(), stringlist,typeSpinner,"");
+        adapterAll=new  ListAdapterSpinner(getActivity(), stringlist,typeSpinner,_strTitle);
+        _listViewItems.setAdapter(adapter);
+
 
         _listViewItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                _searchableItem.onSearchableItemClicked(listAdapter.getItem(position), position);
+                _searchableItem.onSearchableItemClicked(adapterAll.indexOf(adapter.getItem(position)));
+
+                adapter.filter("",numberSelect);
                 getDialog().dismiss();
             }
         });
+
     }
+
 
     @Override
     public boolean onClose() {
@@ -189,20 +213,18 @@ public class SearchableListDialog extends DialogFragment implements
     @Override
     public boolean onQueryTextChange(String s) {
 //        listAdapter.filterData(s);
-        if (TextUtils.isEmpty(s)) {
-//                _listViewItems.clearTextFilter();
-            ((ArrayAdapter) _listViewItems.getAdapter()).getFilter().filter(null);
-        } else {
-            ((ArrayAdapter) _listViewItems.getAdapter()).getFilter().filter(s);
-        }
+        adapter.filter(s,numberSelect);
+        _listViewItems.setAdapter(adapter);
+
         if (null != _onSearchTextChanged) {
             _onSearchTextChanged.onSearchTextChanged(s);
         }
+
         return true;
     }
 
     public interface SearchableItem<T> extends Serializable {
-        void onSearchableItemClicked(T item, int position);
+        void onSearchableItemClicked(int position);
     }
 
     public interface OnSearchTextChanged {

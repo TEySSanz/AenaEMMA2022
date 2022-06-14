@@ -139,7 +139,7 @@
                         android:textColor="@color/md_white_1000"
                         android:textStyle="bold" />
 
-                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                         android:id="@+id/spinner_idioma"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

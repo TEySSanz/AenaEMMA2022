@@ -2,7 +2,6 @@ package es.testadistica.www.aenaemma2022.utilidades;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 import static android.view.View.GONE;
-import static android.view.View.SCROLLBARS_OUTSIDE_INSET;
 import static android.view.View.VISIBLE;
 
 import android.app.Activity;
@@ -12,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -43,7 +41,6 @@ import java.util.Date;
 import java.util.List;
 
 import es.testadistica.www.aenaemma2022.R;
-import es.testadistica.www.aenaemma2022.actividades.CuePasajerosActivity;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 
 public class ModeloPasajeros1 extends Form {
@@ -183,8 +180,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P1
         //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdpasina;
-        sp_cdpasina = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
+        SearchableSpinnerOLD sp_cdpasina;
+        sp_cdpasina = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdpaisna);
         sp_cdpasina.setAdapter(paisesAdapter);
         sp_cdpasina.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdpasina.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -202,8 +199,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P2
         //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdpasire;
-        sp_cdpasire = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
+        SearchableSpinnerOLD sp_cdpasire;
+        sp_cdpasire = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdpaisre);
         sp_cdpasire.setAdapter(paisesAdapter);
         sp_cdpasire.setTitle(activity.getString(R.string.spinner_pais_title));
         sp_cdpasire.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -220,7 +217,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+        SearchableSpinnerOLD sp_cdlocado_prov = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
         sp_cdlocado_prov.setAdapter(provinciasAdapter);
         sp_cdlocado_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocado_prov.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -237,7 +234,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+        SearchableSpinnerOLD sp_cdlocado = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado);
         sp_cdlocado.setAdapter(municipiosAdapter);
         sp_cdlocado.setTitle(activity.getString(R.string.spinner_municipio_title));
         sp_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -254,7 +251,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        SearchableSpinnerOLD sp_distres = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres);
         sp_distres.setAdapter(distritosAdapter);
         sp_distres.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distres.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -271,7 +268,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        SearchableSpinnerOLD sp_distres_area = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres_area);
         sp_distres_area.setAdapter(paises1y2Adapter);
         sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
         sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -290,8 +287,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P4
         //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdiaptoo;
-        sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
+        SearchableSpinnerOLD sp_cdiaptoo;
+        sp_cdiaptoo = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptoo);
         sp_cdiaptoo.setAdapter(tipoAeropuertosAdapter);
         sp_cdiaptoo.setTitle(activity.getString(R.string.spinner_tipoAeropuerto_title));
         sp_cdiaptoo.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -310,8 +307,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P5
         //Asigna los valores del desplegable de companias
-        SearchableSpinner sp_ciaantes;
-        sp_ciaantes = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_ciaantes);
+        SearchableSpinnerOLD sp_ciaantes;
+        sp_ciaantes = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_ciaantes);
         sp_ciaantes.setAdapter(companiasAdapter);
         sp_ciaantes.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_ciaantes.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -329,7 +326,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P9
-        SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+        SearchableSpinnerOLD sp_cdlocaco_prov = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
         sp_cdlocaco_prov.setAdapter(provinciasAdapter);
         sp_cdlocaco_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocaco_prov.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -346,7 +343,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        SearchableSpinnerOLD sp_cdlocaco = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco);
         sp_cdlocaco.setAdapter(municipiosAdapter);
         sp_cdlocaco.setTitle(activity.getString(R.string.spinner_municipio_title));
         sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -363,7 +360,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_distracce = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
+        SearchableSpinnerOLD sp_distracce = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distracce);
         sp_distracce.setAdapter(distritosAdapter);
         sp_distracce.setTitle(activity.getString(R.string.spinner_distrito_title));
         sp_distracce.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -382,8 +379,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P17
         //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdiaptod;
-        sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        SearchableSpinnerOLD sp_cdiaptod;
+        sp_cdiaptod = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptod);
         sp_cdiaptod.setAdapter(tipoAeropuertosAdapter);
         sp_cdiaptod.setTitle(activity.getString(R.string.spinner_tipoAeropuerto_title));
         sp_cdiaptod.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -402,8 +399,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P18
         //Asigna los valores del desplegable de companias
-        SearchableSpinner sp_numvuepa;
-        sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+        SearchableSpinnerOLD sp_numvuepa;
+        sp_numvuepa = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_numvuepa);
         sp_numvuepa.setAdapter(companiasAdapter);
         sp_numvuepa.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_numvuepa.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -421,8 +418,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P19b
         //Asigna los valores del desplegable de companias
-        SearchableSpinner sp_cdociaar;
-        sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+        SearchableSpinnerOLD sp_cdociaar;
+        sp_cdociaar = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdociaar);
         sp_cdociaar.setAdapter(companiasPpalAdapter);
         sp_cdociaar.setTitle(activity.getString(R.string.spinner_compania_title));
         sp_cdociaar.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -441,8 +438,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P20
         //Asigna los valores del desplegable de tipoAeropuertos
-        SearchableSpinner sp_cdiaptof;
-        sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+        SearchableSpinnerOLD sp_cdiaptof;
+        sp_cdiaptof = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptof);
         sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);
         sp_cdiaptof.setTitle(activity.getString(R.string.spinner_tipoAeropuerto_title));
         sp_cdiaptof.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -461,8 +458,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P21
         //Asigna los valores del desplegable de motivo viaje
-        SearchableSpinner sp_cdmviaje;
-        sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+        SearchableSpinnerOLD sp_cdmviaje;
+        sp_cdmviaje = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdmviaje);
         sp_cdmviaje.setAdapter(motivoViajeAdapter);
         sp_cdmviaje.setTitle(activity.getString(R.string.spinner_motivo_title));
         sp_cdmviaje.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -481,8 +478,8 @@ public class ModeloPasajeros1 extends Form {
 
         //P36
         //Asigna los valores del desplegable de productos
-        SearchableSpinner sp_prod1;
-        sp_prod1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+        SearchableSpinnerOLD sp_prod1;
+        sp_prod1 = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod1);
         sp_prod1.setAdapter(productosAdapter);
         sp_prod1.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod1.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -499,8 +496,8 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_prod2;
-        sp_prod2 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
+        SearchableSpinnerOLD sp_prod2;
+        sp_prod2 = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod2);
         sp_prod2.setAdapter(productosAdapter);
         sp_prod2.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod2.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -517,8 +514,8 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_prod3;
-        sp_prod3 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
+        SearchableSpinnerOLD sp_prod3;
+        sp_prod3 = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod3);
         sp_prod3.setAdapter(productosAdapter);
         sp_prod3.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod3.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -535,8 +532,8 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_prod4;
-        sp_prod4 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
+        SearchableSpinnerOLD sp_prod4;
+        sp_prod4 = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod4);
         sp_prod4.setAdapter(productosAdapter);
         sp_prod4.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod4.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -553,8 +550,8 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        SearchableSpinner sp_prod5;
-        sp_prod5 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
+        SearchableSpinnerOLD sp_prod5;
+        sp_prod5 = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod5);
         sp_prod5.setAdapter(productosAdapter);
         sp_prod5.setTitle(activity.getString(R.string.spinner_producto_title));
         sp_prod5.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -592,18 +589,18 @@ public class ModeloPasajeros1 extends Form {
 
     private void condicionesSpinners() {
         //P2
-        final SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
+        final SearchableSpinnerOLD sp_cdpaisre = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdpaisre);
 
         sp_cdpaisre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdpaisre.setBackgroundResource(android.R.drawable.btn_dropdown);
                 //Blanquear todas las opciones cuando se cambia de pais
-                SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
-                SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+                SearchableSpinnerOLD sp_cdlocado_prov = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+                SearchableSpinnerOLD sp_cdlocado = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado);
+                SearchableSpinnerOLD sp_distres = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres);
                 EditText et_distresotro = (EditText) activity.findViewById(R.id.survey_edit_distresotro);
-                SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+                SearchableSpinnerOLD sp_distres_area = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres_area);
                 sp_cdlocado_prov.setSelection(0);
                 sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                 sp_cdlocado.setSelection(0);
@@ -625,7 +622,7 @@ public class ModeloPasajeros1 extends Form {
                         String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
                         ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion", filtro));
                         paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                        sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+                        sp_distres_area = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres_area);
                         sp_distres_area.setAdapter(paises1y2Adapter);
                         sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
                         sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));
@@ -643,7 +640,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        final SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+        final SearchableSpinnerOLD sp_cdlocado_prov = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
 
         //P2 Filtro municipios
         sp_cdlocado_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -670,7 +667,7 @@ public class ModeloPasajeros1 extends Form {
 
 
 
-                final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+                final SearchableSpinnerOLD sp_cdlocado = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado);
                 ArrayAdapter<String> municipioAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
                 municipioAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
                 sp_cdlocado.setAdapter(municipioAdapter);
@@ -684,7 +681,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+        final SearchableSpinnerOLD sp_cdlocado = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado);
 
         sp_cdlocado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -715,7 +712,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        final SearchableSpinnerOLD sp_distres = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres);
 
         sp_distres.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -738,7 +735,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P4
-        final SearchableSpinner sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
+        final SearchableSpinnerOLD sp_cdiaptoo = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptoo);
 
         sp_cdiaptoo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -761,7 +758,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P5
-        final SearchableSpinner sp_ciaantes = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_ciaantes);
+        final SearchableSpinnerOLD sp_ciaantes = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_ciaantes);
 
         sp_ciaantes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -784,7 +781,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P9 Filtro municipios
-        final SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+        final SearchableSpinnerOLD sp_cdlocaco_prov = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
 
         sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -808,7 +805,7 @@ public class ModeloPasajeros1 extends Form {
                     filtro = filtro + ")";
                 }               
 
-                final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+                final SearchableSpinnerOLD sp_cdlocaco = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco);
                 ArrayAdapter<String> municipioAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
                 municipioAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
                 sp_cdlocaco.setAdapter(municipioAdapter);
@@ -822,7 +819,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        final SearchableSpinnerOLD sp_cdlocaco = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco);
 
         sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -853,7 +850,7 @@ public class ModeloPasajeros1 extends Form {
             }
         });
 
-        final SearchableSpinner sp_distracce = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
+        final SearchableSpinnerOLD sp_distracce = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distracce);
 
         sp_distracce.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -876,7 +873,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P17
-        final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        final SearchableSpinnerOLD sp_cdiaptod = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptod);
 
         sp_cdiaptod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -899,7 +896,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P18
-        final SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+        final SearchableSpinnerOLD sp_numvuepa = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_numvuepa);
 
         sp_numvuepa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -920,7 +917,7 @@ public class ModeloPasajeros1 extends Form {
         });
 
         //P19
-        final SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+        final SearchableSpinnerOLD sp_cdociaar = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdociaar);
 
         sp_cdociaar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -2324,7 +2321,7 @@ public class ModeloPasajeros1 extends Form {
                     }
                     //P21, hemos indicado vacaciones >7 días (293), P22 “duración del viaje tiene que ser superior a 7;
                     //si en P21 se indica opción 291 o 292, en P22 igual o inferior a 7.
-                    SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+                    SearchableSpinnerOLD sp_cdmviaje = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdmviaje);
                     String st_cdmviaje = sp_cdmviaje.getSelectedItem().toString().substring(0, 3);
                     EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
                     String st_Taus = etTaus.getText().toString();
@@ -3857,7 +3854,7 @@ public class ModeloPasajeros1 extends Form {
 
 
         //P1
-        SearchableSpinner sp_cdpaisna = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
+        SearchableSpinnerOLD sp_cdpaisna = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdpaisna);
         String textSpCdpaisna = sp_cdpaisna.getSelectedItem().toString().substring(0, 3);
         if (!textSpCdpaisna.contains("000")) {
             quest.setCdpaisna(textSpCdpaisna);
@@ -3866,7 +3863,7 @@ public class ModeloPasajeros1 extends Form {
         }
 
         //P2
-        SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
+        SearchableSpinnerOLD sp_cdpaisre = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdpaisre);
         String textSpCdpaisre = sp_cdpaisre.getSelectedItem().toString().substring(0, 3);
         if (!textSpCdpaisre.contains("000")) {
             quest.setCdpaisre(textSpCdpaisre);
@@ -3874,7 +3871,7 @@ public class ModeloPasajeros1 extends Form {
             quest.setCdpaisre("-1");
         }
 
-        SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+        SearchableSpinnerOLD sp_cdlocado = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocado);
         String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
         if (!textSpCdlocado.contains("00000")) {
             quest.setCdlocado(textSpCdlocado);
@@ -3882,9 +3879,9 @@ public class ModeloPasajeros1 extends Form {
             quest.setCdlocado("-1");
         }
 
-        SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        SearchableSpinnerOLD sp_distres = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres);
         String textSpDistres = sp_distres.getSelectedItem().toString().substring(0, 2);
-        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        SearchableSpinnerOLD sp_distres_area = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distres_area);
         String textSpDistres_area = sp_distres_area.getSelectedItem().toString().substring(0, 3);
         String filtroAeropuerto = "28079";
 
@@ -3930,7 +3927,7 @@ public class ModeloPasajeros1 extends Form {
         quest.setCdcambio(String.valueOf(selectedCode));
 
         //P4
-        SearchableSpinner sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
+        SearchableSpinnerOLD sp_cdiaptoo = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptoo);
         String textSpCdiaptoo = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
         if(!textSpCdiaptoo.contains("000")){
             quest.setCdiaptoo(textSpCdiaptoo);
@@ -3945,7 +3942,7 @@ public class ModeloPasajeros1 extends Form {
         }
 
         //P5
-        SearchableSpinner sp_ciaantes = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_ciaantes);
+        SearchableSpinnerOLD sp_ciaantes = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_ciaantes);
         String textSpCiaantes = sp_ciaantes.getSelectedItem().toString().substring(0,3);
         if(!textSpCiaantes.contains("000")){
             quest.setCiaantes(textSpCiaantes);
@@ -4031,10 +4028,10 @@ public class ModeloPasajeros1 extends Form {
         //P9
         RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
 
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        SearchableSpinnerOLD sp_cdlocaco = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco);
         String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString().substring(0,5);
 
-        SearchableSpinner sp_distracce = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
+        SearchableSpinnerOLD sp_distracce = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_distracce);
         String textSpDistracce = sp_distracce.getSelectedItem().toString().substring(0,2);
 
         selectedCode = -1;
@@ -4408,7 +4405,7 @@ public class ModeloPasajeros1 extends Form {
         //}
 
         //P17
-        SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        SearchableSpinnerOLD sp_cdiaptod = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptod);
         String textSpCdiaptod = sp_cdiaptod.getSelectedItem().toString().substring(0,3);
         if(!textSpCdiaptod.contains("000")){
             quest.setCdiaptod(textSpCdiaptod);
@@ -4423,7 +4420,7 @@ public class ModeloPasajeros1 extends Form {
         }
 
         //P18
-        SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
+        SearchableSpinnerOLD sp_numvuepa = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_numvuepa);
         String textSpNumvuepa = sp_numvuepa.getSelectedItem().toString().substring(0,3);
         EditText numvuepa = (EditText) activity.findViewById(R.id.survey_edit_numvuepa);
         if(!textSpNumvuepa.contains("000")){
@@ -4445,7 +4442,7 @@ public class ModeloPasajeros1 extends Form {
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_cdterm_option2:
-                    SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+                    SearchableSpinnerOLD sp_cdociaar = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdociaar);
                     String textSpCdociaar = sp_cdociaar.getSelectedItem().toString().substring(0,3);
                     if(!textSpCdociaar.contains("000")){
                         quest.setCdociaar(textSpCdociaar);
@@ -4467,7 +4464,7 @@ public class ModeloPasajeros1 extends Form {
 
 
         //P20
-        SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+        SearchableSpinnerOLD sp_cdiaptof = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptof);
         String textSpCdiaptof = sp_cdiaptof.getSelectedItem().toString().substring(0,3);
         if(!textSpCdiaptof.contains("000")){
             quest.setCdiaptof(textSpCdiaptof);
@@ -4476,7 +4473,7 @@ public class ModeloPasajeros1 extends Form {
         }
 
         //P21
-        SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
+        SearchableSpinnerOLD sp_cdmviaje = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdmviaje);
         String textSpCdmviaje = sp_cdmviaje.getSelectedItem().toString().substring(0,3);
         if(!textSpCdmviaje.contains("000")){
             quest.setCdmviaje(textSpCdmviaje);
@@ -4835,7 +4832,7 @@ public class ModeloPasajeros1 extends Form {
             switch (checkedId) {
                 case R.id.survey_radio_comprart_option1:
                     quest.setGas_com(stringToInt(etGas_com.getText().toString()));
-                    SearchableSpinner sp_prod1= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+                    SearchableSpinnerOLD sp_prod1= (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod1);
                     String textSpProd1 = sp_prod1.getSelectedItem().toString().substring(0,2);
                     if(!textSpProd1.contains("00")){
                         quest.setProd1(textSpProd1);
@@ -4843,7 +4840,7 @@ public class ModeloPasajeros1 extends Form {
                         quest.setProd1("-1");
                     }
 
-                    SearchableSpinner sp_prod2= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
+                    SearchableSpinnerOLD sp_prod2= (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod2);
                     String textSpProd2 = sp_prod2.getSelectedItem().toString().substring(0,2);
                     if(!textSpProd2.contains("00")){
                         quest.setProd2(textSpProd2);
@@ -4851,7 +4848,7 @@ public class ModeloPasajeros1 extends Form {
                         quest.setProd2("-1");
                     }
 
-                    SearchableSpinner sp_prod3= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
+                    SearchableSpinnerOLD sp_prod3= (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod3);
                     String textSpProd3 = sp_prod3.getSelectedItem().toString().substring(0,2);
                     if(!textSpProd3.contains("00")){
                         quest.setProd3(textSpProd3);
@@ -4859,7 +4856,7 @@ public class ModeloPasajeros1 extends Form {
                         quest.setProd3("-1");
                     }
 
-                    SearchableSpinner sp_prod4= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
+                    SearchableSpinnerOLD sp_prod4= (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod4);
                     String textSpProd4 = sp_prod4.getSelectedItem().toString().substring(0,2);
                     if(!textSpProd4.contains("00")){
                         quest.setProd4(textSpProd4);
@@ -4867,7 +4864,7 @@ public class ModeloPasajeros1 extends Form {
                         quest.setProd4("-1");
                     }
 
-                    SearchableSpinner sp_prod5= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
+                    SearchableSpinnerOLD sp_prod5= (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_prod5);
                     String textSpProd5 = sp_prod5.getSelectedItem().toString().substring(0,2);
                     if(!textSpProd5.contains("00")){
                         quest.setProd5(textSpProd5);
@@ -5202,7 +5199,7 @@ public class ModeloPasajeros1 extends Form {
     }
 
     private void generarTituloCdalojin() {
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        SearchableSpinnerOLD sp_cdlocaco = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdlocaco);
         String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
         String textoCdalojin = activity.getString(R.string.survey_m1_text_cdalojin);
         TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin);
@@ -5212,7 +5209,7 @@ public class ModeloPasajeros1 extends Form {
     }
 
     private void generarTituloCdterm() {
-        SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+        SearchableSpinnerOLD sp_cdiaptod = (SearchableSpinnerOLD) activity.findViewById(R.id.survey_spinner_cdiaptod);
         String textSpCdiaptod = sp_cdiaptod.getSelectedItem().toString();
         String textoCdterm = activity.getString(R.string.survey_m1_text_cdterm);
         if (textSpCdiaptod.length()>4)
@@ -5392,7 +5389,7 @@ public class ModeloPasajeros1 extends Form {
     }
 
     private boolean requeridoSearchableSpinner(View miView, String codigoNoResponde) {
-        SearchableSpinner miSearchableSp = (SearchableSpinner) miView;
+        SearchableSpinnerOLD miSearchableSp = (SearchableSpinnerOLD) miView;
 
         if (miSearchableSp.getSelectedItem().toString().substring(0,codigoNoResponde.length()).equals(codigoNoResponde)) {
             miSearchableSp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));

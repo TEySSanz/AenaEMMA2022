@@ -82,7 +82,7 @@
                         android:gravity="center|center_horizontal"
                         android:text="@string/survey_m1_text_cdlocaco_prov" />
 
-                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                         android:id="@+id/survey_spinner_cdlocaco_prov"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                         android:text="@string/survey_m1_text_cdlocaco" />
 
 
-                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                         android:id="@+id/survey_spinner_cdlocaco"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
                         android:visibility="gone" />
 
 
-                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinner
+                    <es.testadistica.www.aenaemma2022.utilidades.SearchableSpinnerOLD
                         android:id="@+id/survey_spinner_distracce"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

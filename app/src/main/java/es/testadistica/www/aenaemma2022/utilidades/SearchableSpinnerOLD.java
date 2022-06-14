@@ -18,26 +18,26 @@ import java.util.List;
 
 import es.testadistica.www.aenaemma2022.R;
 
-public class SearchableSpinner extends AppCompatSpinner implements View.OnTouchListener,
-        SearchableListDialog.SearchableItem {
+public class SearchableSpinnerOLD extends AppCompatSpinner implements View.OnTouchListener,
+        SearchableListDialogOLD.SearchableItem {
 
     public static final int NO_ITEM_SELECTED = -1;
     private Context _context;
     private List _items;
-    private SearchableListDialog _searchableListDialog;
+    private SearchableListDialogOLD _searchableListDialog;
 
     private boolean _isDirty;
     private ArrayAdapter _arrayAdapter;
     private String _strHintText;
     private boolean _isFromInit;
 
-    public SearchableSpinner(Context context) {
+    public SearchableSpinnerOLD(Context context) {
         super(context);
         this._context = context;
         init();
     }
 
-    public SearchableSpinner(Context context, AttributeSet attrs) {
+    public SearchableSpinnerOLD(Context context, AttributeSet attrs) {
         super(context, attrs);
         this._context = context;
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SearchableSpinner);
@@ -52,7 +52,7 @@ public class SearchableSpinner extends AppCompatSpinner implements View.OnTouchL
         init();
     }
 
-    public SearchableSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SearchableSpinnerOLD(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this._context = context;
         init();
@@ -60,7 +60,7 @@ public class SearchableSpinner extends AppCompatSpinner implements View.OnTouchL
 
     private void init() {
         _items = new ArrayList();
-        _searchableListDialog = SearchableListDialog.newInstance
+        _searchableListDialog = SearchableListDialogOLD.newInstance
                 (_items);
         _searchableListDialog.setOnSearchableItemClickListener(this);
         setOnTouchListener(this);
@@ -141,7 +141,7 @@ public class SearchableSpinner extends AppCompatSpinner implements View.OnTouchL
         _searchableListDialog.setPositiveButton(strPositiveButtonText, onClickListener);
     }
 
-    public void setOnSearchTextChangedListener(SearchableListDialog.OnSearchTextChanged onSearchTextChanged) {
+    public void setOnSearchTextChangedListener(SearchableListDialogOLD.OnSearchTextChanged onSearchTextChanged) {
         _searchableListDialog.setOnSearchTextChangedListener(onSearchTextChanged);
     }
 

@@ -44,6 +44,8 @@ import java.util.List;
 
 import es.testadistica.www.aenaemma2022.R;
 import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
+import es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner;
+import es.testadistica.www.aenaemma2022.searchablespinner.mListString;
 
 public class ModeloTrabajadores1 extends FormTrab {
 
@@ -84,44 +86,49 @@ public class ModeloTrabajadores1 extends FormTrab {
     private void iniciarSpinners() {
 
         //P1
-        ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionarioNoCod(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "descripcion", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
-        empresasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        //ArrayAdapter<String> empresasAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionarioNoCod(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "descripcion", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        ArrayList<mListString> empresasAdapter = new ArrayList<mListString>(getDiccionarioNoCod(Contracts.TABLE_TIPOEMPRESATRAB,"iden", "codigo","descripcion", "descripcion", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        //empresasAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_empresa;
         survey_spinner_empresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
-        survey_spinner_empresa.setAdapter(empresasAdapter);
-        survey_spinner_empresa.setTitle(activity.getString(R.string.survey_text_empresa));
-        survey_spinner_empresa.setPositiveButton(activity.getString(R.string.spinner_close));
+        survey_spinner_empresa.setAdapter(empresasAdapter, 1, 1, activity.getString(R.string.survey_text_empresa), activity.getString(R.string.spinner_close));
+        //survey_spinner_empresa.setTitleList(activity.getString(R.string.survey_text_empresa));
+        //survey_spinner_empresa.setPositiveButton(activity.getString(R.string.spinner_close));
+
 
         //P2
-        ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "descripcion"));
-        actempreAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        //ArrayAdapter<String> actempreAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "descripcion"));
+        ArrayList<mListString> actempreAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOACTEMPTRAB,"iden", "codigo","descripcion", "descripcion"));
+        //actempreAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_actempre;
         survey_spinner_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
-        survey_spinner_actempre.setAdapter(actempreAdapter);
-        survey_spinner_actempre.setTitle(activity.getString(R.string.survey_text_actempre));
-        survey_spinner_actempre.setPositiveButton(activity.getString(R.string.spinner_close));
+        survey_spinner_actempre.setAdapter(actempreAdapter, 1, 1, activity.getString(R.string.survey_text_actempre), activity.getString(R.string.spinner_close));
+        //survey_spinner_actempre.setTitle(activity.getString(R.string.survey_text_actempre));
+        //survey_spinner_actempre.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //P3
-        ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
+        //ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
         //ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario("28"));
-        cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        //cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_cdlocado;
         survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-        survey_spinner_cdlocado.setAdapter(cdlocadoAdapter);
-        survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
-        survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+        survey_spinner_cdlocado.setAdapter(cdlocadoAdapter, 1, 1, activity.getString(R.string.survey_text_cdlocado_loc), activity.getString(R.string.spinner_close));
+        //survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
+        //survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
 
-        ArrayAdapter<String> distresAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
-        distresAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+        //ArrayAdapter<String> distresAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        ArrayList<mListString> distresAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        //distresAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
         SearchableSpinner survey_spinner_distres;
         survey_spinner_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
-        survey_spinner_distres.setAdapter(distresAdapter);
-        survey_spinner_distres.setTitle(activity.getString(R.string.survey_text_distres));
-        survey_spinner_distres.setPositiveButton(activity.getString(R.string.spinner_close));
+        survey_spinner_distres.setAdapter(distresAdapter, 1, 1, activity.getString(R.string.survey_text_distres), activity.getString(R.string.spinner_close));
+        //survey_spinner_distres.setTitle(activity.getString(R.string.survey_text_distres));
+        //survey_spinner_distres.setPositiveButton(activity.getString(R.string.spinner_close));
     }
 
     private void condicionesSpinners() {
@@ -135,7 +142,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 sp_empresa.setBackgroundResource(android.R.drawable.btn_dropdown);
 
-                String texto = sp_empresa.getSelectedItem().toString();
+                String texto = getValorDesplegable(sp_empresa);
 
                 if (!texto.equals("OTROS")){
                     activity.findViewById(R.id.survey_edit_empresa).setVisibility(GONE);
@@ -159,7 +166,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 sp_actempre.setBackgroundResource(android.R.drawable.btn_dropdown);
 
-                String texto = sp_actempre.getSelectedItem().toString().substring(0,3);
+                String texto = getValorDesplegable(sp_actempre).substring(0,3);
 
                 if (!texto.equals("999")){
                     activity.findViewById(R.id.survey_edit_actempre).setVisibility(GONE);
@@ -183,7 +190,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
 
-                String texto = sp_cdlocado.getSelectedItem().toString().substring(0,5);
+                String texto = getValorDesplegable(sp_cdlocado).substring(0,5);
 
                 if (!texto.equals("28079")){
                     activity.findViewById(R.id.survey_model_layout_distres).setVisibility(GONE);
@@ -206,7 +213,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                 sp_distres.setBackgroundResource(android.R.drawable.btn_dropdown);
 
-                String texto = sp_distres.getSelectedItem().toString().substring(0,5);
+                String texto = getValorDesplegable(sp_distres).substring(0,5);
 
                 if (!texto.equals("99999")){
                     activity.findViewById(R.id.survey_distres_otros).setVisibility(GONE);
@@ -236,14 +243,11 @@ public class ModeloTrabajadores1 extends FormTrab {
             public void onClick(View v) {
                 rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
-                ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia IN ('00','28')"));
-                cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia IN ('00','28')"));
 
                 SearchableSpinner survey_spinner_cdlocado;
                 survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter);
-                survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
-                survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter, 1, 1, activity.getString(R.string.survey_text_cdlocado_loc), activity.getString(R.string.spinner_close));
 
                 activity.findViewById(R.id.survey_model_layout_cdlocado).setVisibility(VISIBLE);
             }
@@ -254,14 +258,11 @@ public class ModeloTrabajadores1 extends FormTrab {
             public void onClick(View v) {
                 rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
-                ArrayAdapter<String> cdlocadoAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia NOT IN ('28')"));
-                cdlocadoAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia NOT IN ('28')"));
 
                 SearchableSpinner survey_spinner_cdlocado;
                 survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter);
-                survey_spinner_cdlocado.setTitle(activity.getString(R.string.survey_text_cdlocado_loc));
-                survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
+                survey_spinner_cdlocado.setAdapter(cdlocadoAdapter, 1, 1, activity.getString(R.string.survey_text_cdlocado_loc), activity.getString(R.string.spinner_close));
 
                 activity.findViewById(R.id.survey_model_layout_cdlocado).setVisibility(VISIBLE);
             }
@@ -2985,7 +2986,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     //P1
                     final SearchableSpinner sp_empresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
 
-                    if (sp_empresa.getSelectedItem().toString().equals("...")) {
+                    if (getValorDesplegable(sp_empresa).equals("...")) {
                         sp_empresa.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3000,7 +3001,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                     final SearchableSpinner sp_actempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
                     final EditText etActempre_otro = (EditText) activity.findViewById(R.id.survey_edit_actempre);
 
-                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("000")) {
+                    if (getValorDesplegable(sp_actempre).substring(0,3).equals("000")) {
                         sp_actempre.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3009,7 +3010,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }
 
-                    if (sp_actempre.getSelectedItem().toString().substring(0,3).equals("999") && etActempre_otro.getText().toString().equals("")) {
+                    if (getValorDesplegable(sp_actempre).substring(0,3).equals("999") && etActempre_otro.getText().toString().equals("")) {
                         etActempre_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3038,7 +3039,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
                     } else {
 
-                        if (sp_cdlocado.getSelectedItem().toString().substring(0, 5).equals("00000")) {
+                        if (getValorDesplegable(sp_cdlocado).substring(0, 5).equals("00000")) {
                             sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
@@ -3047,7 +3048,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }
 
-                        if (sp_cdlocado.getSelectedItem().toString().substring(0, 5).equals("28079") && sp_distres.getSelectedItem().toString().substring(0, 5).equals("00000")) {
+                        if (getValorDesplegable(sp_cdlocado).substring(0, 5).equals("28079") && getValorDesplegable(sp_distres).substring(0, 5).equals("00000")) {
                             sp_distres.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
@@ -3056,7 +3057,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }
 
-                        if (sp_distres.getSelectedItem().toString().substring(0, 5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
+                        if (getValorDesplegable(sp_distres).substring(0, 5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
                             etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
@@ -4670,7 +4671,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         //P1
         SearchableSpinner spEmpresa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_empresa);
-        String textSpEmpresa = spEmpresa.getSelectedItem().toString();
+        String textSpEmpresa = getValorDesplegable(spEmpresa);
         EditText etEmpresa = (EditText) activity.findViewById(R.id.survey_edit_empresa);
         if(!textSpEmpresa.contains("...")){
             if(textSpEmpresa.contains("OTROS")){
@@ -4684,7 +4685,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         //P2
         SearchableSpinner spActempre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_actempre);
-        String textSpActempre = spActempre.getSelectedItem().toString().substring(0,3);
+        String textSpActempre = getValorDesplegable(spActempre).substring(0,3);
         EditText etActEmpOtros = (EditText) activity.findViewById(R.id.survey_edit_actempre);
         if(!textSpActempre.contains("000")){
             quest.setActempre(textSpActempre);
@@ -4698,7 +4699,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         //P3
         SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-        String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0,5);
+        String textSpCdlocado = getValorDesplegable(sp_cdlocado).substring(0,5);
         if(!textSpCdlocado.contains("00000")){
             quest.setCdlocado(textSpCdlocado);
         } else {
@@ -4706,7 +4707,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
-        String textSpDistres = sp_distres.getSelectedItem().toString().substring(0,5);
+        String textSpDistres = getValorDesplegable(sp_distres).substring(0,5);
         EditText etDistresOtros = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
         if(!textSpDistres.contains("00000") && textSpCdlocado.contains("28079")){
             quest.setDistres(textSpDistres);
@@ -5540,7 +5541,7 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         return getDiccionario;
     }
-
+/*
     private List<String> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden) {
         List<String> getDiccionario = new ArrayList<String>();
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -5557,7 +5558,26 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         return getDiccionario;
     }
+ */
 
+    private List<mListString> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden) {
+        List<mListString> getDiccionario = new ArrayList<mListString>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT " + campoIden + ", " + campoCod + "||'. '|| " + campoValor +
+                " FROM " + tabla + " AS T1 ORDER BY " + campoOrden , parametros);
+
+        while (cursor.moveToNext()) {
+            getDiccionario.add(new mListString(cursor.getInt(0), cursor.getString(1)));
+        }
+
+        cursor.close();
+
+        return getDiccionario;
+    }
+
+/*
     private List<String> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
         List<String> getDiccionario = new ArrayList<String>();
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -5575,7 +5595,27 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         return getDiccionario;
     }
+ */
 
+    private List<mListString> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
+        List<mListString> getDiccionario = new ArrayList<mListString>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT " + campoIden + ", " + campoCod + "||'. '|| " + campoValor +
+                " FROM " + tabla + " AS T1" +
+                " WHERE " + filtro + " ORDER BY " + campoOrden , parametros);
+
+        while (cursor.moveToNext()) {
+            getDiccionario.add(new mListString(cursor.getInt(0), cursor.getString(1)));
+        }
+
+        cursor.close();
+
+        return getDiccionario;
+    }
+
+/*
     private List<String> getDiccionarioNoCod(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
         List<String> getDiccionario = new ArrayList<String>();
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -5587,6 +5627,24 @@ public class ModeloTrabajadores1 extends FormTrab {
 
         while (cursor.moveToNext()) {
             getDiccionario.add(cursor.getString(1));
+        }
+
+        cursor.close();
+
+        return getDiccionario;
+    }
+*/
+    private List<mListString> getDiccionarioNoCod(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
+        List<mListString> getDiccionario = new ArrayList<mListString>();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+
+        Cursor cursor = db.rawQuery("SELECT " + campoIden + ", " + campoValor +
+                " FROM " + tabla + " AS T1" +
+                " WHERE " + filtro + " ORDER BY " + campoOrden , parametros);
+
+        while (cursor.moveToNext()) {
+            getDiccionario.add(new mListString(cursor.getInt(0), cursor.getString(1)));
         }
 
         cursor.close();
@@ -5825,5 +5883,14 @@ public class ModeloTrabajadores1 extends FormTrab {
         }
 
         return correcto;
+    }
+
+    public String getValorDesplegable(SearchableSpinner miSpinner) {
+        String miValor = null;
+
+        mListString mlsEmpresa = (mListString) miSpinner.getSelectedItem();
+        miValor = mlsEmpresa.getNilai1();
+
+        return  miValor;
     }
 }
