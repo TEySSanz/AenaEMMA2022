@@ -11327,6 +11327,6 @@ public class DBInsert {
     }
 
     public static void insertsVersion (SQLiteDatabase db) {
-        db.execSQL("INSERT INTO " + Contracts.TABLE_VERSION + " (" + Contracts.COLUMN_VERSION_VERSION + ") VALUES ('v1.6')");
+        db.execSQL("INSERT INTO " + Contracts.TABLE_VERSION + " (" + Contracts.COLUMN_VERSION_VERSION + ") VALUES ('v1.7')");
     }
 }
