@@ -3870,7 +3870,7 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(8); //>P8
                                 break;
                             case R.id.survey_radio_cdsinope_option2:
-                                show = showQuestion(16); //>P16
+                                show = showQuestion(15); //>P15
                                 break;
                         }
                     } else {
@@ -3890,7 +3890,7 @@ public class ModeloPasajeros1 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_cdalojen_option0:
-                                show = showQuestion(16); //>P16
+                                show = showQuestion(15); //>P15
                                 break;
                             case R.id.survey_radio_cdalojen_option1:
                                 rbViene_re1.setVisibility(GONE);
@@ -3901,7 +3901,7 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(9); //>P9
                                 break;
                             case R.id.survey_radio_cdalojen_option9:
-                                show = showQuestion(16); //>P16
+                                show = showQuestion(9); //>P9
                                 break;
                         }
                     } else {
