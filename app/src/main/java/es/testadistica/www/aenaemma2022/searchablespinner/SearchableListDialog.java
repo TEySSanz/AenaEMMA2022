@@ -119,14 +119,31 @@ public class SearchableListDialog extends DialogFragment implements
         alertDialog.setView(rootView);
 
         String strPositiveButton = _strPositiveButtonText == null ? "CLOSE" : _strPositiveButtonText;
-        alertDialog.setPositiveButton(strPositiveButton, _onClickListener);
+        alertDialog.setPositiveButton(strPositiveButton, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                adapter.filter("",numberSelect);
+                getDialog().dismiss();
+            }
+        });
 
         String strTitle = _strTitle == null ? " " : _strTitle;
         alertDialog.setTitle(strTitle);
-
+/*
+        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                adapter.filter("",numberSelect);
+                getDialog().dismiss();
+            }
+        });
+*/
         final AlertDialog dialog = alertDialog.create();
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams
                 .SOFT_INPUT_STATE_HIDDEN);
+
+        dialog.setCanceledOnTouchOutside(false);
+
         return dialog;
     }
 
@@ -201,6 +218,9 @@ public class SearchableListDialog extends DialogFragment implements
 
     @Override
     public boolean onClose() {
+
+        adapter.filter("",numberSelect);
+
         return false;
     }
 
