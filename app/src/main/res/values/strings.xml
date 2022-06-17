@@ -634,7 +634,7 @@
     <string name="survey_m4_text_ultimodo_coche_conductor_num">24</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler">Vehículo de alquiler</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler_num">25</string>
-    <string name="survey_m4_text_ultimodo_coche_vprivado">Coche privado</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado">Vehiculo privado</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Coche pasajeros</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja_num">22</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Coche acompañantes</string>
@@ -827,6 +827,8 @@
     <string name="minuto">MM</string>
     <string name="dos_puntos">:</string>
     <string name="survey_text_error_date">Error fecha</string>
+    <!--Pregunta35-->
+    <string name="survey_m4_text_valorexp">35. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
 
 
 </resources>

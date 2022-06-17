@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +46,7 @@ public class ModeloPasajeros4 extends Form {
     private int preguntaAnterior = 1;
     private int idCue;
     private int idAeropuerto;
-    private int finCue = 34;
+    private int finCue = 35;
     private boolean resultValue;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -80,7 +81,7 @@ public class ModeloPasajeros4 extends Form {
         condicionesRadioButton();
         condicionesChecks();
         //condicionesEditText();
-        //condicionesRatingBar();
+        condicionesRatingBar();
     }
 
     private void iniciarTextosAeropuertos(){
@@ -97,6 +98,7 @@ public class ModeloPasajeros4 extends Form {
                 activity.findViewById(R.id.survey_text_cdpaisre_m4).setVisibility(VISIBLE);
                 //P3 NO
                 //P4 NO
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 //P5 NO
                 //P6
                 activity.findViewById(R.id.survey_text_sitiopark).setVisibility(GONE);
@@ -197,6 +199,9 @@ public class ModeloPasajeros4 extends Form {
                 //P34
                 activity.findViewById(R.id.survey_text_cdsexo).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdsexo_m4).setVisibility(VISIBLE);
+                //P35
+                activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_valorexp_m4).setVisibility(VISIBLE);
                 break;
         }
     }
@@ -1464,6 +1469,17 @@ public class ModeloPasajeros4 extends Form {
         });
 
     }
+
+    private void condicionesRatingBar(){
+        RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
+        rabValorexp.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
+    }
+
     @Override
     public int onNextPressed(int p) {
         if (checkQuestion(p)) {
@@ -1774,17 +1790,17 @@ public class ModeloPasajeros4 extends Form {
                 LinearLayout p34 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
-                next.setVisibility(GONE);
+                next.setVisibility(VISIBLE);
                 p34.setVisibility(VISIBLE);
                 break;
-            /*case 35:
+            case 35:
                 //P35
                 LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
                 p42.setVisibility(VISIBLE);
-                break;*/
+                break;
         }
 
         return show;
@@ -2736,7 +2752,7 @@ public class ModeloPasajeros4 extends Form {
                         return false;
                     }
                     break;
-                /*case 35:
+                case 35:
                     RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
                     int intValorexp = Math.round(rabValorexp.getRating());
                     if (intValorexp<1 || intValorexp>10) {
@@ -2749,7 +2765,7 @@ public class ModeloPasajeros4 extends Form {
                     } else {
                         rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                     }
-                    break;*/
+                    break;
                 case 999:
                     //Siempre que se guarde se comprueba que tenga relleno el numero de vuelo y la puerta de embarque
                     EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
@@ -2965,10 +2981,10 @@ public class ModeloPasajeros4 extends Form {
                     //P34
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO, String.valueOf(cue.getCdsexo()));
                     break;
-                //case 35:
-                //P35
-                //guardaDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP, String.valueOf(cue.getValorexp()));
-                //break;
+                case 35:
+                    //P35
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP, String.valueOf(cue.getValorexp()));
+                    break;
             }
         }
 
@@ -3131,10 +3147,10 @@ public class ModeloPasajeros4 extends Form {
                     //P34
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO);
                     break;
-                //case 35:
-                //P35
-                //borraDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP);
-                //break;
+                case 35:
+                    //P35
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP);
+                    break;
             }
         }
         return true;
@@ -3278,9 +3294,9 @@ public class ModeloPasajeros4 extends Form {
         LinearLayout cdsexo = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
         cdsexo.setVisibility(GONE);
 
-        //P36
-        //LinearLayout valorexp = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
-        //valorexp.setVisibility(GONE);
+        //P35
+        LinearLayout valorexp = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
+        valorexp.setVisibility(GONE);
 
     }
 
@@ -3569,12 +3585,12 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 34:
                 //P34
-                //show = showQuestion(35);
+                show = showQuestion(35);
                 break;
-            //case 35:
+            case 35:
             //P35
             //FIN
-            // break;
+                break;
 
         }
 

@@ -73,7 +73,7 @@
     <!-- P34 -->
     <include layout="@layout/survey_cue_cdsexo"/>
     <!-- P35 -->
-    <!-- <include layout="@layout/survey_cue_valorexp"/> -->
+    <include layout="@layout/survey_cue_valorexp"/>
 
 
 
