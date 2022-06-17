@@ -111,6 +111,8 @@ public class ModeloPasajeros1 extends Form {
 
                 activity.findViewById(R.id.survey_text_distracce).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_distracce_bcn).setVisibility(VISIBLE);
+
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(VISIBLE);
                 break;
         }
     }
@@ -4521,6 +4523,9 @@ public class ModeloPasajeros1 extends Form {
                 case R.id.survey_radio_cdalojin_option8:
                     selectedCode = 8;
                     break;
+                case R.id.survey_radio_cdalojin_option10:
+                    selectedCode = 10;
+                    break;
                 case R.id.survey_radio_cdalojin_option9:
                     selectedCode = 9;
                     quest.setCdalojin_otros(etCdalojin_otros.getText().toString());
@@ -5627,7 +5632,7 @@ public class ModeloPasajeros1 extends Form {
     private void generarTituloCdalojin() {
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
-        String textSpCdlocaco = getValorDesplegable(sp_cdlocaco).substring(0,2);
+        String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
         String textoCdalojin = activity.getString(R.string.survey_m1_text_cdalojin);
         TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin);
         if (textSpCdlocaco.length()>7)
