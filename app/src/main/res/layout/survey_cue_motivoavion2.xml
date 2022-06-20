@@ -83,12 +83,6 @@
                 android:text="@string/survey_m4_radio_motivoavion2_option13" />
 
             <RadioButton
-                android:id="@+id/survey_radio_motivoavion2_option15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/survey_m4_radio_motivoavion2_option15" />
-
-            <RadioButton
                 android:id="@+id/survey_radio_motivoavion2_option91"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

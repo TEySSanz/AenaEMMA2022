@@ -46,7 +46,7 @@ public class ModeloPasajeros4 extends Form {
     private int preguntaAnterior = 1;
     private int idCue;
     private int idAeropuerto;
-    private int finCue = 35;
+    private int finCue = 36;
     private boolean resultValue;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -169,7 +169,9 @@ public class ModeloPasajeros4 extends Form {
                 //P24
                 activity.findViewById(R.id.survey_text_chekinb).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_chekinb_m4).setVisibility(VISIBLE);
-                //P25 NO
+                //P25
+                activity.findViewById(R.id.survey_text_eleccovid).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_eleccovid_m4).setVisibility(VISIBLE);
                 //P26 NO
                 //P27 NO
                 //P28
@@ -607,7 +609,7 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
-        //P29
+        //P30
         //Asigna los valores del desplegable de productos
         SearchableSpinner sp_prod1;
         sp_prod1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
@@ -900,39 +902,44 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdiaptoo).substring(0,3);
+                final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
+                if (rbCdiaptoo.isChecked()) {
 
-                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                switch (idAeropuerto){
-                    case 3:
-                        //Sevilla
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
-                        break;
+                    String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
 
+                    String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                    switch (idAeropuerto) {
+                        case 3:
+                            //Sevilla
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            break;
+
+                    }
+
+                    final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                    ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                    sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+
+                    String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
+                    switch (idAeropuerto) {
+                        case 3:
+                            //Sevilla
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SVQOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            break;
+                    }
+
+                    final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
+                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto2));
+                    sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
                 }
+                String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
+                    if (!texto.equals("ZZZ")) {
+                        blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro_m4));
+                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                    } else {
+                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(VISIBLE);
+                    }
 
-                final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
-                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-                String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
-                switch (idAeropuerto){
-                    case 3:
-                        //Sevilla
-                        filtroAeropuerto2 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_SVQOLEADA+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
-                        break;
-                }
-
-                final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
-                sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-                if (!texto.equals("ZZZ")){
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro_m4));
-                    activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(VISIBLE);
-                }
 
             }
             @Override
@@ -952,19 +959,22 @@ public class ModeloPasajeros4 extends Form {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto1 = getValorDesplegable(sp_cdiaptoo).substring(0,3);
+                final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
+                if (rbCdiaptoo.isChecked()) {
 
-                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                switch (idAeropuerto){
+                    String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                    switch (idAeropuerto) {
 
-                    case 3:
-                        //Sevilla
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                        break;
+                        case 3:
+                            //Sevilla
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                            break;
+                    }
+
+                    final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                    sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
                 }
-
-                final SearchableSpinner sp_cdiaptof= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
-                sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
 
                 if (!texto.equals("ZZZ")){
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
@@ -1347,7 +1357,7 @@ public class ModeloPasajeros4 extends Form {
                 rgChekinb.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
-        //P26
+        //P27
         RadioGroup rgMotivoavion2= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_motivoavion2);
         rgMotivoavion2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1364,7 +1374,7 @@ public class ModeloPasajeros4 extends Form {
                 }
             }
         });
-        //P28
+        //P29
         RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
         rgConsume.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1381,7 +1391,7 @@ public class ModeloPasajeros4 extends Form {
                 }
             }
         });
-        //P29
+        //P30
         RadioGroup rgCompart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
         rgCompart.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1398,7 +1408,7 @@ public class ModeloPasajeros4 extends Form {
                 }
             }
         });
-        //P30
+        //P31
         final RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
         rgCdslab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1407,7 +1417,7 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
-        //P31
+        //P32
         final RadioGroup rgCdsprof = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsprof);
         rgCdsprof.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1416,7 +1426,7 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
-        //P32
+        //P33
         final RadioGroup rgEstudios = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_estudios);
         rgEstudios.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1425,7 +1435,7 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
-        //P33
+        //P34
         final RadioGroup rgCdedad = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedad);
         rgCdedad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1434,7 +1444,7 @@ public class ModeloPasajeros4 extends Form {
             }
         });
 
-        //P34
+        //P35
         final RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
         rgCdsexo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1715,7 +1725,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 25:
                 //P25
-                LinearLayout p25 = (LinearLayout) activity.findViewById(R.id.survey_layout_usoave);
+                LinearLayout p25 = (LinearLayout) activity.findViewById(R.id.survey_layout_eleccovid);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1723,7 +1733,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 26:
                 //P26
-                LinearLayout p26 = (LinearLayout) activity.findViewById(R.id.survey_layout_motivoavion2);
+                LinearLayout p26 = (LinearLayout) activity.findViewById(R.id.survey_layout_usoave);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1731,7 +1741,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 27:
                 //P27
-                LinearLayout p27 = (LinearLayout) activity.findViewById(R.id.survey_layout_prefiere);
+                LinearLayout p27 = (LinearLayout) activity.findViewById(R.id.survey_layout_motivoavion2);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1739,7 +1749,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 28:
                 //P28
-                LinearLayout p28 = (LinearLayout) activity.findViewById(R.id.survey_layout_consume);
+                LinearLayout p28 = (LinearLayout) activity.findViewById(R.id.survey_layout_prefiere);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1747,7 +1757,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 29:
                 //P29
-                LinearLayout p29 = (LinearLayout) activity.findViewById(R.id.survey_layout_comprart);
+                LinearLayout p29 = (LinearLayout) activity.findViewById(R.id.survey_layout_consume);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1755,7 +1765,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 30:
                 //P30
-                LinearLayout p30 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdslab);
+                LinearLayout p30 = (LinearLayout) activity.findViewById(R.id.survey_layout_comprart);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1763,7 +1773,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 31:
                 //P31
-                LinearLayout p31 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsprof);
+                LinearLayout p31 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdslab);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1771,7 +1781,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 32:
                 //P32
-                LinearLayout p32 = (LinearLayout) activity.findViewById(R.id.survey_layout_estudios);
+                LinearLayout p32 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsprof);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1779,7 +1789,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 33:
                 //P33
-                LinearLayout p33 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdedad);
+                LinearLayout p33 = (LinearLayout) activity.findViewById(R.id.survey_layout_estudios);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1787,7 +1797,7 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 34:
                 //P34
-                LinearLayout p34 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+                LinearLayout p34 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdedad);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1795,11 +1805,19 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 35:
                 //P35
-                LinearLayout p42 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
+                LinearLayout p35 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
+                previo.setVisibility(VISIBLE);
+                save.setVisibility(VISIBLE);
+                next.setVisibility(VISIBLE);
+                p35.setVisibility(VISIBLE);
+                break;
+            case 36:
+                //P36
+                LinearLayout p36 = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(GONE);
-                p42.setVisibility(VISIBLE);
+                p36.setVisibility(VISIBLE);
                 break;
         }
 
@@ -2640,12 +2658,18 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 25:
                     //P25
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_usoave))){
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_eleccovid))){
                         return false;
                     }
                     break;
                 case 26:
                     //P26
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_usoave))){
+                        return false;
+                    }
+                    break;
+                case 27:
+                    //P27
                     RadioGroup rgMotivoavion2 = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_motivoavion2);
                     EditText etMotivoavion2 = (EditText) activity.findViewById(R.id.survey_edit_motivoavion2_otros);
 
@@ -2666,14 +2690,14 @@ public class ModeloPasajeros4 extends Form {
                         etMotivoavion2.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
                     break;
-                case 27:
-                    //P27
+                case 28:
+                    //P28
                     if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_prefiere))){
                         return false;
                     }
                     break;
-                case 28:
-                    //P28
+                case 29:
+                    //P29
                     RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
 
                     if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_consume))){
@@ -2695,8 +2719,8 @@ public class ModeloPasajeros4 extends Form {
                         }
                     }
                     break;
-                case 29:
-                    //P29
+                case 30:
+                    //P30
                     RadioGroup rgComprart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
 
                     if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_comprart))){
@@ -2722,37 +2746,37 @@ public class ModeloPasajeros4 extends Form {
                         }
                     }
                     break;
-                case 30:
-                    //P30
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdslab))){
-                        return false;
-                    }
-                    break;
                 case 31:
                     //P31
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdsprof))){
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdslab))){
                         return false;
                     }
                     break;
                 case 32:
                     //P32
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_estudios))){
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdsprof))){
                         return false;
                     }
                     break;
                 case 33:
                     //P33
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdedad))){
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_estudios))){
                         return false;
                     }
                     break;
                 case 34:
                     //P34
-                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdsexo))){
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdedad))){
                         return false;
                     }
                     break;
                 case 35:
+                    //P35
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_cdsexo))){
+                        return false;
+                    }
+                    break;
+                case 36:
                     RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
                     int intValorexp = Math.round(rabValorexp.getRating());
                     if (intValorexp<1 || intValorexp>10) {
@@ -2935,24 +2959,28 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 25:
                     //P25
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_USOAVE, String.valueOf(cue.getUsoave()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_ELECCOVID, String.valueOf(cue.getEleccovid()));
                     break;
                 case 26:
                     //P26
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2, String.valueOf(cue.getMotivoavion2()));
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO, cue.getMotivoavion2otro());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_USOAVE, String.valueOf(cue.getUsoave()));
                     break;
                 case 27:
                     //P27
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_PREFIERE, String.valueOf(cue.getPrefiere()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2, String.valueOf(cue.getMotivoavion2()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO, cue.getMotivoavion2otro());
                     break;
                 case 28:
                     //P28
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME, cue.getConsume());
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS, String.valueOf(cue.getGas_cons()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_PREFIERE, String.valueOf(cue.getPrefiere()));
                     break;
                 case 29:
                     //P29
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME, cue.getConsume());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS, String.valueOf(cue.getGas_cons()));
+                    break;
+                case 30:
+                    //P30
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_COMPRART, cue.getComprart());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_GAS_COM, String.valueOf(cue.getGas_com()));
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD1, cue.getProd1());
@@ -2961,28 +2989,28 @@ public class ModeloPasajeros4 extends Form {
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD4, cue.getProd4());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_PROD5, cue.getProd5());
                     break;
-                case 30:
-                    //P30
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSLAB, cue.getCdslab());
-                    break;
                 case 31:
                     //P31
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSPROF, cue.getCdsprof());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSLAB, cue.getCdslab());
                     break;
                 case 32:
                     //P32
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS, cue.getEstudios());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSPROF, cue.getCdsprof());
                     break;
                 case 33:
                     //P33
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDEDAD, cue.getCdedad());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS, cue.getEstudios());
                     break;
                 case 34:
                     //P34
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO, String.valueOf(cue.getCdsexo()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDEDAD, cue.getCdedad());
                     break;
                 case 35:
                     //P35
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO, String.valueOf(cue.getCdsexo()));
+                    break;
+                case 36:
+                    //P36
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP, String.valueOf(cue.getValorexp()));
                     break;
             }
@@ -3101,24 +3129,28 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 25:
                     //P25
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_USOAVE);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ELECCOVID);
                     break;
                 case 26:
                     //P26
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2);
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_USOAVE);
                     break;
                 case 27:
                     //P27
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PREFIERE);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_MOTIVOAVION2OTRO);
                     break;
                 case 28:
                     //P28
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME);
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_PREFIERE);
                     break;
                 case 29:
                     //P29
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CONSUME);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_GAS_CONS);
+                    break;
+                case 30:
+                    //P30
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_COMPRART);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_GAS_COM);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD1);
@@ -3127,28 +3159,28 @@ public class ModeloPasajeros4 extends Form {
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD4);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_PROD5);
                     break;
-                case 30:
-                    //P30
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSLAB);
-                    break;
                 case 31:
                     //P31
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSPROF);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSLAB);
                     break;
                 case 32:
                     //P32
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSPROF);
                     break;
                 case 33:
                     //P33
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDEDAD);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_ESTUDIOS);
                     break;
                 case 34:
                     //P34
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDEDAD);
                     break;
                 case 35:
                     //P35
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDSEXO);
+                    break;
+                case 36:
+                    //P36
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_VALOREXP);
                     break;
             }
@@ -3255,46 +3287,50 @@ public class ModeloPasajeros4 extends Form {
         checkinb.setVisibility(GONE);
 
         //P25
+        LinearLayout eleccovid = (LinearLayout) activity.findViewById(R.id.survey_layout_eleccovid);
+        eleccovid.setVisibility(GONE);
+
+        //P26
         LinearLayout usoave = (LinearLayout) activity.findViewById(R.id.survey_layout_usoave);
         usoave.setVisibility(GONE);
 
-        //P26
+        //P27
         LinearLayout motivoavion2 = (LinearLayout) activity.findViewById(R.id.survey_layout_motivoavion2);
         motivoavion2.setVisibility(GONE);
 
-        //P27
+        //P28
         LinearLayout prefiere = (LinearLayout) activity.findViewById(R.id.survey_layout_prefiere);
         prefiere.setVisibility(GONE);
 
-        //P28
+        //P29
         LinearLayout consume_gans_cons = (LinearLayout) activity.findViewById(R.id.survey_layout_consume);
         consume_gans_cons.setVisibility(GONE);
 
-        //P29
+        //P30
         LinearLayout comprart_gas_com_prod = (LinearLayout) activity.findViewById(R.id.survey_layout_comprart);
         comprart_gas_com_prod.setVisibility(GONE);
 
-        //P30
+        //P31
         LinearLayout cdslab = (LinearLayout) activity.findViewById(R.id.survey_layout_cdslab);
         cdslab.setVisibility(GONE);
 
-        //P31
+        //P32
         LinearLayout cdsprof = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsprof);
         cdsprof.setVisibility(GONE);
 
-        //P32
+        //P33
         LinearLayout estudios = (LinearLayout) activity.findViewById(R.id.survey_layout_estudios);
         estudios.setVisibility(GONE);
 
-        //P33
+        //P34
         LinearLayout cdedad = (LinearLayout) activity.findViewById(R.id.survey_layout_cdedad);
         cdedad.setVisibility(GONE);
 
-        //P34
+        //P35
         LinearLayout cdsexo = (LinearLayout) activity.findViewById(R.id.survey_layout_cdsexo);
         cdsexo.setVisibility(GONE);
 
-        //P35
+        //P36
         LinearLayout valorexp = (LinearLayout) activity.findViewById(R.id.survey_layout_valorexp);
         valorexp.setVisibility(GONE);
 
@@ -3509,7 +3545,7 @@ public class ModeloPasajeros4 extends Form {
                                 show = showQuestion(23); //>P23
                                 break;
                             case R.id.survey_radio_p44factu_option2:
-                                show = showQuestion(29); //>P29
+                                show = showQuestion(30); //>P30
                                 break;
                         }
                     } else {
@@ -3528,8 +3564,40 @@ public class ModeloPasajeros4 extends Form {
                 show = showQuestion(25);
                 break;
             case 25:
-                //P25
-                show = showQuestion(26);
+                //P26
+                if (activated) {
+                    RadioGroup rgVienereDiaptoo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
+                    checkedId = rgVienereDiaptoo.getCheckedRadioButtonId();
+
+                    if (checkedId > 0) {
+                        switch (checkedId) {
+                            case R.id.survey_radio_viene_re:
+                                SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                                String textSpCdiaptof = getValorDesplegable(sp_cdiaptof).substring(0,3);
+                                if (textSpCdiaptof.equals("MAD")){ //España
+                                    show = showQuestion(26); //>P26
+                                } else
+                                    show = showQuestion(29); //>P29
+                                break;
+
+                            case R.id.survey_radio_cdlocaco:
+                                SearchableSpinner sp_cdiaptof1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                                String textSpCdiaptof1 = getValorDesplegable(sp_cdiaptof1).substring(0,3);
+                                if (textSpCdiaptof1.equals("MAD")){ //España
+                                    show = showQuestion(26); //>P26
+                                } else
+                                    show = showQuestion(29); //>P29
+                                break;
+
+                            case R.id.survey_radio_cdiaptoo:
+                                show = showQuestion(29); //>P29
+                                break;
+
+                        }
+                    } else {
+                        show = showQuestion(26); //>P26
+                    }
+                }
                 break;
             case 26:
                 //P26
@@ -3549,6 +3617,10 @@ public class ModeloPasajeros4 extends Form {
                 break;
             case 30:
                 //P30
+                show = showQuestion(31);
+                break;
+            case 31:
+                //P31
                 if (activated) {
                     RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
                     checkedId = rgCdslab.getCheckedRadioButtonId();
@@ -3556,10 +3628,10 @@ public class ModeloPasajeros4 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_cdslab_option1:
-                                show = showQuestion(31); //>P31
+                                show = showQuestion(32); //>P32
                                 break;
                             default:
-                                show = showQuestion(32); //>P32
+                                show = showQuestion(33); //>P33
                                 break;
                         }
                     } else {
@@ -3570,10 +3642,6 @@ public class ModeloPasajeros4 extends Form {
                     show = showQuestion(32); //>P32
                     break;
                 }
-                break;
-            case 31:
-                //P31
-                show = showQuestion(32);
                 break;
             case 32:
                 //P32
@@ -3588,7 +3656,11 @@ public class ModeloPasajeros4 extends Form {
                 show = showQuestion(35);
                 break;
             case 35:
-            //P35
+                //P35
+                show = showQuestion(36);
+                break;
+            case 36:
+            //P36
             //FIN
                 break;
 
@@ -4188,6 +4260,28 @@ public class ModeloPasajeros4 extends Form {
         quest.setChekinb(selectedCode);
 
         //P25
+        RadioGroup rgEleccovid = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_eleccovid);
+
+        selectedCode = -1;
+        quest.setEleccovid("-1");
+        checkedId = rgEleccovid.getCheckedRadioButtonId();
+
+        if (checkedId > 0) {
+            switch (checkedId) {
+                case R.id.survey_radio_eleccovid_option1:
+                    selectedCode = 1;
+                    break;
+                case R.id.survey_radio_eleccovid_option2:
+                    selectedCode = 2;
+                    break;
+                default:
+                    selectedCode = 99;
+                    break;
+            }
+        }
+        quest.setEleccovid(String.valueOf(selectedCode));
+
+        //P26
         RadioGroup rgUsoave = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_usoave);
 
         selectedCode = -1;
@@ -4209,7 +4303,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setUsoave(String.valueOf(selectedCode));
 
-        //P26
+        //P27
         RadioGroup rgMotivoavion2 = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_motivoavion2);
         EditText etMotivoavion2 = (EditText) activity.findViewById(R.id.survey_edit_motivoavion2_otros);
 
@@ -4246,9 +4340,6 @@ public class ModeloPasajeros4 extends Form {
                 case R.id.survey_radio_motivoavion2_option13:
                     selectedCode = 13;
                     break;
-                case R.id.survey_radio_motivoavion2_option15:
-                    selectedCode = 15;
-                    break;
                 case R.id.survey_radio_motivoavion2_option91:
                     quest.setMotivoavion2otro(etMotivoavion2.getText().toString());
                     selectedCode = 91;
@@ -4260,7 +4351,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setMotivoavion2(String.valueOf(selectedCode));
 
-        //P27
+        //P28
         RadioGroup rgPrefiere = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_prefiere);
 
         selectedCode = -1;
@@ -4285,7 +4376,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setPrefiere(String.valueOf(selectedCode));
 
-        //P28
+        //P29
         RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
         EditText etGas_cons = (EditText) activity.findViewById(R.id.survey_edit_gas_cons);
 
@@ -4309,7 +4400,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setConsume(String.valueOf(selectedCode));
 
-        //P29
+        //P30
         RadioGroup rgComprart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
         EditText etGas_com = (EditText) activity.findViewById(R.id.survey_edit_gas_com);
 
@@ -4382,7 +4473,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setComprart(String.valueOf(selectedCode));
 
-        //P30
+        //P31
         RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
         selectedCode = -1;
         checkedId = rgCdslab.getCheckedRadioButtonId();
@@ -4411,7 +4502,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setCdslab(String.valueOf(selectedCode));
 
-        //P31
+        //P32
         RadioGroup rgCdsprof = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsprof);
         selectedCode = -1;
         checkedId = rgCdsprof.getCheckedRadioButtonId();
@@ -4440,7 +4531,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setCdsprof(String.valueOf(selectedCode));
 
-        //P32
+        //P33
         RadioGroup rgEstudios = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_estudios);
         selectedCode = -1;
         checkedId = rgEstudios.getCheckedRadioButtonId();
@@ -4463,7 +4554,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setEstudios(String.valueOf(selectedCode));
 
-        //P33
+        //P34
         RadioGroup rgCdedad = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedad);
 
         selectedCode = -1;
@@ -4514,7 +4605,7 @@ public class ModeloPasajeros4 extends Form {
         }
         quest.setCdedad(String.valueOf(selectedCode));
 
-        //P34
+        //P35
         RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
         selectedCode = -1;
         checkedId = rgCdsexo.getCheckedRadioButtonId();

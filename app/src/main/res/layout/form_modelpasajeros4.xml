@@ -53,26 +53,28 @@
     <!-- P24 -->
     <include layout="@layout/survey_cue_checkinb"/>
     <!-- P25 -->
-    <include layout="@layout/survey_cue_usoave"/>
+    <include layout="@layout/survey_cue_eleccovid"/>
     <!-- P26 -->
-    <include layout="@layout/survey_cue_motivoavion2"/>
+    <include layout="@layout/survey_cue_usoave"/>
     <!-- P27 -->
-    <include layout="@layout/survey_cue_prefiere"/>
+    <include layout="@layout/survey_cue_motivoavion2"/>
     <!-- P28 -->
-    <include layout="@layout/survey_cue_consume_gans_cons"/>
+    <include layout="@layout/survey_cue_prefiere"/>
     <!-- P29 -->
-    <include layout="@layout/survey_cue_comprart_gas_com_prod"/>
+    <include layout="@layout/survey_cue_consume_gans_cons"/>
     <!-- P30 -->
-    <include layout="@layout/survey_cue_cdslab"/>
+    <include layout="@layout/survey_cue_comprart_gas_com_prod"/>
     <!-- P31 -->
-    <include layout="@layout/survey_cue_cdsprof"/>
+    <include layout="@layout/survey_cue_cdslab"/>
     <!-- P32 -->
-    <include layout="@layout/survey_cue_estudios"/>
+    <include layout="@layout/survey_cue_cdsprof"/>
     <!-- P33 -->
-    <include layout="@layout/survey_cue_cdedad"/>
+    <include layout="@layout/survey_cue_estudios"/>
     <!-- P34 -->
-    <include layout="@layout/survey_cue_cdsexo"/>
+    <include layout="@layout/survey_cue_cdedad"/>
     <!-- P35 -->
+    <include layout="@layout/survey_cue_cdsexo"/>
+    <!-- P36 -->
     <include layout="@layout/survey_cue_valorexp"/>
 
 

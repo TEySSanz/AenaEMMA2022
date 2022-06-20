@@ -744,11 +744,18 @@
     <string name="survey_m4_radio_chekinb_option1">Aeropuerto (máquinas auto check-in)</string>
     <string name="survey_m4_radio_chekinb_option2">Por internet (online)</string>
     <!--Pregunta25-->
-    <string name="survey_m4_text_usoave">25. Para realizar este mismo trayecto ¿ha utilizado AVE en alguna ocasión?</string>
+    <string name="survey_m4_text_eleccovid">25. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
+    <string name="survey_m4_radio_eleccovid_option1">Solo tomaré un vuelo si es absolutamente necesario.</string>
+    <string name="survey_m4_radio_eleccovid_option2">Es poco probable que viaje a los niveles anteriores a la pandemia.</string>
+    <string name="survey_m4_radio_eleccovid_option3">Regresaré a los viajes aéreos a un nivel similar anterior a la pandemia.</string>
+    <string name="survey_m4_radio_eleccovid_option4">Las restricciones no han afectado a mi elección de viajar</string>
+    <string name="survey_m4_radio_eleccovid_option5">No suelo viajar en avión</string>
+    <!--Pregunta26-->
+    <string name="survey_m4_text_usoave">26. Para realizar este mismo trayecto ¿ha utilizado AVE en alguna ocasión?</string>
     <string name="survey_m4_radio_usoave_option1">Sí</string>
     <string name="survey_m4_radio_usoave_option2">No</string>
-    <!--Pregunta26-->
-    <string name="survey_m4_text_motivoavion2">26. ¿Podría indicar el principal motivo por el que ha elegido el avión para realizar este trayecto?</string>
+    <!--Pregunta27-->
+    <string name="survey_m4_text_motivoavion2">27. ¿Podría indicar el principal motivo por el que ha elegido el avión para realizar este trayecto?</string>
     <string name="survey_m4_radio_motivoavion2_option1">Duración Total del Viaje</string>
     <string name="survey_m4_radio_motivoavion2_option2">Mayor comodidad a bordo</string>
     <string name="survey_m4_radio_motivoavion2_option3">Billete más económico</string>
@@ -758,25 +765,24 @@
     <string name="survey_m4_radio_motivoavion2_option7">Mayor seguridad para los viajeros</string>
     <string name="survey_m4_radio_motivoavion2_option8">Horario-Frecuencias</string>
     <string name="survey_m4_radio_motivoavion2_option13">Aeropuerto está mejor comunicado o con mejores accesos</string>
-    <string name="survey_m4_radio_motivoavion2_option15">Billete gratuito (comprado con puntos, free, etc.)</string>
     <string name="survey_m4_radio_motivoavion2_option91">Otros (especificar)</string>
-    <!--Pregunta27-->
-    <string name="survey_m4_text_prefiere">27. Si tuviera que realizar este mismo trayecto, por el mismo motivo, prefiriría hacerlo en:</string>
+    <!--Pregunta28-->
+    <string name="survey_m4_text_prefiere">28. Si tuviera que realizar este mismo trayecto, por el mismo motivo, prefiriría hacerlo en:</string>
     <string name="survey_m4_radio_prefiere_option1">AVION</string>
     <string name="survey_m4_radio_prefiere_option2">AVE/TREN</string>
     <string name="survey_m4_radio_prefiere_option3">NS/NC</string>
-    <!--Pregunta28-->
-    <string name="survey_m4_text_consume">28. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
+    <!--Pregunta29-->
+    <string name="survey_m4_text_consume">29. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
     <string name="survey_m4_radio_consume_option1">Sí</string>
-    <string name="survey_m4_text_gas_cons">28a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
+    <string name="survey_m4_text_gas_cons">29a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
     <string name="survey_m4_text_gas_cons_ent">Expresar cantidad en €</string>
     <string name="survey_m4_radio_consume_option2">No</string>
-    <!--Pregunta29-->
-    <string name="survey_m4_text_comprart">29. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
+    <!--Pregunta30-->
+    <string name="survey_m4_text_comprart">30. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
     <string name="survey_m4_radio_comprart_option1">Sí</string>
-    <string name="survey_m4_text_gas_com">29a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
+    <string name="survey_m4_text_gas_com">30a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
     <string name="survey_m4_text_gas_com_ent">Expresar cantidad en €</string>
-    <string name="survey_m4_text_prod">29b. ¿Podría indicar qué tipo de productos ha comprado?</string>
+    <string name="survey_m4_text_prod">30b. ¿Podría indicar qué tipo de productos ha comprado?</string>
     <string name="survey_m4_text_prod_ent">MOSTRAR TARJETA TIPOLOGIA DE PRODUCTO</string>
     <string name="survey_m4_text_prod1">1</string>
     <string name="survey_m4_text_prod2">2</string>
@@ -784,28 +790,28 @@
     <string name="survey_m4_text_prod4">4</string>
     <string name="survey_m4_text_prod5">5</string>
     <string name="survey_m4_radio_comprart_option2">No</string>
-    <!--Pregunta30-->
-    <string name="survey_m4_text_cdslab">30. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <!--Pregunta31-->
+    <string name="survey_m4_text_cdslab">31. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
     <string name="survey_m4_radio_cdslab_option1">Trabaja</string>
     <string name="survey_m4_radio_cdslab_option3">Desempleado</string>
     <string name="survey_m4_radio_cdslab_option5">Estudiante</string>
     <string name="survey_m4_radio_cdslab_option2">Jubilado o pensionista</string>
     <string name="survey_m4_radio_cdslab_option6">Ama de casa</string>
-    <!--Pregunta31-->
-    <string name="survey_m4_text_cdsprof">31. Usted trabaja como...</string>
+    <!--Pregunta32-->
+    <string name="survey_m4_text_cdsprof">32. Usted trabaja como...</string>
     <string name="survey_m4_radio_cdsprof_option1">Empresario o profesional con empleados</string>
     <string name="survey_m4_radio_cdsprof_option2">Profesional o trabajador autónomo</string>
     <string name="survey_m4_radio_cdsprof_option5">Asalariado fijo del sector público</string>
     <string name="survey_m4_radio_cdsprof_option6">Asalariado fijo del sector privado</string>
     <string name="survey_m4_radio_cdsprof_option0">Asalariado eventual o interino</string>
     <string name="survey_m4_radio_cdsprof_option9">Otra situación</string>
-    <!--Pregunta32-->
-    <string name="survey_m4_text_estudios">32. ¿Podría decirme el nivel de estudios terminados?</string>
+    <!--Pregunta33-->
+    <string name="survey_m4_text_estudios">33. ¿Podría decirme el nivel de estudios terminados?</string>
     <string name="survey_m4_radio_estudios_option1">Primarios/Básicos/EGB</string>
     <string name="survey_m4_radio_estudios_option3">Secundarios (ESO/BUP/Bachiller/FP Grado medio)</string>
     <string name="survey_m4_radio_estudios_option5">Superiores (Universitarios/Técnico Superior)</string>
-    <!--Pregunta33-->
-    <string name="survey_m4_text_cdedad">33. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <!--Pregunta34-->
+    <string name="survey_m4_text_cdedad">34. ¿A cuál de estos grupos de edad pertenece usted?</string>
     <string name="survey_m4_radio_cdedad_option1">menor de 15 años</string>
     <string name="survey_m4_radio_cdedad_option2">15 a 19 años</string>
     <string name="survey_m4_radio_cdedad_option3">20 a 24 años</string>
@@ -818,8 +824,8 @@
     <string name="survey_m4_radio_cdedad_option10">70 a 79 años</string>
     <string name="survey_m4_radio_cdedad_option11">80 a 84 años</string>
     <string name="survey_m4_radio_cdedad_option12">mayor de 85 años</string>
-    <!--Pregunta34-->
-    <string name="survey_m4_text_cdsexo">34. Sexo</string>
+    <!--Pregunta35-->
+    <string name="survey_m4_text_cdsexo">35. Sexo</string>
     <string name="survey_m4_radio_cdsexo_option1">Hombre</string>
     <string name="survey_m4_radio_cdsexo_option2">Mujer</string>
     <string name="survey_m4_text_muchasgracias">Muchas gracias por su colaboración</string>
@@ -827,8 +833,8 @@
     <string name="minuto">MM</string>
     <string name="dos_puntos">:</string>
     <string name="survey_text_error_date">Error fecha</string>
-    <!--Pregunta35-->
-    <string name="survey_m4_text_valorexp">35. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <!--Pregunta36-->
+    <string name="survey_m4_text_valorexp">36. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
 
 
 </resources>

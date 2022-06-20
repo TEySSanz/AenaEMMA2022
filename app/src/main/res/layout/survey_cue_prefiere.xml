@@ -5,19 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="ExtraText">
+
     <LinearLayout
         android:id="@+id/survey_layout_prefiere"
+        style="@style/SurveySingleQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        style="@style/SurveySingleQuestion"
         android:visibility="gone">
 
         <TextView
             android:id="@+id/survey_text_prefiere"
+            style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/SurveyQuestionTitle"
             android:text="@string/survey_m4_text_prefiere" />
 
         <LinearLayout
