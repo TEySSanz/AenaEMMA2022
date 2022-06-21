@@ -34,6 +34,7 @@ public class ListadoPasajerosItemAdapter extends ArrayAdapter<CuePasajerosListad
             holder.txt_idioma = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codIdioma));
             holder.txt_vuelo = ((TextView) convertView.findViewById(R.id.surveylist_item_text_vuelo));
             holder.txt_puerta = ((TextView) convertView.findViewById(R.id.surveylist_item_text_puerta));
+            holder.txt_enviado = ((TextView) convertView.findViewById(R.id.surveylist_item_text_enviado));
 
             convertView.setTag(holder);
         } else {
@@ -44,6 +45,7 @@ public class ListadoPasajerosItemAdapter extends ArrayAdapter<CuePasajerosListad
             holder.txt_idioma = ((TextView) convertView.findViewById(R.id.surveylist_item_text_codIdioma));
             holder.txt_vuelo = ((TextView) convertView.findViewById(R.id.surveylist_item_text_vuelo));
             holder.txt_puerta = ((TextView) convertView.findViewById(R.id.surveylist_item_text_puerta));
+            holder.txt_enviado = ((TextView) convertView.findViewById(R.id.surveylist_item_text_enviado));
 
             holder = (ViewHolder) convertView.getTag();
         }
@@ -55,6 +57,7 @@ public class ListadoPasajerosItemAdapter extends ArrayAdapter<CuePasajerosListad
         holder.txt_idioma.setText(String.valueOf(cue.getIdioma()));
         holder.txt_vuelo.setText(String.valueOf(cue.getVuelo()));
         holder.txt_puerta.setText(String.valueOf(cue.getPuerta()));
+        holder.txt_enviado.setText(String.valueOf(cue.getEnviado()));
 
         return convertView;
     }
@@ -66,5 +69,6 @@ public class ListadoPasajerosItemAdapter extends ArrayAdapter<CuePasajerosListad
         public TextView txt_idioma;
         public TextView txt_vuelo;
         public TextView txt_puerta;
+        public TextView txt_enviado;
     }
 }

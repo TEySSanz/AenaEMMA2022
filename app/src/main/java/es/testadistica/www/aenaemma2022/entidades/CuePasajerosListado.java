@@ -10,14 +10,16 @@ public class CuePasajerosListado implements Serializable {
     private String idioma;
     private String vuelo;
     private String puerta;
+    private String enviado;
 
-    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta) {
+    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta, String enviado) {
         this.iden = iden;
         this.encuestador = encuestador;
         this.fecha = fecha;
         this.idioma = idioma;
         this.vuelo = vuelo;
         this.puerta = puerta;
+        this.enviado = enviado;
     }
 
     public int getIden() {
@@ -66,5 +68,13 @@ public class CuePasajerosListado implements Serializable {
 
     public void setPuerta(String puerta) {
         this.puerta = puerta;
+    }
+
+    public String getEnviado() {
+        return enviado;
+    }
+
+    public void setEnviado(String enviado) {
+        this.enviado = enviado;
     }
 }

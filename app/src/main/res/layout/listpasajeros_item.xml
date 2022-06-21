@@ -75,6 +75,18 @@
         android:textColor="@color/aenaBlue"
         android:textSize="14dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/surveylist_item_text_enviado"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:hint="XX"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
 <!--
     <ImageButton
         android:id="@+id/surveylist_item_button_delete"

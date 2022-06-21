@@ -247,6 +247,17 @@
                 android:textColor="@color/aenaLightGrey"
                 android:textStyle="bold"
                 android:text="@string/surveylist_text_header_terminal" />
+
+            <TextView
+                android:id="@+id/surveylist_item_text_enviado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/aenaLightGrey"
+                android:textStyle="bold"
+                android:text="@string/surveylist_text_header_enviado" />
 <!--
             <Button
                 android:layout_width="0dp"

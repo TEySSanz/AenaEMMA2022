@@ -178,7 +178,8 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                         "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
                         "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
                         "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUECA + ",' '), " +
-                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ",' ') " +
+                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ",' '), " +
+                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ",' ') " +
                         " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
                                    Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
                                    Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
@@ -187,7 +188,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
-            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+            cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
             listaCue.add(cue);
         }
 

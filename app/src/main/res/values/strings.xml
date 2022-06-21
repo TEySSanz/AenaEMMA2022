@@ -42,6 +42,7 @@
     <string name="surveylist_text_header_codIdioma">IDIOMA</string>
     <string name="surveylist_text_header_vuelo">VUELO</string>
     <string name="surveylist_text_header_terminal">PUERTA</string>
+    <string name="surveylist_text_header_enviado">ENVIADO </string>
     <string name="surveylist_text_header_delete" />
     <string name="button_upload">ENVIAR</string>
     <string name="spinner_idioma_title">SELECCIONE EL IDIOMA</string>
