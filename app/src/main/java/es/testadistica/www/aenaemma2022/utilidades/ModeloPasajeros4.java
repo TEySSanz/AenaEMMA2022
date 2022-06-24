@@ -1357,6 +1357,14 @@ public class ModeloPasajeros4 extends Form {
                 rgChekinb.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
+        //P25
+        final RadioGroup rgEleccovid = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_eleccovid);
+        rgEleccovid.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged (RadioGroup radioGroup, int i){
+                rgEleccovid.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
+            }
+        });
         //P27
         RadioGroup rgMotivoavion2= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_motivoavion2);
         rgMotivoavion2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1854,7 +1862,7 @@ public class ModeloPasajeros4 extends Form {
                         return false;
                     }*/
 
-                    final SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
+                    final SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
 
                     if (getValorDesplegable(sp_cdpaisre).substring(0,3).equals("000")) {
                         sp_cdpaisre.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -1900,21 +1908,10 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case 3:
                     //P3
-                    if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
-                        /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
-                            return false;
-                        }*/
-                        final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
-
-                        if (getValorDesplegable(sp_cdlocaco).substring(0,5).equals("00000")) {
-                            sp_cdlocaco.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-
-                            return getDialogValueBackError(activity,
-                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                    activity.getResources().getString(R.string.survey_text_selectOption),
-                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                        }
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo))){
+                        return false;
                     }
+
                     if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
                         /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
                             return false;
@@ -2218,8 +2215,14 @@ public class ModeloPasajeros4 extends Form {
                     }
 
                     if (rgCdTerm.getCheckedRadioButtonId() == R.id.survey_radio_cdterm_option2){
-                        if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdociaar), "000")) {
-                            return false;
+                        final SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
+                        if(getValorDesplegable(sp_cdociaar).substring(0,3).equals("000")) {
+                            sp_cdociaar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }
 
                         if(activity.findViewById(R.id.survey_layout_cdociaarotro).getVisibility()==VISIBLE) {
