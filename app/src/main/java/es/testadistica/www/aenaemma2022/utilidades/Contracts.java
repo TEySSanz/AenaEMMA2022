@@ -273,7 +273,9 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_CDSEXO = "cdsexo";
     public static final String COLUMN_CUEPASAJEROS_IDIOMA = "idioma";
     public static final String COLUMN_CUEPASAJEROS_CDPAISNA = "cdpaisna";
+    public static final String COLUMN_CUEPASAJEROS_CDPAISNAOTRO = "cdpaisnaotro";
     public static final String COLUMN_CUEPASAJEROS_CDPAISRE = "cdpaisre";
+    public static final String COLUMN_CUEPASAJEROS_CDPAISREOTRO = "cdpaisreotro";
     public static final String COLUMN_CUEPASAJEROS_CDLOCADO = "cdlocado";
     public static final String COLUMN_CUEPASAJEROS_DISTRES = "distres";
     public static final String COLUMN_CUEPASAJEROS_DISTRESOTRO = "distresotro";
@@ -371,7 +373,9 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_CDOCIAAR + " TEXT," +
             COLUMN_CUEPASAJEROS_CDOCIAAROTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDPAISNA + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDPAISNAOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDPAISRE + " TEXT," +
+            COLUMN_CUEPASAJEROS_CDPAISREOTRO + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSEXO + " INTEGER," +
             COLUMN_CUEPASAJEROS_CDSLAB + " TEXT," +
             COLUMN_CUEPASAJEROS_CDSPROF + " TEXT," +

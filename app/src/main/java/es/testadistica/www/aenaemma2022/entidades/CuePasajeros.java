@@ -36,7 +36,9 @@ public class CuePasajeros implements Serializable {
     private String cdociaar;
     private String cdociaarotro;
     private String cdpaisna;
+    private String cdpaisnaotro;
     private String cdpaisre;
+    private String cdpaisreotro;
     private int cdsexo;
     private String cdslab;
     private String cdsprof;
@@ -350,12 +352,28 @@ public class CuePasajeros implements Serializable {
         this.cdpaisna = cdpaisna;
     }
 
+    public String getCdpaisnaotro() {
+        return cdpaisnaotro;
+    }
+
+    public void setCdpaisnaotro(String cdpaisnaotro) {
+        this.cdpaisnaotro = cdpaisnaotro;
+    }
+
     public String getCdpaisre() {
         return cdpaisre;
     }
 
     public void setCdpaisre(String cdpaisre) {
         this.cdpaisre = cdpaisre;
+    }
+
+    public String getCdpaisreotro() {
+        return cdpaisreotro;
+    }
+
+    public void setCdpaisreotro(String cdpaisreotro) {
+        this.cdpaisreotro = cdpaisreotro;
     }
 
     public int getCdsexo() {
