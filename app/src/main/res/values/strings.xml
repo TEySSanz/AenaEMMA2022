@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.9)</string>
+    <string name="app_name">EMMA 2022 (v1.10)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.9</string>
+    <string name="version">v1.10</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>

@@ -10,8 +10,8 @@ android {
         applicationId "es.testadistica.www.aenaemma2022"
         minSdk 19
         targetSdk 31
-        versionCode 9
-        versionName "1.9"
+        versionCode 10
+        versionName "1.10"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
