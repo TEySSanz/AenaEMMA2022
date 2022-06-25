@@ -3627,7 +3627,7 @@ public class ModeloPasajeros4 extends Form {
                 show = showQuestion(25);
                 break;
             case 25:
-                //P26
+                //P25
                 if (activated) {
                     RadioGroup rgCdterm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
                     checkedId = rgCdterm.getCheckedRadioButtonId();
@@ -3639,13 +3639,19 @@ public class ModeloPasajeros4 extends Form {
                                 String textSpCdiaptod = getValorDesplegable(sp_cdiaptod).substring(0,3);
                                 if (textSpCdiaptod.equals("MAD")){ //España
                                     show = showQuestion(26); //>P26
-                                } else
+                                } else {
                                     show = showQuestion(29); //>P29
+                                }
+                                break;
+                            default:
+                                show = showQuestion(29); //>P29
                                 break;
                         }
                     } else {
                         show = showQuestion(29); //>P29
                     }
+                } else {
+                    show = showQuestion(26); //>P26
                 }
                 break;
             case 26:
