@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.11)</string>
+    <string name="app_name">EMMA 2022 (v1.12)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.11</string>
+    <string name="version">v1.12</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -446,4 +446,19 @@
     <string name="survey_m4_radio_eleccovid_option3">I will return to air travel at a similar pre-pandemic level.</string>
     <string name="survey_m4_radio_eleccovid_option4">The restrictions have not affected my choice to travel</string>
     <string name="survey_m4_radio_eleccovid_option5">I don\'t usually travel by plane</string>
+    <string name="survey_m5_text_eleccovid">22. How the COVID-19 pandemic has affected your choice to travel by plane: (Check the option that best suits your choice)</string>
+    <string name="survey_m5_text_p44factu">23.Have you checked in your luggage?</string>
+    <string name="survey_m5_text_nperbul">"24. How many people do these cases belong to?                        "</string>
+    <string name="survey_m5_text_chekinb">25.- Where did you obtain your boarding pass?</string>
+    <string name="survey_m5_text_consume">"26.Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)? "</string>
+    <string name="survey_m5_text_gas_cons">26a.Approximately how much has been spent today in the catering services at the airport</string>
+    <string name="survey_m5_text_comprart">"27.Have you bought today anything in the airport shops? "</string>
+    <string name="survey_m5_text_gas_com">"27a. And how much has been spent on the airport shops? "</string>
+    <string name="survey_m5_text_prod">27b Could you please state what kind of products you have purchased?</string>
+    <string name="survey_m5_text_cdslab">28.Which of the following work situations are you currently in?</string>
+    <string name="survey_m5_text_cdsprof">29.Do you work as?</string>
+    <string name="survey_m5_text_estudios">30. Education</string>
+    <string name="survey_m5_text_cdedad">31. Which of these age groups do you belong to?</string>
+    <string name="survey_m5_text_cdsexo">32. Gender</string>
+    <string name="survey_m5_text_valorexp">33. How do you rate the experience of your time at the airport?</string>
 </resources>
