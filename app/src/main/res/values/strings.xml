@@ -57,6 +57,8 @@
     <string name="spinner_pais_title">SELECCIONE EL PAÍS</string>
     <string name="spinner_pais1y2_title">SELECCIONE EL ÁREA / REGIÓN</string>
     <string name="spinner_provincia_title">SELECCIONE LA PROVINCIA</string>
+    <string name="spinner_isla_title">SELECCIONE LA ISLA</string>
+    <string name="spinner_localidad_title">SELECCIONE LA LOCALIDAD</string>
     <string name="spinner_municipio_title">SELECCIONE EL MUNICIPIO</string>
     <string name="spinner_distrito_title">SELECCIONE EL DISTRITO</string>
     <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
@@ -836,6 +838,38 @@
     <string name="survey_text_error_date">Error fecha</string>
     <!--Pregunta36-->
     <string name="survey_m4_text_valorexp">36. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+
+    <!--Preguntas Modelo 5 IBZ-->
+
+    <!--Pregunta3-->
+    <string name="survey_m5_text_cdlocaco_prov">Isla</string>
+    <!--Pregunta22-->
+    <string name="survey_m5_text_eleccovid">22. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
+    <!--Pregunta23-->
+    <string name="survey_m5_text_p44factu">23. ¿Ha facturado equipaje?</string>
+    <!--Pregunta24-->
+    <string name="survey_m5_text_nperbul">24. ¿A cuántas personas pertenecen los bultos?</string>
+    <!--Pregunta25-->
+    <string name="survey_m5_text_chekinb">25. ¿Dónde ha obtenido su tarjeta de embarque?</string>
+    <!--Pregunta26-->
+    <string name="survey_m5_text_consume">26. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
+    <string name="survey_m5_text_gas_cons">26a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
+    <!--Pregunta27-->
+    <string name="survey_m5_text_comprart">27. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
+    <string name="survey_m5_text_gas_com">27a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
+    <string name="survey_m5_text_prod">27b. ¿Podría indicar qué tipo de productos ha comprado?</string>
+    <!--Pregunta28-->
+    <string name="survey_m5_text_cdslab">28. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <!--Pregunta29-->
+    <string name="survey_m5_text_cdsprof">29. Usted trabaja como...</string>
+    <!--Pregunta30-->
+    <string name="survey_m5_text_estudios">30. ¿Podría decirme el nivel de estudios terminados?</string>
+    <!--Pregunta31-->
+    <string name="survey_m5_text_cdedad">31. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <!--Pregunta32-->
+    <string name="survey_m5_text_cdsexo">32. Sexo</string>
+    <!--Pregunta33-->
+    <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
 
 
 </resources>

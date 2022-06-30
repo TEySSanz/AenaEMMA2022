@@ -30,6 +30,14 @@
             android:text="@string/survey_m4_text_p44factu"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_p44factu_m5"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m5_text_p44factu"
+            android:visibility="gone"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

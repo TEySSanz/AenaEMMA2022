@@ -4917,6 +4917,12 @@ public class ModeloPasajeros1 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_cdidavue_option1:
+                    if (ckCdidavue.isChecked()){
+                        quest.setTaus(stringToInt("0"));
+                    } else {
+                        EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
+                        quest.setTaus(stringToInt(etTaus.getText().toString()));
+                    }
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_cdidavue_option2:

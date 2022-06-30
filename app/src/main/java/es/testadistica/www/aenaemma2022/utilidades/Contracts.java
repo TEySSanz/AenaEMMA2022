@@ -49,13 +49,15 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_DESCRIPCION = "descripcion";
     public static final String COLUMN_TIPOAEROPUERTOS_DESCRIPCIONPRINCIPAL = "descripcionPrincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_CODPAIS = "codPais";
-    public static final String COLUMN_TIPOAEROPUERTOS_PAIS = "Pais";
+    public static final String COLUMN_TIPOAEROPUERTOS_PAIS = "pais";
     public static final String COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL = "MADprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_MADOLEADA = "MADoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL = "BCNprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_BCNOLEADA = "BCNoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL = "SVQprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_SVQOLEADA = "SVQoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL = "IBZprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_IBZOLEADA = "IBZoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -68,11 +70,13 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_BCNOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_SVQPRINCIPAL + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_SVQOLEADA + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_SVQOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
-    public static final String TABLE_TIPOCOMPANIAS = "TipoCompanias";
+    public static final String TABLE_TIPOCOMPANIAS = "Companias";
     public static final String COLUMN_TIPOCOMPANIAS_IDEN = "iden";
     public static final String COLUMN_TIPOCOMPANIAS_CODIGO = "codigo";
     public static final String COLUMN_TIPOCOMPANIAS_DESCRIPCION = "descripcion";
@@ -82,6 +86,8 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_BCNOLEADA = "BCNoleada";
     public static final String COLUMN_TIPOCOMPANIAS_SVQAEREA = "SVQaerea";
     public static final String COLUMN_TIPOCOMPANIAS_SVQOLEADA = "SVQoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_IBZAEREA = "IBZaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_IBZOLEADA = "IBZoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
@@ -91,7 +97,9 @@ public class Contracts {
             COLUMN_TIPOCOMPANIAS_BCNAEREA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_BCNOLEADA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_SVQAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_SVQOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_SVQOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_IBZAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_IBZOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos
@@ -243,6 +251,32 @@ public class Contracts {
             COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO + " TEXT )";
     public static final String SQL_DROP_TIPOMOTIVOVIAJEFILTRO = "DROP TABLE IF EXISTS " + TABLE_TIPOMOTIVOVIAJEFILTRO;
 
+    //Tabla TipoIslas
+    public static final String TABLE_TIPOISLAS = "TipoIslas";
+    public static final String COLUMN_TIPOISLAS_IDEN = "iden";
+    public static final String COLUMN_TIPOISLAS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOISLAS_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOISLAS = "CREATE TABLE "+ TABLE_TIPOISLAS + " ("+
+            COLUMN_TIPOISLAS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOISLAS_CODIGO + " TEXT, " +
+            COLUMN_TIPOISLAS_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOISLAS = "DROP TABLE IF EXISTS " + TABLE_TIPOISLAS;
+
+    //Tabla TipoIslasLocalidad
+    public static final String TABLE_TIPOISLASLOCALIDAD = "TipoIslasLocalidad";
+    public static final String COLUMN_TIPOISLASLOCALIDAD_IDEN = "iden";
+    public static final String COLUMN_TIPOISLASLOCALIDAD_CODIGO = "codigo";
+    public static final String COLUMN_TIPOISLASLOCALIDAD_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA = "codigoIsla";
+    public static final String COLUMN_TIPOISLASLOCALIDAD_DESCRIPCIONISLA = "descripcionIsla";
+    public static final String SQL_CREATE_TIPOISLASLOCALIDAD = "CREATE TABLE "+ TABLE_TIPOISLASLOCALIDAD + " ("+
+            COLUMN_TIPOISLASLOCALIDAD_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOISLASLOCALIDAD_CODIGO + " TEXT, " +
+            COLUMN_TIPOISLASLOCALIDAD_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA + " TEXT, " +
+            COLUMN_TIPOISLASLOCALIDAD_DESCRIPCIONISLA + " TEXT )";
+    public static final String SQL_DROP_TIPOISLASLOCALIDAD = "DROP TABLE IF EXISTS " + TABLE_TIPOISLASLOCALIDAD;
+
     //Tabla CuePasajeros
     public static final String TABLE_CUEPASAJEROS = "CuePasajeros";
     public static final String COLUMN_CUEPASAJEROS_IDEN = "iden";
@@ -339,6 +373,7 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_HINI = "hini";
     public static final String COLUMN_CUEPASAJEROS_HFIN = "hfin";
     public static final String COLUMN_CUEPASAJEROS_PUERTA = "puerta";
+    public static final String COLUMN_CUEPASAJEROS_CDLOCACOOTRO = "cdlocacootro";
     public static final String COLUMN_CUEPASAJEROS_VALOREXP = "valorexp";
     public static final String SQL_CREATE_CUEPASAJEROS = "CREATE TABLE "+ TABLE_CUEPASAJEROS + " ("+
             COLUMN_CUEPASAJEROS_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -435,6 +470,7 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_BUSTERMI + " INTEGER," +
             COLUMN_CUEPASAJEROS_DROPOFF + " TEXT," +
             COLUMN_CUEPASAJEROS_ELECCOVID + " TEXT, " +
+            COLUMN_CUEPASAJEROS_CDLOCACOOTRO + " TEXT, " +
             COLUMN_CUEPASAJEROS_VALOREXP + " INTEGER )";
     public static final String SQL_DROP_CUEPASAJEROS = "DROP TABLE IF EXISTS " + TABLE_CUEPASAJEROS;
 

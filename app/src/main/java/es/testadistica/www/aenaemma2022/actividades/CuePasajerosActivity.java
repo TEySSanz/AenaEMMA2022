@@ -125,6 +125,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 5:
                 form = new ModeloPasajeros5(this, pregunta, conn);
                 ((ModeloPasajeros5) form).setCue(cue);
+                maxPreg=33;
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
@@ -154,7 +155,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            if (modeloCue==1 || modeloCue==4){
+                            if (modeloCue==1 || modeloCue==4|| modeloCue==5){
                                 System.out.println("pregunta "+pregunta);
                                 System.out.println("maxPreg "+maxPreg);
                                 if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
@@ -210,6 +211,8 @@ public class CuePasajerosActivity extends AppCompatActivity {
                     anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
                 } else if (modeloCue == 4) {
                     anterior = ((ModeloPasajeros4) form).getPreguntaAnterior();
+                } else if (modeloCue == 5) {
+                    anterior = ((ModeloPasajeros5) form).getPreguntaAnterior();
                 }
                 //form.onPreviousPressed(actual, anterior);
                 pregunta = form.onPreviousPressed(actual, anterior);

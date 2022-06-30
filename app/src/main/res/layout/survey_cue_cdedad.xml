@@ -29,6 +29,14 @@
             android:text="@string/survey_m4_text_cdedad"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdedad_m5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m5_text_cdedad"
+            android:visibility="gone"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

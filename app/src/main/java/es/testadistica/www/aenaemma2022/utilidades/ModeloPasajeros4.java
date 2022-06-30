@@ -1075,7 +1075,6 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdmviajefiltro.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String textoViajeFiltro = sp_cdmviajefiltro.getSelectedItem().toString().substring(0,2);
                 String textoViajeFiltro = getValorDesplegable(sp_cdmviajefiltro).substring(0,2);
 
                 String filtroViaje = " iden IS NOT NULL ";
@@ -1085,11 +1084,6 @@ public class ModeloPasajeros4 extends Form {
                     filtroViaje = " "+Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO+" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
                 }
 
-                /*ArrayAdapter<String> motivoViajeAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE, "iden", "codigo", "descripcion", "codigo", filtroViaje));
-                motivoViajeAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                SearchableSpinner sp_cdmviaje;
-                sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
-                sp_cdmviaje.setAdapter(motivoViajeAdapter);*/
                 ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo", filtroViaje));
                 sp_cdmviaje.setAdapter(motivoViajeAdapter, 1, 1, activity.getString(R.string.spinner_motivo_title), activity.getString(R.string.spinner_close));
             }
@@ -1527,6 +1521,7 @@ public class ModeloPasajeros4 extends Form {
         });
     }
 
+
     @Override
     public int onNextPressed(int p) {
         if (checkQuestion(p)) {
@@ -1870,9 +1865,6 @@ public class ModeloPasajeros4 extends Form {
             switch (check) {
                 case 1:
                     //P1
-                    /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdpaisna), "000")) {
-                        return false;
-                    }*/
                     final SearchableSpinner sp_cdpaisna = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
 
                     if (getValorDesplegable(sp_cdpaisna).substring(0,3).equals("000")) {
@@ -4079,6 +4071,12 @@ public class ModeloPasajeros4 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_cdidavue_option1:
+                    if (ckCdidavue.isChecked()){
+                        quest.setTaus(stringToInt("0"));
+                    } else {
+                        EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
+                        quest.setTaus(stringToInt(etTaus.getText().toString()));
+                    }
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_cdidavue_option2:
@@ -4341,6 +4339,15 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case R.id.survey_radio_eleccovid_option2:
                     selectedCode = 2;
+                    break;
+                case R.id.survey_radio_eleccovid_option3:
+                    selectedCode = 3;
+                    break;
+                case R.id.survey_radio_eleccovid_option4:
+                    selectedCode = 4;
+                    break;
+                case R.id.survey_radio_eleccovid_option5:
+                    selectedCode = 5;
                     break;
                 default:
                     selectedCode = 99;
@@ -4692,6 +4699,10 @@ public class ModeloPasajeros4 extends Form {
             }
         }
         quest.setCdsexo(selectedCode);
+
+        //P36
+        RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
+        quest.setValorexp(Math.round(rabValorexp.getRating()));
 
         return quest;
     }

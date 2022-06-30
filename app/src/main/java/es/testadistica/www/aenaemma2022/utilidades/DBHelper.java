@@ -151,6 +151,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOMOTIVOVIAJEFILTRO);
         DBInsert.insertsTipoMotivoViajeFiltro(db);
 
+        //TipoIslas
+        db.execSQL(Contracts.SQL_DROP_TIPOISLAS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOISLAS);
+        DBInsert.insertsTipoIslas(db);
+
+        //TipoIslasLocalidad
+        db.execSQL(Contracts.SQL_DROP_TIPOISLASLOCALIDAD);
+        db.execSQL(Contracts.SQL_CREATE_TIPOISLASLOCALIDAD);
+        DBInsert.insertsTipoIslasLocalidad(db);
+
     }
 
     public void addColumn (SQLiteDatabase db, String tabla, String columna){

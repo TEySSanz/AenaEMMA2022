@@ -98,6 +98,7 @@ public class CuePasajeros implements Serializable {
     private int bustermi;
     private String dropoff;
     private String eleccovid;
+    private String cdlocacootro;
     private int valorexp;
 
     public CuePasajeros(){
@@ -840,6 +841,14 @@ public class CuePasajeros implements Serializable {
 
     public void setEleccovid(String eleccovid) {
         this.eleccovid = eleccovid;
+    }
+
+    public String getCdlocacootro() {
+        return cdlocacootro;
+    }
+
+    public void setCdlocacootro(String cdlocacootro) {
+        this.cdlocacootro = cdlocacootro;
     }
 
     public int getValorexp() { return valorexp; }
