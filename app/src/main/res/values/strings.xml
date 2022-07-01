@@ -842,6 +842,7 @@
     <!--Preguntas Modelo 5 IBZ-->
 
     <!--Pregunta3-->
+    <string name="survey_m5_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Ibiza?</string>
     <string name="survey_m5_text_cdlocaco_prov">Isla</string>
     <!--Pregunta22-->
     <string name="survey_m5_text_eleccovid">22. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>

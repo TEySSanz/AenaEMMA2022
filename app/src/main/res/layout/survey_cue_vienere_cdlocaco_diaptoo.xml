@@ -19,7 +19,16 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m4_text_viene_re" />
+            android:text="@string/survey_m4_text_viene_re"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_m5_text_viene_re"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m5_text_viene_re"
+            android:visibility="gone"/>
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re_diaptoo"

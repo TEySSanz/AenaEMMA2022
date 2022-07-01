@@ -2960,6 +2960,7 @@ public class ModeloPasajeros4 extends Form {
                 case 12:
                     //P12
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOF, cue.getCdiaptof());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO, cue.getCdiaptofotro());
                     break;
                 case 13:
                     //P13
@@ -3131,6 +3132,7 @@ public class ModeloPasajeros4 extends Form {
                 case 12:
                     //P12
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOF);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO);
                     break;
                 case 13:
                     //P13
@@ -4046,6 +4048,12 @@ public class ModeloPasajeros4 extends Form {
         String textSpCdiaptof = getValorDesplegable(sp_cdiaptof).substring(0,3);
         if(!textSpCdiaptof.contains("000")){
             quest.setCdiaptof(textSpCdiaptof);
+            if (textSpCdiaptof.contains("ZZZ")){
+                EditText et_cdiaptofotro = (EditText) activity.findViewById(R.id.survey_edit_cdiaptofotro);
+                quest.setCdiaptofotro(et_cdiaptofotro.getText().toString());
+            } else {
+                quest.setCdiaptofotro("-1");
+            }
         } else {
             quest.setCdiaptof("-1");
         }

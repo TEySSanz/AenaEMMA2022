@@ -97,6 +97,8 @@ public class ModeloPasajeros5 extends Form {
                 //P3 NO
                 activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdlocaco_prov_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                activity.findViewById(R.id.survey_m5_text_viene_re).setVisibility(VISIBLE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 //P5 NO
@@ -3677,7 +3679,7 @@ public class ModeloPasajeros5 extends Form {
         String textSpCdiaptof = getValorDesplegable(sp_cdiaptof).substring(0,3);
         if(!textSpCdiaptof.contains("000")){
             quest.setCdiaptof(textSpCdiaptof);
-            if (textSpCdiaptof.contains("999")){
+            if (textSpCdiaptof.contains("ZZZ")){
                 EditText et_cdiaptofotro = (EditText) activity.findViewById(R.id.survey_edit_cdiaptofotro);
                 quest.setCdiaptofotro(et_cdiaptofotro.getText().toString());
             } else {

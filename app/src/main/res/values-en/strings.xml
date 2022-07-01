@@ -461,4 +461,5 @@
     <string name="survey_m5_text_cdedad">31. Which of these age groups do you belong to?</string>
     <string name="survey_m5_text_cdsexo">32. Gender</string>
     <string name="survey_m5_text_valorexp">33. How do you rate the experience of your time at the airport?</string>
+    <string name="survey_m5_text_viene_re">3.Where did you start your journey to take this flight in Ibiza´s airport?</string>
 </resources>

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modelpasajeros4.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdidavue_taus.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_npers.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_dropdown.xml" value="0.3085" />
         <entry key="..\:/Users/eduardo/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/drawable/progressbar.xml" value="0.3085" />
@@ -76,7 +79,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
