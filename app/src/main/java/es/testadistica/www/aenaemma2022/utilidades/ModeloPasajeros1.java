@@ -3262,7 +3262,7 @@ public class ModeloPasajeros1 extends Form {
                     break;
                 case 6:
                     //P6
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CIAANTES, cue.getConexfac());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CONEXFAC, cue.getConexfac());
                     break;
                 case 7:
                     //P7
@@ -3330,6 +3330,7 @@ public class ModeloPasajeros1 extends Form {
                 case 20:
                     //P20
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOF, cue.getCdiaptof());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO, cue.getCdiaptofotro());
                     break;
                 case 21:
                     //P21
@@ -3530,6 +3531,7 @@ public class ModeloPasajeros1 extends Form {
                 case 20:
                     //P20
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOF);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO);
                     break;
                 case 21:
                     //P21
@@ -4676,7 +4678,7 @@ public class ModeloPasajeros1 extends Form {
         quest.setModo1(String.valueOf(selectedCode));
 
         selectedCode = -1;
-        if (stringToInt(quest.getNmodos())>3) {
+        if (stringToInt(quest.getNmodos())>=3) {
             checkedId = rgUltimodo_2modo.getCheckedRadioButtonId();
             if (checkedId > 0) {
                 switch (checkedId) {
@@ -4892,6 +4894,12 @@ public class ModeloPasajeros1 extends Form {
         String textSpCdiaptof = getValorDesplegable(sp_cdiaptof).substring(0,3);
         if(!textSpCdiaptof.contains("000")){
             quest.setCdiaptof(textSpCdiaptof);
+            if (textSpCdiaptof.contains("ZZZ")){
+                EditText et_cdociaarotro = (EditText) activity.findViewById(R.id.survey_edit_cdiaptofotro);
+                quest.setCdiaptofotro(et_cdociaarotro.getText().toString());
+            } else {
+                quest.setCdiaptofotro("-1");
+            }
         } else {
             quest.setCdiaptof("-1");
         }
