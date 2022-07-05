@@ -4540,12 +4540,13 @@ public class ModeloPasajeros5 extends Form {
 
         try {
             //Formato de hora (hora/minuto)
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("HH:MM");
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("HH:mm");
             //Comprobación de la HORA
+            formatoFecha.setLenient(false);
             formatoFecha.parse(hora + ":" + minuto);
             correcto = true;
         } catch (ParseException e) {
-            //Si la fecha no es correcta, pasará por aquí
+            //Si la hora no es correcta, pasará por aquí
             correcto = false;
         }
 
