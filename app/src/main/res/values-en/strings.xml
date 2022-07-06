@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.12)</string>
+    <string name="app_name">EMMA 2022 (v1.13)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.12</string>
+    <string name="version">v1.13</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -308,7 +308,7 @@
     <string name="survey_m4_radio_sitiopark_option5">"At the airport’s PAYMENT PARKING of AENA (during the trip) "</string>
     <string name="survey_m4_radio_sitiopark_option6">"At the airport’s PAYMENT PARKING of AENA (while saying good bye to my accompanying person) "</string>
     <string name="survey_m4_radio_sitiopark_option4">In a PAYMENT PARKING No AENA outside the airport</string>
-    <string name="survey_m4_text_pqfuera">6b.Why?</string>
+    <string name="survey_m4_text_pqfuera">6a.Why?</string>
     <string name="survey_m4_radio_sitiopark_option9">Other</string>
     <string name="survey_m4_text_acomptes">7.How many people (friends, family, colleagues, etc.) came to say goodbye to you and entered into the terminal building?</string>
     <string name="survey_m4_radio_acomptes_option0">None</string>

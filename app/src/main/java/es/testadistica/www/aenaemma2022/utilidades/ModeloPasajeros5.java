@@ -183,7 +183,7 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_comprart).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_comprart_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_gas_com).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_gas_cons_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_com_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_comprart_b).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_comprart_b_m5).setVisibility(VISIBLE);
                 //P28
