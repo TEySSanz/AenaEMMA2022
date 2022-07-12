@@ -19,7 +19,8 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m1_text_cdalojin" />
+            android:text="@string/survey_m1_text_cdalojin"
+            android:visibility="visible" />
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdalojin"

@@ -29,6 +29,14 @@
             android:text="@string/survey_m4_text_cdtreser"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdtreser_m2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m2_text_cdtreser"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdtreser"
             android:layout_width="match_parent"

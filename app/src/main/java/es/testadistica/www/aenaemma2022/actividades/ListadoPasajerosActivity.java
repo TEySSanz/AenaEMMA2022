@@ -92,6 +92,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                 maxPreg = 33;
                 break;
             case 5:
+                maxPreg = 38;
                 break;
             case 6:
                 break;

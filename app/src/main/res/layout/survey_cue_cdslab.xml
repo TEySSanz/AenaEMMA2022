@@ -38,6 +38,14 @@
             android:text="@string/survey_m5_text_cdslab"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdslab_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_cdslab"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdslab"
             android:layout_width="match_parent"

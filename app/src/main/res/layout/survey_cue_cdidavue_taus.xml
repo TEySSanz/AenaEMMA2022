@@ -30,6 +30,14 @@
             android:text="@string/survey_m4_text_cdidavue"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdidavue_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_cdidavue"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdidavue"
             android:layout_width="match_parent"
@@ -73,6 +81,14 @@
                 android:visibility="gone" />
 
             <TextView
+                android:id="@+id/survey_text_cdidavue_a_m2"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m2_text_cdidavue_a"
+                android:visibility="gone" />
+
+            <TextView
                 android:id="@+id/survey_text_cdidavue_b"
                 style="@style/SurveyQuestionTitle"
                 android:layout_width="match_parent"
@@ -86,6 +102,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m4_text_cdidavue_b"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/survey_text_cdidavue_b_m2"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m2_text_cdidavue_b"
                 android:visibility="gone" />
 
             //taus

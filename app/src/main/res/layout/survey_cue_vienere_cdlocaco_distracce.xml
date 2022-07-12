@@ -19,8 +19,8 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m1_text_viene_re" />
-
+            android:text="@string/survey_m1_text_viene_re"
+            android:visibility="visible"/>
         <TextView
             android:id="@+id/survey_text_viene_re_bcn"
             style="@style/SurveyQuestionTitle"
@@ -28,6 +28,14 @@
             android:layout_height="wrap_content"
             android:text="@string/survey_m1_text_viene_re_bcn"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/survey_text_viene_re_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_viene_re"
+            android:visibility="gone"/>
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re"
@@ -126,6 +134,29 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/survey_layout_cdlocacootro"
+                    style="@style/SurveySingleQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/survey_edit_text_cdlocacootro"
+                        style="@style/SurveyQuestionLiteral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/survey_m1_text_diaptoo_otro" />
+
+
+                    <EditText
+                        android:id="@+id/survey_edit_cdlocacootro"
+                        style="@style/SurveyQuestionEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/survey_layout_distracce"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -141,7 +172,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/standard_padding"
                         android:gravity="center"
-                        android:text="@string/survey_m1_text_distracce" />
+                        android:text="@string/survey_m1_text_distracce"
+                        android:visibility="visible"/>
 
                     <TextView
                         android:id="@+id/survey_text_distracce_bcn"
@@ -151,6 +183,16 @@
                         android:layout_marginLeft="@dimen/standard_padding"
                         android:gravity="center"
                         android:text="@string/survey_m1_text_distracce_bcn"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/survey_text_distracce_m2"
+                        style="@style/SurveyQuestionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/standard_padding"
+                        android:gravity="center"
+                        android:text="@string/survey_m2_text_distracce"
                         android:visibility="gone" />
 
 

@@ -3443,7 +3443,6 @@ public class ModeloPasajeros5 extends Form {
                     break;
                 case R.id.survey_radio_cdiaptoo:
                     SearchableSpinner sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
-                    //String textSpCdiaptoo = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
                     String textSpCdiaptoo = getValorDesplegable(sp_cdiaptoo).substring(0,3);
                     if(!textSpCdiaptoo.contains("000")){
                         quest.setCdiaptoo(textSpCdiaptoo);

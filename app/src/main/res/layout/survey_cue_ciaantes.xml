@@ -20,7 +20,16 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_m1_text_ciaantes" />
+            android:text="@string/survey_m1_text_ciaantes"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_text_ciaantes_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_ciaantes"
+            android:visibility="gone"/>
 
         <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
             android:id="@+id/survey_spinner_ciaantes"

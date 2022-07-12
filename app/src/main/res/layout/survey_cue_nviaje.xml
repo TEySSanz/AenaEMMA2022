@@ -29,6 +29,14 @@
             android:text="@string/survey_m4_text_nviaje"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_nviaje_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_nviaje"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_nviaje"
             android:layout_width="match_parent"

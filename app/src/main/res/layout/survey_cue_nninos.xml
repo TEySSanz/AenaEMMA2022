@@ -29,6 +29,14 @@
             android:text="@string/survey_m4_text_nniños"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_nniños_m2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m2_text_nniños"
+            android:visibility="gone"/>
+
         <EditText
             android:id="@+id/survey_edit_nniños"
             style="@style/SurveyQuestionEdit"

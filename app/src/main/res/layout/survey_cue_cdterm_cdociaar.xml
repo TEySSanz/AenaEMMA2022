@@ -30,6 +30,14 @@
             android:text="@string/survey_m4_text_cdterm"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdterm_m2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_cdterm"
+            android:visibility="gone"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,6 +86,15 @@
                 android:layout_gravity="center_horizontal"
                 style="@style/SurveyQuestionTitle"
                 android:text="@string/survey_m4_text_cdociaar"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/survey_text_cdociaar_m2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                style="@style/SurveyQuestionTitle"
+                android:text="@string/survey_m2_text_cdociaar"
                 android:visibility="gone"/>
 
             <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner

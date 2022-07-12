@@ -112,6 +112,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 2:
                 form = new ModeloPasajeros2(this, pregunta, conn);
                 ((ModeloPasajeros2) form).setCue(cue);
+                maxPreg=38;
                 break;
             case 3:
                 form = new ModeloPasajeros3(this, pregunta, conn);
@@ -155,7 +156,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            if (modeloCue==1 || modeloCue==4|| modeloCue==5){
+                            if (modeloCue==1 || modeloCue==2 || modeloCue==4 || modeloCue==5){
                                 System.out.println("pregunta "+pregunta);
                                 System.out.println("maxPreg "+maxPreg);
                                 if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
@@ -209,6 +210,8 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 int anterior = 0;
                 if (modeloCue == 1) {
                     anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
+                } else if (modeloCue == 2) {
+                    anterior = ((ModeloPasajeros2) form).getPreguntaAnterior();
                 } else if (modeloCue == 4) {
                     anterior = ((ModeloPasajeros4) form).getPreguntaAnterior();
                 } else if (modeloCue == 5) {
