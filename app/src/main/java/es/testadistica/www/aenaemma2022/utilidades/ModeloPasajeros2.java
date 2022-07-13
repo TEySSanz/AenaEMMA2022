@@ -214,6 +214,7 @@ public class ModeloPasajeros2 extends Form {
                 //P34
                 activity.findViewById(R.id.survey_text_cdsprof).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdsprof_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
                 //P35
                 activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_estudios_m2).setVisibility(VISIBLE);
@@ -242,7 +243,7 @@ public class ModeloPasajeros2 extends Form {
         switch (idAeropuerto){
             case 5:
                 //Palma de Mallorca
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADOLEADA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_PMIOLEADA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
@@ -251,7 +252,7 @@ public class ModeloPasajeros2 extends Form {
         switch (idAeropuerto){
             case 5:
                 //Palma de Mallorca
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADAEREA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_PMIAEREA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -261,7 +262,7 @@ public class ModeloPasajeros2 extends Form {
         switch (idAeropuerto){
             case 5:
                 //Palma de Mallorca
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_PMIOLEADA+" = 1";
                 break;
 
         }
@@ -271,7 +272,7 @@ public class ModeloPasajeros2 extends Form {
         switch (idAeropuerto){
             case 5:
                 //Palma de Mallorca
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL+" = 1";
                 break;
 
         }
@@ -754,10 +755,10 @@ public class ModeloPasajeros2 extends Form {
                 switch (idAeropuerto) {
                     case 5:
                         //Palma de Mallorca
-                        if (texto4.equals("000")) {
-                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 ";
+                        if (texto4.equals("000")||(texto4.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL + " = 1 ";
                         } else {
-                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
                         }
                         break;
 
@@ -771,10 +772,10 @@ public class ModeloPasajeros2 extends Form {
                 switch (idAeropuerto) {
                     case 5:
                         //Palma de Mallorca
-                        if (texto4.equals("000")) {
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 ";
+                        if (texto4.equals("000")||(texto4.equals("ZZZ"))) {
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL + " = 1 ";
                         } else {
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
                         }
                         break;
                 }
@@ -902,10 +903,10 @@ public class ModeloPasajeros2 extends Form {
                 switch (idAeropuerto){
                     case 5:
                         //Palma de Mallorca
-                        if (texto1.equals("000")) {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 ";
+                        if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL+" = 1 ";
                         } else {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
                         }
                         break;
                 }
@@ -2861,7 +2862,7 @@ public class ModeloPasajeros2 extends Form {
                     //P15
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDTERM, cue.getCdterm());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAR, cue.getCdociaar());
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAR, cue.getCdociaarotro());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAROTRO, cue.getCdociaarotro());
                     break;
                 case 16:
                     //P16
@@ -3370,7 +3371,7 @@ public class ModeloPasajeros2 extends Form {
                                 show = showQuestion(12); //>P12
                                 break;
                             case R.id.survey_radio_conexfac_option2:
-                                show = showQuestion(7); //>P7
+                                show = showQuestion(12); //>P12
                                 break;
                         }
                     } else {
@@ -3419,9 +3420,9 @@ public class ModeloPasajeros2 extends Form {
                     checkedId = rgUltimodo_umodo.getCheckedRadioButtonId();
 
                     if ((checkedId == R.id.survey_radio_m4_ultimodo_1modo_option4) || (checkedId == R.id.survey_radio_m4_ultimodo_1modo_option5) ) {
-                        show = showQuestion(11);//>P11
-                    } else{
                         show = showQuestion(10);//>P10
+                    } else{
+                        show = showQuestion(11);//>P11
                     }
 
                 } else {
@@ -3891,7 +3892,7 @@ public class ModeloPasajeros2 extends Form {
                     selectedCode = 23;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option6:
-                    selectedCode = 35;
+                    selectedCode = 32;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option7:
                     selectedCode = 31;
@@ -4021,7 +4022,7 @@ public class ModeloPasajeros2 extends Form {
                         quest.setCdociaar(textSpCdociaar);
                         if (textSpCdociaar.contains("999")){
                             EditText et_cdociaarotro = (EditText) activity.findViewById(R.id.survey_edit_cdociaarotro);
-                            quest.setCdiaptofotro(et_cdociaarotro.getText().toString());
+                            quest.setCdociaarotro(et_cdociaarotro.getText().toString());
                         } else {
                             quest.setCdociaarotro("-1");
                         }
@@ -4525,6 +4526,9 @@ public class ModeloPasajeros2 extends Form {
                 case R.id.survey_radio_cdsprof_option6:
                     selectedCode = 6;
                     break;
+                case R.id.survey_radio_cdsprof_option9:
+                    selectedCode = 9;
+                    break;
                 default:
                     selectedCode = 99;
                     break;
@@ -4792,9 +4796,12 @@ public class ModeloPasajeros2 extends Form {
         String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
         String textoCdalojin = activity.getString(R.string.survey_m2_text_cdalojin);
         TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero_m2);
-        if (textSpCdlocaco.length()>6)
-            textSpCdlocaco = textSpCdlocaco.substring(6, textSpCdlocaco.length());
-        tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
+
+            if (textSpCdlocaco.length()>6)
+                textSpCdlocaco = textSpCdlocaco.substring(6, textSpCdlocaco.length());
+            tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
+
+
     }
 
     private void generarTituloCdterm() {

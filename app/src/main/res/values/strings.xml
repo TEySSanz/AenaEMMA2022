@@ -955,6 +955,7 @@
     <string name="survey_m2_text_cdslab">33. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
     <!--Pregunta34-->
     <string name="survey_m2_text_cdsprof">34. Usted trabaja como...</string>
+    <string name="survey_m2_radio_cdsprof_option9">Otra situación</string>
     <!--Pregunta35-->
     <string name="survey_m2_text_estudios">35. ¿Podría decirme el nivel de estudios terminados?</string>
     <!--Pregunta36-->
