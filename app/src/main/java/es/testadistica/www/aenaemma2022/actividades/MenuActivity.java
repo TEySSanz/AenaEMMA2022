@@ -642,7 +642,10 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CIAANTESOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTODOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CDOCIAAROTRO + ", " +
-                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCACOOTRO +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCACOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISNAOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
