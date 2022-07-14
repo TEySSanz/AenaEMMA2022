@@ -745,6 +745,9 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setCdiaptodotro(cursor.getString(89));
             cue.setCdociaarotro(cursor.getString(90));
             cue.setCdlocacootro(cursor.getString(91));
+            cue.setCdiaptofotro(cursor.getString(92));
+            cue.setCdpaisnaotro(cursor.getString(93));
+            cue.setCdpaisreotro(cursor.getString(94));
 
             pendientes.add(cue);
         }
