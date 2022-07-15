@@ -61,24 +61,22 @@
     <!-- P28 -->
     <include layout="@layout/survey_cue_nperbul"/>
     <!-- P29 -->
-    <include layout="@layout/survey_cue_dropoff"/>
-    <!-- P30 -->
     <include layout="@layout/survey_cue_checkinb"/>
-    <!-- P31 -->
+    <!-- P30 -->
     <include layout="@layout/survey_cue_consume_gans_cons"/>
-    <!-- P32 -->
+    <!-- P31 -->
     <include layout="@layout/survey_cue_comprart_gas_com_prod"/>
-    <!-- P33 -->
+    <!-- P32 -->
     <include layout="@layout/survey_cue_cdslab"/>
-    <!-- P34 -->
+    <!-- P33 -->
     <include layout="@layout/survey_cue_cdsprof"/>
-    <!-- P35 -->
+    <!-- P34 -->
     <include layout="@layout/survey_cue_estudios"/>
-    <!-- P36 -->
+    <!-- P35 -->
     <include layout="@layout/survey_cue_cdedad"/>
-    <!-- P37 -->
+    <!-- P36 -->
     <include layout="@layout/survey_cue_cdsexo"/>
-    <!-- P38 -->
+    <!-- P37 -->
     <include layout="@layout/survey_cue_valorexp"/>
 
 </LinearLayout>

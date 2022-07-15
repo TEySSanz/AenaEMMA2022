@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.16)</string>
+    <string name="app_name">EMMA 2022 (v1.17)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.16</string>
+    <string name="version">v1.17</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -408,19 +408,20 @@
     <string name="survey_m2_text_p44factu">27.Avete imbarcato i bagagli?</string>
     <string name="survey_m2_text_nperbul">28.A quante persone appartengono i pacchetti?</string>
     <string name="survey_m2_text_dropoff">29.E a quale sportello ha lasciato i bagagli?</string>
-    <string name="survey_m2_text_chekinb">30.Dove hai preso la carta d\\\"\'\"imbarco?</string>
-    <string name="survey_m2_text_consume">31.Oggi ha consumato prodotti presso il servizio di ristorazione dell\"\'\"aeroporto (caffetterie, distributori automatici, ecc.)?</string>
-    <string name="survey_m2_text_gas_cons">31a.Quanto avete speso oggi per i servizi di catering aeroportuale?</string>
-    <string name="survey_m2_text_comprart">32.Ha acquistato articoli nei negozi dell\"\'\"aeroporto?</string>
-    <string name="survey_m2_text_gas_com">32a.E quanto avete speso nei negozi dell\\\'aeroporto?</string>
-    <string name="survey_m2_text_prod">32b.Potreste indicare che tipo di prodotti avete acquistato?</string>
-    <string name="survey_m2_text_cdslab">33.In quale delle seguenti situazioni lavorative si trova attualmente?</string>
-    <string name="survey_m2_text_cdsprof">34.Lavorate come...</string>
-    <string name="survey_m2_text_estudios">35.Può dirmi il livello di istruzione che ha conseguito?</string>
-    <string name="survey_m2_text_cdedad">36.A quale di queste fasce d\\\"\'\"età appartiene?</string>
-    <string name="survey_m2_text_cdsexo">37.Sesso</string>
-    <string name="survey_m2_text_valorexp">38.Come giudica la sua esperienza in aeroporto (da 1 a 10)?</string>
+    <string name="survey_m2_text_chekinb">29.Dove hai preso la carta d\\\"\'\"imbarco?</string>
+    <string name="survey_m2_text_consume">30.Oggi ha consumato prodotti presso il servizio di ristorazione dell\"\'\"aeroporto (caffetterie, distributori automatici, ecc.)?</string>
+    <string name="survey_m2_text_gas_cons">30a.Quanto avete speso oggi per i servizi di catering aeroportuale?</string>
+    <string name="survey_m2_text_comprart">31.Ha acquistato articoli nei negozi dell\"\'\"aeroporto?</string>
+    <string name="survey_m2_text_gas_com">31a.E quanto avete speso nei negozi dell\\\'aeroporto?</string>
+    <string name="survey_m2_text_prod">31b.Potreste indicare che tipo di prodotti avete acquistato?</string>
+    <string name="survey_m2_text_cdslab">32.In quale delle seguenti situazioni lavorative si trova attualmente?</string>
+    <string name="survey_m2_text_cdsprof">33.Lavorate come...</string>
+    <string name="survey_m2_text_estudios">34.Può dirmi il livello di istruzione che ha conseguito?</string>
+    <string name="survey_m2_text_cdedad">35.A quale di queste fasce d\\\"\'\"età appartiene?</string>
+    <string name="survey_m2_text_cdsexo">36.Sesso</string>
+    <string name="survey_m2_text_valorexp">37.Come giudica la sua esperienza in aeroporto (da 1 a 10)?</string>
     <string name="survey_m2_radio_cdcambio_option1">Si</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
+    <string name="survey_m2_radio_viene_re_option1">"Viene dalla sua residenza "</string>
 
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.16)</string>
+    <string name="app_name">EMMA 2022 (v1.17)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.16</string>
+    <string name="version">v1.17</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -498,18 +498,19 @@
     <string name="survey_m2_text_p44factu">27.Have you checked in your luggage?</string>
     <string name="survey_m2_text_nperbul">28.How many people do these cases belong to?</string>
     <string name="survey_m2_text_dropoff">29.¿At which check-in desk has you left your luggage?</string>
-    <string name="survey_m2_text_chekinb">30.Where did you obtain your boarding pass?</string>
-    <string name="survey_m2_text_consume">31.Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)?</string>
-    <string name="survey_m2_text_gas_cons">31a.Approximately how much have you spent today in the catering services at the airport?</string>
-    <string name="survey_m2_text_comprart">32.Have you bought today anything in the airport shops?</string>
-    <string name="survey_m2_text_gas_com">32a.How much have you spent in the airport shops?</string>
-    <string name="survey_m2_text_prod">32b.Could you please state what kind of products you have purchased?</string>
-    <string name="survey_m2_text_cdslab">33.Which of the following work situations are you currently in?</string>
-    <string name="survey_m2_text_cdsprof">34.You work as…</string>
-    <string name="survey_m2_text_estudios">35.Education</string>
-    <string name="survey_m2_text_cdedad">36.Which of these age groups do you belong to?</string>
-    <string name="survey_m2_text_cdsexo">37.Gender</string>
-    <string name="survey_m2_text_valorexp">38.How do you rate the experience of your time at the airport?</string>
+    <string name="survey_m2_text_chekinb">29.Where did you obtain your boarding pass?</string>
+    <string name="survey_m2_text_consume">30.Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)?</string>
+    <string name="survey_m2_text_gas_cons">30a.Approximately how much have you spent today in the catering services at the airport?</string>
+    <string name="survey_m2_text_comprart">31.Have you bought today anything in the airport shops?</string>
+    <string name="survey_m2_text_gas_com">31a.How much have you spent in the airport shops?</string>
+    <string name="survey_m2_text_prod">31b.Could you please state what kind of products you have purchased?</string>
+    <string name="survey_m2_text_cdslab">32.Which of the following work situations are you currently in?</string>
+    <string name="survey_m2_text_cdsprof">33.You work as…</string>
+    <string name="survey_m2_text_estudios">34.Education</string>
+    <string name="survey_m2_text_cdedad">35.Which of these age groups do you belong to?</string>
+    <string name="survey_m2_text_cdsexo">36.Gender</string>
+    <string name="survey_m2_text_valorexp">37.How do you rate the experience of your time at the airport?</string>
     <string name="survey_m2_radio_cdcambio_option1">Yes</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
+    <string name="survey_m2_radio_viene_re_option1">Coming from your residence</string>
 </resources>

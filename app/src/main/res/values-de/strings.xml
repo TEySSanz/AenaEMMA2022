@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.16)</string>
+    <string name="app_name">EMMA 2022 (v1.17)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.16</string>
+    <string name="version">v1.17</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>
@@ -407,18 +407,19 @@
     <string name="survey_m2_text_p44factu">27.Haben Sie Gepäck eingecheckt?</string>
     <string name="survey_m2_text_nperbul">28.Wie vielen Personen gehören die Pakete?</string>
     <string name="survey_m2_text_dropoff">29.Und an welchem Schalter haben Sie Ihr Gepäck abgegeben?</string>
-    <string name="survey_m2_text_chekinb">30.Woher haben Sie Ihre Bordkarte?</string>
-    <string name="survey_m2_text_consume">31.Haben Sie heute ein Produkt in der Flughafengastronomie (Cafeterias, Verkaufsautomaten usw.) verzehrt?</string>
-    <string name="survey_m2_text_gas_cons">31a.Wie viel haben Sie für Flughafen-Catering-Services ausgegeben?</string>
-    <string name="survey_m2_text_comprart">32.Haben Sie in den Flughafenshops etwas gekauft?</string>
-    <string name="survey_m2_text_gas_com">32a.Und wie viel haben Sie in den Flughafenshops ausgegeben?</string>
-    <string name="survey_m2_text_prod">32b.Können Sie angeben, welche Art von Produkten Sie gekauft haben?</string>
-    <string name="survey_m2_text_cdslab">33.In welcher der folgenden Arbeissituatuinen befinden Sie sich zur Zeit?</string>
-    <string name="survey_m2_text_cdsprof">34.arbeitest du wie</string>
-    <string name="survey_m2_text_estudios">35.Abgeschlossene Ausbildung?</string>
-    <string name="survey_m2_text_cdedad">36.Zu welcher dieser Altersgruppen gehören Sie?</string>
-    <string name="survey_m2_text_cdsexo">37. Sex</string>
-    <string name="survey_m2_text_valorexp">38.Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
+    <string name="survey_m2_text_chekinb">29.Woher haben Sie Ihre Bordkarte?</string>
+    <string name="survey_m2_text_consume">30.Haben Sie heute ein Produkt in der Flughafengastronomie (Cafeterias, Verkaufsautomaten usw.) verzehrt?</string>
+    <string name="survey_m2_text_gas_cons">30a.Wie viel haben Sie für Flughafen-Catering-Services ausgegeben?</string>
+    <string name="survey_m2_text_comprart">31.Haben Sie in den Flughafenshops etwas gekauft?</string>
+    <string name="survey_m2_text_gas_com">31a.Und wie viel haben Sie in den Flughafenshops ausgegeben?</string>
+    <string name="survey_m2_text_prod">31b.Können Sie angeben, welche Art von Produkten Sie gekauft haben?</string>
+    <string name="survey_m2_text_cdslab">32.In welcher der folgenden Arbeissituatuinen befinden Sie sich zur Zeit?</string>
+    <string name="survey_m2_text_cdsprof">33.arbeitest du wie</string>
+    <string name="survey_m2_text_estudios">34.Abgeschlossene Ausbildung?</string>
+    <string name="survey_m2_text_cdedad">35.Zu welcher dieser Altersgruppen gehören Sie?</string>
+    <string name="survey_m2_text_cdsexo">36. Sex</string>
+    <string name="survey_m2_text_valorexp">37.Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
     <string name="survey_m2_radio_cdcambio_option1">Ja</string>
     <string name="survey_m2_radio_cdcambio_option2">Nein</string>
+    <string name="survey_m2_radio_viene_re_option1">"Sie kommen direkt aus lhrem Wohnsitzort "</string>
 </resources>

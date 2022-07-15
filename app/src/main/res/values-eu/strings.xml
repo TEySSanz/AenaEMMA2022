@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.16)</string>
+    <string name="app_name">EMMA 2022 (v1.17)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.16</string>
+    <string name="version">v1.17</string>
 </resources>

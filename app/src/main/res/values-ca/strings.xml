@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.16)</string>
+    <string name="app_name">EMMA 2022 (v1.17)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.16</string>
+    <string name="version">v1.17</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -450,18 +450,20 @@
     <string name="survey_m2_text_p44factu">27.¿Ha facturat equipatge?</string>
     <string name="survey_m2_text_nperbul">28.¿A quantes persones pertanyen els embalums?</string>
     <string name="survey_m2_text_dropoff">29.I ¿En quin taulell ha deixat el seu equipatge?</string>
-    <string name="survey_m2_text_chekinb">30.¿On ha obtingut la seva targeta d\\\'embarcament?</string>
-    <string name="survey_m2_text_consume">31.¿Avui ha consumit algun producte en el servei de restauració de l\\\'aeroport (cafeteries, màquines expenedores, etc.)?</string>
-    <string name="survey_m2_text_gas_cons">31a.Aproximadament avui Quant ha gastat en els serveis de restauració de l\\\'aeroport?</string>
-    <string name="survey_m2_text_comprart">32.¿Ha comprat algun article a les botigues de l\'aeroport?</string>
-    <string name="survey_m2_text_gas_com">32a.I Quant ha gastat a les botigues de l\\\'aeroport?</string>
-    <string name="survey_m2_text_prod">32b.¿Podria indicar quin tipus de productes ha comprat?</string>
-    <string name="survey_m2_text_cdslab">33.¿En quin de les següents situacions laborals es troba vostè actualment?</string>
-    <string name="survey_m2_text_cdsprof">34.Vostè treballa com a …</string>
-    <string name="survey_m2_text_estudios">35.¿odria dir-me el nivell d\\\'estudis acabats?</string>
-    <string name="survey_m2_text_cdedad">36.¿A quin d\\\'aquests grups d\\\'edat pertany vostè?</string>
-    <string name="survey_m2_text_cdsexo">37.Sexo</string>
-    <string name="survey_m2_text_valorexp">38.¿Com valora l\'experiència del seu pas per l\'\\aeroport? (valori d\'1 a 10)</string>
+    <string name="survey_m2_text_chekinb">29.¿On ha obtingut la seva targeta d\\\'embarcament?</string>
+    <string name="survey_m2_text_consume">30.¿Avui ha consumit algun producte en el servei de restauració de l\\\'aeroport (cafeteries, màquines expenedores, etc.)?</string>
+    <string name="survey_m2_text_gas_cons">30a.Aproximadament avui Quant ha gastat en els serveis de restauració de l\\\'aeroport?</string>
+    <string name="survey_m2_text_comprart">31.¿Ha comprat algun article a les botigues de l\'aeroport?</string>
+    <string name="survey_m2_text_gas_com">31a.I Quant ha gastat a les botigues de l\\\'aeroport?</string>
+    <string name="survey_m2_text_prod">31b.¿Podria indicar quin tipus de productes ha comprat?</string>
+    <string name="survey_m2_text_cdslab">32.¿En quin de les següents situacions laborals es troba vostè actualment?</string>
+    <string name="survey_m2_text_cdsprof">33.Vostè treballa com a …</string>
+    <string name="survey_m2_text_estudios">34.¿odria dir-me el nivell d\\\'estudis acabats?</string>
+    <string name="survey_m2_text_cdedad">35.¿A quin d\\\'aquests grups d\\\'edat pertany vostè?</string>
+    <string name="survey_m2_text_cdsexo">36.Sexo</string>
+    <string name="survey_m2_text_valorexp">37.¿Com valora l\'experiència del seu pas per l\'\\aeroport? (valori d\'1 a 10)</string>
     <string name="survey_m2_radio_cdcambio_option1">Si</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
+    <string name="survey_m2_radio_viene_re_option1">Viene de su residencia</string>
+    <string name="survey_m4_radio_viene_re">Viene de su residencia</string>
 </resources>
