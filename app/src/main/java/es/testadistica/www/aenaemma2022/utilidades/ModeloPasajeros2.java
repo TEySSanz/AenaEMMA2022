@@ -44,7 +44,7 @@ public class ModeloPasajeros2 extends Form {
     private int preguntaAnterior = 1;
     private int idCue;
     private int idAeropuerto;
-    private int finCue = 38;
+    private int finCue = 37;
     private boolean resultValue;
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -110,16 +110,13 @@ public class ModeloPasajeros2 extends Form {
                 activity.findViewById(R.id.survey_text_conexfac).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_conexfac_m2).setVisibility(VISIBLE);
                 //P7
-                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_viene_re_m2).setVisibility(VISIBLE);
-                activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(GONE);
-                activity.findViewById(R.id.survey_edit_text_cdlocacootro_m2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdlocaco_prov_m2).setVisibility(VISIBLE);
-                activity.findViewById(R.id.survey_radio_viene_re_option1).setVisibility(GONE);
-                activity.findViewById(R.id.survey_radio_viene_re_option1_m2).setVisibility(VISIBLE);
-                activity.findViewById(R.id.survey_radio_viene_re_option2).setVisibility(GONE);
-                activity.findViewById(R.id.survey_radio_viene_re_option2_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdlocaco_prov_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_cdlocaco).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdlocaco_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                activity.findViewById(R.id.survey_m2_text_viene_re).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_cdiaptoo).setVisibility(GONE);
                 //P8
                 activity.findViewById(R.id.survey_text_cdalojin_crucero).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdalojin_crucero_m2).setVisibility(VISIBLE);
@@ -1046,18 +1043,21 @@ public class ModeloPasajeros2 extends Form {
             }
         });
         //P7
-        RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+        RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
         rgViene_re.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 rgViene_re.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
                 switch(i)
                 {
-                    case R.id.survey_radio_viene_re_option2_m2:
-                        activity.findViewById(R.id.survey_layout_no_viene_re).setVisibility(VISIBLE);
+                    case R.id.survey_radio_cdlocaco_m2:
+                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
                         break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_no_viene_re).setVisibility(GONE);
+                    case R.id.survey_radio_viene_re:
+                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
                         break;
                 }
             }
@@ -1510,7 +1510,7 @@ public class ModeloPasajeros2 extends Form {
                 break;
             case 7:
                 //P7
-                LinearLayout p7 = (LinearLayout) activity.findViewById(R.id.survey_layout_viene_re);
+                LinearLayout p7 = (LinearLayout) activity.findViewById(R.id.survey_layout_viene_re_cdlocaco_diaptoo);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -1907,9 +1907,10 @@ public class ModeloPasajeros2 extends Form {
                     break;
                 case 7:
                     //P7
-                    if (!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_viene_re))) {
+                    if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo))){
                         return false;
                     }
+
                     if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
                         final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
 
@@ -3151,7 +3152,7 @@ public class ModeloPasajeros2 extends Form {
         conexfac.setVisibility(GONE);
 
         //P7
-        LinearLayout viene_re = (LinearLayout) activity.findViewById(R.id.survey_layout_viene_re);
+        LinearLayout viene_re = (LinearLayout) activity.findViewById(R.id.survey_layout_viene_re_cdlocaco_diaptoo);
         viene_re.setVisibility(GONE);
 
         //P8
@@ -3353,17 +3354,17 @@ public class ModeloPasajeros2 extends Form {
                 //P7
                 generarTituloCdalojin();
                 if (activated) {
-                    RadioGroup rgVienere = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+                    RadioGroup rgVienere = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
                     checkedId = rgVienere.getCheckedRadioButtonId();
 
                     if (checkedId > 0) {
                         switch (checkedId) {
-                            case R.id.survey_radio_viene_re_option1_m2:
+                            case R.id.survey_radio_viene_re:
                                 // Si el pasajero viene de su residencia habitual tiene que ser viaje de IDA: si P9=1 P22=1.
                                 activity.findViewById(R.id.survey_radio_cdidavue_option2).setVisibility(GONE);
                                 show = showQuestion(9); //>P9
                                 break;
-                            case R.id.survey_radio_viene_re_option2_m2:
+                            case  R.id.survey_radio_cdlocaco_m2:
                                 // Si el pasajero viene de su residencia habitual tiene que ser viaje de IDA: si P9=1 P22=1.
                                 activity.findViewById(R.id.survey_radio_cdidavue_option2).setVisibility(VISIBLE);
                                 show = showQuestion(8); //>P8
@@ -3756,7 +3757,7 @@ public class ModeloPasajeros2 extends Form {
         }
         quest.setConexfac(String.valueOf(selectedCode));
         //P7
-        RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+        RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
 
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         String textSpCdlocaco = getValorDesplegable(sp_cdlocaco).substring(0,4);
@@ -3767,12 +3768,12 @@ public class ModeloPasajeros2 extends Form {
 
         if (checkedId > 0) {
             switch (checkedId) {
-                case R.id.survey_radio_viene_re_option1_m2:
+                case R.id.survey_radio_viene_re:
                     selectedCode = 1;
                     quest.setCdlocaco("-1");
                     quest.setCdlocacootro("-1");
                     break;
-                case R.id.survey_radio_viene_re_option2_m2:
+                case R.id.survey_radio_cdlocaco_m2:
                     if(!textSpCdlocaco.contains("0000")){
                         quest.setCdlocaco(textSpCdlocaco);
                         if (textSpCdlocaco.contains("9999")){

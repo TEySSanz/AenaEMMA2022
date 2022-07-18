@@ -30,6 +30,14 @@
             android:text="@string/survey_m5_text_viene_re"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_m2_text_viene_re"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_viene_re"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re_diaptoo"
             android:layout_width="match_parent"
@@ -46,13 +54,22 @@
                 android:id="@+id/survey_radio_cdlocaco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_m4_radio_cdlocaco" />
+                android:text="@string/survey_m4_radio_cdlocaco"
+                android:visibility="visible"/>
+
+            <RadioButton
+                android:id="@+id/survey_radio_cdlocaco_m2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m5_text_cdlocaco_prov"
+                android:visibility="gone"/>
 
             <RadioButton
                 android:id="@+id/survey_radio_cdiaptoo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_m4_radio_cdiaptoo" />
+                android:text="@string/survey_m4_radio_cdiaptoo"
+                android:visibility="visible"/>
         </RadioGroup>
 
         <LinearLayout
@@ -149,7 +166,7 @@
                     style="@style/SurveyQuestionLiteral"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_text_diaptoo_otro" />
+                    android:text="@string/survey_m2_text_cdlocacootro_otro" />
 
 
                 <EditText

@@ -17,7 +17,7 @@
     <!-- P6 -->
     <include layout="@layout/survey_cue_conexfac"/>
     <!-- P7 -->
-    <include layout="@layout/survey_cue_vienere_cdlocaco_distracce"/>
+    <include layout="@layout/survey_cue_vienere_cdlocaco_diaptoo"/>
     <!-- P8 -->
     <include layout="@layout/survey_cue_cdalojin_crucero"/>
     <!-- P9 -->

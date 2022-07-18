@@ -112,7 +112,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 2:
                 form = new ModeloPasajeros2(this, pregunta, conn);
                 ((ModeloPasajeros2) form).setCue(cue);
-                maxPreg=38;
+                maxPreg=37;
                 break;
             case 3:
                 form = new ModeloPasajeros3(this, pregunta, conn);
