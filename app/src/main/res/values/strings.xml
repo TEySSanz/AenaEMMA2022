@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.17)</string>
+    <string name="app_name">EMMA 2022 (v1.18)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -870,7 +870,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
-    <string name="version">v1.17</string>
+    <string name="version">v1.18</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -968,6 +968,13 @@
     <string name="survey_m2_text_cdsexo">36. Sexo</string>
     <!--Pregunta38-->
     <string name="survey_m2_text_valorexp">37. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+
+    <!--Preguntas Menorca-->
+
+    <!--Pregunta3-->
+    <string name="survey_m5_MAH_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Menorca?</string>
+    <!--Pregunta32-->
+    <string name="survey_m5_MAH_text_cdsexo">32. Genero</string>
 
 
 </resources>

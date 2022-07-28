@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.17)</string>
+    <string name="app_name">EMMA 2022 (v1.18)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.17</string>
+    <string name="version">v1.18</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>
@@ -422,4 +422,6 @@
     <string name="survey_m2_radio_cdcambio_option1">Ja</string>
     <string name="survey_m2_radio_cdcambio_option2">Nein</string>
     <string name="survey_m2_radio_viene_re_option1">"Sie kommen direkt aus lhrem Wohnsitzort "</string>
+    <string name="survey_m5_MAH_text_cdsexo">32. Sex</string>
+    <string name="survey_m5_MAH_text_viene_re">3.Woher kommenSie, um diesen Flug anf Menorca zu nehmen?</string>
 </resources>

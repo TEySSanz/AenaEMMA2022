@@ -31,6 +31,14 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/survey_m5_MAH_text_viene_re"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m5_MAH_text_viene_re"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/survey_m2_text_viene_re"
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"

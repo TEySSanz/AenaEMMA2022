@@ -205,6 +205,126 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
                 break;
+            case 6:
+                //Menorca
+                //P1
+                activity.findViewById(R.id.survey_text_cdpaisna).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdpaisna_m4).setVisibility(VISIBLE);
+                //P2
+                activity.findViewById(R.id.survey_text_cdpaisre).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdpaisre_m4).setVisibility(VISIBLE);
+                //P3 NO
+                activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdlocaco_prov_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                activity.findViewById(R.id.survey_m5_MAH_text_viene_re).setVisibility(VISIBLE);
+                //P4 NO
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
+                //P5 NO
+                //P6
+                activity.findViewById(R.id.survey_text_sitiopark).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_sitiopark_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_pqfuera).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_pqfuera_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_sitiopark_option1).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_sitiopark_option1_m4).setVisibility(VISIBLE);
+                //P7
+                activity.findViewById(R.id.survey_text_acomptes).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_acomptes_m4).setVisibility(VISIBLE);
+                //P8
+                activity.findViewById(R.id.survey_text_hllega).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_hllega_m4).setVisibility(VISIBLE);
+                //P9
+                activity.findViewById(R.id.survey_text_cdiaptod).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdiaptod_m4).setVisibility(VISIBLE);
+                //P10
+                activity.findViewById(R.id.survey_text_numvuepa).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_numvuepa_m4).setVisibility(VISIBLE);
+                //P11
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdociaar).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdociaar_m4).setVisibility(VISIBLE);
+                //P12
+                activity.findViewById(R.id.survey_text_cdiaptof).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdiaptof_m4).setVisibility(VISIBLE);
+                //P13
+                activity.findViewById(R.id.survey_text_cdmviaje).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdmviaje_m4).setVisibility(VISIBLE);
+                //P14
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
+                //P15
+                activity.findViewById(R.id.survey_text_npers).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_npers_m4).setVisibility(VISIBLE);
+                //P16
+                activity.findViewById(R.id.survey_text_nniños).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_nniños_m4).setVisibility(VISIBLE);
+                //P17
+                activity.findViewById(R.id.survey_text_relacion).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_relacion_m4).setVisibility(VISIBLE);
+                //P18
+                activity.findViewById(R.id.survey_text_cdtreser).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdtreser_m4).setVisibility(VISIBLE);
+                //P19
+                activity.findViewById(R.id.survey_text_cdbillet).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdbillet_m4).setVisibility(VISIBLE);
+                //P20
+                activity.findViewById(R.id.survey_text_nviaje).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_nviaje_m4).setVisibility(VISIBLE);
+                //P21
+                activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_vol12mes_m4).setVisibility(VISIBLE);
+                //P22
+                activity.findViewById(R.id.survey_text_eleccovid).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_eleccovid_m5).setVisibility(VISIBLE);
+                //P23
+                activity.findViewById(R.id.survey_text_p44factu).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_p44factu_m5).setVisibility(VISIBLE);
+                //P24
+                activity.findViewById(R.id.survey_text_nperbul).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_nperbul_m5).setVisibility(VISIBLE);
+                //P25
+                activity.findViewById(R.id.survey_text_chekinb).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_chekinb_m5).setVisibility(VISIBLE);
+                //P26
+                activity.findViewById(R.id.survey_text_consume).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_consume_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_cons).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_gas_cons_m5).setVisibility(VISIBLE);
+                //P27
+                activity.findViewById(R.id.survey_text_comprart).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_comprart_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_com).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_gas_com_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_comprart_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_comprart_b_m5).setVisibility(VISIBLE);
+                //P28
+                activity.findViewById(R.id.survey_text_cdslab).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdslab_m5).setVisibility(VISIBLE);
+                //P29
+                activity.findViewById(R.id.survey_text_cdsprof).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdsprof_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
+                //P30
+                activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_estudios_m5).setVisibility(VISIBLE);
+                //P31
+                activity.findViewById(R.id.survey_text_cdedad).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdedad_m5).setVisibility(VISIBLE);
+                //P32
+                activity.findViewById(R.id.survey_text_cdsexo).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdsexo_m5_MAH).setVisibility(VISIBLE);
+                //P33
+                activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
+                break;
         }
     }
 
@@ -225,6 +345,10 @@ public class ModeloPasajeros5 extends Form {
                 //Ibiza
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_IBZOLEADA+"=1 ";
                 break;
+            case 6:
+                //Menorca
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MAHOLEADA+"=1 ";
+                break;
         }
         ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
 
@@ -233,6 +357,10 @@ public class ModeloPasajeros5 extends Form {
             case 4:
                 //Ibiza
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_IBZAEREA+"=1 ";
+                break;
+            case 6:
+                //Menorca
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MAHAEREA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -244,6 +372,10 @@ public class ModeloPasajeros5 extends Form {
                 //Ibiza
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA+" = 1";
                 break;
+            case 6:
+                //Menorca
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA+" = 1";
+                break;
 
         }
         ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -253,6 +385,10 @@ public class ModeloPasajeros5 extends Form {
             case 4:
                 //Ibiza
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1";
+                break;
+            case 6:
+                //Menorca
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1";
                 break;
         }
         ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -771,6 +907,14 @@ public class ModeloPasajeros5 extends Form {
                             //IBIZA
                             filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             break;
+                        case 6:
+                            //Menorca
+                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }
+                            break;
 
                     }
 
@@ -783,6 +927,14 @@ public class ModeloPasajeros5 extends Form {
                         case 4:
                             //Ibiza
                             filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            break;
+                        case 6:
+                            //Menorca
+                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }
                             break;
                     }
 
@@ -826,6 +978,14 @@ public class ModeloPasajeros5 extends Form {
                         case 4:
                             //Ibiza
                             filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                            break;
+                        case 6:
+                            //Menorca
+                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 ";
+                            } else {
+                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                            }
                             break;
                     }
 
@@ -3527,7 +3687,7 @@ public class ModeloPasajeros5 extends Form {
                     selectedCode = 23;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option6:
-                    selectedCode = 35;
+                    selectedCode = 32;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option7:
                     selectedCode = 31;
@@ -4141,6 +4301,9 @@ public class ModeloPasajeros5 extends Form {
                     break;
                 case R.id.survey_radio_cdsprof_option6:
                     selectedCode = 6;
+                    break;
+                case R.id.survey_radio_cdsprof_option9:
+                    selectedCode = 9;
                     break;
                 default:
                     selectedCode = 99;

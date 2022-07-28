@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.17)</string>
+    <string name="app_name">EMMA 2022 (v1.18)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.17</string>
+    <string name="version">v1.18</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -466,4 +466,6 @@
     <string name="survey_m2_radio_cdcambio_option2">No</string>
     <string name="survey_m2_radio_viene_re_option1">Viene de su residencia</string>
     <string name="survey_m4_radio_viene_re">Viene de su residencia</string>
+    <string name="survey_m5_MAH_text_cdsexo">32.Sexo</string>
+    <string name="survey_m5_MAH_text_viene_re">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Menorca?</string>
 </resources>
