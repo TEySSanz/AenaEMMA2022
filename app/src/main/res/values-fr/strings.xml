@@ -424,4 +424,6 @@
     <string name="survey_m2_radio_viene_re_option1">"Résidence priveé "</string>
     <string name="survey_m5_MAH_text_cdsexo">32.Sexe</string>
     <string name="survey_m5_MAH_text_viene_re">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Menorca?</string>
+    <string name="survey_m4_ALC_text_viene_re">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Alicante?</string>
+    <string name="survey_m4_AGP_text_viene_re">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Malaga?</string>
 </resources>

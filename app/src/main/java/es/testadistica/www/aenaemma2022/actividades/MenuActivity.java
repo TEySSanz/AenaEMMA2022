@@ -76,7 +76,8 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
 
     //private static final String WEBSERVICE = "http://192.168.7.18:8084/AenaEMMA2022/rest";
     //private static final String WEBSERVICE = "http://213.229.135.43:8081/AenaEMMA2022/rest";
-    private static final String WEBSERVICE = "http://194.224.27.206:8081/AenaEMMA2022/rest";
+    //private static final String WEBSERVICE = "http://194.224.27.206:8081/AenaEMMA2022/rest";
+    private static final String WEBSERVICE = "http://80.28.130.49:8081/AenaEMMA2022/rest";
     
     DBHelper conn;
     Context context;

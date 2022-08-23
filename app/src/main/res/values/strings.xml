@@ -976,5 +976,15 @@
     <!--Pregunta32-->
     <string name="survey_m5_MAH_text_cdsexo">32. Genero</string>
 
+    <!--Preguntas Alicante-->
+
+    <!--Pregunta3-->
+    <string name="survey_m4_ALC_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Alicante?</string>
+
+    <!--Preguntas Malaga-->
+
+    <!--Pregunta3-->
+    <string name="survey_m4_AGP_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Malaga?</string>
+
 
 </resources>

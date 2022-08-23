@@ -834,11 +834,19 @@ public class ModeloPasajeros1 extends Form {
                 switch (idAeropuerto){
                     case 1:
                         //Madrid
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                        }
                         break;
                     case 2:
                         //Barcelona
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                        }
                         break;
 
                 }
@@ -856,11 +864,19 @@ public class ModeloPasajeros1 extends Form {
                 switch (idAeropuerto){
                     case 1:
                         //Madrid
-                        filtroAeropuerto2 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                        }
                         break;
                     case 2:
                         //Barcelona
-                        filtroAeropuerto2 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNOLEADA+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"')";
+                        if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_BCNOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                        }
                         break;
                 }
                 /*ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
@@ -1027,11 +1043,19 @@ public class ModeloPasajeros1 extends Form {
                 switch (idAeropuerto){
                     case 1:
                         //Madrid
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        }
                         break;
                     case 2:
                         //Barcelona
-                        filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        }
                         break;
                 }
                 /*ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));

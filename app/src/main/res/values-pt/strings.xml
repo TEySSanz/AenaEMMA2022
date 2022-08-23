@@ -425,4 +425,6 @@
     <string name="survey_m2_radio_viene_re_option1">" Vem da sua residência"</string>
     <string name="survey_m5_MAH_text_cdsexo">32.Sexo</string>
     <string name="survey_m5_MAH_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Menorca?</string>
+    <string name="survey_m4_ALC_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Alicante?</string>
+    <string name="survey_m4_AGP_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Malaga?</string>
 </resources>

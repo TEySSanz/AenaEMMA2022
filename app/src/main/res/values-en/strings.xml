@@ -515,4 +515,6 @@
     <string name="survey_m2_radio_viene_re_option1">Coming from your residence</string>
     <string name="survey_m5_MAH_text_cdsexo">32.Gender</string>
     <string name="survey_m5_MAH_text_viene_re">3.Where did you start your journey to take this flight in Menorca´s airport?</string>
+    <string name="survey_m4_ALC_text_viene_re">3.Where did you start your journey to take this flight in Alicante´s airport?</string>
+    <string name="survey_m4_AGP_text_viene_re">3.Where did you start your journey to take this flight in Malaga´s airport?</string>
 </resources>

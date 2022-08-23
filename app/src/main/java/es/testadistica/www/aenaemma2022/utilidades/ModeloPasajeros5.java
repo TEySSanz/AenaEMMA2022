@@ -905,7 +905,11 @@ public class ModeloPasajeros5 extends Form {
                     switch (idAeropuerto) {
                         case 4:
                             //IBIZA
-                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }
                             break;
                         case 6:
                             //Menorca
@@ -926,7 +930,11 @@ public class ModeloPasajeros5 extends Form {
                     switch (idAeropuerto) {
                         case 4:
                             //Ibiza
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }
                             break;
                         case 6:
                             //Menorca
@@ -977,7 +985,11 @@ public class ModeloPasajeros5 extends Form {
 
                         case 4:
                             //Ibiza
-                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 ";
+                            } else {
+                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                            }
                             break;
                         case 6:
                             //Menorca

@@ -424,4 +424,6 @@
     <string name="survey_m2_radio_viene_re_option1">"Sie kommen direkt aus lhrem Wohnsitzort "</string>
     <string name="survey_m5_MAH_text_cdsexo">32. Sex</string>
     <string name="survey_m5_MAH_text_viene_re">3.Woher kommenSie, um diesen Flug anf Menorca zu nehmen?</string>
+    <string name="survey_m4_ALC_text_viene_re">3.Woher kommenSie, um diesen Flug anf Alicante zu nehmen?</string>
+    <string name="survey_m4_AGP_text_viene_re">3.Woher kommenSie, um diesen Flug anf Malaga zu nehmen?</string>
 </resources>
