@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.19)</string>
+    <string name="app_name">EMMA 2022 (v1.20)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -834,7 +834,7 @@
     <string name="hora">HH</string>
     <string name="minuto">MM</string>
     <string name="dos_puntos">:</string>
-    <string name="survey_text_error_date">Error fecha</string>
+    <string name="survey_text_error_date">Error hora</string>
     <!--Pregunta36-->
     <string name="survey_m4_text_valorexp">36. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
 
@@ -870,7 +870,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
-    <string name="version">v1.19</string>
+    <string name="version">v1.20</string>
 
     <!--Preguntas Palma de mallorca-->
 

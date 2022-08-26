@@ -664,7 +664,7 @@ public class ModeloPasajeros4 extends Form {
         });
 
         SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
-        sp_distres_area.setAdapter(paises1y2Adapter, 1, 1, activity.getString(R.string.spinner_pais1y2_title), activity.getString(R.string.spinner_close));
+        sp_distres_area.setAdapter(paises1y2Adapter, 1, 1,activity.getString( R.string.spinner_pais1y2_title), activity.getString(R.string.spinner_close));
         /*SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
         sp_distres_area.setAdapter(paises1y2Adapter);
         sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
@@ -1079,12 +1079,14 @@ public class ModeloPasajeros4 extends Form {
 
                 if (id > 0 && id <10){
                     filtro = filtro + "'00','0"+id+"','99',";
-                } else if (id > 9 && id <52){
+                } else if (id > 9 && id <=57){
                     filtro =  filtro +"'00','"+id+"','99',";
+                } /*else if (id > 89 && id <=94){
+                    filtro =  filtro +"'"+id+"',";
                 }
                 else if (id == 53){
                     filtro =  filtro +"'99',";
-                } else {
+                }*/ else {
                     filtro = " (iden > -1 ";
                 }
 
@@ -1137,12 +1139,14 @@ public class ModeloPasajeros4 extends Form {
 
                 if (id > 0 && id <10){
                     filtro = filtro + "'00','0"+id+"','99',";
-                } else if (id > 9 && id <52){
+                } else if (id > 9 && id <=57){
                     filtro =  filtro +"'00','"+id+"','99',";
+                } /*else if (id > 89 && id <=94){
+                    filtro =  filtro +"'"+id+"',";
                 }
                 else if (id == 53){
                     filtro =  filtro +"'99',";
-                } else {
+                } */else {
                     filtro = " (iden > -1 ";
                 }
 
@@ -3285,6 +3289,7 @@ public class ModeloPasajeros4 extends Form {
                     //P11
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDTERM, cue.getCdterm());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAR, cue.getCdociaar());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAROTRO, cue.getCdociaarotro());
                     break;
                 case 12:
                     //P12
@@ -3457,6 +3462,7 @@ public class ModeloPasajeros4 extends Form {
                     //P11
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDTERM);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAR);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CDOCIAAROTRO);
                     break;
                 case 12:
                     //P12
@@ -4361,6 +4367,12 @@ public class ModeloPasajeros4 extends Form {
                     String textSpCdociaar = getValorDesplegable(sp_cdociaar).substring(0,3);
                     if(!textSpCdociaar.contains("000")){
                         quest.setCdociaar(textSpCdociaar);
+                        if (textSpCdociaar.contains("999")){
+                            EditText et_cdociaarotro = (EditText) activity.findViewById(R.id.survey_edit_cdociaarotro);
+                            quest.setCdociaarotro(et_cdociaarotro.getText().toString());
+                        } else {
+                            quest.setCdociaarotro("-1");
+                        }
                     }
                     selectedCode = 2;
                     break;
@@ -5438,12 +5450,13 @@ public class ModeloPasajeros4 extends Form {
 
         try {
             //Formato de hora (hora/minuto)
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("HH:MM");
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("HH:mm");
             //Comprobación de la HORA
+            formatoFecha.setLenient(false);
             formatoFecha.parse(hora + ":" + minuto);
             correcto = true;
         } catch (ParseException e) {
-            //Si la fecha no es correcta, pasará por aquí
+            //Si la hora no es correcta, pasará por aquí
             correcto = false;
         }
 

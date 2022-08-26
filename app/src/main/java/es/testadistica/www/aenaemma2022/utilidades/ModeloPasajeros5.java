@@ -796,12 +796,12 @@ public class ModeloPasajeros5 extends Form {
 
                 if (id > 0 && id <10){
                     filtro = filtro + "'00','0"+id+"','99',";
-                } else if (id > 9 && id <52){
+                } else if (id > 9 && id <=57){
                     filtro =  filtro +"'00','"+id+"','99',";
                 }
-                else if (id == 53){
+                /*else if (id == 53){
                     filtro =  filtro +"'99',";
-                } else {
+                } */ else {
                     filtro = " (iden > -1 ";
                 }
 
