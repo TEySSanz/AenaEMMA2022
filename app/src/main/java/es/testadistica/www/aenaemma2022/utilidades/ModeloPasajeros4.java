@@ -1041,13 +1041,6 @@ public class ModeloPasajeros4 extends Form {
                         ArrayList<mListString> paises1y2Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion", filtro));
                         sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
                         sp_distres_area.setAdapter(paises1y2Adapter, 1, 1, activity.getString(R.string.spinner_pais1y2_title), activity.getString(R.string.spinner_close));
-                        /*String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
-                        ArrayAdapter<String> paises1y2Adapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "codigo", filtro));
-                        paises1y2Adapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                        sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
-                        sp_distres_area.setAdapter(paises1y2Adapter);
-                        sp_distres_area.setTitle(activity.getString(R.string.spinner_pais1y2_title));
-                        sp_distres_area.setPositiveButton(activity.getString(R.string.spinner_close));*/
                         activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(VISIBLE);
 
                     } else {
@@ -2223,6 +2216,7 @@ public class ModeloPasajeros4 extends Form {
                         }
                     }
 
+
                     break;
                 case 2:
                     //P2
@@ -2567,7 +2561,7 @@ public class ModeloPasajeros4 extends Form {
                     }*/
                     final SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
 
-                    if (getValorDesplegable(sp_numvuepa).substring(0,5).equals("00000")) {
+                    if (getValorDesplegable(sp_numvuepa).substring(0,3).equals("000")) {
                         sp_numvuepa.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                         return getDialogValueBackError(activity,
@@ -3245,6 +3239,7 @@ public class ModeloPasajeros4 extends Form {
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE, cue.getCdpaisre());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO, cue.getCdpaisreotro());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO, cue.getCdlocado());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES, cue.getDistres());
                     break;
                 case 3:
                     //P3
@@ -3418,6 +3413,7 @@ public class ModeloPasajeros4 extends Form {
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES);
                     break;
                 case 3:
                     //P3
@@ -3425,6 +3421,7 @@ public class ModeloPasajeros4 extends Form {
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCACO);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOO);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDIAPTOOOTRO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES);
                     break;
                 case 4:
                     //P4
@@ -4123,6 +4120,14 @@ public class ModeloPasajeros4 extends Form {
             quest.setCdlocado(textSpCdlocado);
         } else {
             quest.setCdlocado("-1");
+        }
+
+        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        String textSpDistres = getValorDesplegable(sp_distres_area).substring(0,3);
+        if (!textSpDistres.contains("000") && compruebaListaPaises1y2(textSpCdpaisre)>0) {
+            quest.setDistres(textSpDistres);
+        } else {
+            quest.setDistres("-1");
         }
         //P3
         RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);

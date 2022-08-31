@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.20)</string>
+    <string name="app_name">EMMA 2022 (v1.21)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.20</string>
+    <string name="version">v1.21</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -51,8 +51,8 @@
     <string name="spinner_compania_title">SELECCIONE LA COMPAÑIA</string>
     <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
     <string name="spinner_tipoAeropuerto_title">SELECCIONE EL AEROPUERTO</string>
-    <string name="survey_m1_text_cdpaisna">"Quelle est votre NATIONALITÉ? "</string>
-    <string name="survey_m1_text_cdpaisre">Dans quel PAYS aves-vous vécu pour la plus grande partie des 12 derniers mois?</string>
+    <string name="survey_m1_text_cdpaisna">"1. Quelle est votre NATIONALITÉ? "</string>
+    <string name="survey_m1_text_cdpaisre">2. Dans quel PAYS aves-vous vécu pour la plus grande partie des 12 derniers mois?</string>
     <string name="survey_m1_text_cdpaisre_ent">Para España preguntar Provincia y localidad. Países lista 1 y 2 área del mapa</string>
     <string name="survey_m1_text_cdpaisre_prov">Provincia</string>
     <string name="survey_m1_text_cdlocado">Localidad</string>
@@ -60,7 +60,7 @@
     <string name="survey_m1_text_distres_bcn">Distrito para Barcelona capital</string>
     <string name="survey_m1_text_distres_area">Área / Región</string>
     <string name="survey_m1_text_distresotro">Especificar calle y nº, hotel o similar</string>
-    <string name="survey_m1_text_cdcambio">Êtes-vous arrivé à l´aéroport por fair une correspondance?</string>
+    <string name="survey_m1_text_cdcambio">3. Êtes-vous arrivé à l´aéroport por fair une correspondance?</string>
     <string name="survey_m1_radio_cdcambio_option1">Oui</string>
     <string name="survey_m1_radio_conexfac_option1">Oui</string>
     <string name="survey_m1_radio_cdsinope_option1">Oui</string>
@@ -74,9 +74,9 @@
     <string name="survey_m1_radio_p44factu_option2">Non</string>
     <string name="survey_m1_radio_consume_option2">Non</string>
     <string name="survey_m1_radio_comprart_option1">Oui</string>
-    <string name="survey_m1_text_diaptoo">"De quel AÉROPORT êtes-vous sorti por arriver ici? "</string>
+    <string name="survey_m1_text_diaptoo">"4. De quel AÉROPORT êtes-vous sorti por arriver ici? "</string>
     <string name="survey_m1_text_diaptoo_ent">Concretar estado/país</string>
-    <string name="survey_m1_text_ciaantes">"Quelle COMPAGNIE D´AVIATION aves-vous prise? "</string>
+    <string name="survey_m1_text_ciaantes">"5. Quelle COMPAGNIE D´AVIATION aves-vous prise? "</string>
     <string name="survey_m1_text_conexfac">6.¿Au momento de faire la correspondance avec-vous dû récupérer vos bagages et refaire l`enregistrement?</string>
     <string name="survey_m1_text_cdsinope">7. Lors de la correspondance, aves-vous passé la nuit à Madrid?</string>
     <string name="survey_m1_text_cdsinope_bcn">7. Lors de la correspondance, aves-vous passé la nuit à Barcelona?</string>

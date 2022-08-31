@@ -2779,6 +2779,7 @@ public class ModeloPasajeros5 extends Form {
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE, cue.getCdpaisre());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO, cue.getCdpaisreotro());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO, cue.getCdlocado());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES, cue.getDistres());
                     break;
                 case 3:
                     //P3
@@ -2940,6 +2941,7 @@ public class ModeloPasajeros5 extends Form {
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISRE);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_CDLOCADO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES);
                     break;
                 case 3:
                     //P3
@@ -3580,6 +3582,13 @@ public class ModeloPasajeros5 extends Form {
             quest.setCdlocado(textSpCdlocado);
         } else {
             quest.setCdlocado("-1");
+        }
+        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
+        String textSpDistres_area = getValorDesplegable(sp_distres_area).substring(0,3);
+        if (compruebaListaPaises1y2(textSpCdpaisre)>0) {
+            quest.setDistres(textSpDistres_area);
+        } else {
+            quest.setDistres("-1");
         }
         //P3
         RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
