@@ -74,6 +74,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m4_radio_viene_re" />
 
+            <TextView
+                android:id="@+id/survey_text_viene_re_aviso_AGP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_viene_re_aviso_AGP"
+                android:visibility="gone"
+                style="@style/SurveyQuestionHelp"/>
+
             <RadioButton
                 android:id="@+id/survey_radio_cdlocaco"
                 android:layout_width="match_parent"

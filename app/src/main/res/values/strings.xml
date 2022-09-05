@@ -985,6 +985,7 @@
 
     <!--Pregunta3-->
     <string name="survey_m4_AGP_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Malaga?</string>
-
+    <string name="survey_text_viene_re_aviso_AGP">¿Esta seguro de que viene de su residencia?</string>
+    <string name="survey_text_viene_re_aviso_AGP_1">¿Esta seguro de que viene de su residencia, bueno?</string>
 
 </resources>

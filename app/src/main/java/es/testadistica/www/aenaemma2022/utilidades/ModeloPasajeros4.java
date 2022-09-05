@@ -1071,9 +1071,16 @@ public class ModeloPasajeros4 extends Form {
                 String filtro = " provincia IN (";
 
                 if (id > 0 && id <10){
-                    filtro = filtro + "'00','0"+id+"','99',";
+                    filtro = filtro + "'00','0" + id + "','99',";
                 } else if (id > 9 && id <=57){
-                    filtro =  filtro +"'00','"+id+"','99',";
+                    if(id==91){
+                        activity.findViewById(R.id.survey_layout_cdlocado).setVisibility(GONE);
+                    } else if(id==94){
+                        activity.findViewById(R.id.survey_layout_cdlocado).setVisibility(GONE);
+                    }else{
+                        filtro =  filtro +"'00','"+id+"','99',";
+                    }
+
                 } /*else if (id > 89 && id <=94){
                     filtro =  filtro +"'"+id+"',";
                 }
@@ -1097,6 +1104,7 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocado.setAdapter(municipioAdapter);
                 sp_cdlocado.setTitle(activity.getString(R.string.spinner_municipio_title));
                 sp_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));*/
+
             }
 
             @Override
@@ -1456,13 +1464,25 @@ public class ModeloPasajeros4 extends Form {
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_cdiaptoo:
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(VISIBLE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_viene_re:
+
+                        //if (textoLocado.equals("29") || textoLocado.equals("18") || textoLocado.equals("04") || textoLocado.equals("30") || textoLocado.equals("41") || textoLocado.equals("21") || textoLocado.equals("14") || textoLocado.equals("11") || textoLocado.equals("23") || textoLocado.equals("04") || textoLocado.equals("03")){
+                        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+                        //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
+                        String textSpCdlocado = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+                        if ((textSpCdlocado.contains("02")) || (textSpCdlocado.contains("03")) || (textSpCdlocado.contains("04"))) {
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(VISIBLE);
+                        }
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
                         break;
@@ -3755,6 +3775,14 @@ public class ModeloPasajeros4 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_viene_re:
+                                /*SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+                                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
+                                String textoLocado = getValorDesplegable(sp_cdlocado).substring(0,2);
+                                if (textoLocado.equals("29") || textoLocado.equals("18") || textoLocado.equals("04") || textoLocado.equals("30") || textoLocado.equals("41") || textoLocado.equals("21") || textoLocado.equals("14") || textoLocado.equals("11") || textoLocado.equals("23") || textoLocado.equals("04") || textoLocado.equals("03")){
+                                    activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                }else{
+                                    activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(VISIBLE);
+                                }*/
                                 // Si el pasajero viene de su residencia habitual tiene que ser viaje de IDA: si P9=1 P22=1.
                                 activity.findViewById(R.id.survey_radio_cdidavue_option2).setVisibility(GONE);
                                 show = showQuestion(5); //>P5
@@ -4113,6 +4141,15 @@ public class ModeloPasajeros4 extends Form {
             quest.setCdpaisre("-1");
         }
 
+        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+        //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
+        String textSpCdlocado_prov = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+        if (textSpCdlocado_prov.contains("91")) {
+            quest.setCdlocado("91");
+        } else if (textSpCdlocado_prov.contains("94")){
+            quest.setCdlocado("94");
+        }
+
         SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
         //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
         String textSpCdlocado = getValorDesplegable(sp_cdlocado).substring(0,5);
@@ -4143,6 +4180,14 @@ public class ModeloPasajeros4 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_viene_re:
+                    /*SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+                    //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
+                    String textSpCdlocado_prov = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+                    if ((textSpCdlocado.contains("02")) || (textSpCdlocado.contains("03")) || (textSpCdlocado.contains("04"))) {
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP_1).setVisibility(GONE);
+                    } else {
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP_1).setVisibility(VISIBLE);
+                    }*/
                     selectedCode = 1;
                     quest.setCdlocaco("-1");
                     quest.setDistracce("-1");
