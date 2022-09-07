@@ -1481,7 +1481,7 @@ public class ModeloPasajeros4 extends Form {
                         if ((textSpCdlocado.contains("02")) || (textSpCdlocado.contains("03")) || (textSpCdlocado.contains("04"))) {
                             activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         } else {
-                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         }
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
