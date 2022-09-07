@@ -988,4 +988,10 @@
     <string name="survey_text_viene_re_aviso_AGP">¿Esta seguro de que viene de su residencia?</string>
     <string name="survey_text_viene_re_aviso_AGP_1">¿Esta seguro de que viene de su residencia, bueno?</string>
 
+    <!--Pregunta15-->
+    <string name="survey_text_velecaerop">15. Habitualmente, ¿utiliza un vehiculo electrico en su desplazamiento al aeropuerto?</string>
+    <string name="survey_radio_velecaerop_option1">Si</string>
+    <string name="survey_radio_velecaerop_option2">No</string>
+    <string name="survey_radio_velecaerop_option3">No, pero tengo previsto hacerlo</string>
+
 </resources>

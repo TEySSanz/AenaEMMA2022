@@ -624,6 +624,7 @@ public class Contracts {
     public static final String COLUMN_CUETRABAJADORES_CDSLAB = "cdslab";
     public static final String COLUMN_CUETRABAJADORES_PUESTO = "puesto";
     public static final String COLUMN_CUETRABAJADORES_SUGERENCIAS = "sugerencias";
+    public static final String COLUMN_CUETRABAJADORES_VELECAEROP = "velecaerop";
     public static final String SQL_CREATE_CUETRABAJADORES = "CREATE TABLE "+ TABLE_CUETRABAJADORES + " ("+
             COLUMN_CUETRABAJADORES_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUETRABAJADORES_IDUSUARIO + " INTEGER, " +
@@ -700,7 +701,8 @@ public class Contracts {
             COLUMN_CUETRABAJADORES_CDEDADTRAB + " TEXT," +
             COLUMN_CUETRABAJADORES_CDSLAB + " TEXT," +
             COLUMN_CUETRABAJADORES_PUESTO + " TEXT," +
-            COLUMN_CUETRABAJADORES_SUGERENCIAS + " TEXT )";
+            COLUMN_CUETRABAJADORES_SUGERENCIAS + " TEXT," +
+            COLUMN_CUETRABAJADORES_VELECAEROP + " TEXT )";
     public static final String SQL_DROP_CUETRABAJADORES = "DROP TABLE IF EXISTS " + TABLE_CUETRABAJADORES;
 
     //Tabla Versión

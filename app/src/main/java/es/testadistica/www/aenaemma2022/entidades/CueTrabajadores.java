@@ -80,6 +80,7 @@ public class CueTrabajadores implements Serializable {
     private String cdslab;
     private String puesto;
     private String sugerencias;
+    private String velecaerop;
 
     public CueTrabajadores(){
 
@@ -696,5 +697,13 @@ public class CueTrabajadores implements Serializable {
 
     public void setSugerencias(String sugerencias) {
         this.sugerencias = sugerencias;
+    }
+
+    public String getVelecaerop() {
+        return velecaerop;
+    }
+
+    public void setVelecaerop(String velecaerop) {
+        this.velecaerop = velecaerop;
     }
 }
