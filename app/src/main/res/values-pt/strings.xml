@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">EMMA 2022 (v1.23)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.22</string>
+    <string name="version">v1.23</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
