@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.22)</string>
+    <string name="app_name">EMMA 2022 (v1.23)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -410,6 +410,7 @@
     <string name="survey_check_zonatrab_option6">Zona de Rampa</string>
     <!--Pregunta7-->
     <string name="survey_text_horaent_pregunta">7. ¿Cuál es su horario habitual de trabajo?</string>
+    <string name="survey_text_horaent_pregunta_AGP">6. ¿Cuál es su horario habitual de trabajo?</string>
     <string name="survey_text_horaent_option1">1. Hora habitual de entrada/salida al trabajo:</string>
     <string name="survey_text_horaent1">Entrada 1</string>
     <string name="survey_text_horasal1">Salida 1</string>
@@ -424,12 +425,14 @@
     <string name="survey_text_horaent_ent3">si realiza más de dos horarios</string>
     <!--Pregunta8-->
     <string name="survey_text_nmodos">8. ¿Cuántos MODOS DE TRANSPORTE utiliza HABITUALMENTE en el desplazamiento al aeropuerto?</string>
+    <string name="survey_text_nmodos_AGP">7. ¿Cuántos MODOS DE TRANSPORTE utiliza HABITUALMENTE en el desplazamiento al aeropuerto?</string>
     <string name="survey_radio_nmodos_option1">Un modo</string>
     <string name="survey_text_nmodos_ent">solo preguntar ultimo modo</string>
     <string name="survey_radio_nmodos_option2">Dos modos</string>
     <string name="survey_radio_nmodos_nmodos">Indique nº de modos</string>
     <!--Pregunta9-->
     <string name="survey_text_ultimodo_pregunta">9. ¿Podría indicar los MODOS DE TRANSPORTE que ha utilizado para ACCEDER al aeropuerto?</string>
+    <string name="survey_text_ultimodo_pregunta_AGP">8. ¿Podría indicar los MODOS DE TRANSPORTE que ha utilizado para ACCEDER al aeropuerto?</string>
     <string name="survey_text_modo1">1er Modo</string>
     <string name="survey_text_modo2">2º Modo</string>
     <string name="survey_text_ultimodo">Ultimo Modo</string>
@@ -465,6 +468,7 @@
     <!--Pregunta10-->
     <string name="survey_text_nocucoche_ent">En caso de utilizar coche compartido</string>
     <string name="survey_text_nocucoche">10. ¿Cuántos ocupantes van en el vehículo?</string>
+    <string name="survey_text_nocucoche_AGP">9. ¿Cuántos ocupantes van en el vehículo?</string>
     <string name="survey_radio_nocucoche_option1">2 personas</string>
     <string name="survey_radio_nocucoche_option2">3 personas</string>
     <string name="survey_radio_nocucoche_option3">>3 personas</string>
@@ -473,6 +477,7 @@
     <string name="survey_text_EMP_seccion_transpubl">Sección transporte público</string>
     <!--Pregunta11-->
     <string name="survey_text_satistranspubli">11. ¿Cuál es el nivel de satisfacción en la utilización del transporte público en su desplazamiento hacia o desde el Aeropuerto?</string>
+    <string name="survey_text_satistranspubli_AGP">10. ¿Cuál es el nivel de satisfacción en la utilización del transporte público en su desplazamiento hacia o desde el Aeropuerto?</string>
     <string name="survey_text_satistranspubli_ent">(siendo 1 nada satisfecho y 5 muy satisfecho)</string>
     <string name="survey_radio_satistranspubli_option1">1</string>
     <string name="survey_radio_satistranspubli_option2">2</string>
@@ -482,6 +487,7 @@
     <string name="survey_radio_satistranspubli_option9">Ns/Nc</string>
     <!--Pregunta12-->
     <string name="survey_text_valtranspubli">12. ¿Qué es lo que más valora del transporte público?</string>
+    <string name="survey_text_valtranspubli_AGP">11. ¿Qué es lo que más valora del transporte público?</string>
     <string name="survey_text_valtranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_valtranspubli_option1">Comodidad</string>
     <string name="survey_check_valtranspubli_option2">Tiempo desplazamiento</string>
@@ -495,6 +501,7 @@
     <string name="survey_check_valtranspubli_option10">Otros (indique cuál)</string>
     <!--Pregunta13-->
     <string name="survey_text_mejtranspubli">13. ¿Qué aspectos cree que podrían mejorar del transporte público?</string>
+    <string name="survey_text_mejtranspubli_AGP">12. ¿Qué aspectos cree que podrían mejorar del transporte público?</string>
     <string name="survey_text_mejtranspubli_ent">(seleccionar un máximo de 3 aspectos)</string>
     <string name="survey_check_mejtranspubli_option1">Frecuencias</string>
     <string name="survey_check_mejtranspubli_option2">Precio</string>
@@ -508,9 +515,11 @@
     <string name="survey_text_EMP_seccion_coche">Sección Coche</string>
     <!--Pregunta14-->
     <string name="survey_text_desplazatrab">14. Aproximadamente ¿Cuánto tiempo emplea en su desplazamiento al lugar del trabajo?</string>
+    <string name="survey_text_desplazatrab_AGP">13. Aproximadamente ¿Cuánto tiempo emplea en su desplazamiento al lugar del trabajo?</string>
     <string name="survey_text_desplazatrab_ent">(Indique el tiempo en minutos)</string>
     <!--Pregunta15-->
     <string name="survey_text_aparctrab">15. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
+    <string name="survey_text_aparctrab_AGP">14. ¿Dispone de aparcamiento en su lugar de trabajo?</string>
     <string name="survey_radio_aparctrab_option1">Si, gratuito</string>
     <string name="survey_radio_aparctrab_option2">Si, pago abono</string>
     <string name="survey_radio_aparctrab_option3">No, lo dejo en el viario</string>
@@ -870,7 +879,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
-    <string name="version">v1.22</string>
+    <string name="version">v1.23</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -987,6 +996,9 @@
     <string name="survey_m4_AGP_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Malaga?</string>
     <string name="survey_text_viene_re_aviso_AGP">¿Esta seguro de que viene de su residencia?</string>
     <string name="survey_text_viene_re_aviso_AGP_1">¿Esta seguro de que viene de su residencia, bueno?</string>
+
+    <!--Preguntas Malaga trabajadores-->
+    <!--Estan junto a las de trabajadores Madrid-->
 
     <!--Pregunta15-->
     <string name="survey_text_velecaerop">15. Habitualmente, ¿utiliza un vehiculo electrico en su desplazamiento al aeropuerto?</string>

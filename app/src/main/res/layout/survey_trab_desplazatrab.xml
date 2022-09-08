@@ -19,7 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/SurveyQuestionTitle"
-            android:text="@string/survey_text_desplazatrab" />
+            android:text="@string/survey_text_desplazatrab"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_text_desplazatrab_AGP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_desplazatrab_AGP"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/survey_text_desplazatrab_ent"

@@ -40,13 +40,13 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
     private static String DATE_FORMAT_COMPLETE ="dd/MM/yyyy HH:mm";
     private Date fechaActual = null;
     private ArrayList<CueTrabajadoresListado> listaCue;
-    private int modeloCue = 1;
-    private int maxPreg = 28;
-    private int idAeropuerto = 1;
+    private int modeloCue;
+    private int maxPreg = 1;
 
     TextView txt_usuario;
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
+    int idAeropuerto;
     SearchableSpinnerOLD sp_idioma;
     ListView list_trabajadores;
     DBHelper conn;
@@ -75,7 +75,18 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         if (datos != null) {
             txt_usuario.setText(datos.getString("usuario"));
             txt_aeropuerto.setText(datos.getString("aeropuerto"));
+            idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
         }
+
+        switch (idAeropuerto) {
+            case 1:
+                maxPreg = 29;
+                break;
+            case 8:
+                maxPreg = 29;
+                break;
+        }
+
 
         //BBDD
         conn = new DBHelper(this.getApplicationContext());
@@ -87,14 +98,14 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         //Aplica el formato a la fecha
         SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
         //Asigna la fecha a visualizar
-        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
+            txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
 
         //Asigna los valores del desplegable de idiomas
         ArrayAdapter<String> idiomaAdapter = new ArrayAdapter<String>(this, R.layout.selection_spinner_item_small, getIdiomas("clave IN ('ES')"));
-        idiomaAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-        sp_idioma.setAdapter(idiomaAdapter);
-        sp_idioma.setTitle(this.getString(R.string.spinner_idioma_title));
-        sp_idioma.setPositiveButton(this.getString(R.string.spinner_close));
+            idiomaAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
+            sp_idioma.setAdapter(idiomaAdapter);
+            sp_idioma.setTitle(this.getString(R.string.spinner_idioma_title));
+            sp_idioma.setPositiveButton(this.getString(R.string.spinner_close));
 
         //Actualiza el listado
         refrescar();
@@ -141,15 +152,15 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         listaCue = new ArrayList<CueTrabajadoresListado>();
 
         Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN + ", " +
-                        "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
-                        "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
-                        "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' ') " +
-                        " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 LEFT JOIN " +
-                                   Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
-                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUETRABAJADORES_PREGUNTA + " = " + maxPreg +
-                        " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
+                "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUETRABAJADORES_HORAINICIO + ", " +
+                "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' ') " +
+                " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 LEFT JOIN " +
+                Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUETRABAJADORES_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
+                " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUETRABAJADORES_PREGUNTA + " = " + maxPreg +
+                " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
 
         while (cursor.moveToNext()) {
             cue = new CueTrabajadoresListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
@@ -221,7 +232,7 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
 
         while (cAeropuerto.moveToNext()) {
             idAeropuerto = cAeropuerto.getString(0);
-            this.idAeropuerto = cAeropuerto.getInt(0);
+            modeloCue = cAeropuerto.getInt(1);
         }
 
         cAeropuerto.close();
@@ -260,7 +271,9 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
 
         cIdenCue.close();
 
-        cue = new CueTrabajadores(idCue, this.idAeropuerto);
+        cue = new CueTrabajadores(idCue);
+        cue.setIdAeropuerto(stringToInt(idAeropuerto));
+        cue.setIdioma(idIdioma);
 
         return cue;
     }
@@ -282,16 +295,16 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         datosSurvey.putString("hora", hora);
         datosSurvey.putString("numEncuesta", String.valueOf(cue.getIden()));
         datosSurvey.putInt("idCue", cue.getIden());
+        datosSurvey.putInt("idAeropuerto", cue.getIdAeropuerto());
         datosSurvey.putInt("modeloCue", modeloCue);
-        datosSurvey.putInt("idAeropuerto", idAeropuerto);
         datosSurvey.putString("idioma", idioma);
 
         survey.putExtras(datosSurvey);
         startActivityForResult(survey, 0);
     }
 
-    public void enviar(View view){
-        /*
+    /*public void enviar(View view){
+
         final CharSequence[] opciones = {"Sí", "No"};
         final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(ListadoPasajerosActivity.this);
         alertOpciones.setTitle("¿Quiere realizar un envío de la información pendiente?");
@@ -361,14 +374,14 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         });
         alertOpciones.show();
 
-         */
+
     }
 
     private void marcarEnviadoCuestionario(int cueIden){
         SQLiteDatabase db = conn.getWritableDatabase();
 
         db.execSQL("UPDATE " + Contracts.TABLE_CUETRABAJADORES + " SET " + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + " = 1 WHERE " + Contracts.COLUMN_CUETRABAJADORES_IDEN + " = " + cueIden);
-    }
+    }*/
 
     public void exportDatabase(String databaseName) {
         try {
@@ -400,5 +413,19 @@ public class ListadoTrabajadoresActivity extends AppCompatActivity {
         Integer number = random.nextInt(900000)+100000;
 
         return System.currentTimeMillis()+ String.valueOf(number);
+    }
+
+    public int stringToInt (String numeroStr){
+        if (numeroStr != null && numeroStr.matches("[0-9.]+")){
+            int number = 0;
+            try{
+                number = Integer.parseInt(numeroStr);
+                return number;
+            }
+            catch (NumberFormatException ex){
+                return 0;
+            }
+        }
+        return 0;
     }
 }

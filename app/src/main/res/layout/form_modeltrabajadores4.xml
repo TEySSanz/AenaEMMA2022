@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- P1 -->
+    <include layout="@layout/survey_trab_empresa"/>
+    <!-- P2 -->
+    <include layout="@layout/survey_trab_actempre"/>
+    <!-- P3 -->
+    <include layout="@layout/survey_trab_cdlocado_distres"/>
+    <!-- P4 -->
+    <include layout="@layout/survey_trab_jornadas"/>
+    <!-- P5 -->
+    <include layout="@layout/survey_trab_ndiastrab"/>
+    <!-- P6 -->
+    <include layout="@layout/survey_trab_horaent_horasal"/>
+    <!-- P7 -->
+    <include layout="@layout/survey_trab_nmodos"/>
+    <!-- P8 -->
+    <include layout="@layout/survey_trab_modo1_modo2_ultimomodo"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_trab_nocucoche"/>
+    <!-- P10 -->
+    <include layout="@layout/survey_trab_satistranspubli"/>
+    <!-- P11 -->
+    <include layout="@layout/survey_trab_valtranspubli"/>
+    <!-- P12 -->
+    <include layout="@layout/survey_trab_mejtranspubli"/>
+    <!-- P13 -->
+    <include layout="@layout/survey_trab_desplazatrab"/>
+    <!-- P14 -->
+    <include layout="@layout/survey_trab_aparctrab"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_trab_velecaerop"/>
+    <!-- P16 -->
+    <include layout="@layout/survey_trab_notranspubli"/>
+    <!-- P17 -->
+    <include layout="@layout/survey_trab_disptranspubli"/>
+    <!-- P18 -->
+    <include layout="@layout/survey_trab_importranspubli"/>
+    <!-- P19 -->
+    <include layout="@layout/survey_trab_medtranspubli"/>
+    <!-- P20 -->
+    <include layout="@layout/survey_trab_tiempotranspubli"/>
+    <!-- P21 -->
+    <include layout="@layout/survey_trab_compartcoche"/>
+    <!-- P22 -->
+    <include layout="@layout/survey_trab_dispbici"/>
+    <!-- P23 -->
+    <include layout="@layout/survey_trab_modosalida"/>
+    <!-- P24 -->
+    <include layout="@layout/survey_trab_cdedadtrab"/>
+    <!-- P25 -->
+    <include layout="@layout/survey_trab_cdsexo"/>
+    <!-- P26 -->
+    <include layout="@layout/survey_trab_cdslab"/>
+    <!-- P27 -->
+    <include layout="@layout/survey_trab_puesto"/>
+    <!-- P28 -->
+    <include layout="@layout/survey_trab_sugerencia"/>
+
+</LinearLayout>

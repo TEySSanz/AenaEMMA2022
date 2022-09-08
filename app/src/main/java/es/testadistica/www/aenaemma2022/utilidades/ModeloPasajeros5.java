@@ -1140,6 +1140,14 @@ public class ModeloPasajeros5 extends Form {
                         activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_viene_re:
+                        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
+                        //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
+                        String textSpCdlocado = getValorDesplegable(sp_cdlocado_prov).substring(0, 2);
+                        if (textSpCdlocado.contains("07")) {
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(VISIBLE);
+                        }
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
                         break;
@@ -1879,6 +1887,21 @@ public class ModeloPasajeros5 extends Form {
 
                         if (getValorDesplegable(sp_distres_area).substring(0,3).equals("000")) {
                             sp_distres_area.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        }
+                    }
+                    if(activity.findViewById(R.id.survey_layout_cdlocado_esp).getVisibility()==VISIBLE){
+                        /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocado), "00000")) {
+                            return false;
+                        }*/
+                        final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
+
+                        if (getValorDesplegable(sp_cdlocado).substring(0,3).equals("000")) {
+                            sp_cdlocado.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
                                     activity.getResources().getString(R.string.survey_model_text_errorTitle),
@@ -3637,6 +3660,7 @@ public class ModeloPasajeros5 extends Form {
                         quest.setCdiaptoo("-1");
                     }
                     selectedCode = 99000;
+                    quest.setCdlocaco("99000");
                     break;
                 default:
                     selectedCode = 99;

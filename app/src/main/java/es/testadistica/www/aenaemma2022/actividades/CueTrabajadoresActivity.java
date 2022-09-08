@@ -26,19 +26,20 @@ import es.testadistica.www.aenaemma2022.entidades.CueTrabajadores;
 import es.testadistica.www.aenaemma2022.utilidades.DBHelper;
 import es.testadistica.www.aenaemma2022.utilidades.FormTrab;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloTrabajadores1;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloTrabajadores4;
 
 public class CueTrabajadoresActivity extends AppCompatActivity {
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
     private static String DATE_FORMAT_TIME = "HH:mm";
     private Date fechaActual = null;
-    private int maxPreg = 29;
+    private int maxPreg = 1;
 
     private CueTrabajadores cue;
     private FormTrab form;
     private int modeloCue;
-    private int idAeropuerto;
     private int idCue;
+    private int idAeropuerto;
     private int pregunta;
     private Button saveButton;
     private Button nextButton;
@@ -87,18 +88,26 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
             txt_hora.setText(datos.getString("hora"));
             pregunta = 1;
             idCue = datos.getInt("idCue");
-            modeloCue = datos.getInt("modeloCue");
             idAeropuerto = datos.getInt("idAeropuerto");
+            modeloCue = datos.getInt("modeloCue");
+
         }
 
         //Genera el cuestionario
-        cue = new CueTrabajadores(idCue, idAeropuerto);
+        cue = new CueTrabajadores(idCue);
+        cue.setIdAeropuerto(idAeropuerto);
         switch (modeloCue) {
             case 1:
                 form = new ModeloTrabajadores1(this, pregunta, conn);
                 ((ModeloTrabajadores1) form).setCue(cue);
-
+                maxPreg=29;
                 break;
+            case 4:
+                form = new ModeloTrabajadores4(this, pregunta, conn);
+                ((ModeloTrabajadores4) form).setCue(cue);
+                maxPreg=29;
+                break;
+
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
         View.inflate(this, form.getLayoutId(), formContainer);
@@ -126,8 +135,18 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
                     alertDialogBuilder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
-                            //form.onNextPressed(pregunta);
-                            if (form.checkQuestion(999)) {
+                            form.onNextPressed(pregunta);
+                            if (modeloCue==1 || modeloCue==4){
+                                System.out.println("pregunta "+pregunta);
+                                System.out.println("maxPreg "+maxPreg);
+                                if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
+                                        (pregunta!=maxPreg && form.checkQuestion(999))){
+                                    Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
+                                    Intent visita = new Intent();
+                                    setResult(0, visita);
+                                    finish();
+                                }
+                            } else {
                                 Toast.makeText(CueTrabajadoresActivity.this, "El cuestionario se ha guardado", Toast.LENGTH_LONG).show();
                                 Intent visita = new Intent();
                                 setResult(0, visita);
@@ -168,7 +187,12 @@ public class CueTrabajadoresActivity extends AppCompatActivity {
                 etDummy.requestFocus();
 
                 int actual = pregunta;
-                int anterior = ((ModeloTrabajadores1) form).getPreguntaAnterior();
+                int anterior = 0;
+                if (modeloCue == 1) {
+                    anterior = ((ModeloTrabajadores1) form).getPreguntaAnterior();
+                } else if (modeloCue == 4) {
+                    anterior = ((ModeloTrabajadores4) form).getPreguntaAnterior();
+                }
 
                 //form.onPreviousPressed(actual, anterior);
                 pregunta = form.onPreviousPressed(actual, anterior);

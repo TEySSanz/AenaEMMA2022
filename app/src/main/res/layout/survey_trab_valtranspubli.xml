@@ -19,7 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_text_valtranspubli"
-            style="@style/SurveyQuestionTitle"/>
+            style="@style/SurveyQuestionTitle"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_text_valtranspubli_AGP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_valtranspubli_AGP"
+            style="@style/SurveyQuestionTitle"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/survey_text_valtranspubli_ent"

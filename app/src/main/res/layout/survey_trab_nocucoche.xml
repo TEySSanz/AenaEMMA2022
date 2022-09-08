@@ -6,11 +6,12 @@
     android:orientation="vertical"
     tools:ignore="ExtraText">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/survey_layout_nocucoche"
-        style="@style/SurveySingleQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/SurveySingleQuestion"
         android:visibility="gone">
 
         <TextView
@@ -18,7 +19,16 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/survey_text_nocucoche" />
+            android:text="@string/survey_text_nocucoche"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/survey_text_nocucoche_AGP"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_nocucoche_AGP"
+            android:visibility="gone" />
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_nocucoche"
@@ -46,5 +56,5 @@
                 android:text="@string/survey_radio_nocucoche_option3" />
 
         </RadioGroup>
-    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

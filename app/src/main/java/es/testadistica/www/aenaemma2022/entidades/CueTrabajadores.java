@@ -86,6 +86,10 @@ public class CueTrabajadores implements Serializable {
 
     }
 
+    public CueTrabajadores(int iden){
+        this.iden = iden;
+    }
+
     public CueTrabajadores(int iden, int idAeropuerto){
         this.iden = iden;
         this.idAeropuerto = idAeropuerto;

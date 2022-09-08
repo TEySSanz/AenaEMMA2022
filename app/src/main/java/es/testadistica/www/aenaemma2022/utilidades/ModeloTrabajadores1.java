@@ -2800,7 +2800,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 8:
                 //P8
-                RelativeLayout p8 = (RelativeLayout) activity.findViewById(R.id.survey_layout_nmodos);
+                LinearLayout p8 = (LinearLayout) activity.findViewById(R.id.survey_layout_nmodos);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2816,7 +2816,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 10:
                 //P10
-                RelativeLayout p10 = (RelativeLayout) activity.findViewById(R.id.survey_layout_nocucoche);
+                LinearLayout p10 = (LinearLayout) activity.findViewById(R.id.survey_layout_nocucoche);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2824,7 +2824,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 11:
                 //P11
-                RelativeLayout p11 = (RelativeLayout) activity.findViewById(R.id.survey_layout_satistranspubli);
+                LinearLayout p11 = (LinearLayout) activity.findViewById(R.id.survey_layout_satistranspubli);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2856,7 +2856,7 @@ public class ModeloTrabajadores1 extends FormTrab {
                 break;
             case 15:
                 //P15
-                RelativeLayout p15 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
+                LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_aparctrab);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -4281,7 +4281,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         p7.setVisibility(GONE);
 
         //P8
-        RelativeLayout p8 = (RelativeLayout) activity.findViewById(R.id.survey_layout_nmodos);
+        LinearLayout p8 = (LinearLayout) activity.findViewById(R.id.survey_layout_nmodos);
         p8.setVisibility(GONE);
 
         //P9
@@ -4289,11 +4289,11 @@ public class ModeloTrabajadores1 extends FormTrab {
         p9.setVisibility(GONE);
 
         //P10
-        RelativeLayout p10 = (RelativeLayout) activity.findViewById(R.id.survey_layout_nocucoche);
+        LinearLayout p10 = (LinearLayout) activity.findViewById(R.id.survey_layout_nocucoche);
         p10.setVisibility(GONE);
 
         //P11
-        RelativeLayout p11 = (RelativeLayout) activity.findViewById(R.id.survey_layout_satistranspubli);
+        LinearLayout p11 = (LinearLayout) activity.findViewById(R.id.survey_layout_satistranspubli);
         p11.setVisibility(GONE);
 
         //P12
@@ -4309,7 +4309,7 @@ public class ModeloTrabajadores1 extends FormTrab {
         p14.setVisibility(GONE);
 
         //P15
-        RelativeLayout p15 = (RelativeLayout) activity.findViewById(R.id.survey_layout_aparctrab);
+        LinearLayout p15 = (LinearLayout) activity.findViewById(R.id.survey_layout_aparctrab);
         p15.setVisibility(GONE);
 
         //P16

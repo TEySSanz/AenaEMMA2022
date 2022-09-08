@@ -129,6 +129,10 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 //Aeropuerto Madrid-Barajas
                 cuestionarioTrabajadores.setVisibility(View.VISIBLE);
                 break;
+            case 8:
+                //Aeropuerto Malaga
+                cuestionarioTrabajadores.setVisibility(View.VISIBLE);
+                break;
             default:
                 cuestionarioTrabajadores.setVisibility(View.GONE);
                 break;
@@ -373,22 +377,25 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
 
         //Obtenemos el nombre del aeropierto
         String aeropuerto = null;
+        String idAeropuerto = null;
         SQLiteDatabase db = conn.getWritableDatabase();
         String[] usuarios = {txt_usuario.getText().toString()};
 
-        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE +
+        Cursor cUsuarios = db.rawQuery("SELECT T2." + Contracts.COLUMN_AEROPUERTOS_NOMBRE+", T2."+Contracts.COLUMN_AEROPUERTOS_IDEN+
                 " FROM " + Contracts.TABLE_USUARIOS + " AS T1 INNER JOIN " +
                 Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1.idAeropuerto = T2.iden " +
                 " WHERE T1." + Contracts.COLUMN_USUARIOS_NOMBRE + "=?", usuarios);
 
         while (cUsuarios.moveToNext()) {
             aeropuerto = cUsuarios.getString(0);
+            idAeropuerto = cUsuarios.getString(1);
         }
 
         cUsuarios.close();
 
         datos.putString("usuario", txt_usuario.getText().toString());
         datos.putString("aeropuerto", aeropuerto);
+        datos.putString("idAeropuerto", idAeropuerto);
 
         encuestas.putExtras(datos);
         startActivity(encuestas);
@@ -843,7 +850,8 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_CDEDADTRAB + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_CDSLAB + ", " +
                 "T1." + Contracts.COLUMN_CUETRABAJADORES_PUESTO + ", " +
-                "T1." + Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_SUGERENCIAS + ", " +
+                "T1." + Contracts.COLUMN_CUETRABAJADORES_VELECAEROP +
                 " FROM " + Contracts.TABLE_CUETRABAJADORES + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUETRABAJADORES_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUETRABAJADORES_IDEN, parametros);
@@ -927,6 +935,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setCdslab(cursor.getString(73));
             cue.setPuesto(cursor.getString(74));
             cue.setSugerencias(cursor.getString(75));
+            cue.setVelecaerop(cursor.getString(76));
 
             pendientes.add(cue);
         }

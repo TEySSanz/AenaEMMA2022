@@ -19,7 +19,16 @@
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/survey_text_horaent_pregunta" />
+            android:text="@string/survey_text_horaent_pregunta"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_text_horaent_pregunta_AGP"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_horaent_pregunta_AGP"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/survey_layout_horaent_option1"
