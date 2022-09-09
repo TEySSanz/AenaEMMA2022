@@ -6,11 +6,34 @@
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/activity_cuetrabajadores.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modelpasajeros1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modelpasajeros4.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modeltrabajadores1.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modeltrabajadores2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/form_modeltrabajadores4.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdalojen.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdcambio.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdidavue_taus.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdpaisre_cdlocado.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_cdsprof.xml" value="0.2006340579710145" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_dropoff.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_nmodos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_npers.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_relacion.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_ultimodo_m4.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_vienere_cdlocaco_diaptoo.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_cue_vienere_cdlocaco_distracce.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_aparctrab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_cdlocado_distres.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_compartcoche.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_desplazatrab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_horaent_horasal.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_mejtranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_modo1_modo2_ultimomodo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_modosalida.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_nmodos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_nocucoche.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_satistranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_valtranspubli.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ANR/AenaEMMA2022/app/src/main/res/layout/survey_trab_velecaerop.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/eduardo/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_dropdown.xml" value="0.3085" />
         <entry key="..\:/Users/eduardo/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eduardo/Documents/AndroidStudioProjects/AenaEMMA2022/app/src/main/res/drawable/progressbar.xml" value="0.3085" />

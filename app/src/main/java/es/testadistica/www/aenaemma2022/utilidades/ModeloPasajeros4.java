@@ -337,7 +337,10 @@ public class ModeloPasajeros4 extends Form {
                 activity.findViewById(R.id.survey_text_viene_re_AGP).setVisibility(VISIBLE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
-                //P5 NO
+                //P5
+                activity.findViewById(R.id.survey_text_ultimodo_tren_malaga).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_m4_ultimodo_tren_malaga).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_m4_ultimodo_1modo_option9).setVisibility(VISIBLE);
                 //P6
                 activity.findViewById(R.id.survey_text_sitiopark).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_sitiopark_m4).setVisibility(VISIBLE);
@@ -1054,6 +1057,13 @@ public class ModeloPasajeros4 extends Form {
                     activity.findViewById(R.id.survey_layout_cdpaisreotro).setVisibility(VISIBLE);
                 }
 
+
+                if ((!texto.equals("724"))){
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                }
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -1164,7 +1174,7 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String textoProv = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
 
-                if ((textoProv.equals("91")) || (textoProv.equals("94"))){
+                if ((textoProv.equals("94"))){
                     activity.findViewById(R.id.survey_layout_cdlocaco_m4).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_layout_cdlocaco_m4).setVisibility(VISIBLE);
@@ -2348,7 +2358,7 @@ public class ModeloPasajeros4 extends Form {
                     sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                     String textoProv = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
 
-                    if ((textoProv.equals("91")) || (textoProv.equals("94"))){
+                    if ((textoProv.equals("94"))){
                     } else {
                         if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
                         /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
@@ -4188,9 +4198,7 @@ public class ModeloPasajeros4 extends Form {
         SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
         //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
         String textSpCdlocado_prov = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
-        if (textSpCdlocado_prov.contains("91")) {
-            quest.setCdlocado("91");
-        } else if (textSpCdlocado_prov.contains("94")){
+        if (textSpCdlocado_prov.contains("94")){
             quest.setCdlocado("94");
         }
 
@@ -4242,10 +4250,8 @@ public class ModeloPasajeros4 extends Form {
                     sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                     String textoProv = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
 
-                    if ((textoProv.equals("91")) || (textoProv.equals("94"))){
-                        if(textoProv.equals("91")){
-                            quest.setCdlocaco("91");
-                        } else if (textoProv.equals("94")){
+                    if ((textoProv.equals("91"))){
+                        if (textoProv.equals("94")){
                             quest.setCdlocaco("94");
                         }
                         selectedCode = 2;
@@ -4350,6 +4356,9 @@ public class ModeloPasajeros4 extends Form {
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option7:
                     selectedCode = 31;
+                    break;
+                case R.id.survey_radio_m4_ultimodo_1modo_option9:
+                    selectedCode = 42;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option8:
                     EditText etUltimodo_otros= (EditText) activity.findViewById(R.id.survey_edit_m4_ultimodo_otros);

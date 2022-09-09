@@ -89,6 +89,11 @@ public class ModeloTrabajadores4 extends FormTrab {
         switch (cue.getIdAeropuerto()){
             case 8:
                 //Malaga
+                activity.findViewById(R.id.survey_radio_cdlocado_prov_option1).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdlocado_prov_option3).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdlocado_prov).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdlocado_prov_AGP).setVisibility(VISIBLE);
+
                 //P6
                 activity.findViewById(R.id.survey_text_horaent_pregunta).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_horaent_pregunta_AGP).setVisibility(VISIBLE);
@@ -98,8 +103,13 @@ public class ModeloTrabajadores4 extends FormTrab {
                 activity.findViewById(R.id.survey_text_nmodos_AGP).setVisibility(VISIBLE);
 
                 //P8
+                activity.findViewById(R.id.survey_radio_ultimodo_1modo_option11).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_metro_vacio).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_metro).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_ultimodo).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_ultimodo_AGP).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_ultimodo_2modo_option11).setVisibility(GONE);
+
 
                 //P9
                 activity.findViewById(R.id.survey_text_nocucoche).setVisibility(GONE);
@@ -239,10 +249,10 @@ public class ModeloTrabajadores4 extends FormTrab {
 
                 String texto = getValorDesplegable(sp_cdlocado).substring(0,5);
 
-                if (!texto.equals("28079")){
+                if (!texto.equals("29067")){
                     activity.findViewById(R.id.survey_model_layout_distres).setVisibility(GONE);
                 } else {
-                    activity.findViewById(R.id.survey_model_layout_distres).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_model_layout_distres).setVisibility(GONE);
                 }
 
             }
@@ -282,7 +292,7 @@ public class ModeloTrabajadores4 extends FormTrab {
 
         //P3
         final RadioGroup rgCdlocado_prov = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdlocado_prov);
-        final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option1);
+        final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option3);
         final RadioButton rbCdlocado_prov_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option2);
 
         rbCdlocado_prov_1.setOnClickListener(new View.OnClickListener() {
@@ -290,7 +300,7 @@ public class ModeloTrabajadores4 extends FormTrab {
             public void onClick(View v) {
                 rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
-                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia IN ('00','28')"));
+                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia IN ('00','29')"));
 
                 SearchableSpinner survey_spinner_cdlocado;
                 survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
@@ -305,7 +315,7 @@ public class ModeloTrabajadores4 extends FormTrab {
             public void onClick(View v) {
                 rgCdlocado_prov.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
 
-                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia NOT IN ('28')"));
+                ArrayList<mListString> cdlocadoAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", " provincia NOT IN ('29')"));
 
                 SearchableSpinner survey_spinner_cdlocado;
                 survey_spinner_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
@@ -3046,7 +3056,7 @@ public class ModeloTrabajadores4 extends FormTrab {
                 case 3:
                     //P3
                     final RadioGroup rgCdlocado_prov = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdlocado_prov);
-                    final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option1);
+                    final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option3);
                     final RadioButton rbCdlocado_prov_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option2);
                     final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                     final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
@@ -3071,14 +3081,14 @@ public class ModeloTrabajadores4 extends FormTrab {
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }
 
-                        if (getValorDesplegable(sp_cdlocado).substring(0, 5).equals("28079") && getValorDesplegable(sp_distres).substring(0, 5).equals("00000")) {
+                        /*if (getValorDesplegable(sp_cdlocado).substring(0, 5).equals("29067") && getValorDesplegable(sp_distres).substring(0, 5).equals("00000")) {
                             sp_distres.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
                                     activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                     activity.getResources().getString(R.string.survey_text_selectOption),
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                        }
+                        }*/
 
                         if (getValorDesplegable(sp_distres).substring(0, 5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
                             etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -4719,7 +4729,7 @@ public class ModeloTrabajadores4 extends FormTrab {
         SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
         String textSpDistres = getValorDesplegable(sp_distres).substring(0,5);
         EditText etDistresOtros = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
-        if(!textSpDistres.contains("00000") && textSpCdlocado.contains("28079")){
+        if(!textSpDistres.contains("00000") && textSpCdlocado.contains("29067")){
             quest.setDistres(textSpDistres);
 
             if(textSpDistres.contains("99999")){

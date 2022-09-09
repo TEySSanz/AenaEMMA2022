@@ -813,6 +813,15 @@ public class ModeloPasajeros5 extends Form {
                 final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                 ArrayList<mListString> municipioAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
                 sp_cdlocado.setAdapter(municipioAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+
+                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+                if ((!texto.equals("07"))){
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                }
+
             }
 
             @Override
@@ -1133,11 +1142,13 @@ public class ModeloPasajeros5 extends Form {
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_cdiaptoo:
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(VISIBLE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_viene_re:
                         SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);

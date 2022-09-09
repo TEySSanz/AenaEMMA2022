@@ -35,7 +35,7 @@
         <LinearLayout
             android:id="@+id/survey_m4_layout_ultimodo"
             android:layout_width="match_parent"
-            android:layout_height="328dp"
+            android:layout_height="353dp"
             android:orientation="horizontal"
             android:textAlignment="gravity"
             android:visibility="visible">
@@ -80,6 +80,16 @@
                     android:text="@string/survey_m1_text_ultimodo_autobus" />
 
                 <TextView
+                    android:id="@+id/survey_text_ultimodo_tren_malaga"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m1_text_ultimodo_tren_malaga"
+                    android:visibility="gone" />
+
+                <TextView
                     android:id="@+id/survey_text_ultimodo_otros_1col"
                     android:layout_width="match_parent"
                     android:layout_height="23.5dp"
@@ -94,7 +104,7 @@
             <!--- 2 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_m4_ultimodo_2col"
-                android:layout_width="400dp"
+                android:layout_width="425dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -164,7 +174,8 @@
                             android:background="@color/aenaDarkGrey"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="@string/survey_m4_text_ultimodo_coche_vprivado_cvviaja"
-                            android:visibility="visible"/>
+                            android:visibility="visible" />
+
                         <TextView
                             android:id="@+id/survey_text_ultimodo_coche_vprivado_cvviaja_m2"
                             android:layout_width="match_parent"
@@ -173,7 +184,7 @@
                             android:background="@color/aenaDarkGrey"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="@string/survey_m2_text_ultimodo_coche_vprivado_cvviaja"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@+id/survey_text_m4_ultimodo_coche_vprivado_cvdespedir"
@@ -183,7 +194,7 @@
                             android:background="@color/aenaDarkGrey"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="@string/survey_m4_text_ultimodo_coche_vprivado_cvdespedir"
-                            android:visibility= "visible"/>
+                            android:visibility="visible" />
 
                         <TextView
                             android:id="@+id/survey_text_ultimodo_coche_vprivado_cvdespedir_m2"
@@ -193,7 +204,7 @@
                             android:background="@color/aenaDarkGrey"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="@string/survey_m2_text_ultimodo_coche_vprivado_cvdespedir"
-                            android:visibility= "gone"/>
+                            android:visibility="gone" />
                     </LinearLayout>
                 </LinearLayout>
                 <!---Fin vehiculo privado-->
@@ -214,6 +225,16 @@
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m4_text_ultimodo_autobus_apublico" />
+
+                <TextView
+                    android:id="@+id/survey_text_m4_ultimodo_tren_malaga"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m4_text_ultimodo_tren_malaga"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:id="@+id/survey_layout_m4_ultimodo_otros"
@@ -249,7 +270,7 @@
             <LinearLayout
                 android:id="@+id/survey_layout_m4_ultimodo_1modo"
                 android:layout_width="55dp"
-                android:layout_height="500dp"
+                android:layout_height="525dp"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -324,6 +345,15 @@
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
                         android:gravity="center_horizontal|center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option9"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/medium_padding"
+                        android:background="@color/aenaDarkGrey"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:visibility="gone" />
 
                     <RadioButton
                         android:id="@+id/survey_radio_m4_ultimodo_1modo_option8"
