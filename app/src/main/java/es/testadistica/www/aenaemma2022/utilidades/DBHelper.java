@@ -64,7 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
                 }
                 if (subVersion <= 22){ //Si la versión que tiene instalada la tablet es menor o igual a la v1.22 se intentan añadir las columnas.
-                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUETRABAJADORES_VELECAEROP);
+                    addColumn(db, Contracts.TABLE_CUETRABAJADORES, Contracts.COLUMN_CUETRABAJADORES_VELECAEROP);
 
                 }
             }

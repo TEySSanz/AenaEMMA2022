@@ -68,7 +68,8 @@
                 android:id="@+id/survey_radio_motivoavion2_option7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/survey_m4_radio_cdalojin_option7" />
+                android:text="@string/survey_m4_radio_cdalojin_option7"
+                android:visibility="visible"/>
 
             <RadioButton
                 android:id="@+id/survey_radio_motivoavion2_option8"

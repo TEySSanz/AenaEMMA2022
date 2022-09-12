@@ -93,6 +93,9 @@ public class ModeloTrabajadores4 extends FormTrab {
                 activity.findViewById(R.id.survey_radio_cdlocado_prov_option3).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdlocado_prov).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdlocado_prov_AGP).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_distres).setVisibility(GONE);
+                activity.findViewById(R.id.survey_spinner_distres).setVisibility(GONE);
+                activity.findViewById(R.id.survey_distres_otros).setVisibility(GONE);
 
                 //P6
                 activity.findViewById(R.id.survey_text_horaent_pregunta).setVisibility(GONE);
@@ -178,12 +181,12 @@ public class ModeloTrabajadores4 extends FormTrab {
         //survey_spinner_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));
 
         //ArrayAdapter<String> distresAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
-        ArrayList<mListString> distresAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
+        //ArrayList<mListString> distresAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOBARRIOS,"iden", "distrito||codigo","descripcion", "distrito||codigo", " idAeropuerto IN (0," + cue.getIdAeropuerto() + ")"));
         //distresAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
 
-        SearchableSpinner survey_spinner_distres;
-        survey_spinner_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
-        survey_spinner_distres.setAdapter(distresAdapter, 1, 1, activity.getString(R.string.survey_text_distres), activity.getString(R.string.spinner_close));
+        //SearchableSpinner survey_spinner_distres;
+        //survey_spinner_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        //survey_spinner_distres.setAdapter(distresAdapter, 1, 1, activity.getString(R.string.survey_text_distres), activity.getString(R.string.spinner_close));
         //survey_spinner_distres.setTitle(activity.getString(R.string.survey_text_distres));
         //survey_spinner_distres.setPositiveButton(activity.getString(R.string.spinner_close));
     }
@@ -249,10 +252,14 @@ public class ModeloTrabajadores4 extends FormTrab {
 
                 String texto = getValorDesplegable(sp_cdlocado).substring(0,5);
 
-                if (!texto.equals("29067")){
-                    activity.findViewById(R.id.survey_model_layout_distres).setVisibility(GONE);
+                if (texto.equals("29067")){
+                    activity.findViewById(R.id.survey_model_layout_distres).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_distres_otros_MALAGA).setVisibility(VISIBLE);
+                    activity.findViewById(R.id.survey_edit_distres_otros).setVisibility(VISIBLE);
                 } else {
                     activity.findViewById(R.id.survey_model_layout_distres).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_distres_otros_MALAGA).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_edit_distres_otros).setVisibility(GONE);
                 }
 
             }
@@ -262,7 +269,7 @@ public class ModeloTrabajadores4 extends FormTrab {
             }
         });
 
-        final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        /*final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
 
         sp_distres.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -285,7 +292,7 @@ public class ModeloTrabajadores4 extends FormTrab {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
     }
 
     private void condicionesRadioButton() {
@@ -3059,7 +3066,7 @@ public class ModeloTrabajadores4 extends FormTrab {
                     final RadioButton rbCdlocado_prov_1 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option3);
                     final RadioButton rbCdlocado_prov_2 = (RadioButton) activity.findViewById(R.id.survey_radio_cdlocado_prov_option2);
                     final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                    final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+                    //final SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
                     final EditText etDistres_otro = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
 
                     if (!rbCdlocado_prov_1.isChecked() && !rbCdlocado_prov_2.isChecked()) {
@@ -3090,7 +3097,7 @@ public class ModeloTrabajadores4 extends FormTrab {
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }*/
 
-                        if (getValorDesplegable(sp_distres).substring(0, 5).equals("99999") && etDistres_otro.getText().toString().equals("")) {
+                        if (getValorDesplegable(sp_cdlocado).substring(0, 5).equals("29067") && etDistres_otro.getText().toString().equals("")) {
                             etDistres_otro.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
@@ -4720,15 +4727,19 @@ public class ModeloTrabajadores4 extends FormTrab {
         //P3
         SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
         String textSpCdlocado = getValorDesplegable(sp_cdlocado).substring(0,5);
+        EditText etDistresOtros = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
         if(!textSpCdlocado.contains("00000")){
             quest.setCdlocado(textSpCdlocado);
+
+            if(textSpCdlocado.contains("29067")){
+                quest.setDistresotro(etDistresOtros.getText().toString());
+            }
         } else {
             quest.setCdlocado("-1");
         }
 
-        SearchableSpinner sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+        /* sp_distres = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
         String textSpDistres = getValorDesplegable(sp_distres).substring(0,5);
-        EditText etDistresOtros = (EditText) activity.findViewById(R.id.survey_edit_distres_otros);
         if(!textSpDistres.contains("00000") && textSpCdlocado.contains("29067")){
             quest.setDistres(textSpDistres);
 
@@ -4737,7 +4748,7 @@ public class ModeloTrabajadores4 extends FormTrab {
             }
         } else {
             quest.setDistres("-1");
-        }
+        }*/
 
         //P4
         RadioGroup rgJornada = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_jornada);

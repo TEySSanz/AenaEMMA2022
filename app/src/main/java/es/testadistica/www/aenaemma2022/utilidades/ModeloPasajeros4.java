@@ -414,7 +414,8 @@ public class ModeloPasajeros4 extends Form {
                 activity.findViewById(R.id.survey_text_eleccovid).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_eleccovid_m4).setVisibility(VISIBLE);
                 //P26 NO
-                //P27 NO
+                //P27
+                activity.findViewById(R.id.survey_radio_motivoavion2_option7).setVisibility(GONE);
                 //P28
                 activity.findViewById(R.id.survey_text_consume).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_consume_m4).setVisibility(VISIBLE);

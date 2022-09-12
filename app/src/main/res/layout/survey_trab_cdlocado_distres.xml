@@ -116,7 +116,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_text_distres"
-                style="@style/SurveyQuestionAspect"/>
+                style="@style/SurveyQuestionAspect"
+                android:visibility="visible"/>
+
 
             <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
                 android:id="@+id/survey_spinner_distres"
@@ -125,13 +127,22 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/survey_distres_otros"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_text_distres_otros"
+                style="@style/SurveyQuestionAspect"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/survey_distres_otros_MALAGA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_distres_otros_MALAGA"
                 style="@style/SurveyQuestionAspect"
                 android:visibility="gone" />
 
@@ -140,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/SurveyQuestionEdit"
-                android:visibility="gone" />
+                android:visibility="visible" />
         </LinearLayout>
 
     </LinearLayout>
