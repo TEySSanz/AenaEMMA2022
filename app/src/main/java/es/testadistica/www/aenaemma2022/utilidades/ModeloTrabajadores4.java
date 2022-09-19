@@ -112,6 +112,8 @@ public class ModeloTrabajadores4 extends FormTrab {
                 activity.findViewById(R.id.survey_text_ultimodo).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_ultimodo_AGP).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_ultimodo_2modo_option11).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_ultimodo_umodo_option11).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_ultimodo_1modo_option11).setVisibility(GONE);
 
 
                 //P9
