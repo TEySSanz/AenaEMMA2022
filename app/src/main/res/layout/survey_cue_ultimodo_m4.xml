@@ -90,6 +90,16 @@
                     android:visibility="gone" />
 
                 <TextView
+                    android:id="@+id/survey_text_ultimodo_tren_valencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m1_text_ultimodo_tren_valencia"
+                    android:visibility="gone" />
+
+                <TextView
                     android:id="@+id/survey_text_ultimodo_otros_1col"
                     android:layout_width="match_parent"
                     android:layout_height="23.5dp"
@@ -234,6 +244,16 @@
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m4_text_ultimodo_tren_malaga"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/survey_text_m4_ultimodo_tren_valencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m4_text_ultimodo_tren_valencia"
                     android:visibility="gone" />
 
                 <LinearLayout

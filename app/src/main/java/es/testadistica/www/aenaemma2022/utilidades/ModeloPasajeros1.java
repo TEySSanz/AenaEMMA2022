@@ -715,6 +715,12 @@ public class ModeloPasajeros1 extends Form {
                     }
                 }
 
+                if ((!texto.equals("724"))){
+                    activity.findViewById(R.id.survey_radio_viene_re_option1).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_radio_viene_re_option1).setVisibility(VISIBLE);
+                }
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -757,6 +763,15 @@ public class ModeloPasajeros1 extends Form {
                 sp_cdlocado.setTitle(activity.getString(R.string.spinner_municipio_title));
                 sp_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));*/
                 sp_cdlocado.setAdapter(municipioAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+
+                String texto = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+                if ((texto.equals("07"))||(texto.equals("52"))||(texto.equals("94"))||(texto.equals("38"))||(texto.equals("35"))){
+                    activity.findViewById(R.id.survey_radio_viene_re_option1).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_radio_viene_re_option1).setVisibility(VISIBLE);
+                }
+
+
             }
 
             @Override
@@ -827,7 +842,6 @@ public class ModeloPasajeros1 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
                 String texto = getValorDesplegable(sp_cdiaptoo).substring(0,3);
 
                 String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
@@ -850,16 +864,11 @@ public class ModeloPasajeros1 extends Form {
                         break;
 
                 }
-                /*ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
-                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                SearchableSpinner sp_cdiaptof;
-                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);*/
+
 
                 final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
                 sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
                 String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
                 switch (idAeropuerto){
                     case 1:
@@ -879,14 +888,9 @@ public class ModeloPasajeros1 extends Form {
                         }
                         break;
                 }
-                /*ArrayAdapter<String> tipoAeropuertosAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
-                tipoAeropuertosAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                SearchableSpinner sp_cdiaptod;
-                sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-                sp_cdiaptod.setAdapter(tipoAeropuertosPpalAdapter);*/
 
                 final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto2));
+                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto2));
                 sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
 
                 if (!texto.equals("ZZZ")){
@@ -1032,40 +1036,39 @@ public class ModeloPasajeros1 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_cdiaptod.getSelectedItem().toString().substring(0,3);
-                String texto = getValorDesplegable(sp_cdiaptod).substring(0,3);
+                String texto1 = getValorDesplegable(sp_cdiaptod).substring(0,3);
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto1 = sp_cdiaptoo.getSelectedItem().toString().substring(0,3);
-                String texto1 = getValorDesplegable(sp_cdiaptoo).substring(0,3);
+                String texto = getValorDesplegable(sp_cdiaptoo).substring(0,3);
 
                 String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
                 switch (idAeropuerto){
                     case 1:
                         //Madrid
-                        if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 ";
-                        } else {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL + " = 1 ";
+                        if (!(texto.equals("000")||(texto.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                        }
+                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+
                         }
                         break;
                     case 2:
                         //Barcelona
-                        if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 ";
-                        } else {
-                            filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_BCNPRINCIPAL + " = 1 ";
+                        if (!(texto.equals("000")||(texto.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                        }
+                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+
                         }
                         break;
                 }
-                /*ArrayAdapter<String> tipoAeropuertosPpalAdapter = new ArrayAdapter<String>(activity, R.layout.selection_spinner_item_small, getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
-                tipoAeropuertosPpalAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
-                SearchableSpinner sp_cdiaptof;
-                sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter);*/
 
-                final SearchableSpinner sp_cdiaptof= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion", filtroAeropuerto1));
+                final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
                 sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
 
                 if (!texto.equals("ZZZ")){
@@ -3921,15 +3924,31 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(15); //>P15
                                 break;
                             case R.id.survey_radio_cdalojen_option1:
-                                rbViene_re1.setVisibility(GONE);
                                 show = showQuestion(9); //>P9
+                                rbViene_re1.setVisibility(GONE);
                                 break;
                             case R.id.survey_radio_cdalojen_option7:
+                                show = showQuestion(9);
                                 rbViene_re1.setVisibility(GONE);
-                                show = showQuestion(9); //>P9
                                 break;
                             case R.id.survey_radio_cdalojen_option9:
-                                show = showQuestion(9); //>P9
+                                if (activated) {
+                                    RadioGroup rgCdcambio = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdcambio);
+                                    checkedId = rgCdcambio.getCheckedRadioButtonId();
+
+                                    if (checkedId > 0) {
+                                        switch (checkedId) {
+                                            case R.id.survey_radio_cdcambio_option1:
+                                                show = showQuestion(9); //>P9
+                                                rbViene_re1.setVisibility(GONE);
+                                                break;
+                                        }
+                                    } else {
+                                        show = showQuestion(9); //>P9
+                                    }
+                                } else {
+                                    show = showQuestion(9);
+                                }
                                 break;
                         }
                     } else {

@@ -62,6 +62,14 @@
             android:text="@string/survey_m4_AGP_text_viene_re"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_viene_re_VLC"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m4_VLC_text_viene_re"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re_diaptoo"
             android:layout_width="match_parent"
@@ -200,6 +208,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/survey_m2_text_cdlocacootro_otro" />
+
+                <TextView
+                    android:id="@+id/survey_edit_text_cdlocacootro_VLC"
+                    style="@style/SurveyQuestionLiteral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_m2_text_cdlocacootro_otro_VLC" />
 
 
                 <EditText
