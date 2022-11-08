@@ -338,6 +338,9 @@ public class ModeloPasajeros5 extends Form {
         ArrayList<mListString> municipiosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> motivoViajefiltroAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO,"iden", "codigo","motivo", "codigo"));
+        ArrayList<mListString> islasAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIA,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> islasLocalidadAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> distritosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIAPLAYA,"iden", "codigo","descripcion", "codigo"));
 
         String filtroAeropuerto = "iden IS NOT NULL"; //Para que salgan todos
         switch (idAeropuerto){
@@ -516,6 +519,54 @@ public class ModeloPasajeros5 extends Form {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
 
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SearchableSpinner sp_distracceGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
+        sp_distracceGC.setAdapter(distritosAdapter, 1, 1, activity.getString(R.string.spinner_distrito_title), activity.getString(R.string.spinner_close));
+        /*sp_distracce.setAdapter(distritosAdapter);
+        sp_distracce.setTitle(activity.getString(R.string.spinner_distrito_title));
+        sp_distracce.setPositiveButton(activity.getString(R.string.spinner_close));*/
+
+        sp_distracceGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_distracceGC.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SearchableSpinner sp_cdlocaco_provGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+        sp_cdlocaco_provGC.setAdapter(islasAdapterGC, 1, 1, activity.getString(R.string.spinner_isla_title), activity.getString(R.string.spinner_close));
+
+        sp_cdlocaco_provGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocaco_provGC.setBackgroundResource(android.R.drawable.btn_dropdown);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        sp_cdlocacoGC.setAdapter(islasLocalidadAdapterGC, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
+
+        sp_cdlocacoGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocacoGC.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

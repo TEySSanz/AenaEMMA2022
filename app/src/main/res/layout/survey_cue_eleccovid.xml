@@ -45,6 +45,14 @@
             android:text="@string/survey_m2_text_eleccovid"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_eleccovid_GC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_m2_text_eleccovid_GC"
+            android:visibility="gone"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"

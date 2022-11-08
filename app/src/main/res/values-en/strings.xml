@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.27)</string>
+    <string name="app_name">EMMA 2022 (v1.29)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.27</string>
+    <string name="version">v1.29</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -518,4 +518,11 @@
     <string name="survey_m4_ALC_text_viene_re">3.Where did you start your journey to take this flight in Alicante´s airport?</string>
     <string name="survey_m4_AGP_text_viene_re">3.Where did you start your journey to take this flight in Malaga´s airport?</string>
     <string name="survey_m4_VLC_text_viene_re">3.Where did you start your journey to take this flight in Valencia´s airport?</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">The driver comes to DROP SOMEONE OFF</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_pas">The driver TRAVELS</string>
+    <string name="survey_m2_text_eleccovid_GC">29.How the COVID-19 pandemic has affected your choice to travel by plane: (Check the option that best suits your choice)</string>
+    <string name="survey_m2_text_p44factu_GC">26.Have you checked in your luggage?</string>
+    <string name="survey_m2_text_nperbul_GC">27.How many people do these cases belong to?</string>
+    <string name="survey_m2_text_chekinb_GC">28.Where did you obtain your boarding pass?</string>
+    <string name="survey_m2_text_viene_re_GC">7.Where did you start your journey to take this flight in Gran Canaria´s airport?</string>
 </resources>

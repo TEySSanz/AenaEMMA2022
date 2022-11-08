@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.27)</string>
+    <string name="app_name">EMMA 2022 (v1.29)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.27</string>
+    <string name="version">v1.29</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -406,7 +406,7 @@
     <string name="survey_m2_text_vol12mes">25.¿Quantas vezes fez a MESA ROTA COMPLETA nos últimos 12 MESES sem  contar com esta?</string>
     <string name="survey_m2_text_eleccovid">26.Como é que a pandemia COVID-19 afectou a sua escolha de viajar de avião? (Assinale a opção que melhor descreve a sua escolha)</string>
     <string name="survey_m2_text_p44factu">27.Já fez o check-in da bagagem?</string>
-    <string name="survey_m2_text_nperbul">8.A quantas pessoas pertencem as embalagens?</string>
+    <string name="survey_m2_text_nperbul">28.A quantas pessoas pertencem as embalagens?</string>
     <string name="survey_m2_text_dropoff">29.E em que balcão deixou a sua bagagem?</string>
     <string name="survey_m2_text_chekinb">29.Onde obteve o seu cartão de embarque?</string>
     <string name="survey_m2_text_consume">30.Consumiu algum produto hoje no serviço de catering do aeroporto (cafetarias, máquinas de venda automática, etc.)?</string>
@@ -428,4 +428,11 @@
     <string name="survey_m4_ALC_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Alicante?</string>
     <string name="survey_m4_AGP_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Malaga?</string>
     <string name="survey_m4_VLC_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Valencia?</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">O condutor do veículo só vem para se despedir</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_pas">O condutor do veículo viaja</string>
+    <string name="survey_m2_text_eleccovid_GC">29.Como é que a pandemia COVID-19 afectou a sua escolha de viajar de avião? (Assinale a opção que melhor descreve a sua escolha)</string>
+    <string name="survey_m2_text_p44factu_GC">26.Já fez o check-in da bagagem?</string>
+    <string name="survey_m2_text_nperbul_GC">27.A quantas pessoas pertencem as embalagens?</string>
+    <string name="survey_m2_text_chekinb_GC">28.Onde obteve o seu cartão de embarque?</string>
+    <string name="survey_m2_text_viene_re_GC">7.Para apanhar este voo, de onde parte para chegar ao aeroporto de Gran Canaria?</string>
 </resources>

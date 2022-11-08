@@ -41,8 +41,8 @@ import es.testadistica.www.aenaemma2022.searchablespinner.mListString;
 
 public class ModeloPasajeros2 extends Form {
 
-    private int preguntaAnterior = 1;
     private int idCue;
+    private int preguntaAnterior = 1;
     private int idAeropuerto;
     private int finCue = 37;
     private boolean resultValue;
@@ -110,6 +110,8 @@ public class ModeloPasajeros2 extends Form {
                 activity.findViewById(R.id.survey_text_conexfac).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_conexfac_m2).setVisibility(VISIBLE);
                 //P7
+                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_viene_re_GC).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdlocaco_prov_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_cdlocaco).setVisibility(GONE);

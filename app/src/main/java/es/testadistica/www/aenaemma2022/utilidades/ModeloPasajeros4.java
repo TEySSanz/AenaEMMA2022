@@ -1179,6 +1179,7 @@ public class ModeloPasajeros4 extends Form {
                 sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
 
                 String texto = getValorDesplegable(sp_cdpaisre).substring(0,3);
+                String textoProv = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
                 if (texto.equals("724")){ //España
                     activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(VISIBLE);
                     activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(GONE);
@@ -1203,7 +1204,7 @@ public class ModeloPasajeros4 extends Form {
                 }
 
 
-                if ((!texto.equals("724"))){
+                if (!texto.equals("724")){
                     activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
@@ -1252,6 +1253,13 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocado.setAdapter(municipioAdapter);
                 sp_cdlocado.setTitle(activity.getString(R.string.spinner_municipio_title));
                 sp_cdlocado.setPositiveButton(activity.getString(R.string.spinner_close));*/
+                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String textoProv = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
+                if((textoProv.equals("07"))||(textoProv.equals("35"))||(textoProv.equals("94"))){
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                }else{
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                }
 
 
             }

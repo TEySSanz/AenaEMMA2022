@@ -2,7 +2,7 @@ package es.testadistica.www.aenaemma2022.utilidades;
 
 public class Contracts {
 
-    public static final int DATABASE_VERSION = 27;
+    public static final int DATABASE_VERSION = 29;
     public static final String DATABASE_NAME = "Aena.db";
 
     //Tabla Usuarios
@@ -348,6 +348,43 @@ public class Contracts {
             COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA + " TEXT, " +
             COLUMN_TIPOISLASLOCALIDAD_DESCRIPCIONISLA + " TEXT )";
     public static final String SQL_DROP_TIPOISLASLOCALIDAD = "DROP TABLE IF EXISTS " + TABLE_TIPOISLASLOCALIDAD;
+
+    //Tabla TipoGranCanaria
+    public static final String TABLE_TIPOGRANCANARIA = "TipoGranCanaria";
+    public static final String COLUMN_TIPOGRANCANARIA_IDEN = "iden";
+    public static final String COLUMN_TIPOGRANCANARIA_CODIGO = "codigo";
+    public static final String COLUMN_TIPOGRANCANARIA_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOGRANCANARIA = "CREATE TABLE "+ TABLE_TIPOGRANCANARIA + " ("+
+            COLUMN_TIPOGRANCANARIA_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOGRANCANARIA_CODIGO + " TEXT, " +
+            COLUMN_TIPOGRANCANARIA_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOGRANCANARIA = "DROP TABLE IF EXISTS " + TABLE_TIPOGRANCANARIA;
+
+    //Tabla TipoGranCanariaLocalidad
+    public static final String TABLE_TIPOGRANCANARIALOCALIDAD = "TipoGranCanariaLocalidad";
+    public static final String COLUMN_TIPOGRANCANARIALOCALIDAD_IDEN = "iden";
+    public static final String COLUMN_TIPOGRANCANARIALOCALIDAD_CODIGO = "codigo";
+    public static final String COLUMN_TIPOGRANCANARIALOCALIDAD_DESCRIPCION = "descripcion";
+    public static final String COLUMN_TIPOGRANCANARIALOCALIDAD_CODIGOISLA = "codigoIsla";
+    public static final String COLUMN_TIPOGRANCANARIALOCALIDAD_DESCRIPCIONISLA = "descripcionIsla";
+    public static final String SQL_CREATE_TIPOGRANCANARIALOCALIDAD = "CREATE TABLE "+ TABLE_TIPOGRANCANARIALOCALIDAD + " ("+
+            COLUMN_TIPOGRANCANARIALOCALIDAD_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOGRANCANARIALOCALIDAD_CODIGO + " TEXT, " +
+            COLUMN_TIPOGRANCANARIALOCALIDAD_DESCRIPCION + " TEXT, " +
+            COLUMN_TIPOGRANCANARIALOCALIDAD_CODIGOISLA + " TEXT, " +
+            COLUMN_TIPOGRANCANARIALOCALIDAD_DESCRIPCIONISLA + " TEXT )";
+    public static final String SQL_DROP_TIPOGRANCANARIALOCALIDAD = "DROP TABLE IF EXISTS " + TABLE_TIPOGRANCANARIALOCALIDAD;
+
+    //Tabla TipoGranCanariaPlaya
+    public static final String TABLE_TIPOGRANCANARIAPLAYA = "TipoGranCanariaPlaya";
+    public static final String COLUMN_TIPOGRANCANARIAPLAYA_IDEN = "iden";
+    public static final String COLUMN_TIPOGRANCANARIAPLAYA_CODIGO = "codigo";
+    public static final String COLUMN_TIPOGRANCANARIAPLAYA_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOGRANCANARIAPLAYA = "CREATE TABLE "+ TABLE_TIPOGRANCANARIAPLAYA + " ("+
+            COLUMN_TIPOGRANCANARIAPLAYA_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOGRANCANARIAPLAYA_CODIGO + " TEXT, " +
+            COLUMN_TIPOGRANCANARIAPLAYA_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOGRANCANARIAPLAYA = "DROP TABLE IF EXISTS " + TABLE_TIPOGRANCANARIAPLAYA;
 
     //Tabla CuePasajeros
     public static final String TABLE_CUEPASAJEROS = "CuePasajeros";

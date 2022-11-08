@@ -156,7 +156,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            if (modeloCue==1 || modeloCue==2 || modeloCue==4 || modeloCue==5){
+                            if (modeloCue==1 || modeloCue==2 || modeloCue==3 ||modeloCue==4 || modeloCue==5){
                                 System.out.println("pregunta "+pregunta);
                                 System.out.println("maxPreg "+maxPreg);
                                 if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
@@ -212,6 +212,8 @@ public class CuePasajerosActivity extends AppCompatActivity {
                     anterior = ((ModeloPasajeros1) form).getPreguntaAnterior();
                 } else if (modeloCue == 2) {
                     anterior = ((ModeloPasajeros2) form).getPreguntaAnterior();
+                } else if (modeloCue == 3) {
+                    anterior = ((ModeloPasajeros3) form).getPreguntaAnterior();
                 } else if (modeloCue == 4) {
                     anterior = ((ModeloPasajeros4) form).getPreguntaAnterior();
                 } else if (modeloCue == 5) {

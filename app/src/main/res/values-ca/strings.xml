@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.27)</string>
+    <string name="app_name">EMMA 2022 (v1.29)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.27</string>
+    <string name="version">v1.29</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -471,4 +471,11 @@
     <string name="survey_m4_ALC_text_viene_re">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Alicante?</string>
     <string name="survey_m4_AGP_text_viene_re">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Malaga?</string>
     <string name="survey_m4_VLC_text_viene_re">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Valencia?</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">Conductor del vehicle només ve a acomiadar</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_pas">Conductor del vehicle viatja</string>
+    <string name="survey_m2_text_eleccovid_GC">29.¿Com ha afectat la pandèmia per COVID-19 en la seva elecció de viatjar amb avió? (Marqui l\\ \"\'\"opció que millor defineixi la seva elecció)</string>
+    <string name="survey_m2_text_p44factu_GC">26.¿Ha facturat equipatge?</string>
+    <string name="survey_m2_text_nperbul_GC">27.¿A quantes persones pertanyen els embalums?</string>
+    <string name="survey_m2_text_chekinb_GC">28.¿On ha obtingut la seva targeta d\\\'embarcament?</string>
+    <string name="survey_m2_text_viene_re_GC">7.Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Gran Canaria?</string>
 </resources>

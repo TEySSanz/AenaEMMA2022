@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.27)</string>
+    <string name="app_name">EMMA 2022 (v1.29)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.27</string>
+    <string name="version">v1.29</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -428,5 +428,12 @@
     <string name="survey_m4_ALC_text_viene_re">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Alicante?</string>
     <string name="survey_m4_AGP_text_viene_re">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Malaga?</string>
     <string name="survey_m4_VLC_text_viene_re">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Valencia?</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">Il conducente del veicolo viene solo per salutare</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_pas">Il conducente del veicolo viaggia</string>
+    <string name="survey_m2_text_eleccovid_GC">29.In che modo la pandemia COVID-19 ha influenzato la sua scelta di viaggiare in aereo? (Barrare l\\\"\'\"opzione che meglio descrive la sua scelta)</string>
+    <string name="survey_m2_text_p44factu_GC">26.Avete imbarcato i bagagli?</string>
+    <string name="survey_m2_text_nperbul_GC">27.A quante persone appartengono i pacchetti?</string>
+    <string name="survey_m2_text_chekinb_GC">28.Dove hai preso la carta d\\\"\'\"imbarco?</string>
+    <string name="survey_m2_text_viene_re_GC">7.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Gran Canaria?</string>
 
 </resources>

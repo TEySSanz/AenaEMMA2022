@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_m1_text_viene_re"
-            android:visibility="visible"/>
+            android:visibility="visible" />
+
         <TextView
             android:id="@+id/survey_text_viene_re_bcn"
             style="@style/SurveyQuestionTitle"
@@ -35,7 +36,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/survey_m2_text_viene_re"
-            android:visibility="gone"/>
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/survey_text_viene_re_GC"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_viene_re"
+            android:visibility="gone" />
 
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re"
@@ -48,20 +57,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_viene_re_option1"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <RadioButton
                 android:id="@+id/survey_radio_viene_re_option2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m1_radio_viene_re_option2"
-                android:visibility="visible"/>
+                android:visibility="visible" />
+
             <RadioButton
                 android:id="@+id/survey_radio_viene_re_option2_m2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m2_radio_viene_re_option2"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </RadioGroup>
 
         <LinearLayout
@@ -97,7 +107,8 @@
                         android:layout_gravity="center"
                         android:gravity="center|center_horizontal"
                         android:text="@string/survey_m1_text_cdlocaco_prov"
-                        android:visibility="visible"/>
+                        android:visibility="visible" />
+
                     <TextView
                         android:id="@+id/survey_text_cdlocaco_prov_m2"
                         style="@style/SurveyQuestionTitle"
@@ -106,7 +117,7 @@
                         android:layout_gravity="center"
                         android:gravity="center|center_horizontal"
                         android:text="@string/survey_m2_text_cdlocaco_prov"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
 
                     <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
                         android:id="@+id/survey_spinner_cdlocaco_prov"
@@ -165,7 +176,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/survey_m1_text_cdiaptod_otro"
-                        android:visibility="visible"/>
+                        android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/survey_edit_text_cdlocacootro_m2"
@@ -173,7 +184,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/survey_m2_text_cdlocacootro_otro"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/survey_edit_text_cdlocacootro_m2_2GC"
+                        style="@style/SurveyQuestionLiteral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/survey_m2_text_cdlocacootro_otro2"
+                        android:visibility="gone" />
 
 
                     <EditText
@@ -200,7 +219,7 @@
                         android:layout_marginLeft="@dimen/standard_padding"
                         android:gravity="center"
                         android:text="@string/survey_m1_text_distracce"
-                        android:visibility="visible"/>
+                        android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/survey_text_distracce_bcn"
@@ -232,6 +251,7 @@
                         android:layout_weight="1"
                         android:background="@android:drawable/btn_dropdown"
                         android:spinnerMode="dropdown" />
+
 
                 </LinearLayout>
 

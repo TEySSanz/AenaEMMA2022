@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.27)</string>
+    <string name="app_name">EMMA 2022 (v1.29)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -64,6 +64,7 @@
     <string name="spinner_producto_title">SELECCIONE EL PRODUCTO</string>
     <string name="spinner_tipoAeropuerto_title">SELECCIONE EL AEROPUERTO</string>
     <string name="spinner_motivo_title">SELECCIONE EL MOTIVO</string>
+    <string name="spinner_playa_title">SELECCIONE LA PLAYA</string>
 
     <!--Preguntas Modelo 1-->
     <string name="survey_text_error_nviaje_num">Se debe indicar un nº de viajes</string>
@@ -646,9 +647,11 @@
     <string name="survey_m4_text_ultimodo_coche_valquiler">Vehículo de alquiler</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler_num">25</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado">Vehiculo privado</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_pas">Vehículo privado de pasajeros</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Coche pasajeros</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja_num">22</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Coche acompañantes</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">Vehículo privado de acompañantes</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_num">23</string>
     <string name="survey_m4_text_ultimodo_autobus">AUTOBÚS</string>
     <string name="survey_m4_text_ultimodo_autobus_adiscrecional">Autobús de cortesía</string>
@@ -879,7 +882,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
-    <string name="version">v1.27</string>
+    <string name="version">v1.29</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -899,9 +902,11 @@
     <string name="survey_m2_text_conexfac">6. ¿Al realizar la conexión, ha tenido que recoger su equipaje en este aeropuerto para volver a facturarlo?</string>
     <!--Pregunta7-->
     <string name="survey_m2_text_viene_re">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Palma de Mallorca?</string>
+    <string name="survey_m2_text_viene_re_GC">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Gran Canaria?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
+    <string name="survey_m2_text_cdlocacootro_otro2">Especificar playa/hotel/calle...</string>
     <string name="survey_m2_radio_viene_re_option1">Viene de su residencia habitual</string>
     <string name="survey_m2_radio_viene_re_option2">Isla</string>
     <!--Pregunta8-->
@@ -949,14 +954,18 @@
     <string name="survey_m2_text_vol12mes">25. ¿Cuántas veces ha realizado la MISMA RUTA COMPLETA en los últimos 12 MESES sin contar este?</string>
     <!--Pregunta26-->
     <string name="survey_m2_text_eleccovid">26. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
+    <string name="survey_m2_text_eleccovid_GC">29. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
     <!--Pregunta27-->
     <string name="survey_m2_text_p44factu">27. ¿Ha facturado equipaje?</string>
+    <string name="survey_m2_text_p44factu_GC">26. ¿Ha facturado equipaje?</string>
     <!--Pregunta28-->
     <string name="survey_m2_text_nperbul">28. ¿A cuántas personas pertenecen los bultos?</string>
+    <string name="survey_m2_text_nperbul_GC">27. ¿A cuántas personas pertenecen los bultos?</string>
     <!--Pregunta29-->
     <string name="survey_m2_text_dropoff">29. Y ¿En qué mostrador ha dejado su equipaje?</string>
     <!--Pregunta30-->
     <string name="survey_m2_text_chekinb">29. ¿Dónde ha obtenido su tarjeta de embarque?</string>
+    <string name="survey_m2_text_chekinb_GC">28. ¿Dónde ha obtenido su tarjeta de embarque?</string>
     <!--Pregunta31-->
     <string name="survey_m2_text_consume">30. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
     <string name="survey_m2_text_gas_cons">30a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>

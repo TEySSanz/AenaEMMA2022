@@ -169,6 +169,21 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOISLASLOCALIDAD);
         DBInsert.insertsTipoIslasLocalidad(db);
 
+        //TipoGranCanaria
+        db.execSQL(Contracts.SQL_DROP_TIPOGRANCANARIA);
+        db.execSQL(Contracts.SQL_CREATE_TIPOGRANCANARIA);
+        DBInsert.insertsTipoGranCanaria(db);
+
+        //TipoGranCanariaLocalidad
+        db.execSQL(Contracts.SQL_DROP_TIPOGRANCANARIALOCALIDAD);
+        db.execSQL(Contracts.SQL_CREATE_TIPOGRANCANARIALOCALIDAD);
+        DBInsert.insertsTipoGranCanariaLocalidad(db);
+
+        //TipoGranCanariaPlaya
+        db.execSQL(Contracts.SQL_DROP_TIPOGRANCANARIAPLAYA);
+        db.execSQL(Contracts.SQL_CREATE_TIPOGRANCANARIAPLAYA);
+        DBInsert.insertsTipoGranCanariaPlaya(db);
+
     }
 
     public void addColumn (SQLiteDatabase db, String tabla, String columna){
