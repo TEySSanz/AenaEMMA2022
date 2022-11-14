@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.29)</string>
+    <string name="app_name">EMMA 2022 (v1.30)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -882,7 +882,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
-    <string name="version">v1.29</string>
+    <string name="version">v1.30</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -903,6 +903,8 @@
     <!--Pregunta7-->
     <string name="survey_m2_text_viene_re">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Palma de Mallorca?</string>
     <string name="survey_m2_text_viene_re_GC">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Gran Canaria?</string>
+    <string name="survey_m2_text_viene_re_TS">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Tenerife Sur?</string>
+    <string name="survey_m2_text_viene_re_TN">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Tenerife Norte?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>

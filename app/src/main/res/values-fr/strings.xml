@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.29)</string>
+    <string name="app_name">EMMA 2022 (v1.30)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.29</string>
+    <string name="version">v1.30</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -434,4 +434,6 @@
     <string name="survey_m2_text_nperbul_GC">27.A combien de personnes appartiennent les bagages?</string>
     <string name="survey_m2_text_chekinb_GC">28.Où avez-vous obtenu votre carte d`embarquement?</string>
     <string name="survey_m2_text_viene_re_GC">7.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Gran Canaria?</string>
+    <string name="survey_m2_text_viene_re_TS">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Tenerife Sur?</string>
+    <string name="survey_m2_text_viene_re_TN">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Tenerife Norte?</string>
 </resources>

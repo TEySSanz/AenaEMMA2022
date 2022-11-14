@@ -1095,12 +1095,22 @@ public class ModeloPasajeros3 extends Form {
                 //String textoViajeFiltro = sp_cdmviajefiltro.getSelectedItem().toString().substring(0,2);
                 String textoViajeFiltro = getValorDesplegable(sp_cdmviajefiltro).substring(0,2);
 
+                int numero=209;
+
                 String filtroViaje = " iden IS NOT NULL ";
 
                 if (textoViajeFiltro.equals("10") || textoViajeFiltro.equals("20") || textoViajeFiltro.equals("29")){
                     activity.findViewById(R.id.survey_spinner_cdmviaje).setVisibility(VISIBLE);
-                    filtroViaje = " "+Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO+" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
+                    filtroViaje = " "+ Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN (" + numero + ") AND " +Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO +" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
                 }
+
+
+                /*String filtroViaje = " iden IS NOT NULL ";
+
+                if (textoViajeFiltro.equals("10") || textoViajeFiltro.equals("20") || textoViajeFiltro.equals("29")){
+                    activity.findViewById(R.id.survey_spinner_cdmviaje).setVisibility(VISIBLE);
+                    filtroViaje = " "+Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO+" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
+                }*/
 
                 ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo", filtroViaje));
                 sp_cdmviaje.setAdapter(motivoViajeAdapter, 1, 1, activity.getString(R.string.spinner_motivo_title), activity.getString(R.string.spinner_close));
