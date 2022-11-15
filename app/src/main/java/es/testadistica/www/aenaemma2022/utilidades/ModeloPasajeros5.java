@@ -2085,22 +2085,6 @@ public class ModeloPasajeros5 extends Form {
 
                     String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
                     switch (idAeropuerto) {
-                        case 4:
-                            //IBIZA
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
-                        case 6:
-                            //Menorca
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
                         case 13:
                             //Tenerife Sur
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
@@ -2118,24 +2102,8 @@ public class ModeloPasajeros5 extends Form {
 
                     String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
                     switch (idAeropuerto) {
-                        case 4:
-                            //Ibiza
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
-                        case 6:
-                            //Menorca
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
                         case 13:
-                            //Tenerife sur
+                            //Tenerife Sur
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
                             } else {
@@ -2170,50 +2138,38 @@ public class ModeloPasajeros5 extends Form {
         sp_cdiaptod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                //final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
+                //if (rbCdiaptoo.isChecked()) {
+
                 sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto1 = getValorDesplegable(sp_cdiaptod).substring(0,3);
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdiaptoo).substring(0,3);
-                final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
-                if (rbCdiaptoo.isChecked()) {
 
-                    String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                    switch (idAeropuerto) {
 
-                        case 4:
-                            //Ibiza
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 6:
-                            //Menorca
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 13:
-                            //Tenerife sur
-                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
-                            if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
-                                filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
-                            }
-                            if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
-                                filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto) {
 
-                            }
-                            break;
-                    }
 
-                    final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
-                    sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+                    case 13:
+                        //Tenerife sur
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
+                        if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                        }
+                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+
+                        }
+                        break;
                 }
+
+                final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+
 
                 if (!texto1.equals("ZZZ")) {
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
@@ -2221,6 +2177,7 @@ public class ModeloPasajeros5 extends Form {
                 } else {
                     activity.findViewById(R.id.survey_layout_cdiaptodotro).setVisibility(VISIBLE);
                 }
+
 
             }
             @Override
@@ -2721,7 +2678,7 @@ public class ModeloPasajeros5 extends Form {
                         if (textSpCdlocado.contains("07")) {
                             activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         } else {
-                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
                         }
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                         activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
