@@ -323,6 +323,17 @@ public class Contracts {
             COLUMN_TIPOMOTIVOVIAJEFILTRO_CODIGO + " TEXT )";
     public static final String SQL_DROP_TIPOMOTIVOVIAJEFILTRO = "DROP TABLE IF EXISTS " + TABLE_TIPOMOTIVOVIAJEFILTRO;
 
+    //Tabla TipoAutobus
+    public static final String TABLE_TIPOAUTOBUS = "TipoAutobus";
+    public static final String COLUMN_TIPOAUTOBUS_IDEN = "iden";
+    public static final String COLUMN_TIPOAUTOBUS_CODIGO = "codigo";
+    public static final String COLUMN_TIPOAUTOBUS_DESCRIPCION = "descripcion";
+    public static final String SQL_CREATE_TIPOAUTOBUS = "CREATE TABLE "+ TABLE_TIPOAUTOBUS + " ("+
+            COLUMN_TIPOAUTOBUS_IDEN + " INTEGER PRIMARY KEY, " +
+            COLUMN_TIPOAUTOBUS_CODIGO + " TEXT, " +
+            COLUMN_TIPOAUTOBUS_DESCRIPCION + " TEXT )";
+    public static final String SQL_DROP_TIPOAUTOBUS = "DROP TABLE IF EXISTS " + TABLE_TIPOAUTOBUS;
+
     //Tabla TipoIslas
     public static final String TABLE_TIPOISLAS = "TipoIslas";
     public static final String COLUMN_TIPOISLAS_IDEN = "iden";
@@ -484,6 +495,22 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_PUERTA = "puerta";
     public static final String COLUMN_CUEPASAJEROS_CDLOCACOOTRO = "cdlocacootro";
     public static final String COLUMN_CUEPASAJEROS_VALOREXP = "valorexp";
+    public static final String COLUMN_CUEPASAJEROS_EMPRESA = "empresa";
+    public static final String COLUMN_CUEPASAJEROS_EMPRESAOTRO = "empresaotro";
+    public static final String COLUMN_CUEPASAJEROS_CDLOCADOOTRO = "cdlocadootro";
+    public static final String COLUMN_CUEPASAJEROS_DESTINO = "destino";
+    public static final String COLUMN_CUEPASAJEROS_DESTINOOTRO = "destinootro";
+    public static final String COLUMN_CUEPASAJEROS_CIA = "cia";
+    public static final String COLUMN_CUEPASAJEROS_CIAOTRO = "ciaotro";
+    public static final String COLUMN_CUEPASAJEROS_HLLEGABUS = "hllegabus";
+    public static final String COLUMN_CUEPASAJEROS_HSALEAVION = "hsaleavion";
+    public static final String COLUMN_CUEPASAJEROS_BUSTRANSFER = "bustransfer";
+    public static final String COLUMN_CUEPASAJEROS_ENTAUTOBUS = "entautobus";
+    public static final String COLUMN_CUEPASAJEROS_DESAUTOBUS = "desautobus";
+    public static final String COLUMN_CUEPASAJEROS_HSALEBUS = "hsalebus";
+    public static final String COLUMN_CUEPASAJEROS_SECCION = "seccion";
+    public static final String COLUMN_CUEPASAJEROS_MODO = "modo";
+    public static final String COLUMN_CUEPASAJEROS_MODOOTRO = "modootro";
     public static final String SQL_CREATE_CUEPASAJEROS = "CREATE TABLE "+ TABLE_CUEPASAJEROS + " ("+
             COLUMN_CUEPASAJEROS_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUEPASAJEROS_IDUSUARIO + " INTEGER, " +
@@ -580,7 +607,23 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_DROPOFF + " TEXT," +
             COLUMN_CUEPASAJEROS_ELECCOVID + " TEXT, " +
             COLUMN_CUEPASAJEROS_CDLOCACOOTRO + " TEXT, " +
-            COLUMN_CUEPASAJEROS_VALOREXP + " INTEGER )";
+            COLUMN_CUEPASAJEROS_VALOREXP + " TEXT, " +
+            COLUMN_CUEPASAJEROS_EMPRESA + " TEXT, " +
+            COLUMN_CUEPASAJEROS_EMPRESAOTRO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_CDLOCADOOTRO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_DESTINO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_DESTINOOTRO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_CIA + " TEXT, " +
+            COLUMN_CUEPASAJEROS_CIAOTRO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_HLLEGABUS + " TEXT, " +
+            COLUMN_CUEPASAJEROS_HSALEAVION + " TEXT, " +
+            COLUMN_CUEPASAJEROS_BUSTRANSFER + " TEXT, " +
+            COLUMN_CUEPASAJEROS_ENTAUTOBUS + " TEXT, " +
+            COLUMN_CUEPASAJEROS_HSALEBUS + " TEXT, " +
+            COLUMN_CUEPASAJEROS_DESAUTOBUS + " TEXT, " +
+            COLUMN_CUEPASAJEROS_SECCION + " TEXT, " +
+            COLUMN_CUEPASAJEROS_MODO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_MODOOTRO + " TEXT )";
     public static final String SQL_DROP_CUEPASAJEROS = "DROP TABLE IF EXISTS " + TABLE_CUEPASAJEROS;
 
     //Tabla CueTrabajadores

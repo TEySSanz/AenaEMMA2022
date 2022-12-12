@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_valorexp"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_valorexp_s1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_valorexp_s1"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/survey_text_valorexp_s2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_valorexp_s2"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/survey_text_valorexp_s3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_valorexp_s3"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/survey_text_valorexp_s4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_valorexp_s4"
+            android:visibility="gone"/>
+
+        <RatingBar
+            android:id="@+id/survey_rating_valorexp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="10"
+            android:stepSize="1" />
+
+        <!--<EditText
+            android:id="@+id/survey_edit_valorexp"
+            style="@style/SurveyQuestionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="2" />-->
+
+
+    </LinearLayout>
+</LinearLayout>

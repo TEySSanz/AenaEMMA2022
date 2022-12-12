@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_sitiopark"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_sitiopark_s3"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_sitiopark_s3"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/survey_text_sitiopark_s4"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_sitiopark_s4"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_sitiopark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_radio_sitiopark_option1"
+                    android:visibility="visible"/>
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_radio_sitiopark_option2"
+                    android:visibility="visible"/>
+
+                <RadioButton
+                    android:id="@+id/survey_radio_sitiopark_option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_radio_sitiopark_option9"
+                    android:visibility="visible"/>
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

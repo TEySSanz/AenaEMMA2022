@@ -30,6 +30,7 @@ import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros2;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros3;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros4;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros5;
+import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros6;
 
 public class CuePasajerosActivity extends AppCompatActivity {
 
@@ -128,6 +129,11 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 ((ModeloPasajeros5) form).setCue(cue);
                 maxPreg=33;
                 break;
+            case 6:
+                form = new ModeloPasajeros6(this, pregunta, conn);
+                ((ModeloPasajeros6) form).setCue(cue);
+                maxPreg=33;
+                break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
         View.inflate(this, form.getLayoutId(), formContainer);
@@ -156,7 +162,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             form.onNextPressed(pregunta);
-                            if (modeloCue==1 || modeloCue==2 || modeloCue==3 ||modeloCue==4 || modeloCue==5){
+                            if (modeloCue==1 || modeloCue==2 || modeloCue==3 ||modeloCue==4 || modeloCue==5 || modeloCue==6){
                                 System.out.println("pregunta "+pregunta);
                                 System.out.println("maxPreg "+maxPreg);
                                 if ((pregunta==maxPreg && form.checkQuestion(999) && form.checkQuestion(maxPreg)) ||
@@ -218,6 +224,8 @@ public class CuePasajerosActivity extends AppCompatActivity {
                     anterior = ((ModeloPasajeros4) form).getPreguntaAnterior();
                 } else if (modeloCue == 5) {
                     anterior = ((ModeloPasajeros5) form).getPreguntaAnterior();
+                } else if (modeloCue == 6) {
+                    anterior = ((ModeloPasajeros6) form).getPreguntaAnterior();
                 }
                 //form.onPreviousPressed(actual, anterior);
                 pregunta = form.onPreviousPressed(actual, anterior);

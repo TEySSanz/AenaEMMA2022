@@ -117,6 +117,9 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
             case 13:
                 maxPreg = 33;
                 break;
+            case 14:
+                maxPreg = 60;
+                break;
         }
 
         //BBDD

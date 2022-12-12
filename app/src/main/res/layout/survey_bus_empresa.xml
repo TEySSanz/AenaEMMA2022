@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <LinearLayout
+        android:id="@+id/survey_layout_empresa"
+        style="@style/SurveySingleQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/survey_text_empresa_s1"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_empresa_bus_s1"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/survey_text_empresa_s2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_empresa_bus_s2"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/survey_text_empresa_s3"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_empresa_bus_s3"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/survey_text_empresa_s4"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_empresa_bus_s4"
+            android:visibility="gone"/>
+
+        <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
+            android:id="@+id/survey_spinner_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <LinearLayout
+            android:id="@+id/survey_layout_empresaotro_s1"
+            style="@style/SurveySingleQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_edit_text_empresaotro_s1"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_text_empresaotro_s1" />
+
+
+            <EditText
+                android:id="@+id/survey_edit_empresaotro_s1"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

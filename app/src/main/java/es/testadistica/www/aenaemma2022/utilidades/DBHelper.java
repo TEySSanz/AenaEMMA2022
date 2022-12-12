@@ -184,6 +184,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(Contracts.SQL_CREATE_TIPOGRANCANARIAPLAYA);
         DBInsert.insertsTipoGranCanariaPlaya(db);
 
+        //TipoAutobus
+        db.execSQL(Contracts.SQL_DROP_TIPOAUTOBUS);
+        db.execSQL(Contracts.SQL_CREATE_TIPOAUTOBUS);
+        DBInsert.insertsTipoAutobus(db);
+
     }
 
     public void addColumn (SQLiteDatabase db, String tabla, String columna){

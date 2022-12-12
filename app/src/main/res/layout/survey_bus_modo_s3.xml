@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    <LinearLayout
+        android:id="@+id/survey_layout_modo_s3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/SurveySingleQuestion"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/survey_text_modo_s3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_modo_s3"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/survey_text_modo_s4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_text_modo_s4"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/survey_radiogroup_modo_s3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option11" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option24" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option22" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option37" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option38"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option38" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option42" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option43" />
+
+                <RadioButton
+                    android:id="@+id/survey_radio_modo_s3_option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_bus_radio_modo_s3_option9" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/survey_layout_modo_s3_otros"
+            style="@style/SurveySingleQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_edit_text_modo_s3_otros"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m1_text_cdalojin_otros" />
+
+
+            <EditText
+                android:id="@+id/survey_edit_modo_s3_otros"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -655,7 +655,23 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCACOOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CDIAPTOFOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISNAOTRO + ", " +
-                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDPAISREOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_EMPRESA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_EMPRESAOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CDLOCADOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DESTINO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DESTINOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CIA + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_CIAOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HLLEGABUS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HSALEAVION + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_BUSTRANSFER + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_ENTAUTOBUS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_DESAUTOBUS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_HSALEBUS+ ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_SECCION + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODOOTRO +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
@@ -758,7 +774,22 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setCdiaptofotro(cursor.getString(92));
             cue.setCdpaisnaotro(cursor.getString(93));
             cue.setCdpaisreotro(cursor.getString(94));
-
+            cue.setEmpresa(cursor.getString(95));
+            cue.setEmpresaotro(cursor.getString(96));
+            cue.setCdlocadootro(cursor.getString(97));
+            cue.setDestino(cursor.getString(98));
+            cue.setDestinootro(cursor.getString(99));
+            cue.setCia(cursor.getString(100));
+            cue.setCiaotro(cursor.getString(101));
+            cue.setHllegabus(cursor.getString(102));
+            cue.setHsaleavion(cursor.getString(103));
+            cue.setBustransfer(cursor.getString(104));
+            cue.setEntautobus(cursor.getString(105));
+            cue.setDesautobus(cursor.getString(106));
+            cue.setHsalebus(cursor.getString(107));
+            cue.setSeccion(cursor.getString(108));
+            cue.setModo(cursor.getString(109));
+            cue.setModootro(cursor.getString(110));
             pendientes.add(cue);
         }
 

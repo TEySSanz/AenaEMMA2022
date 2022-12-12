@@ -1030,6 +1030,144 @@
     <string name="survey_m2_text_cdlocacootro_otro_VLC">Escriba su Codigo Postal</string>
     <string name="survey_m1_text_ultimodo_tren_valencia">METRO</string>
     <string name="survey_m4_text_ultimodo_tren_valencia"> </string>
+
+    <!--Preguntas Autobuses-->
+
+
+    <string name="survey_text_autobus">SELECCIONE UNA DE LAS SIGUIENTES OPCIONES</string>
+    <string name="survey_bus_radio_autobus_option1">AUTOBUS-AVIÓN</string>
+    <string name="survey_bus_radio_autobus_option2">AVIÓN-AUTOBUS</string>
+    <string name="survey_bus_radio_autobus_option3">AUTOBUS-OTRO MODO</string>
+    <string name="survey_bus_radio_autobus_option4">OTRO MODO-AUTOBUS</string>
+
+    <string name="survey_text_empresa_bus_s1">1. ¿Con qué compañia de autobús ha llegado a la estación de autobuses?</string>
+    <string name="survey_text_empresa_bus_s2">1. ¿Con qué compañia de autobús va a salir de la estación de autobuses?</string>
+    <string name="survey_text_empresa_bus_s3">1. ¿Con qué compañia de autobús ha llegado a la estación de autobuses?</string>
+    <string name="survey_text_empresa_bus_s4">1. ¿Con qué compañia de autobús va a salir de a la estación de autobuses?</string>
+    <string name="survey_text_empresaotro_s1">Especificar</string>
+    <string name="spinner_autobus_title">SELECCIONE LA COMPAÑIA DE AUTOBUS</string>
+
+    <string name="survey_text_cdpaisna_s1">2. ¿Podría decirme cuál es su nacionalidad?</string>
+    <string name="survey_text_cdpaisna_s2">2. ¿Podría decirme cuál es su nacionalidad?</string>
+
+    <string name="survey_text_entautobus_s3">2. ¿De dónde parte para acceder a la estación de autobuses del aeropuerto de AS Madrid-Barajas?</string>
+    <string name="survey_text_entautobus_s4">2. ¿De dónde parte para acceder a la estación de autobuses del aeropuerto de AS Madrid-Barajas?</string>
+
+    <string name="survey_text_cdpaisre_s1">3. ¿En qué País ha estado residiendo la mayor parte de los últimos 12 meses?</string>
+    <string name="survey_text_cdpaisre_s2">3. ¿En qué País ha estado residiendo la mayor parte de los últimos 12 meses?</string>
+
+    <string name="survey_text_desautobus_s3">3. ¿Cuál es su destino?</string>
+    <string name="survey_text_desautobus_s4">4. ¿Cuál es su destino?</string>
+
+    <string name="survey_text_destino_bus_s1">4. ¿Cuál es el destino de su viaje?</string>
+    <string name="survey_text_destino_bus_s2">4. ¿Cuál es el destino de su viaje?</string>
+    <string name="survey_text_cdiaptoo_s2">5. ¿Desde qué aeropuerto ha volado para llegar aquí?</string>
+
+    <string name="survey_text_modo_s3">4. ¿Podría indicarme el MODO DE TRANSPORTE que va a utilizar para abandonar la estación de autobuses?</string>
+    <string name="survey_text_modo_s4">4. ¿Podría indicarme el MODO DE TRANSPORTE que ha utilizado para acceder a la estación de autobuses?</string>
+    <string name="survey_bus_radio_modo_s3_option11">Taxi</string>
+    <string name="survey_bus_radio_modo_s3_option24">VTC</string>
+    <string name="survey_bus_radio_modo_s3_option22">Coche Privado</string>
+    <string name="survey_bus_radio_modo_s3_option37">Autobús Urbano (EMT)</string>
+    <string name="survey_bus_radio_modo_s3_option38">Autobús Interurbano</string>
+    <string name="survey_bus_radio_modo_s3_option42">Cercanías</string>
+    <string name="survey_bus_radio_modo_s3_option43">Metro</string>
+    <string name="survey_bus_radio_modo_s3_option9">Otro</string>
+
+    <string name="survey_text_numvuepa_s1">5. ¿Podría indicar su numero de vuelo?</string>
+
+    <string name="survey_text_sitiopark_s3">5. ¿Donde ha dejado su vehículo?</string>
+    <string name="survey_text_sitiopark_s4">5. ¿Donde ha dejado su vehículo?</string>
+    <string name="survey_radio_sitiopark_option1">En el PARKING DE PAGO DE AENA</string>
+    <string name="survey_radio_sitiopark_option2">En PARKING DE PAGO NO DE AENA</string>
+    <string name="survey_radio_sitiopark_option9">Otros</string>
+
+    <string name="survey_text_bus_ciaantes">6. ¿Con qué COMPAÑIA AÉREA ha volado?</string>
+
+    <string name="survey_text_hllegabus_s1">6. ¿Aproximadamente, a qué HORA ha llegado a la estación de autobuses del aeropuerto?</string>
+    <string name="survey_text_hllegabus_s2">7. ¿Aproximadamente, a qué HORA ha llegado a la estación de autobuses del aeropuerto?</string>
+
+    <string name="survey_text_hsaleavion_s1">7. ¿A qué hora tiene programada la salida de su vuelo?</string>
+    <string name="survey_text_acomptes_s3">7. ¿Ha venido algún acompañante a recibirle a la estación de autobuses del aeropuerto?</string>
+    <string name="survey_text_acomptes_s4">7. ¿Ha venido algún acompañante a despedirle a la estación de autobuses del aeropuerto?</string>
+
+    <string name="survey_text_hsalebus_s2">8. ¿A qué hora tiene programada la salida del autobús?</string>
+
+    <string name="survey_text_viene_re_s1">8. ¿De dónde parte para acceder a la estación de autobuses del aeropuerto de AS Madrid-Barajas?</string>
+
+    <string name="survey_text_bustransfer_s1">9. ¿Tiene que utilizar el autobús entre terminales para coger su vuelo?</string>
+    <string name="survey_text_bustransfer_s2">9. ¿Ha tenido que utilizar el autobús entre terminales para llegar a la estación de autobuses?</string>
+    <string name="survey_text_bustransfer_s3">6. ¿Va a tener que utilizar el autobús entre terminales para abandonar la estación de autobuses?</string>
+    <string name="survey_text_bustransfer_s4">6. ¿Ha tenido que utilizar el autobús entre terminales para llegar a la estación de autobuses?</string>
+    <string name="survey_bus_radio_bustransfer_option1">Si</string>
+    <string name="survey_bus_radio_bustransfer_option2">No</string>
+
+    <string name="survey_text_cdmviaje_s1">10. ¿Cuál es el MOTIVO PRINCIPAL de su viaje?</string>
+    <string name="survey_text_cdmviaje_s2">10. ¿Cuál es el PROPOSITO PRINCIPAL de su viaje?</string>
+    <string name="survey_bus_radio_cdmviaje_option1">Negocio</string>
+    <string name="survey_bus_radio_cdmviaje_option2">Ocio</string>
+    <string name="survey_bus_radio_cdmviaje_option3">Visita familiares/Amigos</string>
+    <string name="survey_bus_radio_cdmviaje_option4">Otro motivo (personal)</string>
+
+    <string name="survey_text_cdidavue_s2">11. ¿Es este su viaje de IDA o de VUELTA?</string>
+    <string name="survey_text_cdidavue_s2_a">11a. ¿Cuánto tiempo estará fuera?</string>
+    <string name="survey_text_cdidavue_s2_b">11b. ¿Cuánto tiempo ha estado fuera?</string>
+
+    <string name="survey_text_npers_s1">11. Incluyéndose usted, ¿Cuántas personas viajan en su grupo inmediato?</string>
+    <string name="survey_text_npers_s2">12. Incluyéndose usted, ¿Cuántas personas viajan en su grupo inmediato?</string>
+
+    <string name="survey_text_nniños_s1">12. ¿Cuántos de ellos son menores de 15 años?</string>
+    <string name="survey_text_nniños_s2">13. ¿Cuántos de ellos son menores de 15 años?</string>
+
+    <string name="survey_text_chekinb_s1">13. ¿Dónde ha obtenido su billete?</string>
+    <string name="survey_text_chekinb_s2">14. ¿Dónde ha obtenido su billete?</string>
+    <string name="survey_bus_radio_chekinb_option0">Aeropuerto (punto venta de billetes)</string>
+    <string name="survey_bus_radio_chekinb_option1">Por Internet (online)</string>
+    <string name="survey_bus_radio_chekinb_option2">Puntos de venta empresa de autobuses</string>
+
+    <string name="survey_text_nviaje_s2">15. ¿Ha realizado esta misma conexión AVIÓN-AUTOBÚS en alguna otra ocasión?</string>
+
+    <string name="survey_text_cdsprof_s1">14. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_text_cdsprof_s2">16. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_text_cdsprof_s3">8. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_text_cdsprof_s4">8. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_bus_radio_cdsprof_option1">Trabaja</string>
+    <string name="survey_bus_radio_cdsprof_option2">Jubilado o pensionista</string>
+    <string name="survey_bus_radio_cdsprof_option3">Estudiante</string>
+    <string name="survey_bus_radio_cdsprof_option9">Otra</string>
+
+    <string name="survey_text_estudios_s1">15. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_text_estudios_s2">17. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_text_estudios_s3">9. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_text_estudios_s4">9. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_bus_radio_estudios_option1">Primarios/Básicos/EGB</string>
+    <string name="survey_bus_radio_estudios_option3">Secundarios (ESO/BUP/Bachiller/FP Grado Medio)</string>
+    <string name="survey_bus_radio_estudios_option5">Superiores (Universitarios/Técnico Superior)</string>
+
+    <string name="survey_text_cdedad_s1">16. ¿A qué de estos grupos de edad pertenece usted?</string>
+    <string name="survey_text_cdedad_s2">18. ¿A qué de estos grupos de edad pertenece usted?</string>
+    <string name="survey_text_cdedad_s3">10. ¿A qué de estos grupos de edad pertenece usted?</string>
+    <string name="survey_text_cdedad_s4">10. ¿A qué de estos grupos de edad pertenece usted?</string>
+    <string name="survey_bus_radio_cdedad_option1">menor de 15 años</string>
+    <string name="survey_bus_radio_cdedad_option2">15 a 29 años</string>
+    <string name="survey_bus_radio_cdedad_option3">30 a 49 años</string>
+    <string name="survey_bus_radio_cdedad_option4">50 a 64 años</string>
+    <string name="survey_bus_radio_cdedad_option5">mayor de 64 años</string>
+
+    <string name="survey_text_cdsexo_s1">17. Género</string>
+    <string name="survey_text_cdsexo_s2">19. Género</string>
+    <string name="survey_text_cdsexo_s3">11. Género</string>
+    <string name="survey_text_cdsexo_s4">11. Género</string>
+    <string name="survey_bus_radio_cdsexo_option1">Hombre</string>
+    <string name="survey_bus_radio_cdsexo_option2">Mujer</string>
+    <!--Pregunta60-->
+    <string name="survey_text_valorexp_s1">17. ¿Cómo valora la experiencia de su paso por la estación de autobuses del aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_text_valorexp_s2">20. ¿Cómo valora la experiencia de su paso por la estación de autobuses del aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_text_valorexp_s3">11. ¿Cómo valora la experiencia de su paso por la estación de autobuses del aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_text_valorexp_s4">12. ¿Cómo valora la experiencia de su paso por la estación de autobuses del aeropuerto? (valore del 1 al 10)</string>
+
+
+
     <string name="version">v1.32</string>
 
 

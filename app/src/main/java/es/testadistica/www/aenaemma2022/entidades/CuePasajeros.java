@@ -100,6 +100,22 @@ public class CuePasajeros implements Serializable {
     private String eleccovid;
     private String cdlocacootro;
     private int valorexp;
+    private String empresa;
+    private String empresaotro;
+    private String cdlocadootro;
+    private String destino;
+    private String destinootro;
+    private String cia;
+    private String ciaotro;
+    private String hllegabus;
+    private String hsaleavion;
+    private String bustransfer;
+    private String entautobus;
+    private String desautobus;
+    private String hsalebus;
+    private String seccion;
+    private String modo;
+    private String modootro;
 
     public CuePasajeros(){
 
@@ -849,6 +865,134 @@ public class CuePasajeros implements Serializable {
 
     public void setCdlocacootro(String cdlocacootro) {
         this.cdlocacootro = cdlocacootro;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getEmpresaotro() {
+        return empresaotro;
+    }
+
+    public void setEmpresaotro(String empresaotro) {
+        this.empresaotro = empresaotro;
+    }
+
+    public String getCdlocadootro() {
+        return cdlocadootro;
+    }
+
+    public void setCdlocadootro(String cdlocadootro) {
+        this.cdlocadootro = cdlocadootro;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public String getDestinootro() {
+        return destinootro;
+    }
+
+    public void setDestinootro(String destinootro) {
+        this.destinootro = destinootro;
+    }
+
+    public String getCia() {
+        return cia;
+    }
+
+    public void setCia(String cia) {
+        this.cia = cia;
+    }
+
+    public String getCiaotro() {
+        return ciaotro;
+    }
+
+    public void setCiaotro(String ciaotro) {
+        this.ciaotro = ciaotro;
+    }
+
+    public String getHllegabus() {
+        return hllegabus;
+    }
+
+    public void setHllegabus(String hllegabus) {
+        this.hllegabus = hllegabus;
+    }
+
+    public String getHsaleavion() {
+        return hsaleavion;
+    }
+
+    public void setHsaleavion(String hsaleavion) {
+        this.hsaleavion = hsaleavion;
+    }
+
+    public String getBustransfer() {
+        return bustransfer;
+    }
+
+    public void setBustransfer(String bustransfer) {
+        this.bustransfer = bustransfer;
+    }
+
+    public String getEntautobus() {
+        return entautobus;
+    }
+
+    public void setEntautobus(String entautobus) {
+        this.entautobus = entautobus;
+    }
+
+    public String getDesautobus() {
+        return desautobus;
+    }
+
+    public void setDesautobus(String desautobus) {
+        this.desautobus = desautobus;
+    }
+
+    public String getHsalebus() {
+        return hsalebus;
+    }
+
+    public void setHsalebus(String hsalebus) {
+        this.hsalebus = hsalebus;
+    }
+
+    public String getSeccion() {
+        return seccion;
+    }
+
+    public void setSeccion(String seccion) {
+        this.seccion = seccion;
+    }
+
+    public String getModo() {
+        return modo;
+    }
+
+    public void setModo(String modo) {
+        this.modo = modo;
+    }
+
+    public String getModootro() {
+        return modootro;
+    }
+
+    public void setModootro(String modootro) {
+        this.modootro = modootro;
     }
 
     public int getValorexp() { return valorexp; }
