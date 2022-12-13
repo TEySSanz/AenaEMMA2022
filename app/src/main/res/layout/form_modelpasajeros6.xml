@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- P1 -->
+    <include layout="@layout/survey_bus_autobus"/>
+    <!-- P2 -->
+    <include layout="@layout/survey_bus_empresa"/>
+    <!-- P3 -->
+    <include layout="@layout/survey_bus_cdpaisna"/>
+    <!-- P4 -->
+    <include layout="@layout/survey_bus_cdpaisre"/>
+    <!-- P5 -->
+    <include layout="@layout/survey_bus_destino"/>
+    <!-- P6 -->
+    <include layout="@layout/survey_bus_numvuepa"/>
+    <!-- P7 -->
+    <include layout="@layout/survey_bus_hllegabus"/>
+    <!-- P8 -->
+    <include layout="@layout/survey_bus_hsaleavion"/>
+    <!-- P9 -->
+    <include layout="@layout/survey_bus_vienere"/>
+    <!-- P10 -->
+    <include layout="@layout/survey_bus_bustransfer"/>
+    <!-- P11 -->
+    <include layout="@layout/survey_bus_cdmviaje"/>
+    <!-- P12 -->
+    <include layout="@layout/survey_bus_npers"/>
+    <!-- P13 -->
+    <include layout="@layout/survey_bus_nninos"/>
+    <!-- P14 -->
+    <include layout="@layout/survey_bus_chekinb"/>
+    <!-- P15 -->
+    <include layout="@layout/survey_bus_cdsprof"/>
+    <!-- P16 -->
+    <include layout="@layout/survey_bus_estudios"/>
+    <!-- P17 -->
+    <include layout="@layout/survey_bus_cdedad"/>
+    <!-- P18 -->
+    <include layout="@layout/survey_bus_cdsexo"/>
+    <!-- P23 -->
+    <include layout="@layout/survey_bus_cdiaptoo"/>
+    <!-- P24 -->
+    <include layout="@layout/survey_bus_ciaantes"/>
+    <!-- P26 -->
+    <include layout="@layout/survey_bus_hsalebus"/>
+    <!-- P29 -->
+    <include layout="@layout/survey_bus_cdidavue_taus"/>
+    <!-- P33 -->
+    <include layout="@layout/survey_bus_nviaje"/>
+    <!-- P39 -->
+    <include layout="@layout/survey_bus_entautobus"/>
+    <!-- P40 -->
+    <include layout="@layout/survey_bus_desautobus"/>
+    <!-- P41 -->
+    <include layout="@layout/survey_bus_modo_s3"/>
+    <!-- P42 -->
+    <include layout="@layout/survey_bus_sitiopark"/>
+    <!-- P43 -->
+    <include layout="@layout/survey_bus_acomptes"/>
+    <!-- P52 -->
+    <include layout="@layout/survey_bus_ultimodo"/>
+    <!-- P60 -->
+    <include layout="@layout/survey_bus_valorexp"/>
+
+
+
+</LinearLayout>
