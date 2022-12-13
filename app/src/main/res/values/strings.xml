@@ -1065,6 +1065,7 @@
 
     <string name="survey_text_modo_s3">4. ¿Podría indicarme el MODO DE TRANSPORTE que va a utilizar para abandonar la estación de autobuses?</string>
     <string name="survey_text_modo_s4">4. ¿Podría indicarme el MODO DE TRANSPORTE que ha utilizado para acceder a la estación de autobuses?</string>
+    <string name="survey_text_modo_s4_tit">Modo de llegada a la estación</string>
     <string name="survey_bus_radio_modo_s3_option11">Taxi</string>
     <string name="survey_bus_radio_modo_s3_option24">VTC</string>
     <string name="survey_bus_radio_modo_s3_option22">Coche Privado</string>
