@@ -215,7 +215,7 @@
                 android:padding="@dimen/small_padding"
                 android:text="@string/survey_text_numCompania"
                 android:textColor="@color/aenaBlue"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textSize="@dimen/abc_text_size_menu_material"
                 android:textStyle="bold" />
 
             <EditText
@@ -255,7 +255,7 @@
                 android:padding="@dimen/small_padding"
                 android:text="@string/survey_text_numBus"
                 android:textColor="@color/aenaBlue"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textSize="@dimen/abc_text_size_menu_material"
                 android:textStyle="bold" />
 
             <EditText
@@ -295,7 +295,7 @@
                 android:padding="@dimen/small_padding"
                 android:text="@string/survey_text_numDarsena"
                 android:textColor="@color/aenaBlue"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textSize="@dimen/abc_text_size_menu_material"
                 android:textStyle="bold" />
 
             <EditText

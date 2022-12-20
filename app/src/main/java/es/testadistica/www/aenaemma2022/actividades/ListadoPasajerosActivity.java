@@ -58,7 +58,19 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listado_pasajeros);
+        Bundle datos = this.getIntent().getExtras();
+        if (datos != null) {
+            idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
+        }
+        switch (idAeropuerto) {
+            case 14:
+                setContentView(R.layout.activity_listado_pasajeros1);
+                break;
+            default:
+                setContentView(R.layout.activity_listado_pasajeros);
+                break;
+        }
+        //setContentView(R.layout.activity_listado_pasajeros1);
 
         //Añadir icono en el ActionBar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -73,12 +85,12 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
 
         //Recoge los parámetros de la pantalla anterior
-        Bundle datos = this.getIntent().getExtras();
+        //Bundle datos = this.getIntent().getExtras();
 
         if (datos != null) {
             txt_usuario.setText(datos.getString("usuario"));
             txt_aeropuerto.setText(datos.getString("aeropuerto"));
-            idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
+            //idAeropuerto=stringToInt(datos.getString("idAeropuerto"));
         }
 
         switch (idAeropuerto) {
@@ -147,6 +159,15 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         //Actualiza el listado
         refrescar();
 
+        /*switch (idAeropuerto) {
+            case 14:
+                //refrescar1();
+                break;
+            default:
+                refrescar();
+                break;
+        }*/
+
         //Crea backup de la base de datos
         exportDatabase(Contracts.DATABASE_NAME);
 
@@ -181,6 +202,20 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
     }
 
+    /*private void refrescar1(){
+        listaCue = todasEncuestas1();
+        ListadoPasajerosItemAdapter adaptador = new ListadoPasajerosItemAdapter(this, listaCue);
+        list_pasajeros1.setAdapter(adaptador);
+
+        //Establece la fecha actual
+        Calendar currentTime = Calendar.getInstance();
+        fechaActual = currentTime.getTime();
+        //Aplica el formato a la fecha
+        SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
+        //Asigna la fecha a visualizar
+        txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
+    }*/
+
     private ArrayList<CuePasajerosListado> todasEncuestas(){
         SQLiteDatabase db = conn.getReadableDatabase();
         CuePasajerosListado cue = null;
@@ -189,18 +224,18 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         listaCue = new ArrayList<CuePasajerosListado>();
 
         Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
-                        "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
-                        "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
-                        "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
-                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUECA + ",' '), " +
-                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ",' '), " +
-                        "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ",' ') " +
-                        " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
-                                   Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
-                                   Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
-                        " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_PREGUNTA + " = " + maxPreg +
-                        " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
+                "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
+                "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMVUECA + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_PUERTA + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ",' ') " +
+                " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
+                Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
+                " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_PREGUNTA + " = " + maxPreg +
+                " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
             cue = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
@@ -211,6 +246,38 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         return listaCue;
     }
+
+    /*private ArrayList<CuePasajerosListado> todasEncuestas1(){
+        SQLiteDatabase db = conn.getReadableDatabase();
+        CuePasajerosListado cue1 = null;
+        String[] parametros = {txt_usuario.getText().toString()};
+
+        listaCue = new ArrayList<CuePasajerosListado>();
+
+        Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
+                "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_FECHA + "||' '||" + "T1." + Contracts.COLUMN_CUEPASAJEROS_HORAINICIO + ", " +
+                "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMBUS + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMCOMP + ",' '), " +
+                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ",' ') " +
+                " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
+                Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_USUARIOS + " AS T3 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDUSUARIO + " = T3." + Contracts.COLUMN_USUARIOS_IDEN + " LEFT JOIN " +
+                Contracts.TABLE_IDIOMAS + " AS T4 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDIDIOMA + " = T4." + Contracts.COLUMN_IDIOMAS_IDEN +
+                " WHERE T3." + Contracts.COLUMN_USUARIOS_NOMBRE + "=? AND T1." + Contracts.COLUMN_CUEPASAJEROS_PREGUNTA + " = " + maxPreg +
+                " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
+
+        while (cursor.moveToNext()) {
+            cue1 = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+            listaCue.add(cue1);
+        }
+
+        cursor.close();
+
+        return listaCue;
+    }*/
 
     private List<String> getIdiomas(String filtro) {
         List<String> getIdiomas = new ArrayList<String>();

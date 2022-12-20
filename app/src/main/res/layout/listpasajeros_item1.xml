@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="0dp"
+        android:background="@color/aenaDarkGrey">
+
+    <TextView
+        android:id="@+id/surveylist_item_text_iden"
+        android:layout_width="0dp"
+        android:layout_weight="1.25"
+        android:layout_height="match_parent"
+        android:hint="XXX"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_codEnc"
+        android:layout_width="0dp"
+        android:layout_weight="3.1"
+        android:layout_height="match_parent"
+        android:hint="XXX"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_fecha"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:hint="dd/MM/yyyy HH:mm"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_codIdioma"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:hint="es"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_numdarsena"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:hint="AAA"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_numbus"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:hint="AAA"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/surveylist_item_text_numcomp"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:hint="AAA"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/surveylist_item_text_enviado"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:hint="XX"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:textColor="@color/aenaBlue"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+<!--
+    <ImageButton
+        android:id="@+id/surveylist_item_button_delete"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_margin="@dimen/medium_padding"
+        android:gravity="center"
+        android:background="@color/aenaOrange"
+        android:src="@drawable/ic_delete_forever_black_24dp"/>
+-->
+    </LinearLayout>
+</LinearLayout>

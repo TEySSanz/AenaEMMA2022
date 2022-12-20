@@ -236,7 +236,7 @@
                 android:textColor="@color/aenaLightGrey"
                 android:textStyle="bold"
                 android:text="@string/surveylist_text_header_vuelo"
-                android:visibility="invisible"/>
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/surveylist_item_text_terminal"
@@ -248,7 +248,7 @@
                 android:textColor="@color/aenaLightGrey"
                 android:textStyle="bold"
                 android:text="@string/surveylist_text_header_terminal"
-                android:visibility="invisible"/>
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/surveylist_item_text_enviado"

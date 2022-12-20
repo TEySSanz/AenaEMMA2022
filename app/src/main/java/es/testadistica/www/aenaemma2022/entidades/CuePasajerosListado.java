@@ -1,7 +1,5 @@
 package es.testadistica.www.aenaemma2022.entidades;
 
-import android.widget.TextView;
-
 import java.io.Serializable;
 
 public class CuePasajerosListado implements Serializable {
@@ -13,15 +11,29 @@ public class CuePasajerosListado implements Serializable {
     private String vuelo;
     private String puerta;
     private String enviado;
+    private String numdarsena;
+    private String numbus;
+    private String numcomp;
 
 
-    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta, String enviado) {
+    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta,String enviado) {
         this.iden = iden;
         this.encuestador = encuestador;
         this.fecha = fecha;
         this.idioma = idioma;
         this.vuelo = vuelo;
         this.puerta = puerta;
+        this.enviado = enviado;
+    }
+
+    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String numdarsena, String numbus, String numcomp, String enviado) {
+        this.iden = iden;
+        this.encuestador = encuestador;
+        this.fecha = fecha;
+        this.idioma = idioma;
+        this.numdarsena = numdarsena;
+        this.numbus = numbus;
+        this.numcomp = numcomp;
         this.enviado = enviado;
     }
 
@@ -71,6 +83,30 @@ public class CuePasajerosListado implements Serializable {
 
     public void setPuerta(String puerta) {
         this.puerta = puerta;
+    }
+
+    public String getNumdarsena() {
+        return numdarsena;
+    }
+
+    public void setNumdarsena(String numdarsena) {
+        this.numdarsena = numdarsena;
+    }
+
+    public String getNumbus() {
+        return numbus;
+    }
+
+    public void setNumbus(String numbus) {
+        this.numbus = numbus;
+    }
+
+    public String getNumcomp() {
+        return numcomp;
+    }
+
+    public void setNumcomp(String numcomp) {
+        this.numcomp = numcomp;
     }
 
     public String getEnviado() {

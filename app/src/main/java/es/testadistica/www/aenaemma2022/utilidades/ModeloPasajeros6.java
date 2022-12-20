@@ -2552,6 +2552,7 @@ public class ModeloPasajeros6 extends Form {
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMCOMP, String.valueOf(cue.getNumcomp()));
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMBUS, String.valueOf(cue.getNumbus()));
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA, String.valueOf(cue.getNumdarsena()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_HORAFIN, String.valueOf(cue.getHoraFin()));
                     break;
             }
 
@@ -2660,8 +2661,8 @@ public class ModeloPasajeros6 extends Form {
                     break;
                 case 24:
                     //P24
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CIAANTES, cue.getCiaantes());
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CIAANTESOTRO, cue.getCiaantesotro());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CIA, cue.getCia());
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_CIAOTRO, cue.getCiaotro());
                     break;
                 case 26:
                     //P26
@@ -2805,8 +2806,8 @@ public class ModeloPasajeros6 extends Form {
                     break;
                 case 24:
                     //P24
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CIAANTES);
-                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CIAANTESOTRO);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CIA);
+                    borraDB(Contracts.COLUMN_CUEPASAJEROS_CIAOTRO);
                     break;
                 case 26:
                     //P26
@@ -3813,15 +3814,15 @@ public class ModeloPasajeros6 extends Form {
         SearchableSpinner sp_ciaantes = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_ciaantes);
         String textSpCiaantes = getValorDesplegable(sp_ciaantes).substring(0,3);
         if(!textSpCiaantes.contains("000")){
-            quest.setCiaantes(textSpCiaantes);
+            quest.setCia(textSpCiaantes);
             if (textSpCiaantes.contains("999")){
                 EditText et_ciaantesotro = (EditText) activity.findViewById(R.id.survey_edit_ciaantesotro);
-                quest.setCiaantesotro(et_ciaantesotro.getText().toString());
+                quest.setCiaotro(et_ciaantesotro.getText().toString());
             } else {
-                quest.setCiaantesotro("-1");
+                quest.setCiaotro("-1");
             }
         } else {
-            quest.setCiaantes("-1");
+            quest.setCia("-1");
         }
 
         //P26

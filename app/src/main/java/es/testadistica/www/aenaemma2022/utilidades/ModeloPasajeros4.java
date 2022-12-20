@@ -87,6 +87,8 @@ public class ModeloPasajeros4 extends Form {
     private void iniciarTextosAeropuertos(){
         //Por defecto se muestran las opciones del cuestionario de Madrid, si de algún aeropuerto se cambian los textos hay que incluirlo
         // en el switch
+        activity.findViewById(R.id.survey_rl_numVuelo).setVisibility(VISIBLE);
+        activity.findViewById(R.id.survey_rl_puertaEmbarque).setVisibility(VISIBLE);
         switch (idAeropuerto){
             case 3:
                 //Sevilla

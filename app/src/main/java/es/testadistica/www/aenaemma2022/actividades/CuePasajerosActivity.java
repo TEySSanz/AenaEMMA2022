@@ -59,7 +59,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     EditText txt_hora;
     EditText txt_company;
     EditText txt_vuelo;
-    //LinearLayout identifier_bus;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,7 +137,6 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 form = new ModeloPasajeros6(this, pregunta, conn);
                 ((ModeloPasajeros6) form).setCue(cue);
                 maxPreg=33;
-                //identifier_bus.setVisibility(visible);
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
