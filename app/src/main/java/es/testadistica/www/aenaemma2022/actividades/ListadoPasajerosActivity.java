@@ -1,5 +1,8 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
+import static android.view.View.GONE;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,5 +1,7 @@
 package es.testadistica.www.aenaemma2022.actividades;
 
+import static android.view.View.GONE;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -57,6 +59,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
     EditText txt_hora;
     EditText txt_company;
     EditText txt_vuelo;
+    //LinearLayout identifier_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
         txt_company = (EditText) findViewById(R.id.survey_edit_codCompVuelo);
         txt_vuelo = (EditText) findViewById(R.id.survey_edit_numVuelo);
         txt_airportHeader = (TextView) findViewById(R.id.survey_text_airportHeader);
+        //identifier_bus = (LinearLayout) findViewById(R.id.survey_ll_identifier_bus);
 
         //BBDD
         conn = new DBHelper(this.getApplicationContext());
@@ -133,6 +137,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
                 form = new ModeloPasajeros6(this, pregunta, conn);
                 ((ModeloPasajeros6) form).setCue(cue);
                 maxPreg=33;
+                //identifier_bus.setVisibility(visible);
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);

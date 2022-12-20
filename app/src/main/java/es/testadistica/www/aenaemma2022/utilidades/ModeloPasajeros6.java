@@ -73,7 +73,7 @@ public class ModeloPasajeros6 extends Form {
         System.out.println("idAeropuerto: "+idAeropuerto);
         showQuestion(pregunta);
 
-        //iniciarTextosAeropuertos();
+        iniciarTextosAeropuertos();
         iniciarSpinners();
         condicionesSpinners();
         condicionesRadioButton();
@@ -82,6 +82,11 @@ public class ModeloPasajeros6 extends Form {
     }
 
     private void iniciarTextosAeropuertos(){
+        activity.findViewById(R.id.survey_rl_numBus).setVisibility(VISIBLE);
+        activity.findViewById(R.id.survey_rl_numComp).setVisibility(VISIBLE);
+        activity.findViewById(R.id.survey_rl_numDarsena).setVisibility(VISIBLE);
+        activity.findViewById(R.id.survey_rl_numVuelo).setVisibility(GONE);
+        activity.findViewById(R.id.survey_rl_puertaEmbarque).setVisibility(GONE);
         //Por defecto se muestran las opciones del cuestionario de Madrid, si de algún aeropuerto se cambian los textos hay que incluirlo
         // en el switch
 
@@ -107,7 +112,7 @@ public class ModeloPasajeros6 extends Form {
         switch (idAeropuerto){
             case 14:
                 //Autobuses
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADOLEADA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_BUSOLEADA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
@@ -116,7 +121,7 @@ public class ModeloPasajeros6 extends Form {
         switch (idAeropuerto){
             case 14:
                 //Autobuses
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MADAEREA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_BUSAEREA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -124,7 +129,7 @@ public class ModeloPasajeros6 extends Form {
         switch (idAeropuerto){
             case 14:
                 //Autobuses
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BUSOLEADA+" = 1";
                 break;
         }
         ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -132,7 +137,7 @@ public class ModeloPasajeros6 extends Form {
         switch (idAeropuerto){
             case 14:
                 //Autobuses
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADOLEADA+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BUSOLEADA+" = 1";
                 break;
         }
         ArrayList<mListString> tipoAeropuertosAdapter1 = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -141,7 +146,7 @@ public class ModeloPasajeros6 extends Form {
         switch (idAeropuerto){
             case 14:
                 //Gran Canaria
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MADPRINCIPAL+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_BUSPRINCIPAL+" = 1";
                 break;
         }
         ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -2506,47 +2511,47 @@ public class ModeloPasajeros6 extends Form {
                     break;
                 case 999:
                     //Siempre que se guarde se comprueba que tenga relleno el numero de vuelo y la puerta de embarque
-                    EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
-                    EditText etNnumVuelo = (EditText) activity.findViewById(R.id.survey_edit_numVuelo);
-                    EditText etPpuertaEmbarque = (EditText) activity.findViewById(R.id.survey_edit_puertaEmbarque);
+                    EditText etNumComp = (EditText) activity.findViewById(R.id.survey_edit_numComp);
+                    EditText etNumBus = (EditText) activity.findViewById(R.id.survey_edit_numBus);
+                    EditText etNumDarsena = (EditText) activity.findViewById(R.id.survey_edit_numDarsena);
                     String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
 
-                    if (etCodCompVuelo.getText().toString().isEmpty()) {
-                        etCodCompVuelo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-                        etCodCompVuelo.setError(textoError);
+                    if (etNumComp.getText().toString().isEmpty()) {
+                        etNumComp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etNumComp.setError(textoError);
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 textoError,
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
-                        etCodCompVuelo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etNumComp.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
-                    if (etNnumVuelo.getText().toString().isEmpty()) {
-                        etNnumVuelo.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-                        etNnumVuelo.setError(textoError);
+                    if (etNumBus.getText().toString().isEmpty()) {
+                        etNumBus.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etNumBus.setError(textoError);
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 textoError,
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
-                        etNnumVuelo.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etNumBus.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
-                    if (etPpuertaEmbarque.getText().toString().isEmpty()) {
-                        etPpuertaEmbarque.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-                        etPpuertaEmbarque.setError(textoError);
+                    if (etNumDarsena.getText().toString().isEmpty()) {
+                        etNumDarsena.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                        etNumDarsena.setError(textoError);
                         return getDialogValueBackError(activity,
                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                 textoError,
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
-                        etPpuertaEmbarque.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        etNumDarsena.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                     }
 
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMVUECA, String.valueOf(cue.getNumvueca()));
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_PUERTA, String.valueOf(cue.getPuerta()));
-                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_HORAFIN, String.valueOf(cue.getHoraFin()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMCOMP, String.valueOf(cue.getNumcomp()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMBUS, String.valueOf(cue.getNumbus()));
+                    guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA, String.valueOf(cue.getNumdarsena()));
                     break;
             }
 
@@ -2971,6 +2976,7 @@ public class ModeloPasajeros6 extends Form {
                                 show = showQuestion(2); //>P2
                                 break;
                             case R.id.survey_radio_autobus_option2:
+
                                 activity.findViewById(R.id.survey_text_empresa_s1).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_empresa_s2).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_cdpaisna_s1).setVisibility(GONE);
@@ -3393,21 +3399,24 @@ public class ModeloPasajeros6 extends Form {
         int checkedId = -1;
 
         //CABECERA
-        EditText etCodCompVuelo = (EditText) activity.findViewById(R.id.survey_edit_codCompVuelo);
-        EditText etNnumVuelo = (EditText) activity.findViewById(R.id.survey_edit_numVuelo);
-        EditText etPuertaEmbarque = (EditText) activity.findViewById(R.id.survey_edit_puertaEmbarque);
-        String stPuertaEmbarque = etPuertaEmbarque.getText().toString();
-        String stNumvueca = etCodCompVuelo.getText().toString()+"-"+etNnumVuelo.getText().toString();
+        EditText etNumComp = (EditText) activity.findViewById(R.id.survey_edit_numComp);
+        EditText etNumBus = (EditText) activity.findViewById(R.id.survey_edit_numBus);
+        EditText etNumDarsena = (EditText) activity.findViewById(R.id.survey_edit_numDarsena);
+        String stNumComp = etNumComp.getText().toString();
+        String stNumBus = etNumBus.getText().toString();
+        String stNumDarsena = etNumDarsena.getText().toString();
+        //String stNumvueca = etCodCompVuelo.getText().toString()+"-"+etNnumVuelo.getText().toString();
 
-        if (!stPuertaEmbarque.isEmpty()) {
-            quest.setPuerta(stPuertaEmbarque);
-        } else {
-            quest.setPuerta("-1");
+        if (!etNumComp.getText().toString().isEmpty()) {
+            quest.setNumcomp(stNumComp);
+        }
+        if (!etNumBus.getText().toString().isEmpty()) {
+            quest.setNumbus(stNumBus);
+        }
+        if (!etNumDarsena.getText().toString().isEmpty()) {
+            quest.setNumdarsena(stNumDarsena);
         }
 
-        if (!etCodCompVuelo.getText().toString().isEmpty() || !etNnumVuelo.getText().toString().isEmpty()){
-            quest.setNumvueca(stNumvueca);
-        }
 
         //Establece la fecha actual
         Calendar currentTime = Calendar.getInstance();

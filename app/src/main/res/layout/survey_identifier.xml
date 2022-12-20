@@ -7,10 +7,12 @@
 
     //Identificadores de encuesta
     <LinearLayout
+        android:id="@+id/survey_ll_identifier"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/standard_padding">
+        android:padding="@dimen/standard_padding"
+        android:visibility="visible">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -84,9 +86,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/survey_rl_numVuelo"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/survey_text_numVuelo"
@@ -156,9 +160,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/survey_rl_puertaEmbarque"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/survey_text_puertaEmbarque"
@@ -188,6 +194,126 @@
                 android:textStyle="bold"
                 android:background="@color/aenaLightGrey"
                 android:maxLength="4"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/survey_rl_numComp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_text_numComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/survey_text_numCompania"
+                android:textColor="@color/aenaBlue"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/survey_edit_numComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/survey_text_numComp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/aenaLightGrey"
+                android:gravity="center"
+                android:hint="xxx"
+                android:maxLength="3"
+                android:paddingLeft="@dimen/standard_padding"
+                android:paddingTop="@dimen/small_padding"
+                android:paddingRight="@dimen/standard_padding"
+                android:paddingBottom="@dimen/small_padding"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/survey_rl_numBus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_text_numBus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/survey_text_numBus"
+                android:textColor="@color/aenaBlue"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/survey_edit_numBus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/survey_text_numBus"
+                android:layout_centerHorizontal="true"
+                android:background="@color/aenaLightGrey"
+                android:gravity="center"
+                android:hint="xxx"
+                android:maxLength="3"
+                android:paddingLeft="@dimen/standard_padding"
+                android:paddingTop="@dimen/small_padding"
+                android:paddingRight="@dimen/standard_padding"
+                android:paddingBottom="@dimen/small_padding"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/survey_rl_numDarsena"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_text_numDarsena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/survey_text_numDarsena"
+                android:textColor="@color/aenaBlue"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/survey_edit_numDarsena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/survey_text_numDarsena"
+                android:layout_centerHorizontal="true"
+                android:background="@color/aenaLightGrey"
+                android:gravity="center"
+                android:hint="xxx"
+                android:maxLength="3"
+                android:paddingLeft="@dimen/standard_padding"
+                android:paddingTop="@dimen/small_padding"
+                android:paddingRight="@dimen/standard_padding"
+                android:paddingBottom="@dimen/small_padding"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>

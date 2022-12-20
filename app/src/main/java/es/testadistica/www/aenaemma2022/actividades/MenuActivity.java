@@ -2,6 +2,7 @@ package es.testadistica.www.aenaemma2022.actividades;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.view.View.GONE;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -671,7 +672,10 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_HSALEBUS+ ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_SECCION + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_MODO + ", " +
-                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODOOTRO +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_MODOOTRO + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMCOMP + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMBUS + ", " +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
                         " WHERE T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + "=?" +
                         " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
@@ -790,6 +794,9 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
             cue.setSeccion(cursor.getString(108));
             cue.setModo(cursor.getString(109));
             cue.setModootro(cursor.getString(110));
+            cue.setNumcomp(cursor.getString(111));
+            cue.setNumbus(cursor.getString(112));
+            cue.setNumdarsena(cursor.getString(113));
             pendientes.add(cue);
         }
 

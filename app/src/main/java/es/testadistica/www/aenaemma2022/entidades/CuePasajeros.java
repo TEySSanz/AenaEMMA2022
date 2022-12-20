@@ -116,6 +116,9 @@ public class CuePasajeros implements Serializable {
     private String seccion;
     private String modo;
     private String modootro;
+    private String numcomp;
+    private String numbus;
+    private String numdarsena;
 
     public CuePasajeros(){
 
@@ -998,4 +1001,28 @@ public class CuePasajeros implements Serializable {
     public int getValorexp() { return valorexp; }
 
     public void setValorexp(int valorexp) { this.valorexp = valorexp; }
+
+    public String getNumcomp() {
+        return numcomp;
+    }
+
+    public void setNumcomp(String numcomp) {
+        this.numcomp = numcomp;
+    }
+
+    public String getNumbus() {
+        return numbus;
+    }
+
+    public void setNumbus(String numbus) {
+        this.numbus = numbus;
+    }
+
+    public String getNumdarsena() {
+        return numdarsena;
+    }
+
+    public void setNumdarsena(String numdarsena) {
+        this.numdarsena = numdarsena;
+    }
 }

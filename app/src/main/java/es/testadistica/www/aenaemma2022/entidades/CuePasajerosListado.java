@@ -1,5 +1,7 @@
 package es.testadistica.www.aenaemma2022.entidades;
 
+import android.widget.TextView;
+
 import java.io.Serializable;
 
 public class CuePasajerosListado implements Serializable {
@@ -11,6 +13,7 @@ public class CuePasajerosListado implements Serializable {
     private String vuelo;
     private String puerta;
     private String enviado;
+
 
     public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String vuelo, String puerta, String enviado) {
         this.iden = iden;
@@ -77,4 +80,6 @@ public class CuePasajerosListado implements Serializable {
     public void setEnviado(String enviado) {
         this.enviado = enviado;
     }
+
+
 }

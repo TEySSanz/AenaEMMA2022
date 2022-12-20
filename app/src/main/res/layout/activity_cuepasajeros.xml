@@ -23,6 +23,7 @@
             android:layout_height="match_parent" >
 
             <include layout="@layout/survey_identifier" />
+            <include layout="@layout/survey_identifier_bus" />
 
             <LinearLayout
                 android:id="@+id/survey_form_container"

@@ -76,6 +76,8 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_TFNOLEADA = "TFNoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL = "TFSprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_TFSOLEADA = "TFSoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_BUSPRINCIPAL = "BUSprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_BUSOLEADA = "BUSoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -108,7 +110,9 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_TFNPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_TFNOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_BUSPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_BUSOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
@@ -142,6 +146,8 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_TFNOLEADA = "TFNoleada";
     public static final String COLUMN_TIPOCOMPANIAS_TFSAEREA = "TFSaerea";
     public static final String COLUMN_TIPOCOMPANIAS_TFSOLEADA = "TFSoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_BUSAEREA = "BUSaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_BUSOLEADA = "BUSoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
@@ -171,7 +177,9 @@ public class Contracts {
             COLUMN_TIPOCOMPANIAS_TFNAEREA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_VLCOLEADA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_TFSAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_TFSOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_TFSOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_BUSAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_BUSOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos
@@ -511,6 +519,9 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_SECCION = "seccion";
     public static final String COLUMN_CUEPASAJEROS_MODO = "modo";
     public static final String COLUMN_CUEPASAJEROS_MODOOTRO = "modootro";
+    public static final String COLUMN_CUEPASAJEROS_NUMCOMP = "numcomp";
+    public static final String COLUMN_CUEPASAJEROS_NUMBUS = "numbus";
+    public static final String COLUMN_CUEPASAJEROS_NUMDARSENA = "numdarsena";
     public static final String SQL_CREATE_CUEPASAJEROS = "CREATE TABLE "+ TABLE_CUEPASAJEROS + " ("+
             COLUMN_CUEPASAJEROS_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUEPASAJEROS_IDUSUARIO + " INTEGER, " +
@@ -623,7 +634,10 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_DESAUTOBUS + " TEXT, " +
             COLUMN_CUEPASAJEROS_SECCION + " TEXT, " +
             COLUMN_CUEPASAJEROS_MODO + " TEXT, " +
-            COLUMN_CUEPASAJEROS_MODOOTRO + " TEXT )";
+            COLUMN_CUEPASAJEROS_MODOOTRO + " TEXT, " +
+            COLUMN_CUEPASAJEROS_NUMCOMP + " TEXT, " +
+            COLUMN_CUEPASAJEROS_NUMBUS + " TEXT, " +
+            COLUMN_CUEPASAJEROS_NUMDARSENA + " TEXT )";
     public static final String SQL_DROP_CUEPASAJEROS = "DROP TABLE IF EXISTS " + TABLE_CUEPASAJEROS;
 
     //Tabla CueTrabajadores
