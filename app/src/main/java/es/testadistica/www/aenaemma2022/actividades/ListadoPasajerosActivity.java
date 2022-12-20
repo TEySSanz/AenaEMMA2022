@@ -30,7 +30,9 @@ import java.util.List;
 import java.util.Random;
 
 import es.testadistica.www.aenaemma2022.R;
+import es.testadistica.www.aenaemma2022.adaptadores.ListadoAutobusesItemAdapter;
 import es.testadistica.www.aenaemma2022.adaptadores.ListadoPasajerosItemAdapter;
+import es.testadistica.www.aenaemma2022.entidades.CueAutobusesListado;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajerosListado;
 import es.testadistica.www.aenaemma2022.utilidades.Contracts;
@@ -43,6 +45,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     private static String DATE_FORMAT_COMPLETE ="dd/MM/yyyy HH:mm";
     private Date fechaActual = null;
     private ArrayList<CuePasajerosListado> listaCue;
+    private ArrayList<CueAutobusesListado> listaCue1;
     private int modeloCue;
     private int maxPreg = 1;
 
@@ -52,6 +55,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     int idAeropuerto;
     SearchableSpinnerOLD sp_idioma;
     ListView list_pasajeros;
+    ListView list_pasajeros1;
     DBHelper conn;
     RequestQueue peticion;
 
@@ -83,6 +87,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_aeropuerto = (TextView) findViewById(R.id.txt_aeropuerto);
         sp_idioma = (SearchableSpinnerOLD) findViewById(R.id.spinner_idioma);
         list_pasajeros = (ListView) findViewById(R.id.list_pasajeros);
+        list_pasajeros1 = (ListView) findViewById(R.id.list_pasajeros1);
 
         //Recoge los parámetros de la pantalla anterior
         //Bundle datos = this.getIntent().getExtras();
@@ -157,16 +162,16 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         sp_idioma.setPositiveButton(this.getString(R.string.spinner_close));
 
         //Actualiza el listado
-        refrescar();
+        //refrescar();
 
-        /*switch (idAeropuerto) {
+        switch (idAeropuerto) {
             case 14:
-                //refrescar1();
+                refrescar1();
                 break;
             default:
                 refrescar();
                 break;
-        }*/
+        }
 
         //Crea backup de la base de datos
         exportDatabase(Contracts.DATABASE_NAME);
@@ -179,7 +184,14 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        refrescar();
+        switch (idAeropuerto) {
+            case 14:
+                refrescar1();
+                break;
+            default:
+                refrescar();
+                break;
+        }
     }
 
     @Override
@@ -202,9 +214,9 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
     }
 
-    /*private void refrescar1(){
-        listaCue = todasEncuestas1();
-        ListadoPasajerosItemAdapter adaptador = new ListadoPasajerosItemAdapter(this, listaCue);
+    private void refrescar1(){
+        listaCue1 = todasEncuestas1();
+        ListadoAutobusesItemAdapter adaptador = new ListadoAutobusesItemAdapter(this, listaCue1);
         list_pasajeros1.setAdapter(adaptador);
 
         //Establece la fecha actual
@@ -214,7 +226,7 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         SimpleDateFormat sdfDate = new SimpleDateFormat(DATE_FORMAT_COMPLETE);
         //Asigna la fecha a visualizar
         txt_fechaActual.setText(sdfDate.format(currentTime.getTime()));
-    }*/
+    }
 
     private ArrayList<CuePasajerosListado> todasEncuestas(){
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -247,12 +259,12 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         return listaCue;
     }
 
-    /*private ArrayList<CuePasajerosListado> todasEncuestas1(){
+    private ArrayList<CueAutobusesListado> todasEncuestas1(){
         SQLiteDatabase db = conn.getReadableDatabase();
-        CuePasajerosListado cue1 = null;
+        CueAutobusesListado cue1 = null;
         String[] parametros = {txt_usuario.getText().toString()};
 
-        listaCue = new ArrayList<CuePasajerosListado>();
+        listaCue1 = new ArrayList<CueAutobusesListado>();
 
         Cursor cursor = db.rawQuery("SELECT T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN + ", " +
                 "T3." + Contracts.COLUMN_USUARIOS_NOMBRE + ", " +
@@ -260,7 +272,6 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                 "COALESCE(T4." + Contracts.COLUMN_IDIOMAS_CLAVE + ",' '), " +
                 "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA + ",' '), " +
                 "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMBUS + ",' '), " +
-                "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_NUMCOMP + ",' '), " +
                 "COALESCE(T1." + Contracts.COLUMN_CUEPASAJEROS_ENVIADO + ",' ') " +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 LEFT JOIN " +
                 Contracts.TABLE_AEROPUERTOS + " AS T2 ON T1." + Contracts.COLUMN_CUEPASAJEROS_IDAEROPUERTO + " = T2." + Contracts.COLUMN_AEROPUERTOS_IDEN + " LEFT JOIN " +
@@ -270,14 +281,14 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                 " ORDER BY T1." + Contracts.COLUMN_CUEPASAJEROS_IDEN, parametros);
 
         while (cursor.moveToNext()) {
-            cue1 = new CuePasajerosListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
-            listaCue.add(cue1);
+            cue1 = new CueAutobusesListado(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
+            listaCue1.add(cue1);
         }
 
         cursor.close();
 
-        return listaCue;
-    }*/
+        return listaCue1;
+    }
 
     private List<String> getIdiomas(String filtro) {
         List<String> getIdiomas = new ArrayList<String>();

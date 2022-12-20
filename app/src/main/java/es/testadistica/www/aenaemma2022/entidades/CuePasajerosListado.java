@@ -26,17 +26,6 @@ public class CuePasajerosListado implements Serializable {
         this.enviado = enviado;
     }
 
-    public CuePasajerosListado(int iden, String encuestador, String fecha, String idioma, String numdarsena, String numbus, String numcomp, String enviado) {
-        this.iden = iden;
-        this.encuestador = encuestador;
-        this.fecha = fecha;
-        this.idioma = idioma;
-        this.numdarsena = numdarsena;
-        this.numbus = numbus;
-        this.numcomp = numcomp;
-        this.enviado = enviado;
-    }
-
     public int getIden() {
         return iden;
     }

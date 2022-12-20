@@ -75,17 +75,6 @@
         android:textColor="@color/aenaBlue"
         android:textSize="14dp"
         android:textStyle="bold" />
-    <TextView
-        android:id="@+id/surveylist_item_text_numcomp"
-        android:layout_width="0dp"
-        android:layout_weight="3"
-        android:layout_height="match_parent"
-        android:hint="AAA"
-        android:layout_margin="@dimen/medium_padding"
-        android:gravity="center"
-        android:textColor="@color/aenaBlue"
-        android:textSize="14dp"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/surveylist_item_text_enviado"

@@ -228,6 +228,7 @@
                 android:text="@string/surveylist_text_header_codIdioma" />
 
             <TextView
+                android:id="@+id/surveylist_item_text_numdarsena"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
@@ -235,11 +236,10 @@
                 android:gravity="center"
                 android:textColor="@color/aenaLightGrey"
                 android:textStyle="bold"
-                android:text="@string/surveylist_text_header_vuelo"
-                android:visibility="invisible"/>
+                android:text="@string/surveylist_text_header_numdarsena" />
 
             <TextView
-                android:id="@+id/surveylist_item_text_terminal"
+                android:id="@+id/surveylist_item_text_numbus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/small_padding"
@@ -247,8 +247,7 @@
                 android:gravity="center"
                 android:textColor="@color/aenaLightGrey"
                 android:textStyle="bold"
-                android:text="@string/surveylist_text_header_terminal"
-                android:visibility="invisible"/>
+                android:text="@string/surveylist_text_header_numbus" />
 
             <TextView
                 android:id="@+id/surveylist_item_text_enviado"
@@ -273,7 +272,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/list_pasajeros"
+            android:id="@+id/list_pasajeros1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10">
