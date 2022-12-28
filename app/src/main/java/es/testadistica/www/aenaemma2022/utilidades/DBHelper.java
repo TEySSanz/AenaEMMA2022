@@ -67,6 +67,28 @@ public class DBHelper extends SQLiteOpenHelper {
                     addColumn(db, Contracts.TABLE_CUETRABAJADORES, Contracts.COLUMN_CUETRABAJADORES_VELECAEROP);
 
                 }
+                if (subVersion <= 34){ //Si la versión que tiene instalada la tablet es menor o igual a la v1.34 se intentan añadir las columnas.
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_EMPRESA);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_EMPRESAOTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_CDLOCADOOTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_DESTINO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_DESTINOOTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_CIA);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_CIAOTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_HLLEGABUS);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_HSALEAVION);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_BUSTRANSFER);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_ENTAUTOBUS);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_HSALEBUS);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_DESAUTOBUS);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_SECCION);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_MODO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_MODOOTRO);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_NUMCOMP);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_NUMBUS);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA);
+
+                }
             }
         }
 
