@@ -115,12 +115,12 @@
                 android:background="@color/aenaLightGrey"
                 android:gravity="center"
                 android:hint="xxx"
-                android:maxLength="3"
+                android:maxLength="20"
                 android:paddingLeft="@dimen/standard_padding"
                 android:paddingTop="@dimen/small_padding"
                 android:paddingRight="@dimen/standard_padding"
                 android:paddingBottom="@dimen/small_padding"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
 

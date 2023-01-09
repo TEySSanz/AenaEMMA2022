@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.34)</string>
+    <string name="app_name">EMMA 2022 (v1.35)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -1059,7 +1059,7 @@
     <string name="survey_text_cdpaisre_s2">3. ¿En qué País ha estado residiendo la mayor parte de los últimos 12 meses?</string>
 
     <string name="survey_text_desautobus_s3">3. ¿Cuál es su destino?</string>
-    <string name="survey_text_desautobus_s4">4. ¿Cuál es su destino?</string>
+    <string name="survey_text_desautobus_s4">3. ¿Cuál es su destino?</string>
 
     <string name="survey_text_destino_bus_s1">4. ¿Cuál es el destino de su viaje?</string>
     <string name="survey_text_destino_bus_s2">4. ¿Cuál es el destino de su viaje?</string>
@@ -1171,7 +1171,7 @@
 
     <string name="survey_text_numDarsena">Nº DÁRSENA</string>
     <string name="survey_text_numBus">Nº AUTOBÚS</string>
-    <string name="survey_text_numCompania">Nº COMPAÑIA</string>
+    <string name="survey_text_numCompania">COMPAÑIA</string>
     <string name="survey_text_numDarsena_edit">XXX</string>
     <string name="survey_text_numBus_edit">XXX</string>
     <string name="survey_text_numCompania_edit">AAA</string>
@@ -1179,7 +1179,7 @@
 
 
 
-    <string name="version">v1.33</string>
+    <string name="version">v1.35</string>
 
 
 </resources>

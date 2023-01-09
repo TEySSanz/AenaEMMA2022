@@ -1370,7 +1370,7 @@ public class ModeloPasajeros6 extends Form {
                 break;
             case 22:
                 //P22
-                LinearLayout p22 = (LinearLayout) activity.findViewById(R.id.survey_layout_destino);
+                LinearLayout p22 = (LinearLayout) activity.findViewById(R.id.survey_layout_desautobus_tot);
                 previo.setVisibility(VISIBLE);
                 save.setVisibility(VISIBLE);
                 next.setVisibility(VISIBLE);
@@ -2416,7 +2416,7 @@ public class ModeloPasajeros6 extends Form {
                     }
 
                     break;
-                case 40: case 51:
+                case 40: case 51: case 22:
                     //P40
                     if (activity.findViewById(R.id.survey_layout_desautobus_tot).getVisibility() == VISIBLE) {
                         /*if (!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
@@ -2594,7 +2594,7 @@ public class ModeloPasajeros6 extends Form {
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES, cue.getDistres());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_DISTRESOTRO, cue.getDistresotro());
                     break;
-                case 5: case 22:
+                case 5:
                     //P5
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_DESTINO, cue.getDestino());
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_DESTINOOTRO, cue.getDestinootro());
@@ -2681,7 +2681,7 @@ public class ModeloPasajeros6 extends Form {
                     //P39
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_ENTAUTOBUS, cue.getEntautobus());
                     break;
-                case 40: case 51:
+                case 40: case 51: case 22:
                     //P40
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_DESAUTOBUS, cue.getDesautobus());
                     break;
@@ -2739,7 +2739,7 @@ public class ModeloPasajeros6 extends Form {
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_DISTRES);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_DISTRESOTRO);
                     break;
-                case 5: case 22:
+                case 5:
                     //P5
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_DESTINO);
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_DESTINOOTRO);
@@ -2826,7 +2826,7 @@ public class ModeloPasajeros6 extends Form {
                     //P39
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_ENTAUTOBUS);
                     break;
-                case 40: case 51:
+                case 40: case 51: case 22:
                     //P40
                     borraDB(Contracts.COLUMN_CUEPASAJEROS_DESAUTOBUS);
                     break;
@@ -2984,8 +2984,6 @@ public class ModeloPasajeros6 extends Form {
                                 activity.findViewById(R.id.survey_text_cdpaisna_s2).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_cdpaisre_s1).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdpaisre_s2).setVisibility(VISIBLE);
-                                activity.findViewById(R.id.survey_text_destino_s1).setVisibility(GONE);
-                                activity.findViewById(R.id.survey_text_destino_s2).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_hllegabus_s1).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_hllegabus_s2).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_bustrasnfer_s1).setVisibility(GONE);
@@ -3009,6 +3007,8 @@ public class ModeloPasajeros6 extends Form {
                                 activity.findViewById(R.id.survey_text_cdsexo_s2).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_valorexp_s1).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_valorexp_s2).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_text_desautobus_s3).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_desautobus_s2).setVisibility(VISIBLE);
                                 show = showQuestion(19); //>P19
                                 break;
                             case R.id.survey_radio_autobus_option3:
@@ -3100,7 +3100,7 @@ public class ModeloPasajeros6 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_viene_re_option1:
-                                show = showQuestion(11); //>P11
+                                show = showQuestion(10); //>P10
                                 break;
                             case R.id.survey_radio_viene_re_option2:
                                 show = showQuestion(10); //>P10
@@ -3344,7 +3344,10 @@ public class ModeloPasajeros6 extends Form {
 
                     if (checkedId > 0) {
                         switch (checkedId) {
-                            case R.id.survey_radio_modo_s4_option91:
+                            case R.id.survey_radio_modo_s4_option22:
+                                show = showQuestion(53); //>P53
+                                break;
+                            case R.id.survey_radio_modo_s4_option23:
                                 show = showQuestion(53); //>P53
                                 break;
                             default:

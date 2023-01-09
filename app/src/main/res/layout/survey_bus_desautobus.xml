@@ -30,6 +30,14 @@
             android:text="@string/survey_text_desautobus_s4"
             android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/survey_text_desautobus_s2"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_text_destino_bus_s2"
+            android:visibility="gone" />
+
         <LinearLayout
             android:id="@+id/survey_layout_desautobus_esp"
             android:layout_width="match_parent"
