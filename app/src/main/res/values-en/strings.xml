@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.35)</string>
+    <string name="app_name">EMMA 2022 (v1.36)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.35</string>
+    <string name="version">v1.36</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -569,7 +569,7 @@
     <string name="survey_text_acomptes_s4">"7. Has someone come to see you off at the airport bus station?  "</string>
     <string name="survey_text_viene_re_s1">8. Where did you depart from to access the AS Madrid-Barajas airport bus station?</string>
     <string name="survey_text_bustransfer_s1">9. Do you have to use the bus between terminals to take your flight?</string>
-    <string name="survey_text_bustransfer_s2">9. Do you have to use the bus between terminals to take your flight?</string>
+    <string name="survey_text_bustransfer_s2">9. Do you have to use the bus between terminals to reach the bus station?</string>
     <string name="survey_text_bustransfer_s4">6. Have you had to use the inter-terminal bus to get to the bus station?</string>
     <string name="survey_text_bustransfer_s3">6. Do you have to use the bus between terminals to leave the bus station?</string>
     <string name="survey_bus_radio_bustransfer_option1">Yes</string>

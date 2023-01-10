@@ -2516,7 +2516,7 @@ public class ModeloPasajeros6 extends Form {
                     EditText etNumDarsena = (EditText) activity.findViewById(R.id.survey_edit_numDarsena);
                     String textoError = activity.getResources().getString(R.string.survey_text_specifyAnswer);
 
-                    if (etNumComp.getText().toString().isEmpty()) {
+                    /*if (etNumComp.getText().toString().isEmpty()) {
                         etNumComp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                         etNumComp.setError(textoError);
                         return getDialogValueBackError(activity,
@@ -2547,7 +2547,7 @@ public class ModeloPasajeros6 extends Form {
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else {
                         etNumDarsena.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
-                    }
+                    }*/
 
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMCOMP, String.valueOf(cue.getNumcomp()));
                     guardaDB(Contracts.COLUMN_CUEPASAJEROS_NUMBUS, String.valueOf(cue.getNumbus()));
