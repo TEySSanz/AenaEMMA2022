@@ -136,7 +136,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 6:
                 form = new ModeloPasajeros6(this, pregunta, conn);
                 ((ModeloPasajeros6) form).setCue(cue);
-                maxPreg=33;
+                maxPreg=60;
                 break;
         }
         LinearLayout formContainer = (LinearLayout) findViewById(R.id.survey_form_container);
