@@ -72,41 +72,14 @@ public class ModeloPasajeros5 extends Form {
         System.out.println("idAeropuerto: "+idAeropuerto);
         showQuestion(pregunta);
 
-        switch (idAeropuerto){
-            case 4:
-                //Ibiza
-                iniciarTextosAeropuertos();
-                iniciarSpinners();
-                //iniciarTimePickers();;
-                condicionesSpinners();
-                condicionesRadioButton();
-                condicionesChecks();
-                //condicionesEditText();
-                condicionesRatingBar();
-                break;
-            case 6:
-                //Menorca
-                iniciarTextosAeropuertos();
-                iniciarSpinners();
-                //iniciarTimePickers();;
-                condicionesSpinners();
-                condicionesRadioButton();
-                condicionesChecks();
-                //condicionesEditText();
-                condicionesRatingBar();
-                break;
-            case 13:
-                //Menorca
-                iniciarTextosAeropuertosGC();
-                iniciarSpinnersGC();
-                //iniciarTimePickers();;
-                condicionesSpinnersGC();
-                condicionesRadioButtonGC();
-                condicionesChecksGC();
-                //condicionesEditText();
-                condicionesRatingBarGC();
-                break;
-        }
+        iniciarTextosAeropuertos();
+        iniciarSpinners();
+        //iniciarTimePickers();;
+        condicionesSpinners();
+        condicionesRadioButton();
+        condicionesChecks();
+        //condicionesEditText();
+        condicionesRatingBar();
     }
 
     private void iniciarTextosAeropuertos(){
@@ -354,13 +327,6 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
                 break;
-        }
-    }
-
-    private void iniciarTextosAeropuertosGC(){
-        //Por defecto se muestran las opciones del cuestionario de Madrid, si de algún aeropuerto se cambian los textos hay que incluirlo
-        // en el switch
-        switch (idAeropuerto){
             case 13:
                 //Tenerife Sur
                 //P1
@@ -376,6 +342,10 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_edit_text_cdlocacootro_GC).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_viene_re_TS).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_prov).setVisibility(GONE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(GONE);
+                activity.findViewById(R.id.survey_spinner_cdlocacoGC).setVisibility(VISIBLE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 //P5 NO
@@ -482,8 +452,8 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
                 break;
-            case 6:
-                //Menorca
+            case 14:
+                //Lanzarote
                 //P1
                 activity.findViewById(R.id.survey_text_cdpaisna).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdpaisna_m4).setVisibility(VISIBLE);
@@ -493,8 +463,14 @@ public class ModeloPasajeros5 extends Form {
                 //P3 NO
                 activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdlocaco_prov_m5).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_cdlocacootro_GC).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
-                activity.findViewById(R.id.survey_m5_MAH_text_viene_re).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_viene_re_TS).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_prov).setVisibility(GONE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(GONE);
+                activity.findViewById(R.id.survey_spinner_cdlocacoGC).setVisibility(VISIBLE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 //P5 NO
@@ -588,7 +564,6 @@ public class ModeloPasajeros5 extends Form {
                 //P29
                 activity.findViewById(R.id.survey_text_cdsprof).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdsprof_m5).setVisibility(VISIBLE);
-                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
                 //P30
                 activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_estudios_m5).setVisibility(VISIBLE);
@@ -597,7 +572,7 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_cdedad_m5).setVisibility(VISIBLE);
                 //P32
                 activity.findViewById(R.id.survey_text_cdsexo).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdsexo_m5_MAH).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdsexo_m5).setVisibility(VISIBLE);
                 //P33
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
@@ -615,6 +590,9 @@ public class ModeloPasajeros5 extends Form {
         ArrayList<mListString> municipiosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> motivoViajefiltroAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO,"iden", "codigo","motivo", "codigo"));
+        ArrayList<mListString> islasAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIA,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> islasLocalidadAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> distritosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIAPLAYA,"iden", "codigo","descripcion", "codigo"));
 
         String filtroAeropuerto = "iden IS NOT NULL"; //Para que salgan todos
         switch (idAeropuerto){
@@ -628,6 +606,14 @@ public class ModeloPasajeros5 extends Form {
                 break;
             case 13:
                 //Tenerife sur
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_TFSOLEADA+"=1 ";
+                break;
+            case 14:
+                //Lanzarote
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_TFSOLEADA+"=1 ";
+                break;
+            case 15:
+                //Fuerteventura
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_TFSOLEADA+"=1 ";
                 break;
         }
@@ -816,17 +802,14 @@ public class ModeloPasajeros5 extends Form {
             }
         });
 
-        //P9
-        //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdiaptod;
-        sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-        sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+        SearchableSpinner sp_cdlocaco_provGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_provGC);
+        sp_cdlocaco_provGC.setAdapter(islasAdapterGC, 1, 1, activity.getString(R.string.spinner_isla_title), activity.getString(R.string.spinner_close));
 
-        sp_cdiaptod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        sp_cdlocaco_provGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
+                sp_cdlocaco_provGC.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -834,366 +817,14 @@ public class ModeloPasajeros5 extends Form {
             }
         });
 
-        //P10
-        //Asigna los valores del desplegable de companias
-        SearchableSpinner sp_numvuepa;
-        sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
-        sp_numvuepa.setAdapter(companiasAdapter, 1, 1, activity.getString(R.string.spinner_compania_title), activity.getString(R.string.spinner_close));
+        SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+        sp_cdlocacoGC.setAdapter(islasLocalidadAdapterGC, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
 
-        sp_numvuepa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_numvuepa.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P11b
-        //Asigna los valores del desplegable de companias
-        SearchableSpinner sp_cdociaar;
-        sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
-        sp_cdociaar.setAdapter(companiasPpalAdapter, 1, 1, activity.getString(R.string.spinner_compania_title), activity.getString(R.string.spinner_close));
-
-        sp_cdociaar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        sp_cdlocacoGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                sp_cdociaar.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P12
-        //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdiaptof;
-        sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-        sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-        sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdiaptof.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P13
-        //Asigna los valores del desplegable de motivo viaje
-        SearchableSpinner sp_cdmviaje;
-        sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
-        sp_cdmviaje.setAdapter(motivoViajeAdapter, 1, 1, activity.getString(R.string.spinner_motivo_title), activity.getString(R.string.spinner_close));
-
-        sp_cdmviaje.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdmviaje.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_cdmviajefiltro;
-        sp_cdmviajefiltro = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviajefiltro);
-        sp_cdmviajefiltro.setAdapter(motivoViajefiltroAdapter, 1, 1, activity.getString(R.string.spinner_motivo_title), activity.getString(R.string.spinner_close));
-
-        sp_cdmviajefiltro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdmviajefiltro.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P27
-        //Asigna los valores del desplegable de productos
-        SearchableSpinner sp_prod1;
-        sp_prod1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
-        sp_prod1.setAdapter(productosAdapter, 1, 1, activity.getString(R.string.spinner_producto_title), activity.getString(R.string.spinner_close));
-
-        sp_prod1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_prod1.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_prod2;
-        sp_prod2 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod2);
-        sp_prod2.setAdapter(productosAdapter, 1, 1, activity.getString(R.string.spinner_producto_title), activity.getString(R.string.spinner_close));
-
-        sp_prod2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_prod2.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_prod3;
-        sp_prod3 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod3);
-        sp_prod3.setAdapter(productosAdapter, 1, 1, activity.getString(R.string.spinner_producto_title), activity.getString(R.string.spinner_close));
-
-        sp_prod3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_prod3.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_prod4;
-        sp_prod4 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod4);
-        sp_prod4.setAdapter(productosAdapter, 1, 1, activity.getString(R.string.spinner_producto_title), activity.getString(R.string.spinner_close));
-
-        sp_prod4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_prod4.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_prod5;
-        sp_prod5 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod5);
-        sp_prod5.setAdapter(productosAdapter, 1, 1, activity.getString(R.string.spinner_producto_title), activity.getString(R.string.spinner_close));
-
-        sp_prod5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_prod5.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-    }
-
-    private void iniciarSpinnersGC() {
-
-        ArrayList<mListString> paisesAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "descripcion"));
-        ArrayList<mListString> paises1y2Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion"));
-        ArrayList<mListString> islasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIA,"iden", "codigo","descripcion", "codigo"));
-        ArrayList<mListString> islasLocalidadAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo"));
-        ArrayList<mListString> provinciasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo"));
-        ArrayList<mListString> municipiosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
-        ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
-        ArrayList<mListString> motivoViajefiltroAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJEFILTRO,"iden", "codigo","motivo", "codigo"));
-        ArrayList<mListString> distritosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIAPLAYA,"iden", "codigo","descripcion", "codigo"));
-
-        String filtroAeropuerto = "iden IS NOT NULL"; //Para que salgan todos
-        switch (idAeropuerto){
-            case 4:
-                //Ibiza
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_IBZOLEADA+"=1 ";
-                break;
-            case 6:
-                //Menorca
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MAHOLEADA+"=1 ";
-                break;
-        }
-        ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
-
-        filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
-        switch (idAeropuerto){
-            case 4:
-                //Ibiza
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_IBZAEREA+"=1 ";
-                break;
-            case 6:
-                //Menorca
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_MAHAEREA+"=1 ";
-                break;
-        }
-        ArrayList<mListString> companiasPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
-        ArrayList<mListString> productosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPRODUCTOS,"iden", "codigo","descripcion", "codigo"));
-
-        filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
-        switch (idAeropuerto){
-            case 4:
-                //Ibiza
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA+" = 1";
-                break;
-            case 6:
-                //Menorca
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA+" = 1";
-                break;
-
-        }
-        ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
-
-        filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
-        switch (idAeropuerto){
-            case 4:
-                //Ibiza
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1";
-                break;
-            case 6:
-                //Menorca
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1";
-                break;
-        }
-        ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
-
-        //P1
-        //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdpasina;
-        sp_cdpasina = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
-        sp_cdpasina.setAdapter(paisesAdapter, 1, 1, activity.getString(R.string.spinner_pais_title), activity.getString(R.string.spinner_close));
-
-        sp_cdpasina.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdpasina.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P2
-        //Asigna los valores del desplegable de paises
-        SearchableSpinner sp_cdpasire;
-        sp_cdpasire = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
-        sp_cdpasire.setAdapter(paisesAdapter, 1, 1, activity.getString(R.string.spinner_pais_title), activity.getString(R.string.spinner_close));
-
-        sp_cdpasire.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdpasire.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
-        sp_cdlocado_prov.setAdapter(provinciasAdapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
-
-        sp_cdlocado_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-
-                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-        sp_cdlocado.setAdapter(municipiosAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
-
-        sp_cdlocado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
-        sp_distres_area.setAdapter(paises1y2Adapter, 1, 1, activity.getString(R.string.spinner_pais1y2_title), activity.getString(R.string.spinner_close));
-
-        sp_distres_area.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P3 Asigna los valores a los despeglables de aeropuertos y localidades
-
-        SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-        sp_cdlocaco_prov.setAdapter(islasAdapter, 1, 1, activity.getString(R.string.spinner_isla_title), activity.getString(R.string.spinner_close));
-
-        sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
-        sp_cdlocaco.setAdapter(islasLocalidadAdapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
-
-        sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdlocaco.setBackgroundResource(android.R.drawable.btn_dropdown);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        SearchableSpinner sp_cdiaptoo;
-        sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
-        sp_cdiaptoo.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-        sp_cdiaptoo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-
+                sp_cdlocacoGC.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -1473,6 +1104,11 @@ public class ModeloPasajeros5 extends Form {
                 } else {
                     activity.findViewById(R.id.survey_layout_cdpaisreotro).setVisibility(VISIBLE);
                 }
+                if (!texto.equals("724")){
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                } else {
+                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                }
 
             }
             @Override
@@ -1516,6 +1152,33 @@ public class ModeloPasajeros5 extends Form {
                     activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
                 } else {
                     activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                }
+                switch (idAeropuerto){
+                    case 4:
+                        //Ibiza
+                        if ((!texto.equals("07"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        }
+                        break;
+                    case 6:
+                        //Menorca
+                        if ((!texto.equals("07"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        }
+                        break;
+                    case 13:
+                        //Tenerife sur
+                        if ((texto.equals("35"))||(texto.equals("38"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        }
+                        break;
+
                 }
 
             }
@@ -1687,6 +1350,91 @@ public class ModeloPasajeros5 extends Form {
             }
         });
 
+        //P3 Filtro municipios GC
+        final SearchableSpinner sp_cdlocaco_provGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_provGC);
+
+        sp_cdlocaco_provGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocaco_provGC.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = getValorDesplegable(sp_cdlocaco_provGC).substring(0,2);
+
+                String texto1 = " iden IS NOT NULL ";
+
+                if (texto.equals("01")){
+                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                } else if (texto.equals("02") || texto.equals("03")|| texto.equals("04")|| texto.equals("05")|| texto.equals("06")|| texto.equals("07")){
+                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                }
+
+                final SearchableSpinner sp_cdlocacoGC= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+                ArrayList<mListString> islasLocalidadAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto1));
+                sp_cdlocacoGC.setAdapter(islasLocalidadAdapterGC, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        final SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+
+        sp_cdlocacoGC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                sp_cdlocacoGC.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = getValorDesplegable(sp_cdlocacoGC).substring(0,5);
+
+                if (texto.equals("OTROS")) {
+                    activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
+                    final SearchableSpinner sp_playa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
+
+                    sp_playa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                            sp_playa.setBackgroundResource(android.R.drawable.btn_dropdown);
+                            String texto3 = getValorDesplegable(sp_playa).substring(0,5);
+
+                            if (texto3.equals("99999")) {
+                                activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(VISIBLE);
+                            } else {
+                                activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
+                                blanquearEditText(activity.findViewById(R.id.survey_edit_cdlocacootro));
+                                activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(GONE);
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                } else if (texto.equals("99999")) {
+                    activity.findViewById(R.id.survey_layout_playa).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(VISIBLE);
+                } else {
+                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdlocacootro));
+                    activity.findViewById(R.id.survey_layout_playa).setVisibility(GONE);
+                    activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(GONE);
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //P9
         final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
 
@@ -1741,445 +1489,6 @@ public class ModeloPasajeros5 extends Form {
                 } else {
                     activity.findViewById(R.id.survey_layout_cdiaptodotro).setVisibility(VISIBLE);
                 }
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P11
-        final SearchableSpinner sp_cdociaar = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdociaar);
-
-        sp_cdociaar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdociaar.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_cdociaar.getSelectedItem().toString().substring(0,3);
-                String texto = getValorDesplegable(sp_cdociaar).substring(0,3);
-
-                if (!texto.equals("999")){
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdociaarotro));
-                    activity.findViewById(R.id.survey_layout_cdociaarotro).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdociaarotro).setVisibility(VISIBLE);
-                }
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P12
-        final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-
-        sp_cdiaptof.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdiaptof.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_cdiaptof.getSelectedItem().toString().substring(0,3);
-                String texto = getValorDesplegable(sp_cdiaptof).substring(0,3);
-
-                if (!texto.equals("ZZZ")){
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptofotro));
-                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdiaptofotro).setVisibility(VISIBLE);
-                }
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P13
-        final SearchableSpinner sp_cdmviajefiltro = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviajefiltro);
-        final SearchableSpinner sp_cdmviaje = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdmviaje);
-
-        sp_cdmviajefiltro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdmviajefiltro.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String textoViajeFiltro = sp_cdmviajefiltro.getSelectedItem().toString().substring(0,2);
-                String textoViajeFiltro = getValorDesplegable(sp_cdmviajefiltro).substring(0,2);
-                int numero=209;
-
-                String filtroViaje = " iden IS NOT NULL ";
-
-                if (textoViajeFiltro.equals("10") || textoViajeFiltro.equals("20") || textoViajeFiltro.equals("29")){
-                    activity.findViewById(R.id.survey_spinner_cdmviaje).setVisibility(VISIBLE);
-                    filtroViaje = " "+ Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN (" + numero + ") AND " +Contracts.COLUMN_TIPOMOTIVOVIAJE_CODGRUPO +" LIKE '"+textoViajeFiltro+" %' OR iden = 0";
-                }
-
-                ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo", filtroViaje));
-                sp_cdmviaje.setAdapter(motivoViajeAdapter, 1, 1, activity.getString(R.string.spinner_motivo_title), activity.getString(R.string.spinner_close));
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-        //P18
-        final SearchableSpinner sp_numvuepa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_numvuepa);
-
-        sp_numvuepa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_numvuepa.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_numvuepa.getSelectedItem().toString().substring(0,3);
-                String texto = getValorDesplegable(sp_numvuepa).substring(0,3);
-                TextView miTextView =(TextView) activity.findViewById(R.id.survey_text_numvuepa_companyCode);
-                if (!texto.equals("000")){
-                    miTextView.setText(texto+"-");
-                } else {
-                    miTextView.setText("XXX-");
-                }
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void condicionesSpinnersGC() {
-        //P1
-        final SearchableSpinner sp_cdpaisna = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisna);
-
-        sp_cdpaisna.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdpaisna.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //String texto = sp_cdociaar.getSelectedItem().toString().substring(0,3);
-                String texto = getValorDesplegable(sp_cdpaisna).substring(0,3);
-
-                if (!texto.equals("999")){
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdpaisnaotro));
-                    activity.findViewById(R.id.survey_layout_cdpaisnaotro).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdpaisnaotro).setVisibility(VISIBLE);
-                }
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        //P2
-        final SearchableSpinner sp_cdpaisre = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
-
-        sp_cdpaisre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdpaisre.setBackgroundResource(android.R.drawable.btn_dropdown);
-                //Blanquear todas las opciones cuando se cambia de pais
-                SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
-                SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                SearchableSpinner sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
-                sp_cdlocado_prov.setSelection(0);
-                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
-                sp_cdlocado.setSelection(0);
-                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
-                sp_distres_area.setSelection(0);
-                sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
-
-                String texto = getValorDesplegable(sp_cdpaisre).substring(0,3);
-                if (texto.equals("724")){ //España
-                    activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(VISIBLE);
-                    activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdlocado_esp).setVisibility(GONE);
-                    if (compruebaListaPaises1y2(texto) > 0){ //Si el pais es uno de la lista 1 y 2 se habilita para introducir el área / región
-                        String filtro = " iden = 0 OR "+Contracts.COLUMN_TIPOPAISES1Y2_CODIGOPAIS+" = '"+texto+"'";
-                        ArrayList<mListString> paises1y2Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion", filtro));
-                        sp_distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
-                        sp_distres_area.setAdapter(paises1y2Adapter, 1, 1, activity.getString(R.string.spinner_pais1y2_title), activity.getString(R.string.spinner_close));
-                        activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(VISIBLE);
-
-                    } else {
-                        activity.findViewById(R.id.survey_layout_cdlocado_no_esp).setVisibility(GONE);
-                    }
-                }
-                if (!texto.equals("999")) {
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdpaisreotro));
-                    activity.findViewById(R.id.survey_layout_cdpaisreotro).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdpaisreotro).setVisibility(VISIBLE);
-                }
-
-                if (!texto.equals("724")){
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
-                }
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        final SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
-
-        //P2 Filtro municipios
-        sp_cdlocado_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                String filtro = " provincia IN (";
-
-                if (id > 0 && id <10){
-                    filtro = filtro + "'00','0"+id+"','99',";
-                } else if (id > 9 && id <=57){
-                    filtro =  filtro +"'00','"+id+"','99',";
-                }
-                /*else if (id == 53){
-                    filtro =  filtro +"'99',";
-                } */ else {
-                    filtro = " (iden > -1 ";
-                }
-
-                if (!filtro.contains(")")) {
-                    filtro = filtro.substring(0, filtro.length()-1);
-                    filtro = filtro + ")";
-                }
-
-                final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-                ArrayList<mListString> municipioAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
-                sp_cdlocado.setAdapter(municipioAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
-
-                sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String textoProv = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
-                if((textoProv.equals("38"))||(textoProv.equals("35"))){
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
-                }else{
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
-
-        sp_cdlocado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdlocado).substring(0,5);
-
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P3 Filtro municipios
-        final SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-
-        sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
-
-                String texto1 = " iden IS NOT NULL ";
-
-                if (texto.equals("01")){
-                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
-                } else if (texto.equals("02") || texto.equals("03")|| texto.equals("04")|| texto.equals("05")|| texto.equals("06")|| texto.equals("07")){
-                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
-                }
-
-                final SearchableSpinner sp_cdlocaco= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
-                ArrayList<mListString> islasLocalidadAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto1));
-                sp_cdlocaco.setAdapter(islasLocalidadAdapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
-
-        sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                sp_cdlocaco.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdlocaco).substring(0,5);
-
-                if (texto.equals("OTROS")) {
-                    activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
-                    final SearchableSpinner sp_playa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
-
-                    sp_playa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                            sp_playa.setBackgroundResource(android.R.drawable.btn_dropdown);
-                            String texto3 = getValorDesplegable(sp_playa).substring(0,5);
-
-                            if (texto3.equals("99999")) {
-                                activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
-                                activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(VISIBLE);
-                            } else {
-                                activity.findViewById(R.id.survey_layout_playa).setVisibility(VISIBLE);
-                                blanquearEditText(activity.findViewById(R.id.survey_edit_cdlocacootro));
-                                activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(GONE);
-                            }
-
-
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-                } else if (texto.equals("99999")) {
-                    activity.findViewById(R.id.survey_layout_playa).setVisibility(GONE);
-                    activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(VISIBLE);
-                } else {
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdlocacootro));
-                    activity.findViewById(R.id.survey_layout_playa).setVisibility(GONE);
-                    activity.findViewById(R.id.survey_layout_cdlocacootro).setVisibility(GONE);
-                }
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        final SearchableSpinner sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
-
-        sp_cdiaptoo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
-                if (rbCdiaptoo.isChecked()) {
-
-                    String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
-
-                    String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                    switch (idAeropuerto) {
-                        case 13:
-                            //Tenerife Sur
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
-
-                    }
-
-                    final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                    ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
-                    sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-                    String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
-                    switch (idAeropuerto) {
-                        case 13:
-                            //Tenerife Sur
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-                            }
-                            break;
-                    }
-
-                    final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto2));
-                    sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-                }
-                String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
-                if (!texto.equals("ZZZ")) {
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptoootro_m4));
-                    activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(VISIBLE);
-                }
-
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        //P9
-        final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-
-        sp_cdiaptod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                //final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
-                //if (rbCdiaptoo.isChecked()) {
-
-                sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto1 = getValorDesplegable(sp_cdiaptod).substring(0,3);
-
-                sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdiaptoo).substring(0,3);
-
-
-                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                switch (idAeropuerto) {
-
-
-                    case 13:
-                        //Tenerife sur
-                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
-                        if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
-                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
-                        }
-                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
-                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
-
-                        }
-                        break;
-                }
-
-                final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
-                sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
-
-
-                if (!texto1.equals("ZZZ")) {
-                    blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
-                    activity.findViewById(R.id.survey_layout_cdiaptodotro).setVisibility(GONE);
-                } else {
-                    activity.findViewById(R.id.survey_layout_cdiaptodotro).setVisibility(VISIBLE);
-                }
-
 
             }
             @Override
@@ -2652,370 +1961,6 @@ public class ModeloPasajeros5 extends Form {
 
     }
 
-    private void condicionesRadioButtonGC() {
-        //P3
-        RadioGroup rgViene_re = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re_diaptoo);
-        rgViene_re.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgViene_re.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_cdlocaco:
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        break;
-                    case R.id.survey_radio_cdiaptoo:
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        break;
-                    case R.id.survey_radio_viene_re:
-                        SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
-                        //String textSpCdlocado = sp_cdlocado.getSelectedItem().toString().substring(0, 5);
-                        String textSpCdlocado = getValorDesplegable(sp_cdlocado_prov).substring(0, 2);
-                        if (textSpCdlocado.contains("07")) {
-                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        } else {
-                            activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        }
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P4
-        RadioGroup rgCdalojin= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdalojin_crucero);
-        rgCdalojin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgCdalojin.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_cdalojin_option9:
-                        activity.findViewById(R.id.survey_layout_cdalojin_otros).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_cdalojin_otros).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P5
-        RadioGroup rgUmodos = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo);
-        rgUmodos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgUmodos.setBackgroundColor(activity.getResources().getColor(R.color.md_blue_grey_200));
-                switch(i)
-                {
-                    case R.id.survey_radio_m4_ultimodo_1modo_option8:
-                        activity.findViewById(R.id.survey_edit_m4_ultimodo_otros).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_edit_m4_ultimodo_otros).setVisibility(View.INVISIBLE);
-                        break;
-                }
-            }
-        });
-        //P6
-        RadioGroup rgSitiopark = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_sitiopark);
-        rgSitiopark.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgSitiopark.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_sitiopark_option4:
-                        activity.findViewById(R.id.survey_layout_pqfuera).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_pqfuera).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P7
-        RadioGroup rgAcomptes= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_acomptes);
-        rgAcomptes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgAcomptes.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_acomptes_option3:
-                        activity.findViewById(R.id.survey_layout_acomptes_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_acomptes_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P11
-        RadioGroup rgCdterm = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdterm);
-        rgCdterm.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgCdterm.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_cdterm_option2:
-                        activity.findViewById(R.id.survey_layout_cdociaar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_cdociaar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P14
-        RadioGroup rgCdidavue = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdidavue);
-        rgCdidavue.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgCdidavue.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_cdidavue_option1:
-                        activity.findViewById(R.id.survey_layout_taus).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(GONE);
-                        break;
-                    case R.id.survey_radio_cdidavue_option2:
-                        activity.findViewById(R.id.survey_layout_taus).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_taus).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P15
-        RadioGroup rgNpers = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_npers);
-        rgNpers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgNpers.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_npers_option3:
-                        activity.findViewById(R.id.survey_layout_npers_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_npers_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P17
-        final RadioGroup rgRelacion = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_relacion);
-        rgRelacion.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgRelacion.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-        //P18
-        RadioGroup rgCdtreser = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdtreser);
-        rgCdtreser.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgCdtreser.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_cdtreser_dias:
-                        activity.findViewById(R.id.survey_layout_cdtreser_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_cdtreser_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P19
-        final RadioGroup rgCdbillet = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdbillet);
-        rgCdbillet.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgCdbillet.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-        //P20
-        RadioGroup rgNviaje = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nviaje);
-        rgNviaje.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgNviaje.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_nviaje_numviajes:
-                        activity.findViewById(R.id.survey_layout_nviaje_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_nviaje_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P21
-        RadioGroup rgVol12mes = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vol12mes);
-        rgVol12mes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgVol12mes.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_vol12mes_numviajes:
-                        activity.findViewById(R.id.survey_layout_vol12mes_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_vol12mes_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P22
-        final RadioGroup rgEleccovid = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_eleccovid);
-        rgEleccovid.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgEleccovid.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-        //P23
-        RadioGroup rgP44factu = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_p44factu);
-        rgP44factu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgP44factu.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_p44factu_option1:
-                        activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P24
-        RadioGroup rgNperbul = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_nperbul);
-        rgNperbul.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgNperbul.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_nperbul_option3:
-                        activity.findViewById(R.id.survey_layout_nperbul_especificar).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_nperbul_especificar).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P25
-        final RadioGroup rgChekinb = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_chekinb);
-        rgChekinb.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgChekinb.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-        //P26
-        RadioGroup rgConsume = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_consume);
-        rgConsume.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgConsume.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_consume_option1:
-                        activity.findViewById(R.id.survey_layout_gas_cons).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_gas_cons).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P27
-        RadioGroup rgCompart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
-        rgCompart.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                rgCompart.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                switch(i)
-                {
-                    case R.id.survey_radio_comprart_option1:
-                        activity.findViewById(R.id.survey_layout_gas_com).setVisibility(VISIBLE);
-                        break;
-                    default:
-                        activity.findViewById(R.id.survey_layout_gas_com).setVisibility(GONE);
-                        break;
-                }
-            }
-        });
-        //P28
-        final RadioGroup rgCdslab = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdslab);
-        rgCdslab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgCdslab.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        //P29
-        final RadioGroup rgCdsprof = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsprof);
-        rgCdsprof.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgCdsprof.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        //P30
-        final RadioGroup rgEstudios = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_estudios);
-        rgEstudios.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgEstudios.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        //P31
-        final RadioGroup rgCdedad = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdedad);
-        rgCdedad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgCdedad.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-        //P32
-        final RadioGroup rgCdsexo = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_cdsexo);
-        rgCdsexo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged (RadioGroup radioGroup, int i){
-                rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-
-
-
-    }
-
     private void condicionesChecks(){
         CheckBox ckCdidavue = (CheckBox) activity.findViewById(R.id.survey_check_cdidavue_option0);
 
@@ -3039,40 +1984,7 @@ public class ModeloPasajeros5 extends Form {
 
     }
 
-    private void condicionesChecksGC(){
-        CheckBox ckCdidavue = (CheckBox) activity.findViewById(R.id.survey_check_cdidavue_option0);
-
-        ckCdidavue.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                EditText etTaus = (EditText) activity.findViewById(R.id.survey_edit_taus);
-                if (compoundButton.isChecked()){
-                    etTaus.setText("");
-                    etTaus.setEnabled(false);
-                    etTaus.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                    compoundButton.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-                } else {
-                    etTaus.setEnabled(true);
-                    etTaus.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
-                    etTaus.setError(null);
-                }
-            }
-        });
-
-    }
-
     private void condicionesRatingBar(){
-        RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
-        rabValorexp.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
-            }
-        });
-    }
-
-    private void condicionesRatingBarGC(){
         RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
         rabValorexp.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -3485,11 +2397,24 @@ public class ModeloPasajeros5 extends Form {
                         return false;
                     }
 
-                    if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
+                    if((activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE)&&(activity.findViewById(R.id.survey_spinner_cdlocaco).getVisibility()==VISIBLE)){
                         final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
 
                         if (getValorDesplegable(sp_cdlocaco).substring(0,4).equals("0000")) {
                             sp_cdlocaco.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                        }
+                    }
+
+                    if((activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE)&&(activity.findViewById(R.id.survey_spinner_cdlocacoGC).getVisibility()==VISIBLE)){
+                        final SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+
+                        if (getValorDesplegable(sp_cdlocacoGC).substring(0,4).equals("0000")) {
+                            sp_cdlocacoGC.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
 
                             return getDialogValueBackError(activity,
                                     activity.getResources().getString(R.string.survey_model_text_errorTitle),
@@ -5187,6 +4112,9 @@ public class ModeloPasajeros5 extends Form {
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         String textSpCdlocaco = getValorDesplegable(sp_cdlocaco).substring(0,4);
         String textSpCdlocaco1 = getValorDesplegable(sp_cdlocaco).substring(0,5);
+        SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+        String textSpCdlocacoGC = getValorDesplegable(sp_cdlocacoGC).substring(0,4);
+        String textSpCdlocaco1GC = getValorDesplegable(sp_cdlocacoGC).substring(0,5);
         SearchableSpinner sp_playa = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distracce);
         String textPlaya = getValorDesplegable(sp_playa).substring(0,5);
 
@@ -5236,14 +4164,14 @@ public class ModeloPasajeros5 extends Form {
                             break;
                         case 13:
                             //Tenerife
-                            if(!textSpCdlocaco1.contains("00000")){
-                                quest.setCdlocaco(textSpCdlocaco1);
+                            if(!textSpCdlocaco1GC.contains("00000")){
+                                quest.setCdlocaco(textSpCdlocaco1GC);
                                 quest.setDistracce("-1");
-                                if (textSpCdlocaco1.contains("99999")){
+                                if (textSpCdlocaco1GC.contains("99999")){
                                     EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                     quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                     quest.setDistracce("-1");
-                                } else if (textSpCdlocaco1.contains("OTROS")){
+                                } else if (textSpCdlocaco1GC.contains("OTROS")){
                                     quest.setDistracce(textPlaya);
                                     if (textPlaya.contains("99999")) {
                                         EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
