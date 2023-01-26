@@ -789,8 +789,10 @@
     <string name="survey_m4_radio_prefiere_option3">NS/NC</string>
     <!--Pregunta29-->
     <string name="survey_m4_text_consume">29. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
+    <string name="survey_GC_text_consume">25. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
     <string name="survey_m4_radio_consume_option1">Sí</string>
     <string name="survey_m4_text_gas_cons">29a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
+    <string name="survey_GC_text_gas_cons">25a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
     <string name="survey_m4_text_gas_cons_ent">Expresar cantidad en €</string>
     <string name="survey_m4_radio_consume_option2">No</string>
     <!--Pregunta30-->
@@ -870,20 +872,29 @@
     <string name="survey_m5_text_gas_cons">26a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
     <!--Pregunta27-->
     <string name="survey_m5_text_comprart">27. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
+    <string name="survey_GC_text_comprart">26. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
     <string name="survey_m5_text_gas_com">27a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
+    <string name="survey_GC_text_gas_com">26a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
     <string name="survey_m5_text_prod">27b. ¿Podría indicar qué tipo de productos ha comprado?</string>
+    <string name="survey_GC_text_prod">26b. ¿Podría indicar qué tipo de productos ha comprado?</string>
     <!--Pregunta28-->
     <string name="survey_m5_text_cdslab">28. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_GC_text_cdslab">27. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
     <!--Pregunta29-->
     <string name="survey_m5_text_cdsprof">29. Usted trabaja como...</string>
+    <string name="survey_GC_text_cdsprof">28. Usted trabaja como...</string>
     <!--Pregunta30-->
     <string name="survey_m5_text_estudios">30. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_GC_text_estudios">29. ¿Podría decirme el nivel de estudios terminados?</string>
     <!--Pregunta31-->
     <string name="survey_m5_text_cdedad">31. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <string name="survey_GC_text_cdedad">30. ¿A cuál de estos grupos de edad pertenece usted?</string>
     <!--Pregunta32-->
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
+    <string name="survey_GC_text_cdsexo">31. Sexo</string>
     <!--Pregunta33-->
     <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_GC_text_valorexp">32. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -906,6 +917,8 @@
     <string name="survey_m2_text_viene_re_GC">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Gran Canaria?</string>
     <string name="survey_m2_text_viene_re_TS">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Tenerife Sur?</string>
     <string name="survey_m2_text_viene_re_TN">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Tenerife Norte?</string>
+    <string name="survey_m2_text_viene_re_ACE">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Lanzarote?</string>
+    <string name="survey_m2_text_viene_re_FUE">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Fuerteventura?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>

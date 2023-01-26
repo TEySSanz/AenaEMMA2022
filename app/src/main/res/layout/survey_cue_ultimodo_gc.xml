@@ -176,7 +176,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/survey_text_m4_ultimodo_otros"
+                        android:id="@+id/survey_text_GC_ultimodo_otros"
                         android:layout_width="115dp"
                         android:layout_height="27dp"
                         android:layout_gravity="center|center_horizontal"
@@ -185,7 +185,7 @@
                         android:text="@string/survey_m4_text_ultimodo_otros_especificar" />
 
                     <EditText
-                        android:id="@+id/survey_edit_m4_ultimodo_otros"
+                        android:id="@+id/survey_edit_GC_ultimodo_otros"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -217,14 +217,14 @@
                     android:textColor="@color/aenaBlue" />
 
                 <RadioGroup
-                    android:id="@+id/survey_radiogroup_m4_ultimodo_1modo"
+                    android:id="@+id/survey_radiogroup_GC_ultimodo_1modo"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_weight="2"
                     android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option1"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option1"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -232,7 +232,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option2"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option2"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -240,7 +240,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option3"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option3"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -248,7 +248,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option4"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option4"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -256,7 +256,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option5"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option5"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -264,7 +264,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option6"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option6"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -272,7 +272,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option7"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option7"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"
@@ -280,7 +280,7 @@
                         android:gravity="center_horizontal|center_vertical" />
 
                     <RadioButton
-                        android:id="@+id/survey_radio_m4_ultimodo_1modo_option8"
+                        android:id="@+id/survey_radio_GC_ultimodo_1modo_option8"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_marginTop="@dimen/medium_padding"

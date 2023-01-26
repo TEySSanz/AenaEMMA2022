@@ -31,6 +31,14 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/survey_text_consume_GC"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_GC_text_consume"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/survey_text_consume_m5"
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
@@ -86,6 +94,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m4_text_gas_cons"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/survey_text_gas_cons_GC"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_GC_text_gas_cons"
                 android:visibility="gone"/>
 
             <TextView

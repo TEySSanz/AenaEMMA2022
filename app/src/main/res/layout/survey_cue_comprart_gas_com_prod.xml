@@ -39,6 +39,14 @@
             android:visibility="gone" />
 
         <TextView
+            android:id="@+id/survey_text_comprart_GC"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_GC_text_comprart"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/survey_text_comprart_m2"
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"
@@ -102,6 +110,14 @@
                     android:visibility="gone" />
 
                 <TextView
+                    android:id="@+id/survey_text_gas_com_GC"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/survey_GC_text_gas_com"
+                    android:visibility="gone" />
+
+                <TextView
                     android:id="@+id/survey_text_gas_com_m2"
                     style="@style/SurveyQuestionTitle"
                     android:layout_width="match_parent"
@@ -146,6 +162,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_m5_text_prod"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/survey_text_comprart_b_GC"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_padding"
+                android:text="@string/survey_GC_text_prod"
                 android:visibility="gone"/>
 
             <TextView

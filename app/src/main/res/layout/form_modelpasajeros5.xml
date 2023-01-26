@@ -14,6 +14,7 @@
     <include layout="@layout/survey_cue_cdalojin_crucero"/>
     <!-- P5 -->
     <include layout="@layout/survey_cue_ultimodo_m4"/>
+    <include layout="@layout/survey_cue_ultimodo_gc"/>
     <!-- P6 -->
     <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
     <!-- P7 -->
