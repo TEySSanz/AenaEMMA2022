@@ -2,7 +2,7 @@ package es.testadistica.www.aenaemma2022.utilidades;
 
 public class Contracts {
 
-    public static final int DATABASE_VERSION = 36;
+    public static final int DATABASE_VERSION = 37;
     public static final String DATABASE_NAME = "Aena.db";
 
     //Tabla Usuarios
@@ -78,6 +78,10 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_TFSOLEADA = "TFSoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_BUSPRINCIPAL = "BUSprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_BUSOLEADA = "BUSoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL = "FUEprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_FUEOLEADA = "FUEoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL = "ACEprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_ACEOLEADA = "ACEoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -112,7 +116,11 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_BUSPRINCIPAL + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_BUSOLEADA + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_BUSOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
@@ -148,6 +156,10 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_TFSOLEADA = "TFSoleada";
     public static final String COLUMN_TIPOCOMPANIAS_BUSAEREA = "BUSaerea";
     public static final String COLUMN_TIPOCOMPANIAS_BUSOLEADA = "BUSoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_FUEAEREA = "FUEaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_FUEOLEADA = "FUEoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_ACEAEREA = "ACEaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_ACEOLEADA = "ACEoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
@@ -179,7 +191,11 @@ public class Contracts {
             COLUMN_TIPOCOMPANIAS_TFSAEREA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_TFSOLEADA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_BUSAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_BUSOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_BUSOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_FUEAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_FUEOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_ACEAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_ACEOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos

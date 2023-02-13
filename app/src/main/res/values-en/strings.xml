@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.36)</string>
+    <string name="app_name">EMMA 2022 (v1.37)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.36</string>
+    <string name="version">v1.37</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -632,4 +632,17 @@
     <string name="survey_bus_radio_autobus_option2">"AIRPLANE-BUS "</string>
     <string name="survey_bus_radio_autobus_option3">"BUS-ANOTHER WAY "</string>
     <string name="survey_bus_radio_autobus_option4">"ANOTHER WAY - BUS  "</string>
+    <string name="survey_m2_text_viene_re_ACE">3.Where did you start your journey to take this flight in Lanzarote´s airport?</string>
+    <string name="survey_m2_text_viene_re_FUE">3.Where did you start your journey to take this flight in Fuerteventura´s airport?</string>
+    <string name="survey_GC_text_cdsexo">31. Gender</string>
+    <string name="survey_GC_text_valorexp">32. How likely are you to recommend the experience at this airport to a colleague or friend?</string>
+    <string name="survey_GC_text_cdedad">30. Which of these age groups do you belong to?</string>
+    <string name="survey_GC_text_estudios">29. Education</string>
+    <string name="survey_GC_text_cdsprof">28.Do you work as?</string>
+    <string name="survey_GC_text_cdslab">27.Which of the following work situations are you currently in?</string>
+    <string name="survey_GC_text_comprart">"26.Have you bought today anything in the airport shops? "</string>
+    <string name="survey_GC_text_gas_com">"26a. And how much has been spent on the airport shops? "</string>
+    <string name="survey_GC_text_prod">26b Could you please state what kind of products you have purchased?</string>
+    <string name="survey_GC_text_consume">"25.Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)? "</string>
+    <string name="survey_GC_text_gas_cons">25a.Approximately how much has been spent today in the catering services at the airport</string>
 </resources>

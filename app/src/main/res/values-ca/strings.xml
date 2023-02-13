@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.36)</string>
+    <string name="app_name">EMMA 2022 (v1.37)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.36</string>
+    <string name="version">v1.37</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -480,4 +480,17 @@
     <string name="survey_m2_text_viene_re_GC">7.Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Gran Canaria?</string>
     <string name="survey_m2_text_viene_re_TS">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Tenerife Sur?</string>
     <string name="survey_m2_text_viene_re_TN">7. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Tenerife Norte?</string>
+    <string name="survey_m2_text_viene_re_ACE">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Lanzarote?</string>
+    <string name="survey_m2_text_viene_re_FUE">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Fuerteventura?</string>
+    <string name="survey_GC_text_cdsexo">31. Sexo</string>
+    <string name="survey_GC_text_valorexp">"32. ¿ Com valora l'experiència del seu pas per l'aeroport? (valori d'1 a 10)           "</string>
+    <string name="survey_GC_text_cdedad">"30. ¿ A quin d'aquests grups d'edat pertany vostè? "</string>
+    <string name="survey_GC_text_estudios">29. ¿ odria dir-me el nivell d\'estudis acabats?</string>
+    <string name="survey_GC_text_cdsprof">28. Vostè treballa com a …</string>
+    <string name="survey_GC_text_cdslab">27.¿En quin de les següents situacions laborals es troba vostè actualment?</string>
+    <string name="survey_GC_text_comprart">"26.¿Ha comprat algun article a les botigues de l'aeroport? "</string>
+    <string name="survey_GC_text_gas_com">26a. I Quant ha gastat a les botigues de l\'aeroport?</string>
+    <string name="survey_GC_text_prod">"26b. ¿ Podria indicar quin tipus de productes ha comprat? "</string>
+    <string name="survey_GC_text_consume">" 25.¿Avui ha consumit algun producte en el servei de restauració de l'aeroport (cafeteries, màquines expenedores, etc.)?  "</string>
+    <string name="survey_GC_text_gas_cons">"25a.- Aproximadament avui Quant ha gastat en els serveis de restauració de l'aeroport? "</string>
 </resources>

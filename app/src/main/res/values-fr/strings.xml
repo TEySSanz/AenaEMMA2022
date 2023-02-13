@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.36)</string>
+    <string name="app_name">EMMA 2022 (v1.37)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.36</string>
+    <string name="version">v1.37</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -436,4 +436,17 @@
     <string name="survey_m2_text_viene_re_GC">7.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Gran Canaria?</string>
     <string name="survey_m2_text_viene_re_TS">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Tenerife Sur?</string>
     <string name="survey_m2_text_viene_re_TN">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Tenerife Norte?</string>
+    <string name="survey_m2_text_viene_re_ACE">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Lanzarote?</string>
+    <string name="survey_m2_text_viene_re_FUE">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Fuerteventura?</string>
+    <string name="survey_GC_text_cdsexo">31. Sexe</string>
+    <string name="survey_GC_text_valorexp">"32. Comment évaluez-vous votre expérience à l'aéroport? (veuillez noter de 1 à 10)                  "</string>
+    <string name="survey_GC_text_cdedad">"30. ¿Auquel de ces gropupes d´age appartenez-vous? "</string>
+    <string name="survey_GC_text_estudios">29. Éducation</string>
+    <string name="survey_GC_text_cdsprof">"28. Travaillez-vous en tant que… "</string>
+    <string name="survey_GC_text_cdslab">27.¿Dans quelle situation proffessionelle êtes-vous actuellment?</string>
+    <string name="survey_GC_text_comprart">"26.Avez-vous acheté un article dans les magasins de l´aeroport?  "</string>
+    <string name="survey_GC_text_gas_com">26a.Et, combien as-tu dépensé dans les boutiques de l`aeroport?</string>
+    <string name="survey_GC_text_prod">"26b. Pourriez-vous indiquer quel type de produits vous aves acheté? "</string>
+    <string name="survey_GC_text_consume">"25.¿Avez-vous consommé aujourd´hui un produit dans la restauration de l´aéroport (cafétérias, distributeurs automatiques, etc.) "</string>
+    <string name="survey_GC_text_gas_cons">"25a.- Aujourd´hui, environ, combien avez-vous dépensé pour les services de restauration à l´aeroport? "</string>
 </resources>
