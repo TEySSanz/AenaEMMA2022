@@ -290,6 +290,36 @@
                     android:background="@android:drawable/btn_dropdown"
                     android:spinnerMode="dropdown"
                     android:visibility="gone"/>
+                <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
+                    android:id="@+id/survey_spinner_cdlocaco_provACE"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone"/>
+                <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
+                    android:id="@+id/survey_spinner_cdlocaco_provFUE"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone"/>
+                <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
+                    android:id="@+id/survey_spinner_cdlocaco_provLP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
@@ -308,7 +338,18 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/standard_padding"
                     android:gravity="center"
-                    android:text="@string/survey_m1_text_cdlocaco" />
+                    android:text="@string/survey_m1_text_cdlocaco"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/survey_text_cdlocacoGC"
+                    style="@style/SurveyQuestionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/standard_padding"
+                    android:gravity="center"
+                    android:text="@string/survey_m1_text_cdlocacoGC"
+                    android:visibility="gone"/>
 
 
                 <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner

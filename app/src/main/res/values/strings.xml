@@ -129,6 +129,7 @@
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>
     <string name="survey_m1_text_cdlocaco_prov">Provincia</string>
     <string name="survey_m1_text_cdlocaco">Localidad</string>
+    <string name="survey_m1_text_cdlocacoGC">Municipio</string>
     <string name="survey_m1_text_distracce">Distrito para Madrid capital</string>
     <string name="survey_m1_text_distracce_bcn">Distrito para Barcelona capital</string>
     <string name="survey_m1_text_distracce_ent">Especificar Distrito o en su defecto calle y nº, hotel o similar</string>
@@ -372,6 +373,8 @@
     <!-- Botón revisar error -->
     <string name="survey_model_text_errorBtnReview">Revisar</string>
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
+    <string name="survey_text_selectOption2">Se debe de especificar una playa</string>
+    <string name="survey_text_selectOption1">No viene de su residencia</string>
     <string name="survey_text_setNumberModes">Se debe indicar un número mayor de 2</string>
     <string name="survey_text_specifyAnswer">Se debe especificar una respuesta</string>
     <string name="survey_text_sameTime">La hora de entrada y salida no pueden coincidir</string>
@@ -628,7 +631,7 @@
     <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Sevilla?</string>
     <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
     <string name="survey_m4_radio_viene_re1">Fuerteventura</string>
-    <string name="survey_m4_radio_viene_re2">Islas de Gran Canaria</string>
+    <string name="survey_m4_radio_viene_re2">Gran Canaria</string>
     <string name="survey_m4_radio_cdlocaco">Localidad</string>
     <string name="survey_m4_radio_cdiaptoo">Viene en conexión aerea</string>
     <string name="survey_m4_text_cdiaptoo">Aeropuerto de origen</string>
