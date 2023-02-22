@@ -146,12 +146,90 @@
                 android:visibility="gone"/>
 
             <RadioButton
+                android:id="@+id/survey_radio_playa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m5_text_cdlocaco_playa"
+                android:visibility="gone"/>
+
+            <RadioButton
+                android:id="@+id/survey_radio_islas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m5_text_cdlocaco_islas"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/survey_layout_cdvieneotro"
+                style="@style/SurveySingleQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/survey_layout_cdvieneotro1"
+                    style="@style/SurveySingleQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RadioGroup
+                        android:id="@+id/survey_radiogroup_vienereotro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/survey_radio_vienereotro_opcion1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/survey_m4_radio_viene_re1"
+                            android:visibility="visible"/>
+
+                        <RadioButton
+                            android:id="@+id/survey_radio_vienereotro_opcion2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/survey_m4_radio_viene_re2"
+                            android:visibility="visible"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RadioButton
                 android:id="@+id/survey_radio_cdiaptoo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m4_radio_cdiaptoo"
                 android:visibility="visible"/>
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/survey_layout_cdplayaotro"
+            style="@style/SurveySingleQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/survey_edit_text_cdplayaotro"
+                style="@style/SurveyQuestionLiteral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_m2_text_cdlocacootro_playa"
+                android:visibility="visible"/>
+
+            <EditText
+                android:id="@+id/survey_edit_cdplayaotro"
+                style="@style/SurveyQuestionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/survey_layout_cdlocaco"
@@ -340,6 +418,7 @@
             android:layout_marginTop="@dimen/standard_padding"
             android:orientation="horizontal"
             android:visibility="gone">
+
 
             <TextView
                 android:id="@+id/survey_text_cdiaptoo"

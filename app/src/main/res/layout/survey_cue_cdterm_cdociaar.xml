@@ -97,6 +97,15 @@
                 android:text="@string/survey_m2_text_cdociaar"
                 android:visibility="gone"/>
 
+            <TextView
+                android:id="@+id/survey_text_cdociaar_ACE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                style="@style/SurveyQuestionTitle"
+                android:text="@string/survey_ACE_text_cdociaar"
+                android:visibility="gone"/>
+
             <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
                 android:id="@+id/survey_spinner_cdociaar"
                 android:layout_width="match_parent"

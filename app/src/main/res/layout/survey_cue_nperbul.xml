@@ -39,6 +39,14 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/survey_text_nperbul_ACE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SurveyQuestionTitle"
+            android:text="@string/survey_ACE_text_nperbul"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/survey_text_nperbul_m2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -47,6 +47,14 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/survey_text_p44factu_ACE"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_ACE_text_p44factu"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/survey_text_p44factu_GC"
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"

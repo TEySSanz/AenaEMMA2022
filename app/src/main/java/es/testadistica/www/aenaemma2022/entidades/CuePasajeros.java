@@ -119,6 +119,8 @@ public class CuePasajeros implements Serializable {
     private String numcomp;
     private String numbus;
     private String numdarsena;
+    private String playa;
+    private String sitioparkotro;
 
     public CuePasajeros(){
 
@@ -1024,5 +1026,21 @@ public class CuePasajeros implements Serializable {
 
     public void setNumdarsena(String numdarsena) {
         this.numdarsena = numdarsena;
+    }
+
+    public String getSitioparkotro() {
+        return sitioparkotro;
+    }
+
+    public void setSitioparkotro(String sitioparkotro) {
+        this.sitioparkotro = sitioparkotro;
+    }
+
+    public String getPlaya() {
+        return playa;
+    }
+
+    public void setPlaya(String playa) {
+        this.playa = playa;
     }
 }

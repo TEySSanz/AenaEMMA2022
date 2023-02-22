@@ -538,6 +538,8 @@ public class Contracts {
     public static final String COLUMN_CUEPASAJEROS_NUMCOMP = "numcomp";
     public static final String COLUMN_CUEPASAJEROS_NUMBUS = "numbus";
     public static final String COLUMN_CUEPASAJEROS_NUMDARSENA = "numdarsena";
+    public static final String COLUMN_CUEPASAJEROS_PLAYA = "playa";
+    public static final String COLUMN_CUEPASAJEROS_SITIOPARKOTRO = "sitioparkotro";
     public static final String SQL_CREATE_CUEPASAJEROS = "CREATE TABLE "+ TABLE_CUEPASAJEROS + " ("+
             COLUMN_CUEPASAJEROS_IDEN + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_CUEPASAJEROS_IDUSUARIO + " INTEGER, " +
@@ -653,7 +655,9 @@ public class Contracts {
             COLUMN_CUEPASAJEROS_MODOOTRO + " TEXT, " +
             COLUMN_CUEPASAJEROS_NUMCOMP + " TEXT, " +
             COLUMN_CUEPASAJEROS_NUMBUS + " TEXT, " +
-            COLUMN_CUEPASAJEROS_NUMDARSENA + " TEXT )";
+            COLUMN_CUEPASAJEROS_NUMDARSENA + " TEXT, " +
+            COLUMN_CUEPASAJEROS_PLAYA + " TEXT, " +
+            COLUMN_CUEPASAJEROS_SITIOPARKOTRO + " TEXT )";
     public static final String SQL_DROP_CUEPASAJEROS = "DROP TABLE IF EXISTS " + TABLE_CUEPASAJEROS;
 
     //Tabla CueTrabajadores

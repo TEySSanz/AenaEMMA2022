@@ -450,4 +450,19 @@
     <string name="survey_GC_text_prod">"26b. Können Sie angeben, welche Art von Produkten Sie gekauft haben? "</string>
     <string name="survey_GC_text_consume">25. Haben Sie heute ein Produkt in der Flughafengastronomie (Cafeterias, Verkaufsautomaten usw.) verzehrt?</string>
     <string name="survey_GC_text_gas_cons">25a.- Wie viel haben Sie für Flughafen-Catering-Services ausgegeben?</string>
+    <string name="survey_ACE_text_cdidavue">15. Ist dieses lhr Hinflug oder Rückflug?</string>
+    <string name="survey_ACE_text_cdidavue_a">"15a  Wle lange dauert lhr Aufenthalt? "</string>
+    <string name="survey_ACE_text_cdmviaje">"14. Könen sie mir den Hauotgrund der Reise nennen? "</string>
+    <string name="survey_ACE_text_cdidavue_b">"15b  Wie lange waren Sie auf der Reise?  "</string>
+    <string name="survey_ACE_text_npers">16. Sie eingeschlossen, wie viele personen reisen mit?</string>
+    <string name="survey_ACE_text_nniños">17. unter 15 jahre?</string>
+    <string name="survey_ACE_text_relacion">18. Könen siemichant die bestehenden Verhältnisse zwischen den Mitgliedern lhrer gruppe hinwelsen?</string>
+    <string name="survey_ACE_text_cdtreser">"19. Wann haben sie lhre reise gebucht? "</string>
+    <string name="survey_ACE_text_cdbillet">"20. Welches Ticket haben Sie? "</string>
+    <string name="survey_ACE_text_nviaje">"21. Wie viele Flugreisen haben Sie in den letzen 12 Monaten unternommen? "</string>
+    <string name="survey_ACE_text_vol12mes">22.  Wie oft haben Sie dieselbe Reiseroute in den 12 Monaten gemacht? Bitte, zählen Sie nicht diese Reise</string>
+    <string name="survey_ACE_text_p44factu">23. Haben Sie Gepäck eingecheckt?</string>
+    <string name="survey_ACE_text_nperbul">"24. Wie vielen Personen gehören die Pakete?    "</string>
+    <string name="survey_ACE_text_chekinb">"25.- Woher haben Sie Ihre Bordkarte?   "</string>
+    <string name="survey_ACE_text_cdociaar">12.mit welcher Fluggesellschaft fuhren sie lhre reise fost?</string>
 </resources>

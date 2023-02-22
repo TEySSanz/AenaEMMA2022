@@ -493,4 +493,19 @@
     <string name="survey_GC_text_prod">"26b. ¿ Podria indicar quin tipus de productes ha comprat? "</string>
     <string name="survey_GC_text_consume">" 25.¿Avui ha consumit algun producte en el servei de restauració de l'aeroport (cafeteries, màquines expenedores, etc.)?  "</string>
     <string name="survey_GC_text_gas_cons">"25a.- Aproximadament avui Quant ha gastat en els serveis de restauració de l'aeroport? "</string>
+    <string name="survey_ACE_text_cdmviaje">"14.¿Quin és el PROPÒSIT PRINCIPAL del seu viatge? "</string>
+    <string name="survey_ACE_text_cdidavue_a">"15a ¿ Quant temps estarà fos?  "</string>
+    <string name="survey_ACE_text_cdidavue">15.¿És aquest el seu viatge d\'ANADA o de tornada?</string>
+    <string name="survey_ACE_text_cdidavue_b">"15b ¿ Quant temps ha estat fora?  "</string>
+    <string name="survey_ACE_text_npers">16.¿ Incloent-se vostè, quantes persones viatgen en el seu grup immediat?</string>
+    <string name="survey_ACE_text_nniños">17.¿ Quants d\'ells són menors de 15 anys?</string>
+    <string name="survey_ACE_text_relacion">18.¿ odria indicar-me la relació existent entre els components del seu grup immediat de viatge?</string>
+    <string name="survey_ACE_text_cdtreser">"19. ¿Aproximadament, Quant temps fa que va reservar el seu bitllet? "</string>
+    <string name="survey_ACE_text_cdbillet">" 20. ¿Quin tipus de tarifa té el bitllet que utilitzarà?  "</string>
+    <string name="survey_ACE_text_nviaje">21.¿Quants viatges amb avió ha realitzat en els últims 12 MESOS sense comptar est? 1 viatge = Anada i volta</string>
+    <string name="survey_ACE_text_vol12mes">22. ¿ Quantes vegades ha realitzat la mateixa RUTA COMPLETA en els últims 12 MESOS sense comptar est?</string>
+    <string name="survey_ACE_text_p44factu">23.¿Ha facturat equipatge?</string>
+    <string name="survey_ACE_text_nperbul">"24.¿A quantes persones pertanyen els embalums?    "</string>
+    <string name="survey_ACE_text_chekinb">"25.-  On ha obtingut la seva targeta d'embarcament?   "</string>
+    <string name="survey_ACE_text_cdociaar">12.¿Companyia aèria amb la qual contínua el viatge?</string>
 </resources>

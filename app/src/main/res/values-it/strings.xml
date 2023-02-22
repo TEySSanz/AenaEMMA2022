@@ -450,5 +450,20 @@
     <string name="survey_GC_text_prod">"26b. ¿ Potreste indicare che tipo di prodotti avete acquistato? "</string>
     <string name="survey_GC_text_consume">25.Oggi ha consumato prodotti presso il servizio di ristorazione dell\'aeroporto (caffetterie, distributori automatici, ecc.)?</string>
     <string name="survey_GC_text_gas_cons">"25a.- Quanto avete speso oggi per i servizi di catering aeroportuale? "</string>
+    <string name="survey_ACE_text_cdidavue">15. È il vostro viaggio di andata o di ritorno?</string>
+    <string name="survey_ACE_text_cdidavue_a">"15a Compagnia aerea con cui sta proseguendo il viaggio? "</string>
+    <string name="survey_ACE_text_cdmviaje">"14. Qual è lo SCOPO PRINCIPALE del vostro viaggio? "</string>
+    <string name="survey_ACE_text_cdidavue_b">15b  Quanto tempo è stato via?</string>
+    <string name="survey_ACE_text_npers">16. Compresi voi stessi, quante persone viaggiano nel vostro gruppo?</string>
+    <string name="survey_ACE_text_nniños">17. Quanti di loro hanno meno di 15 anni?</string>
+    <string name="survey_ACE_text_relacion">18.Può parlarmi del rapporto tra i membri del suo gruppo di viaggio?</string>
+    <string name="survey_ACE_text_cdtreser">19. All\'incirca quanto tempo fa ha prenotato il biglietto?</string>
+    <string name="survey_ACE_text_cdbillet">20.Che tipo di tariffa ha il biglietto che si intende utilizzare?</string>
+    <string name="survey_ACE_text_nviaje">"21. Quanti viaggi in aereo ha fatto negli ultimi 12 MESI senza contare questo? "</string>
+    <string name="survey_ACE_text_vol12mes">22. Quante volte avete fatto lo STESSO PERCORSO COMPLETO negli ultimi 12 MESI, senza contare questo?</string>
+    <string name="survey_ACE_text_p44factu">23.Avete imbarcato i bagagli?</string>
+    <string name="survey_ACE_text_nperbul">"24.A quante persone appartengono i pacchetti?     "</string>
+    <string name="survey_ACE_text_chekinb">25.- Dove hai preso la carta d\'imbarco?</string>
+    <string name="survey_ACE_text_cdociaar">12.Compagnia aerea con cui sta proseguendo il viaggio?</string>
 
 </resources>

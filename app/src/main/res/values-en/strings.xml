@@ -328,7 +328,7 @@
     <string name="survey_m4_text_cdmviaje">"13.What is the MAIN PURPOSE of your journey? "</string>
     <string name="survey_m4_text_cdidavue">14. Is this your OUTWARD or RETURN journey?</string>
     <string name="survey_m4_radio_cdidavue_option1">Going trip</string>
-    <string name="survey_m4_text_cdidavue_a">14A How long will you be away?</string>
+    <string name="survey_m4_text_cdidavue_a">14a How long will you be away?</string>
     <string name="survey_m4_radio_cdidavue_option2">Return trip</string>
     <string name="survey_m4_text_cdidavue_b">"14B How long have you been away?  "</string>
     <string name="survey_m4_radio_cdidavue_option0">Return the same day</string>
@@ -645,4 +645,19 @@
     <string name="survey_GC_text_prod">26b Could you please state what kind of products you have purchased?</string>
     <string name="survey_GC_text_consume">"25.Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)? "</string>
     <string name="survey_GC_text_gas_cons">25a.Approximately how much has been spent today in the catering services at the airport</string>
+    <string name="survey_ACE_text_cdmviaje">"14.What is the MAIN PURPOSE of your journey? "</string>
+    <string name="survey_ACE_text_cdidavue_a">15a How long will you be away?</string>
+    <string name="survey_ACE_text_cdidavue">15. Is this your OUTWARD or RETURN journey?</string>
+    <string name="survey_ACE_text_cdidavue_b">"15b How long have you been away?  "</string>
+    <string name="survey_ACE_text_npers">16. Including yourself, how many people are TRAVELING in your immediate group?</string>
+    <string name="survey_ACE_text_nniños">17. How many are under 15 years?</string>
+    <string name="survey_ACE_text_relacion">18.Could you please tell me your relationship with the members of this trip?</string>
+    <string name="survey_ACE_text_cdtreser">19.How long did you book your ticket ago?</string>
+    <string name="survey_ACE_text_cdbillet">"20. What tariff is the ticket you are going to use? "</string>
+    <string name="survey_ACE_text_nviaje">"21. How often have you flown over the last 12 MONTHS without considering this one? "</string>
+    <string name="survey_ACE_text_vol12mes">22. How often have you made the whole same trip over the last 12 MONTHS without considering this one?</string>
+    <string name="survey_ACE_text_p44factu">23.Have you checked in your luggage?</string>
+    <string name="survey_ACE_text_nperbul">"24. How many people do these cases belong to?                        "</string>
+    <string name="survey_ACE_text_chekinb">25.- Where did you obtain your boarding pass?</string>
+    <string name="survey_ACE_text_cdociaar">12.Which airline are you following your flight with?</string>
 </resources>

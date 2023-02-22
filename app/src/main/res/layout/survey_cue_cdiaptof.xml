@@ -31,6 +31,14 @@
             android:visibility="gone" />
 
         <TextView
+            android:id="@+id/survey_text_cdiaptof_ACE"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_ACE_text_cdiaptof"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/survey_text_cdiaptof_m2"
             style="@style/SurveyQuestionTitle"
             android:layout_width="match_parent"

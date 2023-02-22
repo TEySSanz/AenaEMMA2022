@@ -89,6 +89,10 @@ public class DBHelper extends SQLiteOpenHelper {
                     addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA);
 
                 }
+                if (subVersion <= 37){ //Si la versión que tiene instalada la tablet es menor o igual a la v1.37 se intentan añadir las columnas.
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_PLAYA);
+                    addColumn(db, Contracts.TABLE_CUEPASAJEROS, Contracts.COLUMN_CUEPASAJEROS_SITIOPARKOTRO);
+                }
             }
         }
 

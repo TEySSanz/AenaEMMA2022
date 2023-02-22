@@ -38,6 +38,14 @@
             android:text="@string/survey_m2_text_cdmviaje"
             android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/survey_text_cdmviaje_ACE"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_ACE_text_cdmviaje"
+            android:visibility="gone" />
+
         <es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner
             android:id="@+id/survey_spinner_cdmviajefiltro"
             android:layout_width="match_parent"

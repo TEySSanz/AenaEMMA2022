@@ -627,6 +627,8 @@
     <!--Pregunta3-->
     <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Sevilla?</string>
     <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
+    <string name="survey_m4_radio_viene_re1">Fuerteventura</string>
+    <string name="survey_m4_radio_viene_re2">Islas de Gran Canaria</string>
     <string name="survey_m4_radio_cdlocaco">Localidad</string>
     <string name="survey_m4_radio_cdiaptoo">Viene en conexión aerea</string>
     <string name="survey_m4_text_cdiaptoo">Aeropuerto de origen</string>
@@ -694,28 +696,36 @@
     <string name="survey_m4_text_cdociaar">11b. ¿Compañia aérea con la que continua el viaje?</string>
     <!--Pregunta12-->
     <string name="survey_m4_text_cdiaptof">12. ¿En qué aeropuerto finalizará su viaje en avión?</string>
+    <string name="survey_ACE_text_cdiaptof">13. ¿En qué aeropuerto finalizará su viaje en avión?</string>
     <string name="survey_m4_text_cdiaptof_ent">Concretar estado/país</string>
     <!--Pregunta13-->
     <string name="survey_m4_text_cdmviaje">13. ¿Cuál es el PROPÓSITO PRINCIPAL de su viaje?</string>
+    <string name="survey_ACE_text_cdmviaje">14. ¿Cuál es el PROPÓSITO PRINCIPAL de su viaje?</string>
     <string name="survey_m4_text_cdmviaje_ent">MOSTRAR TARJETA</string>
     <!--Pregunta14-->
     <string name="survey_m4_text_cdidavue">14. ¿Es este su viaje de IDA o de VUELTA?</string>
+    <string name="survey_ACE_text_cdidavue">15. ¿Es este su viaje de IDA o de VUELTA?</string>
     <string name="survey_m4_radio_cdidavue_option1">Ida</string>
     <string name="survey_m4_text_cdidavue_a">14a. ¿Cuánto tiempo estará fuera?</string>
+    <string name="survey_ACE_text_cdidavue_a">15a. ¿Cuánto tiempo estará fuera?</string>
     <string name="survey_m4_radio_cdidavue_option2">Vuelta</string>
     <string name="survey_m4_text_cdidavue_b">14b. ¿Cuánto tiempo ha estado fuera?</string>
+    <string name="survey_ACE_text_cdidavue_b">15b. ¿Cuánto tiempo ha estado fuera?</string>
     <string name="survey_m4_radio_cdidavue_option0">Regreso en el mismo día</string>
     <string name="survey_m4_text_taus">Nº de días</string>
     <!--Pregunta15-->
     <string name="survey_m4_text_npers">15. ¿Incluyéndose usted, cuántas personas viajan en su grupo inmediato?</string>
+    <string name="survey_ACE_text_npers">16. ¿Incluyéndose usted, cuántas personas viajan en su grupo inmediato?</string>
     <string name="survey_m4_radio_npers_option1">Viaja solo</string>
     <string name="survey_m4_radio_npers_option2">2 personas</string>
     <string name="survey_m4_radio_npers_option3">Nº personas</string>
     <string name="survey_m4_text_npers_personas">personas</string>
     <!--Pregunta16-->
     <string name="survey_m4_text_nniños">16. ¿Cuántos de ellos son menores de 15 años?</string>
+    <string name="survey_ACE_text_nniños">17. ¿Cuántos de ellos son menores de 15 años?</string>
     <!--Pregunta17-->
     <string name="survey_m4_text_relacion">17. ¿Podría indicarme la relación existente entre los componentes de su grupo inmediato de viaje?</string>
+    <string name="survey_ACE_text_relacion">18. ¿Podría indicarme la relación existente entre los componentes de su grupo inmediato de viaje?</string>
     <string name="survey_m4_radio_relacion_option1">Pareja/Cónyuge y/o Hijos</string>
     <string name="survey_m4_radio_relacion_option2">Parientes (abuelos, tíos, primos, etc.)</string>
     <string name="survey_m4_radio_relacion_option3">Amigos/Grupo de estudios</string>
@@ -723,11 +733,13 @@
     <string name="survey_m4_radio_relacion_option9">Otros</string>
     <!--Pregunta18-->
     <string name="survey_m4_text_cdtreser">18. Aproximadamente, ¿Cuánto tiempo hace que reservó su billete?</string>
+    <string name="survey_ACE_text_cdtreser">19. Aproximadamente, ¿Cuánto tiempo hace que reservó su billete?</string>
     <string name="survey_m4_radio_cdtreser_option0">Hoy</string>
     <string name="survey_m4_radio_cdtreser_option1">Ayer</string>
     <string name="survey_m4_radio_cdtreser_dias">Indique nº días</string>
     <!--Pregunta19-->
     <string name="survey_m4_text_cdbillet">19. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
+    <string name="survey_ACE_text_cdbillet">20. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
     <string name="survey_m4_radio_cdbillet_option1">Preferente/Bussines/First</string>
     <string name="survey_m4_radio_cdbillet_option4">Combinado (vuelo+hotel)</string>
     <string name="survey_m4_radio_cdbillet_option6">Turista básica</string>
@@ -735,15 +747,18 @@
     <string name="survey_m4_radio_cdbillet_option9">Otras (free, etc.)</string>
     <!--Pregunta20-->
     <string name="survey_m4_text_nviaje">20. ¿Cuántos viajes en AVIÓN ha realizado en los últimos 12 MESES sin contar este?</string>
+    <string name="survey_ACE_text_nviaje">21. ¿Cuántos viajes en AVIÓN ha realizado en los últimos 12 MESES sin contar este?</string>
     <string name="survey_m4_radio_nviaje_option0">Ninguno</string>
     <string name="survey_m4_radio_nviaje_numviajes">Nº de viajes</string>
     <string name="survey_m4_text_nviaje_numviajes_ent">1 viaje = Ida y vuelta</string>
     <!--Pregunta21-->
     <string name="survey_m4_text_vol12mes">21. ¿Cuántas veces ha realizado la MISMA RUTA COMPLETA en los últimos 12 MESES sin contar este?</string>
+    <string name="survey_ACE_text_vol12mes">22. ¿Cuántas veces ha realizado la MISMA RUTA COMPLETA en los últimos 12 MESES sin contar este?</string>
     <string name="survey_m4_radio_vol12mes_option0">Ninguno</string>
     <string name="survey_m4_radio_vol12mes_numviajes">Nº de viajes</string>
     <!--Pregunta22-->
     <string name="survey_m4_text_p44factu">22. ¿Ha facturado equipaje?</string>
+    <string name="survey_ACE_text_p44factu">23. ¿Ha facturado equipaje?</string>
     <string name="survey_m4_radio_p44factu_option1">Sí</string>
     <string name="survey_m4_radio_bulgrupo_option1">1 bulto</string>
     <string name="survey_m4_radio_bulgrupo_option2">2 bultos</string>
@@ -751,11 +766,13 @@
     <string name="survey_m4_radio_p44factu_option2">No</string>
     <!--Pregunta23-->
     <string name="survey_m4_text_nperbul">23. ¿A cuántas personas pertenecen los bultos?</string>
+    <string name="survey_ACE_text_nperbul">24. ¿A cuántas personas pertenecen los bultos?</string>
     <string name="survey_m4_radio_nperbul_option1">Una persona</string>
     <string name="survey_m4_radio_nperbul_option2">Dos personas</string>
     <string name="survey_m4_radio_nperbul_option3">Mas personas, especificar nº</string>
     <!--Pregunta24-->
     <string name="survey_m4_text_chekinb">24. ¿Dónde ha obtenido su tarjeta de embarque?</string>
+    <string name="survey_ACE_text_chekinb">25. ¿Dónde ha obtenido su tarjeta de embarque?</string>
     <string name="survey_m4_radio_chekinb_option0">Aeropuerto (mostrador facturación o compañía aérea)</string>
     <string name="survey_m4_radio_chekinb_option1">Aeropuerto (máquinas auto check-in)</string>
     <string name="survey_m4_radio_chekinb_option2">Por internet (online)</string>
@@ -859,6 +876,8 @@
     <!--Pregunta3-->
     <string name="survey_m5_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Ibiza?</string>
     <string name="survey_m5_text_cdlocaco_prov">Isla</string>
+    <string name="survey_m5_text_cdlocaco_playa">Playa</string>
+    <string name="survey_m5_text_cdlocaco_islas">Otros</string>
     <!--Pregunta22-->
     <string name="survey_m5_text_eleccovid">22. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
     <!--Pregunta23-->
@@ -922,6 +941,7 @@
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
+    <string name="survey_m2_text_cdlocacootro_playa">Especificar Playa</string>
     <string name="survey_m2_text_cdlocacootro_otro2">Especificar playa/hotel/calle...</string>
     <string name="survey_m2_radio_viene_re_option1">Viene de su residencia habitual</string>
     <string name="survey_m2_radio_viene_re_option2">Isla</string>
@@ -946,6 +966,7 @@
     <!--Pregunta15-->
     <string name="survey_m2_text_cdterm">15. ¿Viaja al aeropuerto %1$s sólo para hacer trasbordo o finaliza allí su viaje vía aérea?</string>
     <string name="survey_m2_text_cdociaar">15b. ¿Compañia aérea con la que continua el viaje?</string>
+    <string name="survey_ACE_text_cdociaar">12. ¿Compañia aérea con la que continua el viaje?</string>
     <!--Pregunta16-->
     <string name="survey_m2_text_cdiaptof">16. ¿En qué aeropuerto finalizará su viaje en avión?</string>
     <!--Pregunta17-->
