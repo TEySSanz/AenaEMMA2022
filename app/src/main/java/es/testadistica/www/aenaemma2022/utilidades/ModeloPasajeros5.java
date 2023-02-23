@@ -1497,6 +1497,11 @@ public class ModeloPasajeros5 extends Form {
                             break;
                         case 15:
                             //Lanzarote
+                            /*if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }*/
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
                                 filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
                             } else {
@@ -1546,6 +1551,11 @@ public class ModeloPasajeros5 extends Form {
                             break;
                         case 15:
                             //Lanzarote
+                            /*if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
+                            } else {
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            }*/
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
                             } else {
@@ -1763,64 +1773,79 @@ public class ModeloPasajeros5 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sp_cdiaptod.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto = getValorDesplegable(sp_cdiaptod).substring(0,3);
+                String texto1 = getValorDesplegable(sp_cdiaptod).substring(0, 3);
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-                String texto1 = getValorDesplegable(sp_cdiaptoo).substring(0,3);
-                final RadioButton rbCdiaptoo = (RadioButton) activity.findViewById(R.id.survey_radio_cdiaptoo);
-                if (rbCdiaptoo.isChecked()) {
+                String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
 
-                    String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
-                    switch (idAeropuerto) {
 
-                        case 4:
-                            //Ibiza
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 6:
-                            //Menorca
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 13:
-                            //Tenerife sur
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL+" = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 15:
-                            //Lanzarote
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
+                switch (idAeropuerto) {
+
+                    case 4:
+                        //Ibiza
+                        if (texto1.equals("000") || (texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                        }
+                        break;
+                    case 6:
+                        //Menorca
+                        if (texto1.equals("000") || (texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                        }
+                        break;
+                    case 13:
+                        //Tenerife sur
+                        if (texto1.equals("000") || (texto1.equals("ZZZ"))) {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
+                        } else {
+                            filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "')";
+                        }
+                        break;
+                    case 15:
+                        //Lanzarote
+                            /*if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
                                 filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL+" = 1 ";
                             } else {
                                 filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                        case 16:
-                            //Fuerteventura
-                            if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
+                            }*/
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
+                        if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                        }
+                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+
+                        }
+                        break;
+                    case 16:
+                        //Fuerteventura
+                            /*if (texto1.equals("000")||(texto1.equals("ZZZ"))) {
                                 filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL+" = 1 ";
                             } else {
                                 filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
-                            }
-                            break;
-                    }
+                            }*/
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                        if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                        }
+                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
 
-                    final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
-                    sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+                        }
+                        break;
                 }
 
-                if (!texto.equals("ZZZ")){
+                final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
+                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
+
+
+                if (!texto1.equals("ZZZ")) {
                     blanquearEditText(activity.findViewById(R.id.survey_edit_cdiaptodotro));
                     activity.findViewById(R.id.survey_layout_cdiaptodotro).setVisibility(GONE);
                 } else {
@@ -4865,7 +4890,7 @@ public class ModeloPasajeros5 extends Form {
                     quest.setDistracce("-1");
                     quest.setDistracceotro("-1");
                     quest.setPlaya("-1");
-                    quest.setCdiaptoo("-1");
+                    //quest.setCdiaptoo("-1");
                     break;
                 case R.id.survey_radio_cdlocaco:
                     switch (idAeropuerto){
@@ -4909,17 +4934,17 @@ public class ModeloPasajeros5 extends Form {
                                 quest.setCdlocaco(textSpCdlocaco1GC);
                                 quest.setDistracce("-1");
                                 quest.setPlaya("-1");
-                                quest.setCdiaptoo("-1");
+                                //quest.setCdiaptoo("-1");
                                 if (textSpCdlocaco1GC.contains("99999")){
                                     EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                     quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                     quest.setDistracce("-1");
                                     quest.setPlaya("-1");
-                                    quest.setCdiaptoo("-1");
+                                    //quest.setCdiaptoo("-1");
                                 } else if (textSpCdlocaco1GC.contains("OTROS")){
                                     quest.setDistracce(textPlaya);
                                     quest.setPlaya("-1");
-                                    quest.setCdiaptoo("-1");
+                                    //quest.setCdiaptoo("-1");
                                     if (textPlaya.contains("99999")) {
                                         EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                         quest.setCdlocacootro(et_cdlocacootro.getText().toString());
@@ -4928,12 +4953,12 @@ public class ModeloPasajeros5 extends Form {
                                 } else {
                                     quest.setCdlocacootro("-1");
                                     quest.setPlaya("-1");
-                                    quest.setCdiaptoo("-1");
+                                    //quest.setCdiaptoo("-1");
                                 }
                             } else {
                                 quest.setCdlocaco("-1");
                                 quest.setPlaya("-1");
-                                quest.setCdiaptoo("-1");
+                                //quest.setCdiaptoo("-1");
                             }
                             //selectedCode = 2;
                             break;
@@ -6021,7 +6046,7 @@ public class ModeloPasajeros5 extends Form {
     }
 
     private void generarTituloCdalojin() {
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
         //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
         String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
         String textoCdalojin = activity.getString(R.string.survey_m4_text_cdalojin);
