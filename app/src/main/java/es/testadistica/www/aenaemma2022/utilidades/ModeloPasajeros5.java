@@ -547,35 +547,35 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_chekinb_ACE).setVisibility(VISIBLE);
                 //P25
                 activity.findViewById(R.id.survey_text_consume).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_consume_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_consume_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_gas_cons).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_gas_cons_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_cons_m5).setVisibility(VISIBLE);
                 //P27
                 activity.findViewById(R.id.survey_text_comprart).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_comprart_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_comprart_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_gas_com).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_gas_com_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_com_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_comprart_b).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_comprart_b_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_comprart_b_m5).setVisibility(VISIBLE);
                 //P28
                 activity.findViewById(R.id.survey_text_cdslab).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdslab_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdslab_m5).setVisibility(VISIBLE);
                 //P29
                 activity.findViewById(R.id.survey_text_cdsprof).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdsprof_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdsprof_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
                 //P30
                 activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_estudios_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_estudios_m5).setVisibility(VISIBLE);
                 //P31
                 activity.findViewById(R.id.survey_text_cdedad).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdedad_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdedad_m5).setVisibility(VISIBLE);
                 //P32
                 activity.findViewById(R.id.survey_text_cdsexo).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdsexo_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdsexo_m5).setVisibility(VISIBLE);
                 //P33
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_valorexp_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
                 break;
             case 16:
                 //Fuerteventura
