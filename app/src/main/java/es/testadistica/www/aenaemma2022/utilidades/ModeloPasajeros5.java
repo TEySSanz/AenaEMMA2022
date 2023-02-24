@@ -2158,9 +2158,11 @@ public class ModeloPasajeros5 extends Form {
                 {
                     case R.id.survey_radio_sitiopark_option4:
                         activity.findViewById(R.id.survey_layout_pqfuera).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_layout_sitioparkotro).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_sitiopark_option9:
                         activity.findViewById(R.id.survey_layout_sitioparkotro).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_layout_pqfuera).setVisibility(GONE);
                         break;
                     default:
                         activity.findViewById(R.id.survey_layout_pqfuera).setVisibility(GONE);
@@ -4890,7 +4892,9 @@ public class ModeloPasajeros5 extends Form {
                     quest.setDistracce("-1");
                     quest.setDistracceotro("-1");
                     quest.setPlaya("-1");
-                    //quest.setCdiaptoo("-1");
+                    quest.setCdiaptoo("-1");
+                    quest.setCdiaptoootro("-1");
+                    quest.setCdlocacootro("-1");
                     break;
                 case R.id.survey_radio_cdlocaco:
                     switch (idAeropuerto){
@@ -4899,17 +4903,25 @@ public class ModeloPasajeros5 extends Form {
                             if(!textSpCdlocaco.contains("0000")){
                                 quest.setCdlocaco(textSpCdlocaco);
                                 quest.setPlaya("-1");
+                                quest.setCdiaptoo("-1");
+                                quest.setCdiaptoootro("-1");
                                 if (textSpCdlocaco.contains("9999")){
                                     EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                     quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                     quest.setPlaya("-1");
+                                    quest.setCdiaptoo("-1");
+                                    quest.setCdiaptoootro("-1");
                                 } else {
                                     quest.setCdlocacootro("-1");
                                     quest.setPlaya("-1");
+                                    quest.setCdiaptoo("-1");
+                                    quest.setCdiaptoootro("-1");
                                 }
                             } else {
                                 quest.setCdlocaco("-1");
                                 quest.setPlaya("-1");
+                                quest.setCdiaptoo("-1");
+                                quest.setCdiaptoootro("-1");
                             }
                             //selectedCode = 2;
                             break;
@@ -4935,29 +4947,41 @@ public class ModeloPasajeros5 extends Form {
                                 quest.setDistracce("-1");
                                 quest.setPlaya("-1");
                                 //quest.setCdiaptoo("-1");
+                                quest.setCdiaptoo("-1");
+                                quest.setCdiaptoootro("-1");
                                 if (textSpCdlocaco1GC.contains("99999")){
                                     EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                     quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                     quest.setDistracce("-1");
                                     quest.setPlaya("-1");
+                                    quest.setCdiaptoo("-1");
+                                    quest.setCdiaptoootro("-1");
                                     //quest.setCdiaptoo("-1");
                                 } else if (textSpCdlocaco1GC.contains("OTROS")){
                                     quest.setDistracce(textPlaya);
                                     quest.setPlaya("-1");
+                                    quest.setCdiaptoo("-1");
+                                    quest.setCdiaptoootro("-1");
                                     //quest.setCdiaptoo("-1");
                                     if (textPlaya.contains("99999")) {
                                         EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                         quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                         quest.setPlaya("-1");
+                                        quest.setCdiaptoo("-1");
+                                        quest.setCdiaptoootro("-1");
                                     }
                                 } else {
                                     quest.setCdlocacootro("-1");
                                     quest.setPlaya("-1");
+                                    quest.setCdiaptoo("-1");
+                                    quest.setCdiaptoootro("-1");
                                     //quest.setCdiaptoo("-1");
                                 }
                             } else {
                                 quest.setCdlocaco("-1");
                                 quest.setPlaya("-1");
+                                quest.setCdiaptoo("-1");
+                                quest.setCdiaptoootro("-1");
                                 //quest.setCdiaptoo("-1");
                             }
                             //selectedCode = 2;
@@ -4981,6 +5005,8 @@ public class ModeloPasajeros5 extends Form {
                     quest.setPlaya(etPlayaotro.getText().toString());
                     quest.setCdlocaco("-1");
                     quest.setCdiaptoo("-1");
+                    quest.setCdiaptoootro("-1");
+                    quest.setCdlocacootro("-1");
                     selectedCode = 3;
                     break;
                 case R.id.survey_radio_islas:
@@ -4989,31 +5015,37 @@ public class ModeloPasajeros5 extends Form {
                         quest.setDistracce("-1");
                         quest.setPlaya("-1");
                         quest.setCdiaptoo("-1");
+                        quest.setCdiaptoootro("-1");
                         if (textSpCdlocaco1GC.contains("99999")){
                             EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                             quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                             quest.setDistracce("-1");
                             quest.setPlaya("-1");
                             quest.setCdiaptoo("-1");
+                            quest.setCdiaptoootro("-1");
                         } else if (textSpCdlocaco1GC.contains("OTROS")){
                             quest.setDistracce(textPlaya);
                             quest.setPlaya("-1");
                             quest.setCdiaptoo("-1");
+                            quest.setCdiaptoootro("-1");
                             if (textPlaya.contains("99999")) {
                                 EditText et_cdlocacootro = (EditText) activity.findViewById(R.id.survey_edit_cdlocacootro);
                                 quest.setCdlocacootro(et_cdlocacootro.getText().toString());
                                 quest.setPlaya("-1");
                                 quest.setCdiaptoo("-1");
+                                quest.setCdiaptoootro("-1");
                             }
                         } else {
                             quest.setCdlocacootro("-1");
                             quest.setPlaya("-1");
                             quest.setCdiaptoo("-1");
+                            quest.setCdiaptoootro("-1");
                         }
                     } else {
                         quest.setCdlocaco("-1");
                         quest.setPlaya("-1");
                         quest.setCdiaptoo("-1");
+                        quest.setCdiaptoootro("-1");
                     }
                     selectedCode = 4;
                     RadioGroup rgVieneres = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_vienereotro);
@@ -5035,17 +5067,21 @@ public class ModeloPasajeros5 extends Form {
                     if(!textSpCdiaptoo.contains("000")){
                         quest.setCdiaptoo(textSpCdiaptoo);
                         quest.setPlaya("-1");
+                        quest.setCdlocacootro("-1");
                         if (textSpCdiaptoo.contains("ZZZ")){
                             EditText et_cdiaptoootro = (EditText) activity.findViewById(R.id.survey_edit_cdiaptoootro_m4);
                             quest.setCdiaptoootro(et_cdiaptoootro.getText().toString());
                             quest.setPlaya("-1");
+                            quest.setCdlocacootro("-1");
                         } else {
                             quest.setCdiaptoootro("-1");
                             quest.setPlaya("-1");
+                            quest.setCdlocacootro("-1");
                         }
                     } else {
                         quest.setCdiaptoo("-1");
                         quest.setPlaya("-1");
+                        quest.setCdlocacootro("-1");
                     }
                     selectedCode = 99000;
                     quest.setCdlocaco("99000");
@@ -5069,21 +5105,27 @@ public class ModeloPasajeros5 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_cdalojin_option1:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_cdalojin_option2:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 2;
                     break;
                 case R.id.survey_radio_cdalojin_option4:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 4;
                     break;
                 case R.id.survey_radio_cdalojin_option7:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 7;
                     break;
                 case R.id.survey_radio_cdalojin_option8:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 8;
                     break;
                 case R.id.survey_radio_cdalojin_option10:
+                    quest.setCdalojin_otros("-1");
                     selectedCode = 10;
                     break;
                 case R.id.survey_radio_cdalojin_option9:
@@ -5106,24 +5148,31 @@ public class ModeloPasajeros5 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_m4_ultimodo_1modo_option1:
+                    quest.setUltimodootro("-1");
                     selectedCode = 11;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option2:
+                    quest.setUltimodootro("-1");
                     selectedCode = 25;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option3:
+                    quest.setUltimodootro("-1");
                     selectedCode = 24;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option4:
+                    quest.setUltimodootro("-1");
                     selectedCode = 22;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option5:
+                    quest.setUltimodootro("-1");
                     selectedCode = 23;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option6:
+                    quest.setUltimodootro("-1");
                     selectedCode = 32;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option7:
+                    quest.setUltimodootro("-1");
                     selectedCode = 31;
                     break;
                 case R.id.survey_radio_m4_ultimodo_1modo_option8:
@@ -5147,24 +5196,31 @@ public class ModeloPasajeros5 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_GC_ultimodo_1modo_option1:
+                    quest.setUltimodootro("-1");
                     selectedCode = 11;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option2:
+                    quest.setUltimodootro("-1");
                     selectedCode = 24;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option3:
+                    quest.setUltimodootro("-1");
                     selectedCode = 25;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option4:
+                    quest.setUltimodootro("-1");
                     selectedCode = 22;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option5:
+                    quest.setUltimodootro("-1");
                     selectedCode = 23;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option6:
+                    quest.setUltimodootro("-1");
                     selectedCode = 35;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option7:
+                    quest.setUltimodootro("-1");
                     selectedCode = 31;
                     break;
                 case R.id.survey_radio_GC_ultimodo_1modo_option8:
@@ -5190,20 +5246,28 @@ public class ModeloPasajeros5 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_sitiopark_option1_m4:
+                    quest.setPqfuera("-1");
+                    quest.setSitioparkotro("-1");
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_sitiopark_option4:
                     EditText etPqfuera = (EditText) activity.findViewById(R.id.survey_edit_pqfuera);
                     quest.setPqfuera(etPqfuera.getText().toString());
+                    quest.setSitioparkotro("-1");
                     selectedCode = 4;
                     break;
                 case R.id.survey_radio_sitiopark_option5:
+                    quest.setPqfuera("-1");
+                    quest.setSitioparkotro("-1");
                     selectedCode = 5;
                     break;
                 case R.id.survey_radio_sitiopark_option6:
+                    quest.setPqfuera("-1");
+                    quest.setSitioparkotro("-1");
                     selectedCode = 6;
                     break;
                 case R.id.survey_radio_sitiopark_option9:
+                    quest.setPqfuera("-1");
                     EditText etSitioparkotro= (EditText) activity.findViewById(R.id.survey_edit_sitioparkotro);
                     quest.setSitioparkotro(etSitioparkotro.getText().toString());
                     selectedCode = 9;
@@ -5285,6 +5349,7 @@ public class ModeloPasajeros5 extends Form {
         if (checkedId > 0) {
             switch (checkedId) {
                 case R.id.survey_radio_cdterm_option1:
+                    quest.setCdociaarotro("-1");
                     selectedCode = 1;
                     break;
                 case R.id.survey_radio_cdterm_option2:
