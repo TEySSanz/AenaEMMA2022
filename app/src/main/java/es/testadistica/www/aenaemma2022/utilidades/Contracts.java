@@ -82,6 +82,7 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_FUEOLEADA = "FUEoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL = "ACEprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_ACEOLEADA = "ACEoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_CIUDAD = "ciudad";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -120,7 +121,8 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_CIUDAD + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias

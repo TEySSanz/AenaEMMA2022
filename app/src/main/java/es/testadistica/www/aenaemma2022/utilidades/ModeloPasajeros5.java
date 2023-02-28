@@ -473,6 +473,7 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_spinner_cdlocacoGC).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_playa).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_islas).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_vienereotro_opcion3).setVisibility(GONE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(VISIBLE);
                 //P5 NO
@@ -596,6 +597,9 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(GONE);
                 activity.findViewById(R.id.survey_spinner_cdlocacoGC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_playa).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_islas).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_vienereotro_opcion1).setVisibility(GONE);
                 //P4 NO
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(VISIBLE);
                 //P5 NO
@@ -622,83 +626,83 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdociaar).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdociaar_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdociaar_ACE).setVisibility(VISIBLE);
                 //P12
                 activity.findViewById(R.id.survey_text_cdiaptof).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdiaptof_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdiaptof_ACE).setVisibility(VISIBLE);
                 //P13
                 activity.findViewById(R.id.survey_text_cdmviaje).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdmviaje_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdmviaje_ACE).setVisibility(VISIBLE);
                 //P14
                 activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdidavue_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
                 activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
                 //P15
                 activity.findViewById(R.id.survey_text_npers).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_npers_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_npers_ACE).setVisibility(VISIBLE);
                 //P16
                 activity.findViewById(R.id.survey_text_nniños).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_nniños_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_nniños_ACE).setVisibility(VISIBLE);
                 //P17
                 activity.findViewById(R.id.survey_text_relacion).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_relacion_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_relacion_ACE).setVisibility(VISIBLE);
                 //P18
                 activity.findViewById(R.id.survey_text_cdtreser).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdtreser_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdtreser_ACE).setVisibility(VISIBLE);
                 //P19
                 activity.findViewById(R.id.survey_text_cdbillet).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdbillet_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdbillet_ACE).setVisibility(VISIBLE);
                 //P20
                 activity.findViewById(R.id.survey_text_nviaje).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_nviaje_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_nviaje_ACE).setVisibility(VISIBLE);
                 //P21
                 activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_vol12mes_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_vol12mes_ACE).setVisibility(VISIBLE);
                 //P22
                 activity.findViewById(R.id.survey_text_p44factu).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_p44factu_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_p44factu_ACE).setVisibility(VISIBLE);
                 //P23
                 activity.findViewById(R.id.survey_text_nperbul).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_nperbul_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_nperbul_ACE).setVisibility(VISIBLE);
                 //P24
                 activity.findViewById(R.id.survey_text_chekinb).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_chekinb_m4).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_chekinb_ACE).setVisibility(VISIBLE);
                 //P25
                 activity.findViewById(R.id.survey_text_consume).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_consume_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_consume_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_gas_cons).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_gas_cons_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_cons_m5).setVisibility(VISIBLE);
                 //P27
                 activity.findViewById(R.id.survey_text_comprart).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_comprart_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_comprart_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_gas_com).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_gas_com_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_gas_com_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_comprart_b).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_comprart_b_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_comprart_b_m5).setVisibility(VISIBLE);
                 //P28
                 activity.findViewById(R.id.survey_text_cdslab).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdslab_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdslab_m5).setVisibility(VISIBLE);
                 //P29
                 activity.findViewById(R.id.survey_text_cdsprof).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdsprof_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdsprof_m5).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
                 //P30
                 activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_estudios_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_estudios_m5).setVisibility(VISIBLE);
                 //P31
                 activity.findViewById(R.id.survey_text_cdedad).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdedad_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdedad_m5).setVisibility(VISIBLE);
                 //P32
                 activity.findViewById(R.id.survey_text_cdsexo).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_cdsexo_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdsexo_m5).setVisibility(VISIBLE);
                 //P33
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
-                activity.findViewById(R.id.survey_text_valorexp_GC).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_valorexp_m5).setVisibility(VISIBLE);
                 break;
         }
     }
@@ -1777,6 +1781,8 @@ public class ModeloPasajeros5 extends Form {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
+                System. out. println(texto);
+                System. out. println(texto1);
 
 
                 String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
@@ -1837,6 +1843,7 @@ public class ModeloPasajeros5 extends Form {
                             filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
 
                         }
+                        System. out. println(filtroAeropuerto1);
                         break;
                 }
 
@@ -1969,33 +1976,89 @@ public class ModeloPasajeros5 extends Form {
                 switch(i)
                 {
                     case R.id.survey_radio_cdlocaco:
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
-                        //activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_spinner_cdlocaco_provACE).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_spinner_cdlocaco_provFUE).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_spinner_cdlocaco_provLP).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_cdlocacoGC).setVisibility(VISIBLE);
-                        String texto = "03";
+                        switch (idAeropuerto){
+                            case 4:case 6:
+                                //Ibiza
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(VISIBLE);
+                                break;
+                            case 13:
+                                //Tenerife sur
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(VISIBLE);
+                                break;
+                            case 15:
+                                //Lanzarote
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                //activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provACE).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provFUE).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provLP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_cdlocacoGC).setVisibility(VISIBLE);
+                                String texto = "03";
 
-                        String texto1 = " iden IS NOT NULL ";
+                                String texto1 = " iden IS NOT NULL ";
 
-                        if (texto.equals("01")){
-                            texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
-                        } else if (texto.equals("02") || texto.equals("03")|| texto.equals("04")|| texto.equals("05")|| texto.equals("06")|| texto.equals("07")){
-                            texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                                if (texto.equals("01")){
+                                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                                } else if (texto.equals("02") || texto.equals("03")|| texto.equals("04")|| texto.equals("05")|| texto.equals("06")|| texto.equals("07")){
+                                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                                }
+
+                                final SearchableSpinner sp_cdlocacoGC= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+                                ArrayList<mListString> islasLocalidadAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto1));
+                                sp_cdlocacoGC.setAdapter(islasLocalidadAdapterGC, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+                                break;
+                            case 16:
+                                //Fuerteventura
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                //activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provACE).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provFUE).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provLP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_cdlocacoGC).setVisibility(VISIBLE);
+                                texto = "04";
+
+                                texto1 = " iden IS NOT NULL ";
+
+                                if (texto.equals("01")){
+                                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                                } else if (texto.equals("02") || texto.equals("03")|| texto.equals("04")|| texto.equals("05")|| texto.equals("06")|| texto.equals("07")){
+                                    texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
+                                }
+
+                                final SearchableSpinner sp_cdlocacoGC16= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+                                ArrayList<mListString> islasLocalidadAdapterGC16 = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto1));
+                                sp_cdlocacoGC16.setAdapter(islasLocalidadAdapterGC16, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+                                break;
                         }
-
-                        final SearchableSpinner sp_cdlocacoGC= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
-                        ArrayList<mListString> islasLocalidadAdapterGC = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto1));
-                        sp_cdlocacoGC.setAdapter(islasLocalidadAdapterGC, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
                         break;
                     case R.id.survey_radio_cdiaptoo:
                         activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(VISIBLE);
@@ -2006,20 +2069,64 @@ public class ModeloPasajeros5 extends Form {
                         activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
                         break;
                     case R.id.survey_radio_playa:
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(VISIBLE);
-                        activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                        switch (idAeropuerto){
+                            case 4:case 6:case 13:
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                break;
+                            case 15:
+                                //Lanzarote
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                break;
+                            case 16:
+                                //Lanzarote
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(VISIBLE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                break;
+                        }
                         break;
                     case R.id.survey_radio_islas:
-                        activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
-                        activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(VISIBLE);
+                        switch (idAeropuerto){
+                            case 4:case 6:case 13:
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
+                                break;
+                            case 15:
+                                //Lanzarote
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(VISIBLE);
+                                break;
+                            case 16:
+                                //Lanzarote
+                                activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_text_viene_re_aviso_AGP).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdplayaotro).setVisibility(GONE);
+                                activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(VISIBLE);
+                                break;
+                        }
                         break;
                     case R.id.survey_radio_viene_re:
                         SearchableSpinner sp_cdlocado_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado_prov);
@@ -2094,6 +2201,31 @@ public class ModeloPasajeros5 extends Form {
                         final SearchableSpinner sp_cdlocacoGC1= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
                         ArrayList<mListString> islasLocalidadAdapterGC1 = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto3));
                         sp_cdlocacoGC1.setAdapter(islasLocalidadAdapterGC1, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+                        break;
+                    case R.id.survey_radio_vienereotro_opcion3:
+                        activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
+                        //activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco_provFUE).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco_provACE).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco_provLP).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco_provGC).setVisibility(GONE);
+                        //activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(GONE);
+                        activity.findViewById(R.id.survey_text_cdlocacoGC).setVisibility(VISIBLE);
+                        texto2 = "03";
+
+                        texto3 = " iden IS NOT NULL ";
+
+                        if (texto2.equals("01")){
+                            texto3 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto2+"'";
+                        } else if (texto2.equals("02") || texto2.equals("03")|| texto2.equals("04")|| texto2.equals("05")|| texto2.equals("06")|| texto2.equals("07")){
+                            texto3 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto2+"'";
+                        }
+
+                        final SearchableSpinner sp_cdlocacoGC2= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+                        ArrayList<mListString> islasLocalidadAdapterGC2 = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOGRANCANARIALOCALIDAD,"iden", "codigo","descripcion", "codigo", texto3));
+                        sp_cdlocacoGC2.setAdapter(islasLocalidadAdapterGC2, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
                         break;
                 }
             }
@@ -3077,22 +3209,49 @@ public class ModeloPasajeros5 extends Form {
                                 textoError,
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     }*/
+                    switch (idAeropuerto){
+
+                            case 15:
+                                //Lanzarote
+
+                                break;
+                            case 16:
+                                //Fuerteventura
+
+                                break;
+                    }
                     final RadioButton rbVienereACE = (RadioButton) activity.findViewById(R.id.survey_radio_viene_re);
                     if (rbVienereACE.isChecked()) {
                         final SearchableSpinner sp_cdlocado = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocado);
                         sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
                         activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
                         String texto = getValorDesplegable(sp_cdlocado).substring(0, 5);
-                        if (((texto.equals("35004")) || (texto.equals("35010")) || (texto.equals("35018")) || (texto.equals("35024")) || (texto.equals("35028")) || (texto.equals("35029")) || (texto.equals("35034")))) {
-                        }else{
-                                String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
-                                return getDialogValueBackError(activity,
-                                        activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                        textoError,
-                                        activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                            }
-                        }
+                        switch (idAeropuerto){
 
+                            case 15:
+                                //Lanzarote
+                                if (((texto.equals("35004")) || (texto.equals("35010")) || (texto.equals("35018")) || (texto.equals("35024")) || (texto.equals("35028")) || (texto.equals("35029")) || (texto.equals("35034")))) {
+                                }else{
+                                    String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
+                                    return getDialogValueBackError(activity,
+                                            activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                            textoError,
+                                            activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                }
+                                break;
+                            case 16:
+                                //Fuerteventura
+                                if (((texto.equals("35003")) || (texto.equals("35007")) || (texto.equals("35014")) || (texto.equals("35015")) || (texto.equals("35017")) || (texto.equals("35030")))) {
+                                }else{
+                                    String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
+                                    return getDialogValueBackError(activity,
+                                            activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                            textoError,
+                                            activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                }
+                                break;
+                        }
+                    }
                     break;
                 case 4:
                     //P4
@@ -5058,6 +5217,9 @@ public class ModeloPasajeros5 extends Form {
                             case R.id.survey_radio_vienereotro_opcion2:
                                 quest.setDistracce("2");
                                 break;
+                            case R.id.survey_radio_vienereotro_opcion3:
+                                quest.setDistracce("3");
+                                break;
                         }
                     }
                     break;
@@ -6111,14 +6273,31 @@ public class ModeloPasajeros5 extends Form {
     }
 
     private void generarTituloCdalojin() {
-        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
-        //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
-        String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
-        String textoCdalojin = activity.getString(R.string.survey_m4_text_cdalojin);
-        TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero);
-        if (textSpCdlocaco.length()>6)
-            textSpCdlocaco = textSpCdlocaco.substring(6, textSpCdlocaco.length());
-        tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
+        switch (idAeropuerto){
+
+            case 4: case 6: case 13:
+                //Lanzarote
+                SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+                //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
+                String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
+                String textoCdalojin = activity.getString(R.string.survey_m4_text_cdalojin);
+                TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero);
+                if (textSpCdlocaco.length()>6)
+                    textSpCdlocaco = textSpCdlocaco.substring(6, textSpCdlocaco.length());
+                tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
+                break;
+            case 16: case 15:
+                //Fuerteventura
+                SearchableSpinner sp_cdlocacoGC = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocacoGC);
+                //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
+                String textSpCdlocacoGC = getValorDesplegable(sp_cdlocacoGC);
+                String textoCdalojinGC = activity.getString(R.string.survey_m4_text_cdalojin);
+                TextView tvCdalojinGC = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero);
+                if (textSpCdlocacoGC.length()>6)
+                    textSpCdlocacoGC = textSpCdlocacoGC.substring(6, textSpCdlocacoGC.length());
+                tvCdalojinGC.setText(textoCdalojinGC.replace("%1$s", textSpCdlocacoGC));
+                break;
+        }
     }
 
     private void generarTituloCdterm() {

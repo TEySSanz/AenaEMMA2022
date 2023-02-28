@@ -631,6 +631,7 @@
     <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Sevilla?</string>
     <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
     <string name="survey_m4_radio_viene_re1">Fuerteventura</string>
+    <string name="survey_m4_radio_viene_re3">Lanzarote</string>
     <string name="survey_m4_radio_viene_re2">Gran Canaria</string>
     <string name="survey_m4_radio_cdlocaco">Localidad</string>
     <string name="survey_m4_radio_cdiaptoo">Viene en conexión aerea</string>
@@ -880,7 +881,7 @@
     <string name="survey_m5_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Ibiza?</string>
     <string name="survey_m5_text_cdlocaco_prov">Isla</string>
     <string name="survey_m5_text_cdlocaco_playa">Playa</string>
-    <string name="survey_m5_text_cdlocaco_islas">Otros</string>
+    <string name="survey_m5_text_cdlocaco_islas">Otros (Pasajeros que llegan en barco - NO CRUCERO)</string>
     <!--Pregunta22-->
     <string name="survey_m5_text_eleccovid">22. ¿Cómo ha afectado la pandemia por COVID-19 en su elección de viajar en avión? (Marque la opción que mejor defina su elección)</string>
     <!--Pregunta23-->

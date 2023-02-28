@@ -195,6 +195,13 @@
                             android:text="@string/survey_m4_radio_viene_re2"
                             android:visibility="visible"/>
 
+                        <RadioButton
+                            android:id="@+id/survey_radio_vienereotro_opcion3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/survey_m4_radio_viene_re3"
+                            android:visibility="visible"/>
+
                     </RadioGroup>
 
                 </LinearLayout>
