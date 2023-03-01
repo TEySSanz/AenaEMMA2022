@@ -1591,7 +1591,7 @@ public class ModeloPasajeros5 extends Form {
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
                             }
                             break;
