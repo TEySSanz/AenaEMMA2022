@@ -4,6 +4,8 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import static es.testadistica.www.aenaemma2022.utilidades.Contracts.TABLE_TIPOAEROPUERTOS;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -803,7 +805,7 @@ public class ModeloPasajeros5 extends Form {
                 break;
 
         }
-        ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
+        ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
 
         filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
         switch (idAeropuerto){
@@ -828,7 +830,7 @@ public class ModeloPasajeros5 extends Form {
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL+" = 1";
                 break;
         }
-        ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
+        ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
 
         //P1
         //Asigna los valores del desplegable de paises
@@ -1472,6 +1474,8 @@ public class ModeloPasajeros5 extends Form {
                 if (rbCdiaptoo.isChecked()) {
 
                     String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
+                    String textoCiudad = compCiudad(texto);
+
 
                     String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
                     switch (idAeropuerto) {
@@ -1514,17 +1518,26 @@ public class ModeloPasajeros5 extends Form {
                             break;
                         case 16:
                             //Fuerteventura
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            if(textoCiudad.equals("")){
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                }
+                            }else{
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                }
                             }
+
                             break;
 
                     }
 
                     final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                    ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                    ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
                     sp_cdiaptof.setAdapter(tipoAeropuertosPpalAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
 
                     String filtroAeropuerto2 = " iden IS NOT NULL "; //Para que salgan todos
@@ -1568,16 +1581,24 @@ public class ModeloPasajeros5 extends Form {
                             break;
                         case 16:
                             //Fuerteventura
-                            if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
-                            } else {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                            if(textoCiudad.equals("")) {
+                                if (texto.equals("000") || (texto.equals("ZZZ"))) {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                }
+                            }else{
+                                if (texto.equals("000") || (texto.equals("ZZZ"))) {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                }
                             }
                             break;
                     }
 
                     final SearchableSpinner sp_cdiaptod = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptod);
-                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto2));
+                    ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto2));
                     sp_cdiaptod.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
                 }
                 String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
@@ -1781,9 +1802,9 @@ public class ModeloPasajeros5 extends Form {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdiaptoo).substring(0, 3);
-                System. out. println(texto);
-                System. out. println(texto1);
-
+                String textoCP = comprobarCP(texto1);
+                String textoCiudad = compCiudad(texto1);
+                String textoCiudad2 = compCiudad(texto);
 
                 String filtroAeropuerto1 = " iden IS NOT NULL "; //Para que salgan todos
                 switch (idAeropuerto) {
@@ -1836,19 +1857,84 @@ public class ModeloPasajeros5 extends Form {
                                 filtroAeropuerto1 = " "+Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL+" = 1 AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto+"') AND "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO+" NOT IN ('" + texto1+"')";
                             }*/
                         filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
-                        if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
-                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
-                        }
-                        if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
-                            filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+                        if(textoCiudad2.equals("")) {
+                            if (textoCiudad.equals("")) {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') ";
+                                    }
+                                }
+                            } else {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
 
+                                    }
+                                }
+                            }
+                        }else{
+                            if (textoCiudad.equals("")) {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                }
+                            } else {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                }
+                            }
                         }
-                        System. out. println(filtroAeropuerto1);
+
+
                         break;
+
                 }
 
                 final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
-                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
+                ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS, "iden", "codigo", "descripcion", "descripcion", filtroAeropuerto1));
                 sp_cdiaptof.setAdapter(tipoAeropuertosAdapter, 1, 1, activity.getString(R.string.spinner_tipoAeropuerto_title), activity.getString(R.string.spinner_close));
 
 
@@ -6169,6 +6255,8 @@ public class ModeloPasajeros5 extends Form {
         return getDiccionario;
     }
 
+
+
     private List<mListString> getDiccionario(String tabla, String campoIden, String campoCod, String campoValor, String campoOrden, String filtro) {
         List<mListString> getDiccionario = new ArrayList<mListString>();
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -6327,6 +6415,42 @@ public class ModeloPasajeros5 extends Form {
         cursor.close();
 
         return conteo;
+    }
+
+    private String comprobarCP(String codigo) {
+        String codPais = "0";
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+        //String textoCP = "SELECT " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " FROM " +TABLE_TIPOAEROPUERTOS+" WHERE " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " = '" +texto+ "'";
+        Cursor cursor = db.rawQuery("SELECT "+ Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS +
+                " FROM " + Contracts.TABLE_TIPOAEROPUERTOS +
+                " WHERE "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " = '"+codigo+"'", parametros);
+
+        while (cursor.moveToNext()) {
+            codPais = cursor.getString(0);
+        }
+
+        cursor.close();
+
+        return codPais;
+    }
+
+    private String compCiudad(String codigo) {
+        String ciudad = "0";
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = null;
+        //String textoCP = "SELECT " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " FROM " +TABLE_TIPOAEROPUERTOS+" WHERE " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " = '" +texto+ "'";
+        Cursor cursor = db.rawQuery("SELECT "+ Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD +
+                " FROM " + Contracts.TABLE_TIPOAEROPUERTOS +
+                " WHERE "+Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " = '"+codigo+"'", parametros);
+
+        while (cursor.moveToNext()) {
+            ciudad = cursor.getString(0);
+        }
+
+        cursor.close();
+
+        return ciudad;
     }
 
     private String replicate (String origen, String relleno, int max){

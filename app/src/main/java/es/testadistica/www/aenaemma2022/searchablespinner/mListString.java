@@ -19,7 +19,7 @@ public class mListString implements Serializable {
     private String nilai10;
     private String imageName;
 
-    public mListString() {
+    public mListString(String string) {
     }
 
     public mListString(int id, String nilai1) {
