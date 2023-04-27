@@ -83,6 +83,10 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL = "ACEprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_ACEOLEADA = "ACEoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_CIUDAD = "ciudad";
+    public static final String COLUMN_TIPOAEROPUERTOS_LEIPRINCIPAL = "LEIprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_LEIOLEADA = "LEIoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_SDRPRINCIPAL = "SDRprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_SDROLEADA = "SDRoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -122,7 +126,11 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_CIUDAD + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_CIUDAD + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_LEIPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_LEIOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_SDRPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_SDROLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
@@ -162,6 +170,10 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_FUEOLEADA = "FUEoleada";
     public static final String COLUMN_TIPOCOMPANIAS_ACEAEREA = "ACEaerea";
     public static final String COLUMN_TIPOCOMPANIAS_ACEOLEADA = "ACEoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_LEIAEREA = "LEIaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_LEIOLEADA = "LEIoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_SDRAEREA = "SDRaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_SDROLEADA = "SDRoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
@@ -197,7 +209,11 @@ public class Contracts {
             COLUMN_TIPOCOMPANIAS_FUEAEREA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_FUEOLEADA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_ACEAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_ACEOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_ACEOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_LEIAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_LEIOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_SDRAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_SDROLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos

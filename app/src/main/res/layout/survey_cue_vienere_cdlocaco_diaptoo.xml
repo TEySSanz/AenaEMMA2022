@@ -110,6 +110,14 @@
             android:text="@string/survey_m2_text_viene_re_FUE"
             android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/survey_text_viene_re_LEI"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m2_text_viene_re_LEI"
+            android:visibility="gone" />
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_viene_re_diaptoo"
             android:layout_width="match_parent"

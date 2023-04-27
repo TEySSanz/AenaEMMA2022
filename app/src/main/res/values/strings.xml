@@ -942,6 +942,7 @@
     <string name="survey_m2_text_viene_re_TN">7. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Tenerife Norte?</string>
     <string name="survey_m2_text_viene_re_ACE">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Lanzarote?</string>
     <string name="survey_m2_text_viene_re_FUE">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Fuerteventura?</string>
+    <string name="survey_m2_text_viene_re_LEI">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de ALMERÍA?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
