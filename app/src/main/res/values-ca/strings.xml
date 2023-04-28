@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.39)</string>
+    <string name="app_name">EMMA 2022 (v1.40)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.39</string>
+    <string name="version">v1.40</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -508,4 +508,6 @@
     <string name="survey_ACE_text_nperbul">"24.¿A quantes persones pertanyen els embalums?    "</string>
     <string name="survey_ACE_text_chekinb">"25.-  On ha obtingut la seva targeta d'embarcament?   "</string>
     <string name="survey_ACE_text_cdociaar">12.¿Companyia aèria amb la qual contínua el viatge?</string>
+    <string name="survey_m2_text_viene_re_LEI">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Almeria?</string>
+    <string name="survey_m2_text_viene_re_SDR">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Santander?</string>
 </resources>
