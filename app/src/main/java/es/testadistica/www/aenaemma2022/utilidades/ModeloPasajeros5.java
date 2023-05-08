@@ -4036,7 +4036,9 @@ public class ModeloPasajeros5 extends Form {
                                             textoError,
                                             activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                                 }else{
-                                    if (((texto_prov.equals("07")) || (texto_prov.equals("35")) || (texto_prov.equals("38")) || (texto_prov.equals("51")) || (texto_prov.equals("52")) || (texto_prov.equals("94")))) {
+                                    if (((texto_prov.equals("04")) || (texto_prov.equals("29")) || (texto_prov.equals("18")) || (texto_prov.equals("30")) || (texto_prov.equals("14")) || (texto_prov.equals("23")))) {
+
+                                    } else {
                                         String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
                                         return getDialogValueBackError(activity,
                                                 activity.getResources().getString(R.string.survey_model_text_errorTitle),
@@ -4054,7 +4056,7 @@ public class ModeloPasajeros5 extends Form {
                                             textoError,
                                             activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                                 } else {
-                                    if (((texto_prov.equals("26")) || (texto_prov.equals("48")) || (texto_prov.equals("33")) || (texto_prov.equals("24")) || (texto_prov.equals("34")) || (texto_prov.equals("09")) || (texto_prov.equals("01")))) {
+                                    if (((texto_prov.equals("26")) || (texto_prov.equals("48")) || (texto_prov.equals("33")) || (texto_prov.equals("24")) || (texto_prov.equals("34")) || (texto_prov.equals("09")) ||  (texto_prov.equals("39")) || (texto_prov.equals("01")))) {
 
                                     } else {
                                         String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
