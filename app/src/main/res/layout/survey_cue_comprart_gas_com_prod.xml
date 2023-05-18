@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_m1_text_prod"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/survey_text_comprart_b_m4"
@@ -153,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_m4_text_prod"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/survey_text_comprart_b_m5"
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_m5_text_prod"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/survey_text_comprart_b_GC"
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_GC_text_prod"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/survey_text_comprart_b_m2"
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_padding"
                 android:text="@string/survey_m2_text_prod"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"

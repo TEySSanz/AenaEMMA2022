@@ -4804,6 +4804,9 @@ public class ModeloPasajeros5 extends Form {
                 case 27:
                     //P27
                     RadioGroup rgComprart = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_comprart);
+                    SearchableSpinner sp_prod1 = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_prod1);
+                    //String st_cdmviaje = sp_cdmviaje1.getSelectedItem().toString().substring(0, 3);
+                    //String prod1 = getValorDesplegable(sp_prod1).substring(0,1);
 
                     if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_comprart))){
                         return false;
@@ -4823,8 +4826,16 @@ public class ModeloPasajeros5 extends Form {
                             etGas_com.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
                         }
 
-                        if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_prod1), "0")){
+                        /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_prod1), "0")){
                             return false;
+                        }*/
+                        if (getValorDesplegable(sp_prod1).substring(0,1).equals("0")) {
+                            sp_prod1.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+
+                            return getDialogValueBackError(activity,
+                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                    activity.getResources().getString(R.string.survey_text_selectOption),
+                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         }
                     }
                     break;

@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/survey_m4_layout_ultimod"
-        android:layout_width="566dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/md_blue_grey_200"
         android:orientation="vertical"
@@ -42,7 +42,7 @@
             <!--- 1 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_vertical_m4_ultimodo_1col"
-                android:layout_width="100dp"
+                android:layout_width="94dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -114,7 +114,7 @@
             <!--- 2 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_m4_ultimodo_2col"
-                android:layout_width="415dp"
+                android:layout_width="453dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -289,7 +289,7 @@
             <!--- 3 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_m4_ultimodo_1modo"
-                android:layout_width="68dp"
+                android:layout_width="48dp"
                 android:layout_height="525dp"
                 android:orientation="vertical"
                 android:visibility="visible">
@@ -300,7 +300,6 @@
                     android:layout_height="96dp"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/survey_m1_text_ultimodo_1modo"
                     android:textColor="@color/aenaBlue" />
 
                 <RadioGroup

@@ -458,7 +458,7 @@
                     android:layout_height="500dp"
 
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/survey_text_ultimodo_2modo"
