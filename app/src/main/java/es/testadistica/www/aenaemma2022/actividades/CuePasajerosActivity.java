@@ -34,6 +34,7 @@ import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros4;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros5;
 import es.testadistica.www.aenaemma2022.utilidades.ModeloPasajeros6;
 
+
 public class CuePasajerosActivity extends AppCompatActivity {
 
     private static String DATE_FORMAT_SHORT = "dd/MM/yyyy";
@@ -112,7 +113,7 @@ public class CuePasajerosActivity extends AppCompatActivity {
             case 1:
                 form = new ModeloPasajeros1(this, pregunta, conn);
                 ((ModeloPasajeros1) form).setCue(cue);
-                maxPreg=42;
+                maxPreg=41;
                 break;
             case 2:
                 form = new ModeloPasajeros2(this, pregunta, conn);

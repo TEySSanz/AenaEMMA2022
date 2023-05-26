@@ -121,6 +121,8 @@ public class CuePasajeros implements Serializable {
     private String numdarsena;
     private String playa;
     private String sitioparkotro;
+    private String vtc;
+    private String vtcotro;
 
     public CuePasajeros(){
 
@@ -1042,5 +1044,21 @@ public class CuePasajeros implements Serializable {
 
     public void setPlaya(String playa) {
         this.playa = playa;
+    }
+
+    public String getVtc() {
+        return vtc;
+    }
+
+    public void setVtc(String vtc) {
+        this.vtc = vtc;
+    }
+
+    public String getVtcotro() {
+        return vtcotro;
+    }
+
+    public void setVtcotro(String vtcotro) {
+        this.vtcotro = vtcotro;
     }
 }

@@ -23,70 +23,68 @@
     <!-- P9 -->
     <include layout="@layout/survey_cue_vienere_cdlocaco_distracce"/>
     <!-- P10 -->
-    <include layout="@layout/survey_cue_cdalojin"/>
+    <include layout="@layout/survey_cue_cdalojin_crucero"/>
     <!-- P11 -->
     <include layout="@layout/survey_cue_nmodos"/>
     <!-- P12 -->
     <include layout="@layout/survey_cue_ultimodo"/>
     <!-- P13 -->
-    <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
+    <include layout="@layout/survey_cue_vtc"/>
     <!-- P14 -->
-    <include layout="@layout/survey_cue_acomptes"/>
+    <include layout="@layout/survey_cue_sitiopark_pqfuera"/>
     <!-- P15 -->
-    <include layout="@layout/survey_cue_bustermi"/>
+    <include layout="@layout/survey_cue_acomptes"/>
     <!-- P16 -->
-    <include layout="@layout/survey_cue_hllega"/>
+    <include layout="@layout/survey_cue_bustermi"/>
     <!-- P17 -->
-    <include layout="@layout/survey_cue_cdiaptod"/>
+    <include layout="@layout/survey_cue_hllega"/>
     <!-- P18 -->
-    <include layout="@layout/survey_cue_numvuepa"/>
+    <include layout="@layout/survey_cue_cdiaptod"/>
     <!-- P19 -->
-    <include layout="@layout/survey_cue_cdterm_cdociaar"/>
+    <include layout="@layout/survey_cue_numvuepa"/>
     <!-- P20 -->
-    <include layout="@layout/survey_cue_cdiaptof"/>
+    <include layout="@layout/survey_cue_cdterm_cdociaar"/>
     <!-- P21 -->
-    <include layout="@layout/survey_cue_cdmviaje"/>
+    <include layout="@layout/survey_cue_cdiaptof"/>
     <!-- P22 -->
-    <include layout="@layout/survey_cue_cdidavue_taus"/>
+    <include layout="@layout/survey_cue_cdmviaje"/>
     <!-- P23 -->
-    <include layout="@layout/survey_cue_npers"/>
+    <include layout="@layout/survey_cue_cdidavue_taus"/>
     <!-- P24 -->
-    <include layout="@layout/survey_cue_nninos"/>
+    <include layout="@layout/survey_cue_npers"/>
     <!-- P25 -->
-    <include layout="@layout/survey_cue_relacion"/>
+    <include layout="@layout/survey_cue_nninos"/>
     <!-- P26 -->
-    <include layout="@layout/survey_cue_cdtreser"/>
+    <include layout="@layout/survey_cue_relacion"/>
     <!-- P27 -->
-    <include layout="@layout/survey_cue_cdbillet"/>
+    <include layout="@layout/survey_cue_cdtreser"/>
     <!-- P28 -->
-    <include layout="@layout/survey_cue_nviaje"/>
+    <include layout="@layout/survey_cue_cdbillet"/>
     <!-- P29 -->
-    <include layout="@layout/survey_cue_vol12mes"/>
+    <include layout="@layout/survey_cue_nviaje"/>
     <!-- P30 -->
-    <include layout="@layout/survey_cue_eleccovid"/>
-    <!-- P31 -->
     <include layout="@layout/survey_cue_p44factu_bulgrupo"/>
-    <!-- P32 -->
+    <!-- P31 -->
     <include layout="@layout/survey_cue_nperbul"/>
-    <!-- P33 -->
+    <!-- P32 -->
     <include layout="@layout/survey_cue_dropoff"/>
-    <!-- P34 -->
+    <!-- P33 -->
     <include layout="@layout/survey_cue_checkinb"/>
-    <!-- P35 -->
+    <!-- P34 -->
     <include layout="@layout/survey_cue_consume_gans_cons"/>
-    <!-- P36 -->
+    <!-- P35 -->
     <include layout="@layout/survey_cue_comprart_gas_com_prod"/>
-    <!-- P37 -->
+    <!-- P36 -->
     <include layout="@layout/survey_cue_cdslab"/>
-    <!-- P38 -->
+    <!-- P37 -->
     <include layout="@layout/survey_cue_cdsprof"/>
-    <!-- P39 -->
+    <!-- P38 -->
     <include layout="@layout/survey_cue_estudios"/>
-    <!-- P40 -->
+    <!-- P39 -->
     <include layout="@layout/survey_cue_cdedad"/>
-    <!-- P41 -->
+    <!-- P40 -->
     <include layout="@layout/survey_cue_cdsexo"/>
-    <!-- P42 -->
+    <!-- P41 -->
     <include layout="@layout/survey_cue_valorexp"/>
 
 

@@ -190,86 +190,91 @@
     <string name="survey_m1_text_ultimodo_otros_num">91</string>
 
     <!--Pregunta13-->
-    <string name="survey_m1_text_sitiopark">13. ¿Dónde ha dejado su vehículo?</string>
+    <string name="survey_m1_text_vtc">13. ¿Podría indicar la empresa de VTC que ha utilizado en esta ocasión?</string>
+    <string name="survey_m1_radio_vtc_option1">Uber</string>
+    <string name="survey_m1_radio_vtc_option2">Cabify</string>
+    <string name="survey_m1_radio_vtc_option3">Bolt</string>
+    <string name="survey_m1_radio_vtc_option9">Otras (especificar)</string>
+    <string name="survey_m1_text_sitiopark">14. ¿Dónde ha dejado su vehículo?</string>
     <string name="survey_m1_radio_sitiopark_option1">En ZONA BAJADA/SUBIDA de pasajeros/Parking Express</string>
     <string name="survey_m1_radio_sitiopark_option5">En el PARKING DE PAGO DE AENA (El tiempo que dura mi viaje)</string>
     <string name="survey_m1_radio_sitiopark_option6">En el PARKING DE PAGO DE AENA (Mientras me despide mi acompañante)</string>
     <string name="survey_m1_radio_sitiopark_option4">En PARKING DE PAGO NO DE AENA</string>
-    <string name="survey_m1_text_pqfuera">13a. ¿Porqué?</string>
+    <string name="survey_m1_text_pqfuera">14a. ¿Porqué?</string>
     <string name="survey_m1_radio_sitiopark_option9">Otros</string>
     <!--Pregunta14-->
-    <string name="survey_m1_text_acomptes">14. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio Terminal?</string>
+    <string name="survey_m1_text_acomptes">15. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio Terminal?</string>
     <string name="survey_m1_radio_acomptes_option0">Ninguna persona</string>
     <string name="survey_m1_radio_acomptes_option1">1 persona</string>
     <string name="survey_m1_radio_acomptes_option2">2 personas</string>
     <string name="survey_m1_radio_acomptes_option3">Mas de 2 personas, especificar</string>
     <string name="survey_m1_text_acomptes_especificar">Especificar</string>
     <!--Pregunta15-->
-    <string name="survey_m1_text_bustermi">15. ¿Hoy ha tenido que utilizar el autobús entre teminales?</string>
+    <string name="survey_m1_text_bustermi">16. ¿Hoy ha tenido que utilizar el autobús entre teminales?</string>
     <string name="survey_m1_radio_bustermi_option1">Sí</string>
     <string name="survey_m1_radio_bustermi_option2">No</string>
     <!--Pregunta16-->
-    <string name="survey_m1_text_hllega">16. ¿A qué HORA ha llegado al aeropuerto?</string>
+    <string name="survey_m1_text_hllega">17. ¿A qué HORA ha llegado al aeropuerto?</string>
     <string name="survey_m1_text_hllega_hora">Hora</string>
     <string name="survey_m1_text_hllega_min">Minuto</string>
     <string name="survey_m1_text_hllega_ent">Debe introducir las horas en formato de 24h</string>
     <!--Pregunta17-->
-    <string name="survey_m1_text_cdiaptod">17. ¿A qué aeropuerto se dirige el vuelo en el que va a embarcar?</string>
+    <string name="survey_m1_text_cdiaptod">18. ¿A qué aeropuerto se dirige el vuelo en el que va a embarcar?</string>
     <string name="survey_m1_text_cdiaptod_ent">Concretar estado/país</string>
     <string name="survey_m1_text_cdiaptod_otro">Especificar</string>
     <!--Pregunta18-->
-    <string name="survey_m1_text_numvuepa">18. ¿Cuál es el número del vuelo?</string>
+    <string name="survey_m1_text_numvuepa">19. ¿Cuál es el número del vuelo?</string>
     <string name="survey_m1_text_numvuepa_ent">Definir claramente la compañía aérea</string>
     <!--Pregunta19-->
-    <string name="survey_m1_text_cdterm">19. ¿Viaja al aeropuerto %1$s sólo para hacer trasbordo o finaliza allí su viaje vía aérea?</string>
+    <string name="survey_m1_text_cdterm">20. ¿Viaja al aeropuerto %1$s sólo para hacer trasbordo o finaliza allí su viaje vía aérea?</string>
     <string name="survey_m1_radio_cdterm_option1">Finaliza</string>
     <string name="survey_m1_radio_cdterm_option2">Trasbordo</string>
-    <string name="survey_m1_text_cdociaar">19b. ¿Compañia aérea con la que continua el viaje?</string>
+    <string name="survey_m1_text_cdociaar">20a. ¿Compañia aérea con la que continua el viaje?</string>
     <string name="survey_m1_text_cdociaar_otro">Especificar</string>
     <!--Pregunta20-->
-    <string name="survey_m1_text_cdiaptof">20. ¿En qué aeropuerto finalizará su viaje en avión?</string>
+    <string name="survey_m1_text_cdiaptof">21. ¿En qué aeropuerto finalizará su viaje en avión?</string>
     <string name="survey_m1_text_cdiaptof_ent">Concretar estado/país</string>
     <string name="survey_m1_text_cdiaptof_otro">Especificar</string>
     <!--Pregunta21-->
-    <string name="survey_m1_text_cdmviaje">21. ¿Cuál es el PROPÓSITO PRINCIPAL de su viaje?</string>
+    <string name="survey_m1_text_cdmviaje">22. ¿Cuál es el PROPÓSITO PRINCIPAL de su viaje?</string>
     <string name="survey_m1_text_cdmviaje_ent">MOSTRAR TARJETA</string>
     <!--Pregunta22-->
-    <string name="survey_m1_text_cdidavue">22. ¿Es este su viaje de IDA o de VUELTA?</string>
+    <string name="survey_m1_text_cdidavue">23. ¿Es este su viaje de IDA o de VUELTA?</string>
     <string name="survey_m1_radio_cdidavue_option1">Ida</string>
-    <string name="survey_m1_text_cdidavue_a">22a. ¿Cuánto tiempo estará fuera?</string>
+    <string name="survey_m1_text_cdidavue_a">23a. ¿Cuánto tiempo estará fuera?</string>
     <string name="survey_m1_radio_cdidavue_option2">Vuelta</string>
-    <string name="survey_m1_text_cdidavue_b">22b. ¿Cuánto tiempo ha estado fuera?</string>
+    <string name="survey_m1_text_cdidavue_b">23b. ¿Cuánto tiempo ha estado fuera?</string>
     <string name="survey_m1_check_cdidavue_option0">Regreso en el mismo día</string>
     <string name="survey_m1_text_taus">Nº de días</string>
     <!--Pregunta23-->
-    <string name="survey_m1_text_npers">23. ¿Incluyéndose usted, cuántas personas viajan en su grupo inmediato?</string>
+    <string name="survey_m1_text_npers">24. ¿Incluyéndose usted, cuántas personas viajan en su grupo inmediato?</string>
     <string name="survey_m1_radio_npers_option1">Viaja solo</string>
     <string name="survey_m1_radio_npers_option2">2 personas</string>
     <string name="survey_m1_radio_npers_option3">Nº personas</string>
     <string name="survey_m1_text_npers_personas">personas</string>
     <!--Pregunta24-->
-    <string name="survey_m1_text_nniños">24. ¿Cuántos de ellos son menores de 15 años?</string>
+    <string name="survey_m1_text_nniños">25. ¿Cuántos de ellos son menores de 15 años?</string>
     <!--Pregunta25-->
-    <string name="survey_m1_text_relacion">25. ¿Podría indicarme la relación existente entre los componentes de su grupo inmediato de viaje?</string>
+    <string name="survey_m1_text_relacion">26. ¿Podría indicarme la relación existente entre los componentes de su grupo inmediato de viaje?</string>
     <string name="survey_m1_radio_relacion_option1">Pareja/Cónyuge y/o Hijos</string>
     <string name="survey_m1_radio_relacion_option2">Parientes (abuelos, tíos, primos, etc.)</string>
     <string name="survey_m1_radio_relacion_option3">Amigos/Grupo de estudios</string>
     <string name="survey_m1_radio_relacion_option4">Compañeros de trabajo</string>
     <string name="survey_m1_radio_relacion_option9">Otros</string>
     <!--Pregunta26-->
-    <string name="survey_m1_text_cdtreser">26. Aproximadamente, ¿Cuánto tiempo hace que reservó su billete?</string>
+    <string name="survey_m1_text_cdtreser">27. Aproximadamente, ¿Cuánto tiempo hace que reservó su billete?</string>
     <string name="survey_m1_radio_cdtreser_option0">Hoy</string>
     <string name="survey_m1_radio_cdtreser_option1">Ayer</string>
     <string name="survey_m1_radio_cdtreser_dias">Indique nº días</string>
     <!--Pregunta27-->
-    <string name="survey_m1_text_cdbillet">27. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
+    <string name="survey_m1_text_cdbillet">28. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
     <string name="survey_m1_radio_cdbillet_option1">Preferente/Bussines/First</string>
     <string name="survey_m1_radio_cdbillet_option4">Combinado (vuelo+hotel)</string>
     <string name="survey_m1_radio_cdbillet_option6">Turista básica</string>
     <string name="survey_m1_radio_cdbillet_option5">Turista con extras</string>
     <string name="survey_m1_radio_cdbillet_option9">Otras (free, etc.)</string>
     <!--Pregunta28-->
-    <string name="survey_m1_text_nviaje">28. ¿Cuántos viajes en AVIÓN ha realizado en los últimos 12 MESES sin contar este?</string>
+    <string name="survey_m1_text_nviaje">29. ¿Cuántos viajes en AVIÓN ha realizado en los últimos 12 MESES sin contar este?</string>
     <string name="survey_m1_radio_nviaje_option0">Ninguno</string>
     <string name="survey_m1_radio_nviaje_numviajes">Nº de viajes</string>
     <string name="survey_m1_text_nviaje_numviajes_ent">1 viaje = Ida y vuelta</string>
@@ -285,37 +290,37 @@
     <string name="survey_m1_radio_eleccovid_option4">Las restricciones no han afectado a mi elección de viajar</string>
     <string name="survey_m1_radio_eleccovid_option5">No suelo viajar en avión</string>
     <!--Pregunta31-->
-    <string name="survey_m1_text_p44factu">31. ¿Ha facturado equipaje?</string>
+    <string name="survey_m1_text_p44factu">30. ¿Ha facturado equipaje?</string>
     <string name="survey_m1_radio_p44factu_option1">Sí</string>
     <string name="survey_m1_text_bulgrupo">Nº de bultos</string>
     <string name="survey_m1_radio_p44factu_option2">No</string>
     <!--Pregunta32-->
-    <string name="survey_m1_text_nperbul">32. ¿A cuántas personas pertenecen los bultos?</string>
+    <string name="survey_m1_text_nperbul">31. ¿A cuántas personas pertenecen los bultos?</string>
     <string name="survey_m1_radio_nperbul_option1">Una persona</string>
     <string name="survey_m1_radio_nperbul_option2">Dos personas</string>
     <string name="survey_m1_radio_nperbul_option3">Mas personas</string>
     <string name="survey_m1_text_nperbul_especificar">Especificar nº</string>
     <!--Pregunta33-->
-    <string name="survey_m1_text_dropoff">33. Y ¿En qué mostrador ha dejado su equipaje?</string>
+    <string name="survey_m1_text_dropoff">32. Y ¿En qué mostrador ha dejado su equipaje?</string>
     <string name="survey_m1_radio_dropoff_option1">Mostrador atendido por personal</string>
     <string name="survey_m1_radio_dropoff_option2">Mostrador auto facturación sin personal de compañía</string>
     <!--Pregunta34-->
-    <string name="survey_m1_text_chekinb">34. ¿Dónde ha obtenido su tarjeta de embarque?</string>
+    <string name="survey_m1_text_chekinb">33. ¿Dónde ha obtenido su tarjeta de embarque?</string>
     <string name="survey_m1_radio_chekinb_option0">Aeropuerto (mostrador facturación o compañía aérea)</string>
     <string name="survey_m1_radio_chekinb_option1">Aeropuerto (máquinas auto check-in)</string>
     <string name="survey_m1_radio_chekinb_option2">Por internet (online)</string>
     <!--Pregunta35-->
-    <string name="survey_m1_text_consume">35. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
+    <string name="survey_m1_text_consume">34. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto?</string>
     <string name="survey_m1_radio_consume_option1">Sí</string>
-    <string name="survey_m1_text_gas_cons">35a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
+    <string name="survey_m1_text_gas_cons">34a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
     <string name="survey_m1_text_gas_cons_ent">Expresar cantidad en €</string>
     <string name="survey_m1_radio_consume_option2">No</string>
     <!--Pregunta36-->
-    <string name="survey_m1_text_comprart">36. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
+    <string name="survey_m1_text_comprart">35. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
     <string name="survey_m1_radio_comprart_option1">Sí</string>
-    <string name="survey_m1_text_gas_com">36a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
+    <string name="survey_m1_text_gas_com">35a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
     <string name="survey_m1_text_gas_com_ent">Expresar cantidad en €</string>
-    <string name="survey_m1_text_prod">36b. ¿Podría indicar qué tipo de productos ha comprado?</string>
+    <string name="survey_m1_text_prod">35b. ¿Podría indicar qué tipo de productos ha comprado?</string>
     <string name="survey_m1_text_prod_ent">MOSTRAR TARJETA TIPOLOGIA DE PRODUCTO</string>
     <string name="survey_m1_text_prod1">1</string>
     <string name="survey_m1_text_prod2">2</string>
@@ -324,26 +329,26 @@
     <string name="survey_m1_text_prod5">5</string>
     <string name="survey_m1_radio_comprart_option2">No</string>
     <!--Pregunta37-->
-    <string name="survey_m1_text_cdslab">37. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_m1_text_cdslab">36. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
     <string name="survey_m1_radio_cdslab_option1">Trabaja</string>
     <string name="survey_m1_radio_cdslab_option3">Desempleado</string>
     <string name="survey_m1_radio_cdslab_option5">Estudiante</string>
     <string name="survey_m1_radio_cdslab_option2">Jubilado o pensionista</string>
     <string name="survey_m1_radio_cdslab_option6">Ama de casa</string>
     <!--Pregunta38-->
-    <string name="survey_m1_text_cdsprof">38. Usted trabaja como...</string>
+    <string name="survey_m1_text_cdsprof">37. Usted trabaja como...</string>
     <string name="survey_m1_radio_cdsprof_option1">Empresario o profesional con empleados</string>
     <string name="survey_m1_radio_cdsprof_option2">Profesional o trabajador autónomo</string>
-    <string name="survey_m1_radio_cdsprof_option5">Asalariado fijo del sector público</string>
+    <string name="survey_m1_radio_cdsprof_option5">Trabajador por cuenta ajena</string>
     <string name="survey_m1_radio_cdsprof_option6">Asalariado fijo del sector privado</string>
     <string name="survey_m1_radio_cdsprof_option0">Asalariado eventual o interino</string>
     <!--Pregunta39-->
-    <string name="survey_m1_text_estudios">39. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_m1_text_estudios">38. ¿Podría decirme el nivel de estudios terminados?</string>
     <string name="survey_m1_radio_estudios_option1">Primarios/Básicos/EGB</string>
     <string name="survey_m1_radio_estudios_option3">Secundarios (ESO/BUP/Bachiller/FP Grado medio)</string>
     <string name="survey_m1_radio_estudios_option5">Superiores (Universitarios/Técnico Superior)</string>
     <!--Pregunta40-->
-    <string name="survey_m1_text_cdedad">40. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <string name="survey_m1_text_cdedad">39. ¿A cuál de estos grupos de edad pertenece usted?</string>
     <string name="survey_m1_radio_cdedad_option1">menor de 15 años</string>
     <string name="survey_m1_radio_cdedad_option2">15 a 19 años</string>
     <string name="survey_m1_radio_cdedad_option3">20 a 24 años</string>
@@ -357,12 +362,12 @@
     <string name="survey_m1_radio_cdedad_option11">80 a 84 años</string>
     <string name="survey_m1_radio_cdedad_option12">mayor de 85 años</string>
     <!--Pregunta41-->
-    <string name="survey_m1_text_cdsexo">41. Sexo</string>
+    <string name="survey_m1_text_cdsexo">40. Sexo</string>
     <string name="survey_m1_radio_cdsexo_option1">Hombre</string>
     <string name="survey_m1_radio_cdsexo_option2">Mujer</string>
     <string name="survey_text_muchasgracias">Muchas gracias por su colaboración</string>
     <!--Pregunta42-->
-    <string name="survey_m1_text_valorexp">42. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_m1_text_valorexp">41. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
 
 
 

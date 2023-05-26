@@ -100,10 +100,10 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
 
         switch (idAeropuerto) {
             case 1:
-                maxPreg = 42;
+                maxPreg = 41;
                 break;
             case 2:
-                maxPreg = 42;
+                maxPreg = 41;
                 break;
             case 3:
                 maxPreg = 36;
@@ -151,6 +151,12 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                 break;
             case 18:
                 maxPreg = 33;
+                break;
+            case 19:
+                maxPreg = 41;
+                break;
+            case 20:
+                maxPreg = 41;
                 break;
         }
 

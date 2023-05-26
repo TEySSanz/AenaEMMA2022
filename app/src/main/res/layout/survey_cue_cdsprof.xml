@@ -82,19 +82,23 @@
                     android:id="@+id/survey_radio_cdsprof_option5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_cdsprof_option5" />
+                    android:text="@string/survey_m1_radio_cdsprof_option5"
+                    android:visibility="visible"/>
+
 
                 <RadioButton
                     android:id="@+id/survey_radio_cdsprof_option6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_cdsprof_option6" />
+                    android:text="@string/survey_m1_radio_cdsprof_option6"
+                    android:visibility="visible"/>
 
                 <RadioButton
                     android:id="@+id/survey_radio_cdsprof_option0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/survey_m1_radio_cdsprof_option0" />
+                    android:text="@string/survey_m1_radio_cdsprof_option0"
+                    android:visibility="visible"/>
 
                 <RadioButton
                     android:id="@+id/survey_radio_cdsprof_option9"
