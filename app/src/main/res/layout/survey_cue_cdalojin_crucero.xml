@@ -30,6 +30,14 @@
             android:text="@string/survey_m2_text_cdalojin"
             android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/survey_text_cdalojin_crucero_m1"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_m1_text_cdalojin"
+            android:visibility="gone" />
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdalojin_crucero"
             android:layout_width="wrap_content"

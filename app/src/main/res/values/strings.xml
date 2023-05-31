@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.41)</string>
+    <string name="app_name">EMMA 2022 (v1.42)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -334,7 +334,7 @@
     <string name="survey_m1_radio_cdslab_option3">Desempleado</string>
     <string name="survey_m1_radio_cdslab_option5">Estudiante</string>
     <string name="survey_m1_radio_cdslab_option2">Jubilado o pensionista</string>
-    <string name="survey_m1_radio_cdslab_option6">Ama de casa</string>
+    <string name="survey_m1_radio_cdslab_option6">Otra situación</string>
     <!--Pregunta38-->
     <string name="survey_m1_text_cdsprof">37. Usted trabaja como...</string>
     <string name="survey_m1_radio_cdsprof_option1">Empresario o profesional con empleados</string>
@@ -1224,7 +1224,7 @@
 
 
 
-    <string name="version">v1.41</string>
+    <string name="version">v1.42</string>
 
 
 </resources>

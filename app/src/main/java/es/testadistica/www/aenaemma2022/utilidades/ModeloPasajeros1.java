@@ -91,6 +91,13 @@ public class ModeloPasajeros1 extends Form {
         activity.findViewById(R.id.survey_radio_cdsprof_option0).setVisibility(GONE);
         activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
         switch (idAeropuerto) {
+            case 1:
+                //Madrid
+                //P10
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdalojin_crucero).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdalojin_crucero_m1).setVisibility(VISIBLE);
+                break;
             case 2:
                 //Barcelona
                 //P2
@@ -104,6 +111,10 @@ public class ModeloPasajeros1 extends Form {
                 activity.findViewById(R.id.survey_text_distracce_bcn).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_viene_re_bcn).setVisibility(VISIBLE);
+                //P10
+                activity.findViewById(R.id.survey_text_cdalojin_crucero).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdalojin_crucero_m1).setVisibility(VISIBLE);
+                break;
         }
     }
 
@@ -2398,21 +2409,24 @@ public class ModeloPasajeros1 extends Form {
                     final SearchableSpinner sp_cdpaisre_pais = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdpaisre);
                     sp_cdpaisre_pais.setBackgroundResource(android.R.drawable.btn_dropdown);
                     String texto_pais = getValorDesplegable(sp_cdpaisre_pais).substring(0,3);
-                    if (!(texto_pais.equals("724"))) {
-                        String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
-                        return getDialogValueBackError(activity,
-                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                textoError,
-                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                    } else {
-                        if (((texto_prov.equals("07")) || (texto_prov.equals("35")) || (texto_prov.equals("38")) || (texto_prov.equals("51")) || (texto_prov.equals("52")))) {
+                    RadioGroup rgVienere = (RadioGroup) activity.findViewById(R.id.survey_radiogroup_viene_re);
+                    if (rgVienere.getCheckedRadioButtonId()==R.id.survey_radio_viene_re_option1) {
+                        if (!(texto_pais.equals("724"))) {
                             String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
                             return getDialogValueBackError(activity,
                                     activity.getResources().getString(R.string.survey_model_text_errorTitle),
                                     textoError,
                                     activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                         } else {
+                            if (((texto_prov.equals("07")) || (texto_prov.equals("35")) || (texto_prov.equals("38")) || (texto_prov.equals("51")) || (texto_prov.equals("52")))) {
+                                String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
+                                return getDialogValueBackError(activity,
+                                        activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                        textoError,
+                                        activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                            } else {
 
+                            }
                         }
                     }
 
@@ -3919,7 +3933,7 @@ public class ModeloPasajeros1 extends Form {
                                 show = showQuestion(8); //>P8
                                 break;
                             case R.id.survey_radio_cdsinope_option2:
-                                show = showQuestion(15); //>P15
+                                show = showQuestion(16); //>P16
                                 break;
                         }
                     } else {
@@ -3939,7 +3953,7 @@ public class ModeloPasajeros1 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_cdalojen_option0:
-                                show = showQuestion(15); //>P15
+                                show = showQuestion(16); //>P16
                                 break;
                             case R.id.survey_radio_cdalojen_option1:
                                 show = showQuestion(9); //>P9
@@ -4065,31 +4079,17 @@ public class ModeloPasajeros1 extends Form {
                     RadioButton rbSitiopark6 = (RadioButton) activity.findViewById(R.id.survey_radio_sitiopark_option6);
                     rbSitiopark6.setVisibility(VISIBLE);
 
-                    if ((checkedId == R.id.survey_radio_ultimodo_umodo_option2) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option2) ||(checkedId3 == R.id.survey_radio_ultimodo_2modo_option2)) {
+                    if ((checkedId == R.id.survey_radio_ultimodo_umodo_option2)) {
                         show = showQuestion(13);//>P13
-                    } else if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5) ||
-                            (checkedId2 == R.id.survey_radio_ultimodo_1modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option5) ||
-                            (checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)) {
-                        if((checkedId == R.id.survey_radio_ultimodo_umodo_option4)||(checkedId2 == R.id.survey_radio_ultimodo_1modo_option4)||(checkedId3 == R.id.survey_radio_ultimodo_2modo_option4)){
-                            if((checkedId == R.id.survey_radio_ultimodo_umodo_option5)||(checkedId2 == R.id.survey_radio_ultimodo_1modo_option5)||(checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)){
-                                rbSitiopark5.setVisibility(GONE);
-                                rbSitiopark1.setVisibility(GONE);
-                                rbSitiopark6.setVisibility(GONE);
-                            }else{
+                    } else if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5)) {
+                        if((checkedId == R.id.survey_radio_ultimodo_umodo_option4)){
                                 rbSitiopark1.setVisibility(GONE);
                                 rbSitiopark6.setVisibility(GONE);
                                 rbSitiopark5.setVisibility(VISIBLE);
-                            }
-                        }else if((checkedId == R.id.survey_radio_ultimodo_umodo_option5)||(checkedId2 == R.id.survey_radio_ultimodo_1modo_option5)||(checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)){
-                            if((checkedId == R.id.survey_radio_ultimodo_umodo_option4)||(checkedId2 == R.id.survey_radio_ultimodo_1modo_option4)||(checkedId3 == R.id.survey_radio_ultimodo_2modo_option4)){
-                                rbSitiopark5.setVisibility(GONE);
-                                rbSitiopark1.setVisibility(GONE);
-                                rbSitiopark6.setVisibility(GONE);
-                            }else{
+                        }else if((checkedId == R.id.survey_radio_ultimodo_umodo_option5)){
                                 rbSitiopark5.setVisibility(GONE);
                                 rbSitiopark1.setVisibility(VISIBLE);
                                 rbSitiopark6.setVisibility(VISIBLE);
-                            }
                         }
                         show = showQuestion(14);//>P14
                     } else {
@@ -4105,26 +4105,7 @@ public class ModeloPasajeros1 extends Form {
                 break;
             case 13:
                 //P13
-                if (activated) {
-                    RadioGroup rgUltimodo_umodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_umodo);
-                    RadioGroup rgUltimodo_1modo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_1modo);
-                    RadioGroup rgUltimodo_2modo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_ultimodo_2modo);
-                    checkedId = rgUltimodo_umodo.getCheckedRadioButtonId();
-                    checkedId2 = rgUltimodo_1modo.getCheckedRadioButtonId();
-                    checkedId3 = rgUltimodo_2modo.getCheckedRadioButtonId();
-
-                    if ((checkedId == R.id.survey_radio_ultimodo_umodo_option4) || (checkedId == R.id.survey_radio_ultimodo_umodo_option5) ||
-                            (checkedId2 == R.id.survey_radio_ultimodo_1modo_option4) || (checkedId2 == R.id.survey_radio_ultimodo_1modo_option5) ||
-                            (checkedId3 == R.id.survey_radio_ultimodo_2modo_option4) || (checkedId3 == R.id.survey_radio_ultimodo_2modo_option5)) {
-                        show = showQuestion(14);//>P14
-                    } else {
-                        show = showQuestion(15);//>P14
-                    }
-
-                } else {
-                    show = showQuestion(15);//>P13
-                }
-                show = showQuestion(15);
+                show = showQuestion(15);//>P13
                 break;
             case 14:
                 //P14
@@ -5756,8 +5737,8 @@ public class ModeloPasajeros1 extends Form {
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
         String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);
-        String textoCdalojin = activity.getString(R.string.survey_m4_text_cdalojin);
-        TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero);
+        String textoCdalojin = activity.getString(R.string.survey_m1_text_cdalojin);
+        TextView tvCdalojin = (TextView) activity.findViewById(R.id.survey_text_cdalojin_crucero_m1);
         if (textSpCdlocaco.length()>6)
             textSpCdlocaco = textSpCdlocaco.substring(6, textSpCdlocaco.length());
         tvCdalojin.setText(textoCdalojin.replace("%1$s", textSpCdlocaco));
@@ -5771,7 +5752,7 @@ public class ModeloPasajeros1 extends Form {
         String textoCdterm = activity.getString(R.string.survey_m1_text_cdterm);
         if (textSpCdiaptod.length()>4)
             textSpCdiaptod = textSpCdiaptod.substring(4, textSpCdiaptod.length());
-        TextView tvCdterm= (TextView) activity.findViewById(R.id.survey_text_cdterm_m4);
+        TextView tvCdterm= (TextView) activity.findViewById(R.id.survey_text_cdterm);
         tvCdterm.setText(textoCdterm.replace("%1$s", textSpCdiaptod));
     }
 
