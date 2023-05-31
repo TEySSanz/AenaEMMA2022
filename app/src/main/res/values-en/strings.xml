@@ -272,7 +272,7 @@
     <string name="survey_m1_radio_cdsexo_option1">Male</string>
     <string name="survey_m1_radio_cdsexo_option2">Female</string>
     <string name="survey_text_muchasgracias">THANK YOU VERY MUCH FOR YOUR HELP</string>
-    <string name="survey_m1_text_valorexp">41. How do you rate the experience of your time at the airport?</string>
+    <string name="survey_m1_text_valorexp">41. How likely are you to recommend the experience at this airport to a colleague or friend?</string>
     <string name="spinner_tipoAeropuerto_title">SELECT AIRPORT</string>
     <string name="survey_m1_text_cdsinope_bcn">7. During your connection has spent the night in Barcelona or around?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Where did you start your journey to take this flight in Barcelona-El Prat´s airport?</string>
@@ -439,7 +439,7 @@
     <string name="survey_m4_radio_cdsexo_option1">Male</string>
     <string name="survey_m4_radio_cdsexo_option2">Female</string>
     <string name="survey_m4_text_muchasgracias">THANK YOU VERY MUCH FOR YOUR HELP</string>
-    <string name="survey_m4_text_valorexp">36. How do you rate the experience of your time at the airport? (valore del 1 al 10)</string>
+    <string name="survey_m4_text_valorexp">36. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 1 al 10)</string>
     <string name="survey_m4_text_eleccovid">25. How the COVID-19 pandemic has affected your choice to travel by plane: (Check the option that best suits your choice)</string>
     <string name="survey_m4_radio_eleccovid_option1">I Will only take a flight if absolutely necessary</string>
     <string name="survey_m4_radio_eleccovid_option2">It is unlikely to travel to pre-pandemic levels.</string>
@@ -509,7 +509,7 @@
     <string name="survey_m2_text_estudios">34.Education</string>
     <string name="survey_m2_text_cdedad">35.Which of these age groups do you belong to?</string>
     <string name="survey_m2_text_cdsexo">36.Gender</string>
-    <string name="survey_m2_text_valorexp">37.How do you rate the experience of your time at the airport?</string>
+    <string name="survey_m2_text_valorexp">37.How likely are you to recommend the experience at this airport to a colleague or friend?</string>
     <string name="survey_m2_radio_cdcambio_option1">Yes</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
     <string name="survey_m2_radio_viene_re_option1">Coming from your residence</string>

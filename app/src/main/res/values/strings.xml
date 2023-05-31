@@ -367,7 +367,7 @@
     <string name="survey_m1_radio_cdsexo_option2">Mujer</string>
     <string name="survey_text_muchasgracias">Muchas gracias por su colaboración</string>
     <!--Pregunta42-->
-    <string name="survey_m1_text_valorexp">41. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_m1_text_valorexp">41. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
 
 
 
@@ -878,7 +878,7 @@
     <string name="dos_puntos">:</string>
     <string name="survey_text_error_date">Error hora</string>
     <!--Pregunta36-->
-    <string name="survey_m4_text_valorexp">36. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_m4_text_valorexp">36. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
 
     <!--Preguntas Modelo 5 IBZ-->
 
@@ -1033,7 +1033,7 @@
     <!--Pregunta37-->
     <string name="survey_m2_text_cdsexo">36. Sexo</string>
     <!--Pregunta38-->
-    <string name="survey_m2_text_valorexp">37. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 1 al 10)</string>
+    <string name="survey_m2_text_valorexp">37.¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
 
     <!--Preguntas Menorca-->
 

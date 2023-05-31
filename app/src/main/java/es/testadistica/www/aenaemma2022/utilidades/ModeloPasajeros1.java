@@ -4223,7 +4223,18 @@ public class ModeloPasajeros1 extends Form {
                     if (checkedId > 0) {
                         switch (checkedId) {
                             case R.id.survey_radio_npers_option1:
-                                show = showQuestion(32); //>P32
+                                if (checkedId2 > 0) {
+                                    switch (checkedId2) {
+                                        case R.id.survey_radio_p44factu_option1:
+                                            show = showQuestion(32); //>P32
+                                            break;
+                                        case R.id.survey_radio_p44factu_option2:
+                                            show = showQuestion(33); //>P33
+                                            break;
+                                    }
+                                } else {
+                                    show = showQuestion(32); //>P32
+                                }
                                 break;
                             default:
                                 if (checkedId2 > 0) {
@@ -4232,7 +4243,7 @@ public class ModeloPasajeros1 extends Form {
                                             show = showQuestion(31); //>P31
                                             break;
                                         case R.id.survey_radio_p44factu_option2:
-                                            show = showQuestion(32); //>P32
+                                            show = showQuestion(33); //>P33
                                             break;
                                     }
                                 } else {
