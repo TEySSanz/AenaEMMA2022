@@ -308,7 +308,6 @@
     <string name="survey_m5_text_estudios">30. Abgeschlossene Ausbildung?</string>
     <string name="survey_m5_text_cdedad">31.  Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_m5_text_cdsexo">32. Sex</string>
-    <string name="survey_m5_text_valorexp">33. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m4_text_cdpaisna">"1. Welche STAATSANGEHÖRIGKEIT haben sie? "</string>
     <string name="survey_m4_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m4_text_viene_re">3. Woher kommenSie, um diesen Flug anf Sevilla zu nehmen?</string>
@@ -418,7 +417,6 @@
     <string name="survey_m2_text_estudios">34.Abgeschlossene Ausbildung?</string>
     <string name="survey_m2_text_cdedad">35.Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_m2_text_cdsexo">36. Sex</string>
-    <string name="survey_m2_text_valorexp">37.Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
     <string name="survey_m2_radio_cdcambio_option1">Ja</string>
     <string name="survey_m2_radio_cdcambio_option2">Nein</string>
     <string name="survey_m2_radio_viene_re_option1">"Sie kommen direkt aus lhrem Wohnsitzort "</string>
@@ -440,7 +438,7 @@
     <string name="survey_m2_text_viene_re_ACE">3.Woher kommenSie, um diesen Flug anf Lanzarote zu nehmen?</string>
     <string name="survey_m2_text_viene_re_FUE">3.Woher kommenSie, um diesen Flug anf Fuerteventura zu nehmen?</string>
     <string name="survey_GC_text_cdsexo">31. Sex</string>
-    <string name="survey_GC_text_valorexp">32. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
+    <string name="survey_GC_text_valorexp">32. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_GC_text_cdedad">30.  Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_GC_text_estudios">29. Abgeschlossene Ausbildung?</string>
     <string name="survey_GC_text_cdsprof">28. arbeitest du wie</string>
@@ -467,4 +465,6 @@
     <string name="survey_ACE_text_cdociaar">12.mit welcher Fluggesellschaft fuhren sie lhre reise fost?</string>
     <string name="survey_m2_text_viene_re_LEI">3.Woher kommenSie, um diesen Flug anf Almeria zu nehmen?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Woher kommenSie, um diesen Flug anf Santander zu nehmen?</string>
+    <string name="survey_m5_text_valorexp">33. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m2_text_valorexp">37. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
 </resources>

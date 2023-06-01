@@ -210,7 +210,7 @@
     <string name="survey_m1_radio_acomptes_option3">Mas de 2 personas, especificar</string>
     <string name="survey_m1_text_acomptes_especificar">Especificar</string>
     <!--Pregunta15-->
-    <string name="survey_m1_text_bustermi">16. ¿Hoy ha tenido que utilizar el autobús entre teminales?</string>
+    <string name="survey_m1_text_bustermi">16. ¿Hoy ha tenido que utilizar el autobús entre terminales?</string>
     <string name="survey_m1_radio_bustermi_option1">Sí</string>
     <string name="survey_m1_radio_bustermi_option2">No</string>
     <!--Pregunta16-->
@@ -921,8 +921,7 @@
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
     <string name="survey_GC_text_cdsexo">31. Sexo</string>
     <!--Pregunta33-->
-    <string name="survey_m5_text_valorexp">33. ¿Cómo valora la experiencia de su paso por el aeropuerto? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
-    <string name="survey_GC_text_valorexp">32. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
+    <string name="survey_GC_text_valorexp">32. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
 
     <!--Preguntas Palma de mallorca-->
 
@@ -1033,7 +1032,6 @@
     <!--Pregunta37-->
     <string name="survey_m2_text_cdsexo">36. Sexo</string>
     <!--Pregunta38-->
-    <string name="survey_m2_text_valorexp">37.¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 1 al 10)</string>
 
     <!--Preguntas Menorca-->
 
@@ -1225,6 +1223,8 @@
 
 
     <string name="version">v1.42</string>
+    <string name="survey_m2_text_valorexp">37. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m5_text_valorexp">33. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
 
 
 </resources>

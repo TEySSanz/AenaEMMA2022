@@ -460,7 +460,7 @@
     <string name="survey_m5_text_estudios">30. Education</string>
     <string name="survey_m5_text_cdedad">31. Which of these age groups do you belong to?</string>
     <string name="survey_m5_text_cdsexo">32. Gender</string>
-    <string name="survey_m5_text_valorexp">33. How do you rate the experience of your time at the airport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m5_text_valorexp">33. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m5_text_viene_re">3.Where did you start your journey to take this flight in Ibiza´s airport?</string>
     <string name="survey_m2_text_cdpaisna">1.Could you tell me your NATIONALITY?</string>
     <string name="survey_m2_text_cdpaisre">2.In which country have you been living for most of the last 12 months?</string>
@@ -509,7 +509,6 @@
     <string name="survey_m2_text_estudios">34.Education</string>
     <string name="survey_m2_text_cdedad">35.Which of these age groups do you belong to?</string>
     <string name="survey_m2_text_cdsexo">36.Gender</string>
-    <string name="survey_m2_text_valorexp">37.How likely are you to recommend the experience at this airport to a colleague or friend?</string>
     <string name="survey_m2_radio_cdcambio_option1">Yes</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
     <string name="survey_m2_radio_viene_re_option1">Coming from your residence</string>
@@ -635,7 +634,7 @@
     <string name="survey_m2_text_viene_re_ACE">3.Where did you start your journey to take this flight in Lanzarote´s airport?</string>
     <string name="survey_m2_text_viene_re_FUE">3.Where did you start your journey to take this flight in Fuerteventura´s airport?</string>
     <string name="survey_GC_text_cdsexo">31. Gender</string>
-    <string name="survey_GC_text_valorexp">32. How likely are you to recommend the experience at this airport to a colleague or friend?</string>
+    <string name="survey_GC_text_valorexp">32. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_GC_text_cdedad">30. Which of these age groups do you belong to?</string>
     <string name="survey_GC_text_estudios">29. Education</string>
     <string name="survey_GC_text_cdsprof">28.Do you work as?</string>
@@ -662,4 +661,5 @@
     <string name="survey_ACE_text_cdociaar">12.Which airline are you following your flight with?</string>
     <string name="survey_m2_text_viene_re_LEI">3.Where did you start your journey to take this flight in Almeria´s airport?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Where did you start your journey to take this flight in Santander´s airport?</string>
+    <string name="survey_m2_text_valorexp">37. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
 </resources>

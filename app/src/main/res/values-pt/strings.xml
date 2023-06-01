@@ -309,7 +309,7 @@
     <string name="survey_m5_text_estudios">"30. Pode dizer-me o nível de educação que completou? "</string>
     <string name="survey_m5_text_cdedad">31. ¿ A qual destas faixas etárias pertence?</string>
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
-    <string name="survey_m5_text_valorexp">33. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)?\t(valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m5_text_valorexp">33. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m4_text_cdsexo">35. Sexo</string>
     <string name="survey_m4_text_cdpaisna">1.Pode dizer-me qual é a sua nacionalidade?</string>
     <string name="survey_m4_text_cdpaisre">2.Em que PAÍS tem residido durante a maior parte dos últimos 12 meses?</string>
@@ -419,7 +419,7 @@
     <string name="survey_m2_text_estudios">34.Pode dizer-me o nível de educação que completou?</string>
     <string name="survey_m2_text_cdedad">35.A qual destas faixas etárias pertence?</string>
     <string name="survey_m2_text_cdsexo">36.Sexo</string>
-    <string name="survey_m2_text_valorexp">37.Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)?</string>
+    <string name="survey_m2_text_valorexp">37. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)?</string>
     <string name="survey_m2_radio_cdcambio_option1">Se</string>
     <string name="survey_m2_radio_cdcambio_option2">Não</string>
     <string name="survey_m2_radio_viene_re_option1">" Vem da sua residência"</string>
@@ -440,7 +440,7 @@
     <string name="survey_m2_text_viene_re_ACE">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Lanzarote?</string>
     <string name="survey_m2_text_viene_re_FUE">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Fuerteventura?</string>
     <string name="survey_GC_text_cdsexo">31. Sexo</string>
-    <string name="survey_GC_text_valorexp">32. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)?</string>
+    <string name="survey_GC_text_valorexp">32. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_GC_text_cdedad">30. ¿ A qual destas faixas etárias pertence?</string>
     <string name="survey_GC_text_estudios">"29. Pode dizer-me o nível de educação que completou? "</string>
     <string name="survey_GC_text_cdsprof">"28. Trabalha como... "</string>

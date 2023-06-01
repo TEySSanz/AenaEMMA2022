@@ -310,7 +310,6 @@
     <string name="survey_m5_text_estudios">30. Éducation</string>
     <string name="survey_m5_text_cdedad">"31. ¿Auquel de ces gropupes d´age appartenez-vous? "</string>
     <string name="survey_m5_text_cdsexo">32. Sexe</string>
-    <string name="survey_m5_text_valorexp">"33. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)            "</string>
     <string name="survey_m4_text_cdpaisna">"1.Quelle est votre NATIONALITÉ? "</string>
     <string name="survey_m4_text_cdpaisre">2.Dans quel PAYS aves-vous vécu pour la plus grande partie des 12 derniers mois?</string>
     <string name="survey_m4_text_cdalojin">4.Quel type de logement avez-vous utilisé lors de votre séjour à %1$s?</string>
@@ -418,7 +417,6 @@
     <string name="survey_m2_text_estudios">34.Éducation</string>
     <string name="survey_m2_text_cdedad">35.Auquel de ces gropupes d´age appartenez-vous?</string>
     <string name="survey_m2_text_cdsexo">36.Sexe</string>
-    <string name="survey_m2_text_valorexp">37.Comment évaluez-vous votre expérience à l\"\'\"aéroport? (veuillez noter de 1 à 10)</string>
     <string name="survey_m2_radio_cdcambio_option1">Oui</string>
     <string name="survey_m2_radio_cdcambio_option2">Non</string>
     <string name="survey_m2_radio_viene_re_option1">"Résidence priveé "</string>
@@ -439,7 +437,7 @@
     <string name="survey_m2_text_viene_re_ACE">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Lanzarote?</string>
     <string name="survey_m2_text_viene_re_FUE">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Fuerteventura?</string>
     <string name="survey_GC_text_cdsexo">31. Sexe</string>
-    <string name="survey_GC_text_valorexp">"32. Comment évaluez-vous votre expérience à l'aéroport? (veuillez noter de 1 à 10)                  "</string>
+    <string name="survey_GC_text_valorexp">"32. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)             "</string>
     <string name="survey_GC_text_cdedad">"30. ¿Auquel de ces gropupes d´age appartenez-vous? "</string>
     <string name="survey_GC_text_estudios">29. Éducation</string>
     <string name="survey_GC_text_cdsprof">"28. Travaillez-vous en tant que… "</string>
@@ -466,4 +464,6 @@
     <string name="survey_ACE_text_cdociaar">12.Avec quelle compaigne aerienne suivez-vous votre voyage?</string>
     <string name="survey_m2_text_viene_re_LEI">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Almeria?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Santander?</string>
+    <string name="survey_m5_text_valorexp">"33. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)             "</string>
+    <string name="survey_m2_text_valorexp">37. Comment évaluez-vous votre expérience à l\'aéroport?(valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
 </resources>

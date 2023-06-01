@@ -321,7 +321,6 @@
     <string name="survey_m5_text_estudios">30. ¿ odria dir-me el nivell d\'estudis acabats?</string>
     <string name="survey_m5_text_cdedad">"31. ¿ A quin d'aquests grups d'edat pertany vostè? "</string>
     <string name="survey_m5_text_cdsexo">32. Sexo</string>
-    <string name="survey_m5_text_valorexp">"33. ¿ Com valora l'experiència del seu pas per l'aeroport? (valori d'1 a 10)           "</string>
     <string name="survey_m4_text_cdpaisna">"1.¿Podria dir-me quina és la seva nacionalitat? "</string>
     <string name="survey_m4_text_cdpaisre">2.¿En quin PAÍS ha estat residint la major part dels últims 12 mesos?</string>
     <string name="survey_m4_text_viene_re">3. Per a agafar aquest vol, d\'on part per a accedir a l\'aeroport de Ibiza?</string>
@@ -461,7 +460,7 @@
     <string name="survey_m2_text_estudios">34.¿odria dir-me el nivell d\\\'estudis acabats?</string>
     <string name="survey_m2_text_cdedad">35.¿A quin d\\\'aquests grups d\\\'edat pertany vostè?</string>
     <string name="survey_m2_text_cdsexo">36.Sexo</string>
-    <string name="survey_m2_text_valorexp">37.¿Com valora l\'experiència del seu pas per l\'\\aeroport? (valori d\'1 a 10)</string>
+    <string name="survey_m2_text_valorexp">37. ¿ Com valora l\'experiència del seu pas per l\'aeroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m2_radio_cdcambio_option1">Si</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
     <string name="survey_m2_radio_viene_re_option1">Viene de su residencia</string>
@@ -483,7 +482,7 @@
     <string name="survey_m2_text_viene_re_ACE">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Lanzarote?</string>
     <string name="survey_m2_text_viene_re_FUE">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Fuerteventura?</string>
     <string name="survey_GC_text_cdsexo">31. Sexo</string>
-    <string name="survey_GC_text_valorexp">"32. ¿ Com valora l'experiència del seu pas per l'aeroport? (valori d'1 a 10)           "</string>
+    <string name="survey_GC_text_valorexp">"32. ¿ Com valora l'experiència del seu pas per l'aeroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)      "</string>
     <string name="survey_GC_text_cdedad">"30. ¿ A quin d'aquests grups d'edat pertany vostè? "</string>
     <string name="survey_GC_text_estudios">29. ¿ odria dir-me el nivell d\'estudis acabats?</string>
     <string name="survey_GC_text_cdsprof">28. Vostè treballa com a …</string>
@@ -510,4 +509,5 @@
     <string name="survey_ACE_text_cdociaar">12.¿Companyia aèria amb la qual contínua el viatge?</string>
     <string name="survey_m2_text_viene_re_LEI">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Almeria?</string>
     <string name="survey_m2_text_viene_re_SDR">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Santander?</string>
+    <string name="survey_m5_text_valorexp">"33. ¿ Com valora l'experiència del seu pas per l'aeroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)      "</string>
 </resources>
