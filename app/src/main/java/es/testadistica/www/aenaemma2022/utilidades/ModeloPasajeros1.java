@@ -3224,7 +3224,7 @@ public class ModeloPasajeros1 extends Form {
                     //P41
                     RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
                     int intValorexp = Math.round(rabValorexp.getRating());
-                    if (intValorexp<1 || intValorexp>10) {
+                    if (intValorexp<1 || intValorexp>11) {
                         String textoError = activity.getResources().getString(R.string.survey_text_error_1a10);
                         rabValorexp.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
                         return getDialogValueBackError(activity,
@@ -5581,7 +5581,7 @@ public class ModeloPasajeros1 extends Form {
 
         //P41
         RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
-        quest.setValorexp(Math.round(rabValorexp.getRating()));
+        quest.setValorexp(Math.round(rabValorexp.getRating())-1);
 
         return quest;
     }

@@ -110,7 +110,7 @@
     <string name="survey_m1_text_estudios">38. Può dirmi il livello di istruzione che ha conseguito?</string>
     <string name="survey_m1_text_cdedad">39 ¿ A quale di queste fasce d\'età appartiene?</string>
     <string name="survey_m1_text_cdsexo">40. Sesso</string>
-    <string name="survey_m1_text_valorexp">41. Come giudica la sua esperienza in aeroporto (da 1 a 10)?</string>
+    <string name="survey_m1_text_valorexp">41. Come giudica la sua esperienza in aeroporto (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)?</string>
     <string name="survey_m1_text_cdpaisre_ent">Para España preguntar Provincia y localidad. Países lista 1 y 2 área del mapa</string>
     <string name="survey_m1_text_cdpaisre_prov">Provincia</string>
     <string name="survey_m1_radio_viene_re_option2">Provincia</string>
@@ -309,7 +309,7 @@
     <string name="survey_m5_text_estudios">30. Può dirmi il livello di istruzione che ha conseguito?</string>
     <string name="survey_m5_text_cdedad">31. ¿ A quale di queste fasce d\'età appartiene?</string>
     <string name="survey_m5_text_cdsexo">32. Sesso</string>
-    <string name="survey_m5_text_valorexp">33. Come giudica la sua esperienza in aeroporto (da 1 a 10)?</string>
+    <string name="survey_m5_text_valorexp">33. Come giudica la sua esperienza in aeroporto ?(valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m4_text_cdpaisna">1. Può dirmi la sua nazionalità?</string>
     <string name="survey_m4_text_cdpaisre">2. In quale PAESE ha risieduto per la maggior parte degli ultimi 12 mesi?</string>
     <string name="survey_m4_text_viene_re">3. Per prendere questo volo, da dove parte per arrivare all\'aeroporto di Sevilla??</string>
@@ -371,7 +371,7 @@
     <string name="survey_m4_text_estudios">33. Può dirmi il livello di istruzione che ha conseguito?</string>
     <string name="survey_m4_text_cdedad">"34. ¿ A quale di queste fasce d'età appartiene? "</string>
     <string name="survey_m4_text_cdsexo">35. Sesso</string>
-    <string name="survey_m4_text_valorexp">36. Come giudica la sua esperienza in aeroporto (da 1 a 10)?</string>
+    <string name="survey_m4_text_valorexp">36. Come giudica la sua esperienza in aeroporto (da 1 a 10)? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m2_text_cdpaisna">1.Può Può dirmi la sua nazionalità?</string>
     <string name="survey_m2_text_cdpaisre">2.In quale PAESE ha risieduto per la maggior parte degli ultimi 12 mesi</string>
     <string name="survey_m2_text_cdcambio">3.Sei arrivato in aeroporto per fare una coincidenza?</string>

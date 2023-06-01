@@ -127,7 +127,7 @@
     <string name="survey_m1_text_estudios">38. ¿ odria dir-me el nivell d\'estudis acabats?</string>
     <string name="survey_m1_text_cdedad">39. ¿ A quin d\'aquests grups d\'edat pertany vostè?</string>
     <string name="survey_m1_text_cdsexo">40. Sexo</string>
-    <string name="survey_m1_text_valorexp">"41. ¿ Com valora l'experiència del seu pas per l'aeroport? (valori d'1 a 10) "</string>
+    <string name="survey_m1_text_valorexp">41. ¿ Com valora l\'experiència del seu pas per l\'aeroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_text_muchasgracias">MOLTES GRÀCIES PER LA SEVA COL·LABORACIÓ</string>
     <string name="survey_m1_text_cdpaisre_ent">Para España preguntar Provincia y localidad. Países lista 1 y 2 área del mapa</string>
     <string name="survey_m1_text_cdpaisre_prov">Provincia</string>

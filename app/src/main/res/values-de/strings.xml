@@ -65,7 +65,7 @@
     <string name="survey_m1_text_estudios">38. Abgeschlossene Ausbildung?</string>
     <string name="survey_m1_text_cdedad">39.  Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_m1_text_cdsexo">40. Sex</string>
-    <string name="survey_m1_text_valorexp">41. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
+    <string name="survey_m1_text_valorexp">41. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m1_radio_cdsexo_option1">Männer</string>
     <string name="survey_m1_radio_cdsexo_option2">Frauen</string>
     <string name="survey_m1_radio_cdcambio_option1">Ja</string>
@@ -308,7 +308,7 @@
     <string name="survey_m5_text_estudios">30. Abgeschlossene Ausbildung?</string>
     <string name="survey_m5_text_cdedad">31.  Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_m5_text_cdsexo">32. Sex</string>
-    <string name="survey_m5_text_valorexp">33. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
+    <string name="survey_m5_text_valorexp">33. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m4_text_cdpaisna">"1. Welche STAATSANGEHÖRIGKEIT haben sie? "</string>
     <string name="survey_m4_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m4_text_viene_re">3. Woher kommenSie, um diesen Flug anf Sevilla zu nehmen?</string>
@@ -370,7 +370,7 @@
     <string name="survey_m4_radio_cdalojin_option7">Bei Verwandten/Bekannten</string>
     <string name="survey_m4_radio_cdalojin_option8">Eigentum der Firma</string>
     <string name="survey_m4_radio_cdalojin_option9">Anderes</string>
-    <string name="survey_m4_text_valorexp">36. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (bitte bewerten Sie von 1 bis 10)</string>
+    <string name="survey_m4_text_valorexp">36. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m2_text_cdpaisna">1.Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m2_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m2_text_cdcambio">3.Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>

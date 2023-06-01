@@ -278,7 +278,7 @@
     <string name="survey_m1_radio_cdsexo_option1">Homme</string>
     <string name="survey_m1_radio_cdsexo_option2">Femme</string>
     <string name="survey_text_muchasgracias">MERCI BEAUCOUP POUR VOTRE COOPÉRATION</string>
-    <string name="survey_m1_text_valorexp">41. Comment évaluez-vous votre expérience à l\'aéroport? (veuillez noter de 1 à 10)</string>
+    <string name="survey_m1_text_valorexp">41. Comment évaluez-vous votre expérience à l\'aéroport?(valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_model_text_errorTitle">¡Error!</string>
     <string name="survey_model_text_errorBtnReview">Revisar</string>
     <string name="survey_text_selectOption">Se debe indicar una opción</string>
@@ -310,7 +310,7 @@
     <string name="survey_m5_text_estudios">30. Éducation</string>
     <string name="survey_m5_text_cdedad">"31. ¿Auquel de ces gropupes d´age appartenez-vous? "</string>
     <string name="survey_m5_text_cdsexo">32. Sexe</string>
-    <string name="survey_m5_text_valorexp">"33. Comment évaluez-vous votre expérience à l'aéroport? (veuillez noter de 1 à 10)                  "</string>
+    <string name="survey_m5_text_valorexp">"33. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)            "</string>
     <string name="survey_m4_text_cdpaisna">"1.Quelle est votre NATIONALITÉ? "</string>
     <string name="survey_m4_text_cdpaisre">2.Dans quel PAYS aves-vous vécu pour la plus grande partie des 12 derniers mois?</string>
     <string name="survey_m4_text_cdalojin">4.Quel type de logement avez-vous utilisé lors de votre séjour à %1$s?</string>
@@ -362,7 +362,7 @@
     <string name="survey_m4_text_estudios">33. Éducation</string>
     <string name="survey_m4_text_cdedad">"34. ¿Auquel de ces gropupes d´age appartenez-vous? "</string>
     <string name="survey_m4_text_cdsexo">35. Sexe</string>
-    <string name="survey_m4_text_valorexp">"36. Comment évaluez-vous votre expérience à l'aéroport? (veuillez noter de 1 à 10)                  "</string>
+    <string name="survey_m4_text_valorexp">"36. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)              "</string>
     <string name="survey_m4_radio_viene_re">"Résidence priveé "</string>
     <string name="survey_m4_radio_sitiopark_option1">"En ZONE DOWNLOADING/UPLOADING PASSAGERS/Parking Express (15\"’\" gratuit) "</string>
     <string name="survey_m4_radio_cdalojin_option1">" Hôtel o similaire"</string>
