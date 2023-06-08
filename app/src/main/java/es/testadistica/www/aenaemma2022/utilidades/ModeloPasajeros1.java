@@ -890,17 +890,20 @@ public class ModeloPasajeros1 extends Form {
         sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
                 String filtro = " provincia IN (";
-
+                /*
                 if (id > 0 && id <10){
                     filtro = filtro + "'00','0"+id+"','99',";
                 }  else if (id > 9 && id <=57){
                     filtro =  filtro +"'00','"+id+"','99',";
-                }
+                }*/
                 /*else if (id == 53){
                     filtro =  filtro +"'99',";
-                } */ else {
+                } */
+                if (!texto.equals("00")) {
+                    filtro =  filtro +"'00','"+texto+"','99',";
+                } else {
                     filtro = " (iden > -1 ";
                 }
 
