@@ -122,6 +122,7 @@ public class ModeloPasajeros1 extends Form {
         ArrayList<mListString> paisesAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES,"iden", "codigo","descripcion", "descripcion"));
         ArrayList<mListString> paises1y2Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPAISES1Y2,"iden", "codigo","zonas || ', ' || descripcion", "zonas || ', ' || descripcion"));
         ArrayList<mListString> provinciasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo"));
+        ArrayList<mListString> provinciasP9Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo", "codigo NOT IN ('07', '35', '38', '51', '52')"));
         ArrayList<mListString> municipiosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> motivoViajeAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMOTIVOVIAJE,"iden", "codigo","descripcion", "codigo"));
         ArrayList<mListString> productosAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPRODUCTOS,"iden", "codigo","descripcion", "codigo"));
@@ -321,7 +322,7 @@ public class ModeloPasajeros1 extends Form {
         });
         //P9
         SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-        sp_cdlocaco_prov.setAdapter(provinciasAdapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
+        sp_cdlocaco_prov.setAdapter(provinciasP9Adapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
         /*sp_cdlocaco_prov.setAdapter(provinciasAdapter);
         sp_cdlocaco_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocaco_prov.setPositiveButton(activity.getString(R.string.spinner_close));*/
@@ -2253,7 +2254,7 @@ public class ModeloPasajeros1 extends Form {
                         /*if (!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_distres_area), "000")) {
                             return false;
                         }*/
-                        final SearchableSpinner distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres);
+                        final SearchableSpinner distres_area = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_distres_area);
 
                         if (getValorDesplegable(distres_area).substring(0,3).equals("000")) {
                             distres_area.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
