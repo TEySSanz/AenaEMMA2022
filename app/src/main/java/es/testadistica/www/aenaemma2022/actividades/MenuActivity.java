@@ -677,7 +677,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMBUS + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_NUMDARSENA + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_PLAYA + ", " +
-                "T1." + Contracts.COLUMN_CUEPASAJEROS_SITIOPARKOTRO +
+                "T1." + Contracts.COLUMN_CUEPASAJEROS_SITIOPARKOTRO + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_VTC + ", " +
                 "T1." + Contracts.COLUMN_CUEPASAJEROS_VTCOTRO +
                 " FROM " + Contracts.TABLE_CUEPASAJEROS + " AS T1 " +
