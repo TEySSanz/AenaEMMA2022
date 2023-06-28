@@ -467,5 +467,17 @@
     <string name="survey_m2_text_viene_re_LEI">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Almeria?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Santander?</string>
     <string name="survey_m2_text_valorexp">37. Come giudica la sua esperienza in aeroporto (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)?</string>
+    <string name="survey_m2_text_viene_re_SCQ">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Santiago?</string>
+    <string name="survey_SCQ_text_consume">28. Oggi ha consumato prodotti presso il servizio di ristorazione dell\"\'\"aeroporto (caffetterie, distributori automatici, ecc.)?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Quanto avete speso oggi per i servizi di catering aeroportuale?</string>
+    <string name="survey_SCQ_text_comprart">29. Ha acquistato articoli nei negozi dell\'aeroporto?</string>
+    <string name="survey_SCQ_text_gas_com">29a. E quanto avete speso nei negozi dell\'aeroporto?</string>
+    <string name="survey_SCQ_text_prod">29b. ¿Potreste indicare che tipo di prodotti avete acquistato?</string>
+    <string name="survey_SCQ_text_cdslab">30. In quale delle seguenti situazioni lavorative si trova attualmente?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Lavorate come...</string>
+    <string name="survey_SCQ_text_estudios">32. Può dirmi il livello di istruzione che ha conseguito?</string>
+    <string name="survey_SCQ_text_cdedad">33. ¿A quale di queste fasce d\'età appartiene?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Sesso</string>
+    <string name="survey_SCQ_text_valorexp">35. Come giudica la sua esperienza in aeroporto? (valore del 0 al 10)</string>
 
 </resources>

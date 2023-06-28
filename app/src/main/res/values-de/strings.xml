@@ -467,4 +467,16 @@
     <string name="survey_m2_text_viene_re_SDR">3.Woher kommenSie, um diesen Flug anf Santander zu nehmen?</string>
     <string name="survey_m5_text_valorexp">33. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m2_text_valorexp">37. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m2_text_viene_re_SCQ">3.Woher kommenSie, um diesen Flug anf Santiago zu nehmen?</string>
+    <string name="survey_SCQ_text_consume">28. Haben Sie heute ein Produkt in der Flughafengastronomie (Cafeterias, Verkaufsautomaten usw.) verzehrt?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Wie viel haben Sie für Flughafen-Catering-Services ausgegeben?</string>
+    <string name="survey_SCQ_text_comprart">29. Haben Sie in den Flughafenshops etwas gekauft?</string>
+    <string name="survey_SCQ_text_gas_com">29a. Und wie viel haben Sie in den Flughafenshops ausgegeben?</string>
+    <string name="survey_SCQ_text_prod">29b. Können Sie angeben, welche Art von Produkten Sie gekauft haben?</string>
+    <string name="survey_SCQ_text_cdslab">30. In welcher der folgenden Arbeissituatuinen befinden Sie sich zur Zeit?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Arbeitest du wie</string>
+    <string name="survey_SCQ_text_estudios">32. Abgeschlossene Ausbildung?</string>
+    <string name="survey_SCQ_text_cdedad">33. Zu welcher dieser Altersgruppen gehören Sie?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Sex</string>
+    <string name="survey_SCQ_text_valorexp">35. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10)</string>
 </resources>

@@ -467,4 +467,16 @@
     <string name="survey_ACE_text_cdociaar">12.Companhia aérea com a qual está a prosseguir a sua viagem?</string>
     <string name="survey_m2_text_viene_re_LEI">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Almeria?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Santander?</string>
+    <string name="survey_m2_text_viene_re_SCQ">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Santiago?</string>
+    <string name="survey_SCQ_text_consume">28. Consumiu algum produto hoje no serviço de catering do aeroporto (cafetarias, máquinas de venda automática, etc.)?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Aproximadamente quanto é que gastou hoje em serviços de catering no aeroporto?</string>
+    <string name="survey_SCQ_text_comprart">29. Já comprou algum artigo nas lojas do aeroporto?</string>
+    <string name="survey_SCQ_text_gas_com">29a. E quanto é que gastou nas lojas do aeroporto?</string>
+    <string name="survey_SCQ_text_prod">29b. Poderia indicar que tipo de produtos adquiriu?</string>
+    <string name="survey_SCQ_text_cdslab">30. Em qual das seguintes situações de emprego se encontra actualmente?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Trabalha como...</string>
+    <string name="survey_SCQ_text_estudios">32. Pode dizer-me o nível de educação que completou?</string>
+    <string name="survey_SCQ_text_cdedad">33. ¿A qual destas faixas etárias pertence?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Sexo</string>
+    <string name="survey_SCQ_text_valorexp">35. Como classificaria a sua experiência no aeroporto? (valore del 0 al 10)</string>
 </resources>
