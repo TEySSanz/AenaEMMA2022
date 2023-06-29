@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.45)</string>
+    <string name="app_name">EMMA 2022 (v1.46)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -269,7 +269,7 @@
     <!--Pregunta27-->
     <string name="survey_m1_text_cdbillet">28. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
     <string name="survey_m1_radio_cdbillet_option1">Preferente/Bussines/First</string>
-    <string name="survey_m1_radio_cdbillet_option4">Combinado (vuelo+hotel)</string>
+    <string name="survey_m1_radio_cdbillet_option4">Combinado (paquete)</string>
     <string name="survey_m1_radio_cdbillet_option6">Turista básica</string>
     <string name="survey_m1_radio_cdbillet_option5">Turista con extras</string>
     <string name="survey_m1_radio_cdbillet_option9">Otras (free, etc.)</string>
@@ -298,7 +298,7 @@
     <string name="survey_m1_text_nperbul">31. ¿A cuántas personas pertenecen los bultos?</string>
     <string name="survey_m1_radio_nperbul_option1">Una persona</string>
     <string name="survey_m1_radio_nperbul_option2">Dos personas</string>
-    <string name="survey_m1_radio_nperbul_option3">Mas personas</string>
+    <string name="survey_m1_radio_nperbul_option3">Más personas</string>
     <string name="survey_m1_text_nperbul_especificar">Especificar nº</string>
     <!--Pregunta33-->
     <string name="survey_m1_text_dropoff">32. Y ¿En qué mostrador ha dejado su equipaje?</string>
@@ -655,15 +655,15 @@
     <string name="survey_m4_text_ultimodo_taxi">TAXI</string>
     <string name="survey_m4_text_ultimodo_taxi_num">11</string>
     <string name="survey_m4_text_ultimodo_coche">COCHE</string>
-    <string name="survey_m4_text_ultimodo_coche_conductor">Vehículo de alquiler con conductor(Cabify,Uber...)</string>
+    <string name="survey_m4_text_ultimodo_coche_conductor">VTC: Cabify, Uber, etc.</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_num">24</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler">Vehículo de alquiler</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler_num">25</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado">Vehiculo privado</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_pas">Vehículo privado de pasajeros</string>
-    <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Coche pasajeros</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Conductor del vehículo viaja</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja_num">22</string>
-    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Coche acompañantes</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Conductor del vehículo sólo viene a despedir</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">Vehículo privado de acompañantes</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_num">23</string>
     <string name="survey_m4_text_ultimodo_autobus">AUTOBÚS</string>
@@ -680,7 +680,7 @@
     <string name="survey_m4_radio_sitiopark_option5">En el PARKING DE PAGO DE AENA (El tiempo que dura mi viaje)</string>
     <string name="survey_m4_radio_sitiopark_option6">En el PARKING DE PAGO DE AENA (Mientras me despide mi acompañante)</string>
     <string name="survey_m4_radio_sitiopark_option4">En PARKING DE PAGO NO DE AENA</string>
-    <string name="survey_m4_text_pqfuera">6a. ¿Porqué?</string>
+    <string name="survey_m4_text_pqfuera">6b. ¿Porqué?</string>
     <string name="survey_m4_radio_sitiopark_option9">Otros</string>
     <!--Pregunta7-->
     <string name="survey_m4_text_acomptes">7. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio o Terminal?</string>
@@ -949,6 +949,8 @@
     <string name="survey_m2_text_viene_re_LEI">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de ALMERÍA?</string>
     <string name="survey_m2_text_viene_re_SDR">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de SANTANDER?</string>
     <string name="survey_m2_text_viene_re_SCQ">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Santiago?</string>
+    <string name="survey_m2_text_viene_re_LCG">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de A Coruña?</string>
+    <string name="survey_m2_text_viene_re_VGO">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Vigo?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
@@ -1223,7 +1225,7 @@
 
 
 
-    <string name="version">v1.45</string>
+    <string name="version">v1.46</string>
     <string name="survey_m2_text_valorexp">37. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m5_text_valorexp">33. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_SCQ_text_consume">28. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
