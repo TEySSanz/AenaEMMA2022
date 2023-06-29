@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.45)</string>
+    <string name="app_name">EMMA 2022 (v1.46)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.45</string>
+    <string name="version">v1.46</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -466,4 +466,16 @@
     <string name="survey_m2_text_viene_re_SDR">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Santander?</string>
     <string name="survey_m5_text_valorexp">"33. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)             "</string>
     <string name="survey_m2_text_valorexp">37. Comment évaluez-vous votre expérience à l\'aéroport?(valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m2_text_viene_re_SCQ">3.Pour prende ce vol, où aves-vous comencé votre trajet pour venir à l´aéroport de Santiago?</string>
+    <string name="survey_SCQ_text_consume">28. ¿Avez-vous consommé aujourd´hui un produit dans la restauration de l´aéroport (cafétérias, distributeurs automatiques, etc.)</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Aujourd´hui, environ, combien avez-vous dépensé pour les services de restauration à l´aeroport?</string>
+    <string name="survey_SCQ_text_comprart">29. Avez-vous acheté un article dans les magasins de l´aeroport?</string>
+    <string name="survey_SCQ_text_gas_com">29a. Et, combien as-tu dépensé dans les boutiques de l`aeroport?</string>
+    <string name="survey_SCQ_text_prod">29b. Pourriez-vous indiquer quel type de produits vous aves acheté?</string>
+    <string name="survey_SCQ_text_cdslab">30. ¿Dans quelle situation proffessionelle êtes-vous actuellment?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Travaillez-vous en tant que…</string>
+    <string name="survey_SCQ_text_estudios">32. Éducation</string>
+    <string name="survey_SCQ_text_cdedad">33. ¿Auquel de ces gropupes d´age appartenez-vous?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Sexe</string>
+    <string name="survey_SCQ_text_valorexp">"35. Comment évaluez-vous votre expérience à l'aéroport? (valore del 0 al 10) "</string>
 </resources>

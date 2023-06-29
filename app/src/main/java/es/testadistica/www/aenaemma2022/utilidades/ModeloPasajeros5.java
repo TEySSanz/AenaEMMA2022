@@ -951,8 +951,6 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_text_valorexp_GC).setVisibility(VISIBLE);
                 break;
         }
-
-
     }
 
     private void iniciarSpinners() {
@@ -1136,7 +1134,6 @@ public class ModeloPasajeros5 extends Form {
         sp_cdpasire.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 sp_cdpasire.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -1151,8 +1148,6 @@ public class ModeloPasajeros5 extends Form {
         sp_cdlocado_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-
                 sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -1182,7 +1177,6 @@ public class ModeloPasajeros5 extends Form {
         sp_distres_area.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -1248,7 +1242,6 @@ public class ModeloPasajeros5 extends Form {
         sp_cdlocaco_esp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 sp_cdlocaco_esp.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -1266,7 +1259,6 @@ public class ModeloPasajeros5 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 sp_cdiaptoo.setBackgroundResource(android.R.drawable.btn_dropdown);
-
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -2798,6 +2790,9 @@ public class ModeloPasajeros5 extends Form {
                                     texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
                                 }
                                 break;
+//                            case 19:
+//
+//                                break;
                         }
                         break;
                     case R.id.survey_radio_cdiaptoo:

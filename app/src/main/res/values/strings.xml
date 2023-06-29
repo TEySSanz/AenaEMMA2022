@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.45)</string>
+    <string name="app_name">EMMA 2022 (v1.46)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -269,7 +269,7 @@
     <!--Pregunta27-->
     <string name="survey_m1_text_cdbillet">28. ¿Qué tipo de tarifa tiene el billete que va a utilizar?</string>
     <string name="survey_m1_radio_cdbillet_option1">Preferente/Bussines/First</string>
-    <string name="survey_m1_radio_cdbillet_option4">Combinado (vuelo+hotel)</string>
+    <string name="survey_m1_radio_cdbillet_option4">Combinado (paquete)</string>
     <string name="survey_m1_radio_cdbillet_option6">Turista básica</string>
     <string name="survey_m1_radio_cdbillet_option5">Turista con extras</string>
     <string name="survey_m1_radio_cdbillet_option9">Otras (free, etc.)</string>
@@ -298,7 +298,7 @@
     <string name="survey_m1_text_nperbul">31. ¿A cuántas personas pertenecen los bultos?</string>
     <string name="survey_m1_radio_nperbul_option1">Una persona</string>
     <string name="survey_m1_radio_nperbul_option2">Dos personas</string>
-    <string name="survey_m1_radio_nperbul_option3">Mas personas</string>
+    <string name="survey_m1_radio_nperbul_option3">Más personas</string>
     <string name="survey_m1_text_nperbul_especificar">Especificar nº</string>
     <!--Pregunta33-->
     <string name="survey_m1_text_dropoff">32. Y ¿En qué mostrador ha dejado su equipaje?</string>
@@ -634,7 +634,7 @@
     <string name="survey_m4_text_cdlocado">Localidad</string>
     <!--Pregunta3-->
     <string name="survey_m4_text_viene_re">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Sevilla?</string>
-    <string name="survey_m4_radio_viene_re">Viene de su residencia habitual</string>
+    <string name="survey_m4_radio_viene_re">Viene de su residencia</string>
     <string name="survey_m4_radio_viene_re1">Fuerteventura</string>
     <string name="survey_m4_radio_viene_re3">Lanzarote</string>
     <string name="survey_m4_radio_viene_re2">Gran Canaria</string>
@@ -655,15 +655,15 @@
     <string name="survey_m4_text_ultimodo_taxi">TAXI</string>
     <string name="survey_m4_text_ultimodo_taxi_num">11</string>
     <string name="survey_m4_text_ultimodo_coche">COCHE</string>
-    <string name="survey_m4_text_ultimodo_coche_conductor">Vehículo de alquiler con conductor(Cabify,Uber...)</string>
+    <string name="survey_m4_text_ultimodo_coche_conductor">VTC: Cabify, Uber, etc.</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_num">24</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler">Vehículo de alquiler</string>
     <string name="survey_m4_text_ultimodo_coche_valquiler_num">25</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado">Vehiculo privado</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_pas">Vehículo privado de pasajeros</string>
-    <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Coche pasajeros</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">Conductor del vehículo viaja</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja_num">22</string>
-    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Coche acompañantes</string>
+    <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">Conductor del vehículo sólo viene a despedir</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_acom">Vehículo privado de acompañantes</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir_num">23</string>
     <string name="survey_m4_text_ultimodo_autobus">AUTOBÚS</string>
@@ -680,7 +680,7 @@
     <string name="survey_m4_radio_sitiopark_option5">En el PARKING DE PAGO DE AENA (El tiempo que dura mi viaje)</string>
     <string name="survey_m4_radio_sitiopark_option6">En el PARKING DE PAGO DE AENA (Mientras me despide mi acompañante)</string>
     <string name="survey_m4_radio_sitiopark_option4">En PARKING DE PAGO NO DE AENA</string>
-    <string name="survey_m4_text_pqfuera">6a. ¿Porqué?</string>
+    <string name="survey_m4_text_pqfuera">6b. ¿Porqué?</string>
     <string name="survey_m4_radio_sitiopark_option9">Otros</string>
     <!--Pregunta7-->
     <string name="survey_m4_text_acomptes">7. ¿Cuántas personas (amigos, familiares, compañeros, etc.) han venido a despedirle hasta el aeropuerto, y le han acompañado dentro del edificio o Terminal?</string>
@@ -793,11 +793,11 @@
     <string name="survey_m4_radio_eleccovid_option4">Las restricciones no han afectado a mi elección de viajar</string>
     <string name="survey_m4_radio_eleccovid_option5">No suelo viajar en avión</string>
     <!--Pregunta26-->
-    <string name="survey_m4_text_usoave">26. Para realizar este mismo trayecto ¿ha utilizado AVE en alguna ocasión?</string>
+    <string name="survey_m4_text_usoave">25. Para realizar este mismo trayecto ¿ha utilizado AVE en alguna ocasión?</string>
     <string name="survey_m4_radio_usoave_option1">Sí</string>
     <string name="survey_m4_radio_usoave_option2">No</string>
     <!--Pregunta27-->
-    <string name="survey_m4_text_motivoavion2">27. ¿Podría indicar el principal motivo por el que ha elegido el avión para realizar este trayecto?</string>
+    <string name="survey_m4_text_motivoavion2">26. ¿Podría indicar el principal motivo por el que ha elegido el avión para realizar este trayecto?</string>
     <string name="survey_m4_radio_motivoavion2_option1">Duración Total del Viaje</string>
     <string name="survey_m4_radio_motivoavion2_option2">Mayor comodidad a bordo</string>
     <string name="survey_m4_radio_motivoavion2_option3">Billete más económico</string>
@@ -809,7 +809,7 @@
     <string name="survey_m4_radio_motivoavion2_option13">Aeropuerto está mejor comunicado o con mejores accesos</string>
     <string name="survey_m4_radio_motivoavion2_option91">Otros (especificar)</string>
     <!--Pregunta28-->
-    <string name="survey_m4_text_prefiere">28. Si tuviera que realizar este mismo trayecto, por el mismo motivo, prefiriría hacerlo en:</string>
+    <string name="survey_m4_text_prefiere">27. Si tuviera que realizar este mismo trayecto, por el mismo motivo, preferiría hacerlo en:</string>
     <string name="survey_m4_radio_prefiere_option1">AVION</string>
     <string name="survey_m4_radio_prefiere_option2">AVE/TREN</string>
     <string name="survey_m4_radio_prefiere_option3">NS/NC</string>
@@ -948,6 +948,9 @@
     <string name="survey_m2_text_viene_re_FUE">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Fuerteventura?</string>
     <string name="survey_m2_text_viene_re_LEI">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de ALMERÍA?</string>
     <string name="survey_m2_text_viene_re_SDR">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de SANTANDER?</string>
+    <string name="survey_m2_text_viene_re_SCQ">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Santiago?</string>
+    <string name="survey_m2_text_viene_re_LCG">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de A Coruña?</string>
+    <string name="survey_m2_text_viene_re_VGO">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Vigo?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
@@ -1222,9 +1225,24 @@
 
 
 
-    <string name="version">v1.45</string>
+    <string name="version">v1.46</string>
     <string name="survey_m2_text_valorexp">37. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m5_text_valorexp">33. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
-
+    <string name="survey_SCQ_text_consume">28. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Aproximadamente hoy ¿Cúanto ha gastado en los servicios de restauración del aeropuerto?</string>
+    <string name="survey_SCQ_text_comprart">29. ¿Ha comprado algún artículo en las tiendas del aeropuerto?</string>
+    <string name="survey_SCQ_text_gas_com">29a. Y ¿Cuánto ha gastado en las tiendas del aeropuerto?</string>
+    <string name="survey_SCQ_text_prod">29b. ¿Podría indicar qué tipo de productos ha comprado?</string>
+    <string name="survey_SCQ_text_cdslab">30. ¿En cuál de las siguientes situaciones laborales se encuentra usted actualmente?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Usted trabaja como...</string>
+    <string name="survey_SCQ_text_estudios">32. ¿Podría decirme el nivel de estudios terminados?</string>
+    <string name="survey_SCQ_text_cdedad">33. ¿A cuál de estos grupos de edad pertenece usted?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Género</string>
+    <string name="survey_SCQ_text_valorexp">35. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10)</string>
+    <string name="survey_m4_text_usoave_SCQ">25. Para realizar este mismo trayecto ¿ha utilizado AVE en alguna ocasión?</string>
+    <string name="survey_m4_text_motivoavion2_SCQ">26. ¿Podría indicar el principal motivo por el que ha elegido el avión para realizar este trayecto?</string>
+    <string name="survey_m4_text_prefiere_SCQ">27. Si tuviera que realizar este mismo trayecto, por el mismo motivo, preferiría hacerlo en:</string>
+    <string name="survey_text_m4_error_taus_293_SCQ">Segun lo indicado en P14 la duración del viaje tiene que ser mayor a 7 días</string>
+    <string name="survey_text_m4_error_taus_291_292_SCQ">Segun lo indicado en P14 la duración del viaje tiene que ser menor o igual a 7 días</string>
 
 </resources>

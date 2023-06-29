@@ -54,6 +54,14 @@
             android:text="@string/survey_m2_text_consume"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_consume_SCQ"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_SCQ_text_consume"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_consume"
             android:layout_width="match_parent"
@@ -118,6 +126,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/survey_m2_text_gas_cons"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/survey_text_gas_cons_SCQ"
+                style="@style/SurveyQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/survey_SCQ_text_gas_cons"
                 android:visibility="gone"/>
 
             <EditText

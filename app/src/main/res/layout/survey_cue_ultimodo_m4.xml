@@ -114,7 +114,7 @@
             <!--- 2 columna -->
             <LinearLayout
                 android:id="@+id/survey_layout_m4_ultimodo_2col"
-                android:layout_width="453dp"
+                android:layout_width="510dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -136,6 +136,15 @@
                     android:gravity="center_horizontal|center_vertical" />
 
                 <TextView
+                    android:id="@+id/survey_text_m4_ultimodo_conductor"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:background="@color/aenaDarkGrey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/survey_m4_text_ultimodo_coche_conductor" />
+
+                <TextView
                     android:id="@+id/survey_text_m4_ultimodo_valquiler"
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
@@ -144,14 +153,6 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/survey_m4_text_ultimodo_coche_valquiler" />
 
-                <TextView
-                    android:id="@+id/survey_text_m4_ultimodo_conductor"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="@dimen/medium_padding"
-                    android:background="@color/aenaDarkGrey"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/survey_m4_text_ultimodo_coche_conductor" />
                 <!--Vehiculo privado-->
                 <LinearLayout
                     android:id="@+id/survey_layout_ultimodo_vehiculo"

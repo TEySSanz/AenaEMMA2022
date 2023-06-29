@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.45)</string>
+    <string name="app_name">EMMA 2022 (v1.46)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.45</string>
+    <string name="version">v1.46</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -295,8 +295,8 @@
     <string name="survey_m4_text_ultimodo_coche">CAR</string>
     <string name="survey_m4_text_ultimodo_autobus">BUS</string>
     <string name="survey_m4_text_ultimodo_otros">OTHER</string>
-    <string name="survey_m4_text_ultimodo_coche_conductor">Vehicle hired</string>
-    <string name="survey_m4_text_ultimodo_coche_valquiler">Rental car with driver (Cabify, uber,..)</string>
+    <string name="survey_m4_text_ultimodo_coche_conductor">VTC: Cabify, Uber</string>
+    <string name="survey_m4_text_ultimodo_coche_valquiler">Vehicle hired</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado">Private vehicle</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvviaja">The driver TRAVELS</string>
     <string name="survey_m4_text_ultimodo_coche_vprivado_cvdespedir">The driver comes to DROP SOMEONE OFF</string>
@@ -662,4 +662,21 @@
     <string name="survey_m2_text_viene_re_LEI">3.Where did you start your journey to take this flight in Almeria´s airport?</string>
     <string name="survey_m2_text_viene_re_SDR">3.Where did you start your journey to take this flight in Santander´s airport?</string>
     <string name="survey_m2_text_valorexp">37. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m2_text_viene_re_SCQ">3.Where did you start your journey to take this flight in Santiago´s airport?</string>
+    <string name="survey_SCQ_text_consume">28. Have you consumed today anything in the airport restaurants services (bar, pub, vending machine...)?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Approximately how much has been spent today in the catering services at the airport?</string>
+    <string name="survey_SCQ_text_comprart">29. Have you bought today anything in the airport shops?</string>
+    <string name="survey_SCQ_text_gas_com">29a. And how much has been spent on the airport shops?</string>
+    <string name="survey_SCQ_text_prod">29b. Could you please state what kind of products you have purchased?</string>
+    <string name="survey_SCQ_text_cdslab">30. Which of the following work situations are you currently in?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Do you work as?</string>
+    <string name="survey_SCQ_text_estudios">32. Education</string>
+    <string name="survey_SCQ_text_cdedad">33. Which of these age groups do you belong to?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Gender</string>
+    <string name="survey_SCQ_text_valorexp">35. How do you rate the experience of your time at the airport? (valore del 0 al 10)</string>
+    <string name="survey_m4_text_usoave_SCQ">25. To do this route, have you ever travelled by AVE?</string>
+    <string name="survey_m4_text_motivoavion2_SCQ">26. Would you please indicate the main reason you chose the plane for this journey?</string>
+    <string name="survey_m4_text_prefiere_SCQ">27. If you had to do the same journey for the same reason, you would prefer to do it by:</string>
+    <string name="survey_m2_text_viene_re_LCG">3.Where did you start your journey to take this flight in A Coruña´s airport?</string>
+    <string name="survey_m2_text_viene_re_VGO">3.Where did you start your journey to take this flight in Vigo´s airport?</string>
 </resources>

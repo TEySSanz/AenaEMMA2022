@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.45)</string>
+    <string name="app_name">EMMA 2022 (v1.46)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.45</string>
+    <string name="version">v1.46</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -510,4 +510,16 @@
     <string name="survey_m2_text_viene_re_LEI">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Almeria?</string>
     <string name="survey_m2_text_viene_re_SDR">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Santander?</string>
     <string name="survey_m5_text_valorexp">"33. ¿ Com valora l'experiència del seu pas per l'aeroport? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)      "</string>
+    <string name="survey_m2_text_viene_re_SCQ">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Santiago?</string>
+    <string name="survey_SCQ_text_consume">28. ¿Avui ha consumit algun producte en el servei de restauració de l\\\'aeroport (cafeteries, màquines expenedores, etc.)?</string>
+    <string name="survey_SCQ_text_gas_cons">28a. Aproximadament avui Quant ha gastat en els serveis de restauració de l\'aeroport?</string>
+    <string name="survey_SCQ_text_comprart">29. ¿Ha comprat algun article a les botigues de l\'aeroport?</string>
+    <string name="survey_SCQ_text_gas_com">29a. I Quant ha gastat a les botigues de l\'aeroport?</string>
+    <string name="survey_SCQ_text_prod">29b. ¿Podria indicar quin tipus de productes ha comprat?</string>
+    <string name="survey_SCQ_text_cdslab">30. ¿En quin de les següents situacions laborals es troba vostè actualment?</string>
+    <string name="survey_SCQ_text_cdsprof">31. Vostè treballa com a…</string>
+    <string name="survey_SCQ_text_estudios">32. ¿Podria dir-me el nivell d\'estudis acabats?</string>
+    <string name="survey_SCQ_text_cdedad">33. ¿A quin d\'aquests grups d\'edat pertany vostè?</string>
+    <string name="survey_SCQ_text_cdsexo">34. Sexo</string>
+    <string name="survey_SCQ_text_valorexp">35. ¿Com valora l\'experiència del seu pas per l\'aeroport? (valore del 0 al 10)</string>
 </resources>
