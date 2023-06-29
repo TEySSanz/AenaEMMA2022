@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -1279,11 +1280,17 @@ public class ModeloPasajeros4 extends Form {
         });
 
         //P3 Asigna los valores a los despeglables de aeropuertos y localidades
-
+        filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
+        switch (idAeropuerto){
+            case 19: case 20: case 21:
+                filtroAeropuerto = "iden IN (0, 15, 24, 27, 32, 33, 36, 99)";
+                break;
+        }
+        ArrayList<mListString> provinciasP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo", filtroAeropuerto));
         SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-        sp_cdlocaco_prov.setAdapter(provinciasAdapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
+        sp_cdlocaco_prov.setAdapter(provinciasP3Adapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
         /*SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-        sp_cdlocaco_prov.setAdapter(provinciasAdapter);
+        sp_cdlocaco_prov.setAdapter(provinciasP3Adapter);
         sp_cdlocaco_prov.setTitle(activity.getString(R.string.spinner_provincia_title));
         sp_cdlocaco_prov.setPositiveButton(activity.getString(R.string.spinner_close));*/
 
@@ -1292,6 +1299,17 @@ public class ModeloPasajeros4 extends Form {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
+                String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
+                Log.i("Texto prov",texto);
+                String texto1 = " iden IS NOT NULL ";
+
+                if (texto.equals("15") || texto.equals("24")|| texto.equals("27")|| texto.equals("32")|| texto.equals("33")|| texto.equals("36")){
+                    texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                }
+                Log.i("Texto prov",texto1);
+                final SearchableSpinner sp_cdlocaco= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+                ArrayList<mListString> localidadP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo", texto1));
+                sp_cdlocaco.setAdapter(localidadP3Adapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -1707,10 +1725,21 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String textoProv = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
 // Ver cómo afecta, en Modelo 5 hay switch(idAeropuerto), en Modelo 1 no aparece
-                if((textoProv.equals("07"))||(textoProv.equals("35"))||(textoProv.equals("94"))){
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
-                }else{
-                    activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                switch(idAeropuerto) {
+                    case 19: case 20: case 21:
+                        if((textoProv.equals("15"))||(textoProv.equals("24"))||(textoProv.equals("27"))||(textoProv.equals("32"))||(textoProv.equals("33"))||(textoProv.equals("36"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        }
+                        break;
+                    default:
+                        if((textoProv.equals("07"))||(textoProv.equals("35"))||(textoProv.equals("94"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        }
+                        break;
                 }
 //
 
@@ -1739,7 +1768,7 @@ public class ModeloPasajeros4 extends Form {
         });
 
         //P3 Filtro municipios
-        final SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+/*        final SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
 
         sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -1756,7 +1785,7 @@ public class ModeloPasajeros4 extends Form {
                 }
                 else if (id == 53){
                     filtro =  filtro +"'99',";
-                } */else {
+                } else {
                     filtro = " (iden > -1 ";
                 }
 
@@ -1770,7 +1799,7 @@ public class ModeloPasajeros4 extends Form {
                 municipioAdapter.setDropDownViewResource(R.layout.selection_spinner_item);
                 sp_cdlocaco.setAdapter(municipioAdapter);
                 sp_cdlocaco.setTitle(activity.getString(R.string.spinner_municipio_title));
-                sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));*/
+                sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));
 
                 final SearchableSpinner sp_cdlocaco= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
                 ArrayList<mListString> municipioAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "descripcion", filtro));
@@ -1792,7 +1821,7 @@ public class ModeloPasajeros4 extends Form {
 
             }
         });
-
+*/
         final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
 
         sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
