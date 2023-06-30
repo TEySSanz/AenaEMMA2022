@@ -1301,7 +1301,7 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
                 Log.i("Texto prov",texto);
-                String texto1 = " iden IS NOT NULL ";
+                String texto1 = " iden IS NOT NULL AND provincia NOT IN ('15','24','27','32','33','36','07','35','38')";
 
                 if (texto.equals("15") || texto.equals("24")|| texto.equals("27")|| texto.equals("32")|| texto.equals("33")|| texto.equals("36")){
                     texto1 = " iden = 0 OR provincia = '"+texto+"'";
