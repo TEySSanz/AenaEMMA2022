@@ -1282,8 +1282,11 @@ public class ModeloPasajeros4 extends Form {
         //P3 Asigna los valores a los despeglables de aeropuertos y localidades
         filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
         switch (idAeropuerto){
-            case 19: case 20: case 21:
+            case 19:
                 filtroAeropuerto = "iden IN (0, 15, 24, 27, 32, 33, 36, 99)";
+                break;
+            case 20: case 21:
+                filtroAeropuerto = "iden IN (0, 15, 24, 27, 32, 33, 36, 56, 99)";
                 break;
         }
         ArrayList<mListString> provinciasP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS,"iden", "codigo","descripcion", "codigo", filtroAeropuerto));
@@ -1301,10 +1304,32 @@ public class ModeloPasajeros4 extends Form {
                 sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
                 Log.i("Texto prov",texto);
+
                 String texto1 = " iden IS NOT NULL AND provincia NOT IN ('15','24','27','32','33','36','07','35','38')";
 
-                if (texto.equals("15") || texto.equals("24")|| texto.equals("27")|| texto.equals("32")|| texto.equals("33")|| texto.equals("36")){
-                    texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                switch (idAeropuerto) {
+                    case 19:
+                        texto1 = " iden IS NOT NULL AND provincia NOT IN ('15','24','27','32','33','36','07','35','38')";
+
+                        if (texto.equals("15") || texto.equals("24")|| texto.equals("27")|| texto.equals("32")|| texto.equals("33")|| texto.equals("36")){
+                            texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                        }
+                        break;
+                    case 20: case 21:
+                        texto1 = " iden IS NOT NULL AND provincia NOT IN ('15','24','27','32','33','36','07','35','38','56')";
+
+                        if (texto.equals("15") || texto.equals("24") || texto.equals("27") || texto.equals("32") || texto.equals("33") || texto.equals("36") || texto.equals("99")){
+                            activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                            if (!texto.equals("99")) {
+                                texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                            }
+                        }
+                        else if (texto.equals("93")) {
+                            activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(View.INVISIBLE);
+                            activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(View.INVISIBLE);
+                        }
+                        break;
                 }
                 Log.i("Texto prov",texto1);
                 final SearchableSpinner sp_cdlocaco= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
@@ -1726,8 +1751,15 @@ public class ModeloPasajeros4 extends Form {
                 String textoProv = getValorDesplegable(sp_cdlocado_prov).substring(0,2);
 // Ver cómo afecta, en Modelo 5 hay switch(idAeropuerto), en Modelo 1 no aparece
                 switch(idAeropuerto) {
-                    case 19: case 20: case 21:
+                    case 19:
                         if((textoProv.equals("15"))||(textoProv.equals("24"))||(textoProv.equals("27"))||(textoProv.equals("32"))||(textoProv.equals("33"))||(textoProv.equals("36"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        }
+                        break;
+                    case 20: case 21:
+                        if((textoProv.equals("15"))||(textoProv.equals("24"))||(textoProv.equals("27"))||(textoProv.equals("32"))||(textoProv.equals("33"))||(textoProv.equals("36"))||(textoProv.equals("93"))){
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
                         } else {
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
@@ -1741,8 +1773,6 @@ public class ModeloPasajeros4 extends Form {
                         }
                         break;
                 }
-//
-
             }
 
             @Override
@@ -3404,7 +3434,7 @@ public class ModeloPasajeros4 extends Form {
                     sp_cdlocaco_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
                     String textoProv = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
 
-                    if ((textoProv.equals("94"))){
+                    if ((textoProv.equals("94")) || (textoProv.equals("93"))){
                     } else {
                         if(activity.findViewById(R.id.survey_layout_cdlocaco).getVisibility()==VISIBLE){
                         /*if(!requeridoSearchableSpinner(activity.findViewById(R.id.survey_spinner_cdlocaco), "00000")) {
