@@ -1232,7 +1232,6 @@ public class ModeloPasajeros4 extends Form {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-
                 sp_cdlocado_prov.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override
@@ -1270,7 +1269,6 @@ public class ModeloPasajeros4 extends Form {
         sp_distres_area.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 sp_distres_area.setBackgroundResource(android.R.drawable.btn_dropdown);
             }
             @Override

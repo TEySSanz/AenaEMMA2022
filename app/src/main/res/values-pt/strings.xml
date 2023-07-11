@@ -479,4 +479,8 @@
     <string name="survey_SCQ_text_cdedad">33. ¿A qual destas faixas etárias pertence?</string>
     <string name="survey_SCQ_text_cdsexo">34. Sexo</string>
     <string name="survey_SCQ_text_valorexp">35. Como classificaria a sua experiência no aeroporto? (valore del 0 al 10)</string>
+    <string name="survey_m5_text_viene_re_GRO">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Girona?</string>
+    <string name="survey_GRO_text_cdsexo">31. Sexo</string>
+    <string name="survey_GRO_text_valorexp">32. Como classificaria a sua experiência no aeroporto? (valore del 0 al 10)</string>
+    <string name="survey_m4_text_ultimodo_coche_conductor_GRO">VTC (Cabify, Uber, ...)</string>
 </resources>
