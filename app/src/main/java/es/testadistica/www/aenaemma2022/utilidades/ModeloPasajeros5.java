@@ -1359,11 +1359,13 @@ public class ModeloPasajeros5 extends Form {
         }
 
         SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
-        sp_cdlocaco_prov.setAdapter(islasAdapter, 1, 1, activity.getString(R.string.spinner_isla_title), activity.getString(R.string.spinner_close));
+        ArrayList<mListString> provinciasP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS, "iden", "codigo", "descripcion", "codigo", filtroAeropuerto));
+        sp_cdlocaco_prov.setAdapter(provinciasP3Adapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
+        /*sp_cdlocaco_prov.setAdapter(islasAdapter, 1, 1, activity.getString(R.string.spinner_isla_title), activity.getString(R.string.spinner_close));
         if (idAeropuerto == 22) {
             ArrayList<mListString> provinciasP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS, "iden", "codigo", "descripcion", "codigo", filtroAeropuerto));
             sp_cdlocaco_prov.setAdapter(provinciasP3Adapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
-        }
+        }*/
 
         sp_cdlocaco_prov.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -1374,14 +1376,21 @@ public class ModeloPasajeros5 extends Form {
                     String texto = getValorDesplegable(sp_cdlocaco_prov).substring(0,2);
                     Log.i("Texto prov",texto);
 
-                    String texto1 = " iden IS NOT NULL AND provincia NOT IN ('8','17','25','43','22','50','53','7','35','38')";
+                    String texto1 = " iden IS NOT NULL AND provincia NOT IN ('08','17','25','43','22','50','53','07','35','38')";
 
-                    if (texto.equals("8") || texto.equals("17")|| texto.equals("25")|| texto.equals("43")|| texto.equals("22")|| texto.equals("50")|| texto.equals("53")){
-                        texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                    if (texto.equals("08") || texto.equals("17")|| texto.equals("25")|| texto.equals("43")|| texto.equals("22")|| texto.equals("50") || texto.equals("99")){
+                        activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(VISIBLE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                        if (!texto.equals("99")) {
+                            texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                        }
+                    } else if (texto.equals("90")) {
+                        activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(View.INVISIBLE);
+                        activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(View.INVISIBLE);
                     }
                     Log.i("Texto prov",texto1);
 
-                    final SearchableSpinner sp_cdlocaco= (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+                    final SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
                     ArrayList<mListString> localidadP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOMUNICIPIOS,"iden", "codigo","descripcion", "codigo", texto1));
                     sp_cdlocaco.setAdapter(localidadP3Adapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
                 }
@@ -1393,11 +1402,12 @@ public class ModeloPasajeros5 extends Form {
         });
 
         SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
-        sp_cdlocaco.setAdapter(islasLocalidadAdapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
+        sp_cdlocaco.setAdapter(municipiosAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
+        /*sp_cdlocaco.setAdapter(islasLocalidadAdapter, 1, 1, activity.getString(R.string.spinner_localidad_title), activity.getString(R.string.spinner_close));
 
         if (idAeropuerto == 22) {
             sp_cdlocaco.setAdapter(municipiosAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
-        }
+        }*/
 
         sp_cdlocaco.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -1411,7 +1421,7 @@ public class ModeloPasajeros5 extends Form {
             }
         });
 
-        SearchableSpinner sp_cdlocaco_prov_esp = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
+        /*SearchableSpinner sp_cdlocaco_prov_esp = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
         sp_cdlocaco_prov_esp.setAdapter(provinciasAdapter, 1, 1, activity.getString(R.string.spinner_provincia_title), activity.getString(R.string.spinner_close));
 
         sp_cdlocaco_prov_esp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1424,14 +1434,14 @@ public class ModeloPasajeros5 extends Form {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
-        SearchableSpinner sp_cdlocaco_esp = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        /*SearchableSpinner sp_cdlocaco_esp = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         sp_cdlocaco_esp.setAdapter(municipiosAdapter, 1, 1, activity.getString(R.string.spinner_municipio_title), activity.getString(R.string.spinner_close));
-        /*SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
+        SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
         sp_cdlocaco.setAdapter(municipiosAdapter);
         sp_cdlocaco.setTitle(activity.getString(R.string.spinner_municipio_title));
-        sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));*/
+        sp_cdlocaco.setPositiveButton(activity.getString(R.string.spinner_close));
 
         sp_cdlocaco_esp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -1442,7 +1452,7 @@ public class ModeloPasajeros5 extends Form {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
         SearchableSpinner sp_cdiaptoo;
         sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
@@ -1936,7 +1946,7 @@ public class ModeloPasajeros5 extends Form {
 //
 //            }
 //        });
-
+/*
         //P3 Filtro (de Modelo4 (Santiago))
         String filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
         switch (idAeropuerto){
@@ -2017,12 +2027,12 @@ public class ModeloPasajeros5 extends Form {
                     filtro = filtro + "'00','0"+id+"','99',";
                 } else if (id > 9 && id <=57){
                     filtro =  filtro +"'00','"+id+"','99',";
-                } /*else if (id > 89 && id <=94){
+                } else if (id > 89 && id <=94){
                     filtro =  filtro +"'"+id+"',";
                 }
                 else if (id == 53){
                     filtro =  filtro +"'99',";
-                } */else {
+                } else {
                     filtro = " (iden > -1 ";
                 }
 
@@ -2080,7 +2090,7 @@ public class ModeloPasajeros5 extends Form {
 
             }
         });
-
+*/
         final SearchableSpinner sp_cdiaptoo = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptoo);
 
         sp_cdiaptoo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
