@@ -954,11 +954,8 @@ public class ModeloPasajeros5 extends Form {
             case 22:
                 //Girona
                 //P1
-//                activity.findViewById(R.id.survey_text_cdpaisna).setVisibility(VISIBLE);
                 //P2
-//                activity.findViewById(R.id.survey_text_cdpaisre).setVisibility(GONE);
-//                activity.findViewById(R.id.survey_text_cdpaisre_m4).setVisibility(VISIBLE);
-                //P3 NO
+                //P3
                 activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
@@ -968,10 +965,10 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_radio_playa).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_islas).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_vienereotro_opcion1).setVisibility(GONE);
-                //P4 NO
+                //P4
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
-                //P5 NO
+                //P5
                 activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvviaja).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvviaja_m2).setVisibility(VISIBLE);
                 activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvdespedir).setVisibility(GONE);
@@ -1039,7 +1036,6 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_radio_nviaje_option0).setVisibility(GONE);
                 //P21
                 activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
-//                activity.findViewById(R.id.survey_text_vol12mes_m4).setVisibility(VISIBLE);
                 //P22
                 activity.findViewById(R.id.survey_text_p44factu).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_p44factu_m4).setVisibility(VISIBLE);
@@ -1138,13 +1134,9 @@ public class ModeloPasajeros5 extends Form {
                 //Santander
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_SDROLEADA+"=1 ";
                 break;
-//            case 22:
-//                //Girona
-//                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
-//                break;
             case 22:
                 //Girona
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_VGOOLEADA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
@@ -1179,13 +1171,9 @@ public class ModeloPasajeros5 extends Form {
                 //Santander
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_SDRAEREA+"=1 ";
                 break;
-//            case 22:
-//                //Girona
-//                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
-//                break;
             case 22:
                 //Girona
-                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_VGOAEREA+"=1 ";
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
                 break;
         }
         ArrayList<mListString> companiasPpalAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -1221,15 +1209,10 @@ public class ModeloPasajeros5 extends Form {
                 //Santander
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_SDROLEADA+" = 1";
                 break;
-//            case 22:
-//                //Girona
-//                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
-//                break;
             case 22:
                 //Girona
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_VGOOLEADA+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
                 break;
-
         }
         ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
 
@@ -1263,13 +1246,9 @@ public class ModeloPasajeros5 extends Form {
                 //Santander
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_SDRPRINCIPAL+" = 1";
                 break;
-//            case 22:
-//                //Girona
-//                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
-//                break;
             case 22:
                 //Girona
-                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL+" = 1";
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
                 break;
         }
         ArrayList<mListString> tipoAeropuertosPpalAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
@@ -1911,7 +1890,6 @@ public class ModeloPasajeros5 extends Form {
                 sp_cdlocado.setBackgroundResource(android.R.drawable.btn_dropdown);
                 String texto = getValorDesplegable(sp_cdlocado).substring(0,5);
 
-
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -2081,9 +2059,6 @@ public class ModeloPasajeros5 extends Form {
                         break;
                 }
 
-
-
-
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -2194,35 +2169,19 @@ public class ModeloPasajeros5 extends Form {
                             }
 
                             break;
-//                        case 22:
-//                            //Girona
-//                            if(textoCiudad.equals("")){
-//                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
-//                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GOPRRINCIPAL + " = 1 ";
-//                                } else {
-//                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GOPRRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-//                                }
-//                            }else{
-//                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
-//                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
-//                                } else {
-//                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
-//                                }
-//                            }
-//                            break;
                         case 22:
                             //Girona
                             if(textoCiudad.equals("")){
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
                             }
                             break;
@@ -2319,35 +2278,19 @@ public class ModeloPasajeros5 extends Form {
                                 }
                             }
                             break;
-//                        case 22:
-//                            //Girona
-//                            if(textoCiudad.equals("")){
-//                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
-//                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
-//                                } else {
-//                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
-//                                }
-//                            }else{
-//                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
-//                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
-//                                } else {
-//                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
-//                                }
-//                            }
-//                            break;
                         case 22:
                             //Girona
                             if(textoCiudad.equals("")){
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
                             }
                             break;
@@ -2842,10 +2785,9 @@ public class ModeloPasajeros5 extends Form {
                         }
 
                         break;
-//Cambiar de VIGO a GIRONA
                     case 22:
                         //Girona
-                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_VGOPRINCIPAL + " = 1 ";
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                         if(textoCiudad2.equals("")) {
                             if (textoCiudad.equals("")) {
                                 if (textoCP.equals("724")) {
@@ -3582,11 +3524,9 @@ public class ModeloPasajeros5 extends Form {
                 {
                     case R.id.survey_radio_p44factu_option1:
                         activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(VISIBLE);
-//                        activity.findViewById(R.id.survey_radiogroup_bulgrupo).setVisibility(VISIBLE);
                         break;
                     default:
                         activity.findViewById(R.id.survey_layout_bulgrupo).setVisibility(GONE);
-//                        activity.findViewById(R.id.survey_radiogroup_bulgrupo).setVisibility(GONE);
                         break;
                 }
             }
@@ -3694,8 +3634,6 @@ public class ModeloPasajeros5 extends Form {
                 rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
-
-
 
     }
 
