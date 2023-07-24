@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
@@ -36,9 +37,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import es.testadistica.www.aenaemma2022.R;
+import es.testadistica.www.aenaemma2022.actividades.ListadoPasajerosActivity;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
+import es.testadistica.www.aenaemma2022.entidades.CuePasajerosListado;
 import es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner;
 import es.testadistica.www.aenaemma2022.searchablespinner.mListString;
 
@@ -1033,7 +1037,6 @@ public class ModeloPasajeros5 extends Form {
                 //P20
                 activity.findViewById(R.id.survey_text_nviaje).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_nviaje_ACE).setVisibility(VISIBLE);
-                activity.findViewById(R.id.survey_radio_nviaje_option0).setVisibility(GONE);
                 //P21
                 activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
                 //P22
@@ -1067,6 +1070,10 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_radio_cdsprof_option6).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_cdsprof_option0).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
+
+                if (Locale.getDefault().getLanguage().equals("en") || ListadoPasajerosActivity.getIdioma().equals("Inglés")){
+                    activity.findViewById(R.id.survey_radio_cdsprof_option11).setVisibility(VISIBLE);
+                }
                 //P29
                 activity.findViewById(R.id.survey_text_estudios).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_estudios_GC).setVisibility(VISIBLE);
@@ -1079,6 +1086,303 @@ public class ModeloPasajeros5 extends Form {
                 //P32
                 activity.findViewById(R.id.survey_text_valorexp).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_valorexp_GRO).setVisibility(VISIBLE);
+                break;
+            case 23:
+                //Jerez
+                //P1
+                //P2
+                //P3
+                activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(VISIBLE);
+//                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                ((TextView) activity.findViewById(R.id.survey_text_viene_re)).setText(R.string.survey_m2_text_viene_re_JEREZ);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_playa).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_islas).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_vienereotro_opcion1).setVisibility(GONE);
+                //P4
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
+                //P5
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvviaja).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvviaja_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvdespedir).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvdespedir_m2).setVisibility(VISIBLE);
+                ((TextView) activity.findViewById(R.id.survey_text_m4_ultimodo_conductor)).setText(R.string.survey_m4_text_ultimodo_coche_conductor_GRO);
+                //P6
+                ((TextView) activity.findViewById(R.id.survey_text_sitiopark)).setText(R.string.survey_m4_text_sitiopark);
+                ((TextView) activity.findViewById(R.id.survey_edit_text_pqfuera)).setText(R.string.survey_m4_text_pqfuera);
+                ((TextView) activity.findViewById(R.id.survey_radio_sitiopark_option1)).setText(R.string.survey_m4_radio_sitiopark_option1);
+                //P7
+                ((TextView) activity.findViewById(R.id.survey_text_acomptes)).setText(R.string.survey_m4_text_acomptes);
+                //P8
+                ((TextView) activity.findViewById(R.id.survey_text_hllega)).setText(R.string.survey_m4_text_hllega);
+                //P9
+                activity.findViewById(R.id.survey_text_cdiaptod).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdiaptod_m4).setVisibility(VISIBLE);
+                //P10
+                ((TextView) activity.findViewById(R.id.survey_text_numvuepa)).setText(R.string.survey_m4_text_numvuepa);
+                //P11
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
+                //P12 (Girona)
+                ((TextView) activity.findViewById(R.id.survey_text_cdociaar)).setText(R.string.survey_ACE_text_cdociaar);
+                //P12
+                ((TextView) activity.findViewById(R.id.survey_text_cdiaptof)).setText(R.string.survey_ACE_text_cdiaptof);
+                //P13
+                ((TextView) activity.findViewById(R.id.survey_text_cdmviaje)).setText(R.string.survey_ACE_text_cdmviaje);
+                //P14
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
+                //P15
+                ((TextView) activity.findViewById(R.id.survey_text_npers)).setText(R.string.survey_ACE_text_npers);
+                //P16
+                ((TextView) activity.findViewById(R.id.survey_text_nniños)).setText(R.string.survey_ACE_text_nniños);
+                //P17
+                ((TextView) activity.findViewById(R.id.survey_text_relacion)).setText(R.string.survey_ACE_text_relacion);
+                //P18
+                ((TextView) activity.findViewById(R.id.survey_text_cdtreser)).setText(R.string.survey_ACE_text_cdtreser);
+                //P19
+                ((TextView) activity.findViewById(R.id.survey_text_cdbillet)).setText(R.string.survey_ACE_text_cdbillet);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdbillet_option4)).setText(R.string.survey_m4_radio_cdbillet_option4);
+                //P20
+                ((TextView) activity.findViewById(R.id.survey_text_nviaje)).setText(R.string.survey_ACE_text_nviaje);
+                //P21
+                activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
+                //P22
+                ((TextView) activity.findViewById(R.id.survey_text_p44factu)).setText(R.string.survey_m4_text_p44factu);
+                //P23
+                ((TextView) activity.findViewById(R.id.survey_text_nperbul)).setText(R.string.survey_m4_text_nperbul);
+                //P24
+                ((TextView) activity.findViewById(R.id.survey_text_chekinb)).setText(R.string.survey_m4_text_chekinb);
+                //P25
+                ((TextView) activity.findViewById(R.id.survey_text_consume)).setText(R.string.survey_GC_text_consume);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_cons)).setText(R.string.survey_GC_text_gas_cons);
+                //P26
+                ((TextView) activity.findViewById(R.id.survey_text_comprart)).setText(R.string.survey_GC_text_comprart);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_com)).setText(R.string.survey_GC_text_gas_com);
+                ((TextView) activity.findViewById(R.id.survey_text_comprart_b)).setText(R.string.survey_GC_text_prod);
+                //P27
+                ((TextView) activity.findViewById(R.id.survey_text_cdslab)).setText(R.string.survey_GC_text_cdslab);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdslab_option6)).setText(R.string.survey_m4_radio_cdslab_option6);
+                //P28
+                ((TextView) activity.findViewById(R.id.survey_text_cdsprof)).setText(R.string.survey_GC_text_cdsprof);
+                activity.findViewById(R.id.survey_radio_cdsprof_option6).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option0).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
+                //P29
+                ((TextView) activity.findViewById(R.id.survey_text_estudios)).setText(R.string.survey_GC_text_estudios);
+                //P30
+                ((TextView) activity.findViewById(R.id.survey_text_cdedad)).setText(R.string.survey_GC_text_cdedad);
+                //P31
+                ((TextView) activity.findViewById(R.id.survey_text_cdsexo)).setText(R.string.survey_GRO_text_cdsexo);
+                //P32
+                ((TextView) activity.findViewById(R.id.survey_text_valorexp)).setText(R.string.survey_GRO_text_valorexp);
+                break;
+            case 24:
+                //Murcia
+                //P1
+                //P2
+                //P3
+                activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(VISIBLE);
+//                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                ((TextView) activity.findViewById(R.id.survey_text_viene_re)).setText(R.string.survey_m2_text_viene_re_MURCIA);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_playa).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_islas).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_vienereotro_opcion1).setVisibility(GONE);
+                //P4
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
+                //P5
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvviaja).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvviaja_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvdespedir).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvdespedir_m2).setVisibility(VISIBLE);
+                ((TextView) activity.findViewById(R.id.survey_text_m4_ultimodo_conductor)).setText(R.string.survey_m4_text_ultimodo_coche_conductor_GRO);
+                //P6
+                ((TextView) activity.findViewById(R.id.survey_text_sitiopark)).setText(R.string.survey_m4_text_sitiopark);
+                ((TextView) activity.findViewById(R.id.survey_edit_text_pqfuera)).setText(R.string.survey_m4_text_pqfuera);
+                ((TextView) activity.findViewById(R.id.survey_radio_sitiopark_option1)).setText(R.string.survey_m4_radio_sitiopark_option1);
+                //P7
+                ((TextView) activity.findViewById(R.id.survey_text_acomptes)).setText(R.string.survey_m4_text_acomptes);
+                //P8
+                ((TextView) activity.findViewById(R.id.survey_text_hllega)).setText(R.string.survey_m4_text_hllega);
+                //P9
+                activity.findViewById(R.id.survey_text_cdiaptod).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdiaptod_m4).setVisibility(VISIBLE);
+                //P10
+                ((TextView) activity.findViewById(R.id.survey_text_numvuepa)).setText(R.string.survey_m4_text_numvuepa);
+                //P11
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
+                //P12 (Girona)
+                ((TextView) activity.findViewById(R.id.survey_text_cdociaar)).setText(R.string.survey_ACE_text_cdociaar);
+                //P12
+                ((TextView) activity.findViewById(R.id.survey_text_cdiaptof)).setText(R.string.survey_ACE_text_cdiaptof);
+                //P13
+                ((TextView) activity.findViewById(R.id.survey_text_cdmviaje)).setText(R.string.survey_ACE_text_cdmviaje);
+                //P14
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
+                //P15
+                ((TextView) activity.findViewById(R.id.survey_text_npers)).setText(R.string.survey_ACE_text_npers);
+                //P16
+                ((TextView) activity.findViewById(R.id.survey_text_nniños)).setText(R.string.survey_ACE_text_nniños);
+                //P17
+                ((TextView) activity.findViewById(R.id.survey_text_relacion)).setText(R.string.survey_ACE_text_relacion);
+                //P18
+                ((TextView) activity.findViewById(R.id.survey_text_cdtreser)).setText(R.string.survey_ACE_text_cdtreser);
+                //P19
+                ((TextView) activity.findViewById(R.id.survey_text_cdbillet)).setText(R.string.survey_ACE_text_cdbillet);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdbillet_option4)).setText(R.string.survey_m4_radio_cdbillet_option4);
+                //P20
+                ((TextView) activity.findViewById(R.id.survey_text_nviaje)).setText(R.string.survey_ACE_text_nviaje);
+                //P21
+                activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
+                //P22
+                ((TextView) activity.findViewById(R.id.survey_text_p44factu)).setText(R.string.survey_m4_text_p44factu);
+                //P23
+                ((TextView) activity.findViewById(R.id.survey_text_nperbul)).setText(R.string.survey_m4_text_nperbul);
+                //P24
+                ((TextView) activity.findViewById(R.id.survey_text_chekinb)).setText(R.string.survey_m4_text_chekinb);
+                //P25
+                ((TextView) activity.findViewById(R.id.survey_text_consume)).setText(R.string.survey_GC_text_consume);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_cons)).setText(R.string.survey_GC_text_gas_cons);
+                //P26
+                ((TextView) activity.findViewById(R.id.survey_text_comprart)).setText(R.string.survey_GC_text_comprart);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_com)).setText(R.string.survey_GC_text_gas_com);
+                ((TextView) activity.findViewById(R.id.survey_text_comprart_b)).setText(R.string.survey_GC_text_prod);
+                //P27
+                ((TextView) activity.findViewById(R.id.survey_text_cdslab)).setText(R.string.survey_GC_text_cdslab);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdslab_option6)).setText(R.string.survey_m4_radio_cdslab_option6);
+                //P28
+                ((TextView) activity.findViewById(R.id.survey_text_cdsprof)).setText(R.string.survey_GC_text_cdsprof);
+                activity.findViewById(R.id.survey_radio_cdsprof_option6).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option0).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
+                //P29
+                ((TextView) activity.findViewById(R.id.survey_text_estudios)).setText(R.string.survey_GC_text_estudios);
+                //P30
+                ((TextView) activity.findViewById(R.id.survey_text_cdedad)).setText(R.string.survey_GC_text_cdedad);
+                //P31
+                ((TextView) activity.findViewById(R.id.survey_text_cdsexo)).setText(R.string.survey_GRO_text_cdsexo);
+                //P32
+                ((TextView) activity.findViewById(R.id.survey_text_valorexp)).setText(R.string.survey_GRO_text_valorexp);
+                break;
+            case 25:
+                //Granada
+                //P1
+                //P2
+                //P3
+                activity.findViewById(R.id.survey_text_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_cdlocacootro).setVisibility(VISIBLE);
+//                activity.findViewById(R.id.survey_text_viene_re).setVisibility(GONE);
+                ((TextView) activity.findViewById(R.id.survey_text_viene_re)).setText(R.string.survey_m2_text_viene_re_GRANADA);
+                activity.findViewById(R.id.survey_spinner_cdlocaco_prov).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_radio_playa).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_islas).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_vienereotro_opcion1).setVisibility(GONE);
+                //P4
+                activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
+                //P5
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvviaja).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvviaja_m2).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_m4_ultimodo_coche_vprivado_cvdespedir).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_ultimodo_coche_vprivado_cvdespedir_m2).setVisibility(VISIBLE);
+                ((TextView) activity.findViewById(R.id.survey_text_m4_ultimodo_conductor)).setText(R.string.survey_m4_text_ultimodo_coche_conductor_GRO);
+                //P6
+                ((TextView) activity.findViewById(R.id.survey_text_sitiopark)).setText(R.string.survey_m4_text_sitiopark);
+                ((TextView) activity.findViewById(R.id.survey_edit_text_pqfuera)).setText(R.string.survey_m4_text_pqfuera);
+                ((TextView) activity.findViewById(R.id.survey_radio_sitiopark_option1)).setText(R.string.survey_m4_radio_sitiopark_option1);
+                //P7
+                ((TextView) activity.findViewById(R.id.survey_text_acomptes)).setText(R.string.survey_m4_text_acomptes);
+                //P8
+                ((TextView) activity.findViewById(R.id.survey_text_hllega)).setText(R.string.survey_m4_text_hllega);
+                //P9
+                activity.findViewById(R.id.survey_text_cdiaptod).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdiaptod_m4).setVisibility(VISIBLE);
+                //P10
+                ((TextView) activity.findViewById(R.id.survey_text_numvuepa)).setText(R.string.survey_m4_text_numvuepa);
+                //P11
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
+                //P12 (Girona)
+                ((TextView) activity.findViewById(R.id.survey_text_cdociaar)).setText(R.string.survey_ACE_text_cdociaar);
+                //P12
+                ((TextView) activity.findViewById(R.id.survey_text_cdiaptof)).setText(R.string.survey_ACE_text_cdiaptof);
+                //P13
+                ((TextView) activity.findViewById(R.id.survey_text_cdmviaje)).setText(R.string.survey_ACE_text_cdmviaje);
+                //P14
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
+                //P15
+                ((TextView) activity.findViewById(R.id.survey_text_npers)).setText(R.string.survey_ACE_text_npers);
+                //P16
+                ((TextView) activity.findViewById(R.id.survey_text_nniños)).setText(R.string.survey_ACE_text_nniños);
+                //P17
+                ((TextView) activity.findViewById(R.id.survey_text_relacion)).setText(R.string.survey_ACE_text_relacion);
+                //P18
+                ((TextView) activity.findViewById(R.id.survey_text_cdtreser)).setText(R.string.survey_ACE_text_cdtreser);
+                //P19
+                ((TextView) activity.findViewById(R.id.survey_text_cdbillet)).setText(R.string.survey_ACE_text_cdbillet);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdbillet_option4)).setText(R.string.survey_m4_radio_cdbillet_option4);
+                //P20
+                ((TextView) activity.findViewById(R.id.survey_text_nviaje)).setText(R.string.survey_ACE_text_nviaje);
+                //P21
+                activity.findViewById(R.id.survey_text_vol12mes).setVisibility(GONE);
+                //P22
+                ((TextView) activity.findViewById(R.id.survey_text_p44factu)).setText(R.string.survey_m4_text_p44factu);
+                //P23
+                ((TextView) activity.findViewById(R.id.survey_text_nperbul)).setText(R.string.survey_m4_text_nperbul);
+                //P24
+                ((TextView) activity.findViewById(R.id.survey_text_chekinb)).setText(R.string.survey_m4_text_chekinb);
+                //P25
+                ((TextView) activity.findViewById(R.id.survey_text_consume)).setText(R.string.survey_GC_text_consume);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_cons)).setText(R.string.survey_GC_text_gas_cons);
+                //P26
+                ((TextView) activity.findViewById(R.id.survey_text_comprart)).setText(R.string.survey_GC_text_comprart);
+                ((TextView) activity.findViewById(R.id.survey_text_gas_com)).setText(R.string.survey_GC_text_gas_com);
+                ((TextView) activity.findViewById(R.id.survey_text_comprart_b)).setText(R.string.survey_GC_text_prod);
+                //P27
+                ((TextView) activity.findViewById(R.id.survey_text_cdslab)).setText(R.string.survey_GC_text_cdslab);
+                ((TextView) activity.findViewById(R.id.survey_radio_cdslab_option6)).setText(R.string.survey_m4_radio_cdslab_option6);
+                //P28
+                ((TextView) activity.findViewById(R.id.survey_text_cdsprof)).setText(R.string.survey_GC_text_cdsprof);
+                activity.findViewById(R.id.survey_radio_cdsprof_option6).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option0).setVisibility(GONE);
+                activity.findViewById(R.id.survey_radio_cdsprof_option9).setVisibility(VISIBLE);
+                //P29
+                ((TextView) activity.findViewById(R.id.survey_text_estudios)).setText(R.string.survey_GC_text_estudios);
+                //P30
+                ((TextView) activity.findViewById(R.id.survey_text_cdedad)).setText(R.string.survey_GC_text_cdedad);
+                //P31
+                ((TextView) activity.findViewById(R.id.survey_text_cdsexo)).setText(R.string.survey_GRO_text_cdsexo);
+                //P32
+                ((TextView) activity.findViewById(R.id.survey_text_valorexp)).setText(R.string.survey_GRO_text_valorexp);
                 break;
         }
     }
@@ -1138,6 +1442,18 @@ public class ModeloPasajeros5 extends Form {
                 //Girona
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
                 break;
+            case 23:
+                //Jerez
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
+                break;
+            case 24:
+                //Murcia
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
+                break;
+            case 25:
+                //Granada
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROOLEADA+"=1 ";
+                break;
         }
         ArrayList<mListString> companiasAdapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOCOMPANIAS,"iden", "codigo","descripcion", "codigo",  filtroAeropuerto));
 
@@ -1173,6 +1489,18 @@ public class ModeloPasajeros5 extends Form {
                 break;
             case 22:
                 //Girona
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
+                break;
+            case 23:
+                //Jerez
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
+                break;
+            case 24:
+                //Murcia
+                filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
+                break;
+            case 25:
+                //Granada
                 filtroAeropuerto = " iden = 0 OR "+Contracts.COLUMN_TIPOCOMPANIAS_GROAEREA+"=1 ";
                 break;
         }
@@ -1213,6 +1541,18 @@ public class ModeloPasajeros5 extends Form {
                 //Girona
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
                 break;
+            case 23:
+                //Jerez
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
+                break;
+            case 24:
+                //Murcia
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
+                break;
+            case 25:
+                //Granada
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA+" = 1";
+                break;
         }
         ArrayList<mListString> tipoAeropuertosAdapter = new ArrayList<mListString>(getDiccionario(TABLE_TIPOAEROPUERTOS,"iden", "codigo","descripcion", "descripcion",  filtroAeropuerto));
 
@@ -1248,6 +1588,18 @@ public class ModeloPasajeros5 extends Form {
                 break;
             case 22:
                 //Girona
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
+                break;
+            case 23:
+                //Jerez
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
+                break;
+            case 24:
+                //Murcia
+                filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
+                break;
+            case 25:
+                //Granada
                 filtroAeropuerto = " "+Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL+" = 1";
                 break;
         }
@@ -1331,11 +1683,13 @@ public class ModeloPasajeros5 extends Form {
         });
 
         //P3 Asigna los valores a los despeglables de aeropuertos y localidades
-
         filtroAeropuerto = " iden IS NOT NULL "; //Para que salgan todos
         if (idAeropuerto == 22) {
             filtroAeropuerto = "iden IN (0, 8, 17, 25, 43, 22, 50, 53, 99)";
         }
+//        else if (idAeropuerto == 23 || idAeropuerto == 24 || idAeropuerto == 25) {
+//            filtroAeropuerto = "iden IN ()";
+//        }
 
         SearchableSpinner sp_cdlocaco_prov = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco_prov);
         ArrayList<mListString> provinciasP3Adapter = new ArrayList<mListString>(getDiccionario(Contracts.TABLE_TIPOPROVINCIAS, "iden", "codigo", "descripcion", "codigo", filtroAeropuerto));
@@ -1873,6 +2227,16 @@ public class ModeloPasajeros5 extends Form {
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
                         }
                         break;
+//                    case 23: case 24: case 25:
+//
+//                        break;
+                    default:
+                        if((texto.equals("07"))||(texto.equals("35"))||(texto.equals("94"))){
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
+                        } else {
+                            activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
+                        }
+                        break;
                 }
             }
 
@@ -2185,6 +2549,22 @@ public class ModeloPasajeros5 extends Form {
                                 }
                             }
                             break;
+                        case 23: case 24: case 25:
+                            //Jerez, Murcia, Granada
+                            if(textoCiudad.equals("")){
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                }
+                            }else{
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                }
+                            }
+                            break;
                     }
 
                     final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
@@ -2284,13 +2664,29 @@ public class ModeloPasajeros5 extends Form {
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
                                 } else {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
+                                }
+                            }
+                            break;
+                        case 23: case 24: case 25:
+                            //Jerez, Murcia, Granada
+                            if(textoCiudad.equals("")){
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
+                                }
+                            }else{
+                                if (texto.equals("000")||(texto.equals("ZZZ"))) {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                } else {
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
                             }
                             break;
@@ -2859,7 +3255,80 @@ public class ModeloPasajeros5 extends Form {
                             }
                         }
                         break;
+                    case 23: case 24: case 25:
+                        //Jerez, Murcia, Granada
+                        filtroAeropuerto1 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                        if(textoCiudad2.equals("")) {
+                            if (textoCiudad.equals("")) {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') ";
+                                    }
+                                }
+                            } else {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')  ";
 
+                                    }
+                                }
+                            }
+                        }else{
+                            if (textoCiudad.equals("")) {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                }
+                            } else {
+                                if (textoCP.equals("724")) {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                } else {
+                                    if (!(texto.equals("000") || (texto.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                    if (!(texto1.equals("000") || (texto1.equals("ZZZ")))) {
+                                        filtroAeropuerto1 = filtroAeropuerto1 + " AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto1 + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODPAIS + " NOT IN ('724') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad2 + "')  ";
+                                    }
+                                }
+                            }
+                        }
+                        break;
                 }
 
                 final SearchableSpinner sp_cdiaptof = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdiaptof);
@@ -3094,8 +3563,8 @@ public class ModeloPasajeros5 extends Form {
                                     texto1 = " iden = 0 OR "+Contracts.COLUMN_TIPOISLASLOCALIDAD_CODIGOISLA+"= '"+texto+"'";
                                 }
                                 break;
-                            case 22:
-                                //Girona
+                            case 22: case 23: case 24: case 25:
+                                //Girona //Jerez, Murcia y Granada
                                 activity.findViewById(R.id.survey_layout_cdlocaco).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_layout_cdiaptoo).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_layout_cdiaptoootro_m4).setVisibility(GONE);
@@ -3105,6 +3574,7 @@ public class ModeloPasajeros5 extends Form {
                                 activity.findViewById(R.id.survey_layout_cdlocaco_prov).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_layout_cdvieneotro).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(VISIBLE);
+                                break;
                             }
                         break;
                     case R.id.survey_radio_cdiaptoo:
@@ -3382,8 +3852,8 @@ public class ModeloPasajeros5 extends Form {
                                 activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(GONE);
                                 break;
-                            case 15: case 16: case 22:
-                                //Lanzarote //Fuerteventura //Girona
+                            case 15: case 16: case 22: case 23: case 24: case 25:
+                                //Lanzarote //Fuerteventura //Girona //Jerez, Murcia y Granada
                                 activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(GONE);
                                 break;
@@ -3397,8 +3867,8 @@ public class ModeloPasajeros5 extends Form {
                                 activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(VISIBLE);
                                 break;
-                            case 15: case 16: case 22:
-                                //Lanzarote //Fuerteventura //Girona
+                            case 15: case 16: case 22: case 23: case 24: case 25:
+                                //Lanzarote //Fuerteventura //Girona //Jerez, Murcia y Granada
                                 activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
                                 break;
@@ -3412,8 +3882,8 @@ public class ModeloPasajeros5 extends Form {
                                 activity.findViewById(R.id.survey_text_cdidavue_a_m4).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_m4).setVisibility(GONE);
                                 break;
-                            case 15: case 16: case 22:
-                                //Lanzarote //Fuerteventura //Girona
+                            case 15: case 16: case 22: case 23: case 24: case 25:
+                                //Lanzarote //Fuerteventura //Girona //Jerez, Murcia y Granada
                                 activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(GONE);
                                 activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(GONE);
                                 break;
@@ -3634,7 +4104,6 @@ public class ModeloPasajeros5 extends Form {
                 rgCdsexo.setBackgroundColor(activity.getResources().getColor(R.color.aenaDarkGrey));
             }
         });
-
     }
 
     private void condicionesChecks(){
@@ -3707,7 +4176,7 @@ public class ModeloPasajeros5 extends Form {
         Button save = (Button) activity.findViewById(R.id.survey_button_save);
         switch (show) {
             case 1:
-                //B1
+                //P1
                 LinearLayout p1 = (LinearLayout) activity.findViewById(R.id.survey_layout_cdpaisna);
                 previo.setVisibility(GONE);
                 save.setVisibility(GONE);
@@ -3740,8 +4209,8 @@ public class ModeloPasajeros5 extends Form {
             case 5:
                 //P5
                 switch (idAeropuerto) {
-                    case 4: case 6: case 13: case 17: case 18: case 22:
-                        //Ibiza, Menorca, Tenerife Sur, Almeria, Santander y Girona
+                    case 4: case 6: case 13: case 17: case 18: case 22: case 23: case 24: case 25:
+                        //Ibiza, Menorca, Tenerife Sur, Almeria, Santander, Girona, Jerez, Murcia, Granada
                         LinearLayout p5 = (LinearLayout) activity.findViewById(R.id.survey_m4_layout_ultimod);
                         previo.setVisibility(VISIBLE);
                         save.setVisibility(VISIBLE);
@@ -4297,6 +4766,26 @@ public class ModeloPasajeros5 extends Form {
                                     }
                                 }
                                 break;
+                            case 23: case 24: case 25:
+                                //Jerez, Murcia y Granada
+                                if (!(texto_pais.equals("724"))) {
+                                    String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
+                                    return getDialogValueBackError(activity,
+                                            activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                            textoError,
+                                            activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                } else {
+                                    if (((texto_prov.equals("08")) || (texto_prov.equals("17")) || (texto_prov.equals("25")) || (texto_prov.equals("43")) || (texto_prov.equals("22")) || (texto_prov.equals("50")) ||  (texto_prov.equals("90")))) {
+
+                                    } else {
+                                        String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
+                                        return getDialogValueBackError(activity,
+                                                activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                                textoError,
+                                                activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                    }
+                                }
+                                break;
                         }
                     }
                     break;
@@ -4325,8 +4814,8 @@ public class ModeloPasajeros5 extends Form {
                 case 5:
                     //P5
                     switch (idAeropuerto) {
-                        case 4: case 6: case 13: case 17: case 18: case 22:
-                            //Ibiza, Menorca, Tenerife Sur, Almeria, Santander y Girona
+                        case 4: case 6: case 13: case 17: case 18: case 22: case 23: case 24: case 25:
+                            //Ibiza, Menorca, Tenerife Sur, Almeria, Santander, Girona, Jerez, Murcia y Granada
                             RadioGroup rgUltimodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo);
 
                             if(!requeridoRadioGroup(activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo))){
@@ -4684,7 +5173,7 @@ public class ModeloPasajeros5 extends Form {
                     if (st_cdmviaje.equals("293") && stringToInt(st_Taus) <= 7) {
                         String textoError = activity.getResources().getString(R.string.survey_text_m4_error_taus_293);
 
-                        if (idAeropuerto == 22) {
+                        if (idAeropuerto == 22 || idAeropuerto == 23 || idAeropuerto == 24 || idAeropuerto == 25) {
                             textoError = activity.getResources().getString(R.string.survey_text_m4_error_taus_293_SCQ);
                         }
                         etTaus.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -4695,7 +5184,7 @@ public class ModeloPasajeros5 extends Form {
                                 activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                     } else if ((st_cdmviaje.equals("291") || st_cdmviaje.equals("292")) && stringToInt(st_Taus)>7){
                         String textoError = activity.getResources().getString(R.string.survey_text_m4_error_taus_291_292);
-                        if (idAeropuerto == 22){
+                        if (idAeropuerto == 22 || idAeropuerto == 23 || idAeropuerto == 24 || idAeropuerto == 25){
                             textoError = activity.getResources().getString(R.string.survey_text_m4_error_taus_291_292_SCQ);
                         }
                         etTaus.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
@@ -4821,17 +5310,45 @@ public class ModeloPasajeros5 extends Form {
 
                     if (rgNviaje.getCheckedRadioButtonId() == R.id.survey_radio_nviaje_numviajes){
                         EditText etNviaje_especificar = (EditText) activity.findViewById(R.id.survey_edit_nviaje_especificar);
-                        if (stringToInt(etNviaje_especificar.getText().toString())<1){
-                            String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
-                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
-                            etNviaje_especificar.setError(textoError);
-                            return getDialogValueBackError(activity,
-                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
-                                    textoError,
-                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
-                        } else {
-                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                        switch (idAeropuerto) {
+                            case 23: case 24: case 25:
+                                if (stringToInt(etNviaje_especificar.getText().toString())<0){
+                                    String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
+                                    etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                                    etNviaje_especificar.setError(textoError);
+                                    return getDialogValueBackError(activity,
+                                            activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                            textoError,
+                                            activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                } else {
+                                    etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                                }
+                                break;
+                            default:
+                                if (stringToInt(etNviaje_especificar.getText().toString())<1){
+                                    String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
+                                    etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+                                    etNviaje_especificar.setError(textoError);
+                                    return getDialogValueBackError(activity,
+                                            activity.getResources().getString(R.string.survey_model_text_errorTitle),
+                                            textoError,
+                                            activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+                                } else {
+                                    etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+                                }
+                                break;
                         }
+//                        if (stringToInt(etNviaje_especificar.getText().toString())<1){
+//                            String textoError = activity.getResources().getString(R.string.survey_text_error_nviaje_num);
+//                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.aenaRed));
+//                            etNviaje_especificar.setError(textoError);
+//                            return getDialogValueBackError(activity,
+//                                    activity.getResources().getString(R.string.survey_model_text_errorTitle),
+//                                    textoError,
+//                                    activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
+//                        } else {
+//                            etNviaje_especificar.setBackgroundColor(activity.getResources().getColor(R.color.md_white_1000));
+//                        }
                     }
                     break;
                 case 21:
@@ -5701,8 +6218,8 @@ public class ModeloPasajeros5 extends Form {
             case 5:
                 //P5
                 switch (idAeropuerto) {
-                    case 4: case 6: case 13: case 17: case 18: case 22:
-                        //Ibiza, Menorca, Tenerife Sur, Almeria, Santander y Girona
+                    case 4: case 6: case 13: case 17: case 18: case 22: case 23: case 24: case 25:
+                        //Ibiza, Menorca, Tenerife Sur, Almeria, Santander, Girona, Jerez, Murcia, Granada
                         if (activated) {
                             RadioGroup rgUltimodo_umodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo);
                             checkedId = rgUltimodo_umodo.getCheckedRadioButtonId();
@@ -6203,8 +6720,8 @@ public class ModeloPasajeros5 extends Form {
                             }
                             //selectedCode = 2;
                             break;
-                        case 17: case 18: case 22:
-                            //Almeria, Santander, Girona
+                        case 17: case 18: case 22: case 23: case 24: case 25:
+                            //Almeria, Santander, Girona, Jerez, Murcia y Granada
                             if(!textSpCdlocaco.contains("00000")){
                                 quest.setCdlocaco(textSpCdlocaco);
                                 quest.setDistracce("-1");
@@ -6413,8 +6930,8 @@ public class ModeloPasajeros5 extends Form {
 
         //P5
         switch (idAeropuerto) {
-            case 4: case 6: case 13: case 17: case 18: case 22:
-                //Ibiza, Menorca, Tenerife Sur, Almeria, Santander y Girona
+            case 4: case 6: case 13: case 17: case 18: case 22: case 23: case 24: case 25:
+                //Ibiza, Menorca, Tenerife Sur, Almeria, Santander, Girona, Jerez, Murcia, Granada
                 RadioGroup rgUltimodo_umodo= (RadioGroup) activity.findViewById(R.id.survey_radiogroup_m4_ultimodo_1modo);
 
                 selectedCode = -1;
@@ -7128,6 +7645,9 @@ public class ModeloPasajeros5 extends Form {
                 case R.id.survey_radio_cdsprof_option9:
                     selectedCode = 9;
                     break;
+                case R.id.survey_radio_cdsprof_option11:
+                    selectedCode = 11;
+                    break;
                 default:
                     selectedCode = 99;
                     break;
@@ -7394,8 +7914,8 @@ public class ModeloPasajeros5 extends Form {
     private void generarTituloCdalojin() {
         switch (idAeropuerto){
 
-            case 4: case 6: case 13: case 17: case 18: case 22:
-                //Ibiza, Menorca, Tenerife Sur, Almeria, Santander y Girona
+            case 4: case 6: case 13: case 17: case 18: case 22: case 23: case 24: case 25:
+                //Ibiza, Menorca, Tenerife Sur, Almeria, Santander, Girona, Jerez, Murcia, Granada
                 SearchableSpinner sp_cdlocaco = (SearchableSpinner) activity.findViewById(R.id.survey_spinner_cdlocaco);
                 //String textSpCdlocaco = sp_cdlocaco.getSelectedItem().toString();
                 String textSpCdlocaco = getValorDesplegable(sp_cdlocaco);

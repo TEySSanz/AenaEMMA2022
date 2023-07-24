@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2022 (v1.50)</string>
+    <string name="app_name">EMMA 2022 (v1.51)</string>
     <string name="nombre">EMMA 2022</string>
 
     <!-- Activity Login -->
@@ -342,6 +342,7 @@
     <string name="survey_m1_radio_cdsprof_option5">Trabajador por cuenta ajena</string>
     <string name="survey_m1_radio_cdsprof_option6">Asalariado fijo del sector privado</string>
     <string name="survey_m1_radio_cdsprof_option0">Asalariado eventual o interino</string>
+    <string name="survey_m1_radio_cdsprof_option11">Trabajador o profesional con empleados</string>
     <!--Pregunta39-->
     <string name="survey_m1_text_estudios">38. ¿Podría decirme el nivel de estudios terminados?</string>
     <string name="survey_m1_radio_estudios_option1">Primarios/Básicos/EGB</string>
@@ -952,6 +953,9 @@
     <string name="survey_m2_text_viene_re_SCQ">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Santiago?</string>
     <string name="survey_m2_text_viene_re_LCG">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de A Coruña?</string>
     <string name="survey_m2_text_viene_re_VGO">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Vigo?</string>
+    <string name="survey_m2_text_viene_re_JEREZ">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Jerez?</string>
+    <string name="survey_m2_text_viene_re_MURCIA">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Murcia?</string>
+    <string name="survey_m2_text_viene_re_GRANADA">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Granada?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>
@@ -1226,7 +1230,7 @@
 
 
 
-    <string name="version">v1.50</string>
+    <string name="version">v1.51</string>
     <string name="survey_m2_text_valorexp">37. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m5_text_valorexp">33. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_SCQ_text_consume">28. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>

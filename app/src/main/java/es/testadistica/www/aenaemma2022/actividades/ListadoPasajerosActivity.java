@@ -53,7 +53,8 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
     TextView txt_fechaActual;
     TextView txt_aeropuerto;
     int idAeropuerto;
-    SearchableSpinnerOLD sp_idioma;
+//    SearchableSpinnerOLD sp_idioma;
+    public static SearchableSpinnerOLD sp_idioma;
     ListView list_pasajeros;
     ListView list_pasajeros1;
     DBHelper conn;
@@ -163,6 +164,15 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
                 break;
             case 22:
                 maxPreg = 33;
+                break;
+            case 23:
+                maxPreg = 36;
+                break;
+            case 24:
+                maxPreg = 36;
+                break;
+            case 25:
+                maxPreg = 36;
                 break;
         }
 
@@ -475,6 +485,10 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         Integer number = random.nextInt(900000)+100000;
 
         return System.currentTimeMillis()+ String.valueOf(number);
+    }
+
+    public static String getIdioma() {
+        return sp_idioma.getSelectedItem().toString();
     }
 
     public int stringToInt (String numeroStr){

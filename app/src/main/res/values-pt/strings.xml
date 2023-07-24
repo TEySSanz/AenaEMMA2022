@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.50)</string>
+    <string name="app_name">EMMA 2022 (v1.51)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.50</string>
+    <string name="version">v1.51</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -483,4 +483,5 @@
     <string name="survey_GRO_text_cdsexo">31. Sexo</string>
     <string name="survey_GRO_text_valorexp">32. Como classificaria a sua experiência no aeroporto? (valore del 0 al 10)</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_GRO">VTC (Cabify, Uber, ...)</string>
+    <string name="survey_ACE_text_cdiaptof">13. Em que aeroporto terminará o seu voo?</string>
 </resources>

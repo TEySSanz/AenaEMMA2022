@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.50)</string>
+    <string name="app_name">EMMA 2022 (v1.51)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.50</string>
+    <string name="version">v1.51</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>
@@ -483,4 +483,5 @@
     <string name="survey_GRO_text_cdsexo">31. Sex</string>
     <string name="survey_GRO_text_valorexp">32. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10)</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_GRO">VTC (Cabify, Uber, ...)</string>
+    <string name="survey_ACE_text_cdiaptof">13. An welchem Flughafen endet lhre Reise?</string>
 </resources>
