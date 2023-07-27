@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.51)</string>
+    <string name="app_name">EMMA 2022 (v1.52)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.51</string>
+    <string name="version">v1.52</string>
 
     <!-- Activity Login -->
     <string name="input_usuario">Usuario</string>
@@ -343,7 +343,7 @@
     <string name="survey_m4_radio_sitiopark_option5">En el PÀRQUING DE PAGAMENT D\'AENA (El temps que dura el meu viatge)</string>
     <string name="survey_m4_radio_sitiopark_option6">En el PÀRQUING DE PAGAMENT D\'AENA (Mentre m\'acomiada el meu acompanyant)</string>
     <string name="survey_m4_radio_sitiopark_option4">En PÀRQUING DE PAGAMENT NO D\'AENA</string>
-    <string name="survey_m4_text_pqfuera">"6a. ¿Per qué? "</string>
+    <string name="survey_m4_text_pqfuera">"6b. ¿Per qué? "</string>
     <string name="survey_m4_radio_sitiopark_option9">Altres</string>
     <string name="survey_m4_text_acomptes">7.¿Quantes persones (amics, familiars, companys, etc.) han vingut a acomiadar-li fins a l\'aeroport, i li han acompanyat dins de l\'edifici Terminal?</string>
     <string name="survey_m4_radio_acomptes_option0">"Cap persona     "</string>
@@ -527,4 +527,7 @@
     <string name="survey_GRO_text_valorexp">32. ¿Com valora l\'experiència del seu pas per l\'aeroport? (valore del 0 al 10)</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_GRO">VTC (Cabify, Uber, ...)</string>
     <string name="survey_ACE_text_cdiaptof">13. ¿En quin aeroport finalitzarà el seu viatge amb avió?</string>
+    <string name="survey_m2_text_viene_re_RMU">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Murcia?</string>
+    <string name="survey_m2_text_viene_re_XRY">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de Jerez?</string>
+    <string name="survey_m2_text_viene_re_GRX">3. Per a agafar aquest vol, d\\\'on part per a accedir a l\\\'aeroport de FGL Granada-Jaén?</string>
 </resources>
