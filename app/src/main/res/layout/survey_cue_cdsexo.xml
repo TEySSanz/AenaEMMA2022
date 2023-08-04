@@ -70,6 +70,14 @@
             android:text="@string/survey_SCQ_text_cdsexo"
             android:visibility="gone"/>
 
+        <TextView
+            android:id="@+id/survey_text_cdsexo_GRO"
+            style="@style/SurveyQuestionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/survey_GRO_text_cdsexo"
+            android:visibility="gone"/>
+
         <RadioGroup
             android:id="@+id/survey_radiogroup_cdsexo"
             android:layout_width="match_parent"

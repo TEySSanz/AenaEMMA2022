@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.46)</string>
+    <string name="app_name">EMMA 2022 (v1.53)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.46</string>
+    <string name="version">v1.53</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>
@@ -328,7 +328,7 @@
     <string name="survey_m4_text_ultimodo_otros_especificar">"Welche? "</string>
     <string name="survey_m4_text_sitiopark">6. Wo haben Sie Ihr Fahrzeug abgestellt?</string>
     <string name="survey_m4_radio_sitiopark_option1">In ZONE DOWNLOADING/UPLOADING Passagiere/Parking Express (15\"’\" gratis)</string>
-    <string name="survey_m4_text_pqfuera">"6a. warum? "</string>
+    <string name="survey_m4_text_pqfuera">"6b. warum? "</string>
     <string name="survey_m4_text_acomptes">7. Wie viele Leute haben Sie bis zur Terminal begleltet (Freunde, Verwndte, Kollegen, usw)?</string>
     <string name="survey_m4_text_hllega">8. Um wievel Uhr sind Sie heute am Flughafen angekommen?</string>
     <string name="survey_m4_text_cdiaptod">"9. Wohin fliegen Sie mit diesen Flug? "</string>
@@ -479,4 +479,12 @@
     <string name="survey_SCQ_text_cdedad">33. Zu welcher dieser Altersgruppen gehören Sie?</string>
     <string name="survey_SCQ_text_cdsexo">34. Sex</string>
     <string name="survey_SCQ_text_valorexp">35. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10)</string>
+    <string name="survey_m5_text_viene_re_GRO">3.Woher kommenSie, um diesen Flug anf Girona zu nehmen?</string>
+    <string name="survey_GRO_text_cdsexo">31. Sex</string>
+    <string name="survey_GRO_text_valorexp">32. Wie würden Sie Ihre Erfahrungen am Flughafen bewerten? (valore del 0 al 10)</string>
+    <string name="survey_m4_text_ultimodo_coche_conductor_GRO">VTC (Cabify, Uber, ...)</string>
+    <string name="survey_ACE_text_cdiaptof">13. An welchem Flughafen endet lhre Reise?</string>
+    <string name="survey_m2_text_viene_re_RMU">3.Woher kommenSie, um diesen Flug anf Murcia zu nehmen?</string>
+    <string name="survey_m2_text_viene_re_XRY">3.Woher kommenSie, um diesen Flug anf Jerez zu nehmen?</string>
+    <string name="survey_m2_text_viene_re_GRX">3.Woher kommenSie, um diesen Flug anf FGL Granada-Jaén zu nehmen?</string>
 </resources>

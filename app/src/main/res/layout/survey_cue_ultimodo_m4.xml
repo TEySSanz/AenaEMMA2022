@@ -73,7 +73,7 @@
                 <TextView
                     android:id="@+id/survey_text_ultimodo_autobus"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="54dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
@@ -102,7 +102,7 @@
                 <TextView
                     android:id="@+id/survey_text_ultimodo_otros_1col"
                     android:layout_width="match_parent"
-                    android:layout_height="23.5dp"
+                    android:layout_height="35dp"
                     android:layout_marginTop="@dimen/medium_padding"
                     android:background="@color/aenaDarkGrey"
                     android:gravity="center_horizontal|center_vertical"
@@ -260,13 +260,13 @@
                 <LinearLayout
                     android:id="@+id/survey_layout_m4_ultimodo_otros"
                     android:layout_width="match_parent"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/survey_text_m4_ultimodo_otros"
                         android:layout_width="115dp"
-                        android:layout_height="27dp"
+                        android:layout_height="35dp"
                         android:layout_gravity="center|center_horizontal"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
@@ -378,7 +378,7 @@
                     <RadioButton
                         android:id="@+id/survey_radio_m4_ultimodo_1modo_option8"
                         android:layout_width="match_parent"
-                        android:layout_height="25dp"
+                        android:layout_height="35dp"
                         android:layout_marginTop="@dimen/medium_padding"
                         android:background="@color/aenaDarkGrey"
                         android:gravity="center_horizontal|center_vertical" />

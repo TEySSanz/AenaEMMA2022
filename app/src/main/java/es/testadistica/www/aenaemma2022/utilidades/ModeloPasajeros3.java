@@ -988,7 +988,7 @@ public class ModeloPasajeros3 extends Form {
                     case 11:
                         //Gran Canaria
                         if (texto4.equals("000")||(texto4.equals("ZZZ"))) {
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LPAPRINCIPAL + " = 1 ";
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LPAOLEADA + " = 1 ";
                         } else {
                             filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LPAOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
                         }
@@ -996,7 +996,7 @@ public class ModeloPasajeros3 extends Form {
                     case 12:
                         //Tenerife Norte
                         if (texto4.equals("000")||(texto4.equals("ZZZ"))) {
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFNPRINCIPAL + " = 1 ";
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFNOLEADA + " = 1 ";
                         } else {
                             filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFNOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
                         }
