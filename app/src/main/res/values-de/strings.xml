@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.52)</string>
+    <string name="app_name">EMMA 2022 (v1.53)</string>
     <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.52</string>
+    <string name="version">v1.53</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>

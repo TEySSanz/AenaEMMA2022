@@ -781,7 +781,7 @@ public class ModeloPasajeros2 extends Form {
                     case 5:
                         //Palma de Mallorca
                         if (texto4.equals("000")||(texto4.equals("ZZZ"))) {
-                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIPRINCIPAL + " = 1 ";
+                            filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIOLEADA + " = 1 ";
                         } else {
                             filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_PMIOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto4 + "')";
                         }

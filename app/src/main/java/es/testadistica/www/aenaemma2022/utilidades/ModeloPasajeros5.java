@@ -2392,7 +2392,7 @@ public class ModeloPasajeros5 extends Form {
                         case 4:
                             //Ibiza
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZPRINCIPAL + " = 1 ";
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 ";
                             } else {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_IBZOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             }
@@ -2400,7 +2400,7 @@ public class ModeloPasajeros5 extends Form {
                         case 6:
                             //Menorca
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHPRINCIPAL + " = 1 ";
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA + " = 1 ";
                             } else {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_MAHOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             }
@@ -2408,7 +2408,7 @@ public class ModeloPasajeros5 extends Form {
                         case 13:
                             //Tenerife sur
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSPRINCIPAL + " = 1 ";
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " = 1 ";
                             } else {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_TFSOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             }
@@ -2421,7 +2421,7 @@ public class ModeloPasajeros5 extends Form {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             }*/
                             if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEPRINCIPAL + " = 1 ";
+                                filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " = 1 ";
                             } else {
                                 filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_ACEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                             }
@@ -2430,13 +2430,13 @@ public class ModeloPasajeros5 extends Form {
                             //Fuerteventura
                             if(textoCiudad.equals("")) {
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_FUEOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
@@ -2446,13 +2446,13 @@ public class ModeloPasajeros5 extends Form {
                             //Almeria
                             if(textoCiudad.equals("")) {
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_LEIOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
@@ -2462,13 +2462,13 @@ public class ModeloPasajeros5 extends Form {
                             //Santander
                             if(textoCiudad.equals("")) {
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDRPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDROLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDROLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000") || (texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDRPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDROLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_SDROLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
@@ -2478,13 +2478,13 @@ public class ModeloPasajeros5 extends Form {
                             //Girona
                             if(textoCiudad.equals("")){
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_GROOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
@@ -2494,13 +2494,13 @@ public class ModeloPasajeros5 extends Form {
                             //Jerez
                             if(textoCiudad.equals("")){
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "')";
                                 }
                             }else{
                                 if (texto.equals("000")||(texto.equals("ZZZ"))) {
-                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYPRINCIPAL + " = 1 ";
+                                    filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYOLEADA + " = 1 ";
                                 } else {
                                     filtroAeropuerto2 = " " + Contracts.COLUMN_TIPOAEROPUERTOS_XRYOLEADA + " = 1 AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CODIGO + " NOT IN ('" + texto + "') AND " + Contracts.COLUMN_TIPOAEROPUERTOS_CIUDAD + " NOT IN ('" + textoCiudad + "')";
                                 }
@@ -6689,12 +6689,7 @@ public class ModeloPasajeros5 extends Form {
                     break;
                 case R.id.survey_radio_cdalojin_option7:
                     quest.setCdalojin_otros("-1");
-//                    selectedCode = 7;
-                    //Para Girona el código es 6
-                    selectedCode = 6;
-                    if (idAeropuerto == 23){
-                        selectedCode = 7;
-                    }
+                    selectedCode = 7;
                     break;
                 case R.id.survey_radio_cdalojin_option8:
                     quest.setCdalojin_otros("-1");
