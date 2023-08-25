@@ -100,79 +100,83 @@ public class ListadoPasajerosActivity extends AppCompatActivity {
         }
 
         switch (idAeropuerto) {
-            case 1:
+            case 1: //Adolfo Suárez Madrid-Barajas
                 maxPreg = 41;
                 break;
-            case 2:
+            case 2: //Josep Tarradellas Barcelona-El Prat
                 maxPreg = 41;
                 break;
-            case 3:
+            case 3: //Sevilla
                 maxPreg = 36;
                 break;
-            case 4:
+            case 4: //Ibiza
                 maxPreg = 33;
                 break;
-            case 5:
+            case 5: //Palma de Mallorca
                 maxPreg = 37;
                 break;
-            case 6:
+            case 6: //Menorca
                 maxPreg = 33;
                 break;
-            case 7:
+            case 7: //Alicante - Elche
                 maxPreg = 36;
                 break;
-            case 8:
+            case 8: //Málaga-Costa del Sol
                 maxPreg = 36;
                 break;
-            case 9:
-                break;
-            case 10:
-                maxPreg = 36;
-                break;
-            case 11:
-                maxPreg = 37;
-                break;
-            case 12:
-                maxPreg = 37;
-                break;
-            case 13:
+            case 9: //Bilbao
                 maxPreg = 33;
                 break;
-            case 14:
+            case 10: //Valencia
+                maxPreg = 36;
+                break;
+            case 11: //Gran Canaria
+                maxPreg = 37;
+                break;
+            case 12: //Tenerife Norte
+                maxPreg = 37;
+                break;
+            case 13: //Tenerife Sur
+                maxPreg = 33;
+                break;
+            case 14: //Autobuses T4
                 maxPreg = 60;
                 break;
-            case 15:
+            case 15: //Lanzarote
                 maxPreg = 33;
                 break;
-            case 16:
+            case 16: //Fuerteventura
                 maxPreg = 33;
                 break;
-            case 17:
+            case 17: //Almeria
                 maxPreg = 33;
                 break;
-            case 18:
+            case 18: //Santander
                 maxPreg = 33;
                 break;
-            case 19:
+            case 19: //Santiago-Rosalía de Castro
                 maxPreg = 36;
                 break;
-            case 20:
+            case 20: //A Coruña
                 maxPreg = 36;
                 break;
-            case 21:
+            case 21: //Vigo
                 maxPreg = 36;
                 break;
-            case 22:
+            case 22: //Girona
                 maxPreg = 33;
                 break;
-            case 23:
+            case 23: //Jerez
                 maxPreg = 33;
                 break;
-            case 24:
+            case 24: //Región de Murcia
                 maxPreg = 36;
                 break;
-            case 25:
+            case 25: //FGL Granada-Jaén
                 maxPreg = 36;
+                break;
+            case 26: //Asturias
+                maxPreg = 33;
                 break;
         }
 
