@@ -961,6 +961,8 @@
     <string name="survey_m2_text_viene_re_XRY">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Jerez?</string>
     <string name="survey_m2_text_viene_re_RMU">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto Internacional Región de Murcia?</string>
     <string name="survey_m2_text_viene_re_GRX">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de FGL Granada-Jaén?</string>
+    <string name="survey_m2_text_viene_re_OVD">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Asturias?</string>
+    <string name="survey_m2_text_viene_re_BIO">3. Para coger este vuelo, ¿de dónde parte para acceder al aeropuerto de Bilbao?</string>
     <string name="survey_m2_text_distracce">Playa</string>
     <string name="survey_m2_text_cdlocaco_prov">Isla</string>
     <string name="survey_m2_text_cdlocacootro_otro">Especificar Localidad/Municipio/Playa</string>

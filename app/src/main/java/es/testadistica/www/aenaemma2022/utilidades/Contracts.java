@@ -101,6 +101,8 @@ public class Contracts {
     public static final String COLUMN_TIPOAEROPUERTOS_RMUOLEADA = "RMUoleada";
     public static final String COLUMN_TIPOAEROPUERTOS_GRXPRINCIPAL = "GRXprincipal";
     public static final String COLUMN_TIPOAEROPUERTOS_GRXOLEADA = "GRXoleada";
+    public static final String COLUMN_TIPOAEROPUERTOS_OVDPRINCIPAL = "OVDprincipal";
+    public static final String COLUMN_TIPOAEROPUERTOS_OVDOLEADA = "OVDoleada";
     public static final String SQL_CREATE_TIPOAEROPUERTOS = "CREATE TABLE "+ TABLE_TIPOAEROPUERTOS + " ("+
             COLUMN_TIPOAEROPUERTOS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOAEROPUERTOS_CODIGO + " TEXT, " +
@@ -158,7 +160,9 @@ public class Contracts {
             COLUMN_TIPOAEROPUERTOS_RMUPRINCIPAL + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_RMUOLEADA + " TEXT, " +
             COLUMN_TIPOAEROPUERTOS_GRXPRINCIPAL + " TEXT, " +
-            COLUMN_TIPOAEROPUERTOS_GRXOLEADA + " TEXT )";
+            COLUMN_TIPOAEROPUERTOS_GRXOLEADA + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_OVDPRINCIPAL + " TEXT, " +
+            COLUMN_TIPOAEROPUERTOS_OVDOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOAEROPUERTOS = "DROP TABLE IF EXISTS " + TABLE_TIPOAEROPUERTOS;
 
     //Tabla TipoCompanias
@@ -216,6 +220,8 @@ public class Contracts {
     public static final String COLUMN_TIPOCOMPANIAS_RMUOLEADA = "RMUoleada";
     public static final String COLUMN_TIPOCOMPANIAS_GRXAEREA = "GRXaerea";
     public static final String COLUMN_TIPOCOMPANIAS_GRXOLEADA = "GRXoleada";
+    public static final String COLUMN_TIPOCOMPANIAS_OVDAEREA = "OVDaerea";
+    public static final String COLUMN_TIPOCOMPANIAS_OVDOLEADA = "OVDoleada";
     public static final String SQL_CREATE_TIPOCOMPANIAS = "CREATE TABLE "+ TABLE_TIPOCOMPANIAS + " ("+
             COLUMN_TIPOCOMPANIAS_IDEN + " INTEGER PRIMARY KEY, " +
             COLUMN_TIPOCOMPANIAS_CODIGO + " TEXT, " +
@@ -269,7 +275,9 @@ public class Contracts {
             COLUMN_TIPOCOMPANIAS_RMUAEREA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_RMUOLEADA + " TEXT, " +
             COLUMN_TIPOCOMPANIAS_GRXAEREA + " TEXT, " +
-            COLUMN_TIPOCOMPANIAS_GRXOLEADA + " TEXT )";
+            COLUMN_TIPOCOMPANIAS_GRXOLEADA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_OVDAEREA + " TEXT, " +
+            COLUMN_TIPOCOMPANIAS_OVDOLEADA + " TEXT )";
     public static final String SQL_DROP_TIPOCOMPANIAS = "DROP TABLE IF EXISTS " + TABLE_TIPOCOMPANIAS;
 
     //Tabla Distritos

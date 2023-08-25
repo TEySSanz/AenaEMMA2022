@@ -4889,7 +4889,7 @@ public class ModeloPasajeros1 extends Form {
 
         if (checkedId > 0) {
             switch (checkedId) {
-                case R.id.survey_radio_sitiopark_option1_m4:
+                case R.id.survey_radio_sitiopark_option1:
                     quest.setPqfuera("-1");
                     quest.setSitioparkotro("-1");
                     selectedCode = 1;
