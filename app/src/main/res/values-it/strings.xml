@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.53)</string>
-    <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.53</string>
+    <string name="app_name">EMMA 2023 (v1.54)</string>
+    <string name="nombre">EMMA 2023</string>
+    <string name="version">v1.54</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -421,6 +421,8 @@
     <string name="survey_m2_text_cdsexo">36.Sesso</string>
     <string name="survey_m2_radio_cdcambio_option1">Si</string>
     <string name="survey_m2_radio_cdcambio_option2">No</string>
+    <string name="survey_m2_text_viene_re_OVD">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Asturias?</string>
+    <string name="survey_m2_text_viene_re_BIO">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Bilbao?</string>
     <string name="survey_m2_radio_viene_re_option1">"Viene dalla sua residenza "</string>
     <string name="survey_m5_MAH_text_cdsexo">32.Sesso</string>
     <string name="survey_m5_MAH_text_viene_re">3.Per prendere questo volo, da dove parte per arrivare all\\\'aeroporto di Menorca?</string>

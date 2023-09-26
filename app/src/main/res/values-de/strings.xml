@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.53)</string>
-    <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.53</string>
+    <string name="app_name">EMMA 2023 (v1.54)</string>
+    <string name="nombre">EMMA 2023</string>
+    <string name="version">v1.54</string>
     <string name="survey_m1_text_cdpaisna">1. Welche STAATSANGEHÖRIGKEIT haben sie?</string>
     <string name="survey_m1_text_cdpaisre">2.In welchem LAND haben Sie gelebt, während der lettzen 12 Monaten?</string>
     <string name="survey_m1_text_cdcambio">3. Sind Sie hier gekommen, um einen ANSCHLUSSFLUG zu manchen?</string>
@@ -419,6 +419,8 @@
     <string name="survey_m2_text_cdsexo">36. Sex</string>
     <string name="survey_m2_radio_cdcambio_option1">Ja</string>
     <string name="survey_m2_radio_cdcambio_option2">Nein</string>
+    <string name="survey_m2_text_viene_re_OVD">3.Woher kommenSie, um diesen Flug anf Asturias zu nehmen?</string>
+    <string name="survey_m2_text_viene_re_BIO">3.Woher kommenSie, um diesen Flug anf Bilbao zu nehmen?</string>
     <string name="survey_m2_radio_viene_re_option1">"Sie kommen direkt aus lhrem Wohnsitzort "</string>
     <string name="survey_m5_MAH_text_cdsexo">32. Sex</string>
     <string name="survey_m5_MAH_text_viene_re">3.Woher kommenSie, um diesen Flug anf Menorca zu nehmen?</string>

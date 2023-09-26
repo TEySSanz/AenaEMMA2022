@@ -346,9 +346,9 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
                 //P5
-                activity.findViewById(R.id.survey_text_ultimodo_tren_malaga).setVisibility(VISIBLE); //Columna 1: TREN
-                activity.findViewById(R.id.survey_text_m4_ultimodo_tren_malaga).setVisibility(VISIBLE); //Columna 2: Cercanías
-                activity.findViewById(R.id.survey_radio_m4_ultimodo_1modo_option9).setVisibility(VISIBLE); //Columna 3: Botón Cercanías
+                activity.findViewById(R.id.survey_text_ultimodo_tren_malaga).setVisibility(GONE); //Columna 1: TREN
+                activity.findViewById(R.id.survey_text_m4_ultimodo_tren_malaga).setVisibility(GONE); //Columna 2: Cercanías
+                activity.findViewById(R.id.survey_radio_m4_ultimodo_1modo_option9).setVisibility(GONE); //Columna 3: Botón Cercanías
                 //P6
                 ((TextView) activity.findViewById(R.id.survey_text_sitiopark)).setText(R.string.survey_m4_text_sitiopark);
                 ((TextView) activity.findViewById(R.id.survey_edit_text_pqfuera)).setText(R.string.survey_m4_text_pqfuera);
@@ -362,7 +362,8 @@ public class ModeloPasajeros5 extends Form {
                 //P10
                 ((TextView) activity.findViewById(R.id.survey_text_numvuepa)).setText(R.string.survey_m4_text_numvuepa);
                 //P11
-                ((TextView) activity.findViewById(R.id.survey_text_cdterm)).setText(R.string.survey_m4_text_cdterm);
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
                 //P12
                 ((TextView) activity.findViewById(R.id.survey_text_cdociaar)).setText(R.string.survey_ACE_text_cdociaar);
                 //P13
@@ -370,9 +371,14 @@ public class ModeloPasajeros5 extends Form {
                 //P14
                 ((TextView) activity.findViewById(R.id.survey_text_cdmviaje)).setText(R.string.survey_ACE_text_cdmviaje);
                 //P15
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue)).setText(R.string.survey_ACE_text_cdidavue);
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue_a)).setText(R.string.survey_ACE_text_cdidavue_a);
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue_b)).setText(R.string.survey_ACE_text_cdidavue_b);
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
                 //P16
                 ((TextView) activity.findViewById(R.id.survey_text_npers)).setText(R.string.survey_ACE_text_npers);
                 //P17
@@ -1286,9 +1292,9 @@ public class ModeloPasajeros5 extends Form {
                 activity.findViewById(R.id.survey_radio_cdalojin_option10).setVisibility(GONE);
                 activity.findViewById(R.id.survey_radio_cdalojin_option3).setVisibility(VISIBLE);
                 //P5
-                activity.findViewById(R.id.survey_text_ultimodo_tren_malaga).setVisibility(VISIBLE); //Columna 1: TREN
-                activity.findViewById(R.id.survey_text_m4_ultimodo_tren_malaga).setVisibility(VISIBLE); //Columna 2: Cercanías
-                activity.findViewById(R.id.survey_radio_m4_ultimodo_1modo_option9).setVisibility(VISIBLE); //Columna 3: Botón Cercanías
+                activity.findViewById(R.id.survey_text_ultimodo_tren_malaga).setVisibility(GONE); //Columna 1: TREN
+                activity.findViewById(R.id.survey_text_m4_ultimodo_tren_malaga).setVisibility(GONE); //Columna 2: Cercanías
+                activity.findViewById(R.id.survey_radio_m4_ultimodo_1modo_option9).setVisibility(GONE); //Columna 3: Botón Cercanías
                 //P6
                 ((TextView) activity.findViewById(R.id.survey_text_sitiopark)).setText(R.string.survey_m4_text_sitiopark);
                 ((TextView) activity.findViewById(R.id.survey_edit_text_pqfuera)).setText(R.string.survey_m4_text_pqfuera);
@@ -1302,7 +1308,8 @@ public class ModeloPasajeros5 extends Form {
                 //P10
                 ((TextView) activity.findViewById(R.id.survey_text_numvuepa)).setText(R.string.survey_m4_text_numvuepa);
                 //P11
-                ((TextView) activity.findViewById(R.id.survey_text_cdterm)).setText(R.string.survey_m4_text_cdterm);
+                activity.findViewById(R.id.survey_text_cdterm).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdterm_m4).setVisibility(VISIBLE);
                 //P12
                 ((TextView) activity.findViewById(R.id.survey_text_cdociaar)).setText(R.string.survey_ACE_text_cdociaar);
                 //P13
@@ -1310,9 +1317,14 @@ public class ModeloPasajeros5 extends Form {
                 //P14
                 ((TextView) activity.findViewById(R.id.survey_text_cdmviaje)).setText(R.string.survey_ACE_text_cdmviaje);
                 //P15
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue)).setText(R.string.survey_ACE_text_cdidavue);
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue_a)).setText(R.string.survey_ACE_text_cdidavue_a);
-                ((TextView) activity.findViewById(R.id.survey_text_cdidavue_b)).setText(R.string.survey_ACE_text_cdidavue_b);
+                activity.findViewById(R.id.survey_text_cdidavue).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_a).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_a_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_text_cdidavue_b).setVisibility(GONE);
+                activity.findViewById(R.id.survey_text_cdidavue_b_ACE).setVisibility(VISIBLE);
+                activity.findViewById(R.id.survey_edit_text_taus).setVisibility(GONE);
+                activity.findViewById(R.id.survey_edit_text_taus_m4).setVisibility(VISIBLE);
                 //P16
                 ((TextView) activity.findViewById(R.id.survey_text_npers)).setText(R.string.survey_ACE_text_npers);
                 //P17
@@ -1666,6 +1678,12 @@ public class ModeloPasajeros5 extends Form {
         else if (idAeropuerto == 23) {
             filtroAeropuerto = "iden IN (0, 6, 10, 11, 14, 21, 23, 41, 54, 56, 99)";
         }
+        else if (idAeropuerto == 26) {
+            filtroAeropuerto = "iden IN (0, 24, 27, 33, 34, 39, 99)";
+        }
+        else if (idAeropuerto == 9) {
+            filtroAeropuerto = "iden IN (0, 1, 9, 20, 26, 31, 33, 39, 48, 99)";
+        }
 //        else if (idAeropuerto == 23 || idAeropuerto == 24 || idAeropuerto == 25) {
 //            filtroAeropuerto = "iden IN ()";
 //        }
@@ -1715,6 +1733,28 @@ public class ModeloPasajeros5 extends Form {
                         } else if (texto.equals("91") || texto.equals("93")) {
                             activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(View.INVISIBLE);
                             activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(View.INVISIBLE);
+                        }
+                        break;
+                    case 26:
+                        texto1 = " iden IS NOT NULL AND provincia NOT IN ('24','27','33','34','39','07','35','38')";
+
+                        if (texto.equals("24") || texto.equals("27") || texto.equals("33") || texto.equals("34") || texto.equals("39") || texto.equals("99")){
+                            activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                            if (!texto.equals("99")) {
+                                texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                            }
+                        }
+                        break;
+                    case 9:
+                        texto1 = " iden IS NOT NULL AND provincia NOT IN ('01', '09', '20', '26', '31', '33', '39', '48','07','35','38')";
+
+                        if (texto.equals("01") || texto.equals("09") || texto.equals("20") || texto.equals("26") || texto.equals("31") || texto.equals("33") || texto.equals("39") || texto.equals("48") || texto.equals("99")){
+                            activity.findViewById(R.id.survey_text_cdlocaco).setVisibility(VISIBLE);
+                            activity.findViewById(R.id.survey_spinner_cdlocaco).setVisibility(VISIBLE);
+                            if (!texto.equals("99")) {
+                                texto1 = " iden = 0 OR provincia = '"+texto+"'";
+                            }
                         }
                         break;
                 }
@@ -2232,7 +2272,7 @@ public class ModeloPasajeros5 extends Form {
                         break;
                     case 9:
                         //Bilbao
-                        if((texto.equals("01"))||(texto.equals("09"))||(texto.equals("20"))||(texto.equals("39"))){
+                        if((texto.equals("01"))||(texto.equals("09"))||(texto.equals("20"))||(texto.equals("26"))||(texto.equals("31"))||(texto.equals("33"))||(texto.equals("39"))||(texto.equals("48"))){
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
                         } else {
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
@@ -2264,7 +2304,7 @@ public class ModeloPasajeros5 extends Form {
                         break;
                     case 26:
                         //Asturias
-                        if((texto.equals("24"))||(texto.equals("27"))||(texto.equals("39"))){
+                        if((texto.equals("24"))||(texto.equals("27"))||(texto.equals("33"))||(texto.equals("34"))||(texto.equals("39"))){
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(VISIBLE);
                         } else {
                             activity.findViewById(R.id.survey_radio_viene_re).setVisibility(GONE);
@@ -5047,7 +5087,7 @@ public class ModeloPasajeros5 extends Form {
                                             textoError,
                                             activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                                 } else {
-                                    if (((texto_prov.equals("01")) || (texto_prov.equals("09")) || (texto_prov.equals("20")) || (texto_prov.equals("39")))) {
+                                    if (((texto_prov.equals("01")) || (texto_prov.equals("09")) || (texto_prov.equals("20")) || (texto_prov.equals("26")) || (texto_prov.equals("31")) || (texto_prov.equals("33")) || (texto_prov.equals("39")) || (texto_prov.equals("48")))) {
 
                                     } else {
                                         String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
@@ -5067,7 +5107,7 @@ public class ModeloPasajeros5 extends Form {
                                             textoError,
                                             activity.getResources().getString(R.string.survey_model_text_errorBtnReview));
                                 } else {
-                                    if (((texto_prov.equals("24")) || (texto_prov.equals("27")) || (texto_prov.equals("39")))) {
+                                    if (((texto_prov.equals("24")) || (texto_prov.equals("27")) || (texto_prov.equals("33")) || (texto_prov.equals("34")) || (texto_prov.equals("39")))) {
 
                                     } else {
                                         String textoError = activity.getResources().getString(R.string.survey_text_selectOption1);
@@ -6549,7 +6589,7 @@ public class ModeloPasajeros5 extends Form {
                                 break;
                             case R.id.survey_radio_cdterm_option2:
                                 show = showQuestion(12); //>P12
-                                break;
+                            break;
                         }
                     } else {
                         show = showQuestion(12); //>P12
@@ -8019,7 +8059,7 @@ public class ModeloPasajeros5 extends Form {
 
         //P33
         RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
-        quest.setValorexp(Math.round(rabValorexp.getRating()));
+        quest.setValorexp(Math.round(rabValorexp.getRating())-1);
 
         return quest;
     }

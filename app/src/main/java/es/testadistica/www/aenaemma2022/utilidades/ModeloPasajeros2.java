@@ -4580,7 +4580,7 @@ public class ModeloPasajeros2 extends Form {
 
         //P37
         RatingBar rabValorexp = (RatingBar) activity.findViewById(R.id.survey_rating_valorexp);
-        quest.setValorexp(Math.round(rabValorexp.getRating()));
+        quest.setValorexp(Math.round(rabValorexp.getRating())-1);
 
         return quest;
     }

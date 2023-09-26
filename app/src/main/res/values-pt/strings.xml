@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2022 (v1.53)</string>
-    <string name="nombre">EMMA 2022</string>
-    <string name="version">v1.53</string>
+    <string name="app_name">EMMA 2023 (v1.54)</string>
+    <string name="nombre">EMMA 2023</string>
+    <string name="version">v1.54</string>
     <string name="input_usuario">Usuario</string>
     <string name="input_password">Contraseña</string>
     <string name="btn_acceder">Acceder</string>
@@ -422,6 +422,8 @@
     <string name="survey_m2_text_valorexp">37. Como classificaria a sua experiência no aeroporto (por favor, classifique de 1 a 10)?</string>
     <string name="survey_m2_radio_cdcambio_option1">Se</string>
     <string name="survey_m2_radio_cdcambio_option2">Não</string>
+    <string name="survey_m2_text_viene_re_OVD">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Asturias?</string>
+    <string name="survey_m2_text_viene_re_BIO">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Bilbao?</string>
     <string name="survey_m2_radio_viene_re_option1">" Vem da sua residência"</string>
     <string name="survey_m5_MAH_text_cdsexo">32.Sexo</string>
     <string name="survey_m5_MAH_text_viene_re">3.Para apanhar este voo, de onde parte para chegar ao aeroporto de Menorca?</string>
