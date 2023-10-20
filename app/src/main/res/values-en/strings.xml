@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2023 (v1.54)</string>
+    <string name="app_name">EMMA 2023 (v1.55)</string>
     <string name="nombre">EMMA 2023</string>
-    <string name="version">v1.54</string>
+    <string name="version">v1.55</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -189,7 +189,7 @@
     <string name="survey_m1_radio_cdtreser_dias">Days</string>
     <string name="survey_m1_text_cdbillet">"28. What tariff is the ticket you are going to use? "</string>
     <string name="survey_m1_radio_cdbillet_option1">First / Business</string>
-    <string name="survey_m1_radio_cdbillet_option4">Package</string>
+    <string name="survey_m1_radio_cdbillet_option4">Combined (flight+hotel)</string>
     <string name="survey_m1_radio_cdbillet_option6">Tourist not allowing changes</string>
     <string name="survey_m1_radio_cdbillet_option5">Tourist allowing changes</string>
     <string name="survey_m1_radio_cdbillet_option9">Others (free, etc.)</string>
@@ -272,7 +272,7 @@
     <string name="survey_m1_radio_cdsexo_option1">Male</string>
     <string name="survey_m1_radio_cdsexo_option2">Female</string>
     <string name="survey_text_muchasgracias">THANK YOU VERY MUCH FOR YOUR HELP</string>
-    <string name="survey_m1_text_valorexp">41. How likely are you to recommend the experience at this airport to a colleague or friend? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
+    <string name="survey_m1_text_valorexp">41. How do you rate the experience of your time at the airport? (valore del 0 al 10)</string>
     <string name="spinner_tipoAeropuerto_title">SELECT AIRPORT</string>
     <string name="survey_m1_text_cdsinope_bcn">7. During your connection has spent the night in Barcelona or around?</string>
     <string name="survey_m1_text_viene_re_bcn">9. Where did you start your journey to take this flight in Barcelona-El Prat´s airport?</string>
