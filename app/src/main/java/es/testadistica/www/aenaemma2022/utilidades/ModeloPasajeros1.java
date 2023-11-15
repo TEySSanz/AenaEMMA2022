@@ -35,8 +35,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import es.testadistica.www.aenaemma2022.R;
+import es.testadistica.www.aenaemma2022.actividades.ListadoPasajerosActivity;
 import es.testadistica.www.aenaemma2022.entidades.CuePasajeros;
 import es.testadistica.www.aenaemma2022.searchablespinner.SearchableSpinner;
 import es.testadistica.www.aenaemma2022.searchablespinner.mListString;
@@ -115,6 +117,10 @@ public class ModeloPasajeros1 extends Form {
                 activity.findViewById(R.id.survey_text_cdalojin_crucero).setVisibility(GONE);
                 activity.findViewById(R.id.survey_text_cdalojin_crucero_m1).setVisibility(VISIBLE);
                 break;
+        }
+
+        if (Locale.getDefault().getLanguage().equals("en") || ListadoPasajerosActivity.getIdioma().equals("Inglés")){
+            activity.findViewById(R.id.survey_radio_cdsprof_option11).setVisibility(VISIBLE);
         }
     }
 

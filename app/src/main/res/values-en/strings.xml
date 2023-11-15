@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EMMA 2023 (v1.55)</string>
+    <string name="app_name">EMMA 2023 (v1.56)</string>
     <string name="nombre">EMMA 2023</string>
-    <string name="version">v1.55</string>
+    <string name="version">v1.56</string>
 
     <string name="input_usuario">User</string>
     <string name="input_password">Password</string>
@@ -98,15 +98,15 @@
     <string name="survey_m1_text_ultimodo">"12. ¿Could you tell me the mode of transport used for the airport? "</string>
     <string name="survey_m1_text_ultimodo_ent">Señalar último modo</string>
     <string name="survey_m1_text_ultimodo_b">12b. Could you tell me the first and the last the modes of transport that you took to arrive to the airport?</string>
-    <string name="survey_m1_text_ultimodo_1modo">1er Modo</string>
-    <string name="survey_m1_text_ultimodo_2modo">2º Modo</string>
-    <string name="survey_m1_text_ultimodo_umodo">Ultimo Modo</string>
+    <string name="survey_m1_text_ultimodo_1modo">1st Mode</string>
+    <string name="survey_m1_text_ultimodo_2modo">2nd Mode</string>
+    <string name="survey_m1_text_ultimodo_umodo">Last Mode</string>
     <string name="survey_m1_text_ultimodo_taxi">TAXI</string>
     <string name="survey_m1_text_ultimodo_taxi_num">11</string>
     <string name="survey_m1_text_ultimodo_coche">CAR</string>
     <string name="survey_m1_text_ultimodo_coche_vtc">VTC (Cabify, uber,..)</string>
     <string name="survey_m1_text_ultimodo_coche_vtc_num">24</string>
-    <string name="survey_m1_text_ultimodo_coche_valquiler">Rental car without driver</string>
+    <string name="survey_m1_text_ultimodo_coche_valquiler">Rental car</string>
     <string name="survey_m1_text_ultimodo_coche_valquiler_num">25</string>
     <string name="survey_m1_text_ultimodo_coche_vprivado">Private vehicle</string>
     <string name="survey_m1_text_ultimodo_coche_vprivado_cvviaja">The driver TRAVELS</string>
@@ -133,6 +133,8 @@
     <string name="survey_m1_text_ultimodo_otros">OTHERS</string>
     <string name="survey_m1_text_ultimodo_otros_especificar">Specify</string>
     <string name="survey_m1_text_ultimodo_otros_num">91</string>
+    <string name="survey_m1_text_vtc">13. Could you indicate the VTC company that you have used on this occasion?</string>
+    <string name="survey_m1_radio_vtc_option9">Others (specify)</string>
     <string name="survey_m1_text_sitiopark">14. Where have you left your vehicle?</string>
     <string name="survey_m1_radio_sitiopark_option1">AREA UP / DOWN passenger/Parking Express (15’ free)</string>
     <string name="survey_m1_radio_sitiopark_option5">"At the airport’s PAYMENT PARKING of AENA (during the trip) "</string>
@@ -144,7 +146,7 @@
     <string name="survey_m1_radio_bustermi_option1">Yes</string>
     <string name="survey_m1_radio_bustermi_option2">No</string>
     <string name="survey_m1_text_acomptes">15. How many people (friends, family, colleagues, etc.) came to say goodbye to you and entered into the terminal building?</string>
-    <string name="survey_m1_radio_acomptes_option0">None</string>
+    <string name="survey_m1_radio_acomptes_option0">Nobody</string>
     <string name="survey_m1_radio_acomptes_option1">1 person</string>
     <string name="survey_m1_radio_acomptes_option2">2 people</string>
     <string name="survey_m1_radio_acomptes_option3">"More than 2 people, specify "</string>
@@ -190,8 +192,8 @@
     <string name="survey_m1_text_cdbillet">"28. What tariff is the ticket you are going to use? "</string>
     <string name="survey_m1_radio_cdbillet_option1">First / Business</string>
     <string name="survey_m1_radio_cdbillet_option4">Combined (flight+hotel)</string>
-    <string name="survey_m1_radio_cdbillet_option6">Tourist not allowing changes</string>
-    <string name="survey_m1_radio_cdbillet_option5">Tourist allowing changes</string>
+    <string name="survey_m1_radio_cdbillet_option6">Basic Economy</string>
+    <string name="survey_m1_radio_cdbillet_option5">Tourist with extras</string>
     <string name="survey_m1_radio_cdbillet_option9">Others (free, etc.)</string>
     <string name="survey_m1_text_nviaje">"29. How often have you flown over the last 12 MONTHS without considering this one? "</string>
     <string name="survey_m1_radio_nviaje_option0">None</string>
@@ -215,7 +217,7 @@
     <string name="survey_m1_radio_nperbul_option2">Two people</string>
     <string name="survey_m1_radio_nperbul_option3">More people</string>
     <string name="survey_m1_text_nperbul_especificar">Specify number</string>
-    <string name="survey_m1_text_dropoff">"32. ¿At which check-in desk has you left your luggage?  "</string>
+    <string name="survey_m1_text_dropoff">"32. At which check-in desk has you left your luggage?  "</string>
     <string name="survey_m1_radio_dropoff_option1">Check-in desk attended by staff</string>
     <string name="survey_m1_radio_dropoff_option2">In automatic Drop off desk (withou airline personel)\t</string>
     <string name="survey_m1_text_chekinb">33. Where did you obtain your boarding pass?</string>
@@ -693,8 +695,8 @@
     <string name="survey_m2_text_viene_re_RMU">3.Where did you start your journey to take this flight in Murcia´s airport?</string>
     <string name="survey_m2_text_viene_re_XRY">3.Where did you start your journey to take this flight in Jerez´s airport?</string>
     <string name="survey_m2_text_viene_re_GRX">3.Where did you start your journey to take this flight in FGL Granada-Jaén´s airport?</string>
-    <string name="survey_m4_radio_cdbillet_option6_GRX">Tourist not allowing changes</string>
-    <string name="survey_m4_radio_cdbillet_option5_GRX">Tourist allowing changes</string>
+    <string name="survey_m4_radio_cdbillet_option6_GRX">Basic Economy</string>
+    <string name="survey_m4_radio_cdbillet_option5_GRX">Tourist with extras</string>
     <string name="survey_m4_radio_cdsprof_option5_RMU">Salary employee</string>
     <string name="survey_m4_text_ultimodo_coche_conductor_RMU">Rental car with driver (Cabify, Uber,..)</string>
 </resources>

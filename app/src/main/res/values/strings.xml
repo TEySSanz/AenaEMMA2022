@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EMMA 2023 (v1.55)</string>
+    <string name="app_name">EMMA 2023 (v1.56)</string>
     <string name="nombre">EMMA 2023</string>
 
     <!-- Activity Login -->
@@ -1237,7 +1237,7 @@
 
 
 
-    <string name="version">v1.55</string>
+    <string name="version">v1.56</string>
     <string name="survey_m2_text_valorexp">37. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_m5_text_valorexp">33. ¿Cómo de probable es que recomiendes la experiencia en el aeropuerto a un amigo o compañero? (valore del 0 al 10, donde 0 es nada probable y 10 es extremadamente probable)</string>
     <string name="survey_SCQ_text_consume">28. ¿Hoy ha consumido algún producto en el servicio de restauración del aeropuerto (cafeterías, máquinas expendedoras, etc.)?</string>
